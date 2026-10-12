@@ -17,6 +17,8 @@ Quick wins; smaller user budgets apply, unmet minima are gaps. **Query**: search
 
 ## 1. Start and plan
 
+Use the [default candidate list](../loop/product-improvement.md#observe-first-then-ask-research-questions) alongside user-supplied sources. Choose channels for the task and audience context; there is no requirement to research every candidate.
+
 Run from the skill folder. brief.json: product/url/locale/release/questions/languages/channels/windows/report/budgets/access_policy; validation fields: `schemas/ux-research-brief.v1.schema.json`. First command:
 
 ```sh
