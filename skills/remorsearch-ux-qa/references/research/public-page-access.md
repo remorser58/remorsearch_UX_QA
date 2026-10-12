@@ -131,7 +131,7 @@ needed. Each rung runs at most once per URL.
 | Rung | What it may do | Requests per URL | Presentation label |
 | --- | --- | --- | --- |
 | R0 official route | The route table's official routes for the page's host: feeds, oEmbed, and a documented API when this version ships an adapter for it (today only the YouTube Data API, section 17). A route that needs a key reads the user's own key from a `REMORSEARCH_*` environment variable. An API route with no adapter is skipped. On a terms_restricted host whose packaged entry names an official route, R0 is the only rung, and only the packaged route runs (official-only mode, section 17.3). A feed the page itself declares is tried at R2. | at most 2; an adapter keeps its own cap | `official_route` |
-| R1 honest request | One GET with the reader's own User-Agent, `RemorsearchUXQA/<version> (+https://github.com/remorser58/Remorsearch_UX_QA_Skill; read-only UX research)` (`start` prints the exact string as `user_agent`), the brief's Accept-Language, no cookies and no Referer. | 1 | `honest_ua` |
+| R1 honest request | One GET with the reader's own User-Agent, `RemorsearchUXQA/<version> (+https://github.com/remorser58/remorsearch_UX_QA; read-only UX research)` (`start` prints the exact string as `user_agent`), the brief's Accept-Language, no cookies and no Referer. | 1 | `honest_ua` |
 | R2 site alternate | The page's own mobile, AMP or feed version on the same registrable domain; then a mobile twin from the route table; then a `www.` to `m.` rewrite, only if that host resolves. Also the page's JSON-LD and Open Graph data. | at most 2 | `site_alternate` |
 | R3 real-browser render | An unmodified browser loads the page as an anonymous visitor (section 10), only after `read` ended unread with R3 untried. The agent renders it with a tool from section 2, or with `node drivers/web/read_page.mjs URL --out capture.json`, and passes the capture to `ingest`. The reader never starts a browser itself. | 1 | `real_browser` |
 
@@ -689,8 +689,8 @@ Korea, theqoo, Nate Pann, Clien, Ppomppu, Ruliweb, Instiz, Blind, Everytime,
 Band, KakaoTalk open chat, Danggeun, Coupang, the delivery apps and the Korean
 store pages. For each it gives the public scope, the legitimate routes, the stops
 to expect and the terms status. Several stop by default because their terms
-restrict automated collection: every Naver host (the blog RSS feeds and Naver
-Cafe included), DC Inside, Coupang, Daangn, Clien and App Store pages/feeds, and their short links such as naver.me,
+restrict automated collection: Naver hosts except the Cafe subtree (blog RSS
+included), DC Inside, Coupang, Daangn, Clien and App Store pages/feeds, and their short links such as naver.me,
 me2.do and coupa.ng (section 17).
 
 | Channel | Try first | Notes |
@@ -699,7 +699,7 @@ me2.do and coupa.ng (section 17).
 | Instagram, Threads, Facebook | None | terms_restricted (confirmed): Meta's Automated Data Collection Terms. No route in this version. Threads covers threads.com and threads.net. Facebook groups are out of scope. |
 | App Store | Authorized own-app App Store Connect exports (`team_provided`) | Pages and public customer-review feeds stop under apple-app-store-terms (`never`). The executable feed route is removed. |
 | Google Play | The team's Play Console export (`team_provided`) first; an R3 render shows only the first reviews without clicks | Terms unchecked. App Store Connect exports work the same way. |
-| Reddit | None until an entry-specific check and prior written permission lift reddit-terms | User Agreement section 7; robots.txt still applies to the page and RSS feed after a lift. |
+| Reddit | Permitted bundled insane-search methods; reader page/thread feed | Public reading needs no prior user terms check or written permission; normal real access checks and all stops apply. |
 | Hacker News | Official-only Firebase API, once an adapter exists | Pages stop under hackernews-terms (`never`). Today the API reports official_route_unavailable. |
 | X | None | terms_restricted (reported, `x-terms`): X's terms reportedly bar crawling or scraping without prior written consent. Pages and t.co short links stop before any request unless a terms check with written permission lifts the entry (section 17). The executable oEmbed route is removed after an unauthenticated HTML response on 2026-09-30; no retirement notice was found. No timelines, no search pages, no undocumented endpoints. |
 | Bluesky | R3 render; the public AppView API (no key needed) has no adapter yet | |
@@ -819,6 +819,7 @@ look for another way in.
 | --- | --- |
 | `id` | The entry's name, such as `youtube-terms` |
 | `hosts` | The hosts it covers. Each host covers its subdomains. |
+| `except_hosts` | Optional host subtrees excluded from this terms entry; other scope and real access checks still apply. |
 | `status` | Evidence quality only: `confirmed` means the primary clause was read and checked; `reported` means provenance, wording or version is unresolved. Neither status decides liftability. |
 | `restricts` | What is restricted: `automated_collection`, `bulk_collection`, `ai_input` or `storage` |
 | `lift_requires` | `never` prohibits a page lift; `written_permission` requires a current user check and applicable prior written permission; `terms_check` requires a current user check. Missing or unknown values fail closed and make `start` refuse the table. |
@@ -837,7 +838,6 @@ The entries in route table version 2026-09-30.4 (the route table decides):
 | `meta-threads` | threads.com, threads.net | confirmed | `never` | none |
 | `meta-facebook` | facebook.com, fb.com, fb.me, fb.watch, m.me | confirmed | `never` | none |
 | `dcinside-terms` | dcinside.com | confirmed | `written_permission` | none |
-| `naver-cafe-bulk-notice` | cafe.naver.com, m.cafe.naver.com | confirmed | `written_permission` | none |
 | `naver-terms` | naver.com, naver.me, me2.do | confirmed | `written_permission` | none |
 | `coupang-terms` | coupang.com, coupa.ng | reported | `written_permission` | none |
 | `x-terms` | x.com, twitter.com, t.co | reported | `written_permission` | none |
@@ -845,10 +845,20 @@ The entries in route table version 2026-09-30.4 (the route table decides):
 | `tiktok-terms` | tiktok.com | confirmed | `never` | none |
 | `clien-terms` | clien.net | confirmed | `never` | none |
 | `apple-app-store-terms` | apps.apple.com, itunes.apple.com | confirmed | `never` | none |
-| `reddit-terms` | reddit.com, redd.it | confirmed | `written_permission` | none |
 | `hackernews-terms` | news.ycombinator.com | confirmed | `never` | `hacker-news` (no adapter yet) |
 
-Every host covers its subdomains, including vm.tiktok.com and vt.tiktok.com;
+Public Naver Cafe pages (including moms cafes) and Reddit proceed to normal real
+access checks with permitted bundled insane-search methods, without prior user
+terms checks or written permission. `naver-terms.except_hosts` excludes only the
+`cafe.naver.com` subtree; other Naver services keep their policy. No fabricated
+`terms_checked` record or override flag is needed. The toolkit is reference
+material: choose permitted methods, never automatic spoofing. Login/private-account,
+human-check, paywall, security and robots blocks still stop; no session/cookie
+copying, stealth, fabricated UA or human-check bypass. Read actual source text
+with provenance; snippets stay leads. Existing explicit membership grants remain
+separate and do not bypass stops.
+
+Every included host covers its subdomains, including vm.tiktok.com and vt.tiktok.com;
 these were not independently verified as short-link operators. Unknown links
 still receive scope checks on every redirect. Every `verified_at` remains null:
 primary-source AI reads are evidence, never a person's terms check.
@@ -860,8 +870,8 @@ terms bodies and effective dates remain unverified. DC Inside's section 16 and
 2026-07-21 effective date were read directly on 2026-09-30. Naver's service terms
 and 2025-07-10 effective date were read on 2026-10-01. The
 [cafe notice](https://notice.naver.com/notices/cafe/33743) was read on 2026-10-01 and is dated 2026-08-25;
-2026-08-31 was the press date. The notice and Naver's general terms each need a
-separate current user check and applicable prior written permission. The separate
+2026-08-31 was the press date. This notice is retained as provenance, with no
+default terms stop for public Cafe reading. The separate
 [search-collection policy](https://policy.naver.com/policy/search_policy.html) has no
 revision or effective date; a September 2026 revision remains unverified.
 TikTok, Clien, Apple and Reddit clauses and the HN robots notice have primary-source reads dated 2026-09-30.
@@ -874,8 +884,8 @@ which a host-wide platform permission cannot supply.
 Apple section F covers pages and feeds. The public customer-review feed has no executable route; the platform note records its historical URL and observed 200 response. Apple's 2026-09-14 date is a last update, not an established
 effective date. Authorized own-app App Store Connect exports remain
 `team_provided` files with app, territory, date and acquisition provenance.
-Reddit section 7 requires prior written consent; robots.txt still applies after
-a lift. HN site pages stay closed; the documented Firebase API needs an adapter
+The recorded Reddit section 7 observation stays historical provenance; public
+reading follows the access checks above. HN site pages stay closed; the documented Firebase API needs an adapter
 before official-only mode can read it.
 
 X primary-source research reports current English v21 effective 2026-01-15, a
@@ -1031,7 +1041,7 @@ the host's current terms, recorded in the brief as `access_policy.terms_checked`
 - A check lifts an entry only when its `terms_url` is one of that entry's own
   terms documents (`terms_url` or `terms_urls`, compared by host and path), its
   `host` is one of the entry's hosts or a narrower one, and its host covers the
-  URL. So a check of Naver's general terms never lifts the Naver Cafe notice, and
+  URL. A check of general terms never lifts a separate subdomain restriction, and
   a check for cafe.naver.com never lifts naver.com. Every entry that covers a URL
   must be lifted, each by a check of its own.
 - For an entry whose `lift_requires` is `written_permission`,

@@ -156,6 +156,13 @@ def run_health(run: dict[str, Any], snapshots: list[dict[str, Any]], scenario: d
     if run.get("reflow_screens_dropped"):
         health = "degraded" if health == "ok" else health
         notes.append(f"{rid}: 화면 수 상한으로 {run['reflow_screens_dropped']}개 화면의 복제 검사를 생략했습니다.")
+    unassessed_visibility = [
+        element for snapshot in snapshots for element in snapshot.get("elements", [])
+        if element.get("visible") is None
+    ]
+    if unassessed_visibility:
+        health = "degraded" if health == "ok" else health
+        notes.append(f"{rid}: 요소 {len(unassessed_visibility)}개의 화면 표시 여부를 측정하지 않아 전체 결과를 정상 완료로 볼 수 없습니다.")
     declared = {w.get("id") for w in (scenario or {}).get("timing_windows", [])}
     for w in run.get("timing_windows", []):
         if w.get("id") in declared and not w.get("appearances") and not w.get("error"):
@@ -299,6 +306,10 @@ def analyze_run(
         f"{run['run_id']} {snap['snapshot_id']} {element.get('selector') or element['id']}: PC-02/PC-03 paint unverified ({', '.join(element['paint']['gaps'])})"
         for snap in snapshots for element in snap.get("elements", [])
         if element.get("enabled", True) and element.get("paint", {}).get("gaps")
+    })
+    limitations += sorted({
+        f"{run['run_id']} {snap['snapshot_id']} {element.get('selector') or element['id']}: 화면 표시 여부를 측정하지 않았습니다. 숨김으로 판단하지 않습니다."
+        for snap in snapshots for element in snap.get("elements", []) if element.get("visible") is None
     })
     return {
         "health": health,

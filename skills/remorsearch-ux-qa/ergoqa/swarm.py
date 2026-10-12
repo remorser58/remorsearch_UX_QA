@@ -197,12 +197,13 @@ def aggregate(analyses: Iterable[dict[str, Any]], profiles: Iterable[dict[str, A
             evaluated_by_run.setdefault(run_id, [])
             evaluated_by_run[run_id] += [p for p in analysis["profiles_evaluated"] if p not in evaluated_by_run[run_id]]
         for obs in analysis["observations"]:
-            if (obs.get("extra") or {}).get("verdict") == "inconclusive":
-                continue  # retained in raw observations and analysis limitations
             # Group by the element's selector, not its current text: a countdown or score
             # whose text changes every snapshot is one element (cross-review 2026-09-28).
             key = (scenario_id, obs["check_id"], obs["element_key"].split("|", 1)[0])
-            group = groups.setdefault(key, {"tested": set(), "triggered": set(), "failed": [], "runs": set()})
+            group = groups.setdefault(key, {"tested": set(), "triggered": set(), "failed": [], "runs": set(), "inconclusive": set()})
+            if (obs.get("extra") or {}).get("verdict") == "inconclusive":
+                group["inconclusive"].add(obs["profile_id"])
+                continue  # retained in raw observations and analysis limitations
             group["tested"].add(obs["profile_id"])
             group["runs"].add(obs["run_id"])
             if not obs["passed"]:
@@ -246,7 +247,8 @@ def aggregate(analyses: Iterable[dict[str, Any]], profiles: Iterable[dict[str, A
         # counting profiles outside the check's scope as not triggered, so a CVD-only or
         # bright-sun-only finding names its condition (AP-05) instead of reading "k/k".
         evaluated = {pid for run_id in group["runs"] for pid in evaluated_by_run.get(run_id, [])} | set(tested)
-        untriggered = [profiles_by_id[p] for p in sorted(evaluated) if p not in group["triggered"] and p in profiles_by_id]
+        # An explicit unknown remains unresolved across steps and cannot establish a negative contrast.
+        untriggered = [profiles_by_id[p] for p in sorted(evaluated) if p not in group["triggered"] and p not in group["inconclusive"] and p in profiles_by_id]
         differential = {} if check_id == "TI-01" else _differential([profiles_by_id[p] for p in triggered if p in profiles_by_id], untriggered)
         findings.append({
             "check_id": check_id,

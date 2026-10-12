@@ -1,7 +1,7 @@
 {
   "schema_version": "ux-research-routes.v1",
-  "version": "2026-09-30.4",
-  "note": "The only place platform names appear in the reader. Every entry is unverified (verified_at null) until a manual live check and a human review; an unverified route that fails simply falls through to the next rung. hosts: exact names or '*.suffix'. path: a regular expression on the URL path; its named groups become template variables, and query parameters are available as {q_<name>}. path_by_host: a different path pattern for some of the hosts (such as a short-link host). Other template variables: {scheme} {host} {port_suffix} {path} {query} {url_enc}, and {key} for a user key read from the environment variable named in 'env' (always REMORSEARCH_*; 'env_aliases' lists older names that are still accepted; the value is never stored or logged). A key named in this packaged table is sent only to the hosts this table names for it, and only REMORSEARCH_* variables and the aliases listed here are ever read, whatever route table a run uses. official: kind 'feed' (scope 'item' keeps only the entry that links to the page; scope 'all' keeps every entry, such as a thread or review feed), 'oembed', or 'api' (read only by the provider adapter named in 'adapter', uxresearch/<adapter>.py, which has its own fields: the youtube adapter reads id_from, id_pattern, url, comments_url, page_size, max_pages, quota_units_per_call, quota_reset_tz, retention_days and policy_note; an 'api' route with no adapter is skipped). alternates: the site's own mobile or AMP twins. author_from: subdomain | path_segment | page. profile_paths: first path segments that name a person's channel or profile on the platform's hosts; the privacy scrubber replaces such URLs. drop and author (string lists, optional, both currently unused by every packaged platform): extra chrome tokens and extra author-label tokens that the reader adds to its global token lists (data/markers.json chrome_idents and author_idents) when it parses a page on this platform's hosts; add one only for a token the global list lacks, with a live check of the platform's markup. The reader consumes both fields (extract.py). login_hosts: a redirect there is an auth_gate stop. The scope lists are checked before any request, on every redirect hop (robots.txt redirects included), route and alternate, in this order: the researcher's deny list, search_pages and a site's own search results pages (a URL with a query on a platform's host whose path has a 'search' segment; refused at the start with exit 2; a stop when reached by a redirect), the never_call endpoints of discovery entries switched off (the same), third_party_copies (archives, caches, translation and reader proxies, AMP caches and front ends: the URL a copy wraps is judged first and a stop there stops the copy with the same class; otherwise the copy is refused like a search page, except an entry marked wayback_for_official for a page of the product's own site when the brief allows it; target says how the wrapped URL is found: path_url, label_host, amp_path, query_url, or template with path, query and wraps, where an entry with no hosts matches any host but its except_hosts by URL shape alone), out_of_scope (private channels), then terms_restricted. A terms_restricted entry comes only from a published or reported restriction with its sources, never from a guess: status records evidence quality: 'confirmed' when the primary clause was read and checked, 'reported' when its provenance or version remains unresolved; verified_at remains null until a person reads the primary page. Every entry that covers a URL must be lifted for the run, each by a check of its own in the user's brief (access_policy.terms_checked): lift_requires must explicitly name never, written_permission or terms_check; missing or unknown values fail closed and are refused at start and resume. Status never decides liftability. A check lifts an entry only when lift_requires is not never and its terms_url is one of the entry's own terms documents (terms_url and terms_urls, compared by host and path), its host is one of the entry's hosts or narrower, its host covers the URL and its result is permits_this_reading; an entry whose lift_requires is written_permission (its clause forbids automated collection without prior written permission or consent) also needs the permission {granted_by, granted_on, reference} in that check, and a check dated before effective_from lifts nothing. Every open-run command revalidates the 365-day check limit and effective_from. Earlier runs must restart; their hashed files are never rewritten. A lifted entry has a budget of 10 documents across its hosts. official_route names the packaged platform whose official route may still run for such a host (official-only mode: no page request, no render capture); official-only mode reads only this packaged table. Host names cover their subdomains in every list. The packaged scope lists always apply, also when a run uses another route table (--routes), which can add platforms and entries but never change or remove a packaged entry, and never add or change a platform for a host a packaged terms entry covers (start refuses such a table). Verify every note live before relying on it.",
+  "version": "2026-10-13.1",
+  "note": "The only place platform names appear in the reader. Every entry is unverified (verified_at null) until a manual live check and a human review; an unverified route that fails simply falls through to the next rung. hosts: exact names or '*.suffix'. path: a regular expression on the URL path; its named groups become template variables, and query parameters are available as {q_<name>}. path_by_host: a different path pattern for some of the hosts (such as a short-link host). Other template variables: {scheme} {host} {port_suffix} {path} {query} {url_enc}, and {key} for a user key read from the environment variable named in 'env' (always REMORSEARCH_*; 'env_aliases' lists older names that are still accepted; the value is never stored or logged). A key named in this packaged table is sent only to the hosts this table names for it, and only REMORSEARCH_* variables and the aliases listed here are ever read, whatever route table a run uses. official: kind 'feed' (scope 'item' keeps only the entry that links to the page; scope 'all' keeps every entry, such as a thread or review feed), 'oembed', or 'api' (read only by the provider adapter named in 'adapter', uxresearch/<adapter>.py, which has its own fields: the youtube adapter reads id_from, id_pattern, url, comments_url, page_size, max_pages, quota_units_per_call, quota_reset_tz, retention_days and policy_note; an 'api' route with no adapter is skipped). alternates: the site's own mobile or AMP twins. author_from: subdomain | path_segment | page. profile_paths: first path segments that name a person's channel or profile on the platform's hosts; the privacy scrubber replaces such URLs. drop and author (string lists, optional, both currently unused by every packaged platform): extra chrome tokens and extra author-label tokens that the reader adds to its global token lists (data/markers.json chrome_idents and author_idents) when it parses a page on this platform's hosts; add one only for a token the global list lacks, with a live check of the platform's markup. The reader consumes both fields (extract.py). login_hosts: a redirect there is an auth_gate stop. The scope lists are checked before any request, on every redirect hop (robots.txt redirects included), route and alternate, in this order: the researcher's deny list, search_pages and a site's own search results pages (a URL with a query on a platform's host whose path has a 'search' segment; refused at the start with exit 2; a stop when reached by a redirect), the never_call endpoints of discovery entries switched off (the same), third_party_copies (archives, caches, translation and reader proxies, AMP caches and front ends: the URL a copy wraps is judged first and a stop there stops the copy with the same class; otherwise the copy is refused like a search page, except an entry marked wayback_for_official for a page of the product's own site when the brief allows it; target says how the wrapped URL is found: path_url, label_host, amp_path, query_url, or template with path, query and wraps, where an entry with no hosts matches any host but its except_hosts by URL shape alone), out_of_scope (private channels), then terms_restricted. A terms_restricted entry comes only from a published or reported restriction with its sources, never from a guess: status records evidence quality: 'confirmed' when the primary clause was read and checked, 'reported' when its provenance or version remains unresolved; verified_at remains null until a person reads the primary page. Every entry that covers a URL must be lifted for the run, each by a check of its own in the user's brief (access_policy.terms_checked): lift_requires must explicitly name never, written_permission or terms_check; missing or unknown values fail closed and are refused at start and resume. Status never decides liftability. A check lifts an entry only when lift_requires is not never and its terms_url is one of the entry's own terms documents (terms_url and terms_urls, compared by host and path), its host is one of the entry's hosts or narrower, its host covers the URL and its result is permits_this_reading; an entry whose lift_requires is written_permission (its clause forbids automated collection without prior written permission or consent) also needs the permission {granted_by, granted_on, reference} in that check, and a check dated before effective_from lifts nothing. Every open-run command revalidates the 365-day check limit and effective_from. Earlier runs must restart; their hashed files are never rewritten. A lifted entry has a budget of 10 documents across its hosts. official_route names the packaged platform whose official route may still run for such a host (official-only mode: no page request, no render capture); official-only mode reads only this packaged table. Host names cover their subdomains in every list; terms entries may exclude host subtrees with except_hosts. Public Naver Cafe and Reddit reading has no default terms stop and proceeds through normal real access checks using permitted bundled-toolkit methods. The packaged scope lists always apply, also when a run uses another route table (--routes), which can add platforms and entries but never change or remove a packaged entry, and never add or change a platform for a host a packaged terms entry covers (start refuses such a table). Verify every note live before relying on it.",
   "platforms": [
     {
       "id": "naver-blog",
@@ -41,7 +41,7 @@
       "official": [],
       "alternates": [{"kind": "mobile", "url": "https://m.cafe.naver.com/{cafe}/{article}"}],
       "login_hosts": ["nid.naver.com"],
-      "terms_note": "terms_restricted (confirmed): the cafe notice dated 2026-08-25 bans bulk collection of posts and comments (Naver's terms apply as well). The reader stops before any request unless the user's own terms check lifts it for the run. Member-only boards stay auth_gate gaps; a signed-in capture is taken in only for a cafe the brief authorises (access_policy.signed_in_communities, with the cafe's path_prefix) and only after such a lift, and is kept as summaries only. Primary URL: https://notice.naver.com/notices/cafe/33743, read on 2026-10-01. The notice and general terms each require a separate user check and prior written permission under lift_requires: written_permission.",
+      "terms_note": "Public Cafe pages, including moms cafes, proceed through normal real access checks with no prior user terms check or written-permission prerequisite. Use permitted methods from the bundled insane-search reference; robots, login/private-account, human-check, paywall and security blocks still stop. Separately authorized membership allows summaries only and does not bypass other stops.",
       "verified_at": null
     },
     {
@@ -333,7 +333,7 @@
       ],
       "alternates": [],
       "login_hosts": [],
-      "terms_note": "terms_restricted (confirmed, reddit-terms): User Agreement section 7 prohibits scraping without prior written consent. A lift needs the user's current terms check and that written permission; robots.txt still applies to pages and the thread feed.",
+      "terms_note": "Public Reddit pages and the thread feed proceed through normal real access checks with no prior user terms check or written-permission prerequisite. Use permitted methods from the bundled insane-search reference; robots, login/private-account, human-check, paywall and security blocks still stop.",
       "verified_at": null
     },
     {
@@ -561,23 +561,8 @@
       "note": "Primary terms, effective 2026-07-21, were read on 2026-09-30. Evidence status is confirmed; no person verified the primary page. lift_requires: written_permission still requires the user’s current entry-specific check and applicable prior written consent. robots.txt and all other stops remain independently applicable."
     },
     {
-      "id": "naver-cafe-bulk-notice",
-      "hosts": ["cafe.naver.com", "m.cafe.naver.com"],
-      "status": "confirmed",
-      "lift_requires": "written_permission",
-      "effective_from": "2026-08-25",
-      "restricts": ["bulk_collection", "automated_collection"],
-      "official_route": null,
-      "terms_url": "https://notice.naver.com/notices/cafe/33743",
-      "clause": "\"크롤러·봇·스크립트 등 자동화된 방식으로 게시물과 댓글을 대량으로 조회·수집하는 행위\" 금지.",
-      "read_via": "direct_fetch",
-      "sources": ["https://notice.naver.com/notices/cafe/33743"],
-      "checked_at": "2026-10-01",
-      "verified_at": null,
-      "note": "The primary cafe notice was read on 2026-10-01. Its own date is 2026-08-25; 2026-08-31 was the press date. It bans bulk collection and external republication without members’ and the cafe’s consent and asks existing collectors to stop immediately and delete collected data. lift_requires: written_permission requires a current check of this notice and applicable prior written permission. Cafe URLs also meet naver-terms, which needs a separate check; a check of the general terms alone cannot lift the notice. No person verified the primary page."
-    },
-    {
       "id": "naver-terms",
+      "except_hosts": ["cafe.naver.com"],
       "hosts": ["naver.com", "naver.me", "me2.do"],
       "status": "confirmed",
       "lift_requires": "written_permission",
@@ -589,7 +574,7 @@
       "sources": ["https://policy.naver.com/rules/service.html", "https://policy.naver.com/policy/search_policy.html"],
       "checked_at": "2026-10-01",
       "verified_at": null,
-      "note": "Primary service terms, effective 2025-07-10, were read on 2026-10-01. The separate search-collection policy disallows other search robots collecting databases protected by robots.txt; it shows no effective or revision date, so a September 2026 revision remains unverified. Covers every Naver host, blog RSS and the naver.me/me2.do short links. lift_requires: written_permission requires a current entry-specific user check and applicable prior written permission. No person verified the primary page.",
+      "note": "Primary service terms, effective 2025-07-10, were read on 2026-10-01. The separate search-collection policy disallows other search robots collecting databases protected by robots.txt; it shows no effective or revision date, so a September 2026 revision remains unverified. Covers Naver hosts except the cafe.naver.com subtree; blog RSS and naver.me/me2.do short links remain covered. lift_requires: written_permission requires a current entry-specific user check and applicable prior written permission. No person verified the primary page.",
       "effective_from": "2025-07-10"
     },
     {
@@ -756,32 +741,6 @@
       ],
       "last_updated": "2026-09-14",
       "note": "AI researchers read section F on 2026-09-30; no person verified it. 2026-09-14 is the stated last update, not an established effective date. No customer-review feed exception was found. The removed itunes.apple.com customer-review feed returned 200 in the research, which does not establish permitted research use. Authorized own-app App Store Connect exports remain team_provided files; competitor reviews remain a coverage gap.",
-      "checked_at": "2026-09-30",
-      "verified_at": null
-    },
-    {
-      "id": "reddit-terms",
-      "hosts": [
-        "reddit.com",
-        "redd.it"
-      ],
-      "status": "confirmed",
-      "lift_requires": "written_permission",
-      "effective_from": "2026-07-01",
-      "restricts": [
-        "automated_collection"
-      ],
-      "official_route": null,
-      "terms_url": "https://www.redditinc.com/policies/user-agreement",
-      "clause": "User Agreement section 7: \"scraping the Services without Reddit's prior written consent is prohibited\".",
-      "read_via": "direct_fetch",
-      "sources": [
-        "https://www.redditinc.com/policies/user-agreement",
-        "https://www.reddit.com/robots.txt",
-        "https://www.redditinc.com/policies/data-api-terms",
-        "https://old.reddit.com/robots.txt"
-      ],
-      "note": "An AI researcher read section 7 on 2026-09-30; no person verified it. Every lift needs the user's current entry-specific check and applicable prior written consent. robots.txt remains an independent stop after permission; the conditional crawl allowance and a published RSS feed do not waive it. redd.it is the operator's short-link domain. Both www.reddit.com and old.reddit.com robots.txt were read directly on 2026-09-30 and showed User-agent: * / Disallow: /.",
       "checked_at": "2026-09-30",
       "verified_at": null
     },

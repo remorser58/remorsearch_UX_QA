@@ -865,6 +865,13 @@ export function extractSnapshot(args) {
     }
     return el.hasAttribute('tabindex') && el.tabIndex >= 0;
   };
+  const isDisabled = (el) => {
+    try {
+      return el.matches(':disabled') || el.getAttribute('aria-disabled') === 'true' || !!el.closest('[inert]');
+    } catch (e) {
+      return false;
+    }
+  };
   const ALWAYS_TEXT = new Set(['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'li', 'label', 'legend', 'figcaption', 'caption']);
   const DIRECT_TEXT = new Set(['span', 'div', 'small', 'strong', 'em', 'b', 'i', 'td', 'th', 'dt', 'dd', 'blockquote', 'output', 'pre', 'code', 'section', 'article', 'header', 'footer', 'main', 'aside']);
 
@@ -966,6 +973,32 @@ export function extractSnapshot(args) {
     return g.vis && g.inVp;
   });
   const inertByModal = (el) => modals.length > 0 && !modals.some((m) => m === el || m.contains(el) || el.contains(m));
+  // Count rendered, enabled controls by direct-child subtree, including below-fold
+  // controls. The boundary describes DOM structure, not semantic alternatives.
+  const siblingBranches = new WeakMap();
+  for (const el of all) {
+    if (!isInteractive(el) || !geo(el).vis || isDisabled(el) || inertByModal(el)) continue;
+    for (let child = el, parent = el.parentElement; parent && parent !== document.body && parent !== document.documentElement; child = parent, parent = parent.parentElement) {
+      if (!siblingBranches.has(parent)) siblingBranches.set(parent, new Set());
+      siblingBranches.get(parent).add(child);
+    }
+  }
+  const siblingScopes = new WeakMap();
+  const siblingScope = (el) => {
+    if (siblingScopes.has(el)) return siblingScopes.get(el);
+    let result = { sibling_scope_id: null, sibling_scope_status: 'none' };
+    for (let parent = el.parentElement; parent && parent !== document.body && parent !== document.documentElement; parent = parent.parentElement) {
+      if ((siblingBranches.get(parent)?.size || 0) >= 2) {
+        const selector = uniqueSelector(parent);
+        result = selector && selector.length <= 256
+          ? { sibling_scope_id: selector, sibling_scope_status: 'measured' }
+          : { sibling_scope_id: null, sibling_scope_status: 'unavailable' };
+        break;
+      }
+    }
+    siblingScopes.set(el, result);
+    return result;
+  };
   // Fraction of sample points inside the visible box where another element is on top
   // (not the element, a descendant or an ancestor): a sheet, scrim or overlay.
   const occlusion = (el, r) => {
@@ -1249,13 +1282,7 @@ export function extractSnapshot(args) {
     const border = isControl ? borderFor(cs, colors ? colors.container || colors.bg : null) : { color: null, width: 0 };
     let cumOpacity = 1;
     for (let p = el; p; p = parentOf(p)) cumOpacity *= parseFloat(style(p).opacity);
-    const disabled = (() => {
-      try {
-        return el.matches(':disabled') || el.getAttribute('aria-disabled') === 'true' || !!el.closest('[inert]');
-      } catch (e) {
-        return false;
-      }
-    })();
+    const disabled = isDisabled(el);
     const fw = parseInt(cs.fontWeight, 10);
     const fs = parseFloat(cs.fontSize);
     const displayedText = visibleText(el);
@@ -1316,6 +1343,7 @@ export function extractSnapshot(args) {
         }
         return ids;
       })(),
+      ...siblingScope(el),
       source: 'dom',
     });
   }

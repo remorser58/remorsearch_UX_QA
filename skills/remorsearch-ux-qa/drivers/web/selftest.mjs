@@ -1664,6 +1664,20 @@ async function dialogTest(base, tmp) {
     ctl('#chip-hot') && ctl('#chip-hot').control === false && ctl('#chip-hot').contains_control === false && ctl('#chip-hot').ancestor_ids.includes('chips')
     && ctl('#chip-ok-t') && ctl('#chip-ok-t').control === true && ctl('#open-bad').control === true,
     { hot: ctl('#chip-hot'), ok: ctl('#chip-ok-t') });
+  const initialControls = (snaps[0]?.elements || []).filter((e) => e.interactive);
+  const rowButtons = initialControls.filter((e) => /^회원 [0-5] (편집|삭제)$/.test(String(e.text || '')));
+  const rowScopes = new Map();
+  for (const item of rowButtons) rowScopes.set(item.sibling_scope_id, (rowScopes.get(item.sibling_scope_id) || 0) + 1);
+  check('choice scope: six anonymous rows keep two actions per measured sibling scope',
+    rowButtons.length === 12 && rowScopes.size === 6 && [...rowScopes.values()].every((count) => count === 2)
+      && rowButtons.every((e) => e.visible && e.enabled && e.in_viewport && e.sibling_scope_status === 'measured')
+      && [...rowScopes.keys()].every((scope) => typeof scope === 'string' && scope.length > 0),
+    { buttons: rowButtons.length, scopes: [...rowScopes] });
+  const options = initialControls.filter((e) => /^결제수단 [0-9]$/.test(String(e.text || '')));
+  check('choice scope: ten wrapped options share a boundary despite hidden, inert and disabled auxiliary controls',
+    options.length === 10 && options.every((e) => e.visible && e.enabled && e.in_viewport
+      && e.sibling_scope_status === 'measured' && e.sibling_scope_id === '#scope-options'),
+    options.map((e) => ({ text: e.text, scope: e.sibling_scope_id, status: e.sibling_scope_status })));
 }
 
 function runReader(args, { reader = path.join(HERE, 'read_page.mjs'), env = process.env } = {}) {

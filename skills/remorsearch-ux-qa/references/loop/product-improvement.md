@@ -16,7 +16,7 @@ Enter persona-qa with `references/persona-qa/workflow.md`. Use the real product 
 
 Ask where the task stopped, what the UI implied, what workaround was available and when it worked. Separate unknown causes from reproduced behavior. Test unfamiliar/returning, interrupted, touch/keyboard and other relevant synthetic conditions, without claiming real participants or population estimates. Ergonomics remains experimental screening; emulation/models cannot establish real-device, assistive-technology or human accuracy.
 
-Load `references/research/workflow.md` and its access/evidence cards when research starts. Plan questions from the baseline and inspect relevant counterexamples. These six sources are fixed candidates, selected for useful task context; there is no requirement to scrape all six or assign empty priority scores:
+Load `references/research/workflow.md` and its access/evidence cards when research starts. Plan questions from the baseline and inspect relevant counterexamples. These sources are default candidates, selected for useful task context; there is no requirement to scrape every candidate or assign empty priority scores:
 
 | Candidate | Context to seek |
 | --- | --- |
@@ -26,8 +26,10 @@ Load `references/research/workflow.md` and its access/evidence cards when resear
 | X | Original post, conversation, quote/reply target and experience conditions |
 | 인스타그램 (Instagram) | Post/video caption, related comments and the question or problem context |
 | Threads(쓰레드) | Original post, connected replies, prior statement and follow-up explanation |
+| 맘카페·육아 커뮤니티 (including Naver Cafes) | Relevant parenting, household or local-service tasks; original post, replies and alternatives tried |
+| Reddit | Relevant subreddit, original post, comment chain, product/version context and workarounds tried |
 
-Supplement with relevant Naver Cafes, reviews, Reddit or official sources. Selection does not imply access. Discover URLs, then invoke bundled insane-search under the research card's access/privacy rules and permitted adapters. Unsupported output stays a lead; unread content stays a gap. Retain actual calls, source URL, checked/published dates, version, summary, read scope, firsthand/promotion/inference distinctions, counters and duplicates. A blocked platform does not stop other research or product QA. Never invent callback receipts outside supported capture paths.
+Supplement with other relevant Naver Cafes, reviews or official sources. Selection does not imply access. Discover URLs, then invoke bundled insane-search under the research card's access/privacy rules and permitted adapters. Unsupported output stays a lead; unread content stays a gap. Retain actual calls, source URL, checked/published dates, version, summary, read scope, firsthand/promotion/inference distinctions, counters and duplicates. A blocked platform does not stop other research or product QA. Never invent callback receipts outside supported capture paths.
 
 Convert scrubbed research into hypotheses and rerun related tasks. Unreproduced complaints stay hypotheses; check version/context differences. Sparse community evidence does not block reproduced defects. Report optional source gaps separately from missing required product QA. Use existing plan, gate and bundle contracts; never fabricate statuses or receipts to pass.
 

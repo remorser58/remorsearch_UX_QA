@@ -299,6 +299,16 @@ def cmd_android_snapshot(args: argparse.Namespace) -> int:
     return EXIT_OK
 
 
+def cmd_ios_import(args: argparse.Namespace) -> int:
+    from .drivers import ios
+
+    result = ios.import_ios_export(args.evidence, args.out, device_id=args.device, capture_id=args.capture_id,
+                                   scenario_id=args.scenario_id, profile_id=args.profile_id, route=args.route,
+                                   fixture_id=args.fixture_id, fixture_kind=args.fixture_kind)
+    print(f"ios import ({result['xcuitest_result']}, {len(result['captures'])} capture(s)) -> {args.out}")
+    return EXIT_OK
+
+
 def cmd_attach(args: argparse.Namespace) -> int:
     from .qa_attach import attach_run
 
@@ -474,6 +484,18 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--step", type=int, default=0)
     p.add_argument("--out", required=True)
     p.set_defaults(func=cmd_android_snapshot)
+
+    p = sub.add_parser("ios-import", help="import an existing XCUITest evidence export as ergo runs")
+    p.add_argument("--evidence", required=True, help="native evidence directory with xcresult exports and summaries")
+    p.add_argument("--out", required=True, help="new output directory")
+    p.add_argument("--device", required=True, help="exact device catalog id (for example iphone-15)")
+    p.add_argument("--capture-id", required=True, help="exact producer capture UUID to import")
+    p.add_argument("--scenario-id", required=True)
+    p.add_argument("--profile-id", required=True)
+    p.add_argument("--route", required=True, help="explicit ios-app:// route path")
+    p.add_argument("--fixture-id", required=True, help="caller-bound fixture identity")
+    p.add_argument("--fixture-kind", choices=("synthetic_app_data", "runtime_app_data"), required=True)
+    p.set_defaults(func=cmd_ios_import)
     return parser
 
 

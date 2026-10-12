@@ -340,6 +340,17 @@ def _element(errors: _Errors, el: Any, path: str) -> None:
     errors.string(el, "name", path, required=False, nullable=True, nonempty=False)
     for key in ("text", "tag", "selector"):
         errors.string(el, key, path, required=False, nullable=True, nonempty=False)
+    errors.string(el, "sibling_scope_id", path, required=False, nullable=True)
+    scope = el.get("sibling_scope_id")
+    if isinstance(scope, str):
+        errors.require(len(scope) <= 256, f"{path}.sibling_scope_id", "must be at most 256 characters")
+    errors.enum(el, "sibling_scope_status", ("measured", "none", "unavailable"), path, required=False)
+    if "sibling_scope_status" in el:
+        errors.require("sibling_scope_id" in el, f"{path}.sibling_scope_id", "is required with sibling_scope_status")
+        if el["sibling_scope_status"] == "measured":
+            errors.require(_nonempty_str(scope), f"{path}.sibling_scope_id", "measured scope requires a non-empty string")
+        elif el["sibling_scope_status"] in ("none", "unavailable"):
+            errors.require(scope is None, f"{path}.sibling_scope_id", "must be null for none or unavailable scope")
     _box(errors, el.get("box"), f"{path}.box")
     if "visible_box" in el and el["visible_box"] is not None:
         _box(errors, el["visible_box"], f"{path}.visible_box")
@@ -350,8 +361,11 @@ def _element(errors: _Errors, el: Any, path: str) -> None:
             errors.require(el.get("visible_box") is None, f"{path}.visible_box", "must be null for empty or unsupported geometry")
         elif el["visible_geometry"] in ("measured", "ancestor_clipped"):
             errors.require(isinstance(el.get("visible_box"), dict), f"{path}.visible_box", "must be a finite box for measured geometry")
-    for key in ("interactive", "visible"):
-        errors.boolean(el, key, path)
+    errors.boolean(el, "interactive", path)
+    errors.boolean(el, "visible", path, nullable=True)
+    if el.get("visible") is None:
+        errors.require(el.get("visible_geometry") == "unsupported" and el.get("visible_box") is None,
+                       f"{path}.visible", "may be null only when visible_geometry is unsupported and visible_box is null")
     for key in ("enabled", "in_viewport"):
         errors.boolean(el, key, path, required=False)
     errors.number(el, "font_size_px", path, required=False, nullable=True, minimum=0)
