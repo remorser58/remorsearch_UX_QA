@@ -32,7 +32,7 @@ Python 도구는 macOS, Linux, WSL의 Python 3.10 이상에서 표준 라이브�
 1. 저장소를 내려받습니다.
 
    ```sh
-   git clone https://github.com/remorser58/remorsearch.git
+   git clone https://github.com/remorser58/remorsearch_UX_QA.git
    ```
 
 2. 스킬 폴더를 에이전트의 스킬 디렉터리에 복사합니다.
@@ -41,7 +41,7 @@ Python 도구는 macOS, Linux, WSL의 Python 3.10 이상에서 표준 라이브�
 
    ```sh
    mkdir -p ~/.claude/skills
-   cp -R remorsearch/skills/remorsearch-ux-qa ~/.claude/skills/
+   cp -R remorsearch_UX_QA/skills/remorsearch-ux-qa ~/.claude/skills/
    ```
 
    팀과 함께 쓰려면 프로젝트의 `.claude/skills/`에 복사합니다.
@@ -50,7 +50,7 @@ Python 도구는 macOS, Linux, WSL의 Python 3.10 이상에서 표준 라이브�
 
    ```sh
    mkdir -p ~/.codex/skills
-   cp -R remorsearch/skills/remorsearch-ux-qa ~/.codex/skills/
+   cp -R remorsearch_UX_QA/skills/remorsearch-ux-qa ~/.codex/skills/
    ```
 
 3. 선택: 실제 웹 페이지를 시험하는 웹 드라이버를 설치합니다. persona-qa와 ergonomics가 씁니다. Node.js 22를 쓰세요.

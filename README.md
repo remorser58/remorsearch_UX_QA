@@ -32,7 +32,7 @@ The Python tools need Python 3.10 or later on macOS, Linux or WSL. They use only
 1. Clone the repository.
 
    ```sh
-   git clone https://github.com/remorser58/remorsearch.git
+   git clone https://github.com/remorser58/remorsearch_UX_QA.git
    ```
 
 2. Copy the skill folder into the skills directory of your agent.
@@ -41,7 +41,7 @@ The Python tools need Python 3.10 or later on macOS, Linux or WSL. They use only
 
    ```sh
    mkdir -p ~/.claude/skills
-   cp -R remorsearch/skills/remorsearch-ux-qa ~/.claude/skills/
+   cp -R remorsearch_UX_QA/skills/remorsearch-ux-qa ~/.claude/skills/
    ```
 
    To share the skill with a team, copy the folder into `.claude/skills/` in the project.
@@ -50,7 +50,7 @@ The Python tools need Python 3.10 or later on macOS, Linux or WSL. They use only
 
    ```sh
    mkdir -p ~/.codex/skills
-   cp -R remorsearch/skills/remorsearch-ux-qa ~/.codex/skills/
+   cp -R remorsearch_UX_QA/skills/remorsearch-ux-qa ~/.codex/skills/
    ```
 
 3. Optional: install the live web driver. persona-qa and ergonomics use it on real web pages. Use Node.js 22.

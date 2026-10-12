@@ -1568,27 +1568,48 @@ def check_choice_overload(ctx: Context) -> list[Observation]:
         box = element["box"]
         # Same look, not just a similar size: unrelated controls (a back chevron, date
         # chips and a stepper) were merged by size buckets alone (adjudication 2026-09-28).
-        # Choices are siblings in one container; when the driver gives no container id,
-        # fall back to identical fill and border.
-        parent = (element.get("ancestor_ids") or [None])[0]
-        look = ("parent", parent) if parent else ("look", element.get("color_bg"), element.get("border_color"))
+        # Fresh unmeasured captures abstain; only absent fields use legacy estimates.
+        scope = element.get("sibling_scope_id")
+        status = element.get("sibling_scope_status")
+        if "sibling_scope_id" not in element and "sibling_scope_status" not in element:
+            parent = (element.get("ancestor_ids") or [None])[0]
+            look = ("legacy_ancestor", parent) if parent else ("legacy_appearance", element.get("color_bg"), element.get("border_color"))
+        elif isinstance(scope, str) and scope.strip() and len(scope) <= 256 and ("sibling_scope_status" not in element or status == "measured"):
+            look = ("dom_sibling_structure", scope)
+        elif "sibling_scope_id" in element and scope is None and status == "none":
+            continue
+        else:
+            out.append(Observation(
+                "CG-01", ctx.run["run_id"], ctx.profile["profile_id"], ctx.snapshot.get("snapshot_id"), ctx.snapshot.get("step_index"),
+                [element["id"]], element_key(element),
+                {"name": "equal_choices", "value": None, "unit": "count", "threshold": params.CHOICE_OVERLOAD_MAX, "comparator": "<=",
+                 "grouping_basis": "unavailable", "grouping_status": "unavailable", "limitations": ["sibling_scope_unavailable"]},
+                False, None, "비교할 제어 요소의 그룹을 측정하지 못해 선택 과부하 판정을 보류했습니다.",
+                "hick-hyman-v1", extra={"verdict": "inconclusive"},
+            ))
+            continue
         key = (element.get("tag"), element.get("role"), round(box["w"] / 8), round(box["h"] / 8), element.get("font_weight"),
                element.get("font_size_px"), look)
         groups.setdefault(key, []).append(element)
-    for members in groups.values():
+    for key, members in groups.items():
         if len(members) <= params.CHOICE_OVERLOAD_MAX:
             continue
         labels = [(m.get("text") or m.get("name") or "").strip() for m in members]
         if sum(1 for t in labels if len(t) == 1 and t.isdigit()) >= 8:
             continue  # a numeric keypad: recall of a known code, not a choice among options
         decision_ms = cognition.hick_hyman_ms(len(members))
+        basis = key[-1][0]
+        legacy = basis.startswith("legacy_")
         out.append(Observation(
             "CG-01", ctx.run["run_id"], ctx.profile["profile_id"], ctx.snapshot.get("snapshot_id"), ctx.snapshot.get("step_index"),
             [m["id"] for m in members[:12]], element_key(members[0]),
             {"name": "equal_choices", "value": len(members), "unit": "count", "threshold": params.CHOICE_OVERLOAD_MAX, "comparator": "<=",
-             "hick_decision_ms": round(decision_ms)},
+             "hick_decision_ms": round(decision_ms), "grouping_basis": basis,
+             "grouping_status": "estimated" if legacy else "measured",
+             "limitations": (["legacy_grouping_estimate"] if legacy else []) + ["alternative_semantics_unverified"]},
             False, "P3",
-            f"동일한 모양의 선택지 {len(members)}개(힉-하이먼 예측 결정 시간 약 {decision_ms/1000:.1f}초).",
+            f"같은 모양의 제어 요소 {len(members)}개를 " + ("과거 캡처의 상위 요소·외형으로 추정해 묶었습니다. " if legacy else "DOM 구조로 묶었습니다. ")
+            + f"실제 선택 대안인지 확인이 필요합니다(힉-하이먼 예측 결정 시간 약 {decision_ms/1000:.1f}초).",
             "hick-hyman-v1",
         ))
     return out
