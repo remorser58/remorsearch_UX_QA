@@ -538,7 +538,7 @@
     기준 365일 이내여야 하며 미래 날짜는 무효임. 한 URL에 걸린 항목은 각각 별도 확인으로 모두 풀어야 함.
     근거 상태 `reported`·`confirmed`는 해제를 정하지 않음. `lift_requires: never`는 풀 수 없고, `terms_check`는 사용자 확인만 필요함. 에이전트는 확인 항목을 쓰지 않으며 명령줄 스위치도 없음
     (`schemas/ux-research-brief.v1.schema.json`). 풀린 항목은 모든 호스트를 합쳐 실행당 문서 10건까지만 읽음.
-  - 네이버 카페 공지 원문 주소는 기록되어 있음. 공지와 네이버 이용약관은 각각 별도 사용자 확인과 해당 읽기의 사전 서면 허락이 필요함. 이용약관 확인만으로 공지 항목은 풀리지 않음.
+  - 공개 네이버 카페·맘카페와 Reddit은 사전 사용자 약관 확인이나 서면 허락 없이 묶음 insane-search의 허용된 방법으로 읽음. 현재 접근 상태와 robots를 확인하며 로그인·비공개 계정·회원 전용·CAPTCHA·페이월·보안 차단은 해당 경로를 멈춤. `naver-terms.except_hosts`는 `cafe.naver.com` 하위 호스트만 제외함. 다른 네이버 서비스의 정책은 유지함. 확인 기록을 꾸미거나 우회 플래그를 추가하지 않음. — 규칙
   - `ingest`는 풀리지 않은 제한 호스트의 캡처를 받지 않음. 공식 경로만 쓰는 방식(유튜브)은 캡처를 받지 않음. — 규칙
 - 근거: 각 플랫폼의 약관(항목 id, 상태, 조항, 읽은 방식은 `uxresearch/data/routes.json`의 `terms_restricted`와
   `references/research/korea/platform-map.md`). 2021도1533.
@@ -552,15 +552,13 @@
 | `meta-threads` | threads.com, threads.net | `confirmed` | `never`, 풀 수 없음 | 미확인 | 운영사 robots 공지 관찰됨 2026-09-30. 개별 약관 본문·효력일 미확인 |
 | `meta-facebook` | facebook.com, fb.com, fb.me, fb.watch, m.me | `confirmed` | `never`, 풀 수 없음 | 미확인 | Meta 제3.2조·자동 수집 조항 관찰됨 2026-09-30 |
 | `dcinside-terms` | dcinside.com | `confirmed` | `written_permission`, 현행 약관 확인·사전 서면 허락 | 2026-07-21 | 관찰됨 2026-09-30. 제16조·2026-07-21 시행일 |
-| `naver-cafe-bulk-notice` | cafe.naver.com, m.cafe.naver.com | `confirmed` | `written_permission`, 공지별 사용자 확인·사전 서면 허락 | 2026-08-25 | 관찰됨 2026-10-01. 공지 자체의 날짜, 2026-08-31은 보도일 |
-| `naver-terms` | naver.com, naver.me, me2.do | `confirmed` | `written_permission`, 현행 약관 확인·사전 서면 허락 | 2025-07-10 | 관찰됨 2026-10-01. 검색결과 수집 정책의 개정·시행일은 미확인 |
+| `naver-terms` | naver.com, naver.me, me2.do (`cafe.naver.com` 하위 호스트 제외) | `confirmed` | `written_permission`, 현행 약관 확인·사전 서면 허락 | 2025-07-10 | 관찰됨 2026-10-01. 검색결과 수집 정책의 개정·시행일은 미확인 |
 | `coupang-terms` | coupang.com, coupa.ng | `reported` | `written_permission`, 현행 약관 확인·사전 서면 허락 | 미확인 | 미확인(요약) |
 | `x-terms` | x.com, twitter.com, t.co | `reported` | `written_permission`, 현행 약관 확인·사전 서면 허락 | 2026-01-15 | 관찰됨(AI 조사, 사람 미확인); 영문 v21 2026-01-15, 한국어 2026-04-10, 예정판 2026-10-09를 각각 미확인으로 기록함 |
 | `daangn-terms` | daangn.com | `reported` | `written_permission`, 현행 약관 확인·사전 서면 허락 | 2026-01-02 | 관찰됨(AI 조사, 사람 미확인); 페이지 데이터로 읽음, 약관 페이지 재확인 실패. 효력일 2026-01-02는 조사 기록 기준 |
 | `tiktok-terms` | tiktok.com | `confirmed` | `never`, 풀 수 없음 | 2020-08-19 | 관찰됨(AI 조사, 사람 미확인) |
 | `clien-terms` | clien.net | `confirmed` | `never`, 풀 수 없음 | 2019-12-04 | 관찰됨(AI 조사, 사람 미확인); 권리자별 동의가 필요하여 플랫폼 허락으로 풀 수 없음 |
 | `apple-app-store-terms` | apps.apple.com, itunes.apple.com | `confirmed` | `never`, 풀 수 없음 | 미확인 | 관찰됨(AI 조사, 사람 미확인); 2026-09-14 최종 업데이트, 효력일 미확인. 팀 자기 앱은 App Store Connect 내보내기 자료 |
-| `reddit-terms` | reddit.com, redd.it | `confirmed` | `written_permission`, 현행 약관 확인·사전 서면 허락 | 2026-07-01 | 관찰됨(AI 조사, 사람 미확인); 제7절, 허락 뒤에도 robots.txt 적용 |
 | `hackernews-terms` | news.ycombinator.com | `confirmed` | `never`, 풀 수 없음 | 미확인 | 관찰됨(AI 조사, 사람 미확인); 공식 API 어댑터가 없어 official_route_unavailable |
 
 - 읽은 방식: 직접 읽은 운영사 조항과 공지는 관찰됨이며 routes.json의 read_via·sources·checked_at을 따름. Instagram·Threads 개별 약관, Coupang 쇼핑 약관 등 닿지 못한 사실은 미확인으로 유지함. 사람이 읽기 전까지 verified_at은 null임.
@@ -590,7 +588,8 @@
 | 인벤 | 제10조②는 회사 저작권 게시물의 사전 승낙 없는 복제·제3자 제공·영리 이용 등을 금지함. 시행일 미표기. robots는 일부 게시판·검색·관리 경로를 막고 Wget은 전체 금지. 자동 수집 허용 범위는 미확인 | [약관](https://www.inven.co.kr/doc/service.php), [robots](https://www.inven.co.kr/robots.txt) | 관찰됨 2026-09-30 |
 | MLBPARK | 제11조⑤는 사전 승낙 없는 서비스 정보의 영리 이용·제3자 이용을 금지함. 2022-08-30 시행. robots의 * 그룹은 Disallow: /. 자동 수집 허용 범위는 미확인 | [약관](https://secure.donga.com/mlbpark/policy/service.php), [robots](https://mlbpark.donga.com/robots.txt) | 관찰됨 2026-09-30 |
 | Bluesky | 2025-08-14 갱신 약관에서 자동 수집 금지 조항을 찾지 못함. robots는 * 그룹 Allow: /와 /intent/compose 금지를 두고 API·firehose를 안내함. 명시적 대량 수집 허락과 AppView 정책 문서는 미확인 | [약관](https://bsky.social/about/support/tos), [robots](https://bsky.app/robots.txt) | 문구 관찰됨 2026-09-30. 수집 허락은 미확인 |
-| Reddit | 제7절의 사전 서면 동의 요구를 읽음. www·old 호스트의 robots 모두 * 그룹 Disallow: /. lift_requires: written_permission을 따르며 허락 뒤에도 robots 중단을 적용함 | [약관](https://www.redditinc.com/policies/user-agreement), [robots](https://www.reddit.com/robots.txt), [old robots](https://old.reddit.com/robots.txt) | 관찰됨 2026-09-30 |
+| Naver Cafe | 공지 날짜는 2026-08-25이며 2026-08-31은 보도일임. 게시글·댓글의 자동 대량 수집 금지 조항 관찰을 보존함. 공개 읽기는 기본 약관 중단 없이 현재 robots와 실제 접근 상태를 판정함 | [카페 공지](https://notice.naver.com/notices/cafe/33743) | 관찰됨 2026-10-01 |
+| Reddit | 제7절의 사전 서면 동의 요구를 읽음(효력일 2026-07-01). www·old 호스트의 robots 모두 * 그룹 Disallow: /. 공개 읽기는 기본 약관 중단 없이 현재 robots와 실제 접근 상태를 판정함 | [약관](https://www.redditinc.com/policies/user-agreement), [robots](https://www.reddit.com/robots.txt), [old robots](https://old.reddit.com/robots.txt) | 관찰됨 2026-09-30. 현재 실행의 접근 확인은 별도 |
 | Hacker News | YC 약관은 data mining·robots·scraping 등을 금지함(시행일 미표기). robots는 Crawl-delay: 30과 내부 동작·로그인 경로 금지를 둠. lift_requires: never로 페이지는 풀 수 없음 | [약관](https://www.ycombinator.com/legal), [robots](https://news.ycombinator.com/robots.txt) | 관찰됨 2026-09-30 |
 
 ### L17 유튜브 댓글은 공식 API의 정성 근거로만, 최대 30일 보관, 보호 속성 추정 금지

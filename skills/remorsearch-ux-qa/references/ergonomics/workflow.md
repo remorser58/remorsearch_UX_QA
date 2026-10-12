@@ -1,11 +1,11 @@
 <!-- Mode: ergonomics, experimental. Entry point: `SKILL.md`. -->
 # Ergonomics mode
 
-Default to a stratified detector run on the real surface: one recorded flow per device/orientation, analyzed across profiles. It needs no subagents. Persona agents, interviews and simulated experience boards are opt-in. Reports can be English or Korean.
+Basic geometric screening uses one real flow per device/orientation analyzed across profiles. Phase 0 approval activates independent live persona operators under `references/agent-setup.md` section 0; screening cannot replace their traces. Interviews/simulated boards remain opt-in. Reports can be English or Korean.
 
 ## Phase 0 recap
 
-Use `SKILL.md` Phase 0: scope/build/tasks, devices/orientations, input, supplied data, grants and tools. Choose detector coverage or requested persona-agent behavior. Missing audience research takes the stratified path; explain it. Korean product QA reads `references/persona-qa/kwcag-card.md`; Korean research users/channels open `references/research/korea/overview.md` only when research runs. Before an external page, including a later lead, carry `references/shared/access-card.md` and use research's evidence card. Ask at most one grouped question for necessary missing inputs.
+Use `SKILL.md` Phase 0: scope/build/tasks, devices/orientations, input, data, grants/tools and the run's agent permission. Missing audience evidence stays test assumptions; explain stratified screening. Korean product QA reads `references/persona-qa/kwcag-card.md`; Korean research loads `references/research/korea/overview.md` only when active. Before external pages carry `references/shared/access-card.md` and research's evidence card. Group necessary missing-input questions.
 
 Keep basis visible: **measured** is surface observation against a fixed standard; **model** applies a published model to measured inputs and is inferred; **judgment** is human/LLM inference. Only measured observations from completed runs can be verified. Counts are k/n **simulated-profile coverage**; never real prevalence, preference, discomfort or forecast. Do not role-play pain or seeing difficulty as measurements. The uncalibrated thumb model alone is capped at P2. Model prediction alone cannot reach P0; P0 needs measured safety failure or a declared irreversible action with a computed misfire path. Every P0/P1 needs measured basis or corroborating task trace.
 
@@ -50,9 +50,9 @@ node drivers/web/ergo_drive.mjs run --scenario sc.json --device DEVICE --out run
 python3 scripts/ergo_qa.py analyze --runs runs/ --profiles work/profiles.json --scenario sc.json --cross-profile --out analysis.json
 ```
 
-One real scripted trace per device/orientation can serve all profiles there. Keep screenshots, geometry/colors/timing before/after each step, actual outcomes and collector versions. Bundled run/idle default limit is 900 seconds. Android uses adb capture plus `android-snapshot`; iOS/desktop/engine-rendered games use platform captures and annotations (vision geometry is inferred); look up `references/ergonomics/platform-drivers.md` for exact options. A blocked transport stays untested.
+One real scripted trace per device/orientation can screen profiles geometrically. Keep screenshots, geometry/colors/timing before/after each step, actual outcomes and collector versions. Bundled run/idle default limit is 900 seconds. Android uses adb capture plus `android-snapshot`; iOS/desktop/engine-rendered games use platform captures and annotations (vision geometry is inferred); look up `references/ergonomics/platform-drivers.md` for exact options. A blocked transport stays untested.
 
-Opt-in persona agents use serve and `references/ergonomics/persona-agent-protocol.md`, plus `references/agent-setup.md` if spawning is authorized. Each agent receives applicable cards and sees screenshots before touch decisions. Separate runs per agent when behavior matters; later technical/a11y inspection records its provenance. Notes/expectation/confusion remain judgment. Optional `references/ergonomics/swarm-and-social-layer.md` boards/interviews cite run/step/observation IDs; ungrounded answers are speculative and simulated discourse only generates research hypotheses.
+After approval, the host dispatches persona operators using serve and `references/ergonomics/persona-agent-protocol.md`; follow `references/agent-setup.md` section 0 for isolated runs, conditions and trace aggregation. Carry applicable cards; later technical/a11y inspection records provenance. Notes/expectation/confusion remain judgment. Optional `references/ergonomics/swarm-and-social-layer.md` boards/interviews cite run/step/observation IDs; ungrounded answers are speculative and simulated discourse only generates research hypotheses.
 
 ## 4. Analyze, judge and aggregate
 

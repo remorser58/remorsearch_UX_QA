@@ -5,7 +5,7 @@ Test task completion and input preservation. Synthetic scenarios define conditio
 
 ## Phase 0 recap
 
-Use `SKILL.md` Phase 0. Discover tasks from the product; record URL/build, device/viewport/input, constraints, intent, Figma version, grants and synthetic fixtures. Begin baseline QA without a prepared audience or problem list. Ask only for missing material access; preserve existing grants.
+Use `SKILL.md` Phase 0: tasks, URL/build, device/viewport/input, constraints, intent, Figma version, grants and owned synthetic fixtures. Start QA without a prepared audience/problem list. Reuse grants; ask for missing access. Follow `references/agent-setup.md` section 0 for permission and independent parallel operators.
 
 Disclose Chromium emulation limits: real device/grip/keyboard occlusion/safe area/screen reader remain untested. Korean product: `references/persona-qa/kwcag-card.md`; report language changes wording only. Outside-product pages: `references/shared/access-card.md` in operator/verifier prompts. Host browser first; preserve user state.
 
@@ -22,15 +22,15 @@ For every priority task, require all these rows on each device in scope:
 | Keyboard only | Whole primary task, including intermediate choices and recovery |
 | Reading order | Each intermediate screen's meaningful sequence and focus order |
 
-After every step, verify prior values/choices. Author `success.task_checks` for material fields after error/coupon/address/recovery transitions and at completion (`drivers/web/README.md`). Use explicit expected reset/normalized values; `from_step` reuses an authored input, `type.redact:true` protects its recorded text. Failed submit: first-invalid focus, invalid state and error association. Success requires final options/quantities/amounts/notes to match. Each row: pass/partial/fail/untested with reason.
+Verify prior values/choices after every step. Author `success.task_checks` after error/coupon/address/recovery transitions and at completion (`drivers/web/README.md`): explicit reset/normalized values, `from_step` for authored input, `type.redact:true` for recorded text. Failed submit: first-invalid focus, invalid state/error association. Final options/quantities/amounts/notes must match. Grade each row pass/partial/fail/untested with reason.
 
-Scenario: ID/task/goal/safe data, basis/brief condition, context/constraints/device/input/start, expected decision/integrity/risk, claim IDs and omissions. Audience rows cite audience_id/segment_id/task_id/facet and gate-supported motivations. Without an audience, choose task-changing strata: new/returning, touch/keyboard, interruption, delay, empty/stale/edge data. Do not add demographic decoration or stereotype behavior.
+Scenario: ID/task/goal/safe data, basis/condition, context/constraints/device/input/start, expected decision/integrity/risk, claim IDs/omissions. Audience rows cite audience_id/segment_id/task_id/facet and gate-supported motivations. Without evidence, use task assumptions: new/returning, touch/keyboard, interruption, delay, empty/stale/edge data. No invented demographics or stereotypes.
 
 Optional dataset: exact source/revision/schema, bounded/streaming sample; record adapter/schema fingerprint/seed/config/shard/read-byte-time bounds/IDs/strata/stop. Separate original attributes/assumptions. Scenario detail: `references/persona-qa/persona-scenario-design.md` by section.
 
 ## 2. Exercise and capture
 
-Exercise actual product/input/start state; capture decisions/recovery, console/network/runtime errors, keyboard/focus/semantics and feedback. Screenshots support the trace; available interactions require flow evidence.
+Exercise the product/input/start state; capture decisions/recovery, console/network/runtime errors, keyboard/focus/semantics and feedback. Screenshots support traces; interactions need flow evidence.
 
 Bundled fallback (Node.js 22; detect installed dependencies first):
 
@@ -89,18 +89,18 @@ Severity: `references/persona-qa/evidence-and-severity.md` by section, impact-ba
 
 Finding: ID/severity/rationale; build/screen/device/viewport/input; persona or scenario/task; steps from start URL; expected and observed with visible UI quotes; capture receipt; user/product impact; verified/inferred cause; fix layer/change/trade-off; standards for accessibility only; second pass; confidence. Consult `references/shared/causal-chain.md` for every P0/P1; unknown organizational constraints remain unknown. Never use as any, @ts-ignore or @ts-expect-error in remediation.
 
-Every P0/P1 requires a second pass over only its capture and text dump, without the draft (at most three priority scenarios):
+Every P0/P1 needs a fresh second pass of its capture/text without the draft (at most three priority scenarios):
 
 ```text
 {finding_id, reviewer: subagent|self, task_completed, control_name,
  omitted, severity: agree|disagree, inconclusive}
 ```
 
-Without subagents, run a labelled self-pass; it is not independent review. Resolve every disagreement in writing before finalization. Unreadable artifacts require recapture or inconclusive status. Korean accessibility findings have separate KWCAG 2.2 and WCAG 2.2 item/status/coverage; lookup mappings in `references/persona-qa/kwcag-2.2.md` by ID.
+Without approved subagents, label the self-pass; it provides no independent review. Resolve disagreements in writing. Unreadable artifacts need recapture or inconclusive status. Korean accessibility: separate KWCAG 2.2/WCAG 2.2 item/status/coverage; lookup `references/persona-qa/kwcag-2.2.md` by ID.
 
 ## 5. Remediate, replay and report
 
-Fix the reproduced cause with a minimal intent-compatible change. State expected behavior, trade-off and validation; benefit claims need measurements. Reuse the improvement request's scoped grants; standalone review remains read-only. Create UX changes in Figma first with actual nodes/version/readback. Missing design blocks affected implementation only. Replay the original scenario/data/build scope/device/input, primary task, recovery, adjacent states, Figma and accessibility. Explicitly recheck preserved decisions; retain baseline/change/replay evidence. Acceptance requires passing replay, regression and intent checks.
+Fix the reproduced cause with the smallest intent-compatible change. State expected behavior/trade-off/validation; measure claimed benefits. Reuse improvement grants; standalone review stays read-only. Figma first: nodes/version/readback; missing design blocks affected implementation. Replay original scenario/data/build/device/input, primary task, recovery, adjacent states, Figma/accessibility. Recheck preserved decisions; keep baseline/change/replay evidence. Acceptance requires passing replay, regression and intent checks.
 
 Use `references/persona-qa/qa-report-template.md` by section. First heading after title is Decision/결론: verdict/reason naming build; up to three actions, each at most 25 words with behavior, finding IDs and confirming state; one line untested. Verdict rules:
 

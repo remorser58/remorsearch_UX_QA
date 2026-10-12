@@ -1,11 +1,36 @@
 # Subagent setup
 
-Several modes can start subagents: persona agents in ergonomics and persona-qa,
-parallel source readers in research, and judges or verifiers in any mode. This
-page decides which model and reasoning effort they use. Skip it when the run
-starts no subagents.
+This page governs permission, independent work and model settings for persona
+operators, research readers and reviewers. The host dispatches agents; CLI
+recording/analysis commands do not spawn them.
 
 ## 0. Current request takes precedence
+
+Before spawning, ask once per skill run whether multi-agent research/persona QA
+is allowed, unless the run already has an explicit answer. Example: "Allow
+multi-agent research and persona QA? Parallel work can save time but uses more
+model capacity." Record/reuse the answer for this run. Refusal or no answer means
+single-agent serial execution; silence grants nothing. Model choice is separate:
+use existing host role/config settings without a new mandatory selection.
+
+Approval covers independent operators, readers and reviewers under one shared
+cap: six active agents, or the smaller host/user cap. Start only independent work.
+It grants no publishing, private-community access, external writes or resource
+sharing; existing access and write grants still apply.
+
+For approved live QA, dispatch independent persona operators using the product
+in parallel under distinct task-relevant conditions derived from research.
+Missing evidence stays task-based test assumptions, never invented audience
+demographics. Each operator needs its own runID/profile, isolated browser context
+and task-owned fixtures/state. Serialize any part whose state cannot be isolated.
+Use the same build/scenario definitions; keep run/profile/capture IDs unique and linked. Decisions use the current
+screenshot and allowed input channel, followed by real actions and before/after
+evidence; preserve blind-pass limits. Aggregate observed traces, dedupe findings,
+corroborate them and resolve disagreements. P0/P1 needs a fresh second pass
+without the draft; with no approved reviewer, label the serial self-pass.
+One scripted flow analyzed across profiles remains geometric screening, never
+a substitute for approved live persona-agent QA. Measured/model/judgment and
+live/synthetic distinctions remain unchanged.
 
 Apply model, effort and role assignments explicitly supplied in the current
 conversation before any saved choice or harness default. Mixed-provider teams
@@ -85,8 +110,8 @@ choice made here then has no effect; say so instead of asking.
 
 Only when no saved choice and no harness mapping exist. Use the host's selection
 prompt (in Claude Code, the `AskUserQuestion` tool); if the host has none, ask
-with a numbered list. Before asking, say that ergonomics mode may start one agent
-per simulated profile (16 in the default sample), so the choice multiplies.
+with a numbered list. Before asking, explain the bounded independent work and
+shared cap from section 0; profile count does not authorize that many agents.
 
 **Model and effort for persona and research subagents.** One question with these
 options; the host adds a free-text "Other".
@@ -158,9 +183,10 @@ These rules add to the steps above. They do not change how the model is chosen.
 
 - Research readers and counter-searchers use the `operator` settings. Verifiers
   use the `judge` settings.
-- Run readers 2-3 per batch, or 5-6 when the host enforces the return schema
-  (schema-forced fan-out). Never start 10 or more at once. The research run ledger
-  caps the load on each host, whatever the concurrency.
+- Readers/reviewers require section 0's permission and share its cap with persona
+  operators. Use 2-3 readers per batch, or 5-6 with a host-enforced return schema
+  only when slots allow. The research ledger caps each host regardless of agent
+  concurrency; never make parallel requests to one source host.
 - Readers return `ux-reader-return.v1` (bundled schema) and never write their own
   fetch code. They read through `scripts/ux_research.py` and the browser tools in
   `references/research/public-page-access.md`.

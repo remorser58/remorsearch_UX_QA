@@ -65,11 +65,10 @@
 예상 중단 값은 `references/research/public-page-access.md` 5절의 중단 유형에 약관 중단 `terms_restricted`를 더한
 것입니다(`uxresearch/scope.py`). `terms_restricted`는 요청 전에, 그리고 리디렉션 단계마다 판정하므로 짧은 주소가 제한
 호스트로 넘어가도 멈춥니다. 운영사의 짧은 주소(naver.me, me2.do, coupa.ng, t.co 등)도 요청 전에 멈춥니다.
-근거 상태 `reported`·`confirmed`는 해제 여부를 정하지 않습니다. `lift_requires: never`인 유튜브·인스타그램·스레드·페이스북·틱톡·클리앙·앱스토어·Hacker News 페이지는 풀 수 없습니다. `written_permission`인 디시인사이드·네이버·네이버 카페 공지·쿠팡·X·당근·Reddit은 항목별 사용자 확인과 해당 읽기의 사전 서면 허락이 필요합니다. `terms_check`이면 항목별 사용자 확인이 필요합니다. X(x.com, twitter.com, t.co)는 `x-terms`의 `written_permission` 조건을 따릅니다. oEmbed 실행 경로는 제거했으며, `official_route`가 null이므로 공식 경로만 쓰는 방식으로 열 수 없습니다.
+근거 상태 `reported`·`confirmed`는 해제 여부를 정하지 않습니다. `lift_requires: never`인 유튜브·인스타그램·스레드·페이스북·틱톡·클리앙·앱스토어·Hacker News 페이지는 풀 수 없습니다. `written_permission`인 디시인사이드·카페를 제외한 네이버 서비스·쿠팡·X·당근은 항목별 사용자 확인과 해당 읽기의 사전 서면 허락이 필요합니다. `terms_check`이면 항목별 사용자 확인이 필요합니다. X(x.com, twitter.com, t.co)는 `x-terms`의 `written_permission` 조건을 따릅니다. oEmbed 실행 경로는 제거했으며, `official_route`가 null이므로 공식 경로만 쓰는 방식으로 열 수 없습니다.
 
 약관 확인의 `terms_url`은 그 항목에 기록된 약관 문서여야 합니다. 확인의 `host`는 항목의 호스트이거나 더 좁고, 읽을
-URL을 포함해야 합니다. 한 URL에 걸린 제한은 항목마다 별도 확인으로 모두 풀어야 합니다. 네이버 카페 공지는
-원문 주소가 기록되어 있으며, 공지와 네이버 이용약관을 각각 확인하고 사전 서면 허락을 기록해야 합니다. 풀린 항목도 모든 호스트를 합쳐
+URL을 포함해야 합니다. 한 URL에 걸린 제한은 항목마다 별도 확인으로 모두 풀어야 합니다. 공개 네이버 카페·맘카페와 Reddit은 사전 사용자 약관 확인이나 서면 허락 없이 묶음 insane-search의 허용된 방법으로 읽습니다. 현재 robots와 실제 접근 상태를 확인하며 로그인·비공개 계정·회원 전용·CAPTCHA·페이월·보안 차단은 해당 경로를 멈춥니다. 네이버 카페 공지 원문 관찰은 보존합니다. 풀린 항목도 모든 호스트를 합쳐
 실행당 문서 10건까지만 읽습니다(`references/research/public-page-access.md` 17절).
 
 공식 경로가 있는 제한 호스트(유튜브)는 그 경로만 씁니다. 실패해도 페이지나 대체 주소를 요청하거나 렌더하지 않으며,
@@ -88,7 +87,7 @@ URL을 포함해야 합니다. 한 URL에 걸린 제한은 항목마다 별도 �
 | id | 채널 | 계열 | 공개 범위 | 정당한 경로 | 예상 중단 | 약관 | 단서 신뢰도 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | `naver-blog` | 네이버 블로그 | 블로그 | 공개 | `official_feed`, `reader_public_page` | `terms_restricted` | `confirmed` | medium |
-| `naver-cafe` | 네이버 카페(육아·지역 카페 포함) | 커뮤니티 | 혼합 | `reader_public_page`, `signed_in_authorised` | `terms_restricted`, `auth_gate` | `confirmed` | low |
+| `naver-cafe` | 네이버 카페(육아·지역 카페 포함) | 커뮤니티 | 혼합 | `reader_public_page`, `signed_in_authorised` | `auth_gate` | `confirmed` | low |
 | `naver-kin` | 네이버 지식iN | 질문·답변 | 공개 | `reader_public_page` | `terms_restricted` | `confirmed` | medium |
 | `naver-place` | 네이버 플레이스 리뷰 | 상거래 리뷰 | 앱 중심 | `team_export`, `reader_public_page` | `terms_restricted` | `confirmed` | medium |
 | `kakao-map` | 카카오맵 리뷰 | 상거래 리뷰 | 앱 중심 | `reader_public_page` | - | `unchecked` | low |
@@ -153,16 +152,16 @@ URL을 포함해야 합니다. 한 URL에 걸린 제한은 항목마다 별도 �
 - 호스트: `cafe.naver.com`, `m.cafe.naver.com` · route table id: `naver-cafe`
 - 계열 `community` · 공개 범위 `mixed`: 카페마다 공개 게시판과 회원 전용 게시판이 섞여 있고, 등급(등업) 조건이 붙은 게시판도 있음. 회원 전용·등업 게시판은 공개가 아님(auth_gate). — 규칙 (`references/research/public-page-access.md`)
 - 정당한 경로(선호 순): `reader_public_page` → `signed_in_authorised`
-  - 네이버 카페 주소에는 naver-terms와 naver-cafe-bulk-notice가 함께 적용되어 항목마다 별도 확인이 필요함. lift_requires: written_permission 항목은 사용자가 그 항목의 약관 문서를 직접 읽고 access_policy.terms_checked에 result permits_this_reading과 운영사의 사전 서면 허락(permission: granted_by, granted_on, reference)을 함께 적은 실행에서만 풀림. checked_on은 effective_from이 있으면 그날 이후여야 하며, 오늘 이후이거나 365일이 지난 확인은 무효임. lift_requires: never 항목은 풀리지 않음. 에이전트는 확인 항목을 쓰지 않음. 풀린 항목은 모든 호스트를 합쳐 실행당 문서 10건까지 읽음. 카페 공지 원문 주소가 기록되어 있으며, 공지 항목과 네이버 이용약관은 각각 별도 확인과 사전 서면 허락이 필요함. — 규칙 (`uxresearch/data/routes.json`)
+  - 공개 네이버 카페·맘카페 글은 사전 사용자 약관 확인이나 서면 허락 없이 묶음 insane-search의 허용된 방법으로 읽음. 현재 URL의 실제 접근 상태와 robots를 확인함. 로그인·비공개 계정·회원 전용·CAPTCHA·페이월·보안 차단은 해당 경로를 멈춤. 세션·쿠키 복사, 은폐, UA 위조, 사람 확인 우회는 금지함. 실제 원문과 출처를 남기며 검색 요약은 단서로만 씀. — 규칙 (`uxresearch/data/routes.json`)
   - 로그인 읽기는 사용자가 브리프의 access_policy.signed_in_communities에 카페 경로(path_prefix)와 함께 직접 적은 카페만 해당함. 요약만 남기고 회원 정보는 남기지 않음. 에이전트는 이 목록에 카페를 더하지 않음. — 규칙 (`references/research/public-page-access.md`)
   - 네이버 검색 API와 NAVER API HUB는 소유자가 현행 약관을 읽기 전까지 꺼 둠. 2026-09-30 직접 읽은 개발자센터 약관은 검색 결과를 독립적으로 가공 없이 보여 주고 네이버·원본 출처와 링크를 표시하도록 함. AI 입력·학습·개선·평가·노출, 예외 밖의 복사·저장·캐싱, 제3자 제공·판매, 광고 수익화를 금지함. 기기 보관은 24시간과 새 질의 중 짧은 기간, 서버 이력 보관은 최대 21일임. API HUB 자체 약관과 보도된 2026-09-07 시행일은 미확인. — 관찰됨 2026-09-30 [P138]
   - 2026-09-30 읽은 개발자센터 약관 부칙은 2026-07-30 24:00 이후 신규 신청을 중단하고, 그때까지 신청한 기존 이용자에게 2027-06-30 24:00까지 API를 제공한다고 적음. 쇼핑·책·학술정보는 2026-07-31 24:00에 종료됨. API HUB 자체의 현행 이용 조건은 미확인. — 관찰됨 2026-09-30 [P138]
   - 봇 차단(bot_filter)과 브라우저 확인 화면(js_check)은 opted_out이며 등록 도메인 전체를 이번 실행에서 멈춤. 거절 뒤에는 모바일 대체 주소나 렌더로 다시 열지 않고 확인 화면이 풀리기를 기다리지 않음. 확인 화면을 거친 캡처는 ingest가 받지 않음. — 규칙 (`references/research/public-page-access.md`)
-- 예상 중단: `terms_restricted`, `auth_gate`
+- 예상 중단: `auth_gate`
 - robots 예상 `unknown`: 2026-09-30 관찰: * 그룹은 Disallow: /로 전체 경로를 막음. GPTBot·OAI-SearchBot·ClaudeBot·Claude-SearchBot·PerplexityBot 등 명시 그룹도 전체 경로를 막음. 실행 때 현재 URL의 robots와 기록된 중단을 다시 판정함. — 관찰됨 2026-09-30 [P137]
-- 약관 `confirmed`(routes.json `naver-cafe-bulk-notice`), 제한 `bulk_collection`, `automated_collection`
+- 약관 조항 관찰 `confirmed`(기본 약관 중단 없음), 제한 `bulk_collection`, `automated_collection`
   - 조항: "크롤러·봇·스크립트 등 자동화된 방식으로 게시물과 댓글을 대량으로 조회·수집하는 행위" 금지.
-  - 확인: 2026-10-01 공지 원문을 읽음. 공지 날짜는 2026-08-25이며 2026-08-31은 보도일임. lift_requires: written_permission에 따라 이 공지의 확인과 사전 서면 허락이 필요함. 네이버 이용약관도 별도로 확인해야 하며, 두 항목을 모두 풀어야 함. verified_at은 사람이 원문을 읽기 전까지 null임. — 관찰됨 2026-10-01 [P147]
+  - 확인: 2026-10-01 공지 원문을 읽음. 공지 날짜는 2026-08-25이며 2026-08-31은 보도일임. 조항 관찰은 보존하며 공개 카페 읽기의 기본 약관 중단으로 적용하지 않음. naver-terms의 cafe.naver.com 하위 호스트 제외를 적용함. verified_at은 사람이 원문을 읽기 전까지 null임. — 관찰됨 2026-10-01 [P147]
 - 사용자 단서(신뢰도 `low`): 와이즈앱 추정 네이버 카페 앱 월평균 사용자 904만 명(2026-01~04). 앱 사용자 수는 글쓴이 수도 세그먼트 비율도 아님. 육아·지역 카페 구성원의 성별·연령·정치 성향 추정치는 싣지 않음(4절). — 미확인(요약) [P22, P23]
 - 콘텐츠 규범:
   - 업체가 회원인 척 쓴 가짜 후기와 숨은 마케팅 사례가 여러 차례 보도된 채널임. 공동구매·업체 홍보 글은 promotion 표지로 먼저 거름. — 미확인(요약) [P24, P25]
@@ -802,7 +801,7 @@ URL을 포함해야 합니다. 한 URL에 걸린 제한은 항목마다 별도 �
 ## 9. 완료 기준(Done when)
 
 - 실행에 쓴 채널마다 정당한 경로, 예상 중단, 약관 상태를 계획(`plan.md`)에 적음.
-- `reported`·`confirmed` 채널은 routes.json의 `terms_restricted` 항목과 상태가 같음.
+- `reported`·`confirmed` 제한 채널은 routes.json의 `terms_restricted` 항목과 상태가 같음. 네이버 카페의 `confirmed`는 공지 원문 관찰이며 기본 약관 중단은 없음.
 - 접근 표에 `terms_restricted` 중단을 다른 중단과 나눠 적고, out_of_scope 채널은 따로 셈.
 - 사용자 단서를 세그먼트 비율로 쓰지 않았고, 커뮤니티 구성 추정치를 사람·주장·페르소나에 붙이지 않음.
 - 공개 웹에서 덜 잡힌 집단을 수집 공백으로 적음.

@@ -32,7 +32,8 @@ alternate, in this order:
                   covers the URL's host must be lifted, each by a check of its
                   own; lift_requires decides whether it can be lifted.
 
-Host names cover their subdomains in every list; path prefixes match whole path
+Host names cover their subdomains in every list; terms entries may exclude
+subtrees with except_hosts. Path prefixes match whole path
 segments, case-insensitively, on the raw path and on its normalised forms (dot
 segments removed, unreserved escapes decoded, empty segments and ';' parameters
 cut), so a stop matches when any form does. Nothing a page says changes these
@@ -331,7 +332,8 @@ def _split(url: str) -> tuple[str, str, str]:
 def terms_entries(host: str, lists: Lists) -> list:
     """Every terms_restricted entry that covers this host, in list order (packaged first)."""
     host = (host or "").lower().rstrip(".")
-    return [entry for entry in lists.terms if verdict.host_matches(host, entry["hosts"])]
+    return [entry for entry in lists.terms if verdict.host_matches(host, entry["hosts"])
+            and not verdict.host_matches(host, entry.get("except_hosts") or [])]
 
 
 def terms_entry(host: str, lists: Lists) -> dict | None:
@@ -353,7 +355,8 @@ def check_applies(check: dict, entry: dict) -> bool:
     """A check is for this entry when it cites one of the entry's own terms documents and its host is one of
     the entry's hosts or narrower (a check for a parent domain never lifts a more specific entry)."""
     name = str(check.get("host") or "").lower().rstrip(".")
-    if not name or not verdict.host_matches(name, entry["hosts"]):
+    if not name or not verdict.host_matches(name, entry["hosts"]) \
+            or verdict.host_matches(name, entry.get("except_hosts") or []):
         return False
     cited = document_key(check.get("terms_url"))
     return cited is not None and cited in {document_key(u) for u in _documents(entry)}
@@ -622,7 +625,8 @@ def _entry_effect(check: dict, entry: dict) -> tuple[str, bool]:
     """(what one check does for one entry, whether it lifts it for URLs under the check's host)."""
     entry_id, hosts = entry.get("id"), ", ".join(entry["hosts"])
     name = str(check.get("host") or "").lower()
-    if not verdict.host_matches(name, entry["hosts"]):
+    if not verdict.host_matches(name, entry["hosts"]) \
+            or verdict.host_matches(name, entry.get("except_hosts") or []):
         return (f"does not lift {entry_id}: the check's host {name} is broader than the entry's hosts ({hosts}); "
                 "only a check for one of those hosts (or a narrower one) lifts it"), False
     if _requires(entry) == "never":
@@ -650,7 +654,9 @@ def describe_checks(policy: dict, lists: Lists) -> list:
     for item in policy.get("terms_checked") or []:
         host = item["host"]
         related = [e for e in lists.terms
-                   if verdict.host_matches(host, e["hosts"]) or any(verdict.host_matches(h, [host]) for h in e["hosts"])]
+                   if not verdict.host_matches(host, e.get("except_hosts") or [])
+                   and (verdict.host_matches(host, e["hosts"])
+                        or any(verdict.host_matches(h, [host]) for h in e["hosts"]))]
         effects = []
         for entry in related:
             effect, lifts = _entry_effect(item, entry)
@@ -868,7 +874,10 @@ def check_run_table(run_routes: dict) -> list:
     for platform in _items(run_routes, "platforms"):
         pid = str(platform.get("id"))
         hosts = _host_patterns(platform.get("hosts"))
-        restricted = [e.get("id") for e in terms if _covers(hosts, _host_patterns(e.get("hosts")))]
+        restricted = [e.get("id") for e in terms
+                      if _covers([h for h in hosts
+                                  if not verdict.host_matches(h.removeprefix("*."), e.get("except_hosts") or [])],
+                                 _host_patterns(e.get("hosts")))]
         if pid in named:
             restricted.append(named[pid])
         if restricted and platform != platforms.get(pid):

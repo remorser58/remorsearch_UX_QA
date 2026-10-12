@@ -1,7 +1,7 @@
 <!-- Mode: research. Entry point: `SKILL.md`. -->
 # Research mode
 
-Scoped claims/causes/tests from reported experience. In product improvement, use baseline QA to discover questions; standalone research uses the request. Preserve unknowns.
+Use baseline QA or the standalone request to frame research questions; preserve unknowns.
 
 ## Phase 0 recap
 
@@ -17,7 +17,7 @@ Quick wins; smaller user budgets apply, unmet minima are gaps. **Query**: search
 
 ## 1. Start and plan
 
-Use the [default candidate list](../loop/product-improvement.md#observe-first-then-ask-research-questions) alongside user-supplied sources. Choose channels for the task and audience context; there is no requirement to research every candidate.
+Choose task-relevant sources from `references/loop/product-improvement.md` and user-supplied sources.
 
 Run from the skill folder. brief.json: product/url/locale/release/questions/languages/channels/windows/report/budgets/access_policy; validation fields: `schemas/ux-research-brief.v1.schema.json`. First command:
 
@@ -46,7 +46,7 @@ python3 scripts/ref.py references/insane-search/SOURCE.md phase-0-특수-엔드�
 python3 scripts/ref.py references/insane-search/references/public-api.md stack-exchange-v23
 ```
 
-The second command is a platform example; choose the method for the actual URL. Without a section ID, `ref.py` lists IDs only: use a listed ID to load the method body. Resolve SOURCE.md links from `references/insane-search/`; its `references/public-api.md` therefore resolves to `references/insane-search/references/public-api.md`. Links inside a method resolve from that method's directory. Keep the original toolkit intact, including fallback references; load only the needed sections and never redispatch its frontmatter as a skill.
+The second command is an example. Choose the actual platform's method; omit the section ID to list IDs. Resolve links relative to their file: SOURCE.md's `references/public-api.md` means `references/insane-search/references/public-api.md`. Keep the toolkit and fallbacks intact; read only needed sections and never dispatch its frontmatter as a skill.
 
 Before invoking the selected method with available tools, apply the access card and pre-read below. Use permitted public routes and the recorded tool capability; a missing tool is a gap. The toolkit does not lift terms, robots, privacy or authorization controls. Stop at unauthorized login, private or paywalled content and human checks; existing site/run stops forbid every alternate method. Automatic installs, identity spoofing, cookie transfer and other methods barred by the access card remain unavailable.
 

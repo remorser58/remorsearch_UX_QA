@@ -224,8 +224,11 @@ def platform_output(channel_id: str, root: Path = SKILL_ROOT) -> str:
     routes = json.loads((root / "uxresearch/data/routes.json").read_text(encoding="utf-8"))
     terms = []
     for entry in routes["terms_restricted"]:
-        if any(host == covered or host.endswith("." + covered) for host in platform["hosts"] for covered in entry["hosts"]):
-            terms.append({key: entry.get(key) for key in ("id", "hosts", "status", "lift_requires", "official_route", "terms_url", "effective_from")})
+        if any((host == covered or host.endswith("." + covered))
+               and not any(host == excluded or host.endswith("." + excluded)
+                           for excluded in entry.get("except_hosts", []))
+               for host in platform["hosts"] for covered in entry["hosts"]):
+            terms.append({key: entry.get(key) for key in ("id", "hosts", "except_hosts", "status", "lift_requires", "official_route", "terms_url", "effective_from")})
     output = {"id": channel_id, "name_ko": platform.get("name_ko"), "version": data.get("version"),
               "checked_at": data.get("checked_at"), "verified_at": data.get("verified_at")}
     for key in ("hosts", "family", "public_scope", "routes", "route_ids", "expected_stops"):
