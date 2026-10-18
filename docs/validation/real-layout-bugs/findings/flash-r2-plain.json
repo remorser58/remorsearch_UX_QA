@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p01",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 the header's right-hand nav list runs from x=60 to x=412, 52px past the viewport. The user menu occupies x=348-412 and its 32px avatar sits at x=364-396, entirely off screen. document.scrollWidth is 412 vs clientWidth 360, so the page scrolls sideways.",
+    "fix": "Hide the extra d-md-none utility item and collapse the profile dropdown to an icon below the md breakpoint so the nav ends at or before 360px."
+  },
+  {
+    "page": "p04",
+    "selector": ".navbar .navbar-nav.ml-auto #userDropdown img.img-profile",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360x780 the header nav extends to x=380. The user dropdown is at x=324-380 and its 32px profile image at x=336-368, so the rightmost 8px of the avatar is cut off at the viewport edge. The header clips the overflow, so the rest of the page does not scroll sideways.",
+    "fix": "Trim the right nav's horizontal padding or hide one utility item below md so the user dropdown and avatar end within 360px."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 the right nav runs from x=60 to x=412. The user menu is at x=348-412 and its 32px avatar at x=364-396, fully outside the viewport. document.scrollWidth is 412, so the page can be dragged 52px sideways.",
+    "fix": "Remove the duplicate d-md-none utility item and shrink the profile control at small widths so the nav fits in 360px."
+  },
+  {
+    "page": "p09",
+    "selector": "table#example1, table#example2",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "Both DataTables are 521px wide inside a 344px card and have no .table-responsive wrapper. The table's right edge is x=549 on a 360px viewport, so the Platform(s), Engine version and CSS grade columns are cut off and the page scrolls sideways by 189px.",
+    "fix": "Wrap each table in a .table-responsive container (overflow-x:auto) or reduce column widths so the table fits the 344px card."
+  },
+  {
+    "page": "p11",
+    "selector": ".card-body table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The documentation tables are 810-897px wide inside a 318px card body. The widest right edge is x=942 on a 360px viewport, so the Documentation/Programmatic columns and most code cells are off screen, and the page scrolls sideways by 582px.",
+    "fix": "Wrap each documentation table in a .table-responsive container or give the tables display:block with overflow-x:auto."
+  }
+]

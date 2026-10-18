@@ -1,0 +1,83 @@
+[
+  {
+    "page": "p02",
+    "selector": "ul.navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360px the right-hand navbar group ends at x=364 (user menu 300-364), so document.scrollWidth is 364 and the page scrolls 4px sideways; the avatar sits on the overflow edge.",
+    "fix": "Let the navbar group shrink or wrap at narrow widths (smaller icon margins, flex-wrap, or hide the least important icon below 576px) so its right edge stays within the 360px viewport."
+  },
+  {
+    "page": "p02",
+    "selector": ".card a.ribbon",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "In the 'Interactive ribbon' card the LINKED ribbon occupies x=259-310, y=2398-2449 while the body paragraph spans x=37-323, y=2412-2508; the ribbon covers the right end of the first two text lines and the text runs underneath it.",
+    "fix": "Reserve space for the ribbon on ribbon cards (e.g. padding-right on the card body of about 4.5rem at this width) or make the ribbon smaller/inset so it no longer overlaps body copy."
+  },
+  {
+    "page": "p03",
+    "selector": "aside.app-sidebar",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "At 360px the page loads with body.sidebar-open and a fixed 250px-wide sidebar at x=0-250, leaving only a 110px strip of the page content visible; the sidebar also covers the header area that would hold the toggle.",
+    "fix": "Do not apply sidebar-open by default below the lg breakpoint; keep the sidebar off-canvas and show it only after an explicit toggle, with a backdrop."
+  },
+  {
+    "page": "p04",
+    "selector": "#userDropdown .img-profile",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The header nav group runs from x=176 to x=380 in a 360px viewport; the profile image is at x=336-368 and is cut off 8px past the right edge (visible in the header screenshot).",
+    "fix": "Remove the extra right offset and let the icon row shrink at small widths (smaller margins or hide secondary icons below 576px) so the avatar ends inside the viewport."
+  },
+  {
+    "page": "p04",
+    "selector": ".chart-area",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The 104px icon rail leaves a 256px content column; the Earnings Overview chart is about 166px wide and its y-axis tick labels break into one character per line ('$40,000', '$30,000', '$20,000', '$10,000' stacked vertically), making the scale unreadable.",
+    "fix": "At narrow widths use compact tick labels (40k, 30k, ...) or give the chart container a min-width with horizontal scrolling; alternatively collapse the sidebar off-canvas below md."
+  },
+  {
+    "page": "p04",
+    "selector": ".chart-pie ~ .text-center",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "In the Revenue Sources legend the third item splits across rows: its teal dot stays on the first row (y=1274-1292) while the 'Referral' label drops to the second row (y=1292-1311); 'Social' and 'Referral' boxes overlap by 4px vertically.",
+    "fix": "Make each legend item an inline-flex unit with white-space: nowrap so a dot and its label wrap together, or reduce the legend to two items per row."
+  },
+  {
+    "page": "p08",
+    "selector": "ul.navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At a 360px viewport document.scrollWidth is 412: the right navbar group spans x=60-412 and the user menu spans x=348-412, so the avatar and the last 52px of the header sit off-screen and the page scrolls sideways.",
+    "fix": "Reduce the header item widths/gaps at small widths (or hide secondary icons below 576px) so the navbar content fits inside 360px and no horizontal scroll is created."
+  },
+  {
+    "page": "p11",
+    "selector": ".card-body p code",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "An inline code chip in the overview paragraph has white-space: nowrap and spans x=222-440, while the card's right edge is at x=339 and the viewport is 360px; the chip is cut off by about 80px at the screen edge.",
+    "fix": "Allow inline code to wrap (white-space: normal; overflow-wrap: anywhere) or shorten the chip so it fits inside the card body at phone widths."
+  },
+  {
+    "page": "p12",
+    "selector": ".col-lg-9 .list-group-item > a",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360px the page's scrollWidth is 940 because each message link is 845px wide inside a 318px list item; the row's nowrap text cannot shrink (text-truncate without min-width: 0). At 1440px the rows still overflow the 857px card: link widths are 913, 944 and 1101px, ending at x=1549, 1581 and 1737 while the card ends at 1419 and the viewport at 1440, so message text and timestamps are cut off at the window edge.",
+    "fix": "Add min-width: 0 to the flex-grow link and its truncate spans so text-truncate can clip, and let the row wrap (flex-wrap) at narrow widths; this keeps every row inside the card at both sizes."
+  }
+]

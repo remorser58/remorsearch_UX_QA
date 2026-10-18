@@ -8,6 +8,7 @@ Each record names the suite, the detector or skill version it measured, and the 
 | --- | --- | --- |
 | [`visual-layout-20261018.md`](visual-layout-20261018.md) | Measured scan checks (LY-01 to LY-05 with contrast, target size and reflow) on 28 seeded rendered defects, 11 decoys and four clean twins written blind to the detector, and the earlier suites before and after | `python3 skills/remorsearch-ux-qa/scripts/ergo_bench.py --suite benchmarks/visual-layout --out .ergo-bench/visual-layout` |
 | [`agent-comparison-20261018/`](agent-comparison-20261018/README.md) | The same agent with and without the skill on the same pages, tools and budget: defects found, false alarms and time | Prompts, raw findings and the scoring rule are in the folder |
+| [`real-layout-bugs/`](real-layout-bugs/README.md) | Agent QA with and without the frozen 1.0.0 skill on 12 layout bugs fixed in open-source projects: two models, three paired runs each, preregistered and scored blind to arm, plus the scan on its own | Protocol, sealed answer key, prompts, raw findings, verdicts and scores are in the folder |
 
 ## Ergonomics engine
 

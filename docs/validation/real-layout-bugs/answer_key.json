@@ -1,0 +1,266 @@
+{
+ "suite": "real-layout-bugs",
+ "created": "2026-10-19",
+ "defects": {
+  "S1": {
+   "source": "StartBootstrap/startbootstrap-sb-admin-2",
+   "fix": "60d24312ca1c3d75738d2b40e552a0495e53dda6",
+   "page": "index.html",
+   "viewport": "laptop",
+   "what": "Topbar search field is 34.4 px tall next to its 38 px search button; the field and button do not line up.",
+   "selectors": [
+    ".navbar-search",
+    "form.navbar-search",
+    ".topbar .input-group",
+    ".navbar-search input",
+    ".navbar-search .btn"
+   ]
+  },
+  "A1": {
+   "source": "ColorlibHQ/AdminLTE (v3)",
+   "fix": "9cc4ce39 (issue #4042), built in bd4d9c72",
+   "page": "index.html",
+   "viewport": "laptop",
+   "what": "World map zoom buttons: the + and − glyphs sit 2 px below the centre of their 15x15 buttons.",
+   "selectors": [
+    ".jqvmap-zoomin",
+    ".jqvmap-zoomout",
+    "#world-map",
+    ".jqvmap-container"
+   ]
+  },
+  "A2": {
+   "source": "ColorlibHQ/AdminLTE (v3)",
+   "fix": "6f396ae1",
+   "page": "iframe.html",
+   "viewport": "phone",
+   "what": "Tabbed iframe toolbar wraps into two rows on a phone: Close and the scroll-left button on row one, scroll-right and fullscreen on row two.",
+   "selectors": [
+    ".navbar",
+    ".nav.navbar",
+    ".iframe-mode .navbar",
+    "[data-widget=iframe-scrollleft]",
+    "[data-widget=iframe-scrollright]",
+    "[data-widget=iframe-fullscreen]",
+    ".btn-iframe-close"
+   ]
+  },
+  "A3": {
+   "source": "ColorlibHQ/AdminLTE (v3)",
+   "fix": "6934469b",
+   "page": "pages/tables/data.html",
+   "viewport": "phone",
+   "what": "DataTables demo table is 549 px wide on a 360 px phone: the page scrolls sideways and the right-hand columns are cut at the screen edge.",
+   "selectors": [
+    "#example1",
+    "#example2",
+    ".dataTables_wrapper",
+    "table",
+    ".table"
+   ]
+  },
+  "B1": {
+   "source": "ColorlibHQ/AdminLTE (v4)",
+   "fix": "083d844f (#6114), built in 12b4b06f",
+   "page": "dist/layout/collapsed-sidebar.html",
+   "viewport": "laptop",
+   "what": "In the collapsed (mini) sidebar the brand logo sits 4 px left of the sidebar's centre.",
+   "selectors": [
+    ".brand-image",
+    ".sidebar-brand",
+    ".brand-link",
+    ".app-sidebar"
+   ]
+  },
+  "B2": {
+   "source": "ColorlibHQ/AdminLTE (v4)",
+   "fix": "60fabdb3",
+   "page": "dist/docs/javascript/plugins-overview.html",
+   "viewport": "phone",
+   "what": "Reference tables are wider than the phone screen: the page is 942 px wide on a 360 px phone and scrolls sideways.",
+   "selectors": [
+    "table",
+    ".table",
+    ".docs-page table",
+    ".app-content table"
+   ]
+  },
+  "B3": {
+   "source": "ColorlibHQ/AdminLTE (v4)",
+   "fix": "afa7215e",
+   "page": "dist/index.html",
+   "viewport": "phone",
+   "what": "Header item row is wider than the phone: the page is 412 px wide on a 360 px phone, scrolls sideways and the user menu sits partly off screen.",
+   "selectors": [
+    ".app-header",
+    ".navbar-nav",
+    ".user-menu",
+    ".user-image",
+    ".nav-link.dropdown-toggle",
+    "html",
+    "body"
+   ]
+  },
+  "H": {
+   "source": "ColorlibHQ/AdminLTE (v4)",
+   "fix": "afa7215e (same cause as B3)",
+   "page": "AdminLTE 4 pages before 2026-08-19",
+   "viewport": "phone",
+   "what": "Header user-menu toggle runs past the right edge (by 4 px, or 52 px with the language menu), so the page scrolls sideways.",
+   "selectors": [
+    ".app-header",
+    ".navbar-nav",
+    ".user-menu",
+    ".user-image",
+    ".nav-link.dropdown-toggle",
+    "html",
+    "body"
+   ]
+  },
+  "B4": {
+   "source": "ColorlibHQ/AdminLTE (v4)",
+   "fix": "3f9716ad (#6104)",
+   "page": "dist/layout/fixed-sidebar.html",
+   "viewport": "laptop",
+   "what": "Fixed-sidebar layout is 948 px tall in a 900 px window: the whole layout scrolls 48 px and the fixed header and sidebar brand move off the top.",
+   "selectors": [
+    "body",
+    "html",
+    ".app-wrapper",
+    ".sidebar-wrapper",
+    ".app-header",
+    ".sidebar-brand",
+    ".app-main"
+   ]
+  },
+  "B5": {
+   "source": "ColorlibHQ/AdminLTE (v4)",
+   "fix": "d635f939",
+   "page": "dist/UI/ribbons.html",
+   "viewport": "both",
+   "what": "Corner ribbons stop short of the card corner and leave a bare white triangle in the corner.",
+   "selectors": [
+    ".ribbon",
+    ".ribbon-wrapper"
+   ]
+  },
+  "B6": {
+   "source": "ColorlibHQ/AdminLTE (v4)",
+   "fix": "155e8698 (#6044)",
+   "page": "dist/mailbox/inbox.html",
+   "viewport": "phone",
+   "what": "Inbox rows do not truncate long subjects and previews: the list is 940 px wide on a 360 px phone and the page scrolls sideways.",
+   "selectors": [
+    ".mailbox-messages",
+    "table",
+    "tr",
+    "td",
+    ".text-truncate",
+    "span.fw-normal.text-secondary"
+   ]
+  },
+  "B7": {
+   "source": "ColorlibHQ/AdminLTE (v4)",
+   "fix": "e1892ef3 (#6020), built in f0c024de",
+   "page": "dist/layout/fixed-header.html",
+   "viewport": "laptop",
+   "what": "With the fixed header the sidebar is not sticky: the page is 1699 px tall for a short page, scrolls into empty space and the sidebar brand and top items scroll away.",
+   "selectors": [
+    ".app-sidebar",
+    ".sidebar-wrapper",
+    ".sidebar-brand",
+    "body",
+    "html",
+    ".app-wrapper"
+   ]
+  },
+  "B8": {
+   "source": "ColorlibHQ/AdminLTE (v4)",
+   "fix": "dc7d4bd4, built in aae8438e",
+   "page": "dist/UI/general.html",
+   "viewport": "phone",
+   "what": "On a phone the sidebar is open when the page loads and covers most of the content.",
+   "selectors": [
+    ".app-sidebar",
+    "body",
+    ".sidebar-overlay",
+    ".sidebar-wrapper"
+   ]
+  }
+ },
+ "states": {
+  "S1-broken": [
+   "S1"
+  ],
+  "S1-fixed": [],
+  "A1-broken": [
+   "A1"
+  ],
+  "A1-fixed": [],
+  "A2-broken": [
+   "A2"
+  ],
+  "A2-fixed": [],
+  "A3-broken": [
+   "A3"
+  ],
+  "A3-fixed": [],
+  "B1-broken": [
+   "B1"
+  ],
+  "B1-fixed": [],
+  "B2-broken": [
+   "B2"
+  ],
+  "B2-fixed": [],
+  "B3-broken": [
+   "B3"
+  ],
+  "B3-fixed": [],
+  "B4-broken": [
+   "B4",
+   "H"
+  ],
+  "B4-fixed": [
+   "H"
+  ],
+  "B5-broken": [
+   "B5",
+   "H"
+  ],
+  "B5-fixed": [
+   "H"
+  ],
+  "B6-broken": [
+   "B6",
+   "H"
+  ],
+  "B6-fixed": [
+   "H"
+  ],
+  "B7-broken": [
+   "B7"
+  ],
+  "B7-fixed": [
+   "H"
+  ],
+  "B8-broken": [
+   "B8"
+  ],
+  "B8-fixed": []
+ },
+ "fixed_state_targets": {
+  "S1-fixed": "S1",
+  "A1-fixed": "A1",
+  "A2-fixed": "A2",
+  "A3-fixed": "A3",
+  "B1-fixed": "B1",
+  "B2-fixed": "B2",
+  "B3-fixed": "B3",
+  "B4-fixed": "B4",
+  "B5-fixed": "B5",
+  "B6-fixed": "B6",
+  "B7-fixed": "B7",
+  "B8-fixed": "B8"
+ }
+}

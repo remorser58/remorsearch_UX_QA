@@ -1,0 +1,366 @@
+[
+ {
+  "run": "flash-r1-plain",
+  "model": "flash",
+  "k": 1,
+  "arm": "plain",
+  "shown": 11,
+  "found": 6,
+  "found_items": [
+   "p01:B3",
+   "p02:H",
+   "p03:B8",
+   "p09:A3",
+   "p11:B2",
+   "p12:B6"
+  ],
+  "missed": [
+   "p05:B7",
+   "p06:A2",
+   "p08:H",
+   "p10:A1",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 3,
+  "findings": 10,
+  "minutes": 33.25,
+  "note": "stop message at 33.0 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r1-skill",
+  "model": "flash",
+  "k": 1,
+  "arm": "skill",
+  "shown": 11,
+  "found": 6,
+  "found_items": [
+   "p01:B3",
+   "p02:H",
+   "p08:H",
+   "p09:A3",
+   "p11:B2",
+   "p12:B6"
+  ],
+  "missed": [
+   "p03:B8",
+   "p05:B7",
+   "p06:A2",
+   "p10:A1",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 3,
+  "findings": 9,
+  "minutes": 34,
+  "note": "stop message at 33.0 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r2-plain",
+  "model": "flash",
+  "k": 2,
+  "arm": "plain",
+  "shown": 12,
+  "found": 4,
+  "found_items": [
+   "p01:B3",
+   "p08:H",
+   "p09:A3",
+   "p11:B2"
+  ],
+  "missed": [
+   "p02:B5",
+   "p02:H",
+   "p04:S1",
+   "p05:H",
+   "p07:B1",
+   "p08:B4",
+   "p10:A1",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 5,
+  "minutes": 31.47,
+  "note": "run ended at 29.95 min without a report; asked once to write it",
+  "missing": false
+ },
+ {
+  "run": "flash-r2-skill",
+  "model": "flash",
+  "k": 2,
+  "arm": "skill",
+  "shown": 12,
+  "found": 5,
+  "found_items": [
+   "p01:B3",
+   "p02:H",
+   "p08:H",
+   "p09:A3",
+   "p11:B2"
+  ],
+  "missed": [
+   "p02:B5",
+   "p04:S1",
+   "p05:H",
+   "p07:B1",
+   "p08:B4",
+   "p10:A1",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 3,
+  "findings": 10,
+  "minutes": 33.91,
+  "note": "stop message at 33.2 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r3-plain",
+  "model": "flash",
+  "k": 3,
+  "arm": "plain",
+  "shown": 11,
+  "found": 4,
+  "found_items": [
+   "p02:H",
+   "p03:B8",
+   "p08:H",
+   "p12:B6"
+  ],
+  "missed": [
+   "p02:B5",
+   "p04:S1",
+   "p05:B7",
+   "p06:A2",
+   "p07:B1",
+   "p08:B4",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 2,
+  "valid_extra": 3,
+  "findings": 9,
+  "minutes": 34.41,
+  "note": "stop message at 33.1 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r3-skill",
+  "model": "flash",
+  "k": 3,
+  "arm": "skill",
+  "shown": 11,
+  "found": 4,
+  "found_items": [
+   "p02:H",
+   "p03:B8",
+   "p08:H",
+   "p12:B6"
+  ],
+  "missed": [
+   "p02:B5",
+   "p04:S1",
+   "p05:B7",
+   "p06:A2",
+   "p07:B1",
+   "p08:B4",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 3,
+  "findings": 8,
+  "minutes": 34.12,
+  "note": "stop message at 33.3 min",
+  "missing": false
+ },
+ {
+  "run": "sol-r1-plain",
+  "model": "sol",
+  "k": 1,
+  "arm": "plain",
+  "shown": 11,
+  "found": 6,
+  "found_items": [
+   "p01:B3",
+   "p06:A2",
+   "p08:H",
+   "p09:A3",
+   "p11:B2",
+   "p12:B6"
+  ],
+  "missed": [
+   "p02:H",
+   "p03:B8",
+   "p05:B7",
+   "p10:A1",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 4,
+  "findings": 10,
+  "minutes": 6.28,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r1-skill",
+  "model": "sol",
+  "k": 1,
+  "arm": "skill",
+  "shown": 11,
+  "found": 6,
+  "found_items": [
+   "p01:B3",
+   "p06:A2",
+   "p08:H",
+   "p09:A3",
+   "p11:B2",
+   "p12:B6"
+  ],
+  "missed": [
+   "p02:H",
+   "p03:B8",
+   "p05:B7",
+   "p10:A1",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 5,
+  "findings": 11,
+  "minutes": 12.47,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-plain",
+  "model": "sol",
+  "k": 2,
+  "arm": "plain",
+  "shown": 12,
+  "found": 8,
+  "found_items": [
+   "p01:B3",
+   "p02:H",
+   "p05:H",
+   "p08:B4",
+   "p08:H",
+   "p09:A3",
+   "p11:B2",
+   "p12:H"
+  ],
+  "missed": [
+   "p02:B5",
+   "p04:S1",
+   "p07:B1",
+   "p10:A1"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 9,
+  "findings": 17,
+  "minutes": 11.94,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-skill",
+  "model": "sol",
+  "k": 2,
+  "arm": "skill",
+  "shown": 12,
+  "found": 4,
+  "found_items": [
+   "p01:B3",
+   "p08:H",
+   "p09:A3",
+   "p11:B2"
+  ],
+  "missed": [
+   "p02:B5",
+   "p02:H",
+   "p04:S1",
+   "p05:H",
+   "p07:B1",
+   "p08:B4",
+   "p10:A1",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 6,
+  "findings": 10,
+  "minutes": 9.31,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-plain",
+  "model": "sol",
+  "k": 3,
+  "arm": "plain",
+  "shown": 11,
+  "found": 4,
+  "found_items": [
+   "p02:H",
+   "p06:A2",
+   "p08:H",
+   "p12:B6"
+  ],
+  "missed": [
+   "p02:B5",
+   "p03:B8",
+   "p04:S1",
+   "p05:B7",
+   "p07:B1",
+   "p08:B4",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 5,
+  "findings": 9,
+  "minutes": 9.96,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-skill",
+  "model": "sol",
+  "k": 3,
+  "arm": "skill",
+  "shown": 11,
+  "found": 3,
+  "found_items": [
+   "p06:A2",
+   "p08:H",
+   "p12:B6"
+  ],
+  "missed": [
+   "p02:B5",
+   "p02:H",
+   "p03:B8",
+   "p04:S1",
+   "p05:B7",
+   "p07:B1",
+   "p08:B4",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 9,
+  "findings": 12,
+  "minutes": 15.48,
+  "note": "",
+  "missing": false
+ }
+]

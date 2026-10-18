@@ -1,0 +1,92 @@
+[
+  {
+    "page": "p01",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360×780, the right navbar occupies x=60–412 (352 px). Its user control occupies x=348–412, and the avatar is at x=364–396, entirely outside the 360 px visible viewport. The page gains 52 px of horizontal overflow. Screenshot: p01-phone-final-top.png; DOM: details.json.",
+    "fix": "At the phone breakpoint, reduce nav-link horizontal padding or move lower-priority header controls into a compact menu so the right navbar fits within the available 300 px."
+  },
+  {
+    "page": "p03",
+    "selector": ".card nav.navbar form input.form-control",
+    "viewport": "laptop",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "In the Navbar example at 1440×900, the search input is only 26 px wide at x=1303–1329, with 12 px padding on each side and 1 px borders, leaving no space for its placeholder or entered text. The adjacent Search button remains about 72 px wide. The form reaches x=1408.7 while its navbar ends at x=1403. Screenshot: p03-laptop-760.png; DOM: measurements.json.",
+    "fix": "Collapse this example navbar based on its container width, or wrap the search form onto its own row. Give the input a usable minimum width and enough form width to contain both input and button."
+  },
+  {
+    "page": "p04",
+    "selector": ".chart-pie + .mt-4.text-center.small > span.mr-2:last-child",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360×780, the Revenue Sources legend separates the Referral marker from its label. The marker is at x=287.3, y=327.2 in the captured scrolled viewport; its label wraps to x=205.1, y=343.3, one line below and about 82 px to the left. Direct and Social retain their marker-label pairs. Screenshot: p04-phone-legend.png; DOM: final-check.json.",
+    "fix": "Make each legend item an inline-flex or inline-block pair with white-space: nowrap, and allow complete legend items to wrap with a consistent gap."
+  },
+  {
+    "page": "p06",
+    "selector": ".main-header .navbar-search-block",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "The search field appears on a separate row underneath its search icon and makes the header 88 px tall. On phone, the search item is 71 px tall, with its icon link at y=8–48 and input group at y=48–79; sibling icons remain in the upper row, while the hamburger is centered lower at y=23.5–63.5. The phone input shrinks to 53.4 px and visibly cuts off its placeholder. On laptop the same field sits at y=48–79 while sibling icons are at y=8–48. Screenshots: p06-phone-final-top.png and p06-laptop-0.png; DOM: measurements.json.",
+    "fix": "Restore the search block positioning so an expanded search occupies a dedicated full-width header layer, or place its form inline with the other controls. Prevent the search form from enlarging just one nav item and retain a usable input width."
+  },
+  {
+    "page": "p06",
+    "selector": ".content-wrapper.iframe-mode > .nav.navbar",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360×780, the iframe tab toolbar breaks into two 40 px rows (81 px total height). Close is at x=0, y=88 and the left-scroll control is stranded at x=314, y=88; the right-scroll control drops to x=0, y=128 and fullscreen to x=314, y=128. Screenshot: p06-phone-final-top.png; DOM: measurements.json.",
+    "fix": "Keep the toolbar flex row nowrap at the phone breakpoint. Give the tab strip flex: 1 and min-width: 0, and keep Close, scroll buttons and fullscreen as nonshrinking controls in the same row."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360×780, the right navbar reaches x=412. Its user control occupies x=348–412 and the avatar lies at x=364–396, entirely outside the screen. This adds 52 px to the page width. Screenshot: p08-phone-0.png; DOM: details.json.",
+    "fix": "Reduce header control padding at the phone breakpoint or move secondary actions into a compact menu so the navbar fits the 360 px viewport."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1, #example2",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "Both tables are 521.2 px wide, starting at x=28 and ending at x=549.2 in a 360 px viewport. Their cards end at approximately x=352. The Platform column is partly outside the screen and the Engine version and CSS grade columns are entirely outside it. Table content spills beyond the card rather than staying in a contained scroll area. Screenshots: p09-phone-0.png and p09-phone-touch-end.png; DOM: measurements.json.",
+    "fix": "Wrap each table in a width-constrained responsive overflow-x:auto container, or enable the table library responsive column layout. Keep the page and card width within the viewport."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1_paginate .pagination, #example2_paginate .pagination",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Each pagination row has a 304 px container at x=28–332 but its buttons require 337 px. Right justification moves the first button to x=-5.0: Previous is partly cut off by the left screen edge, and the row protrudes 33 px beyond the content container. Screenshot: p09-phone-touch-end.png; DOM: measurements.json.",
+    "fix": "Use fewer numeric page buttons on phones or reduce button padding so the complete row fits. Alternatively wrap complete controls within the card and avoid right-justifying a row wider than its container."
+  },
+  {
+    "page": "p11",
+    "selector": ".app-main table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "All three reference tables spill out of the 270 px article content area (x=45–315). The At a glance table is 798.1 px wide and ends at x=843.1; the event table is 880.4 px wide and ends at x=925.4; the CSS classes table is 759.9 px wide and ends at x=804.9. At 360×780, several columns are off screen and the document gains approximately 565 px of horizontal overflow. Screenshots: sheet-p11-phone-0.png, sheet-p11-phone-4.png and sheet-p11-phone-8.png; DOM: measurements.json.",
+    "fix": "Place each table inside an article-width wrapper with overflow-x:auto and min-width:0. Keep horizontal table scrolling inside that wrapper, or switch the tables to stacked labeled rows on phones."
+  },
+  {
+    "page": "p12",
+    "selector": ".app-main li.list-group-item > a.flex-grow-1",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "Message text escapes the inbox rows and card. On phone the first message link starts at x=95 and is 656.7 px wide, ending at x=751.7 although its row ends at x=339; the widest row drives the page to about 940 px. On laptop the inbox card ends at x=1419, while the first row content reaches x=1549.2 and the Linear row reaches x=1737.0, beyond the 1440 px screen. The subject text is visibly cut off at the viewport and some timestamps are pushed outside it. Screenshots: p12-phone-inbox-header.png, p12-phone-full.png and p12-laptop-0.png; DOM: details.json and measurements.json.",
+    "fix": "Set min-width:0 on each flexible message link and the nested subject flex item so they can shrink within the row. Constrain the link to the available row width, retain ellipsis on subjects and reserve nonshrinking space for timestamps."
+  }
+]

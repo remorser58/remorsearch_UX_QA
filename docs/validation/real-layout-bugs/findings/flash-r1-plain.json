@@ -1,0 +1,92 @@
+[
+  {
+    "page": "p01",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the header's right-hand nav is 352px wide starting at x=60, so its last item (the 64px user menu, x=348-412) ends 52px beyond the viewport. The avatar is cut off at the right edge and the document scrollWidth grows to 412px.",
+    "fix": "Let the phone header shrink its action group (e.g. reduce item padding and hide lower-priority actions below the md breakpoint) so the nav fits within 360px and the user menu stays fully visible."
+  },
+  {
+    "page": "p02",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360px the header nav ends at x=364, so the 64px user menu is clipped by 4px and the page gains a 4px horizontal scroll (scrollWidth 364).",
+    "fix": "Trim the phone header action spacing or hide one low-priority action so the nav ends at or before 360px."
+  },
+  {
+    "page": "p02",
+    "selector": ".ribbon-wrapper.ribbon-xl .ribbon.text-bg-danger",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "The X-LARGE ribbon is positioned at x=212.5 with width 158.7, ending at x=371.2 on a 360px viewport. Its right corner is clipped by the page edge instead of staying inside the 145px wrapper (x=194-339).",
+    "fix": "Keep the ribbon box inside its .ribbon-wrapper, e.g. position it relative to the wrapper's right/top corner and let overflow: hidden clip the diagonal, rather than translating it beyond the card edge."
+  },
+  {
+    "page": "p03",
+    "selector": "body.sidebar-open aside.app-sidebar",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "The page ships with body class sidebar-open at 360px, so the 250px fixed sidebar covers 250 of the 360px content width and overlaps the heading, callout and all component cards for the full page height. The main column remains at x=0 under the sidebar.",
+    "fix": "Remove the default sidebar-open class at phone widths or close the sidebar below the lg breakpoint so the content column starts beside no overlay."
+  },
+  {
+    "page": "p08",
+    "selector": "#navigation a.nav-link p",
+    "viewport": "laptop",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The 'Sidebar Mini + Collapsed + No Hover' label is clipped with an ellipsis: its content needs 229px but the paragraph is 178px wide inside the 250px sidebar.",
+    "fix": "Allow that nav label to wrap onto a second line or widen the sidebar item text area so the full label is readable."
+  },
+  {
+    "page": "p09",
+    "selector": "#example2, #example1",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "Both data tables render 521px wide inside a 304px dataTables wrapper (x=28-549), with no responsive wrapper. The page scrollWidth is 549px at a 360px viewport, so the Engine version and CSS grade columns sit entirely off screen and the whole page scrolls sideways.",
+    "fix": "Wrap each table in .table-responsive (or set overflow-x: auto on the DataTables container) so the table scrolls inside its card instead of widening the page."
+  },
+  {
+    "page": "p09",
+    "selector": "#example2_previous, #example1_previous",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The 'Previous' pagination item starts at x=-5.0 (84px wide), so its left edge and border are cut off by the viewport on both tables. The next item begins at x=78.9 while the pagination container starts at x=28.",
+    "fix": "Let the pagination row wrap or align the button group inside the card (remove the negative offset from the paginate button) so Previous stays within the card's 28px left edge."
+  },
+  {
+    "page": "p11",
+    "selector": ".app-content .card-body table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The three documentation tables are 809px, 897px and 772px wide inside a 318px card body with no responsive wrapper. The page scrollWidth is 942px at 360px, so the Programmatic and Documentation columns are off screen and the page scrolls sideways.",
+    "fix": "Put each table in a .table-responsive wrapper (overflow-x: auto) so wide reference tables scroll inside the card."
+  },
+  {
+    "page": "p12",
+    "selector": ".col-lg-9 .list-group-item a.flex-grow-1",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The message link expands to 657-688px inside a 318px list item because the sender span has min-width: 9rem and the subject/date spans are in a non-wrapping column. The page scrollWidth is 940px at 360px; subjects and timestamps run off screen and every row forces horizontal scrolling.",
+    "fix": "At phone widths let the row shrink (min-width: 0 on the link and sender span, remove the 9rem minimum or allow wrapping) so the message column truncates inside the card."
+  },
+  {
+    "page": "p12",
+    "selector": ".col-lg-9 .list-group-item a.flex-grow-1",
+    "viewport": "laptop",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "On laptop the message link is 913-944px wide inside an 857px list item (right edge 1549-1581 vs card edge 1419). The first four messages extend past the card and the 10:42 AM timestamp sits outside the card; the card body has scrollWidth 1175px.",
+    "fix": "Constrain the flex row: give the link min-width: 0 and make the sender/subject/date children flex-shrinkable so the timestamp stays inside the card."
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "page": "p02",
+    "selector": ".card:has(.ribbon-wrapper.ribbon-lg .text-bg-info) .card-body p",
+    "viewport": "both",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "The diagonal LINKED ribbon paints over the paragraph in the Interactive ribbon card. On phone the 110x110 px wrapper is x229\u2013339, y535\u2013645 and crosses the first paragraph line at y579\u2013601, obscuring the end of \u201cinherits\u201d. On laptop the wrapper is x1309\u20131419, y670\u2013780 and crosses \u201cutility\u201d on the first line at y714\u2013736. Seen in p02-ribbon-phone.png and p02-ribbon-laptop.png.",
+    "fix": "Reserve space for the 110 px ribbon: give the introductory text sufficient right padding, or place the paragraph below the ribbon area, so no text passes under the diagonal strip."
+  },
+  {
+    "page": "p03",
+    "selector": ".card .navbar input[placeholder=\"Search\"]",
+    "viewport": "laptop",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "In the Navbar example, the search field collapses to a 26x38 px sliver at x1303 while its adjacent Search button is 71.7x38 px. The field has no visible placeholder or usable text area; the form also reaches x1408.7 past the navbar right edge x1403. Seen in p03-navbar.png; measurements in navbar.log.",
+    "fix": "Collapse this embedded navbar based on its container width, or wrap the search form onto a separate row. Give the input a usable minimum width and allow the surrounding menu to wrap instead of shrinking it to 26 px."
+  },
+  {
+    "page": "p04",
+    "selector": "#userDropdown",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The topbar account control spans x324\u2013380 inside a 360 px screen: its final 20 px lie outside the right edge. The topbar itself is 256 px wide but has 276 px of scrollable content. Seen in p04-phone-00.png and its crop; geometry in measure.json. This finding concerns the control bounds, independent of the missing avatar image.",
+    "fix": "Reduce the phone topbar horizontal padding and link widths, or move a secondary action into a compact menu, so the account control ends within the 360 px viewport."
+  },
+  {
+    "page": "p04",
+    "selector": ".mt-4.text-center.small > span:last-child",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "The Revenue Sources legend separates the Referral dot from its label. The dot stays on the first line at x287.3; \u201cReferral\u201d moves to x205.1 on the next line, 19.2 px lower. Direct and Social keep their dots beside their labels. Seen in p04-phone-01-crop.png; the legend container is 166 px wide.",
+    "fix": "Make each dot-and-label span an inline-flex item with white-space: nowrap; let the whole Referral item wrap together."
+  },
+  {
+    "page": "p04",
+    "selector": ".scroll-to-top",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P3",
+    "evidence": "At the page end, the fixed 44x44 px scroll-to-top button at x300\u2013344, y720\u2013764 covers the last part of the footer copyright. The text occupies x140.1\u2013323.9, y731.9\u2013749.9, giving about 24x18 px of overlap over the year. Seen in p04-verify.png and p04-verify-crop.png.",
+    "fix": "Reserve at least 60 px on the footer right side for the floating button, or move the button above the footer while the footer is visible."
+  },
+  {
+    "page": "p06",
+    "selector": ".main-header .navbar-search-block",
+    "viewport": "both",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The search form appears as a second row beneath its search icon, stretching the header to 88 px and leaving the left hamburger vertically displaced from the other icons. On phone the form is x54, y48, 108x31 px; the search input is only 53.4 px wide and visibly cuts its placeholder to \u201cSea\u2026\u201d. On laptop the form remains below the icon at x1038.4, y48, 203.6x31 px. Seen in p06-phone-detail.png and p06-laptop-detail.png.",
+    "fix": "Restore the navbar-search block positioning and collapsed styling. When shown, give the form its own full-width overlay or row; keep the normal navigation icons in one aligned row and prevent the input from shrinking below a readable width."
+  },
+  {
+    "page": "p06",
+    "selector": ".content-wrapper.iframe-mode > .nav",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The iframe tab toolbar breaks into two rows despite containing only four controls and an empty tab list. Close and the left chevron are at y88; the right chevron and fullscreen move to y128. The toolbar grows to 81 px. Its empty ul.navbar-nav occupies the entire 360 px width between the controls. Seen in p06-phone-detail-crop.png; measurements in measure.json.",
+    "fix": "Keep this toolbar as one nowrap flex row and make the tab list flex: 1 1 0 with min-width: 0, rather than width: 100% at the phone breakpoint."
+  },
+  {
+    "page": "p06",
+    "selector": ".tab-empty h2",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The empty-state heading wraps onto two lines but is left-aligned flush to x0 inside the 360 px empty-state panel. Its visible lines are only 150.9 px and 203.5 px wide, leaving all remaining space on the right. The laptop heading is centered in its panel. Seen in p06-phone-detail.png; the phone heading box is 360x134.4 px with text-align: left.",
+    "fix": "Center the wrapped heading text with text-align: center and add horizontal padding so both lines remain centered within the empty-state panel."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The right-hand header group is 352 px wide at x60\u2013412 on a 360 px screen. Its account control is x348\u2013412 and the 32 px avatar is x364\u2013396, entirely outside the visible screen. This also creates a 412 px-wide document, 52 px wider than the requested phone width. Seen in p08-verify.png; geometry in verify.json.",
+    "fix": "At the phone breakpoint, reduce action-link padding or move secondary actions into a menu so the right-hand group fits the available 288 px. Preserve space for the account control inside the screen."
+  },
+  {
+    "page": "p09",
+    "selector": ".dataTables_paginate .pagination",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Both table pagination rows extend left beyond the card and screen. The controls span approximately x-5.0\u2013332 while their assigned container is x28\u2013332, only 304 px wide. The Previous control begins at x-5, loses its left border, and protrudes 13 px beyond the card left edge x8. Seen in p09-verify.png and p09-verify-crop.png; measurements in verify.json.",
+    "fix": "Use fewer numeric page buttons at narrow widths, or reduce their horizontal padding so the full Previous\u2013Next group fits the 304 px container. Keep the group inside the card padding."
+  },
+  {
+    "page": "p10",
+    "selector": ".todo-list > li:nth-child(5) .text",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The long \u201cCheck your messages and notifications\u201d task drops entirely below its checkbox and drag handle, then starts at x52.5 instead of the sibling text column x121.1. The checkbox remains on the preceding row at y1615.6; the task text starts at y1639.6, 24 px lower and 68.6 px left of the other labels. Seen in p10-verify.png and its crop.",
+    "fix": "Use a grid or flex row with fixed columns for drag handle and checkbox, plus a min-width: 0 flexible text column. Wrap the long label inside that column; put its time badge below the label within the same column."
+  },
+  {
+    "page": "p12",
+    "selector": ".list-group-item > a.flex-grow-1",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Message subjects extend beyond the inbox card and screen instead of truncating inside their rows. On phone the card inner width is 318 px at x21\u2013339; message links begin at x95 and grow to 844.5 px, ending near x939.5 and expanding the document to 940 px. On laptop the card ends at x1419, but the longest link ends near x1737; dates for most rows disappear off the right edge. Seen in p12-pan-1.png, p12-pan-2.png and p12-laptop-detail.png; measurements in measure.json.",
+    "fix": "Set min-width: 0 on the message link flex item and its subject flex child. Keep sender/date columns bounded at desktop sizes and apply ellipsis to the subject within the remaining width. On phone, constrain the stacked link to the row width."
+  }
+]
