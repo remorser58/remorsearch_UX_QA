@@ -1,6 +1,6 @@
 # Real layout bugs: agent QA with and without the skill
 
-On 12 layout bugs that open-source maintainers reported and fixed, Remorsearch UX QA 1.0.0 did not make agent QA better. Over three runs each, GPT-6.1 Sol found 18 of the 34 known defects it was shown without the skill and 13 with it, and DeepSeek 4.1 Flash found 14 without and 15 with it. Neither model met the rule registered before the runs. No run raised an alarm on a fixed page. Every arm found the four cases in which a phone page scrolls sideways each time they were shown, and no arm found the five subtler cases.
+On 12 layout bugs that open-source maintainers fixed, Remorsearch UX QA 1.0.0 did not make agent QA better. Over three runs each, GPT-6.1 Sol found 18 of the 34 known defects it was shown without the skill and 13 with it, and DeepSeek 4.1 Flash found 14 without and 15 with it. Neither model met the rule registered before the runs. No run raised an alarm on a fixed page. Every arm found the four cases in which a phone page scrolls sideways each time they were shown, and no arm found the five subtler cases.
 
 In this setup the skill's own scan mostly measured pages that had lost their stylesheets, so it could not point the agents to any of the known bugs. The pages were local files, which the skill's documentation allows, and on a `file://` page the scan loads only files in the page's own folder. On 8 of the 12 items it blocked the page's own theme stylesheet, which sits in a parent folder, and measured the page without it; `scan.md` said that styles might be missing. In every scan the skill-arm agents ran, the reflow, text-spacing and short-window passes failed, as they do when Chromium runs with `REMORSEARCH_CHROMIUM_ARGS=--single-process`, a setting the prompt and the documentation allow when Chromium cannot launch in a sandbox. `scan.md` does not report the failure. Served over http with a normal Chromium launch, the scan alone matched 2 of the 12 bugs and the shared header overflow on every page where it shows; as the agents ran it, the scan matched none.
 
@@ -24,7 +24,7 @@ The protocol was registered before any candidate was screened: [`PROTOCOL.md`](P
 | B8 | AdminLTE 4 | dc7d4bd4, built in aae8438e | `dist/UI/general.html` | phone | Sidebar open on load, covering the content |
 | H | AdminLTE 4 | afa7215e | B4, B5 and B6 in both states, B7 fixed | phone | Header user menu past the right edge by 4 or 52 px |
 
-H is the header overflow that afa7215e fixed, where it also shows on other AdminLTE 4 states. As registered, it counts once per page where it shows, which makes it 10 of the 34 known defects shown to each arm.
+Five of the fixes cite an issue or pull request number. H is the header overflow that afa7215e fixed, where it also shows on other AdminLTE 4 states. As registered, it counts once per page where it shows, which makes it 10 of the 34 known defects shown to each arm.
 
 Screening went through 155 candidate commits newest first (AdminLTE 4: 60, AdminLTE 3: 60, SB Admin 2: 5, Pico 1: 30) and accepted 12. [`screening.json`](screening.json) lists each candidate with its verdict.
 
