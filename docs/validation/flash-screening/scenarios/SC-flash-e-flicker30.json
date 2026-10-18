@@ -1,0 +1,22 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-flash-e-flicker30",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/flicker30.html"
+  },
+  "task_goal_ko": "30 Hz로 깜빡이는 화면을 지켜본다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {},
+  "steps": [
+    {
+      "action": "wait",
+      "ms": 2000
+    }
+  ],
+  "success": {
+    "url_contains": "flicker30.html"
+  }
+}

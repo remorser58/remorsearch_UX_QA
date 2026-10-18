@@ -1,0 +1,65 @@
+{
+  "fixture": true,
+  "executed": false,
+  "artifact_kind": "illustrative gate field values for report layout",
+  "created_at": "2026-09-30T20:26:17.182622+00:00",
+  "input_artifact": "research-fixture.json",
+  "input_sha256": "80406f84dc83a1d1f80072851e8217a99e6cbd18cc051e70cb950fdf97ea98ec",
+  "rules_reference": "skills/remorsearch-ux-qa/references/research/source-grading.md sections 5–8",
+  "rules_version": null,
+  "execution_blocker": "This checkout has no gate CLI command. These are invented example outcomes, not engine output.",
+  "claims": [
+    {
+      "claim_id": "C-01",
+      "status": "supported_high",
+      "grade": "B",
+      "independence_units": 2,
+      "channel_families": 2,
+      "source_ids": [
+        "SRC-FX-01",
+        "SRC-FX-02"
+      ],
+      "counter": {
+        "id": "CTR-01",
+        "query_id": "Q-03",
+        "outcome": "qualifies",
+        "source_ids": [
+          "SRC-FX-05"
+        ],
+        "summary": "같은 화면에서 합계를 확인한 사례가 있어, 재계산 부담의 보고를 모든 주문에 일반화하지 않음."
+      }
+    },
+    {
+      "claim_id": "C-02",
+      "status": "supported_medium",
+      "grade": "B",
+      "independence_units": 2,
+      "channel_families": 1,
+      "source_ids": [
+        "SRC-FX-03",
+        "SRC-FX-04"
+      ],
+      "counter": {
+        "id": "CTR-02",
+        "query_id": "Q-07",
+        "outcome": "qualifies",
+        "source_ids": [
+          "SRC-FX-06"
+        ],
+        "summary": "앞 화면으로 가지 않은 주문의 보존 사례가 있어, 메뉴 재확인 상황을 분리해 시험함."
+      }
+    },
+    {
+      "claim_id": "C-03",
+      "status": "single_voice",
+      "grade": "B",
+      "independence_units": 1,
+      "channel_families": 1,
+      "source_ids": [
+        "SRC-FX-08"
+      ],
+      "counter": null
+    }
+  ],
+  "meaning": "The displayed statuses model eligible voice-source cases. Actual synthetic fixture material is E, never real research evidence. This artifact is not expected engine output."
+}

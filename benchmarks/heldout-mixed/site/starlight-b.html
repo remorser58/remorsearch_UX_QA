@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<title>별빛 타이밍</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:#dff1ff}
+body{font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:none}
+#stage{position:fixed;left:0;top:0;width:100vw;height:100vh;display:block}
+#topbar{position:fixed;left:12px;top:52px;width:311px;height:48px;border-radius:14px;background:#0b2545;display:flex;align-items:center;justify-content:space-between;padding:0 16px;pointer-events:none}
+#hud-score,#hud-time{font-size:17px;font-weight:800;color:#ffffff}
+#prompt{position:fixed;left:50%;top:462px;transform:translateX(-50%);padding:10px 22px;border-radius:14px;background:#ffe066;color:#0b2545;font-size:28px;font-weight:900;white-space:nowrap;display:none;pointer-events:none;box-shadow:0 6px 18px rgba(11,37,69,.25)}
+#prompt.on{display:block}
+#start-hint{position:fixed;left:50%;top:466px;transform:translateX(-50%);padding:8px 16px;border-radius:12px;background:#ffffff;color:#0b2545;font-size:17px;font-weight:700;white-space:nowrap;pointer-events:none}
+#pause-note{position:fixed;left:50%;top:180px;transform:translateX(-50%);padding:10px 22px;border-radius:14px;background:#ffffff;color:#0b2545;font-size:22px;font-weight:800;display:none;pointer-events:none}
+#result{position:fixed;inset:0;background:rgba(11,37,69,.94);color:#fff;display:none;flex-direction:column;align-items:center;padding-top:190px;text-align:center}
+#result.on{display:flex}
+#result h2{font-size:30px;font-weight:900}
+#final-score{font-size:22px;margin-top:14px}
+#final-detail{font-size:17px;margin-top:8px;color:#dbe4ff}
+#again{margin-top:36px;width:200px;height:56px;border-radius:14px;border:0;background:#ffe066;color:#0b2545;font:inherit;font-size:18px;font-weight:800}
+</style>
+</head>
+<body>
+<canvas id="stage"></canvas>
+<div id="topbar"><span id="hud-score">점수 0</span><span id="hud-time">남은 시간 15초</span></div>
+<div id="prompt">지금 부스터!</div>
+<div id="start-hint">가운데 버튼을 눌러 시작하세요</div>
+<div id="pause-note">일시정지 · 다시 누르면 계속</div>
+<div id="result" role="dialog" aria-label="결과"><h2>시간 종료!</h2><p id="final-score">점수 0</p><p id="final-detail"></p><button id="again">다시 하기</button></div>
+<script>
+(function(){
+  var cv=document.getElementById('stage'),ctx=cv.getContext('2d');
+  var W=0,H=0,DPR=1;
+  var ROUND=15000, QTE_MS=3000;
+  var HS=[
+    {id:'hs-tap',name:'탭',box:{x:116,y:620,w:160,h:160},shape:'circle',label:'탭',fill:'#1d5fd1',fs:32},
+    {id:'hs-boost',name:'부스터',box:{x:160,y:524,w:72,h:72},shape:'circle',label:'부스터',fill:'#d9480f',fs:16},
+    {id:'hs-pause',name:'일시정지',box:{x:335,y:54,w:44,h:44},shape:'rect',label:'',fill:'#ffffff',fs:0}
+  ];
+  var state='idle',t0=0,pausedAt=0,pausedTotal=0,taps=0,score=0,perfect=0,qteOpen=false,qteShown=false,boosted=false,pressed=null,pressT=0;
+  var $=function(s){return document.querySelector(s)};
+  function resize(){DPR=window.devicePixelRatio||1;W=window.innerWidth;H=window.innerHeight;cv.width=Math.round(W*DPR);cv.height=Math.round(H*DPR);}
+  window.addEventListener('resize',resize);resize();
+  function elapsed(){ if(state==='idle')return 0; var now=(state==='paused')?pausedAt:performance.now(); return now-t0-pausedTotal; }
+  function angle(){ return ((elapsed()/1600)%1)*Math.PI*2 - Math.PI/2; }
+  var lastS='',lastT='';
+  function hud(){
+    var s='점수 '+score;
+    var left=Math.max(0,Math.ceil((ROUND-elapsed())/1000));
+    var t='남은 시간 '+(state==='idle'?15:left)+'초';
+    if(s!==lastS){$('#hud-score').textContent=s;lastS=s;}
+    if(t!==lastT){$('#hud-time').textContent=t;lastT=t;}
+  }
+  function draw(){
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    var g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#a5d8ff');g.addColorStop(1,'#e7f5ff');
+    ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+    var cx=196,cy=350,r=100;
+    ctx.lineWidth=10;ctx.strokeStyle='#1c7ed6';ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.stroke();
+    ctx.lineWidth=16;ctx.strokeStyle='#f59f00';ctx.beginPath();ctx.arc(cx,cy,r,-Math.PI/2-0.22,-Math.PI/2+0.22);ctx.stroke();
+    var a=angle(),sx=cx+Math.cos(a)*r,sy=cy+Math.sin(a)*r;
+    ctx.fillStyle='#0b2545';ctx.beginPath();
+    for(var i=0;i<10;i++){var rr=i%2?7:16,aa=i*Math.PI/5-Math.PI/2;ctx.lineTo(sx+Math.cos(aa)*rr,sy+Math.sin(aa)*rr);}ctx.closePath();ctx.fill();
+    ctx.fillStyle='#0b2545';ctx.font='700 16px -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif';ctx.textAlign='center';ctx.textBaseline='middle';
+    ctx.fillText('별이 맨 위에 올 때 탭!',cx,cy);
+    HS.forEach(function(h){
+      var b=h.box,x=b.x+b.w/2,y=b.y+b.h/2,down=(pressed===h.id&&performance.now()-pressT<120);
+      if(h.shape==='circle'){
+        ctx.fillStyle=h.fill;ctx.globalAlpha=down?0.8:1;ctx.beginPath();ctx.arc(x,y,b.w/2,0,Math.PI*2);ctx.fill();ctx.globalAlpha=1;
+        ctx.fillStyle='#ffffff';ctx.font='800 '+h.fs+'px -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif';ctx.fillText(h.label,x,y+1);
+      }else{
+        ctx.fillStyle='rgba(255,255,255,.92)';ctx.beginPath();if(ctx.roundRect)ctx.roundRect(b.x,b.y,b.w,b.h,12);else ctx.rect(b.x,b.y,b.w,b.h);ctx.fill();
+        ctx.fillStyle='#0b2545';
+        if(state==='paused'){ctx.beginPath();ctx.moveTo(b.x+16,b.y+12);ctx.lineTo(b.x+32,b.y+22);ctx.lineTo(b.x+16,b.y+32);ctx.closePath();ctx.fill();}
+        else{ctx.fillRect(b.x+14,b.y+12,5,20);ctx.fillRect(b.x+25,b.y+12,5,20);}
+      }
+    });
+  }
+  function loop(){
+    if(state==='playing'&&elapsed()>=ROUND){end();}
+    hud();draw();requestAnimationFrame(loop);
+  }
+  function judge(){
+    var a=angle()+Math.PI/2; a=((a%(Math.PI*2))+Math.PI*2)%(Math.PI*2); var d=Math.min(a,Math.PI*2-a);
+    if(d<0.22){score+=100;perfect++;} else if(d<0.6){score+=50;} else {score+=10;}
+  }
+  function openQte(){
+    if(state!=='playing'||qteShown)return;
+    qteShown=true;qteOpen=true;$('#prompt').classList.add('on');
+    setTimeout(function(){qteOpen=false;$('#prompt').classList.remove('on');},QTE_MS);
+  }
+  function press(id){
+    pressed=id;pressT=performance.now();
+    if(id==='hs-pause'){
+      if(state==='playing'){state='paused';pausedAt=performance.now();$('#pause-note').style.display='block';}
+      else if(state==='paused'){pausedTotal+=performance.now()-pausedAt;state='playing';$('#pause-note').style.display='none';}
+      return;
+    }
+    if(state==='idle'&&id==='hs-tap'){state='playing';t0=performance.now();$('#start-hint').style.display='none';return;}
+    if(state!=='playing')return;
+    if(id==='hs-tap'){judge();taps++;if(taps===2)setTimeout(openQte,500);}
+    if(id==='hs-boost'&&qteOpen&&!boosted){boosted=true;score+=300;}
+  }
+  function end(){
+    state='done';qteOpen=false;$('#prompt').classList.remove('on');
+    $('#final-score').textContent='점수 '+score;
+    $('#final-detail').textContent='정확 '+perfect+'회 · 부스터 '+(boosted?'성공':'놓침');
+    $('#result').classList.add('on');
+  }
+  function hit(x,y){
+    for(var i=0;i<HS.length;i++){var b=HS[i].box;if(x>=b.x&&x<=b.x+b.w&&y>=b.y&&y<=b.y+b.h)return HS[i].id;}
+    return null;
+  }
+  cv.addEventListener('pointerdown',function(e){var id=hit(e.clientX,e.clientY);if(id)press(id);});
+  document.getElementById('again').addEventListener('click',function(){location.reload();});
+  window.__ergoqa__={
+    hotspots:function(){
+      if(state==='done')return [];
+      return HS.map(function(h){return {id:h.id,name:h.name,box:{x:h.box.x,y:h.box.y,w:h.box.w,h:h.box.h},roles:['game_control']};});
+    }
+  };
+  loop();
+})();
+</script>
+</body>
+</html>

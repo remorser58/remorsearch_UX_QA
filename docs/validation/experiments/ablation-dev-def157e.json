@@ -1,0 +1,4013 @@
+{
+ "n_defects": 53,
+ "suites": {
+  "mobile-commerce": 17,
+  "game-desktop": 16,
+  "heldout-mixed": 20
+ },
+ "configs": {
+  "swarm": {
+   "variant": "swarm (current, 14 stratified per touch device)",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887
+  },
+  "single_default": {
+   "variant": "single default persona",
+   "recall_strict": 0.642,
+   "recall_strict_ci95": [
+    0.507,
+    0.757
+   ],
+   "recall_lenient": 0.679,
+   "severity_agreement": 0.566,
+   "findings": 137,
+   "clean_control_findings": 33,
+   "decoys_flagged": 1,
+   "unlabeled": 52,
+   "elements_flagged": 98,
+   "clean_elements_flagged": 25,
+   "units": 75,
+   "clean_control_units": 18,
+   "recall_strict_exact_viewport": 0.623,
+   "lost_strict": [
+    "game-desktop:D-09",
+    "game-desktop:D-15",
+    "heldout-mixed:D-01",
+    "heldout-mixed:D-03",
+    "heldout-mixed:D-06",
+    "heldout-mixed:D-07",
+    "heldout-mixed:D-08",
+    "heldout-mixed:D-10",
+    "heldout-mixed:D-12",
+    "heldout-mixed:D-14",
+    "heldout-mixed:D-19",
+    "mobile-commerce:D-07",
+    "mobile-commerce:D-08",
+    "mobile-commerce:D-14"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.0001,
+   "delta_findings": -56,
+   "delta_clean": -20,
+   "delta_decoys": -1,
+   "delta_unlabeled": -4,
+   "delta_elements_flagged": -48,
+   "delta_clean_elements_flagged": -18,
+   "delta_units": -22,
+   "delta_clean_units": -8
+  },
+  "measured_only": {
+   "variant": "measured checks, default persona",
+   "recall_strict": 0.302,
+   "recall_strict_ci95": [
+    0.195,
+    0.435
+   ],
+   "recall_lenient": 0.453,
+   "severity_agreement": 0.302,
+   "findings": 51,
+   "clean_control_findings": 6,
+   "decoys_flagged": 0,
+   "unlabeled": 14,
+   "elements_flagged": 48,
+   "clean_elements_flagged": 6,
+   "units": 27,
+   "clean_control_units": 5,
+   "recall_strict_exact_viewport": 0.264,
+   "lost_strict": [
+    "game-desktop:D-01",
+    "game-desktop:D-02",
+    "game-desktop:D-04",
+    "game-desktop:D-09",
+    "game-desktop:D-12",
+    "game-desktop:D-14",
+    "game-desktop:D-15",
+    "game-desktop:D-16",
+    "heldout-mixed:D-01",
+    "heldout-mixed:D-02",
+    "heldout-mixed:D-03",
+    "heldout-mixed:D-04",
+    "heldout-mixed:D-05",
+    "heldout-mixed:D-06",
+    "heldout-mixed:D-07",
+    "heldout-mixed:D-08",
+    "heldout-mixed:D-10",
+    "heldout-mixed:D-12",
+    "heldout-mixed:D-13",
+    "heldout-mixed:D-14",
+    "heldout-mixed:D-16",
+    "heldout-mixed:D-17",
+    "heldout-mixed:D-19",
+    "mobile-commerce:D-01",
+    "mobile-commerce:D-04",
+    "mobile-commerce:D-07",
+    "mobile-commerce:D-08",
+    "mobile-commerce:D-09",
+    "mobile-commerce:D-10",
+    "mobile-commerce:D-14",
+    "mobile-commerce:D-15",
+    "mobile-commerce:D-16"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.0,
+   "delta_findings": -142,
+   "delta_clean": -47,
+   "delta_decoys": -2,
+   "delta_unlabeled": -42,
+   "delta_elements_flagged": -98,
+   "delta_clean_elements_flagged": -37,
+   "delta_units": -70,
+   "delta_clean_units": -21
+  },
+  "pool": {
+   "variant": "full OFAT pool",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 1,
+   "delta_clean": 1,
+   "delta_decoys": 0,
+   "delta_unlabeled": -6,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -1,
+   "delta_clean_units": 1
+  },
+  "pool_plus_swarm": {
+   "variant": "pool + swarm",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 1,
+   "delta_clean": 1,
+   "delta_decoys": 0,
+   "delta_unlabeled": -6,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -1,
+   "delta_clean_units": 1
+  }
+ },
+ "attribution": {
+  "mobile-commerce:D-01": {
+   "checks": [
+    "PT-03"
+   ],
+   "category": "pointing",
+   "profile_condition": {}
+  },
+  "mobile-commerce:D-02": {
+   "checks": [
+    "PT-01",
+    "PT-02",
+    "PT-04"
+   ],
+   "category": "pointing",
+   "profile_condition": {}
+  },
+  "mobile-commerce:D-03": {
+   "checks": [
+    "PC-01",
+    "PC-04"
+   ],
+   "category": "perception",
+   "profile_condition": {}
+  },
+  "mobile-commerce:D-04": {
+   "checks": [
+    "CG-01"
+   ],
+   "category": "cognition",
+   "profile_condition": {}
+  },
+  "mobile-commerce:D-05": {
+   "checks": [
+    "CG-03"
+   ],
+   "category": "cognition",
+   "profile_condition": {}
+  },
+  "mobile-commerce:D-07": {
+   "checks": [
+    "PT-02",
+    "PT-04"
+   ],
+   "category": "pointing",
+   "profile_condition": {
+    "context": {
+     "mobility": "walking"
+    }
+   }
+  },
+  "mobile-commerce:D-08": {
+   "checks": [
+    "PC-04"
+   ],
+   "category": "perception",
+   "profile_condition": {
+    "vision": {
+     "presbyopia": true
+    }
+   }
+  },
+  "mobile-commerce:D-09": {
+   "checks": [
+    "GZ-02"
+   ],
+   "category": "gaze",
+   "profile_condition": {}
+  },
+  "mobile-commerce:D-10": {
+   "checks": [
+    "RH-01"
+   ],
+   "category": "reach",
+   "profile_condition": {
+    "grip": "one_hand_right"
+   }
+  },
+  "mobile-commerce:D-12": {
+   "checks": [
+    "PT-01",
+    "PT-02"
+   ],
+   "category": "pointing",
+   "profile_condition": {}
+  },
+  "mobile-commerce:D-14": {
+   "checks": [
+    "PC-03"
+   ],
+   "category": "perception",
+   "profile_condition": {
+    "vision": {
+     "cvd": "deutan"
+    }
+   }
+  },
+  "mobile-commerce:D-15": {
+   "checks": [
+    "GZ-02"
+   ],
+   "category": "gaze",
+   "profile_condition": {}
+  },
+  "mobile-commerce:D-16": {
+   "checks": [
+    "CG-02"
+   ],
+   "category": "cognition",
+   "profile_condition": {}
+  },
+  "mobile-commerce:D-17": {
+   "checks": [
+    "PC-01"
+   ],
+   "category": "perception",
+   "profile_condition": {}
+  },
+  "game-desktop:D-01": {
+   "checks": [
+    "GM-02"
+   ],
+   "category": "reach",
+   "profile_condition": {
+    "grip": "two_thumbs"
+   }
+  },
+  "game-desktop:D-02": {
+   "checks": [
+    "GM-02"
+   ],
+   "category": "reach",
+   "profile_condition": {
+    "grip": "two_thumbs"
+   }
+  },
+  "game-desktop:D-03": {
+   "checks": [
+    "GM-04",
+    "GM-05"
+   ],
+   "category": "game",
+   "profile_condition": {}
+  },
+  "game-desktop:D-04": {
+   "checks": [
+    "GM-01"
+   ],
+   "category": "perception",
+   "profile_condition": {}
+  },
+  "game-desktop:D-05": {
+   "checks": [
+    "PC-01"
+   ],
+   "category": "perception",
+   "profile_condition": {}
+  },
+  "game-desktop:D-06": {
+   "checks": [
+    "GM-03",
+    "GM-04"
+   ],
+   "category": "game",
+   "profile_condition": {}
+  },
+  "game-desktop:D-07": {
+   "checks": [
+    "GM-04"
+   ],
+   "category": "game",
+   "profile_condition": {}
+  },
+  "game-desktop:D-08": {
+   "checks": [
+    "GM-04"
+   ],
+   "category": "game",
+   "profile_condition": {}
+  },
+  "game-desktop:D-09": {
+   "checks": [
+    "PC-03"
+   ],
+   "category": "perception",
+   "profile_condition": {
+    "vision": {
+     "cvd": "deutan"
+    }
+   }
+  },
+  "game-desktop:D-10": {
+   "checks": [
+    "PT-01"
+   ],
+   "category": "pointing",
+   "profile_condition": {}
+  },
+  "game-desktop:D-11": {
+   "checks": [
+    "PT-06"
+   ],
+   "category": "pointing",
+   "profile_condition": {}
+  },
+  "game-desktop:D-12": {
+   "checks": [
+    "GZ-03"
+   ],
+   "category": "gaze",
+   "profile_condition": {}
+  },
+  "game-desktop:D-13": {
+   "checks": [
+    "PC-02"
+   ],
+   "category": "perception",
+   "profile_condition": {}
+  },
+  "game-desktop:D-14": {
+   "checks": [
+    "GZ-02"
+   ],
+   "category": "gaze",
+   "profile_condition": {}
+  },
+  "game-desktop:D-15": {
+   "checks": [
+    "PC-04"
+   ],
+   "category": "perception",
+   "profile_condition": {
+    "vision": {
+     "presbyopia": true
+    }
+   }
+  },
+  "game-desktop:D-16": {
+   "checks": [
+    "CG-02"
+   ],
+   "category": "cognition",
+   "profile_condition": {}
+  },
+  "heldout-mixed:D-01": {
+   "checks": [
+    "RH-01"
+   ],
+   "category": "reach",
+   "profile_condition": {
+    "grip": "one_hand_left"
+   }
+  },
+  "heldout-mixed:D-02": {
+   "checks": [
+    "RH-01"
+   ],
+   "category": "reach",
+   "profile_condition": {
+    "grip": "one_hand_right"
+   }
+  },
+  "heldout-mixed:D-03": {
+   "checks": [
+    "PT-02"
+   ],
+   "category": "pointing",
+   "profile_condition": {
+    "context.mobility": "walking"
+   }
+  },
+  "heldout-mixed:D-04": {
+   "checks": [
+    "GZ-02"
+   ],
+   "category": "gaze",
+   "profile_condition": {}
+  },
+  "heldout-mixed:D-05": {
+   "checks": [
+    "CG-02"
+   ],
+   "category": "cognition",
+   "profile_condition": {}
+  },
+  "heldout-mixed:D-06": {
+   "checks": [
+    "PC-03"
+   ],
+   "category": "perception",
+   "profile_condition": {
+    "vision.cvd": [
+     "deutan",
+     "protan"
+    ]
+   }
+  },
+  "heldout-mixed:D-07": {
+   "checks": [
+    "RH-01"
+   ],
+   "category": "reach",
+   "profile_condition": {
+    "grip": "two_thumbs"
+   }
+  },
+  "heldout-mixed:D-08": {
+   "checks": [
+    "PC-04"
+   ],
+   "category": "perception",
+   "profile_condition": {
+    "vision.presbyopia": true
+   }
+  },
+  "heldout-mixed:D-10": {
+   "checks": [
+    "CG-02"
+   ],
+   "category": "cognition",
+   "profile_condition": {
+    "age_band": [
+     "60s",
+     "70s+"
+    ]
+   }
+  },
+  "heldout-mixed:D-11": {
+   "checks": [
+    "PT-02",
+    "PT-04"
+   ],
+   "category": "pointing",
+   "profile_condition": {}
+  },
+  "heldout-mixed:D-12": {
+   "checks": [
+    "GM-03"
+   ],
+   "category": "game",
+   "profile_condition": {}
+  },
+  "heldout-mixed:D-13": {
+   "checks": [
+    "PT-04"
+   ],
+   "category": "pointing",
+   "profile_condition": {}
+  },
+  "heldout-mixed:D-14": {
+   "checks": [
+    "RH-01"
+   ],
+   "category": "reach",
+   "profile_condition": {
+    "grip": "one_hand_left"
+   }
+  },
+  "heldout-mixed:D-15": {
+   "checks": [
+    "PC-01"
+   ],
+   "category": "perception",
+   "profile_condition": {}
+  },
+  "heldout-mixed:D-16": {
+   "checks": [
+    "GZ-02"
+   ],
+   "category": "gaze",
+   "profile_condition": {}
+  },
+  "heldout-mixed:D-17": {
+   "checks": [
+    "CG-02"
+   ],
+   "category": "cognition",
+   "profile_condition": {}
+  },
+  "heldout-mixed:D-18": {
+   "checks": [
+    "PC-01",
+    "PC-04"
+   ],
+   "category": "perception",
+   "profile_condition": {}
+  },
+  "heldout-mixed:D-19": {
+   "checks": [
+    "PC-03"
+   ],
+   "category": "perception",
+   "profile_condition": {
+    "vision.cvd": [
+     "deutan",
+     "protan"
+    ]
+   }
+  }
+ },
+ "check_leave_one_out": [
+  {
+   "variant": "without CG-01",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.925,
+   "severity_agreement": 0.792,
+   "findings": 190,
+   "clean_control_findings": 52,
+   "decoys_flagged": 2,
+   "unlabeled": 55,
+   "elements_flagged": 143,
+   "clean_elements_flagged": 42,
+   "units": 94,
+   "clean_control_units": 25,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "mobile-commerce:D-04"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -3,
+   "delta_clean": -1,
+   "delta_decoys": 0,
+   "delta_unlabeled": -1,
+   "delta_elements_flagged": -3,
+   "delta_clean_elements_flagged": -1,
+   "delta_units": -3,
+   "delta_clean_units": -1,
+   "check_id": "CG-01",
+   "category": "cognition",
+   "basis": "model",
+   "alone_strict": [
+    "mobile-commerce:D-04"
+   ],
+   "alone_findings": 3,
+   "alone_clean": 1,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 1
+   },
+   "alone_unlabeled": 1,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without CG-02",
+   "recall_strict": 0.811,
+   "recall_strict_ci95": [
+    0.686,
+    0.894
+   ],
+   "recall_lenient": 0.925,
+   "severity_agreement": 0.717,
+   "findings": 187,
+   "clean_control_findings": 52,
+   "decoys_flagged": 2,
+   "unlabeled": 52,
+   "elements_flagged": 140,
+   "clean_elements_flagged": 42,
+   "units": 91,
+   "clean_control_units": 25,
+   "recall_strict_exact_viewport": 0.792,
+   "lost_strict": [
+    "game-desktop:D-16",
+    "heldout-mixed:D-05",
+    "heldout-mixed:D-10",
+    "heldout-mixed:D-17",
+    "mobile-commerce:D-16"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.0625,
+   "delta_findings": -6,
+   "delta_clean": -1,
+   "delta_decoys": 0,
+   "delta_unlabeled": -4,
+   "delta_elements_flagged": -6,
+   "delta_clean_elements_flagged": -1,
+   "delta_units": -6,
+   "delta_clean_units": -1,
+   "check_id": "CG-02",
+   "category": "cognition",
+   "basis": "model",
+   "alone_strict": [
+    "game-desktop:D-16",
+    "heldout-mixed:D-05",
+    "heldout-mixed:D-10",
+    "heldout-mixed:D-17",
+    "mobile-commerce:D-16"
+   ],
+   "alone_findings": 6,
+   "alone_clean": 1,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 1,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without CG-03",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.792,
+   "findings": 190,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 54,
+   "elements_flagged": 144,
+   "clean_elements_flagged": 43,
+   "units": 94,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "mobile-commerce:D-05"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -3,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": -2,
+   "delta_elements_flagged": -2,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -3,
+   "delta_clean_units": 0,
+   "check_id": "CG-03",
+   "category": "cognition",
+   "basis": "measured",
+   "alone_strict": [
+    "mobile-commerce:D-05"
+   ],
+   "alone_findings": 3,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without GM-01",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.792,
+   "findings": 192,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 145,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "game-desktop:D-04"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -1,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -1,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -1,
+   "delta_clean_units": 0,
+   "check_id": "GM-01",
+   "category": "perception",
+   "basis": "model",
+   "alone_strict": [
+    "game-desktop:D-04"
+   ],
+   "alone_findings": 1,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without GM-02",
+   "recall_strict": 0.868,
+   "recall_strict_ci95": [
+    0.752,
+    0.935
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.774,
+   "findings": 191,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 144,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.849,
+   "lost_strict": [
+    "game-desktop:D-01",
+    "game-desktop:D-02"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.5,
+   "delta_findings": -2,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -2,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -1,
+   "delta_clean_units": 0,
+   "check_id": "GM-02",
+   "category": "reach",
+   "basis": "model",
+   "alone_strict": [
+    "game-desktop:D-01",
+    "game-desktop:D-02"
+   ],
+   "alone_findings": 2,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without GM-03",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.925,
+   "severity_agreement": 0.792,
+   "findings": 191,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 144,
+   "clean_elements_flagged": 43,
+   "units": 95,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.849,
+   "lost_strict": [
+    "heldout-mixed:D-12"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -2,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -2,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -2,
+   "delta_clean_units": 0,
+   "check_id": "GM-03",
+   "category": "game",
+   "basis": "model",
+   "alone_strict": [
+    "game-desktop:D-06",
+    "heldout-mixed:D-12"
+   ],
+   "alone_findings": 2,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without GM-04",
+   "recall_strict": 0.868,
+   "recall_strict_ci95": [
+    0.752,
+    0.935
+   ],
+   "recall_lenient": 0.906,
+   "severity_agreement": 0.774,
+   "findings": 191,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 144,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "game-desktop:D-07",
+    "game-desktop:D-08"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.5,
+   "delta_findings": -2,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -2,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -1,
+   "delta_clean_units": 0,
+   "check_id": "GM-04",
+   "category": "game",
+   "basis": "measured",
+   "alone_strict": [
+    "game-desktop:D-03",
+    "game-desktop:D-06",
+    "game-desktop:D-07",
+    "game-desktop:D-08"
+   ],
+   "alone_findings": 2,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without GM-05",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 189,
+   "clean_control_findings": 52,
+   "decoys_flagged": 2,
+   "unlabeled": 54,
+   "elements_flagged": 145,
+   "clean_elements_flagged": 43,
+   "units": 94,
+   "clean_control_units": 25,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -4,
+   "delta_clean": -1,
+   "delta_decoys": 0,
+   "delta_unlabeled": -2,
+   "delta_elements_flagged": -1,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -3,
+   "delta_clean_units": -1,
+   "check_id": "GM-05",
+   "category": "game",
+   "basis": "measured",
+   "alone_strict": [
+    "game-desktop:D-03"
+   ],
+   "alone_findings": 4,
+   "alone_clean": 1,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 1
+   },
+   "alone_unlabeled": 1,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without GM-06",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "check_id": "GM-06",
+   "category": "game",
+   "basis": "measured",
+   "alone_strict": [],
+   "alone_findings": 0,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without GZ-01",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "check_id": "GZ-01",
+   "category": "gaze",
+   "basis": "model",
+   "alone_strict": [],
+   "alone_findings": 0,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without GZ-02",
+   "recall_strict": 0.811,
+   "recall_strict_ci95": [
+    0.686,
+    0.894
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.736,
+   "findings": 188,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 51,
+   "elements_flagged": 145,
+   "clean_elements_flagged": 43,
+   "units": 92,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.792,
+   "lost_strict": [
+    "game-desktop:D-14",
+    "heldout-mixed:D-04",
+    "heldout-mixed:D-16",
+    "mobile-commerce:D-09",
+    "mobile-commerce:D-15"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.0625,
+   "delta_findings": -5,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": -5,
+   "delta_elements_flagged": -1,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -5,
+   "delta_clean_units": 0,
+   "check_id": "GZ-02",
+   "category": "gaze",
+   "basis": "model",
+   "alone_strict": [
+    "game-desktop:D-14",
+    "heldout-mixed:D-04",
+    "heldout-mixed:D-16",
+    "mobile-commerce:D-09",
+    "mobile-commerce:D-15"
+   ],
+   "alone_findings": 5,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without GZ-03",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 192,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 54,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "game-desktop:D-12"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -1,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": -2,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -1,
+   "delta_clean_units": 0,
+   "check_id": "GZ-03",
+   "category": "gaze",
+   "basis": "model",
+   "alone_strict": [
+    "game-desktop:D-12"
+   ],
+   "alone_findings": 1,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without GZ-04",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "check_id": "GZ-04",
+   "category": "gaze",
+   "basis": "model",
+   "alone_strict": [],
+   "alone_findings": 0,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without PC-01",
+   "recall_strict": 0.849,
+   "recall_strict_ci95": [
+    0.729,
+    0.921
+   ],
+   "recall_lenient": 0.906,
+   "severity_agreement": 0.736,
+   "findings": 187,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 142,
+   "clean_elements_flagged": 43,
+   "units": 92,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.83,
+   "lost_strict": [
+    "game-desktop:D-05",
+    "heldout-mixed:D-15",
+    "mobile-commerce:D-17"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.25,
+   "delta_findings": -6,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -4,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -5,
+   "delta_clean_units": 0,
+   "check_id": "PC-01",
+   "category": "perception",
+   "basis": "measured",
+   "alone_strict": [
+    "game-desktop:D-05",
+    "heldout-mixed:D-15",
+    "heldout-mixed:D-18",
+    "mobile-commerce:D-03",
+    "mobile-commerce:D-17"
+   ],
+   "alone_findings": 6,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without PC-02",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.925,
+   "severity_agreement": 0.792,
+   "findings": 190,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 143,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "game-desktop:D-13"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -3,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -3,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -1,
+   "delta_clean_units": 0,
+   "check_id": "PC-02",
+   "category": "perception",
+   "basis": "measured",
+   "alone_strict": [
+    "game-desktop:D-13"
+   ],
+   "alone_findings": 3,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without PC-03",
+   "recall_strict": 0.83,
+   "recall_strict_ci95": [
+    0.708,
+    0.908
+   ],
+   "recall_lenient": 0.906,
+   "severity_agreement": 0.736,
+   "findings": 180,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 55,
+   "elements_flagged": 134,
+   "clean_elements_flagged": 43,
+   "units": 93,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.811,
+   "lost_strict": [
+    "game-desktop:D-09",
+    "heldout-mixed:D-06",
+    "heldout-mixed:D-19",
+    "mobile-commerce:D-14"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.125,
+   "delta_findings": -13,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": -1,
+   "delta_elements_flagged": -12,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -4,
+   "delta_clean_units": 0,
+   "check_id": "PC-03",
+   "category": "perception",
+   "basis": "model",
+   "alone_strict": [
+    "game-desktop:D-09",
+    "heldout-mixed:D-06",
+    "heldout-mixed:D-19",
+    "mobile-commerce:D-14"
+   ],
+   "alone_findings": 13,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without PC-04",
+   "recall_strict": 0.849,
+   "recall_strict_ci95": [
+    0.729,
+    0.921
+   ],
+   "recall_lenient": 0.887,
+   "severity_agreement": 0.774,
+   "findings": 135,
+   "clean_control_findings": 25,
+   "decoys_flagged": 1,
+   "unlabeled": 31,
+   "elements_flagged": 95,
+   "clean_elements_flagged": 15,
+   "units": 82,
+   "clean_control_units": 20,
+   "recall_strict_exact_viewport": 0.83,
+   "lost_strict": [
+    "game-desktop:D-15",
+    "heldout-mixed:D-08",
+    "mobile-commerce:D-08"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.25,
+   "delta_findings": -58,
+   "delta_clean": -28,
+   "delta_decoys": -1,
+   "delta_unlabeled": -25,
+   "delta_elements_flagged": -51,
+   "delta_clean_elements_flagged": -28,
+   "delta_units": -15,
+   "delta_clean_units": -6,
+   "check_id": "PC-04",
+   "category": "perception",
+   "basis": "model",
+   "alone_strict": [
+    "game-desktop:D-15",
+    "heldout-mixed:D-08",
+    "heldout-mixed:D-18",
+    "mobile-commerce:D-03",
+    "mobile-commerce:D-08"
+   ],
+   "alone_findings": 58,
+   "alone_clean": 28,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 28
+   },
+   "alone_unlabeled": 15,
+   "alone_decoys": 1
+  },
+  {
+   "variant": "without PC-05",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "check_id": "PC-05",
+   "category": "perception",
+   "basis": "model",
+   "alone_strict": [],
+   "alone_findings": 0,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without PT-01",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.925,
+   "severity_agreement": 0.792,
+   "findings": 185,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 55,
+   "elements_flagged": 140,
+   "clean_elements_flagged": 43,
+   "units": 94,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "game-desktop:D-10"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -8,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": -1,
+   "delta_elements_flagged": -6,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -3,
+   "delta_clean_units": 0,
+   "check_id": "PT-01",
+   "category": "pointing",
+   "basis": "measured",
+   "alone_strict": [
+    "game-desktop:D-10",
+    "mobile-commerce:D-02",
+    "mobile-commerce:D-12"
+   ],
+   "alone_findings": 8,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 1,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without PT-02",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.906,
+   "severity_agreement": 0.792,
+   "findings": 169,
+   "clean_control_findings": 48,
+   "decoys_flagged": 2,
+   "unlabeled": 51,
+   "elements_flagged": 144,
+   "clean_elements_flagged": 42,
+   "units": 87,
+   "clean_control_units": 22,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "heldout-mixed:D-03"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -24,
+   "delta_clean": -5,
+   "delta_decoys": 0,
+   "delta_unlabeled": -5,
+   "delta_elements_flagged": -2,
+   "delta_clean_elements_flagged": -1,
+   "delta_units": -10,
+   "delta_clean_units": -4,
+   "check_id": "PT-02",
+   "category": "pointing",
+   "basis": "measured",
+   "alone_strict": [
+    "heldout-mixed:D-03",
+    "heldout-mixed:D-11",
+    "mobile-commerce:D-02",
+    "mobile-commerce:D-07",
+    "mobile-commerce:D-12"
+   ],
+   "alone_findings": 24,
+   "alone_clean": 5,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 5
+   },
+   "alone_unlabeled": 2,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without PT-03",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.925,
+   "severity_agreement": 0.811,
+   "findings": 192,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 145,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "mobile-commerce:D-01"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -1,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -1,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -1,
+   "delta_clean_units": 0,
+   "check_id": "PT-03",
+   "category": "pointing",
+   "basis": "model",
+   "alone_strict": [
+    "mobile-commerce:D-01"
+   ],
+   "alone_findings": 1,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without PT-04",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.792,
+   "findings": 168,
+   "clean_control_findings": 47,
+   "decoys_flagged": 2,
+   "unlabeled": 42,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 83,
+   "clean_control_units": 20,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "heldout-mixed:D-13"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -25,
+   "delta_clean": -6,
+   "delta_decoys": 0,
+   "delta_unlabeled": -14,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -14,
+   "delta_clean_units": -6,
+   "check_id": "PT-04",
+   "category": "pointing",
+   "basis": "model",
+   "alone_strict": [
+    "heldout-mixed:D-11",
+    "heldout-mixed:D-13",
+    "mobile-commerce:D-02",
+    "mobile-commerce:D-07"
+   ],
+   "alone_findings": 25,
+   "alone_clean": 6,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 4,
+    "P3": 2
+   },
+   "alone_unlabeled": 10,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without PT-05",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "check_id": "PT-05",
+   "category": "pointing",
+   "basis": "model",
+   "alone_strict": [],
+   "alone_findings": 0,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without PT-06",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.925,
+   "severity_agreement": 0.792,
+   "findings": 192,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 145,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "game-desktop:D-11"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -1,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -1,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -1,
+   "delta_clean_units": 0,
+   "check_id": "PT-06",
+   "category": "pointing",
+   "basis": "measured",
+   "alone_strict": [
+    "game-desktop:D-11"
+   ],
+   "alone_findings": 1,
+   "alone_clean": 0,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 0,
+    "P3": 0
+   },
+   "alone_unlabeled": 0,
+   "alone_decoys": 0
+  },
+  {
+   "variant": "without RH-01",
+   "recall_strict": 0.811,
+   "recall_strict_ci95": [
+    0.686,
+    0.894
+   ],
+   "recall_lenient": 0.906,
+   "severity_agreement": 0.736,
+   "findings": 168,
+   "clean_control_findings": 42,
+   "decoys_flagged": 1,
+   "unlabeled": 42,
+   "elements_flagged": 134,
+   "clean_elements_flagged": 37,
+   "units": 80,
+   "clean_control_units": 19,
+   "recall_strict_exact_viewport": 0.792,
+   "lost_strict": [
+    "heldout-mixed:D-01",
+    "heldout-mixed:D-02",
+    "heldout-mixed:D-07",
+    "heldout-mixed:D-14",
+    "mobile-commerce:D-10"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.0625,
+   "delta_findings": -25,
+   "delta_clean": -11,
+   "delta_decoys": -1,
+   "delta_unlabeled": -14,
+   "delta_elements_flagged": -12,
+   "delta_clean_elements_flagged": -6,
+   "delta_units": -17,
+   "delta_clean_units": -7,
+   "check_id": "RH-01",
+   "category": "reach",
+   "basis": "model",
+   "alone_strict": [
+    "heldout-mixed:D-01",
+    "heldout-mixed:D-02",
+    "heldout-mixed:D-07",
+    "heldout-mixed:D-14",
+    "mobile-commerce:D-10"
+   ],
+   "alone_findings": 25,
+   "alone_clean": 11,
+   "alone_clean_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 3,
+    "P3": 8
+   },
+   "alone_unlabeled": 7,
+   "alone_decoys": 1
+  }
+ ],
+ "category_leave_one_out": [
+  {
+   "variant": "without category cognition",
+   "recall_strict": 0.774,
+   "recall_strict_ci95": [
+    0.645,
+    0.865
+   ],
+   "recall_lenient": 0.906,
+   "severity_agreement": 0.679,
+   "findings": 181,
+   "clean_control_findings": 51,
+   "decoys_flagged": 2,
+   "unlabeled": 49,
+   "elements_flagged": 135,
+   "clean_elements_flagged": 41,
+   "units": 85,
+   "clean_control_units": 24,
+   "recall_strict_exact_viewport": 0.755,
+   "lost_strict": [
+    "game-desktop:D-16",
+    "heldout-mixed:D-05",
+    "heldout-mixed:D-10",
+    "heldout-mixed:D-17",
+    "mobile-commerce:D-04",
+    "mobile-commerce:D-05",
+    "mobile-commerce:D-16"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.0156,
+   "delta_findings": -12,
+   "delta_clean": -2,
+   "delta_decoys": 0,
+   "delta_unlabeled": -7,
+   "delta_elements_flagged": -11,
+   "delta_clean_elements_flagged": -2,
+   "delta_units": -12,
+   "delta_clean_units": -2
+  },
+  {
+   "variant": "without category game",
+   "recall_strict": 0.811,
+   "recall_strict_ci95": [
+    0.686,
+    0.894
+   ],
+   "recall_lenient": 0.868,
+   "severity_agreement": 0.717,
+   "findings": 185,
+   "clean_control_findings": 52,
+   "decoys_flagged": 2,
+   "unlabeled": 53,
+   "elements_flagged": 141,
+   "clean_elements_flagged": 43,
+   "units": 91,
+   "clean_control_units": 25,
+   "recall_strict_exact_viewport": 0.811,
+   "lost_strict": [
+    "game-desktop:D-03",
+    "game-desktop:D-06",
+    "game-desktop:D-07",
+    "game-desktop:D-08",
+    "heldout-mixed:D-12"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.0625,
+   "delta_findings": -8,
+   "delta_clean": -1,
+   "delta_decoys": 0,
+   "delta_unlabeled": -3,
+   "delta_elements_flagged": -5,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -6,
+   "delta_clean_units": -1
+  },
+  {
+   "variant": "without category gaze",
+   "recall_strict": 0.792,
+   "recall_strict_ci95": [
+    0.665,
+    0.88
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.736,
+   "findings": 187,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 49,
+   "elements_flagged": 145,
+   "clean_elements_flagged": 43,
+   "units": 91,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.774,
+   "lost_strict": [
+    "game-desktop:D-12",
+    "game-desktop:D-14",
+    "heldout-mixed:D-04",
+    "heldout-mixed:D-16",
+    "mobile-commerce:D-09",
+    "mobile-commerce:D-15"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.0312,
+   "delta_findings": -6,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": -7,
+   "delta_elements_flagged": -1,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -6,
+   "delta_clean_units": 0
+  },
+  {
+   "variant": "without category perception",
+   "recall_strict": 0.642,
+   "recall_strict_ci95": [
+    0.507,
+    0.757
+   ],
+   "recall_lenient": 0.755,
+   "severity_agreement": 0.566,
+   "findings": 112,
+   "clean_control_findings": 25,
+   "decoys_flagged": 1,
+   "unlabeled": 30,
+   "elements_flagged": 73,
+   "clean_elements_flagged": 15,
+   "units": 71,
+   "clean_control_units": 20,
+   "recall_strict_exact_viewport": 0.623,
+   "lost_strict": [
+    "game-desktop:D-04",
+    "game-desktop:D-05",
+    "game-desktop:D-09",
+    "game-desktop:D-13",
+    "game-desktop:D-15",
+    "heldout-mixed:D-06",
+    "heldout-mixed:D-08",
+    "heldout-mixed:D-15",
+    "heldout-mixed:D-18",
+    "heldout-mixed:D-19",
+    "mobile-commerce:D-03",
+    "mobile-commerce:D-08",
+    "mobile-commerce:D-14",
+    "mobile-commerce:D-17"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.0001,
+   "delta_findings": -81,
+   "delta_clean": -28,
+   "delta_decoys": -1,
+   "delta_unlabeled": -26,
+   "delta_elements_flagged": -73,
+   "delta_clean_elements_flagged": -28,
+   "delta_units": -26,
+   "delta_clean_units": -6
+  },
+  {
+   "variant": "without category pointing",
+   "recall_strict": 0.736,
+   "recall_strict_ci95": [
+    0.604,
+    0.836
+   ],
+   "recall_lenient": 0.792,
+   "severity_agreement": 0.66,
+   "findings": 134,
+   "clean_control_findings": 42,
+   "decoys_flagged": 2,
+   "unlabeled": 35,
+   "elements_flagged": 125,
+   "clean_elements_flagged": 42,
+   "units": 68,
+   "clean_control_units": 16,
+   "recall_strict_exact_viewport": 0.717,
+   "lost_strict": [
+    "game-desktop:D-10",
+    "game-desktop:D-11",
+    "heldout-mixed:D-03",
+    "heldout-mixed:D-11",
+    "heldout-mixed:D-13",
+    "mobile-commerce:D-01",
+    "mobile-commerce:D-02",
+    "mobile-commerce:D-07",
+    "mobile-commerce:D-12"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.0039,
+   "delta_findings": -59,
+   "delta_clean": -11,
+   "delta_decoys": 0,
+   "delta_unlabeled": -21,
+   "delta_elements_flagged": -21,
+   "delta_clean_elements_flagged": -1,
+   "delta_units": -29,
+   "delta_clean_units": -10
+  },
+  {
+   "variant": "without category reach",
+   "recall_strict": 0.774,
+   "recall_strict_ci95": [
+    0.645,
+    0.865
+   ],
+   "recall_lenient": 0.906,
+   "severity_agreement": 0.698,
+   "findings": 166,
+   "clean_control_findings": 42,
+   "decoys_flagged": 1,
+   "unlabeled": 42,
+   "elements_flagged": 132,
+   "clean_elements_flagged": 37,
+   "units": 79,
+   "clean_control_units": 19,
+   "recall_strict_exact_viewport": 0.755,
+   "lost_strict": [
+    "game-desktop:D-01",
+    "game-desktop:D-02",
+    "heldout-mixed:D-01",
+    "heldout-mixed:D-02",
+    "heldout-mixed:D-07",
+    "heldout-mixed:D-14",
+    "mobile-commerce:D-10"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.0156,
+   "delta_findings": -27,
+   "delta_clean": -11,
+   "delta_decoys": -1,
+   "delta_unlabeled": -14,
+   "delta_elements_flagged": -14,
+   "delta_clean_elements_flagged": -6,
+   "delta_units": -18,
+   "delta_clean_units": -7
+  }
+ ],
+ "condition_leave_one_out": [
+  {
+   "variant": "pool without age_20s",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "age_20s"
+  },
+  {
+   "variant": "pool without age_50s",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "age_50s"
+  },
+  {
+   "variant": "pool without presbyopia_60s",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "presbyopia_60s"
+  },
+  {
+   "variant": "pool without age_70s_plus",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "age_70s_plus"
+  },
+  {
+   "variant": "pool without cvd_deutan",
+   "recall_strict": 0.83,
+   "recall_strict_ci95": [
+    0.708,
+    0.908
+   ],
+   "recall_lenient": 0.868,
+   "severity_agreement": 0.774,
+   "findings": 181,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 134,
+   "clean_elements_flagged": 43,
+   "units": 92,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.811,
+   "lost_strict": [
+    "game-desktop:D-09",
+    "heldout-mixed:D-06",
+    "heldout-mixed:D-19",
+    "mobile-commerce:D-14"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.125,
+   "delta_findings": -13,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -12,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -4,
+   "delta_clean_units": 0,
+   "condition": "cvd_deutan"
+  },
+  {
+   "variant": "pool without cvd_protan",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "cvd_protan"
+  },
+  {
+   "variant": "pool without cvd_tritan",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "cvd_tritan"
+  },
+  {
+   "variant": "pool without tremor_mild",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "tremor_mild"
+  },
+  {
+   "variant": "pool without tremor_moderate",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.83,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 95,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -1,
+   "delta_clean": -1,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -1,
+   "delta_clean_units": -1,
+   "condition": "tremor_moderate"
+  },
+  {
+   "variant": "pool without walking",
+   "recall_strict": 0.868,
+   "recall_strict_ci95": [
+    0.752,
+    0.935
+   ],
+   "recall_lenient": 0.906,
+   "severity_agreement": 0.811,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 66,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.849,
+   "lost_strict": [
+    "heldout-mixed:D-03",
+    "mobile-commerce:D-07"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.5,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 16,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "walking"
+  },
+  {
+   "variant": "pool without transit",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "transit"
+  },
+  {
+   "variant": "pool without bright_sun",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "bright_sun"
+  },
+  {
+   "variant": "pool without dark",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "dark"
+  },
+  {
+   "variant": "pool without first_use",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "first_use"
+  },
+  {
+   "variant": "pool without small_hand",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 186,
+   "clean_control_findings": 50,
+   "decoys_flagged": 2,
+   "unlabeled": 47,
+   "elements_flagged": 142,
+   "clean_elements_flagged": 41,
+   "units": 93,
+   "clean_control_units": 25,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -8,
+   "delta_clean": -4,
+   "delta_decoys": 0,
+   "delta_unlabeled": -3,
+   "delta_elements_flagged": -4,
+   "delta_clean_elements_flagged": -2,
+   "delta_units": -3,
+   "delta_clean_units": -2,
+   "condition": "small_hand"
+  },
+  {
+   "variant": "pool without large_hand",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 100,
+   "clean_control_units": 28,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 4,
+   "delta_clean_units": 1,
+   "condition": "large_hand"
+  },
+  {
+   "variant": "pool without grip cradle_right",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 98,
+   "clean_control_units": 28,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 6,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 2,
+   "delta_clean_units": 1,
+   "grip": "cradle_right"
+  },
+  {
+   "variant": "pool without grip keyboard_only",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "grip": "keyboard_only"
+  },
+  {
+   "variant": "pool without grip mouse_left",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "grip": "mouse_left"
+  },
+  {
+   "variant": "pool without grip mouse_right",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "grip": "mouse_right"
+  },
+  {
+   "variant": "pool without grip one_hand_left",
+   "recall_strict": 0.868,
+   "recall_strict_ci95": [
+    0.752,
+    0.935
+   ],
+   "recall_lenient": 0.906,
+   "severity_agreement": 0.811,
+   "findings": 186,
+   "clean_control_findings": 51,
+   "decoys_flagged": 2,
+   "unlabeled": 48,
+   "elements_flagged": 143,
+   "clean_elements_flagged": 42,
+   "units": 98,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.849,
+   "lost_strict": [
+    "heldout-mixed:D-01",
+    "heldout-mixed:D-14"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.5,
+   "delta_findings": -8,
+   "delta_clean": -3,
+   "delta_decoys": 0,
+   "delta_unlabeled": -2,
+   "delta_elements_flagged": -3,
+   "delta_clean_elements_flagged": -1,
+   "delta_units": 2,
+   "delta_clean_units": -1,
+   "grip": "one_hand_left"
+  },
+  {
+   "variant": "pool without grip one_hand_right",
+   "recall_strict": 0.868,
+   "recall_strict_ci95": [
+    0.752,
+    0.935
+   ],
+   "recall_lenient": 0.887,
+   "severity_agreement": 0.811,
+   "findings": 191,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 51,
+   "elements_flagged": 144,
+   "clean_elements_flagged": 42,
+   "units": 99,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.849,
+   "lost_strict": [
+    "heldout-mixed:D-02",
+    "mobile-commerce:D-10"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.5,
+   "delta_findings": -3,
+   "delta_clean": -1,
+   "delta_decoys": 0,
+   "delta_unlabeled": 1,
+   "delta_elements_flagged": -2,
+   "delta_clean_elements_flagged": -1,
+   "delta_units": 3,
+   "delta_clean_units": 0,
+   "grip": "one_hand_right"
+  },
+  {
+   "variant": "pool without grip two_thumbs",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.925,
+   "severity_agreement": 0.83,
+   "findings": 189,
+   "clean_control_findings": 51,
+   "decoys_flagged": 2,
+   "unlabeled": 49,
+   "elements_flagged": 141,
+   "clean_elements_flagged": 40,
+   "units": 92,
+   "clean_control_units": 25,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "heldout-mixed:D-07"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -5,
+   "delta_clean": -3,
+   "delta_decoys": 0,
+   "delta_unlabeled": -1,
+   "delta_elements_flagged": -5,
+   "delta_clean_elements_flagged": -3,
+   "delta_units": -4,
+   "delta_clean_units": -2,
+   "grip": "two_thumbs"
+  },
+  {
+   "variant": "pool without grip two_thumbs_left",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.849,
+   "findings": 194,
+   "clean_control_findings": 54,
+   "decoys_flagged": 2,
+   "unlabeled": 50,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 27,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "grip": "two_thumbs_left"
+  }
+ ],
+ "swarm_condition_leave_one_out": [
+  {
+   "variant": "swarm without age_20s",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.925,
+   "severity_agreement": 0.792,
+   "findings": 190,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 143,
+   "clean_elements_flagged": 43,
+   "units": 96,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "heldout-mixed:D-19"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -3,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -3,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -1,
+   "delta_clean_units": 0,
+   "condition": "age_20s",
+   "profiles_removed": 12
+  },
+  {
+   "variant": "swarm without age_50s",
+   "recall_strict": 0.868,
+   "recall_strict_ci95": [
+    0.752,
+    0.935
+   ],
+   "recall_lenient": 0.906,
+   "severity_agreement": 0.774,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 66,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 98,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.849,
+   "lost_strict": [
+    "heldout-mixed:D-03",
+    "mobile-commerce:D-07"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.5,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 10,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 1,
+   "delta_clean_units": 0,
+   "condition": "age_50s",
+   "profiles_removed": 13
+  },
+  {
+   "variant": "swarm without presbyopia_60s",
+   "recall_strict": 0.887,
+   "recall_strict_ci95": [
+    0.774,
+    0.947
+   ],
+   "recall_lenient": 0.925,
+   "severity_agreement": 0.792,
+   "findings": 192,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 145,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.868,
+   "lost_strict": [
+    "game-desktop:D-09"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -1,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -1,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "presbyopia_60s",
+   "profiles_removed": 14
+  },
+  {
+   "variant": "swarm without age_70s_plus",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "age_70s_plus",
+   "profiles_removed": 13
+  },
+  {
+   "variant": "swarm without cvd_deutan",
+   "recall_strict": 0.83,
+   "recall_strict_ci95": [
+    0.708,
+    0.908
+   ],
+   "recall_lenient": 0.868,
+   "severity_agreement": 0.736,
+   "findings": 180,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 134,
+   "clean_elements_flagged": 43,
+   "units": 93,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.811,
+   "lost_strict": [
+    "game-desktop:D-09",
+    "heldout-mixed:D-06",
+    "heldout-mixed:D-19",
+    "mobile-commerce:D-14"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.125,
+   "delta_findings": -13,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": -12,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -4,
+   "delta_clean_units": 0,
+   "condition": "cvd_deutan",
+   "profiles_removed": 7
+  },
+  {
+   "variant": "swarm without cvd_protan",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "cvd_protan",
+   "profiles_removed": 0
+  },
+  {
+   "variant": "swarm without cvd_tritan",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "cvd_tritan",
+   "profiles_removed": 0
+  },
+  {
+   "variant": "swarm without tremor_mild",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "tremor_mild",
+   "profiles_removed": 7
+  },
+  {
+   "variant": "swarm without tremor_moderate",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "tremor_moderate",
+   "profiles_removed": 0
+  },
+  {
+   "variant": "swarm without walking",
+   "recall_strict": 0.868,
+   "recall_strict_ci95": [
+    0.752,
+    0.935
+   ],
+   "recall_lenient": 0.906,
+   "severity_agreement": 0.774,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 66,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.849,
+   "lost_strict": [
+    "heldout-mixed:D-03",
+    "mobile-commerce:D-07"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.5,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 10,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "walking",
+   "profiles_removed": 8
+  },
+  {
+   "variant": "swarm without transit",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "transit",
+   "profiles_removed": 1
+  },
+  {
+   "variant": "swarm without bright_sun",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "bright_sun",
+   "profiles_removed": 0
+  },
+  {
+   "variant": "swarm without dark",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "dark",
+   "profiles_removed": 0
+  },
+  {
+   "variant": "swarm without first_use",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "first_use",
+   "profiles_removed": 0
+  },
+  {
+   "variant": "swarm without small_hand",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 189,
+   "clean_control_findings": 51,
+   "decoys_flagged": 2,
+   "unlabeled": 54,
+   "elements_flagged": 144,
+   "clean_elements_flagged": 42,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -4,
+   "delta_clean": -2,
+   "delta_decoys": 0,
+   "delta_unlabeled": -2,
+   "delta_elements_flagged": -2,
+   "delta_clean_elements_flagged": -1,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "small_hand",
+   "profiles_removed": 5
+  },
+  {
+   "variant": "swarm without large_hand",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "condition": "large_hand",
+   "profiles_removed": 0
+  },
+  {
+   "variant": "swarm without grip one_hand_left",
+   "recall_strict": 0.83,
+   "recall_strict_ci95": [
+    0.708,
+    0.908
+   ],
+   "recall_lenient": 0.868,
+   "severity_agreement": 0.736,
+   "findings": 185,
+   "clean_control_findings": 50,
+   "decoys_flagged": 2,
+   "unlabeled": 64,
+   "elements_flagged": 143,
+   "clean_elements_flagged": 42,
+   "units": 100,
+   "clean_control_units": 25,
+   "recall_strict_exact_viewport": 0.811,
+   "lost_strict": [
+    "heldout-mixed:D-01",
+    "heldout-mixed:D-03",
+    "heldout-mixed:D-14",
+    "mobile-commerce:D-07"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.125,
+   "delta_findings": -8,
+   "delta_clean": -3,
+   "delta_decoys": 0,
+   "delta_unlabeled": 8,
+   "delta_elements_flagged": -3,
+   "delta_clean_elements_flagged": -1,
+   "delta_units": 3,
+   "delta_clean_units": -1,
+   "grip": "one_hand_left"
+  },
+  {
+   "variant": "swarm without grip one_hand_right",
+   "recall_strict": 0.83,
+   "recall_strict_ci95": [
+    0.708,
+    0.908
+   ],
+   "recall_lenient": 0.849,
+   "severity_agreement": 0.755,
+   "findings": 181,
+   "clean_control_findings": 52,
+   "decoys_flagged": 2,
+   "unlabeled": 57,
+   "elements_flagged": 136,
+   "clean_elements_flagged": 42,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.811,
+   "lost_strict": [
+    "heldout-mixed:D-02",
+    "heldout-mixed:D-06",
+    "mobile-commerce:D-10",
+    "mobile-commerce:D-14"
+   ],
+   "gained_strict": [],
+   "mcnemar_p": 0.125,
+   "delta_findings": -12,
+   "delta_clean": -1,
+   "delta_decoys": 0,
+   "delta_unlabeled": 1,
+   "delta_elements_flagged": -10,
+   "delta_clean_elements_flagged": -1,
+   "delta_units": 0,
+   "delta_clean_units": 0,
+   "grip": "one_hand_right"
+  }
+ ],
+ "discovery_curve": [
+  {
+   "n_per_device": 1,
+   "strategy": "random_pool",
+   "recall_mean": 0.648,
+   "recall_sd": 0.027,
+   "clean_mean": 30.4,
+   "findings_mean": 129
+  },
+  {
+   "n_per_device": 1,
+   "strategy": "stratified_pool",
+   "recall_mean": 0.642,
+   "recall_sd": 0.0,
+   "clean_mean": 33,
+   "findings_mean": 137
+  },
+  {
+   "n_per_device": 2,
+   "strategy": "random_pool",
+   "recall_mean": 0.688,
+   "recall_sd": 0.036,
+   "clean_mean": 36.3,
+   "findings_mean": 144.0
+  },
+  {
+   "n_per_device": 2,
+   "strategy": "stratified_pool",
+   "recall_mean": 0.679,
+   "recall_sd": 0.0,
+   "clean_mean": 33,
+   "findings_mean": 139
+  },
+  {
+   "n_per_device": 3,
+   "strategy": "random_pool",
+   "recall_mean": 0.703,
+   "recall_sd": 0.034,
+   "clean_mean": 39.4,
+   "findings_mean": 152.0
+  },
+  {
+   "n_per_device": 3,
+   "strategy": "stratified_pool",
+   "recall_mean": 0.717,
+   "recall_sd": 0.0,
+   "clean_mean": 36,
+   "findings_mean": 145
+  },
+  {
+   "n_per_device": 4,
+   "strategy": "random_pool",
+   "recall_mean": 0.731,
+   "recall_sd": 0.035,
+   "clean_mean": 40.2,
+   "findings_mean": 155.5
+  },
+  {
+   "n_per_device": 4,
+   "strategy": "stratified_pool",
+   "recall_mean": 0.736,
+   "recall_sd": 0.0,
+   "clean_mean": 36,
+   "findings_mean": 148
+  },
+  {
+   "n_per_device": 6,
+   "strategy": "random_pool",
+   "recall_mean": 0.787,
+   "recall_sd": 0.034,
+   "clean_mean": 44.4,
+   "findings_mean": 166.9
+  },
+  {
+   "n_per_device": 6,
+   "strategy": "stratified_pool",
+   "recall_mean": 0.868,
+   "recall_sd": 0.0,
+   "clean_mean": 49,
+   "findings_mean": 185
+  },
+  {
+   "n_per_device": 8,
+   "strategy": "random_pool",
+   "recall_mean": 0.81,
+   "recall_sd": 0.028,
+   "clean_mean": 47.6,
+   "findings_mean": 173.5
+  },
+  {
+   "n_per_device": 8,
+   "strategy": "stratified_pool",
+   "recall_mean": 0.906,
+   "recall_sd": 0.0,
+   "clean_mean": 49,
+   "findings_mean": 185
+  },
+  {
+   "n_per_device": 10,
+   "strategy": "random_pool",
+   "recall_mean": 0.827,
+   "recall_sd": 0.027,
+   "clean_mean": 48.7,
+   "findings_mean": 176.9
+  },
+  {
+   "n_per_device": 10,
+   "strategy": "stratified_pool",
+   "recall_mean": 0.906,
+   "recall_sd": 0.0,
+   "clean_mean": 49,
+   "findings_mean": 185
+  },
+  {
+   "n_per_device": 14,
+   "strategy": "random_pool",
+   "recall_mean": 0.85,
+   "recall_sd": 0.022,
+   "clean_mean": 49.6,
+   "findings_mean": 180.4
+  },
+  {
+   "n_per_device": 14,
+   "strategy": "stratified_pool",
+   "recall_mean": 0.906,
+   "recall_sd": 0.0,
+   "clean_mean": 50,
+   "findings_mean": 187
+  },
+  {
+   "n_per_device": 20,
+   "strategy": "random_pool",
+   "recall_mean": 0.878,
+   "recall_sd": 0.017,
+   "clean_mean": 50.8,
+   "findings_mean": 184.9
+  },
+  {
+   "n_per_device": 20,
+   "strategy": "stratified_pool",
+   "recall_mean": 0.906,
+   "recall_sd": 0.0,
+   "clean_mean": 51,
+   "findings_mean": 188
+  },
+  {
+   "n_per_device": 28,
+   "strategy": "random_pool",
+   "recall_mean": 0.896,
+   "recall_sd": 0.014,
+   "clean_mean": 51.9,
+   "findings_mean": 189.1
+  },
+  {
+   "n_per_device": 28,
+   "strategy": "stratified_pool",
+   "recall_mean": 0.906,
+   "recall_sd": 0.0,
+   "clean_mean": 51,
+   "findings_mean": 188
+  },
+  {
+   "n_per_device": 40,
+   "strategy": "random_pool",
+   "recall_mean": 0.904,
+   "recall_sd": 0.005,
+   "clean_mean": 52.6,
+   "findings_mean": 191.3
+  },
+  {
+   "n_per_device": 40,
+   "strategy": "stratified_pool",
+   "recall_mean": 0.906,
+   "recall_sd": 0.0,
+   "clean_mean": 51,
+   "findings_mean": 188
+  }
+ ],
+ "greedy_single_profile_cover": [
+  {
+   "suite": "mobile-commerce",
+   "profile": "XP-one_hand_right-age_50s@galaxy-s24-p",
+   "new_defects": [
+    "mobile-commerce:D-01",
+    "mobile-commerce:D-02",
+    "mobile-commerce:D-03",
+    "mobile-commerce:D-04",
+    "mobile-commerce:D-05",
+    "mobile-commerce:D-08",
+    "mobile-commerce:D-09",
+    "mobile-commerce:D-10",
+    "mobile-commerce:D-12",
+    "mobile-commerce:D-15",
+    "mobile-commerce:D-16",
+    "mobile-commerce:D-17"
+   ],
+   "cumulative_recall": 0.226
+  },
+  {
+   "suite": "game-desktop",
+   "profile": "XP-two_thumbs-cvd_deutan@galaxy-s24-l",
+   "new_defects": [
+    "game-desktop:D-01",
+    "game-desktop:D-02",
+    "game-desktop:D-03",
+    "game-desktop:D-04",
+    "game-desktop:D-05",
+    "game-desktop:D-06",
+    "game-desktop:D-07",
+    "game-desktop:D-08",
+    "game-desktop:D-09"
+   ],
+   "cumulative_recall": 0.396
+  },
+  {
+   "suite": "game-desktop",
+   "profile": "XP-keyboard_only-age_50s@desktop-1920-l",
+   "new_defects": [
+    "game-desktop:D-10",
+    "game-desktop:D-11",
+    "game-desktop:D-12",
+    "game-desktop:D-13",
+    "game-desktop:D-14",
+    "game-desktop:D-15",
+    "game-desktop:D-16"
+   ],
+   "cumulative_recall": 0.528
+  },
+  {
+   "suite": "heldout-mixed",
+   "profile": "XP-keyboard_only-cvd_deutan@laptop-1440-l",
+   "new_defects": [
+    "heldout-mixed:D-16",
+    "heldout-mixed:D-17",
+    "heldout-mixed:D-18",
+    "heldout-mixed:D-19"
+   ],
+   "cumulative_recall": 0.604
+  },
+  {
+   "suite": "heldout-mixed",
+   "profile": "XP-one_hand_left-age_70s_plus@iphone-15-p",
+   "new_defects": [
+    "heldout-mixed:D-12",
+    "heldout-mixed:D-13",
+    "heldout-mixed:D-14",
+    "heldout-mixed:D-15"
+   ],
+   "cumulative_recall": 0.679
+  },
+  {
+   "suite": "heldout-mixed",
+   "profile": "XP-one_hand_left-cvd_deutan@galaxy-s24-ultra-p",
+   "new_defects": [
+    "heldout-mixed:D-01",
+    "heldout-mixed:D-04",
+    "heldout-mixed:D-05",
+    "heldout-mixed:D-06"
+   ],
+   "cumulative_recall": 0.755
+  },
+  {
+   "suite": "heldout-mixed",
+   "profile": "XP-two_thumbs-age_70s_plus@galaxy-tab-s9-p",
+   "new_defects": [
+    "heldout-mixed:D-07",
+    "heldout-mixed:D-08",
+    "heldout-mixed:D-10",
+    "heldout-mixed:D-11"
+   ],
+   "cumulative_recall": 0.83
+  },
+  {
+   "suite": "heldout-mixed",
+   "profile": "XP-one_hand_right-walking@galaxy-s24-ultra-p",
+   "new_defects": [
+    "heldout-mixed:D-02",
+    "heldout-mixed:D-03"
+   ],
+   "cumulative_recall": 0.868
+  },
+  {
+   "suite": "mobile-commerce",
+   "profile": "XP-cradle_right-cvd_deutan@galaxy-s24-p",
+   "new_defects": [
+    "mobile-commerce:D-14"
+   ],
+   "cumulative_recall": 0.887
+  },
+  {
+   "suite": "mobile-commerce",
+   "profile": "XP-cradle_right-walking@galaxy-s24-p",
+   "new_defects": [
+    "mobile-commerce:D-07"
+   ],
+   "cumulative_recall": 0.906
+  }
+ ],
+ "pool_defects_needing_combined_profiles": [],
+ "severity_by_check": {
+  "PT-03": {
+   "n": 1,
+   "ok": 0,
+   "under": 1,
+   "pairs": [
+    "mobile-commerce:D-01 expected>=P2 found=P3"
+   ]
+  },
+  "PT-01": {
+   "n": 3,
+   "ok": 3,
+   "under": 0,
+   "pairs": [
+    "mobile-commerce:D-02 expected>=P2 found=P1",
+    "mobile-commerce:D-12 expected>=P2 found=P1",
+    "game-desktop:D-10 expected>=P2 found=P1"
+   ]
+  },
+  "PT-02": {
+   "n": 5,
+   "ok": 5,
+   "under": 0,
+   "pairs": [
+    "mobile-commerce:D-02 expected>=P2 found=P1",
+    "mobile-commerce:D-07 expected>=P3 found=P2",
+    "mobile-commerce:D-12 expected>=P2 found=P1",
+    "heldout-mixed:D-03 expected>=P3 found=P2",
+    "heldout-mixed:D-11 expected>=P3 found=P1"
+   ]
+  },
+  "PT-04": {
+   "n": 4,
+   "ok": 4,
+   "under": 0,
+   "pairs": [
+    "mobile-commerce:D-02 expected>=P2 found=P1",
+    "mobile-commerce:D-07 expected>=P3 found=P2",
+    "heldout-mixed:D-11 expected>=P3 found=P1",
+    "heldout-mixed:D-13 expected>=P2 found=P1"
+   ]
+  },
+  "PC-01": {
+   "n": 5,
+   "ok": 5,
+   "under": 0,
+   "pairs": [
+    "mobile-commerce:D-03 expected>=P2 found=P1",
+    "mobile-commerce:D-17 expected>=P2 found=P1",
+    "game-desktop:D-05 expected>=P2 found=P1",
+    "heldout-mixed:D-15 expected>=P3 found=P1",
+    "heldout-mixed:D-18 expected>=P3 found=P1"
+   ]
+  },
+  "PC-04": {
+   "n": 5,
+   "ok": 4,
+   "under": 1,
+   "pairs": [
+    "mobile-commerce:D-03 expected>=P2 found=P1",
+    "mobile-commerce:D-08 expected>=P2 found=P3",
+    "game-desktop:D-15 expected>=P3 found=P3",
+    "heldout-mixed:D-08 expected>=P3 found=P3",
+    "heldout-mixed:D-18 expected>=P3 found=P1"
+   ]
+  },
+  "CG-01": {
+   "n": 1,
+   "ok": 1,
+   "under": 0,
+   "pairs": [
+    "mobile-commerce:D-04 expected>=P3 found=P3"
+   ]
+  },
+  "CG-03": {
+   "n": 1,
+   "ok": 1,
+   "under": 0,
+   "pairs": [
+    "mobile-commerce:D-05 expected>=P2 found=P2"
+   ]
+  },
+  "GZ-02": {
+   "n": 5,
+   "ok": 4,
+   "under": 1,
+   "pairs": [
+    "mobile-commerce:D-09 expected>=P2 found=P2",
+    "mobile-commerce:D-15 expected>=P2 found=P2",
+    "game-desktop:D-14 expected>=P2 found=P2",
+    "heldout-mixed:D-04 expected>=P2 found=P3",
+    "heldout-mixed:D-16 expected>=P2 found=P1"
+   ]
+  },
+  "RH-01": {
+   "n": 5,
+   "ok": 4,
+   "under": 1,
+   "pairs": [
+    "mobile-commerce:D-10 expected>=P2 found=P2",
+    "heldout-mixed:D-01 expected>=P2 found=P2",
+    "heldout-mixed:D-02 expected>=P2 found=P3",
+    "heldout-mixed:D-07 expected>=P3 found=P2",
+    "heldout-mixed:D-14 expected>=P3 found=P2"
+   ]
+  },
+  "PC-03": {
+   "n": 4,
+   "ok": 4,
+   "under": 0,
+   "pairs": [
+    "mobile-commerce:D-14 expected>=P2 found=P2",
+    "game-desktop:D-09 expected>=P2 found=P2",
+    "heldout-mixed:D-06 expected>=P2 found=P2",
+    "heldout-mixed:D-19 expected>=P3 found=P3"
+   ]
+  },
+  "CG-02": {
+   "n": 5,
+   "ok": 5,
+   "under": 0,
+   "pairs": [
+    "mobile-commerce:D-16 expected>=P2 found=P2",
+    "game-desktop:D-16 expected>=P2 found=P2",
+    "heldout-mixed:D-05 expected>=P2 found=P2",
+    "heldout-mixed:D-10 expected>=P3 found=P2",
+    "heldout-mixed:D-17 expected>=P2 found=P1"
+   ]
+  },
+  "GM-02": {
+   "n": 2,
+   "ok": 2,
+   "under": 0,
+   "pairs": [
+    "game-desktop:D-01 expected>=P2 found=P2",
+    "game-desktop:D-02 expected>=P2 found=P2"
+   ]
+  },
+  "GM-04": {
+   "n": 4,
+   "ok": 4,
+   "under": 0,
+   "pairs": [
+    "game-desktop:D-03 expected>=P3 found=P0",
+    "game-desktop:D-06 expected>=P2 found=P0",
+    "game-desktop:D-07 expected>=P1 found=P0",
+    "game-desktop:D-08 expected>=P2 found=P0"
+   ]
+  },
+  "GM-05": {
+   "n": 1,
+   "ok": 1,
+   "under": 0,
+   "pairs": [
+    "game-desktop:D-03 expected>=P3 found=P0"
+   ]
+  },
+  "GM-01": {
+   "n": 1,
+   "ok": 1,
+   "under": 0,
+   "pairs": [
+    "game-desktop:D-04 expected>=P2 found=P2"
+   ]
+  },
+  "GM-03": {
+   "n": 2,
+   "ok": 2,
+   "under": 0,
+   "pairs": [
+    "game-desktop:D-06 expected>=P2 found=P0",
+    "heldout-mixed:D-12 expected>=P2 found=P2"
+   ]
+  },
+  "PT-06": {
+   "n": 1,
+   "ok": 1,
+   "under": 0,
+   "pairs": [
+    "game-desktop:D-11 expected>=P2 found=P2"
+   ]
+  },
+  "GZ-03": {
+   "n": 1,
+   "ok": 0,
+   "under": 1,
+   "pairs": [
+    "game-desktop:D-12 expected>=P2 found=P3"
+   ]
+  },
+  "PC-02": {
+   "n": 1,
+   "ok": 1,
+   "under": 0,
+   "pairs": [
+    "game-desktop:D-13 expected>=P3 found=P2"
+   ]
+  }
+ },
+ "model_toggles": [
+  {
+   "variant": "swarm (re-analysed)",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887
+  },
+  {
+   "variant": "touch_multipliers_off",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 174,
+   "clean_control_findings": 47,
+   "decoys_flagged": 2,
+   "unlabeled": 44,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 87,
+   "clean_control_units": 20,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": -19,
+   "delta_clean": -6,
+   "delta_decoys": 0,
+   "delta_unlabeled": -12,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": -10,
+   "delta_clean_units": -6
+  },
+  {
+   "variant": "gaze_disabled (no conspicuity map)",
+   "recall_strict": 0.906,
+   "recall_strict_ci95": [
+    0.797,
+    0.959
+   ],
+   "recall_lenient": 0.943,
+   "severity_agreement": 0.811,
+   "findings": 193,
+   "clean_control_findings": 53,
+   "decoys_flagged": 2,
+   "unlabeled": 56,
+   "elements_flagged": 146,
+   "clean_elements_flagged": 43,
+   "units": 97,
+   "clean_control_units": 26,
+   "recall_strict_exact_viewport": 0.887,
+   "lost_strict": [],
+   "gained_strict": [],
+   "mcnemar_p": 1.0,
+   "delta_findings": 0,
+   "delta_clean": 0,
+   "delta_decoys": 0,
+   "delta_unlabeled": 0,
+   "delta_elements_flagged": 0,
+   "delta_clean_elements_flagged": 0,
+   "delta_units": 0,
+   "delta_clean_units": 0
+  }
+ ]
+}

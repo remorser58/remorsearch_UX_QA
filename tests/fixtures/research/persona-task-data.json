@@ -1,0 +1,20 @@
+{
+  "_comment": "Approved synthetic task data for persona/scenario export tests. Invented values only; nothing here is a real product, price or coupon, and no live run is claimed.",
+  "surface_url": "https://product.example/checkout",
+  "device_ids": ["galaxy-s24"],
+  "concrete_data": {
+    "menu_item": "반반치킨",
+    "options": ["순살", "매운 양념"],
+    "amount_krw": 25000,
+    "coupon_code": "DIAG5000",
+    "delivery_tip_krw": 3000
+  },
+  "task_goal_ko": "쿠폰을 적용해 주문을 완료한다",
+  "context_ko": "처음 사용하는 화면에서 최종 금액을 확인해야 한다",
+  "expected_behavior_ko": "도움 없이 쿠폰을 적용하고 최종 금액을 확인한다",
+  "expected_decision_ko": "적용된 금액이 예상과 같으면 주문을 진행한다",
+  "likely_failure_ko": "쿠폰 조건을 다시 확인하느라 메뉴를 다시 고른다",
+  "falsifying_product_test_ko": "처음 사용한 사람이 적용 실패 이유와 복구 방법을 즉시 설명하고 수행하는지 관찰한다",
+  "falsifying_interview_question_ko": "가장 최근 주문에서 최종 금액을 언제 알았는지, 막힌 뒤 무엇을 바꿨는지 묻는다",
+  "priority": "P2"
+}

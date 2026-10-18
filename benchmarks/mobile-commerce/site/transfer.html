@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>송금 | 봄뱅크</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Noto Sans CJK KR","Malgun Gothic",Roboto,"WenQuanYi Zen Hei",sans-serif;color:#191f28;background:#f2f4f6;font-size:15px;line-height:1.45;-webkit-tap-highlight-color:transparent}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:#fff;position:relative}
+button,input{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+.topbar{position:sticky;top:0;z-index:10;height:52px;display:flex;align-items:center;padding:0 4px;background:#fff;border-bottom:1px solid #eef0f2}
+.topbar h1{font-size:17px;font-weight:700;flex:1;text-align:center}
+.icon-btn{width:44px;height:44px;font-size:28px;line-height:40px;text-align:center}
+.icon-spacer{width:44px;height:44px}
+
+.top-error{position:fixed;top:52px;left:50%;transform:translateX(-50%);width:100%;max-width:480px;z-index:15;background:#fdecec;color:#b3261e;font-size:14px;font-weight:600;padding:10px 16px;border-bottom:1px solid #f5c2c0}
+
+main{padding:8px 16px 24px}
+.card{background:#f2f4f6;border-radius:12px;padding:10px 14px}
+.card-label{font-size:14px;color:#4e5968}
+.card-main{font-size:15px}
+.card-main strong{font-size:17px}
+.q{font-size:16px;font-weight:700;margin:12px 0 8px}
+.recipients{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.recipients button{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;height:64px;border:1px solid #d1d6db;border-radius:12px;background:#fff}
+.recipients button[aria-checked="true"]{border:2px solid #1b64da;background:#f2f7ff}
+.av{width:30px;height:30px;border-radius:50%;background:#e8f0fe;color:#1b64da;font-weight:700;font-size:14px;line-height:30px;text-align:center}
+.who{font-size:15px;font-weight:600;line-height:1.2}
+.mark{position:absolute;top:4px;right:6px;font-weight:700;color:#1b64da;font-size:14px}
+.recipients button[aria-checked="true"] .mark::before{content:"✓"}
+.acct{min-height:20px;margin-top:6px;font-size:14px;color:#4e5968}
+
+.amount-field{display:flex;align-items:center;border-bottom:2px solid #333d4b;height:48px}
+.amount-field input{flex:1;min-width:0;border:0;outline:0;font-size:22px;font-weight:700;background:transparent;height:44px}
+.amount-field input::placeholder{color:#8b95a1}
+.won{font-size:18px;font-weight:700;margin:0 4px}
+.clear{width:44px;height:44px;font-size:20px;color:#4e5968}
+.chips{display:flex;gap:4px;margin-top:8px}
+.chips button{flex:1;height:28px;border-radius:6px;background:#f2f4f6;color:#333d4b;font-size:14px;font-weight:600}
+.btn-inline{display:inline-block;margin-top:14px;height:44px;padding:0 28px;border-radius:10px;background:#1b64da;color:#fff;font-size:16px;font-weight:700}
+
+.recent{margin-top:22px}
+.recent h3{font-size:15px;font-weight:700;margin-bottom:6px}
+.recent li{list-style:none;display:flex;justify-content:space-between;font-size:14px;padding:6px 0;border-bottom:1px solid #f2f4f6}
+.recent .who2{color:#4e5968}
+.recent .out{color:#d32f2f;font-weight:600}
+.recent .in{color:#2e7d32;font-weight:600}
+
+.sheet-wrap{position:fixed;inset:0;z-index:30}
+.dim{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.sheet{position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:480px;background:#fff;border-radius:20px 20px 0 0;padding:24px 20px 16px}
+.sheet h3{font-size:20px;line-height:1.4;margin-bottom:10px;white-space:pre-line}
+.detail{font-size:12px;color:#555555;line-height:1.5;margin-bottom:20px}
+.sheet-btns{display:flex;gap:8px}
+.sheet-btns button{flex:1;height:52px;border-radius:12px;font-size:16px;font-weight:700}
+.btn-secondary{background:#f2f4f6;color:#333d4b}
+.btn-primary{background:#1b64da;color:#fff}
+
+.sending{position:fixed;inset:0;z-index:40;background:rgba(255,255,255,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;font-size:16px;font-weight:600}
+.spinner{width:36px;height:36px;border-radius:50%;border:4px solid #d1d6db;border-top-color:#1b64da;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.done{position:fixed;inset:0;background:#fff;z-index:50;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+.done .check{width:64px;height:64px;border-radius:50%;background:#1b64da;color:#fff;font-size:32px;line-height:64px;margin:0 auto 16px}
+.done h2{font-size:22px;margin-bottom:8px;white-space:pre-line}
+.done p{color:#4e5968;font-size:15px}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <button id="back" class="icon-btn" aria-label="뒤로 가기">‹</button>
+    <h1>송금</h1>
+    <span class="icon-spacer" aria-hidden="true"></span>
+  </header>
+  <div id="send-error" class="top-error" role="alert" hidden></div>
+
+  <main>
+    <section id="from-account" class="card">
+      <p class="card-label">출금 계좌 · 봄뱅크 1002-***-381234</p>
+      <p class="card-main">출금 가능 <strong>2,350,000</strong>원</p>
+    </section>
+
+    <h2 class="q">누구에게 보낼까요?</h2>
+    <div id="recipients" class="recipients" role="radiogroup" aria-label="받는 분">
+      <button role="radio" aria-checked="false" data-id="r1" data-name="홍길동" data-bank="국민은행" data-acct="123456-78-901234"><span class="av">홍</span><span class="who">홍길동</span><span class="mark" aria-hidden="true"></span></button>
+      <button role="radio" aria-checked="false" data-id="r2" data-name="김민수" data-bank="신한은행" data-acct="110-432-567890"><span class="av">김</span><span class="who">김민수</span><span class="mark" aria-hidden="true"></span></button>
+      <button role="radio" aria-checked="false" data-id="r3" data-name="이수진" data-bank="카카오뱅크" data-acct="3333-05-1234567"><span class="av">이</span><span class="who">이수진</span><span class="mark" aria-hidden="true"></span></button>
+    </div>
+    <p id="recipient-acct" class="acct"></p>
+
+    <h2 class="q">얼마를 보낼까요?</h2>
+    <div class="amount-field">
+      <input id="amount" inputmode="numeric" autocomplete="off" placeholder="금액 입력" aria-label="보낼 금액">
+      <span class="won">원</span>
+      <button id="amount-clear" class="clear" aria-label="금액 지우기">×</button>
+    </div>
+    <div id="amount-chips" class="chips">
+      <button data-add="10000">+1만</button>
+      <button data-add="50000">+5만</button>
+      <button data-add="100000">+10만</button>
+      <button data-add="1000000">+100만</button>
+      <button data-add="all">전액</button>
+    </div>
+    <button id="next" class="btn-inline">다음</button>
+
+    <section id="recent-activity" class="recent" aria-label="최근 거래">
+      <h3>최근 거래</h3>
+      <ul>
+        <li><span class="who2">09.25 김민수</span><span class="out">출금 −30,000원</span></li>
+        <li><span class="who2">09.24 이수진</span><span class="in">입금 +12,000원</span></li>
+      </ul>
+    </section>
+  </main>
+
+  <div id="confirm-sheet" class="sheet-wrap" hidden>
+    <div class="dim"></div>
+    <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+      <h3 id="confirm-title"></h3>
+      <p id="confirm-account" class="detail"></p>
+      <div class="sheet-btns">
+        <button id="cancel" class="btn-secondary">취소</button>
+        <button id="send" class="btn-primary">보내기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="sending" class="sending" role="status" hidden><div class="spinner" aria-hidden="true"></div><p>보내는 중…</p></div>
+
+  <div id="transfer-done" class="done" role="status" hidden>
+    <div>
+      <div class="check" aria-hidden="true">✓</div>
+      <h2 id="done-title"></h2>
+      <p>봄뱅크 입출금통장에서 출금되었어요.</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var AVAILABLE = 2350000, DAILY_LIMIT = 1000000;
+  var amount = 0, rcpt = null;
+  var input = document.getElementById('amount');
+  var err = document.getElementById('send-error');
+  function fmt(n){ return n.toLocaleString('ko-KR'); }
+  function render(){ input.value = amount ? fmt(amount) : ''; }
+
+  var list = document.getElementById('recipients');
+  list.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-id]');
+    if(!b) return;
+    list.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-checked','false'); });
+    b.setAttribute('aria-checked','true');
+    rcpt = {name:b.dataset.name, bank:b.dataset.bank, acct:b.dataset.acct};
+    document.getElementById('recipient-acct').textContent = rcpt.bank + ' ' + rcpt.acct + ' · ' + rcpt.name;
+  });
+
+  document.getElementById('amount-chips').addEventListener('click', function(e){
+    var b = e.target.closest('button[data-add]');
+    if(!b) return;
+    amount = b.dataset.add === 'all' ? AVAILABLE : Math.min(amount + Number(b.dataset.add), AVAILABLE);
+    render();
+  });
+  input.addEventListener('input', function(){
+    amount = Math.min(Number(input.value.replace(/\D/g,'')) || 0, AVAILABLE);
+    render();
+  });
+  document.getElementById('amount-clear').addEventListener('click', function(){ amount = 0; render(); });
+
+  var sheet = document.getElementById('confirm-sheet');
+  document.getElementById('next').addEventListener('click', function(){
+    if(!rcpt){ err.textContent = '받는 분을 선택해 주세요.'; err.hidden = false; return; }
+    if(!amount){ err.textContent = '보낼 금액을 입력해 주세요.'; err.hidden = false; return; }
+    err.hidden = true;
+    document.getElementById('confirm-title').textContent = rcpt.name + '님에게\n' + fmt(amount) + '원을 보낼까요?';
+    document.getElementById('confirm-account').innerHTML = rcpt.bank + ' ' + rcpt.acct + ' · 예금주 ' + rcpt.name + '<br>수수료 무료 · 받는 분 통장 표시: 김서연';
+    sheet.hidden = false;
+  });
+  document.getElementById('cancel').addEventListener('click', function(){ sheet.hidden = true; });
+  sheet.querySelector('.dim').addEventListener('click', function(){ sheet.hidden = true; });
+
+  var sending = document.getElementById('sending');
+  document.getElementById('send').addEventListener('click', function(){
+    sending.hidden = false;
+    setTimeout(function(){
+      sending.hidden = true;
+      sheet.hidden = true;
+      if(amount > DAILY_LIMIT){
+        err.textContent = '1일 이체 한도(1,000,000원)를 초과했어요. 금액을 줄여 다시 시도해 주세요.';
+        err.hidden = false;
+        return;
+      }
+      document.getElementById('done-title').textContent = rcpt.name + '님에게\n' + fmt(amount) + '원을 보냈어요';
+      document.getElementById('transfer-done').hidden = false;
+    }, 1200);
+  });
+})();
+</script>
+</body>
+</html>

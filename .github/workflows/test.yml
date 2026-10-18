@@ -1,0 +1,57 @@
+name: Test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: test-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  python:
+    name: Python ${{ matrix.python }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Unit tests
+        run: PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s tests -p 'test_*.py'
+      - name: Loop smoke test
+        run: python skills/remorsearch-ux-qa/scripts/smoke_loop.py
+      - name: Research smoke test
+        run: python skills/remorsearch-ux-qa/examples/research/run_fixture.py
+      - name: Distribution file check
+        run: python scripts/release_files.py
+
+  web-driver:
+    name: Web driver selftest on Node 22
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: skills/remorsearch-ux-qa/drivers/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: skills/remorsearch-ux-qa/drivers/web/package-lock.json
+      - name: Install driver dependencies
+        run: npm ci
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+      - name: Driver selftest
+        run: node selftest.mjs

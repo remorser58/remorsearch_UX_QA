@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>(i) 느린 전체 화면 변화</title>
+<!--
+  Control: the whole viewport alternates black and white every 500 ms (one
+  flash per second, two transitions). Large but slow: WCAG 2.3.1 allows up to
+  three flashes per second, so it must pass.
+-->
+<style>
+  html, body { margin: 0; height: 100%; background: #000000; }
+</style>
+</head>
+<body>
+<script>
+  (function () {
+    var n = 0;
+    setInterval(function () {
+      n += 1;
+      document.body.style.background = n % 2 ? '#ffffff' : '#000000';
+    }, 500);
+  })();
+</script>
+</body>
+</html>

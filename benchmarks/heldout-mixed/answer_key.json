@@ -1,0 +1,573 @@
+{
+  "suite": "heldout-mixed",
+  "conventions": {
+    "element_selector": "CSS id selector, or an id prefix ('#pk-', '#opt-', '#hud-', '#agree-', '#rcpt-flag-', '#res-') that matches every member of a repeated group by substring containment. Canvas hotspots use the bare hotspot id (e.g. 'hs-boost'), so 'hotspot:hs-boost' also contains it.",
+    "profile_condition": "Keys are dotted paths into ergo-profile.v1 'attributes' (grip, age_band, vision.cvd, vision.presbyopia, motor.tremor, context.mobility). A scalar must equal the attribute; a list means any-of; {} means the defect is present for every profile. The condition names the profiles for which the defect exists by design. Other profiles may also legitimately trigger.",
+    "mm_per_css_px": {
+      "galaxy-s24-ultra": 0.1886,
+      "iphone-15": 0.1657,
+      "galaxy-tab-s9": 0.1854,
+      "laptop-1440": null
+    },
+    "mm_per_css_px_basis": "published panel density: S24 Ultra about 505 ppi at dpr 3.75; iPhone 15 460 ppi at dpr 3; Tab S9 274 ppi at dpr 2",
+    "severity": "P0 blocker .. P3 minor; severity_min is the lowest severity a matching finding should carry",
+    "measured": "geometry, colours and visible durations were measured in Chromium via Playwright with each device's viewport, dpr and touch settings; CVD contrasts use Machado et al. (2009) at severity 1.0; contrast per WCAG 2.x relative luminance"
+  },
+  "defects": [
+    {
+      "id": "D-01",
+      "scenario_id": "SC-hm-transfer-a",
+      "category": "reach",
+      "element_selector": "#amount-next",
+      "profile_condition": {
+        "grip": "one_hand_left"
+      },
+      "severity_min": "P2",
+      "description": "Amount screen: the only forward action ('다음') is a 56 px round floating button on the right edge at mid-height. Holding the 6.8-inch phone in the left hand, the thumb cannot reach it without regripping or using the other hand; with a right-hand grip it sits next to the thumb.",
+      "human_factors_basis": "Thumb functional area is an arc anchored on the gripping side (Bergstrom-Lehtovirta & Oulasvirta, CHI 2014); far-side targets are slower and less comfortable one-handed (Karlson, Bederson & Contreras-Vidal 2008; Hoober 2013 grip observations). Large-phone guidance puts primary actions in the lower 'interaction area' within reach of either thumb (Samsung One UI). Target centre is about 64 mm from the left edge and 70 mm above the bottom edge, outside a typical left-thumb functional area but 8 mm from the right edge.",
+      "measured": {
+        "box_css": [
+          312,
+          422,
+          56,
+          56
+        ],
+        "center_css": [
+          340,
+          450
+        ],
+        "viewport_css": [
+          384,
+          824
+        ],
+        "mm_per_css_px": 0.1886,
+        "center_from_left_mm": 64.1,
+        "center_from_right_mm": 8.3,
+        "center_from_bottom_mm": 70.5
+      },
+      "fixed_in": "SC-hm-transfer-b: full-width bottom bar button, box [16,752,352,56]"
+    },
+    {
+      "id": "D-02",
+      "scenario_id": "SC-hm-transfer-a",
+      "category": "reach",
+      "element_selector": "#chk-verify",
+      "profile_condition": {
+        "grip": "one_hand_right"
+      },
+      "severity_min": "P2",
+      "description": "Confirm screen: the required voice-phishing confirmation checkbox is a 44 px box on the far left edge at mid-height; its explanatory text is not part of the hit area. The transfer cannot proceed until it is checked. Right-hand one-handed users must regrip; a left-hand grip reaches it easily.",
+      "human_factors_basis": "Mirror case of D-01: the opposite (left) edge in the middle of a ~72 x 155 mm screen lies outside the right thumb's functional area (Bergstrom-Lehtovirta & Oulasvirta 2014; Karlson et al. 2008; Hoober 2013). Only the 44 px box is tappable, so the reachable right part of the row cannot be used. Centre about 66 mm from the right edge and 65 mm above the bottom edge.",
+      "measured": {
+        "box_css": [
+          12,
+          456,
+          44,
+          44
+        ],
+        "center_css": [
+          34,
+          478
+        ],
+        "center_from_left_mm": 6.4,
+        "center_from_right_mm": 66.0,
+        "center_from_bottom_mm": 65.3,
+        "label_clickable": false
+      },
+      "fixed_in": "SC-hm-transfer-b: whole-row toggle, box [16,660,352,80], directly above the confirm button"
+    },
+    {
+      "id": "D-03",
+      "scenario_id": "SC-hm-transfer-a",
+      "category": "pointing",
+      "element_selector": "#pk-",
+      "profile_condition": {
+        "context.mobility": "walking"
+      },
+      "severity_min": "P3",
+      "description": "The 6-digit PIN keypad in the bottom sheet uses 128 x 36 px keys (about 24 x 6.8 mm) stacked with no vertical gap (hairline dividers only). Seated users with ordinary touch precision are near the guideline. When the touch spread grows from walking (or tremor), mis-taps into the row above or below become likely in a serial 6-digit entry.",
+      "human_factors_basis": "FFitts law: hit rate depends on target size relative to the finger-touch spread sigma (Bi, Li & Zhai, CHI 2013). Walking substantially degrades touch accuracy and raises the target size needed (Kane, Wobbrock & Smith 2008; Schildbach & Rukzio 2010; Bergstrom-Lehtovirta, Oulasvirta & Brewster 2011). One-handed thumb tapping needs about 9.2-9.6 mm targets for low error (Parhi, Karlson & Bederson 2006). 36 px passes WCAG 2.5.8 (24 px) but is below Apple 44 pt and Material 48 dp, with no spacing between rows.",
+      "measured": {
+        "key_box_css": [
+          128,
+          36
+        ],
+        "key_mm": [
+          24.1,
+          6.8
+        ],
+        "row_gap_css": 0,
+        "rows_y_css": [
+          680,
+          716,
+          752,
+          788
+        ]
+      },
+      "fixed_in": "SC-hm-transfer-b: 128 x 64 px keys (12.1 mm tall)"
+    },
+    {
+      "id": "D-04",
+      "scenario_id": "SC-hm-transfer-a",
+      "category": "gaze",
+      "element_selector": "#toast",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "An unusual-amount warning (보내던 금액보다 큰 금액...) appears only as a toast at the top of the confirm screen (y 64-160). It appears at the same moment the whole screen changes, while the user's finger and gaze are on the 'Next' button about 55 mm lower. It is easy to miss.",
+      "human_factors_basis": "Attention is at the locus of the last action. Onsets far outside the attended region, especially during a full-screen transition, are prone to change blindness and inattentional blindness (Rensink, O'Regan & Clark 1997; Mack & Rock 1998). Security-critical feedback should be placed where the user is looking and acting (Nielsen heuristic 1: visibility of system status). Vertical gap from the tap point to the toast's nearest edge is about 55 mm (about 10 degrees of visual angle at 300 mm).",
+      "measured": {
+        "box_css": [
+          16,
+          64,
+          352,
+          96
+        ],
+        "focus_point_css": [
+          340,
+          450
+        ],
+        "gap_to_focus_mm": 54.7,
+        "center_to_focus_mm": 69.6
+      },
+      "fixed_in": "SC-hm-transfer-b: persistent inline notice #notice-recent directly above the confirmation row and buttons"
+    },
+    {
+      "id": "D-05",
+      "scenario_id": "SC-hm-transfer-a",
+      "category": "cognition",
+      "element_selector": "#toast",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "The same warning (40 Hangul syllables, 15 eojeol) disappears after 1.6 s with no way to extend or recall it. The user must also read the account and amount before approving.",
+      "human_factors_basis": "Reading time exceeds the display time for every reader. Even at a fast silent-reading rate (assumed about 10 syllables/s for young adults; cf. reading-rate meta-analysis, Brysbaert 2019) the text needs about 4 s plus the time to notice it. Platform toasts last 2 s or 3.5 s and are meant for trivial status. Material snackbars stay 4-10 s. WCAG 2.2.1 Timing Adjustable requires essential time-limited content to be extendable.",
+      "measured": {
+        "visible_ms": 1600,
+        "hangul_syllables": 40,
+        "eojeol": 15
+      },
+      "fixed_in": "SC-hm-transfer-b: not transient"
+    },
+    {
+      "id": "D-06",
+      "scenario_id": "SC-hm-transfer-a",
+      "category": "perception",
+      "element_selector": "#rcpt-flag-",
+      "profile_condition": {
+        "vision.cvd": [
+          "deutan",
+          "protan"
+        ]
+      },
+      "severity_min": "P2",
+      "description": "In the recent-recipients list, 'fraud report on this account' vs 'verified' is shown only by a 12 px red or green dot at the row end. The legend maps colours to words, but the rows carry no text or shape difference. For deutan or protan users the 박서준 row, which has a fraud report, looks the same as the safe rows.",
+      "human_factors_basis": "WCAG 1.4.1 Use of Color: colour must not be the only visual means of conveying information. #e03131 vs #2f9e44 have nearly equal luminance (ratio 1.31). Simulated with Machado, Oliveira & Fernandes (2009) at severity 1.0, the pair is 1.04:1 for deutan and 2.02:1 for protan, and both map to similar olive or ochre hues. Each dot passes 1.4.11 against white (4.51, 3.45), so only the hue carries meaning.",
+      "measured": {
+        "dot_css": [
+          12,
+          12
+        ],
+        "colors": {
+          "warn": "#e03131",
+          "ok": "#2f9e44"
+        },
+        "pair_luminance_ratio": {
+          "normal": 1.31,
+          "deutan": 1.04,
+          "protan": 2.02
+        }
+      },
+      "fixed_in": "SC-hm-transfer-b: text badges '✓ 확인된 계좌' / '⚠ 사기 의심 신고'"
+    },
+    {
+      "id": "D-07",
+      "scenario_id": "SC-hm-lesson-b",
+      "category": "reach",
+      "element_selector": "#quiz-submit",
+      "profile_condition": {
+        "grip": "two_thumbs"
+      },
+      "severity_min": "P3",
+      "description": "On the 11-inch tablet in portrait, the quiz 'submit' button is a 160 px button centred horizontally at the bottom. A learner holding the tablet with both hands and tapping with thumbs cannot reach the centre and must let go with one hand. Other quiz controls sit near an edge.",
+      "human_factors_basis": "With a two-handed portrait grip, thumbs reach a band along each side edge. The centre of a ~148 mm-wide screen is outside it (Odell & Chandrasekaran, HFES 2012; Trudeau et al. 2013, PLoS ONE 8(6):e67525 on thumb reach in two-handed tablet grips; Hoober 2013). The nearest button edge is 59 mm and the centre 74 mm from either side edge.",
+      "measured": {
+        "box_css": [
+          320,
+          1100,
+          160,
+          64
+        ],
+        "viewport_css": [
+          800,
+          1280
+        ],
+        "mm_per_css_px": 0.1854,
+        "nearest_edge_to_side_mm": 59.3,
+        "center_to_side_mm": 74.2
+      },
+      "fixed_in": "SC-hm-lesson-a: right-aligned button, box [560,1100,216,64], 4 mm from the right edge"
+    },
+    {
+      "id": "D-08",
+      "scenario_id": "SC-hm-lesson-b",
+      "category": "perception",
+      "element_selector": "#caption",
+      "profile_condition": {
+        "vision.presbyopia": true
+      },
+      "severity_min": "P3",
+      "description": "Lecture captions are rendered at 13 px (about 2.4 mm em height on the Tab S9) over the video. High contrast, but small for a viewer at tablet distance. People with presbyopia, or anyone holding the tablet at arm's length to focus, cannot read them comfortably while they change every 3 s.",
+      "human_factors_basis": "Legibility depends on angular character size. Presbyopia and age-related acuity loss push the critical print size up (Legge & Bigelow 2011, J. Vision 11(5):8; Akutsu et al. 1991; Charman 2008). A 13 px Hangul caption subtends roughly 17-20 arcmin at 400 mm, at or below the ISO 9241-303 minimum (16') and preferred (20-22') character height before any presbyopic blur. Subtitle guidance sizes captions relative to picture height (BBC Subtitle Guidelines), far larger than 13 px on a 450 px-tall player.",
+      "measured": {
+        "font_px": 13,
+        "em_mm": 2.41,
+        "box_css": [
+          275,
+          466,
+          250,
+          26
+        ]
+      },
+      "fixed_in": "SC-hm-lesson-a: 22 px captions"
+    },
+    {
+      "id": "D-09",
+      "scenario_id": "SC-hm-lesson-b",
+      "category": "perception",
+      "element_selector": "#deadline",
+      "profile_condition": {
+        "vision.cvd": "protan"
+      },
+      "severity_min": "P3",
+      "description": "The quiz deadline banner uses saturated red text (#ff3b30, 17 px regular) on a near-black bar (#1c1f26). Normal contrast is 4.65:1, just passing. For protan viewers, long-wavelength light looks much darker, so the text drops to about 3.1:1 and becomes hard to read. The information is essential: the quiz closes tonight.",
+      "human_factors_basis": "Protanopes have reduced sensitivity to long wavelengths, so saturated reds lose luminance (Vienot, Brettel & Mollon 1999; Machado et al. 2009). Simulated contrast at severity 1.0: protan 3.14:1, deutan 5.65:1, normal 4.65:1. WCAG 1.4.3 needs 4.5:1 for normal-size text (below 24 px regular or 18.66 px bold).",
+      "measured": {
+        "fg": "#ff3b30",
+        "bg": "#1c1f26",
+        "font_px": 17,
+        "font_weight": 400,
+        "contrast": {
+          "normal": 4.65,
+          "protan": 3.14,
+          "deutan": 5.65
+        }
+      },
+      "fixed_in": "SC-hm-lesson-a: white bold text with a clock icon"
+    },
+    {
+      "id": "D-10",
+      "scenario_id": "SC-hm-lesson-b",
+      "category": "cognition",
+      "element_selector": "#explain",
+      "profile_condition": {
+        "age_band": [
+          "60s",
+          "70s+"
+        ]
+      },
+      "severity_min": "P3",
+      "description": "After each answer, the feedback-and-explanation panel (about 24 Hangul syllables plus code tokens) auto-advances to the next question after 5 s, with no pause or 'next' control. A fast young reader can finish it. Older learners, who read more slowly, lose the explanation.",
+      "human_factors_basis": "Reading speed declines with age and with age-related visual change (Akutsu, Legge, Ross & Schuebel 1991; Legge 2007). About 3 s at about 10 syllables/s for young skilled readers, but at the reduced rates typical of readers in their 60s-70s it needs about 5-6 s plus orientation time. WCAG 2.2.1 Timing Adjustable requires the user to be able to turn off, adjust or extend such limits. Game Accessibility Guidelines: allow players to progress through text at their own pace.",
+      "measured": {
+        "visible_ms": 5000,
+        "texts": [
+          "✓ 정답이에요! 변수 이름은 숫자로 시작할 수 없어요. value2처럼 써요.",
+          "✗ 아쉬워요. 정답은 ③번이에요. 소수점이 있는 3.0은 실수형(float)이에요."
+        ],
+        "hangul_syllables": [
+          24,
+          24
+        ]
+      },
+      "fixed_in": "SC-hm-lesson-a: explanation stays until the learner taps '다음 문제'"
+    },
+    {
+      "id": "D-11",
+      "scenario_id": "SC-hm-lesson-b",
+      "category": "pointing",
+      "element_selector": "#opt-",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "Quiz answers are native 20 px radio buttons. The answer text beside each radio is not a label, so only the 20 px circle (about 3.7 mm) accepts a tap, on a touch tablet.",
+      "human_factors_basis": "Touch targets far below platform minimums: Apple 44 pt and Material 48 dp; WCAG 2.5.5 recommends 44 px. With typical finger-touch spread, a 3.7 mm target has a substantial miss rate (FFitts, Bi et al. 2013; Holz & Baudisch 2010 on touch offset). The 64 px row pitch satisfies WCAG 2.5.8 spacing, so this is a usability and ergonomic defect rather than an AA failure. The standard fix is to make the whole row a label.",
+      "measured": {
+        "radio_css": [
+          20,
+          20
+        ],
+        "radio_mm": 3.7,
+        "row_pitch_css": 64,
+        "label_clickable": false
+      },
+      "fixed_in": "SC-hm-lesson-a: 376 x 112 px answer tiles"
+    },
+    {
+      "id": "D-12",
+      "scenario_id": "SC-hm-starlight-a",
+      "category": "game",
+      "element_selector": "#prompt",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "The '지금 부스터!' quick-time prompt is visible for only 900 ms. To answer, the player must notice it, read it, then move the thumb from the big tap button to a small boost button about 50 mm away on the right edge (Shannon ID about 3.6 bits), all inside the window. Older players, players with tremor and left-hand grips fail by a wide margin, and it is tight even for young players.",
+      "human_factors_basis": "Required time is roughly visual reaction time (about 250-300 ms for young adults, longer and more variable with age: Der & Deary 2006) plus reading a 5-syllable prompt, plus Fitts movement time to a 4.6 mm target 50 mm away. That is above 900 ms for most profiles. Game accessibility guidance asks for adjustable game speed and generous or avoidable timed inputs (Game Accessibility Guidelines; Xbox Accessibility Guidelines on time limits).",
+      "measured": {
+        "visible_ms": 900,
+        "trigger": "500 ms after the 2nd counted tap",
+        "tap_to_boost_distance_mm": 50.4,
+        "boost_width_mm": 4.6,
+        "fitts_id_bits": 3.57
+      },
+      "fixed_in": "SC-hm-starlight-b: 3000 ms window, boost 72 px directly above the tap button (ID 1.56 bits)"
+    },
+    {
+      "id": "D-13",
+      "scenario_id": "SC-hm-starlight-a",
+      "category": "pointing",
+      "element_selector": "hs-boost",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "The canvas boost control is a 28 x 28 CSS px circle (about 4.6 mm). It is used under time pressure, and it sits against the right screen edge.",
+      "human_factors_basis": "Game Accessibility Guidelines: make interactive elements and virtual controls large and well spaced, especially on touch screens. Apple HIG 44 pt / Material 48 dp. A 4.6 mm target under typical finger-touch spread has a high miss rate (Parhi et al. 2006; Bi et al. 2013). Timed use leaves no chance to correct a miss.",
+      "measured": {
+        "box_css": [
+          355,
+          436,
+          28,
+          28
+        ],
+        "size_mm": 4.6,
+        "mm_per_css_px": 0.1657
+      },
+      "fixed_in": "SC-hm-starlight-b: 72 x 72 px (11.9 mm)"
+    },
+    {
+      "id": "D-14",
+      "scenario_id": "SC-hm-starlight-a",
+      "category": "reach",
+      "element_selector": "hs-boost",
+      "profile_condition": {
+        "grip": "one_hand_left"
+      },
+      "severity_min": "P3",
+      "description": "For portrait one-handed play, the boost control is on the far right edge at mid-height. It is reachable from a right-hand grip but out of reach for a left-hand thumb during a timed prompt.",
+      "human_factors_basis": "Same functional-area asymmetry as D-01 (Bergstrom-Lehtovirta & Oulasvirta 2014; Hoober 2013), on a ~65 x 141 mm screen. Centre about 61 mm from the left edge and 67 mm above the bottom, 4 mm from the right edge.",
+      "measured": {
+        "center_css": [
+          369,
+          450
+        ],
+        "center_from_left_mm": 61.1,
+        "center_from_right_mm": 4.0,
+        "center_from_bottom_mm": 66.6
+      },
+      "fixed_in": "SC-hm-starlight-b: centred just above the tap button, centre 32 mm from each side and 48 mm above the bottom"
+    },
+    {
+      "id": "D-15",
+      "scenario_id": "SC-hm-starlight-a",
+      "category": "perception",
+      "element_selector": "#hud-",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "The HUD score and remaining-time text is white 17 px bold on a light sky-blue bar (#74c0fc), with no outline or shadow. Contrast is 1.96:1.",
+      "human_factors_basis": "WCAG 1.4.3 needs 4.5:1 for this size (it is not large text). It fails even the 3:1 large-text threshold. Glanceable HUD values must be readable in a fraction of a second, with the eyes mostly on the play field.",
+      "measured": {
+        "fg": "#ffffff",
+        "bg": "#74c0fc",
+        "contrast": 1.96,
+        "font_px": 17,
+        "font_weight": 800
+      },
+      "fixed_in": "SC-hm-starlight-b: white on #0b2545 (15.4:1)"
+    },
+    {
+      "id": "D-16",
+      "scenario_id": "SC-hm-signup-b",
+      "category": "gaze",
+      "element_selector": "#form-errors",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "After clicking '가입하기' at the bottom of the long form, the only error summary appears at the top of the card. With the page scrolled to y=615, the box spans y -377 to -302, entirely above the viewport. Invalid fields get no inline message and focus does not move. The user sees nothing happen.",
+      "human_factors_basis": "Error feedback must be perceivable where the user is attending. WCAG 3.3.1 Error Identification. Inline or near-field error messages improve form completion (Bargas-Avila et al. 2010 web-form guidelines; Seckler et al., CHI 2014). Off-screen onsets cannot capture attention (Nielsen heuristic 1).",
+      "measured": {
+        "box_css_after_click": [
+          501,
+          -377,
+          438,
+          75
+        ],
+        "in_viewport": false,
+        "scrollY": 615,
+        "click_point_css": [
+          720,
+          646
+        ]
+      },
+      "fixed_in": "SC-hm-signup-a: persistent message directly under the submit button plus inline field error"
+    },
+    {
+      "id": "D-17",
+      "scenario_id": "SC-hm-signup-b",
+      "category": "cognition",
+      "element_selector": "#form-errors",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "The same summary auto-hides after 3 s. It is also generic ('일부 항목이 올바르지 않거나 비어 있어요'): it names no field and gives no fix. The user cannot learn which field failed.",
+      "human_factors_basis": "WCAG 3.3.1 and 3.3.3: identify the field in error and suggest a correction. WCAG 2.2.1: time-limited content must be extendable. 32 Hangul syllables in 3 s is below comfortable reading time even before the user has scrolled up to find it.",
+      "measured": {
+        "visible_ms": 3000,
+        "hangul_syllables": 32
+      },
+      "fixed_in": "SC-hm-signup-a: specific, persistent messages"
+    },
+    {
+      "id": "D-18",
+      "scenario_id": "SC-hm-signup-b",
+      "category": "perception",
+      "element_selector": "#pw-rule",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "The password rule helper ('영문, 숫자, 특수문자를 모두 넣어 8~20자...') is 12 px light grey #b3b3b3 on white. Contrast is 2.10:1, and it holds the information needed to pass validation.",
+      "human_factors_basis": "WCAG 1.4.3 Contrast (Minimum): 4.5:1 for normal text. Small, low-contrast text is especially hard for older users and people with reduced acuity (Legge & Bigelow 2011).",
+      "measured": {
+        "fg": "#b3b3b3",
+        "bg": "#ffffff",
+        "contrast": 2.1,
+        "font_px": 12
+      },
+      "fixed_in": "SC-hm-signup-a: 14 px #4e5968 (7.1:1)"
+    },
+    {
+      "id": "D-19",
+      "scenario_id": "SC-hm-signup-b",
+      "category": "perception",
+      "element_selector": "#pw2",
+      "profile_condition": {
+        "vision.cvd": [
+          "deutan",
+          "protan"
+        ]
+      },
+      "severity_min": "P3",
+      "description": "After submit, field validity is shown only by border colour: red (#e03131) on the invalid '비밀번호 확인' field, green (#2f9e44) on the valid ones. There is no inline text or icon. The emptied invalid field is indistinguishable from the valid fields for red-green colour-blind users.",
+      "human_factors_basis": "WCAG 1.4.1 Use of Color. The two border colours differ almost only in hue (luminance ratio 1.31; deutan-simulated 1.04, protan 2.02; Machado et al. 2009). Each border meets 1.4.11 against white, so non-text contrast alone does not reveal the problem.",
+      "measured": {
+        "invalid_border": "#e03131",
+        "valid_border": "#2f9e44",
+        "pair_luminance_ratio": {
+          "normal": 1.31,
+          "deutan": 1.04,
+          "protan": 2.02
+        }
+      },
+      "fixed_in": "SC-hm-signup-a: dark-red border plus '⚠' inline error text; valid fields keep a neutral border"
+    },
+    {
+      "id": "D-20",
+      "scenario_id": "SC-hm-signup-b",
+      "category": "pointing",
+      "element_selector": "#agree-",
+      "profile_condition": {
+        "motor.tremor": [
+          "mild",
+          "moderate"
+        ]
+      },
+      "severity_min": "P3",
+      "description": "The terms checkboxes are 16 x 16 px native inputs, and their label text is not clickable (plain spans). Two of them are required. The rows are 36 px apart, so WCAG 2.5.8 spacing passes, but a mouse user with tremor must land on a 16 px square.",
+      "human_factors_basis": "Motion-impaired mouse users have more target re-entries, overshoot and slips on small targets (Keates et al., ASSETS 2002; Hwang et al., ASSETS 2004; Trewin & Pain 1999). Clickable labels multiply the effective width (Fitts's law). 16 px passes WCAG 2.5.8 through the spacing exception, so an ordinary mouse user is fine.",
+      "measured": {
+        "checkbox_css": [
+          16,
+          16
+        ],
+        "row_pitch_css": 36,
+        "label_clickable": false
+      },
+      "fixed_in": "SC-hm-signup-a: whole-row labels at least 44 px tall"
+    }
+  ],
+  "decoys": [
+    {
+      "id": "N-01",
+      "scenario_id": "SC-hm-transfer-a",
+      "category": "reach",
+      "element_selector": "#back",
+      "description": "Top-left back arrow (48 x 48 px, about 9 mm), about 150 mm above the bottom edge, so no one-handed thumb reaches it. Acceptable: it is secondary navigation, duplicated by the system back gesture or button, and reach guidance targets primary and frequent actions (Hoober 2013; Material top app bar convention).",
+      "also_present_in": [
+        "SC-hm-transfer-b"
+      ]
+    },
+    {
+      "id": "N-02",
+      "scenario_id": "SC-hm-transfer-a",
+      "category": "perception",
+      "element_selector": "#balance-note",
+      "description": "Grey helper text '오늘 이체 가능 금액 5,000,000원', 15 px #6b7684 on white. It looks faint but measures 4.62:1 (protan 4.52, deutan 4.68), so it passes WCAG 1.4.3 AA.",
+      "also_present_in": [
+        "SC-hm-transfer-b"
+      ]
+    },
+    {
+      "id": "N-03",
+      "scenario_id": "SC-hm-lesson-b",
+      "category": "perception",
+      "element_selector": "#res-",
+      "description": "Quiz result rows use a red/green pair of nearly equal luminance (#1f7a35 vs #b42323, ratio 1.21; deutan-simulated 1.02), but each row also carries distinct text and icon ('✓ 정답' / '✗ 오답'). Each meets 4.5:1 on its tint (4.99, 5.90), so WCAG 1.4.1 is satisfied.",
+      "also_present_in": [
+        "SC-hm-lesson-a"
+      ]
+    },
+    {
+      "id": "N-04",
+      "scenario_id": "SC-hm-starlight-a",
+      "category": "reach",
+      "element_selector": "hs-pause",
+      "description": "Pause control in the top-right corner (44 x 44 px, about 7.3 mm, about 129 mm above the bottom), out of one-handed thumb reach. Acceptable: infrequent, not time-critical, and the conventional mobile-game position. Pausing is a deliberate action where a regrip costs nothing.",
+      "also_present_in": [
+        "SC-hm-starlight-b"
+      ]
+    },
+    {
+      "id": "N-05",
+      "scenario_id": "SC-hm-signup-b",
+      "category": "perception",
+      "element_selector": "#submit",
+      "description": "'가입하기' is disabled until both required terms are checked, rendered #adb5bd on #e9ecef (1.75:1). Acceptable: WCAG 1.4.3 exempts inactive user-interface components. The enabled state is white on #1d5fd1 (5.82:1).",
+      "also_present_in": [
+        "SC-hm-signup-a"
+      ]
+    },
+    {
+      "id": "N-06",
+      "scenario_id": "SC-hm-signup-b",
+      "category": "pointing",
+      "element_selector": "#phone-help",
+      "description": "20 x 20 px '?' help icon next to the phone label. The nearest other target is 18.5 px from its centre, so a 24 px circle does not intersect any other target and it passes the WCAG 2.5.8 spacing exception. It is also a mouse-operated desktop page.",
+      "also_present_in": [
+        "SC-hm-signup-a"
+      ]
+    }
+  ],
+  "clean_controls": [
+    {
+      "scenario_id": "SC-hm-transfer-b",
+      "defect_variant": "SC-hm-transfer-a",
+      "notes": "Same transfer flow. Full-width bottom '다음'; whole-row voice-phishing toggle above the confirm button; 64 px PIN keys; the unusual-amount warning is a persistent inline notice next to the action; recipient status as text+icon badges."
+    },
+    {
+      "scenario_id": "SC-hm-lesson-a",
+      "defect_variant": "SC-hm-lesson-b",
+      "notes": "Same lesson flow. White bold deadline text; 22 px captions; 2x2 answer tiles (376 x 112 px); explanation stays until '다음 문제'; submit right-aligned within thumb reach of a two-handed grip."
+    },
+    {
+      "scenario_id": "SC-hm-starlight-b",
+      "defect_variant": "SC-hm-starlight-a",
+      "notes": "Same game. Dark HUD bar (15.4:1); 72 px boost centred above the tap button; 3000 ms boost window."
+    },
+    {
+      "scenario_id": "SC-hm-signup-a",
+      "defect_variant": "SC-hm-signup-b",
+      "notes": "Same signup flow. Readable password rule; persistent specific error under the submit button plus inline field error with icon; neutral borders for valid fields; whole-row checkbox labels."
+    }
+  ]
+}

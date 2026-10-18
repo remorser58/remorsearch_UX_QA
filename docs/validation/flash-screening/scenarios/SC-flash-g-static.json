@@ -1,0 +1,29 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-flash-g-static",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/static.html"
+  },
+  "task_goal_ko": "정적 화면에서 계속 버튼을 누른다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {},
+  "steps": [
+    {
+      "action": "tap",
+      "target": "text=계속"
+    },
+    {
+      "action": "wait",
+      "ms": 1000
+    },
+    {
+      "action": "snapshot"
+    }
+  ],
+  "success": {
+    "url_contains": "static.html"
+  }
+}

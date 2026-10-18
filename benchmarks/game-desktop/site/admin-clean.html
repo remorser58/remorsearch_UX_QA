@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORBIT Console · 멤버 관리</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:system-ui,-apple-system,"Segoe UI","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;font-size:14px;line-height:1.5;color:#1f2328;background:#f3f4f6}
+button,input,select{font:inherit}
+button{cursor:pointer}
+[hidden]{display:none!important}
+.shell{display:grid;grid-template-columns:232px minmax(0,1fr) 256px;grid-template-rows:64px auto;min-height:100vh}
+#top{grid-column:1/-1;display:flex;align-items:center;padding:0 24px;background:#ffffff;border-bottom:1px solid #e5e7eb}
+#brand{font-size:20px;font-weight:800;color:#111827;text-decoration:none;letter-spacing:.02em}
+#brand span{font-weight:300;color:#c9ced6;margin-left:4px}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:40px}
+#nav-help{width:20px;height:20px;padding:0;border:0;border-radius:50%;background:#374151;color:#ffffff;font-size:14px;line-height:20px;font-weight:700}
+#avatar{width:36px;height:36px;padding:0;border:0;border-radius:50%;background:#1a56db;color:#ffffff;font-weight:700}
+#side{background:#ffffff;border-right:1px solid #e5e7eb;padding:16px 12px}
+#side a{display:flex;align-items:center;height:40px;padding:0 12px;margin-bottom:4px;border-radius:6px;color:#374151;text-decoration:none;font-size:15px}
+#side a.on{background:#eef2ff;color:#1e3a8a;font-weight:700}
+main{padding:24px 32px;min-width:0}
+.page-head{display:flex;align-items:center;gap:12px;min-height:36px;margin-bottom:16px}
+h1{font-size:24px;margin:0}
+.page-head .meta{color:#4b5563}
+.card{position:relative;background:#ffffff;border:1px solid #e5e7eb;border-radius:10px;margin-bottom:16px}
+.card-head{display:flex;align-items:center;height:56px;padding:0 20px;border-bottom:1px solid #e5e7eb}
+h2{font-size:16px;margin:0}
+.head-tools{margin-left:auto;display:flex;align-items:center}
+#tools{display:flex;align-items:center;gap:8px}
+#tools button{display:grid;place-items:center;padding:0;border:0;border-radius:4px;background:transparent;color:#374151;width:32px;height:32px}
+#tools button:hover{background:#eef2ff}
+#tools svg{width:18px;height:18px}
+#export{margin-left:24px;height:32px;padding:0 12px;border:0;border-radius:6px;background:#f3f4f6;color:#a3a9b3;cursor:not-allowed}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:0 20px;height:48px;border-bottom:1px solid #eef0f3}
+th{color:#4b5563;font-weight:600;height:44px}
+tbody tr:last-child td{border-bottom:0}
+.chip{display:inline-block;padding:0 10px;border-radius:999px;font-weight:600}
+.chip.ok{background:#d1fae5;color:#065f46}
+.chip.inv{background:#fef3c7;color:#92400e}
+.act{text-align:right;white-space:nowrap}
+.ib{display:inline-grid;place-items:center;width:32px;height:32px;padding:0;border:0;border-radius:6px;background:transparent;color:#374151;vertical-align:middle}
+.ib + .ib{margin-left:24px}
+.ib:hover{background:#f3f4f6}
+.ib svg{width:18px;height:18px}
+#form-card{padding:20px}
+#form-card h2{margin-bottom:12px}
+#member{border:0;margin:0;padding:0;min-width:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.field label{display:block;margin-bottom:6px;color:#374151;font-weight:600}
+#member input,#member select{display:block;width:100%;height:40px;padding:0 12px;border-radius:6px;background:#ffffff;color:#111827;border:1px solid #6b7280}
+#apply-note{margin:12px 0 0;font-size:15px;color:#4b5563}
+.actions{display:flex;align-items:center;margin-top:20px;justify-content:space-between;gap:24px}
+#save{height:40px;padding:0 28px;border:0;background:#1a56db;color:#ffffff;font-weight:700;border-radius:6px}
+#delete-all{height:40px;padding:0 20px;font-weight:700;border:1px solid #c5221f;border-radius:6px;background:#ffffff;color:#b3261e}
+#toast{position:absolute;bottom:20px;white-space:nowrap;padding:10px 14px;border-radius:8px;background:#1f2328;color:#ffffff;box-shadow:0 6px 18px rgba(0,0,0,.18);right:124px;padding:4px 6px 4px 14px}
+.actions .right{display:flex;align-items:center;gap:12px}
+#form-errors{margin:0;padding:8px 12px;border:1px solid #f5c2c0;border-radius:8px;background:#fdecea;color:#8c1d18}
+#member input[aria-invalid="true"]{border-color:#b3261e;border-width:2px}
+#email-error{margin:6px 0 0;min-height:21px;color:#8c1d18;font-weight:600}
+#email-error[hidden]{display:block!important;visibility:hidden}
+#toast{display:flex;align-items:center;gap:12px}
+#toast-close{flex:none;height:32px;padding:0 12px;border:1px solid #ffffff;border-radius:6px;background:transparent;color:#ffffff;font-weight:700}
+#rail{padding:24px 16px 24px 0}
+.promo-card{position:relative;overflow:hidden;border-radius:14px;padding:16px;margin-bottom:16px;color:#ffffff}
+.promo-card strong{display:block;font-size:16px;margin:10px 0 4px}
+.promo-card p{margin:0 0 12px}
+.promo-card .art{height:64px;border-radius:10px;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.45) 0 14px,transparent 15px),radial-gradient(circle at 70% 60%,rgba(255,255,255,.3) 0 22px,transparent 23px),rgba(255,255,255,.12)}
+.badge{display:inline-block;padding:0 8px;border-radius:999px;background:#fde047;color:#111827;font-weight:800}
+.pill{display:inline-block;padding:4px 12px;border-radius:999px;background:#ffffff;color:#4c1d95;font-weight:700;text-decoration:none}
+#promo{background:linear-gradient(135deg,#0f766e,#1d4ed8)}
+#promo .pill{color:#0f3d8a}
+#notice{display:flex;align-items:center;gap:16px;margin-bottom:16px;padding:12px 16px;border:1px solid #f0c36d;border-left:6px solid #b45309;border-radius:8px;background:#fff8e6;color:#3b2f00}
+#notice strong{font-size:15px}
+#notice a{margin-left:auto;color:#1a4fb4;font-weight:700}
+#confirm{position:fixed;inset:0;display:grid;place-items:center;background:rgba(17,24,39,.45);z-index:50}
+#confirm .box{width:400px;padding:20px;border-radius:12px;background:#ffffff}
+#confirm .box p{margin:0 0 16px}
+#confirm .row{display:flex;justify-content:flex-end;gap:12px}
+#confirm button{height:36px;padding:0 16px;border-radius:6px;font-weight:700}
+#confirm-cancel{border:1px solid #6b7280;background:#ffffff;color:#1f2328}
+#confirm-ok{border:0;background:#c5221f;color:#ffffff}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header id="top">
+    <a id="brand" href="#" aria-label="ORBIT Console 홈">ORBIT<span>Console</span></a>
+    <div class="top-right">
+      <button id="nav-help" aria-label="도움말" title="도움말">?</button>
+      <button id="avatar" aria-label="내 계정">김</button>
+    </div>
+  </header>
+  <nav id="side" aria-label="주 메뉴">
+    <a href="#">대시보드</a>
+    <a href="#" class="on" aria-current="page">멤버 관리</a>
+    <a href="#">권한 그룹</a>
+    <a href="#">결제</a>
+    <a href="#">감사 로그</a>
+    <a href="#">설정</a>
+  </nav>
+  <main>
+    <div class="page-head"><h1>멤버 관리</h1><span class="meta">워크스페이스 · 한빛디자인</span></div>
+    <div id="notice" role="alert"><strong>결제 모듈 동기화 실패</strong><span>새로 추가한 멤버의 권한이 반영되지 않을 수 있습니다. 결제 설정에서 연결 상태를 확인해 주세요.</span><a href="#">연결 상태 확인</a></div>
+    <section class="card" id="list-card">
+      <div class="card-head">
+        <h2>멤버 목록</h2>
+        <div class="head-tools">
+          <div id="tools" role="toolbar" aria-label="목록 도구"><button id="tools-add" aria-label="멤버 추가" title="멤버 추가"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v10M3 8h10"/></svg></button><button id="tools-copy" aria-label="복사" title="복사"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="5" width="8" height="8" rx="1"/><path d="M3 10V3h7"/></svg></button><button id="tools-move" aria-label="그룹 이동" title="그룹 이동"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h9M9 5l3 3-3 3"/></svg></button><button id="tools-filter" aria-label="필터" title="필터"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h12L9.5 8.5V13l-3-1.5v-3z"/></svg></button><button id="tools-refresh" aria-label="새로고침" title="새로고침"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 8a5 5 0 1 1-1.5-3.5M13 3v3h-3"/></svg></button></div>
+          <button id="export" disabled>CSV 내보내기</button>
+        </div>
+      </div>
+      <table>
+        <thead><tr><th>이름</th><th>이메일</th><th>역할</th><th>상태</th><th class="act">작업</th></tr></thead>
+        <tbody id="rows">
+        <tr><td>박지훈</td><td>jihoon.park@example.com</td><td>관리자</td><td><span class="chip ok">활성</span></td><td class="act"><button id="row-edit" class="ib edit" aria-label="박지훈 편집"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1-3.5L11 2.5l2.5 2.5L6.5 12z"/></svg></button><button id="row-remove" class="ib remove" aria-label="박지훈 삭제" data-name="박지훈"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h10M6 4V2.5h4V4M4.5 4l.8 9.5h5.4l.8-9.5"/></svg></button></td></tr>
+        <tr><td>이수민</td><td>sumin.lee@example.com</td><td>편집자</td><td><span class="chip ok">활성</span></td><td class="act"><button class="ib edit" aria-label="이수민 편집"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1-3.5L11 2.5l2.5 2.5L6.5 12z"/></svg></button><button class="ib remove" aria-label="이수민 삭제" data-name="이수민"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h10M6 4V2.5h4V4M4.5 4l.8 9.5h5.4l.8-9.5"/></svg></button></td></tr>
+        <tr><td>최도윤</td><td>doyun.choi@example.com</td><td>뷰어</td><td><span class="chip inv">초대됨</span></td><td class="act"><button class="ib edit" aria-label="최도윤 편집"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1-3.5L11 2.5l2.5 2.5L6.5 12z"/></svg></button><button class="ib remove" aria-label="최도윤 삭제" data-name="최도윤"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h10M6 4V2.5h4V4M4.5 4l.8 9.5h5.4l.8-9.5"/></svg></button></td></tr>
+        <tr><td>정하은</td><td>haeun.jung@example.com</td><td>편집자</td><td><span class="chip ok">활성</span></td><td class="act"><button class="ib edit" aria-label="정하은 편집"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1-3.5L11 2.5l2.5 2.5L6.5 12z"/></svg></button><button class="ib remove" aria-label="정하은 삭제" data-name="정하은"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h10M6 4V2.5h4V4M4.5 4l.8 9.5h5.4l.8-9.5"/></svg></button></td></tr>
+        <tr><td>강민재</td><td>minjae.kang@example.com</td><td>뷰어</td><td><span class="chip ok">활성</span></td><td class="act"><button class="ib edit" aria-label="강민재 편집"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1-3.5L11 2.5l2.5 2.5L6.5 12z"/></svg></button><button class="ib remove" aria-label="강민재 삭제" data-name="강민재"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h10M6 4V2.5h4V4M4.5 4l.8 9.5h5.4l.8-9.5"/></svg></button></td></tr>
+        <tr><td>윤지아</td><td>jia.yoon@example.com</td><td>뷰어</td><td><span class="chip inv">초대됨</span></td><td class="act"><button class="ib edit" aria-label="윤지아 편집"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1-3.5L11 2.5l2.5 2.5L6.5 12z"/></svg></button><button class="ib remove" aria-label="윤지아 삭제" data-name="윤지아"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h10M6 4V2.5h4V4M4.5 4l.8 9.5h5.4l.8-9.5"/></svg></button></td></tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="card" id="form-card" hidden>
+      <h2>새 멤버</h2>
+      <fieldset id="member">
+        <div class="field"><label for="member-name">이름</label><input id="member-name" autocomplete="off"></div>
+        <div class="field"><label for="member-email">이메일</label><input id="member-email" type="email" autocomplete="off" aria-describedby="email-error"><p id="email-error" hidden></p></div>
+        <div class="field"><label for="member-role">역할</label><select id="member-role"><option>뷰어</option><option>편집자</option><option>관리자</option></select></div>
+      </fieldset>
+      <p id="apply-note">권한 변경은 저장 후 최대 24시간 이내에 적용되며, 적용 전까지는 기존 권한이 유지됩니다.</p>
+      
+      <div class="actions"><button id="delete-all">전체 삭제…</button><div class="right"><div id="form-errors" role="alert" hidden></div><button id="save">저장</button></div></div>
+      <div id="toast" role="status" hidden><span id="toast-text"></span><button id="toast-close">닫기</button></div>
+    </section>
+  </main>
+  <aside id="rail" aria-label="알림 및 소식">
+    
+    <div id="promo" class="promo-card">
+      <span class="badge">광고</span>
+      <div class="art" aria-hidden="true"></div>
+      <strong>스토리지 2배 이벤트</strong>
+      <p>이번 달 업그레이드하면 첫 3개월 50% 할인!</p>
+      <a href="#" class="pill">혜택 받기 ›</a>
+    </div>
+  </aside>
+</div>
+<div id="confirm" hidden role="dialog" aria-modal="true" aria-labelledby="confirm-text">
+  <div class="box">
+    <p id="confirm-text"></p>
+    <div class="row"><button id="confirm-cancel">취소</button><button id="confirm-ok">삭제</button></div>
+  </div>
+</div>
+<script>
+(function () {
+  'use strict';
+  var CFG = { toastMs: 0, confirmDeleteAll: true, inlineErrors: true };
+  var $ = function (id) { return document.getElementById(id); };
+  var formCard = $('form-card'), nameIn = $('member-name'), emailIn = $('member-email'), roleIn = $('member-role');
+  var errs = $('form-errors'), toast = $('toast'), rows = $('rows');
+  var TOAST_MSG = '저장되었습니다. 권한은 관리자 승인 후 최대 24시간 이내에 적용되며, 승인 전까지는 이전 권한이 유지됩니다.';
+
+  $('tools-add').addEventListener('click', function () { formCard.hidden = false; nameIn.focus(); });
+  ['tools-copy', 'tools-move', 'tools-filter', 'tools-refresh'].forEach(function (id) {
+    $(id).addEventListener('click', function () { return; });
+  });
+
+  var pending = null;
+  function ask(text, onOk) { pending = onOk; $('confirm-text').textContent = text; $('confirm').hidden = false; $('confirm-cancel').focus(); }
+  $('confirm-cancel').addEventListener('click', function () { pending = null; $('confirm').hidden = true; });
+  $('confirm-ok').addEventListener('click', function () { var f = pending; pending = null; $('confirm').hidden = true; if (f) f(); });
+
+  rows.addEventListener('click', function (e) {
+    var b = e.target.closest('button.remove');
+    if (!b) return;
+    ask(b.getAttribute('data-name') + ' 님을 워크스페이스에서 삭제할까요?', function () { b.closest('tr').remove(); });
+  });
+
+  function deleteAll() { rows.innerHTML = ''; }
+  $('delete-all').addEventListener('click', function () {
+    if (CFG.confirmDeleteAll) ask('멤버 목록 전체를 삭제할까요? 이 작업은 되돌릴 수 없습니다.', deleteAll);
+    else deleteAll();
+  });
+
+  var toastTimer = null;
+  function showToast() {
+    $('toast-text') ? ($('toast-text').textContent = TOAST_MSG) : (toast.textContent = TOAST_MSG);
+    toast.hidden = false;
+    clearTimeout(toastTimer);
+    if (CFG.toastMs > 0) toastTimer = setTimeout(function () { toast.hidden = true; }, CFG.toastMs);
+  }
+  if ($('toast-close')) $('toast-close').addEventListener('click', function () { toast.hidden = true; });
+
+  function showErrors(list) {
+    errs.innerHTML = '<strong>저장하지 못했습니다.</strong> ' + list.join(' ');
+    errs.hidden = false;
+    if (CFG.inlineErrors) {
+      var bad = list.some(function (m) { return m.indexOf('이메일') >= 0; });
+      emailIn.setAttribute('aria-invalid', bad ? 'true' : 'false');
+      $('email-error').hidden = !bad;
+      if (bad) $('email-error').textContent = list.filter(function (m) { return m.indexOf('이메일') >= 0; })[0];
+      (bad ? emailIn : nameIn).focus();
+    }
+  }
+  function hideErrors() {
+    errs.hidden = true; errs.innerHTML = '';
+    if (CFG.inlineErrors) { emailIn.setAttribute('aria-invalid', 'false'); $('email-error').hidden = true; }
+  }
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  $('save').addEventListener('click', function () {
+    var n = nameIn.value.trim(), m = emailIn.value.trim(), list = [];
+    if (!n) list.push('이름을 입력해 주세요.');
+    if (!m) list.push('이메일을 입력해 주세요.');
+    else if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)) list.push('이메일 형식이 올바르지 않습니다.');
+    if (list.length) { showErrors(list); return; }
+    hideErrors();
+    var tr = document.createElement('tr');
+    if (!$('saved-row')) tr.id = 'saved-row';
+    tr.innerHTML = '<td>' + esc(n) + '</td><td>' + esc(m) + '</td><td>' + esc(roleIn.value) + '</td>' +
+      '<td><span class="chip inv">초대됨</span></td><td class="act"></td>';
+    rows.appendChild(tr);
+    nameIn.value = ''; emailIn.value = '';
+    showToast();
+  });
+})();
+</script>
+</body>
+</html>

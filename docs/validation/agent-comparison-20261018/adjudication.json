@@ -1,0 +1,30 @@
+{
+ "rule": "A finding counts for a seeded defect when its selector names the defect element or an element inside it; class-only or descriptive selectors were matched by hand from the evidence text.",
+ "manual": {
+  "low-1-plain": {
+   "product1-b.html|h1": "D-05",
+   "product2-a.html|h1": "D-08",
+   "product2-a.html|.stats (stat cards)": "D-10",
+   "product2-a.html|h2 (처음 세운 가설…)": "D-11",
+   "product2-a.html|ol li:nth-child(3)": "D-12",
+   "product3-b.html|h1": "D-16",
+   "product3-b.html|KPI 고객 이탈률 description": "D-18",
+   "product3-b.html|휴면 고객 복귀 row, 담당 cell": "D-19",
+   "product3-b.html|최근 활동 3rd item": "D-22",
+   "product3-b.html|이번 주 인사이트 h3": "D-20",
+   "product3-b.html|10월 목표 달성률 card": "D-21",
+   "product4-a.html|arrival banner": "D-23",
+   "product4-a.html|address": "D-24",
+   "product4-a.html|쿠폰 section header": "FALSE: the sticky pay bar only appears mid-page in a full-page screenshot; at every scroll position the coupon header can be read",
+   "product4-a.html|배송비 label": "D-28"
+  },
+  "default-1-skill-scan-unavailable": {
+   "product1-b.html|.add.add--new": "D-06",
+   "product2-a.html|.chg li.chg--new": "D-14",
+   "product3-b.html|.act.act--sys": "D-22"
+  },
+  "low-1-skill": {
+   "product3-b.html|li:nth-of-type(3)": "D-22"
+  }
+ }
+}

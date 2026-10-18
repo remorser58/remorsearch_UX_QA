@@ -1,0 +1,6 @@
+# Fixture: '*' and '$' patterns and percent-encoding.
+User-agent: *
+Disallow: /*.php$
+Disallow: /search*q=
+Allow: /search/help
+Disallow: /%EA%B2%8C%EC%8B%9C%ED%8C%90/

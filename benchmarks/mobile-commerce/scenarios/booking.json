@@ -1,0 +1,123 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-booking-01",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/mobile-commerce/site/booking.html"
+  },
+  "task_goal_ko": "9월 30일(수) 15:30에 1명 커트 예약을 신청한다 (처음에는 휴대폰 번호를 빠뜨렸다가 안내를 보고 입력한다)",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {
+    "primary": [
+      "#next",
+      "#submit"
+    ],
+    "destructive": [],
+    "critical_message": [],
+    "error_message": [
+      "#form-error"
+    ],
+    "status": [
+      "#toast",
+      "#booking-done"
+    ],
+    "ad_like": [],
+    "hud": [],
+    "game_control": [],
+    "timed": [
+      "#toast"
+    ]
+  },
+  "steps": [
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#dates [data-date=\"2026-09-30\"]"
+    },
+    {
+      "action": "tap",
+      "target": "#time-slots [data-time=\"15:30\"]"
+    },
+    {
+      "action": "wait",
+      "ms": 200
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#next"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "tap",
+      "target": "#name"
+    },
+    {
+      "action": "type",
+      "target": "#name",
+      "text": "김서연"
+    },
+    {
+      "action": "tap",
+      "target": "#agree"
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#submit"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#phone"
+    },
+    {
+      "action": "type",
+      "target": "#phone",
+      "text": "010-1234-5678"
+    },
+    {
+      "action": "tap",
+      "target": "#submit"
+    },
+    {
+      "action": "wait",
+      "ms": 200
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "wait",
+      "ms": 4500
+    }
+  ],
+  "timing_windows": [
+    {
+      "id": "toast",
+      "selector": "#toast",
+      "measure": "visible_duration"
+    }
+  ],
+  "success": {
+    "selector_visible": "#booking-done"
+  },
+  "hotspots": []
+}

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>충전 버튼 반응 없음 - 테스트 포럼</title>
+<script src="/recaptcha/api.js" async defer></script>
+</head>
+<body>
+<article>
+<h1>질문</h1>
+<p>결제 버튼이 안 눌려요. 앱을 다시 깔아도 똑같습니다. COMMENT-FORM-SENTINEL</p>
+</article>
+<form id="comment" action="/comment" method="post">
+  <textarea name="body"></textarea>
+  <div class="g-recaptcha" data-sitekey="fixture-site-key"></div>
+  <button type="submit">등록</button>
+</form>
+</body>
+</html>

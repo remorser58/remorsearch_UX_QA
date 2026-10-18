@@ -1,0 +1,151 @@
+{
+ "suite": "heldout-mixed",
+ "runs": [
+  {
+   "run_id": "R-SC-hm-lesson-a-galaxy-tab-s9",
+   "scenario_id": "SC-hm-lesson-a",
+   "exit": 0,
+   "seconds": 21.0,
+   "run_dir": ".ergo-bench/heldout-frozen/runs/R-SC-hm-lesson-a-galaxy-tab-s9"
+  },
+  {
+   "run_id": "R-SC-hm-lesson-b-galaxy-tab-s9",
+   "scenario_id": "SC-hm-lesson-b",
+   "exit": 0,
+   "seconds": 26.8,
+   "run_dir": ".ergo-bench/heldout-frozen/runs/R-SC-hm-lesson-b-galaxy-tab-s9"
+  },
+  {
+   "run_id": "R-SC-hm-signup-a-laptop-1440",
+   "scenario_id": "SC-hm-signup-a",
+   "exit": 0,
+   "seconds": 30.8,
+   "run_dir": ".ergo-bench/heldout-frozen/runs/R-SC-hm-signup-a-laptop-1440"
+  },
+  {
+   "run_id": "R-SC-hm-signup-b-laptop-1440",
+   "scenario_id": "SC-hm-signup-b",
+   "exit": 0,
+   "seconds": 30.8,
+   "run_dir": ".ergo-bench/heldout-frozen/runs/R-SC-hm-signup-b-laptop-1440"
+  },
+  {
+   "run_id": "R-SC-hm-starlight-a-iphone-15",
+   "scenario_id": "SC-hm-starlight-a",
+   "exit": 0,
+   "seconds": 22.5,
+   "run_dir": ".ergo-bench/heldout-frozen/runs/R-SC-hm-starlight-a-iphone-15"
+  },
+  {
+   "run_id": "R-SC-hm-starlight-b-iphone-15",
+   "scenario_id": "SC-hm-starlight-b",
+   "exit": 0,
+   "seconds": 21.8,
+   "run_dir": ".ergo-bench/heldout-frozen/runs/R-SC-hm-starlight-b-iphone-15"
+  },
+  {
+   "run_id": "R-SC-hm-transfer-a-galaxy-s24-ultra",
+   "scenario_id": "SC-hm-transfer-a",
+   "exit": 0,
+   "seconds": 14.7,
+   "run_dir": ".ergo-bench/heldout-frozen/runs/R-SC-hm-transfer-a-galaxy-s24-ultra"
+  },
+  {
+   "run_id": "R-SC-hm-transfer-b-galaxy-s24-ultra",
+   "scenario_id": "SC-hm-transfer-b",
+   "exit": 0,
+   "seconds": 14.3,
+   "run_dir": ".ergo-bench/heldout-frozen/runs/R-SC-hm-transfer-b-galaxy-s24-ultra"
+  }
+ ],
+ "run_failures": [],
+ "measured_only": {
+  "suite": "heldout-mixed",
+  "defects": 20,
+  "recall_strict": 0.15,
+  "recall_lenient": 0.25,
+  "severity_agreement": 0.15,
+  "decoys": 6,
+  "decoys_flagged": 0,
+  "clean_control_findings": 11,
+  "precision_labeled": 0.656,
+  "unlabeled_findings_in_defect_variants": 7,
+  "findings": 39,
+  "severity_counts": {
+   "P0": 0,
+   "P1": 18,
+   "P2": 17,
+   "P3": 4
+  }
+ },
+ "single_profile": {
+  "suite": "heldout-mixed",
+  "defects": 20,
+  "recall_strict": 0.35,
+  "recall_lenient": 0.45,
+  "severity_agreement": 0.25,
+  "decoys": 6,
+  "decoys_flagged": 1,
+  "clean_control_findings": 59,
+  "precision_labeled": 0.318,
+  "unlabeled_findings_in_defect_variants": 57,
+  "findings": 144,
+  "severity_counts": {
+   "P0": 0,
+   "P1": 23,
+   "P2": 40,
+   "P3": 81
+  }
+ },
+ "swarm": {
+  "suite": "heldout-mixed",
+  "defects": 20,
+  "recall_strict": 0.8,
+  "recall_lenient": 0.9,
+  "severity_agreement": 0.7,
+  "decoys": 6,
+  "decoys_flagged": 2,
+  "clean_control_findings": 98,
+  "precision_labeled": 0.34,
+  "unlabeled_findings_in_defect_variants": 74,
+  "findings": 225,
+  "severity_counts": {
+   "P0": 0,
+   "P1": 24,
+   "P2": 48,
+   "P3": 153
+  }
+ },
+ "swarm_gain_over_single": [
+  "D-01",
+  "D-03",
+  "D-06",
+  "D-07",
+  "D-08",
+  "D-10",
+  "D-12",
+  "D-14",
+  "D-19"
+ ],
+ "swarm_gain_over_measured": [
+  "D-01",
+  "D-02",
+  "D-03",
+  "D-04",
+  "D-05",
+  "D-06",
+  "D-07",
+  "D-08",
+  "D-10",
+  "D-12",
+  "D-13",
+  "D-14",
+  "D-19"
+ ],
+ "missed_by_swarm": [
+  "D-09",
+  "D-16",
+  "D-17",
+  "D-20"
+ ]
+}

@@ -1,0 +1,283 @@
+{
+  "suite": "mobile-commerce",
+  "defects": [
+    {
+      "id": "D-01",
+      "scenario_id": "SC-checkout-01",
+      "category": "pointing",
+      "element_selector": "#btn-clear",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Destructive '전체삭제' (empties the cart immediately, no confirmation or undo) sits in the sticky bottom bar 4 px from the primary '결제하기' button (Galaxy S24: #btn-clear x16-100, #pay x104-344, both y716-768). A slightly-left touch aimed at pay lands on clear.",
+      "human_factors_basis": "Material Design touch-target guidance (48dp targets separated by >=8dp); Apple HIG: avoid placing destructive buttons where they can be tapped accidentally and require confirmation for destructive actions; systematic touch offsets and spread measured by Henze, Rukzio & Boll (2011, '100,000,000 taps') and Holz & Baudisch (2010) make a 0.7 mm gap (4 CSS px at ~0.18 mm/px) insufficient to separate an irreversible action from the primary one."
+    },
+    {
+      "id": "D-02",
+      "scenario_id": "SC-checkout-01",
+      "category": "pointing",
+      "element_selector": "#promo-close",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Promo banner close icon is a 16x16 CSS px target placed 2 px from the '받기' button (#promo-close x318-334 y86-102; #promo-get ends at x316). The scripted task taps it.",
+      "human_factors_basis": "WCAG 2.2 SC 2.5.8 Target Size (Minimum): target <24x24 CSS px and the 24 px circle centred on it intersects the adjacent '받기' target, so the spacing exception does not apply; also far below Apple HIG 44x44 pt and Material 48x48 dp. Fitts' law / touch-error models (Parhi, Karlson & Bederson 2006: ~9.2 mm for reliable thumb targets) predict frequent misses that would instead download the coupon."
+    },
+    {
+      "id": "D-03",
+      "scenario_id": "SC-checkout-01",
+      "category": "perception",
+      "element_selector": "#installment-note",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Installment/exclusion helper text is 11 px #b5b5b5 on #ffffff (contrast 2.05:1).",
+      "human_factors_basis": "WCAG 2.2 SC 1.4.3 Contrast (Minimum) requires 4.5:1 for text of this size; 11 px text is additionally below common legibility minimums (Apple HIG minimum 11 pt with default 17 pt body; Material body 14-16 sp), compounding the contrast failure for reduced-acuity and older users."
+    },
+    {
+      "id": "D-04",
+      "scenario_id": "SC-checkout-01",
+      "category": "cognition",
+      "element_selector": "#pay-methods",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "Payment-method picker shows 12 equally weighted options in a 3x4 grid with no default, no recently-used highlight and no grouping (clean variant: recently used method preselected + 2 alternatives, 9 more behind '다른 결제 수단 9개 보기').",
+      "human_factors_basis": "Hick-Hyman law (Hick 1952; Hyman 1953): choice reaction time grows with log2(n+1) of equally likely alternatives (12 options ~3.7 bits vs 3 options 2 bits); choice-overload literature (Iyengar & Lepper 2000; Scheibehenne et al. 2010 on moderating conditions) and progressive-disclosure guidance (NN/g) recommend defaults/prioritisation at decision points such as checkout."
+    },
+    {
+      "id": "D-05",
+      "scenario_id": "SC-checkout-01",
+      "category": "cognition",
+      "element_selector": "#pay",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "After tapping '결제하기' nothing on screen changes for 2.6 s (setTimeout 2600 ms): button stays enabled, no spinner/label change/progress, then the completion overlay appears. Measured: no DOM mutation within 1.2 s of the tap; repeat taps are silently swallowed.",
+      "human_factors_basis": "Nielsen (1993) response-time limits: 0.1 s feels instantaneous, delays >1 s need explicit feedback and interruptions of several seconds need a progress indicator; Doherty & Thadani (1982) ~400 ms threshold; ISO 9241-110:2020 (self-descriptiveness / feedback) requires the system to indicate it is processing. For a payment action absent feedback invites repeated taps or abandonment."
+    },
+    {
+      "id": "D-06",
+      "scenario_id": "SC-transfer-01",
+      "category": "reach",
+      "element_selector": "#next",
+      "profile_condition": {
+        "grip": "one_hand_right"
+      },
+      "severity_min": "P2",
+      "description": "Primary '다음' is a compact inline button left-aligned at mid-screen (Galaxy S24: x16-104, y399-443, centre (60,421) CSS px = ~(11 mm, 77 mm) from the top-left of a ~66x143 mm screen). For a right-thumb one-handed grip (thumb CMC near the right edge ~118-125 mm down) the centre is ~72-77 mm away, beyond a ~62 mm (50th percentile) functional thumb reach, so the user must shift grip or use the other hand; for a left-thumb grip it is ~44 mm away and comfortable. iPhone 15 (393x852): centre (60,421) pt, same pattern.",
+      "human_factors_basis": "Functional thumb-area model (Bergstrom-Lehtovirta & Oulasvirta, CHI 2014) and Hoober (2013) one-handed hold observations: targets on the far side of the screen from the holding thumb, above the thumb pivot, fall outside the reachable arc; Karlson, Bederson & Contreras-Vidal (2006) and Trudeau et al. (2012) show slower, less accurate thumb input for distant/opposite-side targets. Primary actions should sit in the natural zone (e.g., full-width bottom bar as in the clean variant)."
+    },
+    {
+      "id": "D-07",
+      "scenario_id": "SC-transfer-01",
+      "category": "pointing",
+      "element_selector": "#amount-chips",
+      "profile_condition": {
+        "context": {
+          "mobility": "walking"
+        }
+      },
+      "severity_min": "P3",
+      "description": "Quick-amount chips (+1만/+5만/+10만/+100만/전액) are 62x28 CSS px (~11.4x5.1 mm on Galaxy S24) with 4 px (~0.7 mm) gaps. They pass WCAG 2.5.8 (>=24 px) but, while walking, touch scatter makes an adjacent chip likely - a miss on '+10만' can add '+100만'. The scripted task taps '+100만' and '+5만'.",
+      "human_factors_basis": "Walking roughly doubles touch-point scatter and error rates (Bergstrom-Lehtovirta, Oulasvirta & Brewster, MobileHCI 2011; Schildbach & Rukzio 2010; Mizobuchi et al. 2005); recommended one-handed thumb targets ~9.2-9.6 mm (Parhi et al. 2006) and platform minimums 44 pt / 48 dp with >=8 dp spacing. At 5.1 mm height and 0.7 mm spacing the predicted miss probability under walking sigma is high while seated users are mostly fine."
+    },
+    {
+      "id": "D-08",
+      "scenario_id": "SC-transfer-01",
+      "category": "perception",
+      "element_selector": "#confirm-account",
+      "profile_condition": {
+        "vision": {
+          "presbyopia": true
+        }
+      },
+      "severity_min": "P2",
+      "description": "In the confirmation bottom sheet, the only recipient verification line (bank, account number, account holder name) is 12 px #555555 (7.46:1 contrast, passes WCAG) while the question headline is 20 px. For presbyopic users holding the phone at 400-500 mm this safety-critical text is hard to read, so a mis-selected recipient is not caught.",
+      "human_factors_basis": "Presbyopia moves the near point beyond ~40-50 cm by the 50s-60s, so small text must be read at a longer distance or without accommodation; NIA/NLM 'Making Your Website Senior-Friendly' recommends 12-14 pt (~16-19 px) body text; ANSI/HFES 100-2007 recommends >=16 arcmin (20-22 preferred) character height - 12 px Hangul (~2.0 mm on Galaxy S24) subtends ~14-17 arcmin at 400-500 mm, at or below the minimum, and older readers' critical print size is larger (Legge et al.; Chung et al.)."
+    },
+    {
+      "id": "D-09",
+      "scenario_id": "SC-transfer-01",
+      "category": "gaze",
+      "element_selector": "#send-error",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "When the transfer is rejected (1일 이체 한도 초과) the bottom sheet closes and the only feedback is a banner fixed under the header (Galaxy S24 y52-114) while the user's finger/attention was on '보내기' at (262,738): ~660 CSS px (~120 mm, ~22 deg at 300 mm) away, with no inline message, no focus move and no change near the tap point. The large sheet-dismiss transient coincides with the banner's appearance.",
+      "human_factors_basis": "Visual attention stays at the locus of action; peripheral detection falls off sharply outside the useful field of view of a few degrees (Ball et al. UFOV; Rensink 2000 on change blindness when a change coincides with another transient). Error-message guidance (NN/g; ISO 9241-110 error tolerance; WCAG 3.3.1/3.3.3 intent) calls for errors adjacent to the triggering control; the clean variant keeps the sheet open and shows the error directly above the buttons."
+    },
+    {
+      "id": "D-10",
+      "scenario_id": "SC-settings-01",
+      "category": "reach",
+      "element_selector": "#save",
+      "profile_condition": {
+        "grip": "one_hand_right"
+      },
+      "severity_min": "P2",
+      "description": "The only way to commit settings ('저장') is a text button pinned to the top-left corner of the header (Galaxy S24: x4-56, y3.5-47.5, centre (30,25.5) = ~(5.5 mm, 4.7 mm)). For a right-thumb one-handed grip this is the farthest point on the screen (~130 mm from the thumb pivot); it is also out of reach for left-thumb grip (~114 mm), but worst for right-handed one-handed use.",
+      "human_factors_basis": "Hoober (2013) and the functional thumb-area model (Bergstrom-Lehtovirta & Oulasvirta 2014): the top corner opposite the holding hand is the hardest region for one-handed use on ~6 inch phones; frequent/primary commit actions should be in the lower, natural zone (clean variant: full-width bottom '저장')."
+    },
+    {
+      "id": "D-11",
+      "scenario_id": "SC-settings-01",
+      "category": "perception",
+      "element_selector": "#toggle-marketing",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Switch off-state track is #e8e8e8 with a borderless white knob on a white row (1.23:1 against the background), so after the user turns marketing notifications off the switch and its state are barely visible. Measured on the switch element after the scripted tap.",
+      "human_factors_basis": "WCAG 2.2 SC 1.4.11 Non-text Contrast requires >=3:1 for visual information needed to identify a UI component and its state; the clean variant uses a #6b7684 off-track (4.6:1)."
+    },
+    {
+      "id": "D-12",
+      "scenario_id": "SC-settings-01",
+      "category": "pointing",
+      "element_selector": "#btn-withdraw",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Destructive '회원탈퇴' is a 56x18 CSS px text button stacked 2 px below '로그아웃' (56x18) in the footer (Galaxy S24: logout y503-521, withdraw y523-541). A slightly low tap on logout hits account deletion (mitigated only by a confirmation dialog).",
+      "human_factors_basis": "WCAG 2.2 SC 2.5.8: both targets are <24 px tall and the 24 px circle centred on '회원탈퇴' intersects the '로그아웃' target (centre-to-edge 11 px), so neither size nor spacing criterion is met; Apple HIG 44 pt / Material 48 dp; placing a destructive action flush against a routine one contradicts platform guidance on destructive actions."
+    },
+    {
+      "id": "D-13",
+      "scenario_id": "SC-booking-01",
+      "category": "reach",
+      "element_selector": "#next",
+      "profile_condition": {
+        "grip": "one_hand_left"
+      },
+      "severity_min": "P2",
+      "description": "Step-1 '다음' is a 56 px circular button attached to the right edge of the summary card at mid-screen (Galaxy S24: x280-336, y428-484, centre (308,456) = ~(56 mm, 83 mm)). Comfortable for a right-thumb grip (~38 mm from the pivot) but ~70-74 mm from a left-thumb pivot, beyond typical functional reach; iPhone 15 (393x852): centre (341,456) pt, same pattern.",
+      "human_factors_basis": "Functional thumb-area model (Bergstrom-Lehtovirta & Oulasvirta, CHI 2014); Hoober (2013): the reachable area mirrors with handedness, so a primary action placed on the right edge above the thumb pivot is a stretch only for left-hand one-handed users (roughly 10% of people are left-handed and many users switch hands); clean variant uses a full-width bottom button."
+    },
+    {
+      "id": "D-14",
+      "scenario_id": "SC-booking-01",
+      "category": "perception",
+      "element_selector": "#time-slots",
+      "profile_condition": {
+        "vision": {
+          "cvd": "deutan"
+        }
+      },
+      "severity_min": "P2",
+      "description": "Time-slot availability is encoded only by hue: available = green border #289828 / fill #eaf6ec, full = red border #d8383a / fill #fdeaea; same text, weight, shape; full slots do nothing on tap. The legend is itself colour-keyed. Under Machado et al. (2009) deuteranopia simulation (severity 1.0) the border colours become indistinguishable (CIE76 dE ~0) and fills differ by dE ~0.9 (normal vision: borders dE ~114).",
+      "human_factors_basis": "WCAG 2.2 SC 1.4.1 Use of Color (colour must not be the only visual means of conveying information); red-green colour-vision deficiency affects ~6-8% of men (deutan the most common form; Birch 2012). Clean variant adds '마감' text, strike-through and a dashed disabled style."
+    },
+    {
+      "id": "D-15",
+      "scenario_id": "SC-booking-01",
+      "category": "gaze",
+      "element_selector": "#form-error",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Submitting step 2 with a missing phone number shows a summary error box at the top of the form (Galaxy S24 y64-127) while the user tapped '예약 신청하기' at the bottom (focus (180,742)) - ~650 CSS px (~118 mm, ~21 deg at 300 mm) away; no inline error at the phone field, no focus move, no scroll, nothing changes near the tap point.",
+      "human_factors_basis": "Useful-field-of-view and change-blindness findings (Ball et al.; Rensink 2000): changes far from the locus of attention are often missed; error-message guidelines (NN/g; ISO 9241-110 error tolerance; WCAG 3.3.1 intent) call for identifying the error at the field and near the triggering action (clean variant: inline field errors + summary directly above the submit button)."
+    },
+    {
+      "id": "D-16",
+      "scenario_id": "SC-booking-01",
+      "category": "cognition",
+      "element_selector": "#toast",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "After a successful submission a toast with 60 characters (43 Hangul syllables) - containing the only notice that the booking is pending and will be confirmed via 카카오 알림톡 - is visible for 1.5 s (measured 1500 ms) and cannot be paused or reopened.",
+      "human_factors_basis": "WCAG 2.2 SC 2.2.1 Timing Adjustable (users must be able to extend/turn off time limits on content they need to read); Material 3 snackbar guidance (4-10 s, longer for longer text); reading-time estimate: even at a fast ~500 syllables/min, 43 syllables need ~5 s plus ~0.5-1 s to notice and shift gaze, i.e. >3x the display time."
+    },
+    {
+      "id": "D-17",
+      "scenario_id": "SC-booking-01",
+      "category": "perception",
+      "element_selector": "#submit",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Primary '예약 신청하기' uses white 16 px bold text on #4a9af5 (2.90:1).",
+      "human_factors_basis": "WCAG 2.2 SC 1.4.3 Contrast (Minimum): 16 px bold is not 'large text' (needs >=18.66 px bold), so 4.5:1 is required; it even fails the 3:1 large-text threshold. Low-contrast primary CTAs are also less salient and degrade further in bright ambient light."
+    }
+  ],
+  "decoys": [
+    {
+      "id": "N-01",
+      "scenario_id": "SC-checkout-01",
+      "category": "perception",
+      "element_selector": "#coupon-apply",
+      "description": "Disabled '적용' button (no coupons available) with #aaaaaa text on #f1f3f5 (2.09:1). Acceptable: WCAG 1.4.3 exempts text in inactive (disabled) UI components."
+    },
+    {
+      "id": "N-02",
+      "scenario_id": "SC-checkout-01",
+      "category": "perception",
+      "element_selector": "#stock-badge",
+      "description": "Red low-stock badge ('⚠ 품절 임박 · 1개 남음', #c62828 on white 5.62:1). Looks like colour-coded status but the meaning is carried by an icon and text, so WCAG 1.4.1 is met and it is readable under CVD."
+    },
+    {
+      "id": "N-03",
+      "scenario_id": "SC-checkout-01",
+      "category": "pointing",
+      "element_selector": "#ship-info",
+      "description": "20x20 CSS px info icon next to '배송비 무료' with >=24 px edge-to-edge clearance from every other target (nearest: '적용' 24 px below). Acceptable under the WCAG 2.5.8 spacing exception; secondary, optional control."
+    },
+    {
+      "id": "N-04",
+      "scenario_id": "SC-transfer-01",
+      "category": "cognition",
+      "element_selector": "#sending",
+      "description": "'보내기' takes 1.2 s to complete, but a full-screen spinner with '보내는 중…' appears within ~50 ms of the tap (measured first DOM change 40-56 ms). Latency with immediate feedback is acceptable (Nielsen 1 s limit is about feedback, not duration)."
+    },
+    {
+      "id": "N-05",
+      "scenario_id": "SC-transfer-01",
+      "category": "perception",
+      "element_selector": "#recent-activity",
+      "description": "Recent-transactions list colours outgoing amounts red and incoming green, but each amount also carries a '출금'/'입금' label and a −/+ sign; contrast 4.98:1 and 5.13:1. Not colour-only (WCAG 1.4.1 met)."
+    },
+    {
+      "id": "N-06",
+      "scenario_id": "SC-settings-01",
+      "category": "reach",
+      "element_selector": "#help",
+      "description": "44x44 '고객센터' help icon in the top-right corner, outside the one-handed natural zone. Acceptable: infrequent, secondary action not on the task path; placing rarely used controls at the top is the recommended pattern (Hoober 2013)."
+    },
+    {
+      "id": "N-07",
+      "scenario_id": "SC-settings-01",
+      "category": "pointing",
+      "element_selector": "#privacy-link",
+      "description": "'개인정보 처리방침' link is only 17 px tall, but it is an inline link inside a sentence; WCAG 2.5.8 'Inline' exception applies, and the nearest other target is >70 px away."
+    },
+    {
+      "id": "N-08",
+      "scenario_id": "SC-settings-01",
+      "category": "cognition",
+      "element_selector": "#save-toast",
+      "description": "'저장되었어요' toast (6 characters) is shown for 2.5 s just under the header, ~60 px (edge to edge) from the '저장' tap point, and the saved state also persists on the page ('변경사항 저장됨'). Short, redundant and near the focus point: not a timing or gaze problem."
+    },
+    {
+      "id": "N-09",
+      "scenario_id": "SC-booking-01",
+      "category": "pointing",
+      "element_selector": "#agree",
+      "description": "Consent checkbox input is 20x20 CSS px, but it sits inside a full-width <label> (328x48) that toggles it, so the effective target is 48 px tall; nearest other target is >70 px away."
+    },
+    {
+      "id": "N-10",
+      "scenario_id": "SC-booking-01",
+      "category": "perception",
+      "element_selector": "#notice",
+      "description": "Late-arrival notice in grey (#6b6b6b on white) at 14 px looks faint but measures 5.33:1, passing WCAG 1.4.3 AA."
+    }
+  ],
+  "clean_controls": [
+    {
+      "scenario_id": "SC-checkout-01-clean",
+      "notes": "checkout-clean.html: 44x44 close with 8 px gap; '전체 삭제' moved to the list header (far from pay) with a confirmation dialog; recently used payment method preselected with 2 alternatives and progressive disclosure for the other 9; helper text 14 px #4e5968 (7.1:1); pay button disables and shows a spinner + '결제 처리 중…' within ~50 ms. Decoys N-01..N-03 are present unchanged."
+    },
+    {
+      "scenario_id": "SC-transfer-01-clean",
+      "notes": "transfer-clean.html: '다음' is a full-width bottom button; quick-amount chips 59x48 with 8 px gaps; confirmation details 15 px #333d4b; limit error shown inside the still-open sheet directly above the buttons with icon and text (plus inline field errors). Decoys N-04, N-05 present unchanged."
+    },
+    {
+      "scenario_id": "SC-settings-01-clean",
+      "notes": "settings-clean.html: '저장' is a full-width bottom button; switch off-state #6b7684 (4.6:1); logout and account deletion are separate 56 px rows in different groups (28 px apart) with confirmation dialogs; save toast shown just above the save button. Decoys N-06..N-08 present."
+    },
+    {
+      "scenario_id": "SC-booking-01-clean",
+      "notes": "booking-clean.html: step-1 '다음' is a full-width bottom button; full slots show '마감' text, strike-through, dashed grey disabled style; inline field errors plus a summary directly above the submit button; submit #1b64da (5.41:1); short 4 s toast and the pending-confirmation notice persists on the completion screen. Decoys N-09, N-10 present."
+    }
+  ]
+}

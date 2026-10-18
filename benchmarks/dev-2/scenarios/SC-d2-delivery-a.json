@@ -1,0 +1,223 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-d2-delivery-a",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/dev-2/site/delivery/delivery-a.html"
+  },
+  "task_goal_ko": "바삭공방 치킨 망원점에서 반반치킨 (후라이드+양념)을 부위 순살(+2,000원), 추가 선택 콜라 1.25L(+2,500원)로 고른 뒤 소스는 고르지 않은 채 먼저 '담기'를 눌러 보고, 매운 양념(+500원)을 골라 1개 25,000원으로 담는다. 장바구니에서 수량을 2개(50,000원)로 늘려 주문하기로 넘어간다. 가게 사장님께 요청사항에 “땅콩 알레르기가 있어요. 양념에 땅콩가루 빼 주세요”를 적고 배달 요청사항은 ‘문 앞에 두고 벨 눌러주세요’를 고른다. 할인 쿠폰 코드에는 문자로 받은 코드를 잘못 옮겨 적은 HANKI5000을 넣어 적용해 보고, 지운 뒤 HANKKI5000으로 다시 적용해 5,000원 할인을 받는다. 결제수단은 동네페이를 고른다. 상세주소를 비운 채 먼저 결제하기를 눌러 본 뒤 상세주소 302동 1104호를 입력하고, 48,000원(주문금액 50,000원 + 배달팁 3,000원 − 쿠폰 5,000원)을 결제해 주문 현황 화면을 확인한다",
+  "device_ids": [
+    "galaxy-s24-ultra",
+    "iphone-15"
+  ],
+  "targets": {
+    "primary": [
+      "#menu-banban",
+      "#add-to-cart",
+      "#cart-btn",
+      "#order-btn",
+      "#coupon-apply",
+      "#pay-btn"
+    ],
+    "destructive": [
+      "#line-1-del",
+      "#del-confirm"
+    ],
+    "irreversible": [],
+    "critical_message": [],
+    "error_message": [
+      "#add-to-cart-error",
+      "#grp-sauce-error",
+      "#coupon-msg",
+      "#addr-detail-error"
+    ],
+    "status": [
+      "#cart-btn-count",
+      "#track-headline",
+      "#track-steps",
+      "#track-eta"
+    ],
+    "navigation": [
+      "#menu-back",
+      "#opt-back",
+      "#cart-back",
+      "#co-back",
+      "#track-home"
+    ],
+    "ad_like": [],
+    "hud": [],
+    "game_control": [],
+    "timed": []
+  },
+  "steps": [
+    {
+      "action": "tap",
+      "target": "#menu-banban"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "tap",
+      "target": "#grp-part-boneless"
+    },
+    {
+      "action": "scroll",
+      "dy": 300
+    },
+    {
+      "action": "wait",
+      "ms": 300
+    },
+    {
+      "action": "tap",
+      "target": "#grp-extra-cola"
+    },
+    {
+      "action": "tap",
+      "target": "#add-to-cart"
+    },
+    {
+      "action": "wait",
+      "ms": 600
+    },
+    {
+      "action": "tap",
+      "target": "#grp-sauce-hot"
+    },
+    {
+      "action": "tap",
+      "target": "#add-to-cart"
+    },
+    {
+      "action": "wait",
+      "ms": 600
+    },
+    {
+      "action": "tap",
+      "target": "#cart-btn"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "tap",
+      "target": "#qty-1-inc"
+    },
+    {
+      "action": "tap",
+      "target": "#order-btn"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "type",
+      "target": "#note-store",
+      "text": "땅콩 알레르기가 있어요. 양념에 땅콩가루 빼 주세요"
+    },
+    {
+      "action": "tap",
+      "target": "#rider-bell"
+    },
+    {
+      "action": "type",
+      "target": "#coupon-code",
+      "text": "HANKI5000"
+    },
+    {
+      "action": "tap",
+      "target": "#coupon-apply"
+    },
+    {
+      "action": "wait",
+      "ms": 600
+    },
+    {
+      "action": "tap",
+      "target": "#coupon-code"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "type",
+      "target": "#coupon-code",
+      "text": "HANKKI5000"
+    },
+    {
+      "action": "tap",
+      "target": "#coupon-apply"
+    },
+    {
+      "action": "wait",
+      "ms": 600
+    },
+    {
+      "action": "tap",
+      "target": "#paymethod-dnpay"
+    },
+    {
+      "action": "tap",
+      "target": "#pay-btn"
+    },
+    {
+      "action": "wait",
+      "ms": 800
+    },
+    {
+      "action": "type",
+      "target": "#addr-detail",
+      "text": "302동 1104호"
+    },
+    {
+      "action": "tap",
+      "target": "#pay-btn"
+    },
+    {
+      "action": "wait",
+      "ms": 1000
+    }
+  ],
+  "timing_windows": [],
+  "success": {
+    "selector_visible": "#scr-track"
+  },
+  "hotspots": []
+}

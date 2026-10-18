@@ -1,0 +1,9 @@
+[
+  {"case": "happy", "grant": true, "expected": "complete", "product_complete": false},
+  {"case": "blocked_permission", "grant": false, "expected": "blocked", "product_complete": false},
+  {"case": "interrupted", "grant": true, "pause_after": "browser", "expected": "interrupted", "product_complete": false},
+  {"case": "failed_visual", "grant": true, "expected": "failed", "product_complete": false},
+  {"case": "unknown_evidence", "grant": true, "expected": "unknown", "product_complete": false},
+  {"case": "regression_failure", "grant": true, "expected": "failed", "product_complete": false},
+  {"case": "missing_browser", "grant": true, "expected": "blocked", "product_complete": false}
+]

@@ -1,0 +1,65 @@
+{
+  "screenshot": "annotated.png",
+  "device_id": "galaxy-s24",
+  "viewport_css": [
+    360,
+    780
+  ],
+  "annotator": "model",
+  "surface": {
+    "kind": "game",
+    "url": null,
+    "title": "puzzle",
+    "app_id": null
+  },
+  "elements": [
+    {
+      "name": "결제하기",
+      "role": "button",
+      "box": {
+        "x": 16,
+        "y": 700,
+        "w": 328,
+        "h": 48
+      },
+      "roles": [
+        "primary"
+      ],
+      "text": "결제하기",
+      "color_fg": "#ffffff",
+      "color_bg": "#1a73e8",
+      "font_size_px": 16
+    },
+    {
+      "name": "점프",
+      "role": "button",
+      "box": [
+        300,
+        600,
+        64,
+        64
+      ],
+      "roles": [
+        "game_control"
+      ],
+      "text": null
+    },
+    {
+      "name": "HP 42",
+      "role": "status",
+      "box": {
+        "x": 8,
+        "y": 8,
+        "w": 80,
+        "h": 16
+      },
+      "roles": [
+        "hud"
+      ],
+      "text": "HP 42",
+      "color_fg": "#9aa0a6",
+      "color_bg": "#202124",
+      "font_size_px": 10
+    }
+  ]
+}

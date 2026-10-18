@@ -1,0 +1,116 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-transfer-01-clean",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/mobile-commerce/site/transfer-clean.html"
+  },
+  "task_goal_ko": "홍길동님에게 송금한다. 1일 이체 한도 초과 안내를 받으면 금액을 50,000원으로 줄여 다시 보낸다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {
+    "primary": [
+      "#next",
+      "#send"
+    ],
+    "destructive": [],
+    "critical_message": [
+      "#confirm-account"
+    ],
+    "error_message": [
+      "#send-error"
+    ],
+    "status": [
+      "#sending",
+      "#transfer-done"
+    ],
+    "ad_like": [],
+    "hud": [],
+    "game_control": [],
+    "timed": []
+  },
+  "steps": [
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#recipients [data-id=\"r1\"]"
+    },
+    {
+      "action": "tap",
+      "target": "#amount-chips [data-add=\"1000000\"]"
+    },
+    {
+      "action": "tap",
+      "target": "#amount-chips [data-add=\"50000\"]"
+    },
+    {
+      "action": "wait",
+      "ms": 200
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#next"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#send"
+    },
+    {
+      "action": "wait",
+      "ms": 1600
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#cancel"
+    },
+    {
+      "action": "wait",
+      "ms": 300
+    },
+    {
+      "action": "tap",
+      "target": "#amount-clear"
+    },
+    {
+      "action": "tap",
+      "target": "#amount-chips [data-add=\"50000\"]"
+    },
+    {
+      "action": "tap",
+      "target": "#next"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "tap",
+      "target": "#send"
+    },
+    {
+      "action": "wait",
+      "ms": 1600
+    }
+  ],
+  "timing_windows": [],
+  "success": {
+    "selector_visible": "#transfer-done"
+  },
+  "hotspots": []
+}

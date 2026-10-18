@@ -1,0 +1,80 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-case-study-01",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/visual-layout/site/case-study.html"
+  },
+  "task_goal_ko": "바람길 물류 고객 사례의 제목, 요약, 주요 수치, 진행 과정, 배운 점, 달라진 점, 다른 사례 목록을 끝까지 읽는다",
+  "device_ids": [
+    "galaxy-s24",
+    "iphone-15"
+  ],
+  "targets": {
+    "primary": [
+      "#btn-consult"
+    ],
+    "destructive": [],
+    "critical_message": [],
+    "error_message": [],
+    "status": [],
+    "ad_like": [],
+    "hud": [],
+    "game_control": [],
+    "timed": []
+  },
+  "steps": [
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "scroll",
+      "dy": 600
+    },
+    {
+      "action": "wait",
+      "ms": 250
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "scroll",
+      "dy": 600
+    },
+    {
+      "action": "wait",
+      "ms": 250
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "scroll",
+      "dy": 600
+    },
+    {
+      "action": "wait",
+      "ms": 250
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "scroll",
+      "dy": 600
+    },
+    {
+      "action": "wait",
+      "ms": 250
+    },
+    {
+      "action": "snapshot"
+    }
+  ],
+  "timing_windows": [],
+  "success": {
+    "selector_visible": "#btn-consult"
+  },
+  "hotspots": []
+}

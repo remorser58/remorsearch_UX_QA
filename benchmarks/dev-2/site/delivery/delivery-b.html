@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>바삭공방 치킨 망원점 · 동네한끼</title>
+<style>
+:root{--ink:#212529;--sub:#495057;--line:#e9ecef;--soft:#f8f9fa;--brand:#c92a2a;--ok:#2b7a3b;--focus:#1971c2;--bd:#868e96}
+*{box-sizing:border-box}
+html{scroll-padding-top:120px;scroll-padding-bottom:112px}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;font-size:16px;line-height:1.5;color:var(--ink);background:#fff;word-break:keep-all;overflow-wrap:anywhere;-webkit-tap-highlight-color:transparent}
+h1,h2,p,ul,ol,dl,dd{margin:0}
+button,input,textarea{font:inherit;color:inherit;letter-spacing:inherit;word-spacing:inherit}
+button{margin:0;padding:0;border:0;background:none;text-align:inherit;cursor:pointer;touch-action:manipulation}
+button:disabled{cursor:default}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+[tabindex="-1"]:focus{outline:none}
+.vh{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0}
+.scr{display:none}
+.scr.on{display:block}
+.hdr{position:sticky;top:0;z-index:10;display:flex;align-items:center;min-height:56px;padding:0 4px;background:#fff;border-bottom:1px solid var(--line)}
+.hdr h1{flex:1;min-width:0;padding:8px 4px;font-size:18px;font-weight:700;line-height:1.35}
+.ib{position:relative;flex:none;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:12px;color:var(--ink)}
+.ib svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hdr-actions{display:flex;flex:none}
+#shop-actions-like[aria-pressed="true"] svg{fill:var(--brand);stroke:var(--brand)}
+.body{padding-bottom:32px}
+/* menu */
+#menu-body{padding-bottom:112px}
+.shop{padding:20px 16px 16px}
+.shop-name{font-size:21px;font-weight:800;line-height:1.35}
+.shop-meta{margin-top:4px;font-size:15px;color:var(--sub)}
+#cat-tabs{position:sticky;top:56px;z-index:9;display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;padding:8px 16px;background:#fff;box-shadow:0 1px 0 var(--line);scrollbar-width:none}
+#cat-tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border:1px solid var(--bd);border-radius:24px;background:#fff;color:var(--ink);font-size:15px;white-space:nowrap;text-decoration:none}
+.tab[aria-current="true"]{background:var(--ink);border-color:var(--ink);color:#fff;font-weight:700}
+.msec{scroll-margin-top:8px}
+.msec h2{padding:24px 16px 4px;font-size:19px;font-weight:800;line-height:1.4}
+.mlist{list-style:none;padding:0}
+.mi{display:flex;align-items:flex-start;gap:12px;width:100%;min-height:96px;padding:16px;border-bottom:1px solid var(--line);text-align:left}
+.mi-txt{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.mi-name{font-size:17px;font-weight:700;line-height:1.4}
+.mi-desc{font-size:14px;line-height:1.45;color:var(--sub)}
+.mi-price{font-size:16px;font-weight:700}
+.mi-thumb{flex:none;width:72px;height:72px;border-radius:12px}
+.badge{display:inline-block;margin-left:4px;padding:0 6px;border-radius:6px;background:#fff5f5;color:var(--brand);font-size:14px;font-weight:700;line-height:1.5;vertical-align:1px}
+/* option */
+#opt-body{padding-bottom:140px;background:#f1f3f5}
+.photo{height:200px}
+.opt-info{padding:16px 16px 20px;background:#fff}
+#opt-desc{font-size:15px;color:var(--sub)}
+#opt-base{margin-top:8px;font-size:18px;font-weight:800}
+.grp{min-width:0;margin:8px 0 0;padding:20px 16px;border:0;background:#fff}
+.grp>legend,.grp-title{float:left;width:100%;margin:0 0 12px;padding:0;font-size:17px;font-weight:700;line-height:1.4}
+.grp>*:not(legend):not(.grp-title){clear:both}
+.grp.invalid{outline:2px solid var(--brand);outline-offset:-4px}
+.req{display:inline-block;margin-left:6px;padding:0 6px;border-radius:6px;background:#fff5f5;color:var(--brand);font-size:14px;font-weight:700;line-height:1.6;vertical-align:1px}
+.opt{margin-left:6px;font-size:14px;font-weight:400;color:var(--sub)}
+.gerr{margin:0 0 8px;font-size:14px;font-weight:700;color:var(--brand)}
+.chips2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.chip{position:relative;display:block;min-height:52px;padding:14px 12px;border:1px solid var(--bd);border-radius:12px;background:#fff;font-size:15px;line-height:1.4;text-align:center;white-space:normal;cursor:pointer}
+.chip.on,.chip:has(.hit:checked){padding:13px 11px;border:2px solid var(--brand);background:#fff5f5;color:var(--brand);font-weight:700}
+.chip:has(.hit:focus-visible){outline:2px solid var(--focus);outline-offset:2px}
+.hit{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;z-index:1;cursor:pointer}
+.box{flex:none;display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;margin-right:12px;border:2px solid var(--bd);border-radius:6px;background:#fff}
+input:checked+.box{border-color:var(--brand);background:var(--brand)}
+input:checked+.box::after{content:"";width:11px;height:6px;margin-top:-3px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(-45deg)}
+input:focus-visible+.box{outline:2px solid var(--focus);outline-offset:2px}
+input:disabled+.box{border-color:#ced4da;background:#f1f3f5}
+.xrow{display:flex;align-items:center;margin:0 -16px;padding:0 16px;border-bottom:1px solid #f1f3f5;font-size:16px;line-height:1.4}
+.xrow:last-child{border-bottom:0}
+.xprice{margin-left:auto;padding-left:12px;font-size:15px;color:var(--sub);white-space:nowrap}
+.footbar{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line)}
+.cta{display:block;width:100%;min-height:56px;padding:14px 16px;border-radius:12px;background:var(--brand);color:#fff;font-size:17px;font-weight:700;line-height:1.6;text-align:center}
+#add-to-cart-error{margin:0 0 8px;font-size:14px;font-weight:700;color:var(--brand)}
+/* cart */
+#cart-body{padding-bottom:120px}
+.cart-shop{padding:16px 16px 4px;font-size:17px;font-weight:800}
+.line{margin:0 16px;padding:4px 0 8px;border-bottom:1px solid var(--line)}
+.line-top{display:flex;align-items:flex-start;gap:8px}
+.line-name{flex:1;min-width:0;padding-top:12px;font-size:17px;font-weight:700;line-height:1.4}
+.line-del{margin-right:-12px}
+.line-opts{margin-top:2px;font-size:14px;color:var(--sub)}
+.line-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:4px}
+.line-price{font-size:17px;font-weight:800}
+.stepper{display:flex;align-items:center;margin-right:-8px}
+.stepper button{position:relative;display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%}
+.stepper button::before{content:"";position:absolute;inset:8px;border:1px solid var(--bd);border-radius:50%}
+.stepper svg{position:relative;width:20px;height:20px;fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+.stepper button:disabled svg{stroke:var(--bd)}
+.stepper button:disabled::before{border-color:#dee2e6}
+.qv{min-width:32px;font-size:17px;font-weight:700;text-align:center}
+.more{display:block;width:calc(100% - 32px);min-height:48px;margin:16px;padding:10px 16px;border:1px solid var(--bd);border-radius:12px;font-size:16px;font-weight:700;text-align:center}
+.cart-sum-box{margin:0 16px;padding:16px;border-radius:12px;background:var(--soft)}
+.cart-sum-box .row{display:flex;justify-content:space-between;gap:12px;font-size:17px;font-weight:700}
+.cart-sum-box .note{margin-top:4px;font-size:14px;color:var(--sub)}
+.empty{padding:48px 16px 0;text-align:center}
+.empty-t{font-size:17px;font-weight:700}
+/* checkout */
+#co-body{padding-bottom:120px}
+.blk{margin:0 16px;padding:20px 0;border-bottom:1px solid var(--line)}
+.blk h2,.lg-h{margin:0 0 12px;font-size:18px;font-weight:800;line-height:1.4}
+.addr-main{font-size:16px;font-weight:700}
+.flabel{display:block;margin:12px 0 6px;font-size:15px;font-weight:700}
+.tin{display:block;width:100%;min-height:48px;padding:11px 12px;border:1px solid var(--bd);border-radius:10px;background:#fff;font-size:16px;line-height:1.5}
+.tin::placeholder{color:#666e75;opacity:1}
+.tin.bad{padding:10px 11px;border:2px solid var(--brand)}
+textarea.tin{min-height:72px;resize:vertical}
+.err{margin-top:6px;font-size:14px;font-weight:700;color:var(--brand)}
+.phone{margin-top:16px;font-size:16px}
+.phone .k{margin-right:8px;color:var(--sub)}
+.count{margin-top:4px;font-size:14px;color:var(--sub);text-align:right}
+.crow,.rrow{position:relative;display:flex;align-items:center;min-height:48px;padding:8px 0;font-size:16px;line-height:1.4;cursor:pointer}
+.crow:has(.hit:focus-visible),.rrow:has(.hit:focus-visible){outline:2px solid var(--focus);outline-offset:2px;border-radius:8px}
+.rgrp{min-width:0;margin:12px 0 0;padding:0;border:0}
+.rgrp>legend{float:left;width:100%;margin:0 0 4px;padding:0;font-size:15px;font-weight:700}
+.rgrp>label{clear:both}
+.rdot{flex:none;position:relative;width:24px;height:24px;margin-right:12px;border:2px solid var(--bd);border-radius:50%;background:#fff}
+.hit:checked+.rdot{border-color:var(--brand)}
+.hit:checked+.rdot::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--brand)}
+.cp-row{display:flex;gap:8px}
+.cp-row .tin{flex:1;min-width:0}
+.btn-apply{flex:none;min-width:72px;min-height:48px;padding:0 16px;border-radius:10px;background:var(--ink);color:#fff;font-size:16px;font-weight:700;text-align:center}
+.cmsg{min-height:20px;margin-top:6px;font-size:14px;font-weight:700}
+.cmsg.ok{color:var(--ok)}
+.cmsg.bad{color:var(--brand)}
+.pmgrp{min-width:0;margin:0 16px;padding:20px 0;border:0;border-bottom:1px solid var(--line)}
+.pmgrp>legend{float:left;width:100%;padding:0}
+.pmgrp>label{clear:both}
+.pm{position:relative;display:block;margin-top:8px}
+.pm:first-of-type{margin-top:0}
+.pm .hit{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;outline:none;z-index:1;cursor:pointer}
+.pm-face{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;min-height:56px;padding:12px 16px;border:1px solid var(--bd);border-radius:12px;background:#fff;font-size:16px;line-height:1.4}
+.pm-face small{font-size:14px;color:var(--sub)}
+.pm-face .ck{flex:none;position:relative;width:22px;height:22px;margin-left:auto;border:2px solid var(--bd);border-radius:50%}
+.hit:checked+.pm-face{padding:11px 15px;border:2px solid var(--brand);background:#fff5f5}
+.hit:checked+.pm-face .ck{border-color:var(--brand);background:var(--brand)}
+.hit:checked+.pm-face .ck::after{content:"";position:absolute;left:4px;top:4px;width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
+.hit:focus-visible+.pm-face{box-shadow:0 0 0 3px var(--focus)}
+#pm-error{margin:8px 16px 0}
+.agree{margin:16px 16px 0;font-size:14px;color:var(--sub)}
+#price-summary h2{margin:0 0 8px;font-size:18px;font-weight:800;line-height:1.4}
+.sum-row.total{margin-top:4px;padding-top:8px;border-top:1px solid #dee2e6;font-size:18px;font-weight:700}
+/* track */
+#track-header h1{padding-left:12px}
+.txtbtn{flex:none;min-height:48px;padding:0 14px;border:1px solid var(--bd);border-radius:10px;font-size:15px;font-weight:700}
+#track-body{padding:20px 0 32px}
+#track-headline{margin:0 16px;font-size:22px;font-weight:800;line-height:1.35}
+#track-eta{margin:6px 16px 0;font-size:16px;color:var(--sub)}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:24px 16px 8px;padding:0;list-style:none}
+.steps li{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 2px;text-align:center}
+.steps li::before{content:"";position:absolute;top:8.5px;right:50%;width:100%;height:3px;background:#dee2e6}
+.steps li:first-child::before{display:none}
+.steps li.done::before,.steps li.cur::before{background:#2b8a3e}
+.steps .dot{position:relative;z-index:1;width:16px;height:16px;margin-top:2px;border:2px solid var(--bd);border-radius:50%;background:#fff}
+.steps li.done .dot{border:0;background:#2b8a3e}
+.steps li.cur .dot{border:0;background:#c92a2a}
+.steps .lbl{font-size:14px;font-weight:400;line-height:1.4;color:var(--sub)}
+.order-no{margin:20px 16px 0;font-size:15px;color:var(--sub)}
+.order-no b{color:var(--ink)}
+.tsum{margin:16px 16px 0;padding:16px;border-radius:12px;background:var(--soft)}
+.tsum h2{margin-bottom:8px;font-size:17px;font-weight:800}
+.tsum .r{display:flex;gap:12px;padding:6px 0;font-size:15px}
+.tsum dt{flex:none;width:84px;color:var(--sub)}
+.tsum dd{flex:1;min-width:0}
+.tsum .ti{font-weight:700}
+.tsum .to{font-size:14px;color:var(--sub)}
+#track-notice{margin:16px 16px 0;font-size:14px;color:var(--sub)}
+/* sheets */
+.modal{position:fixed;inset:0;z-index:50;display:flex;align-items:flex-end;justify-content:center}
+.backdrop{position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.sheet{position:relative;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;padding:24px 16px calc(16px + env(safe-area-inset-bottom));border-radius:16px 16px 0 0;background:#fff}
+.sheet h2{font-size:19px;font-weight:800;line-height:1.4}
+.sheet-desc{margin-top:8px;font-size:15px;color:var(--sub)}
+.okmsg{margin-top:12px;font-size:15px;font-weight:700;color:var(--ok)}
+.sheet-btns{display:flex;gap:8px;margin-top:20px}
+.btn1,.btn2{flex:1;min-height:52px;padding:12px;border-radius:12px;font-size:16px;font-weight:700;text-align:center}
+.btn1{background:var(--brand);color:#fff}
+.btn2{background:#f1f3f5;color:var(--ink)}
+
+#cart-btn .cnt{position:absolute;top:2px;right:0;min-width:20px;min-height:20px;padding:0 5px;border-radius:10px;background:var(--brand);color:#fff;font-size:14px;font-weight:700;line-height:20px;text-align:center}
+.chips3{display:flex;gap:8px}
+#grp-sauce .chip{position:relative;flex:none;width:calc((100% - 16px) / 3);height:52px;box-sizing:border-box;padding:0 12px;border:1px solid var(--bd);border-radius:12px;line-height:50px;white-space:nowrap;overflow:hidden;text-overflow:clip;text-align:left}
+#grp-sauce .chip:has(.hit:checked){padding:0 11px;border-width:2px;line-height:48px}
+.xrow{min-height:48px}
+.xrow input{flex:none;width:18px;height:18px;margin:0 12px 0 0;accent-color:var(--brand)}
+#price-summary{width:360px;box-sizing:border-box;margin:16px auto 0;padding:16px;border-radius:12px;background:var(--soft)}
+.sum-row{display:grid;grid-template-columns:208px 120px;align-items:center;min-height:32px;font-size:16px}
+.sum-row>span:last-child{text-align:right;white-space:nowrap}
+</style>
+</head>
+<body>
+<div id="app">
+<section class="scr on" id="scr-menu" aria-labelledby="menu-title">
+  <header class="hdr" id="menu-header">
+    <button type="button" class="ib" id="menu-back" aria-label="뒤로 가기"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <h1 id="menu-title" tabindex="-1">바삭공방 치킨</h1>
+    <div id="shop-actions" class="hdr-actions">
+      <button type="button" class="ib" id="shop-actions-share" aria-label="가게 공유하기"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15V3.5M7.5 8L12 3.5 16.5 8M5 12.5V19a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6.5"/></svg></button>
+      <button type="button" class="ib" id="shop-actions-like" aria-label="찜하기" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20.3s-7.4-4.5-9.2-9.1C1.5 7.8 3.7 4.6 7.1 4.6c2 0 3.6 1.1 4.9 2.9 1.3-1.8 2.9-2.9 4.9-2.9 3.4 0 5.6 3.2 4.3 6.6-1.8 4.6-9.2 9.1-9.2 9.1z"/></svg></button>
+    </div>
+    <button type="button" class="ib" id="cart-btn" aria-label="장바구니, 비어 있음"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 3.5h2.6l2.3 11.2h11.3l2-8H6.2"/><circle cx="9.5" cy="19.3" r="1.6"/><circle cx="17.3" cy="19.3" r="1.6"/></svg><span id="cart-btn-count" class="cnt" hidden>0</span></button>
+  </header>
+  <main class="body" id="menu-body">
+    <div class="shop" id="shop-info">
+      <p class="shop-name">바삭공방 치킨 망원점</p>
+      <p class="shop-meta">★ 4.8 · 리뷰 2,184</p>
+      <p class="shop-meta">최소주문 15,000원 · 배달팁 3,000원 · 배달 35~50분</p>
+    </div>
+    <nav id="cat-tabs" aria-label="메뉴 카테고리">
+      <a class="tab" id="cat-tabs-popular" href="#sec-popular" aria-current="true">인기 메뉴</a>
+      <a class="tab" id="cat-tabs-chicken" href="#sec-chicken">치킨</a>
+      <a class="tab" id="cat-tabs-boneless" href="#sec-boneless">순살치킨</a>
+      <a class="tab" id="cat-tabs-side" href="#sec-side">사이드</a>
+      <a class="tab" id="cat-tabs-drink" href="#sec-drink">음료</a>
+      <a class="tab" id="cat-tabs-sauce" href="#sec-sauce">소스·추가</a>
+    </nav>
+    <section class="msec" id="sec-popular" aria-labelledby="sec-popular-title">
+      <h2 id="sec-popular-title">인기 메뉴</h2>
+      <ul class="mlist">
+        <li><button type="button" class="mi" id="menu-fried" data-menu="fried"><span class="mi-txt"><span class="mi-name">바삭 후라이드</span><span class="mi-desc">국내산 신선육을 두 번 튀겨 겉은 바삭하고 속은 촉촉해요</span><span class="mi-price">19,000원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#f7c873,#d9822b)"></span></button></li>
+        <li><button type="button" class="mi" id="menu-yangnyeom" data-menu="yangnyeom"><span class="mi-txt"><span class="mi-name">달콤 양념치킨</span><span class="mi-desc">직접 끓인 달콤한 양념을 골고루 버무렸어요</span><span class="mi-price">20,000원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#f3a07f,#b8401f)"></span></button></li>
+        <li><button type="button" class="mi" id="menu-banban" data-menu="banban"><span class="mi-txt"><span class="mi-name">반반치킨 (후라이드+양념) <span class="badge">대표</span></span><span class="mi-desc">후라이드 반, 양념 반 · 2~3인분</span><span class="mi-price">20,000원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(100deg,#f7c873 0 50%,#c94a2c 50% 100%)"></span></button></li>
+        <li><button type="button" class="mi" id="menu-garlic" data-menu="garlic"><span class="mi-txt"><span class="mi-name">간장마늘치킨</span><span class="mi-desc">국내산 마늘과 간장 소스로 짭조름하게</span><span class="mi-price">21,000원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#d9b27c,#7f5539)"></span></button></li>
+      </ul>
+    </section>
+    <section class="msec" id="sec-chicken" aria-labelledby="sec-chicken-title">
+      <h2 id="sec-chicken-title">치킨</h2>
+      <ul class="mlist">
+        <li><button type="button" class="mi" id="menu-padak" data-menu="padak"><span class="mi-txt"><span class="mi-name">파닭치킨</span><span class="mi-desc">후라이드에 파채와 겨자 소스를 듬뿍 올렸어요</span><span class="mi-price">21,000원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#f7c873,#8ab661)"></span></button></li>
+        <li><button type="button" class="mi" id="menu-snow" data-menu="snow"><span class="mi-txt"><span class="mi-name">치즈눈꽃치킨</span><span class="mi-desc">후라이드 위에 달콤한 치즈 가루를 뿌렸어요</span><span class="mi-price">22,000원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#fff3bf,#e8b04b)"></span></button></li>
+        <li><button type="button" class="mi" id="menu-ttaengcho" data-menu="ttaengcho"><span class="mi-txt"><span class="mi-name">땡초간장치킨</span><span class="mi-desc">청양고추를 넣어 매콤한 간장치킨</span><span class="mi-price">21,000원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#d9b27c,#a1301a)"></span></button></li>
+      </ul>
+    </section>
+    <section class="msec" id="sec-boneless" aria-labelledby="sec-boneless-title">
+      <h2 id="sec-boneless-title">순살치킨</h2>
+      <ul class="mlist">
+        <li><button type="button" class="mi" id="menu-bl-fried" data-menu="bl-fried"><span class="mi-txt"><span class="mi-name">순살 후라이드</span><span class="mi-desc">부드러운 다리살만 골라 튀겼어요</span><span class="mi-price">21,000원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#f7c873,#d9822b)"></span></button></li>
+        <li><button type="button" class="mi" id="menu-bl-yangnyeom" data-menu="bl-yangnyeom"><span class="mi-txt"><span class="mi-name">순살 양념치킨</span><span class="mi-desc">다리살 순살에 달콤한 양념을 버무렸어요</span><span class="mi-price">22,000원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#f3a07f,#b8401f)"></span></button></li>
+        <li><button type="button" class="mi" id="menu-bl-banban" data-menu="bl-banban"><span class="mi-txt"><span class="mi-name">순살 반반치킨</span><span class="mi-desc">순살 후라이드 반, 순살 양념 반</span><span class="mi-price">22,000원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(100deg,#f7c873 0 50%,#c94a2c 50% 100%)"></span></button></li>
+      </ul>
+    </section>
+    <section class="msec" id="sec-side" aria-labelledby="sec-side-title">
+      <h2 id="sec-side-title">사이드</h2>
+      <ul class="mlist">
+        <li><button type="button" class="mi" id="menu-cheeseball" data-menu="cheeseball"><span class="mi-txt"><span class="mi-name">치즈볼 5개</span><span class="mi-desc">쫀득한 모차렐라 치즈볼</span><span class="mi-price">4,500원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#ffe8a3,#f2b134)"></span></button></li>
+        <li><button type="button" class="mi" id="menu-fries" data-menu="fries"><span class="mi-txt"><span class="mi-name">감자튀김</span><span class="mi-desc">케이준 시즈닝을 뿌린 두툼한 감자튀김</span><span class="mi-price">3,500원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#ffe59e,#e0a526)"></span></button></li>
+      </ul>
+    </section>
+    <section class="msec" id="sec-drink" aria-labelledby="sec-drink-title">
+      <h2 id="sec-drink-title">음료</h2>
+      <ul class="mlist">
+        <li><button type="button" class="mi" id="menu-cola" data-menu="cola"><span class="mi-txt"><span class="mi-name">콜라 1.25L</span><span class="mi-price">2,500원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#6b3e2e,#2b1a14)"></span></button></li>
+        <li><button type="button" class="mi" id="menu-cider" data-menu="cider"><span class="mi-txt"><span class="mi-name">사이다 1.25L</span><span class="mi-price">2,500원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#d3f9d8,#69b378)"></span></button></li>
+      </ul>
+    </section>
+    <section class="msec" id="sec-sauce" aria-labelledby="sec-sauce-title">
+      <h2 id="sec-sauce-title">소스·추가</h2>
+      <ul class="mlist">
+        <li><button type="button" class="mi" id="menu-s-yangnyeom" data-menu="s-yangnyeom"><span class="mi-txt"><span class="mi-name">양념 소스</span><span class="mi-desc">찍어 먹는 달콤한 양념 소스</span><span class="mi-price">500원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#f3a07f,#c2410c)"></span></button></li>
+        <li><button type="button" class="mi" id="menu-s-mustard" data-menu="s-mustard"><span class="mi-txt"><span class="mi-name">머스터드 소스</span><span class="mi-desc">달콤한 허니 머스터드</span><span class="mi-price">300원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#fff3bf,#e0b422)"></span></button></li>
+        <li><button type="button" class="mi" id="menu-s-radish" data-menu="s-radish"><span class="mi-txt"><span class="mi-name">치킨무 추가</span><span class="mi-desc">새콤달콤한 치킨무 1개</span><span class="mi-price">500원</span></span><span class="mi-thumb" aria-hidden="true" style="background:linear-gradient(135deg,#ffffff,#e9ecef)"></span></button></li>
+      </ul>
+    </section>
+  </main>
+</section>
+
+<section class="scr" id="scr-option" aria-labelledby="opt-title" hidden>
+  <header class="hdr" id="opt-header">
+    <button type="button" class="ib" id="opt-back" aria-label="메뉴로 돌아가기"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <h1 id="opt-title" tabindex="-1">반반치킨 (후라이드+양념)</h1>
+  </header>
+  <main class="body" id="opt-body">
+    <div class="photo" id="opt-photo" role="img" aria-label="반반치킨 (후라이드+양념) 사진"></div>
+    <div class="opt-info">
+      <p id="opt-desc">후라이드 반, 양념 반 · 2~3인분</p>
+      <p id="opt-base">기본 20,000원</p>
+    </div>
+    <div id="grp-part" class="grp">
+      <div class="grp-title">부위 선택 <span class="req">필수</span></div>
+      <p id="grp-part-error" class="gerr" hidden></p>
+      <div class="chips2">
+        <div class="chip" id="grp-part-bone" data-v="bone">뼈</div>
+        <div class="chip" id="grp-part-boneless" data-v="boneless">순살 +2,000원</div>
+      </div>
+    </div>
+    <fieldset id="grp-sauce" class="grp">
+      <legend>소스 선택 <span class="req">필수</span></legend>
+      <p id="grp-sauce-error" class="gerr" hidden></p>
+      <div class="chips3">
+        <label class="chip" id="grp-sauce-sweet-label"><input type="radio" name="sauce" id="grp-sauce-sweet" value="sweet" class="hit"><span class="face">달콤 양념</span></label>
+        <label class="chip" id="grp-sauce-hot-label"><input type="radio" name="sauce" id="grp-sauce-hot" value="hot" class="hit"><span class="face">매운 양념 +500원</span></label>
+        <label class="chip" id="grp-sauce-garlic-label"><input type="radio" name="sauce" id="grp-sauce-garlic" value="garlic" class="hit"><span class="face">간장마늘 +1,000원</span></label>
+      </div>
+    </fieldset>
+    <fieldset id="grp-extra" class="grp">
+      <legend>추가 선택 <span class="opt">선택 · 최대 3개</span></legend>
+      <div class="xlist">
+        <div class="xrow"><input type="checkbox" id="grp-extra-cheese" value="cheese" aria-labelledby="grp-extra-cheese-name grp-extra-cheese-price"><span id="grp-extra-cheese-name">치즈볼 5개</span><span class="xprice" id="grp-extra-cheese-price">+4,000원</span></div>
+        <div class="xrow"><input type="checkbox" id="grp-extra-cola" value="cola" aria-labelledby="grp-extra-cola-name grp-extra-cola-price"><span id="grp-extra-cola-name">콜라 1.25L</span><span class="xprice" id="grp-extra-cola-price">+2,500원</span></div>
+        <div class="xrow"><input type="checkbox" id="grp-extra-radish" value="radish" aria-labelledby="grp-extra-radish-name grp-extra-radish-price"><span id="grp-extra-radish-name">치킨무 추가</span><span class="xprice" id="grp-extra-radish-price">+500원</span></div>
+        <div class="xrow"><input type="checkbox" id="grp-extra-mustard" value="mustard" aria-labelledby="grp-extra-mustard-name grp-extra-mustard-price"><span id="grp-extra-mustard-name">머스터드 소스</span><span class="xprice" id="grp-extra-mustard-price">+300원</span></div>
+      </div>
+    </fieldset>
+  </main>
+  <div id="opt-footer" class="footbar">
+    <p id="add-to-cart-error" hidden></p>
+    <button type="button" id="add-to-cart" class="cta"><span id="opt-total">20,000원</span> 담기</button>
+  </div>
+</section>
+
+<section class="scr" id="scr-cart" aria-labelledby="cart-title" hidden>
+  <div id="cart-footer" class="footbar">
+    <button type="button" id="order-btn" class="cta">0원 주문하기</button>
+  </div>
+  <header class="hdr" id="cart-header">
+    <button type="button" class="ib" id="cart-back" aria-label="메뉴로 돌아가기"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <h1 id="cart-title" tabindex="-1">장바구니</h1>
+  </header>
+  <main class="body" id="cart-body">
+    <div id="cart-list"></div>
+    <div id="cart-empty" class="empty" hidden>
+      <p class="empty-t">장바구니가 비어 있어요</p>
+      <button type="button" id="cart-empty-go" class="more">메뉴 담으러 가기</button>
+    </div>
+  </main>
+</section>
+
+<section class="scr" id="scr-checkout" aria-labelledby="co-title" hidden>
+  <header class="hdr" id="co-header">
+    <button type="button" class="ib" id="co-back" aria-label="장바구니로 돌아가기"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <h1 id="co-title" tabindex="-1">주문하기</h1>
+  </header>
+  <main class="body" id="co-body">
+    <form id="co-form" novalidate></form>
+    <p class="agree" id="co-agree">주문 내용을 확인했으며 결제에 동의합니다</p>
+  </main>
+  <div id="pay-bar" class="footbar">
+    <button type="button" id="pay-btn" class="cta">0원 결제하기</button>
+  </div>
+</section>
+
+<section class="scr" id="scr-track" aria-labelledby="track-title" hidden>
+  <header class="hdr" id="track-header">
+    <h1 id="track-title" tabindex="-1">주문 현황</h1>
+    <button type="button" id="track-home" class="txtbtn">홈으로</button>
+  </header>
+  <main class="body" id="track-body">
+    <h2 id="track-headline">주문이 정상적으로 처리되고 있어요</h2>
+    <p id="track-eta">도착까지 약 38분</p>
+    <ol id="track-steps" class="steps" aria-label="주문 진행 단계">
+      <li id="track-steps-1" class="done"><span class="dot"></span><span class="lbl">주문 접수</span><span class="vh">완료</span></li>
+      <li id="track-steps-2" class="cur" aria-current="step"><span class="dot"></span><span class="lbl">조리 중</span><span class="vh">진행 중</span></li>
+      <li id="track-steps-3"><span class="dot"></span><span class="lbl">배달 중</span><span class="vh">예정</span></li>
+      <li id="track-steps-4"><span class="dot"></span><span class="lbl">배달 완료</span><span class="vh">예정</span></li>
+    </ol>
+    <p class="order-no">주문번호 <b id="track-order-no">B2K-0928-1147</b></p>
+    <section class="tsum" id="track-summary" aria-labelledby="track-summary-title">
+      <h2 id="track-summary-title">주문 내역</h2>
+      <dl>
+        <div class="r"><dt>메뉴</dt><dd id="track-sum-menu"></dd></div>
+        <div class="r"><dt>가게 요청</dt><dd id="track-sum-note"></dd></div>
+        <div class="r"><dt>배달 요청</dt><dd id="track-sum-rider"></dd></div>
+        <div class="r"><dt>수저·포크</dt><dd id="track-sum-utensils"></dd></div>
+        <div class="r"><dt>배달 주소</dt><dd id="track-sum-addr"></dd></div>
+        <div class="r"><dt>결제</dt><dd id="track-sum-pay"></dd></div>
+      </dl>
+    </section>
+    <p id="track-notice">조리가 시작된 주문의 취소·변경은 가게에 전화로 문의해 주세요</p>
+  </main>
+</section>
+</div>
+
+<div class="modal" id="share-modal" hidden>
+  <div class="backdrop" data-close="1"></div>
+  <div class="sheet" id="share-sheet" role="dialog" aria-modal="true" aria-labelledby="share-title">
+    <h2 id="share-title">가게 공유하기</h2>
+    <p class="sheet-desc">바삭공방 치킨 망원점 링크를 복사해 가족이나 친구에게 보내 보세요.</p>
+    <p id="share-msg" class="okmsg" role="status"></p>
+    <div class="sheet-btns">
+      <button type="button" id="share-close" class="btn2">닫기</button>
+      <button type="button" id="share-copy" class="btn1">링크 복사</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="del-modal" hidden>
+  <div class="backdrop" data-close="1"></div>
+  <div class="sheet" id="del-dialog" role="alertdialog" aria-modal="true" aria-labelledby="del-title" aria-describedby="del-desc">
+    <h2 id="del-title">메뉴를 뺄까요?</h2>
+    <p id="del-desc" class="sheet-desc"></p>
+    <div class="sheet-btns">
+      <button type="button" id="del-cancel" class="btn2">취소</button>
+      <button type="button" id="del-confirm" class="btn1">빼기</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var MENU = {"fried":{"name":"바삭 후라이드","short":"바삭 후라이드","desc":"국내산 신선육을 두 번 튀겨 겉은 바삭하고 속은 촉촉해요","price":19000,"kind":"bone","bg":"linear-gradient(135deg,#f7c873,#d9822b)"},"yangnyeom":{"name":"달콤 양념치킨","short":"달콤 양념치킨","desc":"직접 끓인 달콤한 양념을 골고루 버무렸어요","price":20000,"kind":"bone","bg":"linear-gradient(135deg,#f3a07f,#b8401f)"},"banban":{"name":"반반치킨 (후라이드+양념)","short":"반반치킨","desc":"후라이드 반, 양념 반 · 2~3인분","price":20000,"kind":"bone","bg":"linear-gradient(100deg,#f7c873 0 50%,#c94a2c 50% 100%)"},"garlic":{"name":"간장마늘치킨","short":"간장마늘치킨","desc":"국내산 마늘과 간장 소스로 짭조름하게","price":21000,"kind":"bone","bg":"linear-gradient(135deg,#d9b27c,#7f5539)"},"padak":{"name":"파닭치킨","short":"파닭치킨","desc":"후라이드에 파채와 겨자 소스를 듬뿍 올렸어요","price":21000,"kind":"bone","bg":"linear-gradient(135deg,#f7c873,#8ab661)"},"snow":{"name":"치즈눈꽃치킨","short":"치즈눈꽃치킨","desc":"후라이드 위에 달콤한 치즈 가루를 뿌렸어요","price":22000,"kind":"bone","bg":"linear-gradient(135deg,#fff3bf,#e8b04b)"},"ttaengcho":{"name":"땡초간장치킨","short":"땡초간장치킨","desc":"청양고추를 넣어 매콤한 간장치킨","price":21000,"kind":"bone","bg":"linear-gradient(135deg,#d9b27c,#a1301a)"},"bl-fried":{"name":"순살 후라이드","short":"순살 후라이드","desc":"부드러운 다리살만 골라 튀겼어요","price":21000,"kind":"boneless","bg":"linear-gradient(135deg,#f7c873,#d9822b)"},"bl-yangnyeom":{"name":"순살 양념치킨","short":"순살 양념치킨","desc":"다리살 순살에 달콤한 양념을 버무렸어요","price":22000,"kind":"boneless","bg":"linear-gradient(135deg,#f3a07f,#b8401f)"},"bl-banban":{"name":"순살 반반치킨","short":"순살 반반치킨","desc":"순살 후라이드 반, 순살 양념 반","price":22000,"kind":"boneless","bg":"linear-gradient(100deg,#f7c873 0 50%,#c94a2c 50% 100%)"},"cheeseball":{"name":"치즈볼 5개","short":"치즈볼","desc":"쫀득한 모차렐라 치즈볼","price":4500,"kind":"plain","bg":"linear-gradient(135deg,#ffe8a3,#f2b134)"},"fries":{"name":"감자튀김","short":"감자튀김","desc":"케이준 시즈닝을 뿌린 두툼한 감자튀김","price":3500,"kind":"plain","bg":"linear-gradient(135deg,#ffe59e,#e0a526)"},"cola":{"name":"콜라 1.25L","short":"콜라","desc":"","price":2500,"kind":"plain","bg":"linear-gradient(135deg,#6b3e2e,#2b1a14)"},"cider":{"name":"사이다 1.25L","short":"사이다","desc":"","price":2500,"kind":"plain","bg":"linear-gradient(135deg,#d3f9d8,#69b378)"},"s-yangnyeom":{"name":"양념 소스","short":"양념 소스","desc":"찍어 먹는 달콤한 양념 소스","price":500,"kind":"plain","bg":"linear-gradient(135deg,#f3a07f,#c2410c)"},"s-mustard":{"name":"머스터드 소스","short":"머스터드 소스","desc":"달콤한 허니 머스터드","price":300,"kind":"plain","bg":"linear-gradient(135deg,#fff3bf,#e0b422)"},"s-radish":{"name":"치킨무 추가","short":"치킨무","desc":"새콤달콤한 치킨무 1개","price":500,"kind":"plain","bg":"linear-gradient(135deg,#ffffff,#e9ecef)"}};
+  var PART = {bone: {label: '뼈', add: 0}, boneless: {label: '순살', add: 2000}};
+  var SAUCE = {sweet: {label: '달콤 양념', add: 0}, hot: {label: '매운 양념', add: 500}, garlic: {label: '간장마늘', add: 1000}};
+  var EXTRA = {cheese: {label: '치즈볼 5개', add: 4000}, cola: {label: '콜라 1.25L', add: 2500}, radish: {label: '치킨무 추가', add: 500}, mustard: {label: '머스터드 소스', add: 300}};
+  var EXTRA_ORDER = ['cheese', 'cola', 'radish', 'mustard'];
+  var RIDER = [['bell', '문 앞에 두고 벨 눌러주세요'], ['knock', '문 앞에 두고 노크해 주세요'], ['hand', '직접 받을게요'], ['call', '도착하면 전화해 주세요']];
+  var PAY = [['dnpay', '동네페이', '결제 금액 1% 적립'], ['card', '신용·체크카드', ''], ['phone', '휴대폰 결제', ''], ['local', '지역화폐(모바일 상품권)', ''], ['meet', '만나서 결제(카드·현금)', '']];
+  var TIP = 3000, MIN_ORDER = 15000;
+  var COUPON = {code: 'HANKKI5000', amount: 5000, min: 30000};
+  var EXPIRED = {SUMMER3000: '8월 31일'};
+  var ADDR = '서울 마포구 망원로 45 망원한강아파트';
+  var SHOP_URL = 'https://m.dongnehankki.kr/s/basak-mangwon';
+  var SCREENS = ['scr-menu', 'scr-option', 'scr-cart', 'scr-checkout', 'scr-track'];
+
+  var state = {
+    menu: 'banban', part: '', sauce: '', extras: [],
+    cart: [],
+    addrDetail: '', safeNumber: true, noteStore: '', noUtensils: true, rider: '',
+    couponCode: '', coupon: null, couponMsg: '', couponKind: '',
+    pm: '', order: null
+  };
+
+  function $(id) { return document.getElementById(id); }
+  function each(list, fn) { Array.prototype.forEach.call(list, fn); }
+  function won(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + '원'; }
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c];
+    });
+  }
+  function label(list, v) { for (var i = 0; i < list.length; i++) { if (list[i][0] === v) return list[i][1]; } return ''; }
+
+  /* ---------- screens ---------- */
+  function go(id, focusEl) {
+    SCREENS.forEach(function (s) {
+      var el = $(s), on = s === id;
+      el.classList.toggle('on', on);
+      el.hidden = !on;
+    });
+    window.scrollTo(0, 0);
+    syncOffsets();
+    var t = focusEl || $(id).querySelector('h1');
+    if (t) t.focus({preventScroll: true});
+  }
+
+  function syncOffsets() {
+    var h = $('menu-header').offsetHeight;
+    $('cat-tabs').style.top = h + 'px';
+    var pad = 120;
+    if ($('scr-menu').classList.contains('on')) pad = Math.max(120, h + $('cat-tabs').offsetHeight);
+    document.documentElement.style.scrollPaddingTop = pad + 'px';
+  }
+  window.addEventListener('resize', syncOffsets);
+  if (window.ResizeObserver) new ResizeObserver(syncOffsets).observe($('menu-header'));
+
+  /* ---------- modal sheets ---------- */
+  var modal = null;
+  function openModal(wrapId, focusEl, returnEl) {
+    modal = {wrap: $(wrapId), ret: returnEl};
+    $('app').inert = true;
+    modal.wrap.hidden = false;
+    focusEl.focus();
+  }
+  function closeModal(noReturn) {
+    if (!modal) return;
+    var m = modal;
+    modal = null;
+    m.wrap.hidden = true;
+    $('app').inert = false;
+    if (!noReturn && m.ret) m.ret.focus();
+  }
+  each(document.querySelectorAll('.modal .backdrop'), function (b) { b.addEventListener('click', function () { closeModal(); }); });
+  document.addEventListener('keydown', function (e) {
+    if (!modal) return;
+    if (e.key === 'Escape') { e.preventDefault(); closeModal(); return; }
+    if (e.key === 'Tab') {
+      var f = modal.wrap.querySelectorAll('button');
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  /* ---------- menu screen ---------- */
+  $('menu-back').addEventListener('click', function () { history.back(); });
+  $('shop-actions-like').addEventListener('click', function () {
+    var on = this.getAttribute('aria-pressed') !== 'true';
+    this.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  $('shop-actions-share').addEventListener('click', function () {
+    $('share-msg').textContent = '';
+    openModal('share-modal', $('share-copy'), $('shop-actions-share'));
+  });
+  $('share-copy').addEventListener('click', function () {
+    try { if (navigator.clipboard) navigator.clipboard.writeText(SHOP_URL).catch(function () {}); } catch (err) { /* ignore */ }
+    $('share-msg').textContent = '링크를 복사했어요';
+  });
+  $('share-close').addEventListener('click', function () { closeModal(); });
+
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('#cat-tabs .tab'));
+  var spyPause = 0;
+  function revealTab(t) {
+    var nav = $('cat-tabs');
+    var left = t.offsetLeft - 16, right = t.offsetLeft + t.offsetWidth + 16 - nav.clientWidth;
+    if (nav.scrollLeft > left) nav.scrollLeft = left;
+    else if (nav.scrollLeft < right) nav.scrollLeft = right;
+  }
+  function setTab(t) {
+    tabs.forEach(function (x) { if (x === t) x.setAttribute('aria-current', 'true'); else x.removeAttribute('aria-current'); });
+    revealTab(t);
+  }
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () { spyPause = Date.now() + 500; setTab(t); });
+    t.addEventListener('focus', function () { revealTab(t); });
+  });
+  window.addEventListener('scroll', function () {
+    if (!$('scr-menu').classList.contains('on') || Date.now() < spyPause) return;
+    var line = $('menu-header').offsetHeight + $('cat-tabs').offsetHeight + 24;
+    var cur = tabs[0];
+    tabs.forEach(function (t) {
+      var sec = $(t.getAttribute('href').slice(1));
+      if (sec.getBoundingClientRect().top <= line) cur = t;
+    });
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) cur = tabs[tabs.length - 1];
+    if (cur.getAttribute('aria-current') !== 'true') setTab(cur);
+  }, {passive: true});
+
+  each(document.querySelectorAll('.mi'), function (b) {
+    b.addEventListener('click', function () { openOption(b.getAttribute('data-menu')); });
+  });
+
+  function cartCount() { return state.cart.reduce(function (a, l) { return a + l.qty; }, 0); }
+  function cartSum() { return state.cart.reduce(function (a, l) { return a + l.unit * l.qty; }, 0); }
+  function updateCartBtn() {
+    var n = cartCount(), c = $('cart-btn-count');
+    c.textContent = n;
+    c.hidden = n === 0;
+    $('cart-btn').setAttribute('aria-label', n ? '장바구니, ' + n + '개 담김' : '장바구니, 비어 있음');
+  }
+  $('cart-btn').addEventListener('click', function () { renderCart(); go('scr-cart'); });
+
+  /* ---------- option screen ---------- */
+  function openOption(key) {
+    var m = MENU[key];
+    state.menu = key;
+    $('opt-title').textContent = m.name;
+    $('opt-photo').setAttribute('aria-label', m.name + ' 사진');
+    $('opt-photo').style.background = m.bg;
+    $('opt-desc').textContent = m.desc;
+    $('opt-desc').hidden = !m.desc;
+    $('opt-base').textContent = '기본 ' + won(m.price);
+    $('grp-part').hidden = m.kind !== 'bone';
+    $('grp-sauce').hidden = m.kind === 'plain';
+    $('grp-extra').hidden = m.kind === 'plain';
+    resetOptions();
+    updateTotal();
+    go('scr-option');
+  }
+  function resetOptions() {
+    state.part = '';
+    state.sauce = '';
+    state.extras = [];
+    each(document.querySelectorAll('#grp-part .chip'), function (c) { c.classList.remove('on'); });
+    ['sweet', 'hot', 'garlic'].forEach(function (v) { $('grp-sauce-' + v).checked = false; });
+    EXTRA_ORDER.forEach(function (x) { var el = $('grp-extra-' + x); el.checked = false; el.disabled = false; });
+    ['part', 'sauce'].forEach(function (g) {
+      $('grp-' + g).classList.remove('invalid');
+      var e = $('grp-' + g + '-error');
+      e.hidden = true;
+      e.textContent = '';
+    });
+    $('add-to-cart-error').hidden = true;
+    $('add-to-cart-error').textContent = '';
+  }
+  function optPrice() {
+    var m = MENU[state.menu], p = m.price;
+    if (m.kind === 'bone' && state.part) p += PART[state.part].add;
+    if (m.kind !== 'plain' && state.sauce) p += SAUCE[state.sauce].add;
+    state.extras.forEach(function (x) { p += EXTRA[x].add; });
+    return p;
+  }
+  function updateTotal() { $('opt-total').textContent = won(optPrice()); }
+  function missingGroups() {
+    var m = MENU[state.menu], r = [];
+    if (m.kind === 'bone' && !state.part) r.push('part');
+    if (m.kind !== 'plain' && !state.sauce) r.push('sauce');
+    return r;
+  }
+  each(document.querySelectorAll('#grp-part .chip'), function (c) {
+    c.addEventListener('click', function () {
+      each(document.querySelectorAll('#grp-part .chip'), function (s) { s.classList.remove('on'); });
+      c.classList.add('on');
+      state.part = c.getAttribute('data-v');
+      updateTotal();
+    });
+  });
+  ['sweet', 'hot', 'garlic'].forEach(function (v) {
+    $('grp-sauce-' + v).addEventListener('change', function () {
+      state.sauce = v;
+      updateTotal();
+    });
+  });
+  EXTRA_ORDER.forEach(function (x) {
+    $('grp-extra-' + x).addEventListener('change', function () {
+      state.extras = EXTRA_ORDER.filter(function (y) { return $('grp-extra-' + y).checked; });
+      var full = state.extras.length >= 3;
+      EXTRA_ORDER.forEach(function (y) { var el = $('grp-extra-' + y); el.disabled = full && !el.checked; });
+      updateTotal();
+    });
+  });
+  $('add-to-cart').addEventListener('click', function () {
+    if (missingGroups().length) return;
+    addToCart();
+  });
+  function lineKey(l) { return [l.menu, l.part, l.sauce, l.extras.join('+')].join('|'); }
+  function addToCart() {
+    var m = MENU[state.menu];
+    var line = {
+      menu: state.menu,
+      part: m.kind === 'bone' ? state.part : '',
+      sauce: m.kind !== 'plain' ? state.sauce : '',
+      extras: m.kind !== 'plain' ? state.extras.slice() : [],
+      unit: optPrice(), qty: 1
+    };
+    var k = lineKey(line), found = null;
+    state.cart.forEach(function (l) { if (lineKey(l) === k) found = l; });
+    if (found) found.qty = Math.min(99, found.qty + 1); else state.cart.push(line);
+    updateCartBtn();
+    go('scr-menu', $('cart-btn'));
+  }
+  $('opt-back').addEventListener('click', function () { go('scr-menu'); });
+
+  /* ---------- cart screen ---------- */
+  function optSummary(l) {
+    var parts = [];
+    if (l.part) parts.push(PART[l.part].label + (PART[l.part].add ? '(+' + won(PART[l.part].add) + ')' : ''));
+    if (l.sauce) parts.push(SAUCE[l.sauce].label + (SAUCE[l.sauce].add ? '(+' + won(SAUCE[l.sauce].add) + ')' : ''));
+    l.extras.forEach(function (x) { parts.push(EXTRA[x].label + '(+' + won(EXTRA[x].add) + ')'); });
+    return parts.join(' · ');
+  }
+  var SVG_MINUS = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 10h10"/></svg>';
+  var SVG_PLUS = '<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M10 5v10M5 10h10"/></svg>';
+  var ICON_X = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></svg>';
+  function stepper(n, name, q) {
+    return '<div class="stepper" id="qty-' + n + '">' +
+      '<button type="button" id="qty-' + n + '-dec"' + (q <= 1 ? ' disabled' : '') + '>' + SVG_MINUS + '</button>' +
+      '<span id="qty-' + n + '-val" class="qv">' + q + '</span>' +
+      '<button type="button" id="qty-' + n + '-inc">' + SVG_PLUS + '</button></div>';
+  }
+  function renderCart() {
+    var list = $('cart-list');
+    if (!state.cart.length) {
+      list.innerHTML = '';
+      list.hidden = true;
+      $('cart-empty').hidden = false;
+      $('cart-footer').hidden = true;
+      return;
+    }
+    list.hidden = false;
+    $('cart-empty').hidden = true;
+    $('cart-footer').hidden = false;
+    var h = '<p class="cart-shop">바삭공방 치킨 망원점</p>';
+    state.cart.forEach(function (l, i) {
+      var n = i + 1, m = MENU[l.menu], s = optSummary(l);
+      h += '<div id="line-' + n + '" class="line">' +
+        '<div class="line-top"><p class="line-name" id="line-' + n + '-name">' + esc(m.name) + '</p>' +
+        '<button type="button" class="ib line-del" id="line-' + n + '-del" aria-label="' + esc(m.short) + ' 삭제">' + ICON_X + '</button></div>' +
+        (s ? '<p class="line-opts">' + esc(s) + '</p>' : '') +
+        '<div class="line-bottom"><span class="line-price" id="line-' + n + '-price">' + won(l.unit * l.qty) + '</span>' +
+        stepper(n, m.short, l.qty) + '</div></div>';
+    });
+    h += '<button type="button" id="add-more" class="more">+ 메뉴 더 담기</button>';
+    h += '<div class="cart-sum-box" id="cart-summary"><div class="row"><span>주문금액</span><span id="cart-sum"></span></div>' +
+      '<p class="note">배달팁 3,000원은 결제 화면에서 더해져요</p>' +
+      '<p id="cart-min-msg" class="err" role="alert" hidden></p></div>';
+    list.innerHTML = h;
+    updateCartTotals();
+  }
+  function updateCartTotals() {
+    var s = cartSum();
+    if ($('cart-sum')) $('cart-sum').textContent = won(s);
+    $('order-btn').textContent = won(s) + ' 주문하기';
+    var mm = $('cart-min-msg');
+    if (mm && !mm.hidden && s >= MIN_ORDER) { mm.hidden = true; mm.textContent = ''; }
+  }
+  function changeQty(n, d) {
+    var l = state.cart[n - 1];
+    if (!l) return;
+    var q = Math.max(1, Math.min(99, l.qty + d));
+    if (q === l.qty) return;
+    l.qty = q;
+    $('qty-' + n + '-val').textContent = q;
+    var dec = $('qty-' + n + '-dec');
+    var hadFocus = document.activeElement === dec;
+    dec.disabled = q <= 1;
+    if (hadFocus && dec.disabled) $('qty-' + n + '-inc').focus();
+    $('line-' + n + '-price').textContent = won(l.unit * q);
+    updateCartTotals();
+    updateCartBtn();
+  }
+  var delIndex = 0;
+  function askDelete(n) {
+    var l = state.cart[n - 1], m = MENU[l.menu];
+    delIndex = n;
+    $('del-desc').textContent = m.name + ' ' + l.qty + '개를 장바구니에서 뺄게요.';
+    openModal('del-modal', $('del-cancel'), $('line-' + n + '-del'));
+  }
+  $('del-cancel').addEventListener('click', function () { closeModal(); });
+  $('del-confirm').addEventListener('click', function () {
+    state.cart.splice(delIndex - 1, 1);
+    closeModal(true);
+    renderCart();
+    updateCartBtn();
+    $('cart-title').focus({preventScroll: true});
+  });
+  $('cart-list').addEventListener('click', function (e) {
+    var b = e.target.closest('button'), m;
+    if (!b) return;
+    if (b.id === 'add-more') { go('scr-menu'); return; }
+    if ((m = b.id.match(/^qty-(\d+)-(inc|dec)$/))) { changeQty(+m[1], m[2] === 'inc' ? 1 : -1); return; }
+    if ((m = b.id.match(/^line-(\d+)-del$/))) askDelete(+m[1]);
+  });
+  $('cart-empty-go').addEventListener('click', function () { go('scr-menu'); });
+  $('cart-back').addEventListener('click', function () { go('scr-menu'); });
+  $('order-btn').addEventListener('click', function () {
+    var s = cartSum();
+    if (s < MIN_ORDER) {
+      var mm = $('cart-min-msg');
+      mm.textContent = '최소주문금액은 15,000원이에요. ' + won(MIN_ORDER - s) + '어치 더 담아 주세요.';
+      mm.hidden = false;
+      mm.scrollIntoView({block: 'nearest'});
+      return;
+    }
+    enterCheckout();
+  });
+
+  /* ---------- checkout screen ---------- */
+  function totals() {
+    var s = cartSum(), d = state.coupon ? state.coupon.amount : 0;
+    return {order: s, tip: TIP, disc: d, total: s + TIP - d};
+  }
+  function enterCheckout() {
+    if (state.coupon && cartSum() < COUPON.min) {
+      state.coupon = null;
+      setCouponMsg(failMsg('min', state.couponCode, cartSum()), 'bad');
+    }
+    renderCheckout();
+    go('scr-checkout');
+  }
+  function renderCheckout() {
+    var h = [];
+    h.push('<section id="addr" class="blk" aria-labelledby="addr-title">',
+      '<h2 id="addr-title">배달 주소</h2>',
+      '<p class="addr-main">' + ADDR + '</p>',
+      '<label for="addr-detail" class="flabel">상세주소 <span class="req">필수</span></label>',
+      '<input id="addr-detail" type="text" class="tin" autocomplete="address-line2" aria-required="true" placeholder="예) 101동 202호" value="' + esc(state.addrDetail) + '">',
+      '<p id="addr-detail-error" class="err" hidden></p>',
+      '<p class="phone"><span class="k">연락처</span>010-2345-6789</p>',
+      '<label class="crow"><input type="checkbox" id="safe-number" class="hit"' + (state.safeNumber ? ' checked' : '') + '>' +
+        '<span class="box" aria-hidden="true"></span><span>안심번호로 주문하기</span></label>',
+      '</section>');
+    h.push('<section id="requests" class="blk" aria-labelledby="requests-title">',
+      '<h2 id="requests-title">요청사항</h2>',
+      '<label for="note-store" class="flabel">가게 사장님께 <span class="opt">(선택)</span></label>',
+      '<textarea id="note-store" class="tin" maxlength="50" rows="2" placeholder="예) 덜 맵게 해 주세요" aria-describedby="note-store-count">' + esc(state.noteStore) + '</textarea>',
+      '<p class="count"><span id="note-store-count">' + state.noteStore.length + '/50</span></p>',
+      '<label class="crow"><input type="checkbox" id="no-utensils" class="hit"' + (state.noUtensils ? ' checked' : '') + '>' +
+        '<span class="box" aria-hidden="true"></span><span>일회용 수저·포크 안 받기</span></label>',
+      '<fieldset id="rider" class="rgrp"><legend>배달 요청사항 <span class="opt">(선택)</span></legend>');
+    RIDER.forEach(function (r) {
+      h.push('<label class="rrow"><input type="radio" name="rider" id="rider-' + r[0] + '" value="' + r[0] + '" class="hit"' +
+        (state.rider === r[0] ? ' checked' : '') + '><span class="rdot" aria-hidden="true"></span><span>' + r[1] + '</span></label>');
+    });
+    h.push('</fieldset></section>');
+    h.push('<section id="coupon" class="blk" aria-labelledby="coupon-title">',
+      '<h2 id="coupon-title">할인 쿠폰 코드</h2>',
+      '<div class="cp-row"><input id="coupon-code" type="text" class="tin" aria-labelledby="coupon-title" aria-describedby="coupon-msg"' +
+        ' autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="쿠폰 코드 입력" value="' + esc(state.couponCode) + '">' +
+        '<button type="button" id="coupon-apply" class="btn-apply">적용</button></div>',
+      '<p id="coupon-msg" role="status" class="cmsg"></p>',
+      '</section>');
+    h.push('<fieldset id="paymethod" class="pmgrp" aria-describedby="pm-error"><legend><h2 class="lg-h" id="paymethod-title">결제수단</h2></legend>');
+    PAY.forEach(function (p) {
+      h.push('<label class="pm"><input type="radio" name="pm" id="paymethod-' + p[0] + '" value="' + p[0] + '" class="hit"' +
+        (state.pm === p[0] ? ' checked' : '') + '><span class="pm-face"><span class="pm-name">' + p[1] + '</span>' +
+        (p[2] ? '<small>' + p[2] + '</small>' : '') + '<span class="ck" aria-hidden="true"></span></span></label>');
+    });
+    h.push('</fieldset>',
+      '<p id="pm-error" class="err" role="alert" hidden></p>');
+    h.push('<section id="price-summary" aria-labelledby="price-summary-title">',
+      '<h2 id="price-summary-title">결제 금액</h2>',
+      '<div class="sum-row"><span>주문금액</span><span id="price-summary-order"></span></div>',
+      '<div class="sum-row"><span>배달팁</span><span id="price-summary-tip"></span></div>',
+      '<div class="sum-row"><span>쿠폰 할인</span><span id="price-summary-discount"></span></div>',
+      '<div class="sum-row total"><span>총 결제금액</span><span id="price-summary-total"></span></div>',
+      '</section>');
+    $('co-form').innerHTML = h.join('');
+    paintCoupon();
+    paintPrices();
+  }
+  function paintPrices() {
+    var t = totals();
+    $('price-summary-order').textContent = won(t.order);
+    $('price-summary-tip').textContent = won(t.tip);
+    $('price-summary-discount').textContent = t.disc ? '−' + won(t.disc) : '0원';
+    $('price-summary-total').textContent = won(t.total);
+    $('pay-btn').textContent = won(t.total) + ' 결제하기';
+  }
+  function setCouponMsg(text, kind) { state.couponMsg = text; state.couponKind = kind; }
+  function paintCoupon() {
+    var inp = $('coupon-code'), msg = $('coupon-msg');
+    if (!inp) return;
+    if (state.couponKind === 'bad') inp.setAttribute('aria-invalid', 'true'); else inp.removeAttribute('aria-invalid');
+    msg.className = 'cmsg' + (state.couponKind ? ' ' + state.couponKind : '');
+    msg.textContent = state.couponMsg;
+  }
+  function failMsg() { return '쿠폰을 적용할 수 없습니다. (CPN-4003)'; }
+  function applyCoupon() {
+    var inp = $('coupon-code');
+    var code = inp.value.trim().toUpperCase();
+    inp.value = code;
+    state.couponCode = code;
+    var sum = cartSum(), reason = '';
+    if (!code) reason = 'empty';
+    else if (code === COUPON.code) { if (sum < COUPON.min) reason = 'min'; }
+    else if (EXPIRED[code]) reason = 'expired';
+    else reason = 'unknown';
+    if (reason) {
+      state.coupon = null;
+      setCouponMsg(failMsg(reason, code, sum), 'bad');
+    } else {
+      state.coupon = {code: code, amount: COUPON.amount};
+      setCouponMsg('✓ 5,000원 할인 쿠폰이 적용됐어요', 'ok');
+    }
+    paintCoupon();
+    paintPrices();
+    $('coupon-msg').scrollIntoView({block: 'nearest'});
+  }
+  function scrollBelowHeader(el) {
+    var y = el.getBoundingClientRect().top + window.scrollY - $('co-header').offsetHeight - 8;
+    window.scrollTo(0, Math.max(0, y));
+  }
+  function showPmError() {
+    var p = $('pm-error');
+    p.textContent = '결제수단을 선택해 주세요';
+    p.hidden = false;
+  }
+  function hidePmError() {
+    var p = $('pm-error');
+    if (p && !p.hidden) { p.hidden = true; p.textContent = ''; }
+  }
+  function hideAddrError() {
+    var e = $('addr-detail-error');
+    if (!e || e.hidden) return;
+    e.hidden = true;
+    e.textContent = '';
+    $('addr-detail').classList.remove('bad');
+  }
+  function showPayErrors(errs) {
+    renderCheckout();
+    if (errs.indexOf('addr') >= 0) {
+      var e = $('addr-detail-error');
+      e.textContent = '상세주소를 입력해 주세요';
+      e.hidden = false;
+      $('addr-detail').classList.add('bad');
+    }
+    if (errs.indexOf('pm') >= 0) showPmError();
+    scrollBelowHeader(errs[0] === 'addr' ? $('addr') : $('paymethod'));
+    if (errs[0] === 'pm') $('paymethod-dnpay').focus({preventScroll: true});
+  }
+  var form = $('co-form');
+  form.addEventListener('submit', function (e) { e.preventDefault(); });
+  form.addEventListener('input', function (e) {
+    var t = e.target;
+    if (t.id === 'addr-detail') {
+      state.addrDetail = t.value;
+      if (t.value.trim()) hideAddrError();
+    } else if (t.id === 'note-store') {
+      $('note-store-count').textContent = t.value.length + '/50';
+    } else if (t.id === 'coupon-code') {
+      state.couponCode = t.value;
+    }
+  });
+  form.addEventListener('change', function (e) {
+    var t = e.target;
+    if (t.id === 'safe-number') state.safeNumber = t.checked;
+    else if (t.id === 'no-utensils') state.noUtensils = t.checked;
+    else if (t.name === 'rider') state.rider = t.value;
+    else if (t.name === 'pm') { state.pm = t.value; hidePmError(); }
+  });
+  form.addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (b && b.id === 'coupon-apply') applyCoupon();
+  });
+  form.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && e.target.id === 'coupon-code') { e.preventDefault(); applyCoupon(); }
+  });
+  $('co-back').addEventListener('click', function () { renderCart(); go('scr-cart'); });
+  $('pay-btn').addEventListener('click', function () {
+    var errs = [];
+    if (!state.addrDetail.trim()) errs.push('addr');
+    if (!state.pm) errs.push('pm');
+    if (errs.length) { showPayErrors(errs); return; }
+    state.noteStore = $('note-store').value.trim();
+    placeOrder();
+  });
+
+  /* ---------- tracking screen ---------- */
+  function placeOrder() {
+    var t = totals();
+    state.order = {
+      lines: state.cart.map(function (l) { return {menu: l.menu, part: l.part, sauce: l.sauce, extras: l.extras.slice(), qty: l.qty}; }),
+      note: state.noteStore, rider: state.rider, utensils: state.noUtensils, pm: state.pm,
+      total: t.total, addr: ADDR + ' ' + state.addrDetail.trim()
+    };
+    renderTrack();
+    state.cart = [];
+    state.coupon = null;
+    state.couponCode = '';
+    state.couponMsg = '';
+    state.couponKind = '';
+    state.noteStore = '';
+    state.rider = '';
+    state.pm = '';
+    updateCartBtn();
+    go('scr-track');
+  }
+  function renderTrack() {
+    var o = state.order;
+    $('track-sum-menu').innerHTML = o.lines.map(function (l) {
+      var s = optSummary(l);
+      return '<p class="ti">' + esc(MENU[l.menu].name) + ' ' + l.qty + '개</p>' + (s ? '<p class="to">' + esc(s) + '</p>' : '');
+    }).join('');
+    $('track-sum-note').textContent = o.note || '없음';
+    $('track-sum-rider').textContent = o.rider ? label(RIDER, o.rider) : '없음';
+    $('track-sum-utensils').textContent = o.utensils ? '안 받음' : '받음';
+    $('track-sum-addr').textContent = o.addr;
+    $('track-sum-pay').textContent = label(PAY, o.pm) + ' · ' + won(o.total);
+  }
+  $('track-home').addEventListener('click', function () { go('scr-menu'); });
+
+  updateCartBtn();
+  syncOffsets();
+})();
+</script>
+</body>
+</html>

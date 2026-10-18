@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<title>나래민원 · 주민등록표 등본 우편 발급 신청</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:104px;scroll-padding-bottom:96px}
+body{font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;font-size:16px;line-height:1.5;color:#191f28;background:#fff;-webkit-text-size-adjust:100%;word-break:keep-all;overflow-wrap:break-word}
+a{color:#191f28}
+button{font:inherit;color:inherit;cursor:pointer}
+fieldset{border:0;min-width:0}
+:focus-visible{outline:3px solid #1d5fd1;outline-offset:2px}
+[hidden]{display:none !important}
+.nw{white-space:nowrap}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.lb{display:block;font-size:16px;font-weight:700;margin-bottom:8px}
+input[type=text],input[type=tel],input[type=email],input[type=password],input[type=search]{width:100%;height:48px;border:1px solid #8b95a1;border-radius:10px;padding:0 14px;font:inherit;font-size:16px;color:#191f28;background:#fff}
+::placeholder{color:#6b7684;opacity:1}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border:2px solid #c92a2a}
+input,textarea,select{scroll-margin-top:32px}
+.field{margin-top:20px}
+.help{margin-top:6px;font-size:15px;color:#4e5968}
+.err{margin-top:6px;font-size:15px;font-weight:600;color:#c92a2a}
+.err:empty{display:none}
+.lead{font-size:16px;color:#4e5968}
+.btn-primary{display:block;width:100%;height:52px;border:0;border-radius:12px;background:#1d5fd1;color:#fff;font-size:17px;font-weight:700}
+.btn-secondary{height:48px;padding:0 16px;border:1px solid #8b95a1;border-radius:10px;background:#fff;color:#191f28;font-size:16px;font-weight:600}
+.btn-text{min-width:48px;height:48px;padding:0 8px;border:0;background:none;color:#1d5fd1;font-size:15px;font-weight:700}
+.skip{position:absolute;left:8px;top:-60px;z-index:50;padding:12px 14px;background:#191f28;color:#fff;border-radius:8px;text-decoration:none}
+.skip:focus{top:8px}
+#app-header{position:sticky;top:0;z-index:20;height:56px;background:#fff;border-bottom:1px solid #e5e8eb;display:flex;align-items:center;justify-content:center}
+#app-title{font-size:17px;font-weight:700}
+.icon-back{position:absolute;left:4px;top:4px;width:48px;height:48px;border:0;border-radius:8px;background:transparent;display:flex;align-items:center;justify-content:center}
+.icon-back::before{content:"";width:12px;height:12px;border-left:2.5px solid #191f28;border-bottom:2.5px solid #191f28;transform:translateX(3px) rotate(45deg)}
+#stepper{position:sticky;top:56px;z-index:19;height:40px;background:#f2f4f6;padding:0 16px;display:flex;align-items:center;font-size:15px;color:#4e5968}
+#step-bar{position:absolute;left:0;bottom:0;height:3px;background:#1d5fd1;width:20%}
+#main{max-width:560px;margin:0 auto;padding:20px 16px 32px}
+#step-title{font-size:22px;font-weight:800;margin-bottom:8px}
+.sub{font-size:16px;font-weight:700;margin-top:20px}
+#intro-facts{margin-top:16px;border-top:1px solid #e5e8eb}
+#intro-facts>div{display:grid;grid-template-columns:88px minmax(0,1fr);gap:8px;padding:12px 0;border-bottom:1px solid #e5e8eb}
+#intro-facts dt{font-size:15px;color:#4e5968}
+#intro-facts dd{font-size:16px}
+#fee-guide-cap{font-size:18px;font-weight:700;margin-top:28px}
+.table-scroll{overflow-x:auto;margin-top:8px;border:1px solid #d1d6db;border-radius:12px}
+#fee-guide table{min-width:520px;border-collapse:collapse;font-size:15px}
+#fee-guide th,#fee-guide td{padding:10px 12px;border-bottom:1px solid #e5e8eb;text-align:left;white-space:nowrap}
+#fee-guide thead th{background:#f2f4f6}
+#fee-guide tbody tr:last-child th,#fee-guide tbody tr:last-child td{border-bottom:0}
+.notice{margin-top:20px;padding:14px 16px;background:#f2f4f6;border-radius:12px;font-size:15px;color:#4e5968}
+#btn-start{margin-top:24px}
+.rrn-row{display:flex;align-items:center;gap:8px}
+.rrn-row input{flex:1;min-width:0}
+.dash{flex:none;color:#4e5968}
+#privacy-box{margin-top:28px;padding:16px;background:#f2f4f6;border-radius:12px;font-size:15px;line-height:1.6;color:#4e5968}
+#privacy-title{font-size:16px;font-weight:700;color:#191f28;margin-bottom:8px}
+#privacy-box ul{padding-left:18px}
+#privacy-box li+li{margin-top:6px}
+#privacy-box b{font-weight:700;color:#191f28}
+.zip-row{display:flex;gap:8px}
+#zip{flex:1;min-width:0;background:#f9fafb}
+#btn-addr-search{flex:none;width:112px}
+#addr-base{display:block;width:100%;min-height:48px;padding:12px 14px;border:1px solid #8b95a1;border-radius:10px;font:inherit;font-size:16px;line-height:1.5;color:#191f28;resize:none;overflow:hidden;background:#f9fafb}
+#addr-base[aria-invalid="true"]{border:2px solid #c92a2a}
+.opt{margin-top:24px}
+#opt-history{margin-top:8px}
+.hist-opt{cursor:pointer}
+.hist-opt input{flex:none;margin:0;accent-color:#1d5fd1}
+.hist-opt:has(input:checked){font-weight:700;color:#1d5fd1}
+.hist-opt{display:flex;align-items:center;gap:12px;min-height:52px;margin-top:8px;padding:0 14px;border:1px solid #d1d6db;border-radius:10px;font-size:16px}
+.hist-opt:first-child{margin-top:0}
+.hist-opt input{width:24px;height:24px}
+.hist-opt:has(input:checked){border:2px solid #1d5fd1}
+.sw-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding:8px 0;border-bottom:1px solid #e5e8eb}
+.sw-row:first-child{border-top:1px solid #e5e8eb}
+.sw-text span{display:block}
+.sw-label{font-size:16px;font-weight:600}
+.switch{position:relative;flex:none;width:60px;height:48px;border:0;padding:0;background:transparent;cursor:pointer}
+.switch .track{position:absolute;left:4px;top:8px;width:52px;height:32px;border-radius:16px;background:#8b95a1}
+.switch .knob{position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:50%;background:#fff;transition:left .15s}
+.switch.on .track{background:#1d5fd1}
+.switch.on .knob{left:23px}
+.copies-row{display:flex;align-items:center;gap:12px}
+#copies-minus,#copies-plus{width:48px;height:48px;padding:0;font-size:22px}
+#copies-value{min-width:56px;text-align:center;font-size:18px;font-weight:700}
+#fee-summary{margin-top:28px;padding:16px;border:1px solid #d1d6db;border-radius:12px;background:#f9fafb}
+.fs-title{font-size:16px;font-weight:700;margin-bottom:8px}
+#fee-summary .row{display:flex;justify-content:space-between;gap:24px;padding:6px 0;font-size:15px}
+#fee-summary .row.total{border-top:1px solid #d1d6db;margin-top:6px;padding-top:10px;font-size:17px;font-weight:800}
+#fee-summary{width:auto;max-width:100%}
+#fee-summary .row{flex-wrap:wrap}
+#auth-who{margin-top:12px;padding:12px 14px;background:#f2f4f6;border-radius:10px;font-size:15px}
+.auth-method{display:block;width:100%;min-height:56px;margin-top:8px;padding:0 16px;border:1px solid #8b95a1;border-radius:12px;background:#fff;text-align:left;font-size:16px;font-weight:600}
+.auth-method[aria-pressed="true"]{border:2px solid #1d5fd1;background:#f0f5ff}
+#auth-apps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
+.auth-app{height:72px;border:1px solid #8b95a1;border-radius:12px;background:#fff;font-size:15px;font-weight:600}
+.auth-app[aria-pressed="true"]{border:2px solid #1d5fd1;background:#f0f5ff}
+#btn-auth-req{margin-top:16px}
+#auth-wait{margin-top:16px;padding:16px;border:1px solid #d1d6db;border-radius:12px}
+#auth-timer{margin-top:8px;font-size:16px}
+.auth-wait-btns{display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-top:12px}
+.auth-wait-btns button{width:100%;height:52px}
+.auth-wait-btns .btn-secondary{padding:0 4px}
+.rv-card{border:1px solid #d1d6db;border-radius:12px;padding:16px;margin-top:16px}
+.rv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.rv-head h3{font-size:17px;font-weight:700}
+.rv-row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:12px;padding:6px 0}
+.rv-row dt{font-size:15px;color:#4e5968}
+.rv-row dd{margin:0;font-size:15px;color:#191f28}
+.rv-row dd{white-space:normal;overflow:visible;word-break:keep-all;overflow-wrap:anywhere}
+#agree-box{margin-top:24px}
+#agree-row{display:flex;align-items:flex-start;gap:12px;min-height:48px;padding:12px;border:1px solid #d1d6db;border-radius:12px;cursor:pointer}
+#agree-final{flex:none;width:24px;height:24px;margin:0;accent-color:#1d5fd1}
+#agree-text{color:#4e5968}
+#agree-text{font-size:15px;line-height:1.6}
+#btn-submit{margin-top:16px}
+#receipt-no{font-size:18px}
+.done-card{margin-top:16px;padding:16px;border:1px solid #d1d6db;border-radius:12px}
+.done-row{display:grid;grid-template-columns:88px minmax(0,1fr);gap:8px;padding:6px 0}
+.done-row dt{font-size:15px;color:#4e5968}
+.done-row dd{font-size:15px;white-space:normal;word-break:keep-all;overflow-wrap:anywhere}
+#done-pay{margin-top:16px;font-size:16px}
+#btn-my{width:100%;margin-top:24px}
+#btn-home{margin-top:8px}
+#site-footer{background:#f2f4f6;padding:28px 16px 40px;font-size:15px;line-height:1.7;color:#4e5968}
+.ft-in{max-width:560px;margin:0 auto}
+.ft-links{margin-left:-6px}
+.ft-links a{display:inline-block;padding:12px 6px;color:#333d4b;font-weight:600}
+.ft-links span{color:#4e5968}
+.ft-in p+p{margin-top:4px}
+.bottom-bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid #e5e8eb;padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
+.bottom-bar .btn-primary{max-width:528px;margin:0 auto}
+body.has-bar{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+#confirm-dialog{position:fixed;inset:0;z-index:110;background:rgba(0,0,0,.5);display:flex;align-items:flex-end}
+.cd-box{width:100%;background:#fff;border-radius:20px 20px 0 0;padding:24px 16px calc(16px + env(safe-area-inset-bottom))}
+#confirm-title{font-size:20px;font-weight:800}
+#confirm-desc{margin-top:8px;font-size:16px;color:#4e5968}
+.cd-btns{display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-top:20px}
+.cd-btns button{width:100%;height:52px;padding:0 8px}
+#addr-modal{position:fixed;inset:0;z-index:100;background:#fff;overflow-y:auto}
+#addr-modal[hidden]{display:none}
+.am-head{height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 16px;border-bottom:1px solid #e5e8eb}
+#addr-modal-title{font-size:18px;font-weight:700}
+#addr-modal-close{min-width:64px}
+.am-search{padding:16px}
+.am-row{display:flex;gap:8px}
+#addr-modal-q{flex:1;min-width:0}
+.btn-search{flex:none;width:72px;height:48px;border:0;border-radius:10px;background:#1d5fd1;color:#fff;font-size:16px;font-weight:700}
+#addr-modal-results-count{padding:0 16px}
+.am-results{list-style:none;margin-top:12px;border-top:1px solid #e5e8eb}
+.am-item{display:block;width:100%;min-height:72px;padding:12px 16px;border:0;border-bottom:1px solid #e5e8eb;background:#fff;text-align:left}
+.am-item:focus-visible{outline-offset:-4px}
+.am-item span{display:block}
+.am-zip{font-size:15px;font-weight:700;color:#1d5fd1}
+.am-road{font-size:16px;font-weight:600;color:#191f28}
+.am-jibun{font-size:15px;color:#4e5968}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+  var $ = function (s) { return document.querySelector(s); };
+
+  var ADDR_DB = [
+    {zip: '04092', road: '서울특별시 마포구 새솔로 128 (신수동, 새솔마을2단지)', jibun: '서울특별시 마포구 신수동 91-3'},
+    {zip: '04092', road: '서울특별시 마포구 새솔로 128-4 (신수동)', jibun: '서울특별시 마포구 신수동 91-17'},
+    {zip: '04093', road: '서울특별시 마포구 새솔로 128-12 (신수동, 새솔어린이집)', jibun: '서울특별시 마포구 신수동 92-5'},
+    {zip: '04093', road: '서울특별시 마포구 새솔로12길 8 (신수동, 새솔빌라)', jibun: '서울특별시 마포구 신수동 88-2'},
+    {zip: '04101', road: '서울특별시 마포구 신수로 56 (신수동)', jibun: '서울특별시 마포구 신수동 63-1'}
+  ];
+  var SCREENS = {intro: 'screen-intro', 1: 'step-1', 2: 'step-2', 3: 'step-3', 4: 'step-4', 5: 'step-5', done: 'done'};
+  var TITLES = {intro: '주민등록표 등본 우편 발급', 1: '신청인 정보', 2: '받을 주소', 3: '발급 옵션', 4: '본인 확인', 5: '신청 내용 확인', done: '신청이 접수되었어요'};
+  var STEP_NAMES = ['', '신청인 정보', '받을 주소', '발급 옵션', '본인 확인', '신청 내용 확인'];
+  var HISTORY_TEXT = {all: '전체 포함', '5y': '최근 5년 포함', none: '포함하지 않음'};
+  var METHOD_NAMES = {'auth-method-simple': '간편인증', 'auth-method-mid': '모바일 신분증', 'auth-method-cert': '공동·금융인증서'};
+  var UNIT_FEE = 400, POSTAGE = 2530;
+  var PHONE_RE = /^01[016789]\d{7,8}$/;
+  var HINT_DEFAULT = '예) 새솔로 128, 새솔마을, 신수동 91-3';
+  var APPLICANT_IDS = ['applicant-name', 'rrn-front', 'rrn-back', 'phone', 'email'];
+
+  function initialState() {
+    return {name: '', rrnFront: '', rrnBack: '', phone: '', email: '', zip: '', road: '', addrDetail: '',
+      history: 'none', rrnSelf: false, rrnMembers: false, copies: 1, authApp: '', verified: false};
+  }
+  var state = initialState();
+  var current = 'intro';
+  var modal = $('#addr-modal');
+  var confirmBox = $('#confirm-dialog');
+
+  function won(n) { return n.toLocaleString('ko-KR') + '원'; }
+  function totalFee() { return UNIT_FEE * state.copies + POSTAGE; }
+  function fmtPhone(v) {
+    var d = String(v).replace(/\D/g, '');
+    if (d.length === 11) return d.slice(0, 3) + '-' + d.slice(3, 7) + '-' + d.slice(7);
+    if (d.length === 10) return d.slice(0, 3) + '-' + d.slice(3, 6) + '-' + d.slice(6);
+    return d;
+  }
+  function pad2(n) { return String(n).padStart(2, '0'); }
+  function isStep(s) { return typeof s === 'number'; }
+  function setInert(except, on) {
+    Array.prototype.forEach.call(document.body.children, function (el) {
+      if (el !== except) el.inert = on;
+    });
+  }
+  function setNextVisible(v) {
+    $('.bottom-bar').hidden = !v;
+    document.body.classList.toggle('has-bar', v);
+  }
+
+  function goTo(s, opts) {
+    current = s;
+    Object.keys(SCREENS).forEach(function (k) {
+      document.getElementById(SCREENS[k]).hidden = (String(k) !== String(s));
+    });
+    var stepper = $('#stepper');
+    if (isStep(s)) {
+      stepper.hidden = false;
+      $('#step-num').textContent = s;
+      $('#step-name').textContent = STEP_NAMES[s];
+      $('#step-bar').style.width = (s / 5 * 100) + '%';
+    } else {
+      stepper.hidden = true;
+    }
+    $('#step-title').textContent = TITLES[s];
+    $('#btn-back').hidden = !isStep(s);
+    setNextVisible(isStep(s) && s <= 4);
+    if (s === 3) updateFee();
+    if (s === 4) $('#auth-who').textContent = state.name + ' · ' + fmtPhone(state.phone);
+    if (s === 5) fillReview();
+    if (s === 'done') fillDone();
+    if (!opts || opts.focus !== false) {
+      window.scrollTo(0, 0);
+      $('#step-title').focus({preventScroll: true});
+    }
+  }
+
+  function focusFirstError(form) {
+    var el = form.querySelector('[aria-invalid="true"]');
+    if (!el) return;
+    el.scrollIntoView({block: 'start'});
+    el.focus({preventScroll: true});
+  }
+
+  /* 1단계: 신청인 정보 */
+  function checkName(v) {
+    v = v.trim();
+    if (!v) return '성명을 입력해 주세요.';
+    if (!/^[가-힣a-zA-Z ]{2,20}$/.test(v)) return '성명은 한글 또는 영문 2~20자로 입력해 주세요.';
+    return '';
+  }
+  function checkRrnFront(v) {
+    v = v.trim();
+    if (!v) return '주민등록번호 앞 6자리를 입력해 주세요.';
+    var m = Number(v.slice(2, 4)), d = Number(v.slice(4, 6));
+    if (!/^\d{6}$/.test(v) || m < 1 || m > 12 || d < 1 || d > 31) return '주민등록번호 앞 6자리(생년월일)를 확인해 주세요.';
+    return '';
+  }
+  function checkRrnBack(v) {
+    v = v.trim();
+    if (!v) return '주민등록번호 뒤 7자리를 입력해 주세요.';
+    if (!/^[1-4]\d{6}$/.test(v)) return '주민등록번호 뒤 7자리를 확인해 주세요.';
+    return '';
+  }
+  function checkEmail(v) {
+    v = v.trim();
+    if (!v) return '';
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return '이메일 주소를 확인해 주세요. 예) name@example.com';
+    return '';
+  }
+  function phoneDigits(v) { return v.replace(/[\s-]/g, ''); }
+  function checkPhone(v) {
+    var d = phoneDigits(v);
+    if (!d) return '휴대전화 번호를 입력해 주세요.';
+    if (!PHONE_RE.test(d)) return '휴대전화 번호 10~11자리를 확인해 주세요. 예) 010-1234-5678';
+    return '';
+  }
+  $('#form-applicant').addEventListener('focusout', function (e) {
+    if (!e.target || e.target.id !== 'phone') return;
+    var d = phoneDigits(e.target.value);
+    if (PHONE_RE.test(d)) e.target.value = fmtPhone(d);
+  });
+
+  var CHECKS = {'applicant-name': checkName, 'rrn-front': checkRrnFront, 'rrn-back': checkRrnBack, 'phone': checkPhone, 'email': checkEmail};
+  function collectErrors() {
+    var errs = {};
+    APPLICANT_IDS.forEach(function (id) {
+      var msg = CHECKS[id](document.getElementById(id).value);
+      if (msg) errs[id] = msg;
+    });
+    return errs;
+  }
+  function showErrors(errs) {
+    APPLICANT_IDS.forEach(function (id) {
+      var el = document.getElementById(id), p = document.getElementById(id + '-err');
+      if (errs[id]) { el.setAttribute('aria-invalid', 'true'); p.textContent = errs[id]; }
+      else { el.removeAttribute('aria-invalid'); p.textContent = ''; }
+    });
+  }
+  function submitApplicant() {
+    var errs = collectErrors();
+    showErrors(errs);
+    if (Object.keys(errs).length) {
+      focusFirstError($('#form-applicant'));
+      return;
+    }
+    state.name = $('#applicant-name').value.trim();
+    state.phone = phoneDigits($('#phone').value);
+    state.email = $('#email').value.trim();
+    state.rrnFront = $('#rrn-front').value.trim();
+    state.rrnBack = $('#rrn-back').value.trim();
+    goTo(2);
+  }
+
+  /* 2단계: 받을 주소 */
+  function fitTextarea(t) {
+    t.style.height = 'auto';
+    t.style.height = (t.scrollHeight + t.offsetHeight - t.clientHeight) + 'px';
+  }
+  window.addEventListener('resize', function () {
+    var t = $('#addr-base');
+    if (t.value && t.offsetParent) fitTextarea(t);
+  });
+  function submitAddress() {
+    var base = $('#addr-base'), det = $('#addr-detail');
+    if (!$('#zip').value || !base.value) {
+      base.setAttribute('aria-invalid', 'true');
+      $('#addr-base-err').textContent = '주소 검색으로 받을 주소를 선택해 주세요.';
+    } else {
+      base.removeAttribute('aria-invalid');
+      $('#addr-base-err').textContent = '';
+    }
+    if (!det.value.trim()) {
+      det.setAttribute('aria-invalid', 'true');
+      $('#addr-detail-err').textContent = '상세 주소(동·호수)를 입력해 주세요.';
+    } else {
+      det.removeAttribute('aria-invalid');
+      $('#addr-detail-err').textContent = '';
+    }
+    var form = $('#form-address');
+    if (form.querySelector('[aria-invalid="true"]')) { focusFirstError(form); return; }
+    state.addrDetail = det.value.trim();
+    goTo(3);
+  }
+  function prepareAddrModal() {
+    $('#addr-modal-q').value = '';
+    $('#addr-modal-results').innerHTML = '';
+    $('#addr-modal-results-count').textContent = '';
+    $('#addr-modal-hint').textContent = HINT_DEFAULT;
+  }
+  function openAddrModal() {
+    prepareAddrModal();
+    document.body.style.overflow = 'hidden';
+    modal.hidden = false;
+    setInert(modal, true);
+    $('#addr-modal-q').focus();
+  }
+  function closeAddrModal(back) {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    setInert(modal, false);
+    (back || $('#btn-addr-search')).focus();
+  }
+
+  function runSearch() {
+    var q = $('#addr-modal-q').value.trim().replace(/\s+/g, ' ');
+    var hint = $('#addr-modal-hint');
+    if (!q) { hint.textContent = '검색어를 입력해 주세요.'; return; }
+    hint.textContent = HINT_DEFAULT;
+    var tokens = q.split(' ');
+    var list = $('#addr-modal-results');
+    list.innerHTML = '';
+    var n = 0;
+    ADDR_DB.forEach(function (a, i) {
+      var hay = a.road + ' ' + a.jibun;
+      if (!tokens.every(function (t) { return hay.indexOf(t) !== -1; })) return;
+      n += 1;
+      var li = document.createElement('li');
+      var b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'am-item';
+      b.id = 'addr-modal-results-' + n;
+      b.setAttribute('data-idx', String(i));
+      [['am-zip', a.zip], ['am-road', a.road], ['am-jibun', '지번 ' + a.jibun]].forEach(function (p) {
+        var sp = document.createElement('span');
+        sp.className = p[0];
+        sp.textContent = p[1];
+        b.appendChild(sp);
+      });
+      li.appendChild(b);
+      list.appendChild(li);
+    });
+    $('#addr-modal-results-count').textContent = n ? '검색 결과 ' + n + '건'
+      : '‘' + q + '’ 검색 결과가 없어요. 도로명과 건물번호 사이를 띄어 입력해 보세요. 예) 새솔로 128';
+  }
+  $('#btn-addr-search').addEventListener('click', openAddrModal);
+  $('#addr-modal-close').addEventListener('click', function () { closeAddrModal($('#btn-addr-search')); });
+  $('#addr-modal-go').addEventListener('click', runSearch);
+  $('#addr-modal-q').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') { e.preventDefault(); runSearch(); }
+  });
+  $('#addr-modal-results').addEventListener('click', function (e) {
+    var b = e.target.closest('.am-item');
+    if (!b) return;
+    var a = ADDR_DB[Number(b.getAttribute('data-idx'))];
+    var base = $('#addr-base');
+    state.zip = a.zip;
+    state.road = a.road;
+    $('#zip').value = a.zip;
+    base.removeAttribute('aria-invalid');
+    $('#addr-base-err').textContent = '';
+    base.value = a.road;
+    fitTextarea(base);
+    closeAddrModal($('#addr-detail'));
+  });
+
+  /* 3단계: 발급 옵션 */
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="history"]'), function (r) {
+    r.addEventListener('change', function () { if (r.checked) state.history = r.value; });
+  });
+  function setSwitch(el, on) {
+    el.classList.toggle('on', on);
+    el.setAttribute('aria-checked', on ? 'true' : 'false');
+  }
+
+  [['opt-rrn-self', 'rrnSelf'], ['opt-rrn-members', 'rrnMembers']].forEach(function (p) {
+    var el = document.getElementById(p[0]);
+    el.addEventListener('click', function () {
+      var on = !el.classList.contains('on');
+      setSwitch(el, on);
+      state[p[1]] = on;
+    });
+  });
+  function updateFee() {
+    $('#fee-summary-n').textContent = state.copies;
+    $('#fee-summary-copies-amt').textContent = won(UNIT_FEE * state.copies);
+    $('#fee-summary-total-amt').textContent = won(totalFee());
+  }
+  function setCopies(n) {
+    state.copies = Math.max(1, Math.min(5, n));
+    $('#copies-value').textContent = state.copies + '통';
+    updateFee();
+  }
+  $('#copies-minus').addEventListener('click', function () { setCopies(state.copies - 1); });
+  $('#copies-plus').addEventListener('click', function () { setCopies(state.copies + 1); });
+
+  /* 4단계: 본인 확인 */
+  var timer = null, remain = 0, extendCount = 0, requestAt = 0, authLabel = '';
+  function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+  function resetAuthRequest() {
+    stopTimer();
+    $('#auth-wait').hidden = true;
+    state.verified = false;
+    $('#auth-status').textContent = '';
+    $('#auth-err').textContent = '';
+  }
+  function fmtTime(s) { return Math.floor(s / 60) + ':' + pad2(s % 60); }
+  function reveal(el) { el.scrollIntoView({block: 'nearest'}); }
+  Array.prototype.forEach.call(document.querySelectorAll('.auth-method'), function (b) {
+    b.addEventListener('click', function () {
+      if (b.getAttribute('aria-pressed') === 'true') return;
+      Array.prototype.forEach.call(document.querySelectorAll('.auth-method'), function (x) {
+        x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
+      });
+      resetAuthRequest();
+      if (b.id === 'auth-method-simple') {
+        var picked = document.querySelector('.auth-app[aria-pressed="true"]');
+        $('#auth-apps').hidden = false;
+        authLabel = picked ? picked.textContent : '';
+        $('#btn-auth-req').hidden = !picked;
+        reveal(picked ? $('#btn-auth-req') : $('#auth-apps'));
+      } else {
+        $('#auth-apps').hidden = true;
+        authLabel = METHOD_NAMES[b.id];
+        $('#btn-auth-req').hidden = false;
+        reveal($('#btn-auth-req'));
+      }
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('.auth-app'), function (b) {
+    b.addEventListener('click', function () {
+      if (b.getAttribute('aria-pressed') === 'true') return;
+      Array.prototype.forEach.call(document.querySelectorAll('.auth-app'), function (x) {
+        x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
+      });
+      resetAuthRequest();
+      authLabel = b.textContent;
+      $('#btn-auth-req').hidden = false;
+      reveal($('#btn-auth-req'));
+    });
+  });
+  function tick() {
+    remain -= 1;
+    if (remain <= 0) {
+      remain = 0;
+      stopTimer();
+      $('#auth-timer-left').textContent = fmtTime(0);
+      if ($('#auth-wait').contains(document.activeElement)) $('#btn-auth-req').focus();
+      $('#auth-wait').hidden = true;
+      $('#auth-status').textContent = '인증 시간이 지났어요. 인증 요청을 다시 눌러 주세요.';
+      return;
+    }
+    $('#auth-timer-left').textContent = fmtTime(remain);
+    if (remain === 60) $('#auth-status').textContent = '인증 시간이 1분 남았어요. 필요하면 시간 연장을 눌러 주세요.';
+  }
+  $('#btn-auth-req').addEventListener('click', function () {
+    stopTimer();
+    state.verified = false;
+    remain = 300;
+    extendCount = 0;
+    requestAt = Date.now();
+    $('#auth-wait-msg').textContent = authLabel + ' 앱으로 인증 요청을 보냈어요. 앱에서 인증을 마친 뒤 아래 ‘인증 완료’를 눌러 주세요.';
+    $('#auth-timer-left').textContent = fmtTime(remain);
+    $('#auth-wait').hidden = false;
+    $('#auth-status').textContent = authLabel + ' 앱으로 인증 요청을 보냈어요.';
+    $('#auth-err').textContent = '';
+    reveal($('#auth-status'));
+    timer = setInterval(tick, 1000);
+  });
+  $('#btn-auth-extend').addEventListener('click', function () {
+    if (extendCount >= 10) { $('#auth-status').textContent = '연장 횟수를 모두 썼어요.'; return; }
+    extendCount += 1;
+    remain += 300;
+    $('#auth-timer-left').textContent = fmtTime(remain);
+    $('#auth-status').textContent = '인증 시간을 5분 늘렸어요.';
+  });
+  $('#btn-auth-done').addEventListener('click', function () {
+    if (Date.now() - requestAt < 1000) {
+      $('#auth-status').textContent = '아직 인증이 끝나지 않았어요. 앱에서 인증을 마친 뒤 다시 눌러 주세요.';
+      return;
+    }
+    state.verified = true;
+    state.authApp = authLabel;
+    stopTimer();
+    if ($('#auth-wait').contains(document.activeElement)) $('#btn-next').focus();
+    $('#auth-wait').hidden = true;
+    var d = new Date();
+    $('#auth-status').textContent = '본인 확인이 끝났어요. (' + authLabel + ' · ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes()) + ')';
+    $('#auth-err').textContent = '';
+  });
+  function submitAuth() {
+    if (!state.verified) { $('#auth-err').textContent = '본인 확인을 먼저 마쳐 주세요.'; reveal($('#auth-err')); return; }
+    $('#auth-err').textContent = '';
+    goTo(5);
+  }
+
+  /* 5단계: 신청 내용 확인 */
+  function fullAddress() { return '[' + state.zip + '] ' + state.road + ' ' + state.addrDetail; }
+  function fillReview() {
+    $('#review-name').textContent = state.name;
+    $('#review-rrn').textContent = state.rrnFront + '-' + state.rrnBack.charAt(0) + '******';
+    $('#review-phone').textContent = fmtPhone(state.phone);
+    $('#review-addr').textContent = fullAddress();
+    $('#review-history').textContent = HISTORY_TEXT[state.history];
+    $('#review-rrn-opt').textContent = state.rrnSelf && state.rrnMembers ? '본인·세대원 표시'
+      : state.rrnSelf ? '본인만 표시' : state.rrnMembers ? '세대원만 표시' : '표시 안 함';
+    $('#review-copies').textContent = state.copies + '통';
+    $('#review-fee').textContent = won(totalFee());
+  }
+  $('#edit-applicant').addEventListener('click', function () { goTo(1); });
+  $('#edit-address').addEventListener('click', function () { goTo(2); });
+  $('#edit-options').addEventListener('click', function () { goTo(3); });
+  $('#agree-final').addEventListener('change', function () {
+    if (this.checked) { this.removeAttribute('aria-invalid'); $('#submit-err').textContent = ''; }
+  });
+  $('#btn-submit').addEventListener('click', function () {
+    var cb = $('#agree-final');
+    if (!cb.checked) {
+      $('#submit-err').textContent = '신청 내용 확인에 동의해 주세요.';
+      cb.setAttribute('aria-invalid', 'true');
+      cb.focus();
+      return;
+    }
+    $('#submit-err').textContent = '';
+    $('#confirm-fee').textContent = won(totalFee());
+    confirmBox.hidden = false;
+    setInert(confirmBox, true);
+    $('#confirm-cancel').focus();
+  });
+  function closeConfirm() {
+    confirmBox.hidden = true;
+    setInert(confirmBox, false);
+  }
+  $('#confirm-cancel').addEventListener('click', function () { closeConfirm(); $('#btn-submit').focus(); });
+  $('#confirm-ok').addEventListener('click', function () { closeConfirm(); goTo('done'); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (!confirmBox.hidden) { closeConfirm(); $('#btn-submit').focus(); return; }
+    if (!modal.hidden) closeAddrModal($('#btn-addr-search'));
+  });
+
+  /* 접수 완료 */
+  function fillDone() {
+    $('#done-doc').textContent = '주민등록표 등본 ' + state.copies + '통';
+    $('#done-addr').textContent = fullAddress();
+    $('#done-fee').textContent = won(totalFee()) + ' (결제 대기)';
+    $('#done-pay').textContent = '휴대전화 ' + fmtPhone(state.phone) + '로 결제 링크를 보냈어요. 24시간 안에 결제하면 영업일 기준 1일 안에 발송돼요.';
+    $('#done-my-msg').textContent = '';
+  }
+  $('#btn-my').addEventListener('click', function () {
+    $('#done-my-msg').textContent = '신청 내역은 접수번호와 휴대전화 번호로 조회할 수 있어요.';
+  });
+  function resetAll() {
+    state = initialState();
+    ['applicant-name', 'rrn-front', 'rrn-back', 'phone', 'email', 'zip', 'addr-detail'].forEach(function (id) {
+      var el = document.getElementById(id);
+      el.value = '';
+      el.removeAttribute('aria-invalid');
+    });
+    var base = $('#addr-base');
+    base.value = '';
+    base.style.height = '';
+    base.removeAttribute('aria-invalid');
+    Array.prototype.forEach.call(document.querySelectorAll('.err'), function (p) { p.textContent = ''; });
+    $('#opt-history-none-input').checked = true;
+    setSwitch($('#opt-rrn-self'), false);
+    setSwitch($('#opt-rrn-members'), false);
+    setCopies(1);
+    Array.prototype.forEach.call(document.querySelectorAll('.auth-method, .auth-app'), function (b) {
+      b.setAttribute('aria-pressed', 'false');
+    });
+    resetAuthRequest();
+    authLabel = '';
+    $('#auth-apps').hidden = true;
+    $('#btn-auth-req').hidden = true;
+    $('#agree-final').checked = false;
+    $('#agree-final').removeAttribute('aria-invalid');
+    $('#done-my-msg').textContent = '';
+  }
+  $('#btn-home').addEventListener('click', function () { resetAll(); goTo('intro'); });
+
+  /* 공통 이동 */
+  $('#btn-start').addEventListener('click', function () { goTo(1); });
+  $('#btn-back').addEventListener('click', function () {
+    if (current === 1) goTo('intro');
+    else if (isStep(current) && current > 1) goTo(current - 1);
+  });
+  $('#btn-next').addEventListener('click', function () {
+    if (current === 1) submitApplicant();
+    else if (current === 2) submitAddress();
+    else if (current === 3) goTo(4);
+    else if (current === 4) submitAuth();
+  });
+  $('#form-applicant').addEventListener('submit', function (e) { e.preventDefault(); });
+  $('#form-address').addEventListener('submit', function (e) { e.preventDefault(); });
+  goTo('intro', {focus: false});
+});
+</script>
+</head>
+<body>
+<a id="skip-link" class="skip" href="#main">본문 바로가기</a>
+<header id="app-header">
+<button type="button" id="btn-back" class="icon-back" hidden><span class="sr-only">이전 단계로 돌아가기</span></button>
+<h1 id="app-title">등본 발급 신청</h1>
+</header>
+<div id="stepper" hidden><span class="st-text">단계 <b id="step-num">1</b>/5 · <span id="step-name">신청인 정보</span></span><span id="step-bar" aria-hidden="true"></span></div>
+<main id="main">
+<h2 id="step-title" tabindex="-1">주민등록표 등본 우편 발급</h2>
+
+<section id="screen-intro">
+<p class="lead">주민센터에 가지 않아도 등본을 등기우편으로 받아 볼 수 있어요. 로그인 없이 본인 확인만 하면 돼요.</p>
+<dl id="intro-facts">
+<div><dt>처리 기간</dt><dd>결제 후 영업일 1일 안에 발송, 2~3일 뒤 도착</dd></div>
+<div><dt>수수료</dt><dd>1통 400원 + 등기 우편요금 2,530원</dd></div>
+<div><dt>받는 방법</dt><dd>등기우편(받는 분 서명 필요)</dd></div>
+<div><dt>신청 자격</dt><dd>본인 또는 같은 세대원</dd></div>
+</dl>
+<h3 id="fee-guide-cap">발급 방법별 수수료</h3>
+<p class="help">표를 옆으로 밀면 더 볼 수 있어요.</p>
+<div id="fee-guide" class="table-scroll" role="region" aria-labelledby="fee-guide-cap" tabindex="0">
+<table>
+<thead><tr><th scope="col">발급 방법</th><th scope="col">수수료(1통)</th><th scope="col">받는 방법</th><th scope="col">걸리는 시간</th></tr></thead>
+<tbody>
+<tr><th scope="row">온라인 발급</th><td>무료</td><td>직접 출력</td><td>즉시</td></tr>
+<tr><th scope="row">무인민원발급기</th><td>200원</td><td>현장 출력</td><td>즉시</td></tr>
+<tr><th scope="row">주민센터 방문</th><td>400원</td><td>창구 수령</td><td>즉시</td></tr>
+<tr><th scope="row">우편 발송</th><td>400원 + 등기 우편요금 2,530원</td><td>등기우편</td><td>2~3일</td></tr>
+</tbody>
+</table>
+</div>
+<div class="notice">신청 전에 제출처가 요구한 조건(주소 변동 이력, 주민등록번호 뒷자리 표시, 부수)을 확인해 두세요.</div>
+<button type="button" id="btn-start" class="btn-primary">신청하기</button>
+</section>
+
+<section id="step-1" hidden>
+<p class="lead">등본을 신청하는 본인의 정보를 입력해 주세요.</p>
+<form id="form-applicant" novalidate>
+<div class="field" id="field-name"><label class="lb" for="applicant-name">성명</label><input id="applicant-name" type="text" autocomplete="name" aria-describedby="applicant-name-err"><p class="err" id="applicant-name-err"></p></div>
+<div class="field" id="field-rrn"><label class="lb" for="rrn-front">주민등록번호<span class="sr-only"> 앞 6자리</span></label><label class="sr-only" for="rrn-back">주민등록번호 뒤 7자리</label><div class="rrn-row" id="rrn"><input id="rrn-front" type="text" inputmode="numeric" maxlength="6" autocomplete="off" aria-describedby="rrn-front-err"><span class="dash" aria-hidden="true">-</span><input id="rrn-back" type="password" inputmode="numeric" maxlength="7" autocomplete="off" aria-describedby="rrn-back-err"></div><p class="err" id="rrn-front-err"></p><p class="err" id="rrn-back-err"></p></div>
+<div class="field" id="field-phone"><label class="lb" for="phone">휴대전화 번호</label><input id="phone" type="tel" inputmode="tel" autocomplete="tel" aria-describedby="phone-hint phone-err"><p class="help" id="phone-hint">숫자만 입력하거나 - 를 넣어도 돼요. <span class="nw">예) 010-1234-5678</span></p><p class="err" id="phone-err"></p></div>
+<div class="field" id="field-email"><label class="lb" for="email">이메일 (선택)</label><input id="email" type="email" autocomplete="email" aria-describedby="email-help email-err"><p class="help" id="email-help">처리 결과를 이메일로도 알려 드려요.</p><p class="err" id="email-err"></p></div>
+</form>
+<section id="privacy-box" aria-labelledby="privacy-title">
+<h3 id="privacy-title">개인정보 수집·이용 안내</h3>
+<ul>
+<li><b>수집 항목</b>: 성명, 주민등록번호, 휴대전화 번호, 이메일(선택), 받을 주소</li>
+<li><b>이용 목적</b>: 민원서류 발급·발송과 처리 결과 안내</li>
+<li><b>보유 기간</b>: 신청일로부터 5년</li>
+<li><b>제3자 제공</b>: 등기 발송을 위해 우체국에 성명·주소·휴대전화 번호 제공</li>
+<li><b>동의를 거부할 권리</b>: 필수 항목 수집을 거부할 수 있지만 이 경우 우편 발급 신청을 할 수 없어요.</li>
+<li><b>문의</b>: 나래민원 개인정보 보호 담당 1600-0000</li>
+</ul>
+</section>
+</section>
+
+<section id="step-2" hidden>
+<p class="lead">등본을 받을 주소를 입력해 주세요. 등기우편은 받는 분이 직접 서명해야 해요.</p>
+<form id="form-address" novalidate>
+<div class="field" id="field-zip"><label class="lb" for="zip">우편번호</label><div class="zip-row"><input id="zip" type="text" readonly aria-describedby="addr-base-err"><button type="button" id="btn-addr-search" class="btn-secondary">주소 검색</button></div></div>
+<div class="field" id="field-addr-base"><label class="lb" for="addr-base">기본 주소</label><textarea id="addr-base" rows="1" readonly aria-describedby="addr-base-err"></textarea><p class="err" id="addr-base-err"></p></div>
+<div class="field" id="field-addr-detail"><label class="lb" for="addr-detail">상세 주소</label><input id="addr-detail" type="text" autocomplete="address-line2" placeholder="예) 101동 1001호" aria-describedby="addr-detail-err"><p class="err" id="addr-detail-err"></p></div>
+</form>
+<p class="help">건물 이름과 동·호수까지 정확히 적어야 반송되지 않아요.</p>
+</section>
+
+<section id="step-3" hidden>
+<p class="lead">제출할 곳에서 요구한 조건에 맞게 골라 주세요.</p>
+<fieldset class="opt" id="opt-history-set">
+<legend class="lb" id="lbl-history">과거의 주소 변동 사항</legend>
+<p class="help" id="history-help">이전에 살았던 주소를 등본에 얼마나 표시할지 골라요.</p>
+<div id="opt-history">
+<label class="hist-opt" id="opt-history-all"><input type="radio" name="history" value="all" id="opt-history-all-input" aria-describedby="history-help"> 전체 포함</label>
+<label class="hist-opt" id="opt-history-5y"><input type="radio" name="history" value="5y" id="opt-history-5y-input" aria-describedby="history-help"> 최근 5년 포함</label>
+<label class="hist-opt" id="opt-history-none"><input type="radio" name="history" value="none" id="opt-history-none-input" aria-describedby="history-help" checked> 포함하지 않음</label>
+</div>
+</fieldset>
+<div class="opt" id="opt-rrn">
+<div class="sw-row"><div class="sw-text"><span class="sw-label" id="lbl-rrn-self">본인 주민등록번호 뒷자리 표시</span><span class="help" id="help-rrn-self">끄면 뒷자리가 *******로 가려져요.</span></div><button type="button" id="opt-rrn-self" class="switch" role="switch" aria-checked="false" aria-labelledby="lbl-rrn-self" aria-describedby="help-rrn-self"><span class="track"><span class="knob"></span></span></button></div>
+<div class="sw-row"><div class="sw-text"><span class="sw-label" id="lbl-rrn-members">세대원 주민등록번호 뒷자리 표시</span><span class="help" id="help-rrn-members">세대원 모두의 뒷자리가 보여요. 꼭 필요할 때만 켜세요.</span></div><button type="button" id="opt-rrn-members" class="switch" role="switch" aria-checked="false" aria-labelledby="lbl-rrn-members" aria-describedby="help-rrn-members"><span class="track"><span class="knob"></span></span></button></div>
+</div>
+<div class="opt" id="opt-copies"><span class="lb" id="lbl-copies">발급 부수</span><div class="copies-row"><button type="button" id="copies-minus" class="btn-secondary" aria-label="1통 줄이기">−</button><output id="copies-value" aria-live="polite" aria-labelledby="lbl-copies">1통</output><button type="button" id="copies-plus" class="btn-secondary" aria-label="1통 늘리기">+</button></div><p class="help">한 번에 최대 5통까지 신청할 수 있어요.</p></div>
+<div class="opt" id="opt-receive"><span class="lb">받는 방법</span><p>등기우편 (받는 분 서명 필요)</p></div>
+<div id="fee-summary" role="group" aria-labelledby="fee-summary-title"><h3 id="fee-summary-title" class="fs-title">예상 수수료</h3><div class="row" id="fee-summary-copies"><span>발급 수수료 (400원 × <span id="fee-summary-n">1</span>통)</span><span id="fee-summary-copies-amt">400원</span></div><div class="row" id="fee-summary-post"><span>등기 우편요금</span><span>2,530원</span></div><div class="row total" id="fee-summary-total"><span>합계</span><span id="fee-summary-total-amt">2,930원</span></div></div>
+</section>
+
+<section id="step-4" hidden>
+<p class="lead">신청인 본인인지 확인할게요.</p>
+<p id="auth-who"></p>
+<h3 class="sub">인증 방법</h3>
+<div id="auth-methods" role="group" aria-label="인증 방법">
+<button type="button" class="auth-method" id="auth-method-simple" aria-pressed="false">간편인증 (민간 인증서 앱)</button>
+<button type="button" class="auth-method" id="auth-method-mid" aria-pressed="false">모바일 신분증</button>
+<button type="button" class="auth-method" id="auth-method-cert" aria-pressed="false">공동·금융인증서</button>
+</div>
+<div id="auth-apps" role="group" aria-label="간편인증 앱" hidden>
+<button type="button" class="auth-app" id="auth-app-1" aria-pressed="false">모아톡</button>
+<button type="button" class="auth-app" id="auth-app-2" aria-pressed="false">한결포털</button>
+<button type="button" class="auth-app" id="auth-app-3" aria-pressed="false">하늘통신</button>
+<button type="button" class="auth-app" id="auth-app-4" aria-pressed="false">누리은행</button>
+<button type="button" class="auth-app" id="auth-app-5" aria-pressed="false">페이온</button>
+<button type="button" class="auth-app" id="auth-app-6" aria-pressed="false">바른인증</button>
+</div>
+<button type="button" id="btn-auth-req" class="btn-primary" hidden>인증 요청</button>
+<div id="auth-wait" hidden>
+<p id="auth-wait-msg"></p>
+<p id="auth-timer">남은 시간 <b id="auth-timer-left">5:00</b></p>
+<div class="auth-wait-btns"><button type="button" id="btn-auth-extend" class="btn-secondary">시간 연장</button><button type="button" id="btn-auth-done" class="btn-primary">인증 완료</button></div>
+</div>
+<p id="auth-status" class="help" role="status" aria-live="polite"></p>
+<p class="err" id="auth-err"></p>
+</section>
+
+<section id="step-5" hidden>
+<p class="lead">신청 전에 내용을 한 번 더 확인해 주세요.</p>
+<div id="review">
+<section class="rv-card" aria-labelledby="rv-applicant-h">
+<div class="rv-head"><h3 id="rv-applicant-h">신청인</h3><button type="button" id="edit-applicant" class="btn-text">수정<span class="sr-only"> 신청인 정보</span></button></div>
+<dl>
+<div class="rv-row"><dt>성명</dt><dd id="review-name"></dd></div>
+<div class="rv-row"><dt>주민등록번호</dt><dd id="review-rrn"></dd></div>
+<div class="rv-row"><dt>휴대전화</dt><dd id="review-phone"></dd></div>
+</dl>
+</section>
+<section class="rv-card" aria-labelledby="rv-address-h">
+<div class="rv-head"><h3 id="rv-address-h">받을 주소</h3><button type="button" id="edit-address" class="btn-text">수정<span class="sr-only"> 받을 주소</span></button></div>
+<dl>
+<div class="rv-row"><dt>주소</dt><dd id="review-addr"></dd></div>
+</dl>
+</section>
+<section class="rv-card" aria-labelledby="rv-options-h">
+<div class="rv-head"><h3 id="rv-options-h">발급 옵션</h3><button type="button" id="edit-options" class="btn-text">수정<span class="sr-only"> 발급 옵션</span></button></div>
+<dl>
+<div class="rv-row"><dt>주소 변동 사항</dt><dd id="review-history"></dd></div>
+<div class="rv-row"><dt>뒷자리 표시</dt><dd id="review-rrn-opt"></dd></div>
+<div class="rv-row"><dt>발급 부수</dt><dd id="review-copies"></dd></div>
+<div class="rv-row"><dt>수수료</dt><dd id="review-fee"></dd></div>
+</dl>
+</section>
+</div>
+<div id="agree-box">
+<label id="agree-row" for="agree-final"><input type="checkbox" id="agree-final" aria-describedby="submit-err"><span id="agree-text">본인은 위 신청 내용이 사실과 같음을 확인합니다. 다른 사람의 정보를 도용하거나 거짓으로 신청하면 「주민등록법」에 따라 처벌받을 수 있습니다.</span></label>
+<p class="err" id="submit-err"></p>
+</div>
+<button type="button" id="btn-submit" class="btn-primary">신청하기</button>
+</section>
+
+<section id="done" hidden>
+<p id="receipt-no">접수번호 <b>2026-0928-104713</b></p>
+<dl id="done-summary" class="done-card">
+<div class="done-row"><dt>신청 서류</dt><dd id="done-doc"></dd></div>
+<div class="done-row"><dt>받을 주소</dt><dd id="done-addr"></dd></div>
+<div class="done-row"><dt>결제 금액</dt><dd id="done-fee"></dd></div>
+</dl>
+<p id="done-pay"></p>
+<p id="done-cancel" class="help">발송 전까지 ‘나의 민원 &gt; 신청 내역’에서 신청을 취소할 수 있어요.</p>
+<button type="button" id="btn-my" class="btn-secondary">나의 민원 보기</button>
+<p id="done-my-msg" class="help" role="status"></p>
+<button type="button" id="btn-home" class="btn-primary">처음으로</button>
+</section>
+</main>
+<footer id="site-footer">
+<div class="ft-in">
+<p class="ft-links"><a href="#">개인정보처리방침</a><span aria-hidden="true">|</span><a href="#">이용약관</a><span aria-hidden="true">|</span><a href="#">저작권정책</a><span aria-hidden="true">|</span><a href="#">웹 접근성 정책</a></p>
+<p>나래민원 고객센터 1600-0000 (평일 09:00~18:00)</p>
+<p>신청 관련 문의는 접수번호를 알려 주시면 빠르게 도와드려요.</p>
+<p>이 누리집은 웹 접근성 품질인증을 받았습니다.</p>
+<p>© 나래민원</p>
+</div>
+</footer>
+<div class="bottom-bar" hidden><button type="button" id="btn-next" class="btn-primary">다음</button></div>
+<div id="confirm-dialog" role="alertdialog" aria-modal="true" aria-labelledby="confirm-title" aria-describedby="confirm-desc" hidden><div class="cd-box"><h2 id="confirm-title">이대로 신청할까요?</h2><p id="confirm-desc">수수료 <b id="confirm-fee">3,330원</b>은 신청 후 휴대전화로 보내 드리는 결제 링크에서 결제해요. 발송이 시작되기 전까지는 ‘나의 민원’에서 신청을 취소할 수 있어요.</p><div class="cd-btns"><button type="button" id="confirm-cancel" class="btn-secondary">다시 확인</button><button type="button" id="confirm-ok" class="btn-primary">신청</button></div></div></div>
+<div id="addr-modal" class="layer" role="dialog" aria-modal="true" aria-labelledby="addr-modal-title" hidden>
+<div class="am-head"><h2 id="addr-modal-title">주소 검색</h2><button type="button" id="addr-modal-close" class="btn-text">닫기</button></div>
+<div class="am-search"><label class="lb" for="addr-modal-q">도로명, 건물명 또는 지번</label><div class="am-row"><input id="addr-modal-q" type="search" enterkeyhint="search" autocomplete="off"><button type="button" id="addr-modal-go" class="btn-search">검색</button></div><p class="help" id="addr-modal-hint">예) 새솔로 128, 새솔마을, 신수동 91-3</p></div>
+<p class="help" id="addr-modal-results-count" role="status" aria-live="polite"></p>
+<ul id="addr-modal-results" class="am-results"></ul>
+</div>
+</body>
+</html>

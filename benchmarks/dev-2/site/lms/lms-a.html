@@ -1,0 +1,887 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>새길캠퍼스 · 온라인 연수원</title>
+<style>
+:root{--ink:#1b1f24;--ink2:#343a40;--sub:#495057;--line:#dee2e6;--brand:#1d4ed8;--bg:#f4f6f8;--err:#b42318;--ok:#1f6f3a;--dark:#15181c}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-padding-top:80px;scroll-padding-bottom:16px}
+body{font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;font-size:17px;line-height:1.6;color:var(--ink);background:var(--bg);word-break:keep-all;overflow-wrap:break-word}
+a{color:var(--brand)}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+svg{display:block;fill:currentColor}
+:focus{outline:3px solid var(--brand);outline-offset:2px}
+[hidden]{display:none!important}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+#gnb{position:sticky;top:0;z-index:30;min-height:64px;background:#fff;border-bottom:1px solid var(--line)}
+#gnb .wrap{min-height:63px;display:flex;align-items:center;gap:16px}
+#gnb-logo{display:inline-flex;align-items:center;gap:8px;min-height:44px;color:var(--ink);font-size:21px;font-weight:800;text-decoration:none;white-space:nowrap}
+#gnb-logo small{font-size:16px;font-weight:600;color:var(--sub)}
+#gnb-menu{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+#gnb-menu a{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:8px;color:var(--ink2);font-weight:700;text-decoration:none}
+#gnb-menu a[aria-current="page"]{color:var(--brand);text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:8px}
+#gnb-user{padding:0 4px 0 12px;color:var(--sub);font-size:16px;white-space:nowrap}
+main{display:block;padding:32px 0 64px}
+h1{font-size:28px;line-height:1.35;font-weight:800}
+#my-summary{margin-top:8px;color:var(--ink2)}
+#courses{list-style:none;margin-top:24px;display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+.course{display:flex;flex-direction:column;gap:8px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:16px}
+.badge{align-self:flex-start;padding:1px 10px;border:1px solid;border-radius:999px;font-size:16px;font-weight:700}
+.badge.law{color:#8a3c00;background:#fff4e5;border-color:#d9a066}
+.badge.job{color:#1e3a8a;background:#e8efff;border-color:#8fa8e8}
+.course h2{height:auto;font-size:20px;line-height:1.4;font-weight:800}
+.course .meta{color:var(--sub);font-size:16px}
+.course .prog p{font-weight:700}
+.bar{display:block;height:8px;margin-top:6px;background:#e3e7eb;border-radius:4px}
+.bar span{display:block;height:100%;background:var(--brand);border-radius:4px}
+.course .eval{color:var(--ink2)}
+.course .go{align-self:flex-end;min-width:120px;height:48px;margin-top:8px;padding:0 20px;border:0;border-radius:10px;background:var(--brand);color:#fff;font-size:17px;font-weight:700}
+#lesson-back{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px 0 10px;border:2px solid #868e96;border-radius:10px;background:#fff;color:var(--ink2);font-weight:700}
+#lesson-back svg{width:20px;height:20px}
+#lesson-course{margin-top:16px;color:var(--sub);font-weight:700}
+#lesson-title{margin-top:2px}
+#lesson-meta{margin-top:4px;color:var(--sub);font-size:16px}
+.lesson-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin-top:20px}
+.side{display:flex;flex-direction:column;gap:20px;min-width:0}
+#player{position:relative;width:100%;max-width:880px}
+#player-screen{position:relative;aspect-ratio:16/9;background:#eef2f7;border-radius:12px 12px 0 0}
+#player-slide{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;border-radius:12px 12px 0 0}
+#player-caption{position:absolute;left:0;right:0;bottom:12px;z-index:2;width:fit-content;max-width:88%;margin:0 auto;padding:6px 14px;border-radius:6px;background:rgba(0,0,0,.8);color:#fff;font-size:20px;line-height:1.45;text-align:center}
+#player-controls{position:absolute;left:0;right:0;bottom:0;z-index:3;min-height:112px;border-radius:0}
+#player-controls{display:flex;flex-wrap:wrap;align-items:center;padding:8px 12px;background:var(--dark);color:#fff}
+#player-controls :focus{outline-color:#ffd43b}
+#seek{flex:1 1 100%;width:100%;height:44px;margin:0;background:transparent;accent-color:#ffd43b;cursor:pointer}
+.ctl-row{flex:1 1 100%;display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:52px}
+.ctl{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:44px;border-radius:8px;background:transparent;color:#fff}
+.ctl.icon{width:44px;padding:0;border:0}
+.ctl.icon svg{width:26px;height:26px}
+.ctl.txt{padding:0 12px;border:2px solid #adb5bd;font-size:17px;font-weight:700;white-space:nowrap}
+#btn-play .i-pause{display:none}
+#btn-play.on .i-play{display:none}
+#btn-play.on .i-pause{display:block}
+#btn-cc[aria-pressed="true"]{background:#fff;border-color:#fff;color:var(--dark);box-shadow:inset 0 -5px 0 #1d4ed8}
+.skip{display:flex;align-items:center;gap:4px;margin-left:-4px}
+.skip button{width:18px;height:18px}
+.skip svg{width:14px;height:14px}
+.skip button{display:grid;place-items:center;padding:0;border:0;border-radius:6px;background:transparent;color:#fff}
+#time{padding:0 4px;font-size:17px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.grow{flex:1 1 0;min-width:0}
+.speed{position:relative;flex:none}
+#speed-menu{position:absolute;left:0;bottom:calc(100% + 8px);z-index:10;min-width:100%;padding:4px 0;list-style:none;background:#fff;color:var(--ink);border:1px solid #868e96;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+#speed-menu li{display:flex;align-items:center;gap:8px;height:44px;padding:0 16px;font-size:17px;white-space:nowrap;cursor:pointer}
+#speed-menu li svg{width:18px;height:18px;color:var(--brand);visibility:hidden}
+#speed-menu li[aria-checked="true"]{font-weight:800}
+#speed-menu li[aria-checked="true"] svg{visibility:visible}
+#speed-menu li:focus{outline:3px solid var(--brand);outline-offset:-3px;background:#eef2ff}
+#player.fs{position:fixed;inset:0;z-index:40;max-width:none;display:flex;flex-direction:column;justify-content:center;background:#000}
+#player.fs #player-screen{width:100%;max-width:calc((100vh - 112px) * 16 / 9);margin:0 auto}
+#progress,#go-quiz{padding:20px;background:#fff;border:1px solid var(--line);border-radius:16px}
+#progress-heading{font-size:19px;font-weight:800}
+#progress-rate{margin-top:6px;font-size:18px;font-weight:800}
+#progress-list{list-style:none;margin-top:12px}
+#progress-list li{padding:8px 0;border-top:1px solid #e9ecef}
+.pl-n{display:inline-block;min-width:1.4em;font-weight:800}
+.pl-s{font-size:16px;font-weight:700;white-space:nowrap}
+.pl-s.done{color:var(--ok)}
+.pl-s.now{color:var(--brand)}
+.pl-s.todo{color:var(--sub)}
+#progress-note{margin-top:10px;color:var(--ok);font-weight:700}
+#progress-note:empty{margin-top:0}
+#go-quiz-btn{width:100%;min-height:52px;border:2px solid var(--brand);border-radius:10px;background:var(--brand);color:#fff;font-size:18px;font-weight:800}
+#go-quiz-btn.pending{background:#fff;color:var(--brand)}
+#go-quiz-msg{margin-top:10px;color:var(--ink2)}
+#go-quiz-msg:empty{margin-top:0}
+#go-quiz-msg.warn{color:var(--err);font-weight:700}
+.modal{position:fixed;inset:0;z-index:50;display:flex;align-items:center;justify-content:center}
+.modal-backdrop{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.55)}
+.modal-panel{position:relative;z-index:51;width:560px;max-width:92vw;max-height:90vh;overflow:auto;padding:28px;background:#fff;color:var(--ink);border:0;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+dialog.modal-panel{position:fixed;inset:0;height:fit-content;margin:auto}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+.modal-panel h2{font-size:22px;line-height:1.4;font-weight:800}
+.modal-lead{margin-top:8px;color:var(--ink2)}
+#start-dialog-rules{font-size:11px;line-height:16px;color:#495057}
+#start-dialog-rules{margin-top:12px;padding-left:22px}
+#start-dialog-rules li+li{margin-top:4px}
+.modal-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px;margin-top:24px}
+.modal-actions button{min-width:120px;height:48px;padding:0 20px;border-radius:10px;font-size:17px;font-weight:700}
+.btn-sec{border:2px solid #868e96;background:#fff;color:var(--ink2)}
+.btn-pri{border:2px solid var(--brand);background:var(--brand);color:#fff}
+#view-quiz{padding:0}
+#qbar{display:flex;align-items:center;flex-wrap:nowrap;white-space:nowrap;overflow:hidden;height:64px}
+#qbar{position:sticky;top:0;z-index:20;column-gap:12px;padding:8px 16px;background:#fff;border-bottom:1px solid var(--line)}
+#qbar-title{font-size:18px;line-height:1.4;font-weight:800}
+#qbar-nav{display:flex;gap:6px}
+#qbar-nav button{display:inline-flex;align-items:center;justify-content:center;gap:1px;width:40px;height:40px;padding:0;border:2px solid #868e96;border-radius:8px;background:#fff;color:#1b1f24;font-size:16px;font-weight:700;outline:none}
+#qbar-nav button:focus{box-shadow:0 0 0 2px #fff,0 0 0 5px #1d4ed8;border-color:#1d4ed8}
+#qbar-nav button.on{background:#1d4ed8;border-color:#1d4ed8;color:#fff}
+#qbar-nav svg{display:none;width:14px;height:14px}
+#qbar-nav .on svg{display:block}
+#qbar-count{font-size:17px;font-weight:700;color:var(--ink2)}
+#qbar-timer{margin-left:auto;font-size:18px;font-weight:800;font-variant-numeric:tabular-nums}
+#qform{max-width:800px;margin:0 auto;padding:24px 16px 32px}
+#qform-course{color:var(--sub);font-weight:700}
+#qform-intro{margin-top:2px;color:var(--ink2)}
+#qform-error{margin-top:16px;padding:14px 16px;border-left:4px solid var(--err);border-radius:8px;background:#fff5f5;color:var(--err);font-size:17px;font-weight:700}
+#qform-error-go{min-height:44px;margin-top:10px;padding:0 14px;border:2px solid var(--err);border-radius:8px;background:#fff;color:var(--err);font-weight:700}
+#qform-mc{display:flex;flex-direction:column;gap:24px;margin-top:24px}
+.q{min-width:0;margin:0;padding:24px;background:#fff;border:1px solid var(--line);border-radius:12px;scroll-margin-top:8px}
+#qform-sa{margin-top:24px}
+.stem{display:block;padding:0;font-size:18px;line-height:28px;font-weight:700;word-break:keep-all}
+legend.stem{float:left;width:100%}
+#qform-mc .stem{height:56px;overflow:hidden}
+.opts{clear:both;display:flex;flex-direction:column;gap:10px;padding-top:16px}
+.opt{display:flex;align-items:center;gap:12px;min-height:56px;padding:12px 16px;border:2px solid #868e96;border-radius:10px;background:#fff;font-size:17px;cursor:pointer}
+.opt.sel{border-color:#1d4ed8;background:#eef2ff}
+.opt .mark{flex:none;width:24px;height:24px;border:2px solid #6c757d;border-radius:50%;background:#fff}
+.opt.sel .mark{border-color:#1d4ed8;background:radial-gradient(circle,#1d4ed8 0 6px,#fff 7px)}
+.opt input{flex:none;width:24px;height:24px;margin:0;-webkit-appearance:none;appearance:none;border:2px solid #6c757d;border-radius:50%;background:#fff;cursor:pointer}
+.opt input:checked{border-color:#1d4ed8;background:radial-gradient(circle,#1d4ed8 0 6px,#fff 7px)}
+.opt .ok{flex:none;width:22px;height:22px;margin-left:auto;color:#1d4ed8;visibility:hidden}
+.opt.sel .ok{visibility:visible}
+.opt:focus-within{outline:3px solid #1d4ed8;outline-offset:2px}
+.sa-row{display:flex;align-items:center;gap:10px;margin-top:16px}
+#qform-sa-input{width:160px;height:48px;padding:0 12px;border:2px solid #868e96;border-radius:10px;background:#fff;font-size:18px}
+#quiz-footer{min-height:80px;background:#fff;border-top:1px solid var(--line)}
+.qf-in{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;max-width:800px;margin:0 auto;padding:15px 16px 16px}
+#quiz-footer-status{flex:1 1 220px;color:var(--ink2);font-size:16px}
+.qf-btns{display:flex;gap:12px;margin-left:auto}
+#quiz-footer-save,#quiz-footer-submit{height:48px;padding:0 20px;border:2px solid var(--brand);border-radius:10px;font-size:17px;font-weight:700}
+#quiz-footer-save{background:#fff;color:var(--brand)}
+#quiz-footer-submit{background:var(--brand);color:#fff}
+#quiz-footer button:focus,#quiz-footer button:focus-visible{outline:none}
+.narrow{max-width:848px}
+#result-course{margin-top:4px;color:var(--sub);font-weight:700}
+.result-card{margin-top:20px;padding:24px;background:#fff;border:1px solid var(--line);border-radius:16px}
+#result-score{font-size:48px;line-height:1.2;font-weight:800}
+#result-status{margin-top:6px;color:var(--ok);font-size:19px;font-weight:800}
+#result-status.ng{color:var(--err)}
+#result-meta{margin-top:4px;color:var(--sub);font-size:16px}
+#result-table{margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:12px}
+#result-table-grid{width:100%;min-width:560px;border-collapse:collapse;font-size:17px}
+#result-table-grid caption{padding:14px 12px 8px;text-align:left;font-size:18px;font-weight:800}
+#result-table-grid th,#result-table-grid td{padding:10px 12px;border-top:1px solid var(--line);text-align:left;vertical-align:top}
+#result-table-grid thead th{background:#f8f9fa;white-space:nowrap}
+#result-table-grid .topic{white-space:nowrap}
+.res-ok,.res-ng{font-weight:700;white-space:nowrap}
+.res-ok{color:var(--ok)}
+.res-ng{color:var(--err)}
+#result-note{margin-top:16px;color:var(--ink2)}
+#result-home{min-width:160px;height:52px;margin-top:20px;padding:0 24px;border:0;border-radius:10px;background:var(--brand);color:#fff;font-size:18px;font-weight:800}
+#site-footer{padding:20px 0 32px;background:#fff;border-top:1px solid var(--line);color:var(--ink2);font-size:16px}
+.ft-links{display:flex;flex-wrap:wrap;gap:4px 16px}
+.ft-links a{display:inline-flex;align-items:center;min-height:44px;color:var(--ink2);font-weight:700}
+.ft-docs{display:grid;gap:4px;margin-top:8px}
+.ft-docs strong{margin-right:6px;color:var(--ink)}
+.ft-copy{margin-top:12px;color:var(--sub)}
+body.exam #gnb,body.exam #site-footer{display:none}
+@media (min-width:960px){#courses{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:1100px){.lesson-grid{grid-template-columns:minmax(0,880px) 320px;gap:32px;align-items:start}}
+@media (max-width:599px){.wrap{padding:0 16px}h1{font-size:24px}main{padding-top:24px}#gnb{position:static;height:auto}#gnb .wrap{flex-wrap:wrap;column-gap:8px;padding-top:6px;padding-bottom:6px}#gnb-menu{margin-left:-12px}}
+@media (max-width:480px){#player-caption{bottom:8px;max-width:96%;padding:4px 10px;font-size:16px}}
+@media (max-height:499px){#gnb,#qbar{position:static}}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var each = function (list, fn) { Array.prototype.forEach.call(list, fn); };
+  var pad2 = function (n) { return (n < 10 ? '0' : '') + n; };
+  var mmss = function (s) { s = Math.max(0, Math.floor(s)); return Math.floor(s / 60) + ':' + pad2(s % 60); };
+  var clock = function (d) { return pad2(d.getHours()) + ':' + pad2(d.getMinutes()); };
+  var ymd = function (d) { return d.getFullYear() + '.' + pad2(d.getMonth() + 1) + '.' + pad2(d.getDate()); };
+  var spoken = function (s) { var m = Math.floor(s / 60); return (m ? m + '분 ' : '') + (s % 60) + '초'; };
+  var esc = function (s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); };
+
+  var COURSES = [
+    { n: 1, title: '개인정보보호 기본과정 (일반 직원용)', law: true, hasEval: true, passed: false, score: null, attempts: 0, doneOn: '',
+      lessons: [
+        { t: '개인정보의 개념', dur: 698, done: true },
+        { t: '수집·이용과 동의', dur: 735, done: true },
+        { t: '안전성 확보 조치', dur: 712, done: true },
+        { t: '유출 사고 대응 절차', h: '개인정보 유출 사고 대응 절차', dur: 760, at: 744 },
+        { t: '파기와 보관', h: '개인정보 파기와 보관', dur: 705 }
+      ] },
+    { n: 2, title: '개인정보보호 심화과정 (개인정보취급자용)', law: true, hasEval: true, passed: false, score: null, attempts: 0, doneOn: '',
+      lessons: [
+        { t: '개인정보취급자의 역할과 책임', dur: 845 },
+        { t: '처리 단계별 보호조치', dur: 790 },
+        { t: '접근 권한 관리와 접속기록 점검', dur: 812 },
+        { t: '암호화와 가명처리', dur: 768 },
+        { t: '위탁과 제3자 제공 관리', dur: 731 },
+        { t: '유출 대응 모의훈련', dur: 802 }
+      ] },
+    { n: 3, title: '2026 직장 내 괴롭힘 예방교육', law: true, hasEval: true, passed: true, score: 90, attempts: 1, doneOn: '2026.07.14',
+      lessons: [
+        { t: '직장 내 괴롭힘의 개념과 판단 기준', dur: 680, done: true },
+        { t: '유형별 사례로 보는 괴롭힘', dur: 725, done: true },
+        { t: '신고와 조치 절차', dur: 690, done: true },
+        { t: '서로 존중하는 조직문화', dur: 640, done: true }
+      ] },
+    { n: 4, title: '엑셀 실무: 피벗 테이블로 보고서 만들기', law: false, hasEval: false, passed: false, score: null, attempts: 0, doneOn: '',
+      lessons: [
+        { t: '피벗 테이블 시작하기', dur: 540, done: true },
+        { t: '원본 데이터 정리 규칙', dur: 575, done: true },
+        { t: '행·열·값 영역 배치', dur: 590, at: 192 },
+        { t: '값 요약 방식과 표시 형식', dur: 610 },
+        { t: '날짜·숫자 그룹화', dur: 560 },
+        { t: '필터와 슬라이서', dur: 600 },
+        { t: '계산 필드와 계산 항목', dur: 620 },
+        { t: '피벗 차트 만들기', dur: 585 },
+        { t: '새로 고침과 원본 범위 변경', dur: 530 },
+        { t: '월간 매출 보고서 실습', dur: 720 }
+      ] }
+  ];
+  var SLIDE14 = ['개인정보 유출 사고 대응 4단계', '① 유출 확인·추가 유출 차단', '② 정보주체 통지 (72시간 이내)', '③ 신고 (1천 명 이상 등 → 개인정보보호위원회·한국인터넷진흥원)', '④ 피해 구제·재발 방지'];
+  var CUES14 = [
+    [0, 9, '4차시에서는 개인정보 유출 사고가 났을 때의 대응 절차를 알아봅니다.'],
+    [712, 720, '마지막으로 오늘 배운 대응 절차를 정리해 보겠습니다.'],
+    [720, 728, '먼저 유출 경로를 확인하고 추가 유출을 막는 것이 가장 우선입니다.'],
+    [728, 736, '다음으로 유출된 항목, 시점과 경위, 대응 조치를 정리합니다.'],
+    [736, 744, '정보주체에게 알리는 기한과 신고 대상을 꼭 기억해 두세요.'],
+    [744, 749, '유출 사실을 알게 되면 72시간 안에 정보주체에게 알려야 합니다.'],
+    [749, 755, '1천 명 이상이 유출되면 개인정보보호위원회나 한국인터넷진흥원에도 신고합니다.'],
+    [755, 761, '다음 5차시에서는 개인정보 파기 절차를 알아봅니다.']
+  ];
+  var QUIZ = [
+    { topic: '고유식별정보', ans: 3, opts: ['휴대전화번호', '차량번호', '여권번호', '사원번호'] },
+    { topic: '민감정보', ans: 3, opts: ['건강에 관한 정보', '노동조합 가입·탈퇴에 관한 정보', '회사 이메일 주소', '유전정보'] },
+    { topic: '유출 초기 대응', ans: 1, opts: ['유출 경로를 확인하고 추가 유출을 막는다', '관련 기록을 모두 삭제한다', '사내 공지가 나올 때까지 아무에게도 알리지 않는다', '정보주체에게 보상 금액부터 안내한다'] },
+    { topic: '파기 방법', ans: 2, opts: ['전자 파일은 휴지통으로만 옮겨 둔다', '종이 문서는 분쇄하거나 소각한다', '나중을 위해 개인 USB에 옮겨 보관한다', '출력물은 이면지로 다시 쓴다'] },
+    { topic: '유출 통지 기한', ans: '72', unit: '시간' }
+  ];
+  var CIRC = ['①', '②', '③', '④'];
+  var RATES = [1, 1.25, 1.5, 2];
+  var RATE_TXT = ['1.0x', '1.25x', '1.5x', '2.0x'];
+
+  function doneCount(c) { return c.lessons.filter(function (l) { return l.done; }).length; }
+  function rate(c) { return Math.round(doneCount(c) / c.lessons.length * 100); }
+  function nextIdx(c) { for (var i = 0; i < c.lessons.length; i++) { if (!c.lessons[i].done) return i; } return 0; }
+  function eligible(c) { return c.hasEval && rate(c) >= 80 && !c.passed && c.attempts < 2; }
+  function finished(c) { return c.hasEval ? c.passed && rate(c) >= 80 : rate(c) === 100; }
+  function lessonName(c, i) { return c.lessons[i].h || c.lessons[i].t; }
+
+  function renderCourses() {
+    var ing = 0, fin = 0, lawLeft = 0;
+    COURSES.forEach(function (c) {
+      var d = doneCount(c), r = rate(c), f = finished(c);
+      if (f) fin++; else { ing++; if (c.law) lawLeft++; }
+      $('courses-' + c.n + '-progress-text').textContent = f && r === 100 && c.doneOn ? '수료 (' + c.doneOn + ')' : '진도율 ' + r + '% (' + d + '/' + c.lessons.length + '차시)';
+      $('courses-' + c.n + '-bar').style.width = r + '%';
+      $('courses-' + c.n + '-eval').textContent = !c.hasEval ? '평가 없음' : c.score !== null ? '최종평가 ' + c.score + '점' : c.attempts ? '최종평가 ' + c.lastScore + '점 (미통과)' : '최종평가 미응시';
+    });
+    $('my-summary').textContent = '수강 중 ' + ing + '과정 · 수료 ' + fin + '과정 · 법정의무교육 미이수 ' + lawLeft + '과정(마감 2026.10.30)';
+  }
+
+  function slideSrc(lines) {
+    var y = [100, 172, 224, 276, 328], t = '';
+    lines.forEach(function (s, k) {
+      t += '<text x="80" y="' + y[k] + '" font-size="' + (k ? 38 : 56) + '" font-weight="' + (k ? 400 : 700) + '" fill="' + (k ? '#343a40' : '#1b1f24') + '">' + esc(s) + '</text>';
+    });
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">' +
+      '<rect width="1600" height="900" fill="#eef2f7"/><rect width="1600" height="10" fill="#1d4ed8"/>' +
+      '<g font-family="Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, sans-serif">' + t + '</g>' +
+      '<g fill="#d6dee9"><rect x="80" y="430" width="320" height="200" rx="24"/><rect x="450" y="430" width="320" height="200" rx="24"/><rect x="820" y="430" width="320" height="200" rx="24"/><rect x="1190" y="430" width="320" height="200" rx="24"/></g>' +
+      '<g fill="#1d4ed8"><circle cx="240" cy="530" r="44"/><circle cx="610" cy="530" r="44"/><circle cx="980" cy="530" r="44"/><circle cx="1350" cy="530" r="44"/></g>' +
+      '</svg>';
+    return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }
+
+  var P = { c: COURSES[0], i: 3, t: 744, dur: 760, playing: false, rate: 1, cc: false, last: 0 };
+  function cueList() {
+    return P.c.n === 1 && P.i === 3 ? CUES14 : [[0, 9, (P.i + 1) + '차시 「' + lessonName(P.c, P.i) + '」 강의를 시작합니다.']];
+  }
+  function renderPlayer() {
+    var s = Math.floor(P.t), list = cueList(), cue = '';
+    $('time').textContent = mmss(s) + ' / ' + mmss(P.dur);
+    var sk = $('seek');
+    sk.max = P.dur;
+    sk.value = s;
+    sk.setAttribute('aria-valuetext', spoken(s));
+    for (var k = 0; k < list.length; k++) { if (s >= list[k][0] && s < list[k][1]) cue = list[k][2]; }
+    var cap = $('player-caption');
+    if (P.cc && cue) {
+      if (cap.textContent !== cue) cap.textContent = cue;
+      cap.hidden = false;
+    } else {
+      cap.hidden = true;
+    }
+    var b = $('btn-play'), label = P.playing ? '일시정지' : '재생';
+    b.classList.toggle('on', P.playing);
+    if (b.getAttribute('aria-label') !== label) b.setAttribute('aria-label', label);
+  }
+  function play() { if (P.t >= P.dur) P.t = 0; P.playing = true; P.last = performance.now(); renderPlayer(); }
+  function pause() { P.playing = false; renderPlayer(); }
+  function setTime(t) {
+    P.t = Math.min(P.dur, Math.max(0, t));
+    P.last = performance.now();
+    if (P.t >= P.dur) { P.playing = false; completeLesson(); }
+    renderPlayer();
+  }
+  setInterval(function () {
+    if (!P.playing) return;
+    var now = performance.now();
+    P.t += (now - P.last) / 1000 * P.rate;
+    P.last = now;
+    if (P.t >= P.dur) { P.t = P.dur; P.playing = false; completeLesson(); }
+    renderPlayer();
+  }, 100);
+  $('btn-play').addEventListener('click', function () { if (P.playing) pause(); else play(); });
+  $('skip-back').addEventListener('click', function () { setTime(P.t - 10); });
+  $('skip-fwd').addEventListener('click', function () { setTime(P.t + 10); });
+  $('seek').addEventListener('input', function () { setTime(Number(this.value)); });
+  $('btn-cc').addEventListener('click', function () {
+    P.cc = !P.cc;
+    this.setAttribute('aria-pressed', P.cc ? 'true' : 'false');
+    renderPlayer();
+  });
+
+  var sBtn = $('speed-btn'), sMenu = $('speed-menu');
+  var sItems = Array.prototype.slice.call(sMenu.querySelectorAll('[role="menuitemradio"]'));
+  function menuOpen() { return !sMenu.hidden; }
+  function focusItem(i) {
+    sItems.forEach(function (el, k) { el.tabIndex = k === i ? 0 : -1; });
+    sItems[i].focus();
+  }
+  function openMenu(last) {
+    sMenu.hidden = false;
+    sBtn.setAttribute('aria-expanded', 'true');
+    var i = last ? sItems.length - 1 : RATES.indexOf(P.rate);
+    focusItem(i < 0 ? 0 : i);
+  }
+  function closeMenu(back) {
+    if (!menuOpen()) return;
+    sMenu.hidden = true;
+    sBtn.setAttribute('aria-expanded', 'false');
+    if (back) sBtn.focus();
+  }
+  function pickRate(i) {
+    P.rate = RATES[i];
+    sItems.forEach(function (el, k) { el.setAttribute('aria-checked', k === i ? 'true' : 'false'); });
+    sBtn.textContent = '배속 ' + RATE_TXT[i];
+    closeMenu(true);
+  }
+  sBtn.addEventListener('click', function () { if (menuOpen()) closeMenu(false); else openMenu(false); });
+  sBtn.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); openMenu(e.key === 'ArrowUp'); }
+  });
+  sMenu.addEventListener('keydown', function (e) {
+    var i = sItems.indexOf(document.activeElement);
+    if (e.key === 'ArrowDown') { e.preventDefault(); focusItem((i + 1) % sItems.length); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); focusItem((i + sItems.length - 1) % sItems.length); }
+    else if (e.key === 'Home') { e.preventDefault(); focusItem(0); }
+    else if (e.key === 'End') { e.preventDefault(); focusItem(sItems.length - 1); }
+    else if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); if (i >= 0) pickRate(i); }
+    else if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); closeMenu(true); }
+    else if (e.key === 'Tab') { e.preventDefault(); closeMenu(false); (e.shiftKey ? sBtn : $('btn-fs')).focus(); }
+  });
+  sItems.forEach(function (el, k) { el.addEventListener('click', function () { pickRate(k); }); });
+  document.addEventListener('click', function (e) { if (menuOpen() && !$('speed').contains(e.target)) closeMenu(false); });
+
+  function setFs(on) {
+    $('player').classList.toggle('fs', on);
+    $('btn-fs').setAttribute('aria-label', on ? '전체 화면 종료' : '전체 화면');
+  }
+  $('btn-fs').addEventListener('click', function () { setFs(!$('player').classList.contains('fs')); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' || document.querySelector('dialog[open]')) return;
+    if ($('player').classList.contains('fs')) { setFs(false); $('btn-fs').focus(); }
+  });
+
+  function stuck(el) { var p = getComputedStyle(el).position; return p === 'sticky' || p === 'fixed'; }
+  function updatePads() {
+    var bar = document.body.classList.contains('exam') ? $('qbar') : $('gnb');
+    document.documentElement.style.scrollPaddingTop = 16 + (stuck(bar) ? bar.offsetHeight : 0) + 'px';
+  }
+  if (window.ResizeObserver) {
+    var ro = new ResizeObserver(updatePads);
+    ro.observe($('gnb'));
+    ro.observe($('qbar'));
+  }
+  window.addEventListener('resize', updatePads);
+
+  var VIEWS = ['courses', 'lesson', 'quiz', 'result'];
+  function show(v, focus) {
+    if (v !== 'lesson') pause();
+    closeMenu(false);
+    setFs(false);
+    VIEWS.forEach(function (k) { $('view-' + k).hidden = k !== v; });
+    document.body.classList.toggle('exam', v === 'quiz');
+    if (v === 'courses') { renderCourses(); $('gnb-my').setAttribute('aria-current', 'page'); }
+    else $('gnb-my').removeAttribute('aria-current');
+    window.scrollTo(0, 0);
+    updatePads();
+    if (focus) $('view-' + v).querySelector('h1').focus({ preventScroll: true });
+  }
+  ['gnb-logo', 'gnb-my'].forEach(function (id) {
+    $(id).addEventListener('click', function (e) { e.preventDefault(); show('courses', true); });
+  });
+  $('lesson-back').addEventListener('click', function () { show('courses', true); });
+  $('result-home').addEventListener('click', function () { show('courses', true); });
+
+  function renderProgress(c) {
+    var d = doneCount(c), r = rate(c), html = '';
+    $('progress-rate').textContent = '진도율 ' + r + '% (' + d + '/' + c.lessons.length + '차시)';
+    $('progress-bar').firstElementChild.style.width = r + '%';
+    c.lessons.forEach(function (L, k) {
+      var st = L.done ? ['done', '✓ 완료'] : k === P.i ? ['now', '학습 중'] : ['todo', '미학습'];
+      html += '<li id="progress-l' + (k + 1) + '"' + (k === P.i ? ' aria-current="step"' : '') + '><span class="pl-n">' + (k + 1) + '</span> ' + esc(L.t) + ' <span class="pl-s ' + st[0] + '">· ' + st[1] + '</span></li>';
+    });
+    $('progress-list').innerHTML = html;
+  }
+  function setMsg(text, warn) {
+    var m = $('go-quiz-msg');
+    m.textContent = text;
+    m.classList.toggle('warn', !!warn);
+  }
+  function renderGoQuiz(c) {
+    $('go-quiz').hidden = !c.hasEval;
+    setMsg('', false);
+  }
+  function onGoQuiz() {
+    var c = P.c;
+    if (!eligible(c)) { setMsg('응시 대상이 아닙니다.', true); return; }
+    setMsg('', false);
+    openStart();
+  }
+  function completeLesson() {
+    var L = P.c.lessons[P.i];
+    if (L.done) return;
+    L.done = true;
+    L.at = 0;
+  }
+  $('go-quiz-btn').addEventListener('click', onGoQuiz);
+
+  function openLesson(c) {
+    var i = nextIdx(c), L = c.lessons[i];
+    P.c = c;
+    P.i = i;
+    P.dur = L.dur;
+    P.t = L.at || 0;
+    P.playing = false;
+    $('lesson-course').textContent = c.title;
+    $('lesson-title').textContent = (i + 1) + '차시. ' + lessonName(c, i);
+    $('lesson-meta').textContent = Math.floor(L.dur / 60) + '분 ' + pad2(L.dur % 60) + '초 · ' + (L.at ? mmss(L.at) + '부터 이어서 재생' : '처음부터 재생');
+    var lines = c.n === 1 && i === 3 ? SLIDE14 : [(i + 1) + '차시. ' + lessonName(c, i), c.title];
+    $('player-slide').src = slideSrc(lines);
+    $('player-slide').alt = '강의 화면: ' + lines[0] + ' — ' + lines.slice(1).join(', ');
+    $('progress-note').textContent = '';
+    renderProgress(c);
+    renderGoQuiz(c);
+    renderPlayer();
+    show('lesson', true);
+  }
+  COURSES.forEach(function (c) {
+    $('courses-' + c.n + '-go').addEventListener('click', function () { openLesson(c); });
+  });
+
+  function keepTab(dlg) {
+    dlg.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var f = Array.prototype.slice.call(dlg.querySelectorAll('button, [href], input'));
+      var first = f[0], last = f[f.length - 1], cur = document.activeElement;
+      if (e.shiftKey && (cur === first || f.indexOf(cur) < 0)) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && (cur === last || f.indexOf(cur) < 0)) { e.preventDefault(); first.focus(); }
+    });
+  }
+  function openStart() { $('start-dialog').hidden = false; }
+  function closeStart() { $('start-dialog').hidden = true; }
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !$('start-dialog').hidden) closeStart();
+  });
+  $('start-dialog-cancel').addEventListener('click', function () { closeStart(); });
+  $('start-dialog-ok').addEventListener('click', function () { closeStart(); startQuiz(); });
+
+  var Q = { a: { 1: 0, 2: 0, 3: 0, 4: 0, 5: '' }, end: 0, timer: 0, warned: 0 };
+  function answered(n) { return n === 5 ? Q.a[5] !== '' : Q.a[n] > 0; }
+  function updateNav() {
+    var cnt = 0;
+    for (var n = 1; n <= 5; n++) {
+      var ok = answered(n), b = $('qbar-nav-' + n);
+      if (ok) cnt++;
+      b.classList.toggle('on', ok);
+      b.setAttribute('aria-label', n + '번 문항으로 이동, ' + (ok ? '응답함' : '미응답'));
+    }
+    $('qbar-count').textContent = '응답 ' + cnt + '/5';
+  }
+  function clearAnswers() {
+    $('qform').reset();
+    Q.a = { 1: 0, 2: 0, 3: 0, 4: 0, 5: '' };
+    each(document.querySelectorAll('#qform-mc .opt'), function (o) { o.classList.remove('sel'); });
+    updateNav();
+  }
+  function pick(opt) {
+    var card = opt.closest('.q'), n = Number(card.id.slice(-1));
+    each(card.querySelectorAll('.opt'), function (o) { o.classList.toggle('sel', o === opt); });
+    Q.a[n] = Number(opt.getAttribute('data-v'));
+    updateNav();
+  }
+  each(document.querySelectorAll('#qform-mc .opt'), function (o) {
+    o.addEventListener('click', function () { pick(o); });
+  });
+  $('qform-sa-input').addEventListener('input', function () { Q.a[5] = this.value.trim(); updateNav(); });
+  $('qform').addEventListener('submit', function (e) { e.preventDefault(); });
+
+  function goTo(n) {
+    var card = n < 5 ? $('qform-mc' + n) : $('qform-sa');
+    card.scrollIntoView({ block: 'start' });
+    var f = card.querySelector('input:checked') || card.querySelector('input, button, [tabindex]');
+    if (f) f.focus({ preventScroll: true });
+  }
+  for (var nav = 1; nav <= 5; nav++) {
+    (function (n) { $('qbar-nav-' + n).addEventListener('click', function () { goTo(n); }); })(nav);
+  }
+  $('qform-error-go').addEventListener('click', function () { goTo(Number(this.getAttribute('data-q'))); });
+  function showError(n) {
+    var box = $('qform-error');
+    $('qform-error-text').textContent = n + '번 문항에 답하지 않았습니다. 모든 문항에 답해야 제출할 수 있습니다.';
+    $('qform-error-go').textContent = n + '번 문항으로 이동';
+    $('qform-error-go').setAttribute('data-q', n);
+    box.hidden = false;
+    box.scrollIntoView({ block: 'start' });
+    box.focus({ preventScroll: true });
+  }
+  function firstMissing() { for (var n = 1; n <= 5; n++) { if (!answered(n)) return n; } return 0; }
+  $('quiz-footer-submit').addEventListener('click', function () {
+    var miss = firstMissing();
+    if (miss) {
+      clearAnswers();
+      showError(miss);
+      return;
+    }
+    $('qform-error').hidden = true;
+    openConfirm();
+  });
+  $('quiz-footer-save').addEventListener('click', function () {
+    $('quiz-footer-status').textContent = '임시 저장됨 · ' + clock(new Date());
+  });
+  function openConfirm() {
+    var cnt = 0;
+    for (var n = 1; n <= 5; n++) { if (answered(n)) cnt++; }
+    $('submit-confirm-desc').textContent = '5문항 중 ' + cnt + '문항에 답했습니다. 제출하면 응시 기회 1회가 차감되고, 제출한 답안은 수정할 수 없습니다.';
+    $('submit-confirm').showModal();
+    $('submit-confirm-cancel').focus();
+  }
+  $('submit-confirm-cancel').addEventListener('click', function () { $('submit-confirm').close(); });
+  $('submit-confirm-ok').addEventListener('click', function () { $('submit-confirm').close(); finish(false); });
+  $('submit-confirm').addEventListener('close', function () {
+    if (document.body.classList.contains('exam')) $('quiz-footer-submit').focus();
+  });
+  keepTab($('submit-confirm'));
+
+  function tickQuiz() {
+    var left = Math.max(0, Math.ceil((Q.end - Date.now()) / 1000));
+    var txt = '남은 시간 ' + pad2(Math.floor(left / 60)) + ':' + pad2(left % 60);
+    if (left <= 60) txt += ' · 1분 남음';
+    else if (left <= 300) txt += ' · 5분 남음';
+    $('qbar-timer').textContent = txt;
+    var w = left <= 60 ? 2 : left <= 300 ? 1 : 0;
+    if (w > Q.warned) {
+      Q.warned = w;
+      $('quiz-footer-status').textContent = '남은 시간 ' + (w === 2 ? '1분' : '5분') + ' · 답안은 자동 저장돼요';
+    }
+    if (left === 0) finish(true);
+  }
+  function startQuiz() {
+    clearAnswers();
+    $('qform-error').hidden = true;
+    $('quiz-footer-status').textContent = '자동 저장됨 · 응시 시작 ' + clock(new Date());
+    Q.end = Date.now() + 600000;
+    Q.warned = 0;
+    clearInterval(Q.timer);
+    tickQuiz();
+    Q.timer = setInterval(tickQuiz, 1000);
+    show('quiz', true);
+  }
+  function ansText(q, v) {
+    if (q.unit) return v === '' ? '미응답' : esc(v) + q.unit;
+    return v ? CIRC[v - 1] + ' ' + q.opts[v - 1] : '미응답';
+  }
+  function finish(auto) {
+    clearInterval(Q.timer);
+    var c = P.c, rows = '', ok = 0, now = new Date();
+    QUIZ.forEach(function (q, k) {
+      var n = k + 1, mine = Q.a[n];
+      var right = q.unit ? /^\d+$/.test(mine) && Number(mine) === Number(q.ans) : mine === q.ans;
+      if (right) ok++;
+      rows += '<tr><th scope="row">' + n + '번</th><td class="topic">' + q.topic + '</td><td>' + ansText(q, mine) + '</td><td>' + ansText(q, q.ans) + '</td><td>' +
+        (right ? '<span class="res-ok"><span aria-hidden="true">✓</span> 정답</span>' : '<span class="res-ng"><span aria-hidden="true">✕</span> 오답</span>') +
+        '</td><td>' + (right ? 20 : 0) + '/20</td></tr>';
+    });
+    var score = ok * 20, pass = score >= 60;
+    c.attempts += 1;
+    if (pass) { c.passed = true; c.score = score; if (!c.doneOn) c.doneOn = ymd(now); }
+    else c.lastScore = score;
+    $('result-course').textContent = c.title + ' · 최종평가';
+    $('result-score').textContent = score + '점';
+    var st = $('result-status');
+    st.textContent = pass ? (finished(c) ? '평가 통과 · 과정 수료 완료' : '평가 통과') : '평가 미통과 · 60점 이상이면 통과예요. ' + (c.attempts < 2 ? '남은 응시 기회 ' + (2 - c.attempts) + '회' : '응시 기회를 모두 사용했어요. 학습 지원 센터에 문의해 주세요.');
+    st.classList.toggle('ng', !pass);
+    $('result-meta').textContent = '응시 ' + c.attempts + '회 / 2회 · 제출 ' + ymd(now) + ' ' + clock(now) + (auto ? ' · 제한시간이 끝나 자동 제출됨' : '');
+    $('result-table-body').innerHTML = rows;
+    show('result', true);
+  }
+
+  renderCourses();
+  renderPlayer();
+  show('courses', false);
+});
+</script>
+</head>
+<body>
+<header id="gnb">
+  <div class="wrap">
+    <a id="gnb-logo" href="#view-courses">새길캠퍼스 <small>온라인 연수원</small></a>
+    <nav id="gnb-menu" aria-label="사이트 메뉴">
+      <a id="gnb-my" href="#view-courses" aria-current="page">내 강의실</a>
+      <a id="gnb-help" href="#ft-doc-help">학습 지원</a>
+      <span id="gnb-user">박서연 님</span>
+    </nav>
+  </div>
+</header>
+
+<main id="view-courses">
+  <div class="wrap">
+    <h1 id="my-heading" tabindex="-1">내 강의실</h1>
+    <p id="my-summary">수강 중 3과정 · 수료 1과정 · 법정의무교육 미이수 2과정(마감 2026.10.30)</p>
+    <ul id="courses">
+      <li class="course" id="courses-1">
+        <span class="badge law">법정의무</span>
+        <h2 id="courses-1-title">개인정보보호 기본과정 (일반 직원용)</h2>
+        <p class="meta">학습기간 2026.09.01 ~ 2026.10.30 · 5차시</p>
+        <div class="prog" id="courses-1-progress"><p id="courses-1-progress-text">진도율 60% (3/5차시)</p><span class="bar" aria-hidden="true"><span id="courses-1-bar" style="width:60%"></span></span></div>
+        <p class="eval" id="courses-1-eval">최종평가 미응시</p>
+        <button class="go" id="courses-1-go" type="button" aria-label="개인정보보호 기본과정 (일반 직원용) 강의실 입장">이어서 학습</button>
+      </li>
+      <li class="course" id="courses-2">
+        <span class="badge law">법정의무</span>
+        <h2 id="courses-2-title">개인정보보호 심화과정 (개인정보취급자용)</h2>
+        <p class="meta">학습기간 2026.09.01 ~ 2026.10.30 · 6차시</p>
+        <div class="prog" id="courses-2-progress"><p id="courses-2-progress-text">진도율 0% (0/6차시)</p><span class="bar" aria-hidden="true"><span id="courses-2-bar" style="width:0%"></span></span></div>
+        <p class="eval" id="courses-2-eval">최종평가 미응시</p>
+        <button class="go" id="courses-2-go" type="button" aria-label="개인정보보호 심화과정 (개인정보취급자용) 강의실 입장">학습 시작</button>
+      </li>
+      <li class="course" id="courses-3">
+        <span class="badge law">법정의무</span>
+        <h2 id="courses-3-title">2026 직장 내 괴롭힘 예방교육</h2>
+        <p class="meta">학습기간 2026.06.01 ~ 2026.07.31 · 4차시</p>
+        <div class="prog" id="courses-3-progress"><p id="courses-3-progress-text">수료 (2026.07.14)</p><span class="bar" aria-hidden="true"><span id="courses-3-bar" style="width:100%"></span></span></div>
+        <p class="eval" id="courses-3-eval">최종평가 90점</p>
+        <button class="go" id="courses-3-go" type="button" aria-label="2026 직장 내 괴롭힘 예방교육 강의실 입장">복습하기</button>
+      </li>
+      <li class="course" id="courses-4">
+        <span class="badge job">직무</span>
+        <h2 id="courses-4-title">엑셀 실무: 피벗 테이블로 보고서 만들기</h2>
+        <p class="meta">학습기간 2026.09.15 ~ 2026.11.14 · 10차시</p>
+        <div class="prog" id="courses-4-progress"><p id="courses-4-progress-text">진도율 20% (2/10차시)</p><span class="bar" aria-hidden="true"><span id="courses-4-bar" style="width:20%"></span></span></div>
+        <p class="eval" id="courses-4-eval">평가 없음</p>
+        <button class="go" id="courses-4-go" type="button" aria-label="엑셀 실무: 피벗 테이블로 보고서 만들기 강의실 입장">이어서 학습</button>
+      </li>
+    </ul>
+  </div>
+</main>
+
+<main id="view-lesson" hidden>
+  <div class="wrap">
+    <button id="lesson-back" type="button"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M20 11H7.8l5.6-5.6L12 4l-8 8 8 8 1.4-1.4L7.8 13H20z"/></svg>내 강의실</button>
+    <p id="lesson-course">개인정보보호 기본과정 (일반 직원용)</p>
+    <h1 id="lesson-title" tabindex="-1">4차시. 개인정보 유출 사고 대응 절차</h1>
+    <p id="lesson-meta">12분 40초 · 12:24부터 이어서 재생</p>
+    <div class="lesson-grid">
+      <div id="player" role="region" aria-label="강의 영상 플레이어">
+        <div id="player-screen">
+          <img id="player-slide" src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201600%20900%22%3E%3Crect%20width%3D%221600%22%20height%3D%22900%22%20fill%3D%22%23eef2f7%22%2F%3E%3Crect%20width%3D%221600%22%20height%3D%2210%22%20fill%3D%22%231d4ed8%22%2F%3E%3Cg%20font-family%3D%22Apple%20SD%20Gothic%20Neo%2C%20Noto%20Sans%20KR%2C%20Malgun%20Gothic%2C%20sans-serif%22%3E%3Ctext%20x%3D%2280%22%20y%3D%22100%22%20font-size%3D%2256%22%20font-weight%3D%22700%22%20fill%3D%22%231b1f24%22%3E%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%20%EC%9C%A0%EC%B6%9C%20%EC%82%AC%EA%B3%A0%20%EB%8C%80%EC%9D%91%204%EB%8B%A8%EA%B3%84%3C%2Ftext%3E%3Ctext%20x%3D%2280%22%20y%3D%22172%22%20font-size%3D%2238%22%20font-weight%3D%22400%22%20fill%3D%22%23343a40%22%3E%E2%91%A0%20%EC%9C%A0%EC%B6%9C%20%ED%99%95%EC%9D%B8%C2%B7%EC%B6%94%EA%B0%80%20%EC%9C%A0%EC%B6%9C%20%EC%B0%A8%EB%8B%A8%3C%2Ftext%3E%3Ctext%20x%3D%2280%22%20y%3D%22224%22%20font-size%3D%2238%22%20font-weight%3D%22400%22%20fill%3D%22%23343a40%22%3E%E2%91%A1%20%EC%A0%95%EB%B3%B4%EC%A3%BC%EC%B2%B4%20%ED%86%B5%EC%A7%80%20(72%EC%8B%9C%EA%B0%84%20%EC%9D%B4%EB%82%B4)%3C%2Ftext%3E%3Ctext%20x%3D%2280%22%20y%3D%22276%22%20font-size%3D%2238%22%20font-weight%3D%22400%22%20fill%3D%22%23343a40%22%3E%E2%91%A2%20%EC%8B%A0%EA%B3%A0%20(1%EC%B2%9C%20%EB%AA%85%20%EC%9D%B4%EC%83%81%20%EB%93%B1%20%E2%86%92%20%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EC%9C%84%EC%9B%90%ED%9A%8C%C2%B7%ED%95%9C%EA%B5%AD%EC%9D%B8%ED%84%B0%EB%84%B7%EC%A7%84%ED%9D%A5%EC%9B%90)%3C%2Ftext%3E%3Ctext%20x%3D%2280%22%20y%3D%22328%22%20font-size%3D%2238%22%20font-weight%3D%22400%22%20fill%3D%22%23343a40%22%3E%E2%91%A3%20%ED%94%BC%ED%95%B4%20%EA%B5%AC%EC%A0%9C%C2%B7%EC%9E%AC%EB%B0%9C%20%EB%B0%A9%EC%A7%80%3C%2Ftext%3E%3C%2Fg%3E%3Cg%20fill%3D%22%23d6dee9%22%3E%3Crect%20x%3D%2280%22%20y%3D%22430%22%20width%3D%22320%22%20height%3D%22200%22%20rx%3D%2224%22%2F%3E%3Crect%20x%3D%22450%22%20y%3D%22430%22%20width%3D%22320%22%20height%3D%22200%22%20rx%3D%2224%22%2F%3E%3Crect%20x%3D%22820%22%20y%3D%22430%22%20width%3D%22320%22%20height%3D%22200%22%20rx%3D%2224%22%2F%3E%3Crect%20x%3D%221190%22%20y%3D%22430%22%20width%3D%22320%22%20height%3D%22200%22%20rx%3D%2224%22%2F%3E%3C%2Fg%3E%3Cg%20fill%3D%22%231d4ed8%22%3E%3Ccircle%20cx%3D%22240%22%20cy%3D%22530%22%20r%3D%2244%22%2F%3E%3Ccircle%20cx%3D%22610%22%20cy%3D%22530%22%20r%3D%2244%22%2F%3E%3Ccircle%20cx%3D%22980%22%20cy%3D%22530%22%20r%3D%2244%22%2F%3E%3Ccircle%20cx%3D%221350%22%20cy%3D%22530%22%20r%3D%2244%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="강의 화면: 개인정보 유출 사고 대응 4단계 — ① 유출 확인·추가 유출 차단, ② 정보주체 통지 (72시간 이내), ③ 신고 (1천 명 이상 등 → 개인정보보호위원회·한국인터넷진흥원), ④ 피해 구제·재발 방지">
+          <p id="player-caption" hidden></p>
+        </div>
+        <div id="player-controls">
+          <input id="seek" type="range" min="0" max="760" step="1" value="744" aria-label="재생 위치" aria-valuetext="12분 24초">
+          <div id="player-controls-row" class="ctl-row">
+            <button id="btn-play" class="ctl icon" type="button" aria-label="재생"><svg class="i-play" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="i-pause" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg></button>
+            <div id="skip" class="skip">
+              <button id="skip-back" type="button" aria-label="10초 뒤로"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7a6 6 0 1 1-6 6H4a8 8 0 1 0 8-8z"/></svg></button>
+              <button id="skip-fwd" type="button" aria-label="10초 앞으로"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M12 5V1l5 5-5 5V7a6 6 0 1 0 6 6h2a8 8 0 1 1-8-8z"/></svg></button>
+            </div>
+            <span id="time">12:24 / 12:40</span>
+            <span class="grow"></span>
+            <button id="btn-cc" class="ctl txt" type="button" aria-pressed="false">자막</button>
+            <div id="speed" class="speed">
+              <button id="speed-btn" class="ctl txt" type="button" aria-haspopup="menu" aria-expanded="false" aria-controls="speed-menu">배속 1.0x</button>
+              <ul id="speed-menu" role="menu" aria-labelledby="speed-btn" hidden>
+                <li id="speed-100" role="menuitemradio" aria-checked="true" tabindex="-1"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>1.0x</li>
+                <li id="speed-125" role="menuitemradio" aria-checked="false" tabindex="-1"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>1.25x</li>
+                <li id="speed-150" role="menuitemradio" aria-checked="false" tabindex="-1"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>1.5x</li>
+                <li id="speed-200" role="menuitemradio" aria-checked="false" tabindex="-1"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>2.0x</li>
+              </ul>
+            </div>
+            <button id="btn-fs" class="ctl icon" type="button" aria-label="전체 화면"><svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4zM14 4h6v6h-2V6h-4zM4 14h2v4h4v2H4zM18 14h2v6h-6v-2h4z"/></svg></button>
+          </div>
+        </div>
+      </div>
+      <div class="side">
+        <section id="progress" aria-labelledby="progress-heading">
+          <h2 id="progress-heading">학습 현황</h2>
+          <p id="progress-rate">진도율 60% (3/5차시)</p>
+          <span id="progress-bar" class="bar" aria-hidden="true"><span style="width:60%"></span></span>
+          <ol id="progress-list">
+            <li id="progress-l1"><span class="pl-n">1</span> 개인정보의 개념 <span class="pl-s done">· ✓ 완료</span></li>
+            <li id="progress-l2"><span class="pl-n">2</span> 수집·이용과 동의 <span class="pl-s done">· ✓ 완료</span></li>
+            <li id="progress-l3"><span class="pl-n">3</span> 안전성 확보 조치 <span class="pl-s done">· ✓ 완료</span></li>
+            <li id="progress-l4" aria-current="step"><span class="pl-n">4</span> 유출 사고 대응 절차 <span class="pl-s now">· 학습 중</span></li>
+            <li id="progress-l5"><span class="pl-n">5</span> 파기와 보관 <span class="pl-s todo">· 미학습</span></li>
+          </ol>
+          <p id="progress-note" role="status" aria-live="polite"></p>
+        </section>
+        <div id="go-quiz">
+          <button id="go-quiz-btn" type="button">최종평가 응시하기</button>
+          <p id="go-quiz-msg" role="status" aria-live="polite"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<main id="view-quiz" hidden>
+  <header id="qbar">
+    <h1 id="qbar-title" tabindex="-1">최종평가</h1>
+    <nav id="qbar-nav" aria-label="문항 바로가기">
+      <button id="qbar-nav-1" type="button" aria-label="1번 문항으로 이동, 미응답">1<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+      <button id="qbar-nav-2" type="button" aria-label="2번 문항으로 이동, 미응답">2<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+      <button id="qbar-nav-3" type="button" aria-label="3번 문항으로 이동, 미응답">3<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+      <button id="qbar-nav-4" type="button" aria-label="4번 문항으로 이동, 미응답">4<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+      <button id="qbar-nav-5" type="button" aria-label="5번 문항으로 이동, 미응답">5<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></button>
+    </nav>
+    <p id="qbar-count">응답 0/5</p>
+    <p id="qbar-timer" role="timer">남은 시간 10:00</p>
+  </header>
+  <form id="qform" novalidate>
+    <p id="qform-course">개인정보보호 기본과정 (일반 직원용)</p>
+    <div id="qform-error" role="alert" tabindex="-1" hidden>
+      <p id="qform-error-text">3번 문항에 답하지 않았습니다. 모든 문항에 답해야 제출할 수 있습니다.</p>
+      <button id="qform-error-go" type="button" data-q="3">3번 문항으로 이동</button>
+    </div>
+    <p id="qform-intro">모든 문항에 답한 뒤 제출하세요. 문항당 20점.</p>
+    <div id="qform-mc">
+      <div class="q" id="qform-mc1">
+        <p class="stem" id="qform-mc1-stem">1. 다음 중 「개인정보 보호법」상 고유식별정보에 해당하는 것은?</p>
+        <div class="opts">
+          <div class="opt" id="qform-mc1-o1" data-v="1"><span class="mark"></span><span class="opt-t">① 휴대전화번호</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc1-o2" data-v="2"><span class="mark"></span><span class="opt-t">② 차량번호</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc1-o3" data-v="3"><span class="mark"></span><span class="opt-t">③ 여권번호</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc1-o4" data-v="4"><span class="mark"></span><span class="opt-t">④ 사원번호</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+        </div>
+      </div>
+      <div class="q" id="qform-mc2">
+        <p class="stem" id="qform-mc2-stem">2. 「개인정보 보호법」 제23조와 같은 법 시행령은 사상·신념, 노동조합·정당의 가입·탈퇴, 정치적 견해, 건강, 성생활 등에 관한 정보와 유전정보, 범죄경력자료 등을 민감정보로 정하고, 정보주체에게 별도로 동의를 받는 등 법에서 정한 경우에만 처리할 수 있도록 하고 있습니다. 다음 중 민감정보에 해당하지 않는 것은?</p>
+        <div class="opts">
+          <div class="opt" id="qform-mc2-o1" data-v="1"><span class="mark"></span><span class="opt-t">① 건강에 관한 정보</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc2-o2" data-v="2"><span class="mark"></span><span class="opt-t">② 노동조합 가입·탈퇴에 관한 정보</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc2-o3" data-v="3"><span class="mark"></span><span class="opt-t">③ 회사 이메일 주소</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc2-o4" data-v="4"><span class="mark"></span><span class="opt-t">④ 유전정보</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+        </div>
+      </div>
+      <div class="q" id="qform-mc3">
+        <p class="stem" id="qform-mc3-stem">3. 개인정보가 유출된 사실을 알게 되었을 때 가장 먼저 해야 할 일로 옳은 것은?</p>
+        <div class="opts">
+          <div class="opt" id="qform-mc3-o1" data-v="1"><span class="mark"></span><span class="opt-t">① 유출 경로를 확인하고 추가 유출을 막는다</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc3-o2" data-v="2"><span class="mark"></span><span class="opt-t">② 관련 기록을 모두 삭제한다</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc3-o3" data-v="3"><span class="mark"></span><span class="opt-t">③ 사내 공지가 나올 때까지 아무에게도 알리지 않는다</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc3-o4" data-v="4"><span class="mark"></span><span class="opt-t">④ 정보주체에게 보상 금액부터 안내한다</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+        </div>
+      </div>
+      <div class="q" id="qform-mc4">
+        <p class="stem" id="qform-mc4-stem">4. 보유기간이 끝난 개인정보를 파기하는 방법으로 옳은 것은?</p>
+        <div class="opts">
+          <div class="opt" id="qform-mc4-o1" data-v="1"><span class="mark"></span><span class="opt-t">① 전자 파일은 휴지통으로만 옮겨 둔다</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc4-o2" data-v="2"><span class="mark"></span><span class="opt-t">② 종이 문서는 분쇄하거나 소각한다</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc4-o3" data-v="3"><span class="mark"></span><span class="opt-t">③ 나중을 위해 개인 USB에 옮겨 보관한다</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+          <div class="opt" id="qform-mc4-o4" data-v="4"><span class="mark"></span><span class="opt-t">④ 출력물은 이면지로 다시 쓴다</span><svg class="ok" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+        </div>
+      </div>
+    </div>
+    <div class="q" id="qform-sa">
+      <label class="stem" id="qform-sa-stem" for="qform-sa-input">5. 개인정보 유출 사실을 알게 된 때부터 몇 시간 이내에 정보주체에게 알려야 하나요? (숫자만 입력)</label>
+      <div class="sa-row"><input id="qform-sa-input" type="text" inputmode="numeric" autocomplete="off"><span>시간</span></div>
+    </div>
+  </form>
+  <div id="quiz-footer">
+    <div class="qf-in">
+      <p id="quiz-footer-status" role="status">자동 저장됨 · 응시 시작 09:00</p>
+      <div class="qf-btns">
+        <button id="quiz-footer-save" type="button">임시 저장</button>
+        <button id="quiz-footer-submit" type="button">답안 제출</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<main id="view-result" hidden>
+  <div class="wrap narrow">
+    <h1 id="result-heading" tabindex="-1">평가 결과</h1>
+    <p id="result-course">개인정보보호 기본과정 (일반 직원용) · 최종평가</p>
+    <div class="result-card">
+      <p id="result-score">0점</p>
+      <p id="result-status">채점 중</p>
+      <p id="result-meta">응시 1회 / 2회</p>
+    </div>
+    <div id="result-table" role="region" aria-labelledby="result-table-cap" tabindex="0" style="overflow-x:auto">
+      <table id="result-table-grid">
+        <caption id="result-table-cap">문항별 채점 결과</caption>
+        <thead>
+          <tr><th scope="col">문항</th><th scope="col">내용</th><th scope="col">내 답</th><th scope="col">정답</th><th scope="col">결과</th><th scope="col">배점</th></tr>
+        </thead>
+        <tbody id="result-table-body"></tbody>
+      </table>
+    </div>
+    <p id="result-note">수료증은 과정 만족도 설문에 참여한 뒤 출력할 수 있어요.</p>
+    <button id="result-home" type="button">내 강의실로</button>
+  </div>
+</main>
+
+<footer id="site-footer">
+  <div class="wrap">
+    <nav class="ft-links" aria-label="사이트 정보">
+      <a id="ft-terms" href="#ft-doc-terms">이용약관</a>
+      <a id="ft-privacy" href="#ft-doc-privacy">개인정보처리방침</a>
+      <a id="ft-help" href="#ft-doc-help">학습 지원 센터</a>
+    </nav>
+    <div class="ft-docs">
+      <p id="ft-doc-help"><strong>학습 지원 센터</strong> 1588-2026 · 평일 09:00~18:00(점심 12:00~13:00) · 진도·평가·수료증 문의, 원격 지원, 평가 시간 연장 신청</p>
+      <p id="ft-doc-terms"><strong>이용약관</strong> 온라인 연수원 이용 조건과 학습자의 권리·의무를 정합니다. 시행 2026.03.01</p>
+      <p id="ft-doc-privacy"><strong>개인정보처리방침</strong> 수집 항목: 이름, 소속, 사번, 학습 기록 · 보유 기간: 교육 종료 후 3년</p>
+    </div>
+    <p class="ft-copy">© 2026 새길캠퍼스</p>
+  </div>
+</footer>
+
+<dialog id="submit-confirm" class="modal-panel" aria-labelledby="submit-confirm-title" aria-describedby="submit-confirm-desc">
+  <h2 id="submit-confirm-title">답안을 제출할까요?</h2>
+  <p id="submit-confirm-desc" class="modal-lead">5문항 중 5문항에 답했습니다. 제출하면 응시 기회 1회가 차감되고, 제출한 답안은 수정할 수 없습니다.</p>
+  <div class="modal-actions">
+    <button id="submit-confirm-cancel" class="btn-sec" type="button">계속 풀기</button>
+    <button id="submit-confirm-ok" class="btn-pri" type="button">제출하기</button>
+  </div>
+</dialog>
+
+<div id="start-dialog" class="modal" hidden>
+  <div class="modal-backdrop"></div>
+  <div class="modal-panel">
+    <h2 id="start-dialog-title">최종평가 응시 안내</h2>
+    <p class="modal-lead">응시를 시작하기 전에 아래 안내를 확인해 주세요.</p>
+    <ul id="start-dialog-rules">
+      <li>문항 수: 5문항(객관식 4, 단답형 1), 문항당 20점</li>
+      <li>제한시간 10분 — 응시를 시작하면 창을 닫거나 다른 화면으로 이동해도 시간은 계속 흐릅니다</li>
+      <li>평가 통과 기준: 60점 이상(진도율 80% 이상일 때 수료)</li>
+      <li>응시 기회 총 2회 — 답안을 제출하면 1회가 차감됩니다</li>
+      <li>제출한 뒤에는 답안을 수정할 수 없습니다</li>
+      <li>시간 연장이 필요한 학습자(장애 등)는 학습 지원 메뉴에서 신청할 수 있습니다</li>
+    </ul>
+    <div class="modal-actions">
+      <button id="start-dialog-cancel" class="btn-sec" type="button">취소</button>
+      <button id="start-dialog-ok" class="btn-pri" type="button">응시 시작</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

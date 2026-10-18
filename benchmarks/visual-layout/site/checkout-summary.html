@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>주문서 | 바른장터</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:15px/1.5 -apple-system,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;color:#191f28;background:#f2f4f6;overflow-x:hidden}
+button{font:inherit;color:inherit;background:none;border:0}
+ul{list-style:none}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:#fff;overflow-x:hidden;padding-bottom:124px}
+.hd{position:fixed;top:0;left:0;right:0;z-index:20;max-width:480px;margin:0 auto;display:flex;align-items:center;height:56px;padding:0 4px;background:#fff;border-bottom:1px solid #eef0f2}
+.hd h1{flex:1;text-align:center;font-size:17px}
+.ib{width:44px;height:44px;font-size:28px}
+.eta{margin:12px 16px 16px;padding:12px 16px;border-radius:14px;background:#eef4ff;color:#0f3d8c}
+.eta b{display:block;font-size:17px;line-height:1.45}
+.eta p{font-size:14px;color:#2b4a7a}
+.sec{padding:20px 16px;border-top:8px solid #f2f4f6}
+.sh{display:flex;align-items:center;justify-content:space-between;min-height:44px;margin-bottom:8px}
+.sh h2{font-size:17px}
+.tb{height:44px;padding:0 6px;font-size:14px;font-weight:600;color:#1b64da}
+.addr{overflow:hidden;padding:14px 16px;border:1px solid #e5e8eb;border-radius:12px}
+.addr b{display:block}
+.addr p{margin-top:4px;color:#333d4b;white-space:nowrap}
+.addr small{display:block;margin-top:6px;font-size:14px;color:#4e5968}
+.items{display:flex;flex-direction:column;gap:16px}
+.item{display:flex;gap:12px}
+.th{flex:none;width:60px;height:60px;border-radius:10px;background:#dfe7f5}
+.info{flex:1;min-width:0}
+.info b{display:block;font-weight:600;line-height:1.45;word-break:keep-all}
+.info small{font-size:14px;color:#4e5968}
+.price{flex:none;width:62px;overflow:hidden;text-align:right;font-weight:700;white-space:nowrap}
+.cps{display:flex;flex-direction:column;gap:8px}
+.cg{font-size:13px;font-weight:700;color:#4e5968}
+.cg.off{margin-top:16px}
+.cp{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border:1px solid #d1d6db;border-radius:12px}
+.cp.on{border-color:#1b64da;background:#f5f9ff}
+.cp b{display:block;font-weight:600}
+.cp small{font-size:13px;color:#4e5968}
+.amt{flex:none;font-weight:700;color:#c2261d}
+.cp.dis b,.cp.dis .amt{color:#5f6b78}
+.terms{margin-top:12px;font-size:10px;line-height:1.55;color:#4e5968}
+.inst{width:405px;table-layout:fixed;border-collapse:collapse;font-size:14px}
+.inst th{padding:8px;background:#f7f8fa;font-size:13px;color:#4e5968;text-align:right;white-space:nowrap}
+.inst td{padding:10px 8px;border-bottom:1px solid #eef0f2;text-align:right;white-space:nowrap}
+.inst th:first-child,.inst td:first-child{text-align:left}
+.inst th:nth-child(1){width:60px}.inst th:nth-child(2){width:112px}.inst th:nth-child(3){width:104px}
+.row{display:flex;justify-content:space-between;align-items:center;min-height:36px}
+.row span:first-child{color:#4e5968}
+.row--ship{padding-left:5px}
+.minus{color:#c2261d}
+.total{margin-top:8px;padding-top:12px;border-top:1px solid #eef0f2;font-size:17px;font-weight:800}
+.total span:first-child{color:#191f28}
+.note{margin:16px 16px 0;font-size:14px;color:#4e5968}
+.biz{margin:20px 16px 0;padding-top:14px;border-top:1px solid #eef0f2;font-size:10px;line-height:1.6;color:#5f6b78}
+.pay{position:fixed;left:0;right:0;bottom:0;z-index:20;max-width:480px;margin:0 auto;padding:10px 16px 12px;background:#fff;border-top:1px solid #eef0f2}
+.pay p{margin-bottom:6px;font-size:13px;color:#4e5968;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cta{display:block;width:100%;height:52px;border-radius:12px;background:#1b64da;color:#fff;font-size:16px;font-weight:700}
+</style>
+</head>
+<body>
+<div class="app">
+<header id="co-header" class="hd"><button class="ib" aria-label="뒤로 가기">‹</button><h1>주문서</h1><span class="ib"></span></header>
+<section id="eta-box" class="eta"><b id="eta-box-date">10월 20일(월) 오전 7시 전 도착 예정</b><p>새벽배송 · 밤 11시 전에 결제하면 내일 아침에 받아요</p></section>
+<section class="sec">
+<div class="sh"><h2>배송지</h2><button class="tb">변경</button></div>
+<div id="addr-box" class="addr"><b>김다온 · 010-2481-7730</b><p id="addr-box-line">서울특별시 은빛구 노을로12길 34, 바람채아파트 101동 1203호 (공동현관 비밀번호 1203 호출)</p><small>요청사항: 문 앞에 놓아 주세요</small></div>
+</section>
+<section class="sec">
+<div class="sh"><h2>주문 상품 3개</h2></div>
+<ul class="items">
+<li class="item"><i class="th"></i><div class="info"><b>노이즈캔슬링 무선 헤드폰 오로라 맥스 2세대</b><small>미드나잇 블루 · 1개</small></div><p id="price-headphone" class="price">1,249,000원</p></li>
+<li class="item"><i class="th"></i><div class="info"><b>교체용 프로틴 이어패드 세트</b><small>그레이 · 1개</small></div><p class="price">9,900원</p></li>
+<li class="item"><i class="th"></i><div class="info"><b>하드 케이스</b><small>그레이 · 1개</small></div><p class="price">7,500원</p></li>
+</ul>
+</section>
+<section class="sec">
+<div class="sh"><h2>쿠폰</h2></div>
+<div id="coupon-list" class="cps">
+<p class="cg">사용 가능 2장</p>
+<div class="cp on"><div><b>가을맞이 5% 할인</b><small>최대 50,000원 · 10월 31일까지</small></div><span class="amt">−50,000원</span></div>
+<div class="cp"><div><b>무료배송 쿠폰</b><small>배송비 3,000원 할인</small></div><span class="amt">−3,000원</span></div>
+<p class="cg off">사용 불가 1장</p>
+<div class="cp dis"><div><b>첫 구매 10,000원 할인</b><small>첫 구매 고객만 쓸 수 있어요</small></div><span class="amt">사용 불가</span></div>
+</div>
+<p id="coupon-terms" class="terms">쿠폰은 할인 전 상품 금액이 5만원 이상일 때 적용돼요. 새벽배송 상품이 포함된 주문에는 무료배송 쿠폰을 쓸 수 없고, 주문을 취소하면 쿠폰은 유효기간 안에서 다시 돌려드려요.</p>
+</section>
+<section class="sec">
+<div class="sh"><h2>카드 할부 안내</h2></div>
+<table id="installment-table" class="inst"><thead><tr><th>할부</th><th>월 납부금</th><th>할부 수수료</th><th>총 납부 금액</th></tr></thead><tbody>
+<tr><td>일시불</td><td>1,217,400원</td><td>0원</td><td>1,217,400원</td></tr>
+<tr><td>3개월</td><td>405,800원</td><td>무이자</td><td>1,217,400원</td></tr>
+<tr><td>6개월</td><td>202,900원</td><td>무이자</td><td>1,217,400원</td></tr>
+<tr><td>12개월</td><td>107,707원</td><td>75,080원</td><td>1,292,480원</td></tr>
+</tbody></table>
+</section>
+<section class="sec">
+<div class="sh"><h2>결제 금액</h2></div>
+<div class="row"><span>상품 금액</span><span>1,266,400원</span></div>
+<div id="sum-row-shipping" class="row row--ship"><span>배송비</span><span>3,000원</span></div>
+<div class="row"><span>쿠폰 할인</span><span class="minus">−50,000원</span></div>
+<div class="row"><span>적립금 사용</span><span class="minus">−2,000원</span></div>
+<div class="row total"><span>최종 결제 금액</span><span>1,217,400원</span></div>
+</section>
+<p class="note">결제 후 30분 안에는 주문 내역에서 바로 취소할 수 있어요.</p>
+<footer id="biz-info" class="biz">(주)바른장터 · 대표 오세린 · 사업자등록번호 000-00-00000 · 통신판매업 신고 제2026-은빛-0000호 · (주)바른장터는 통신판매중개자이며 거래 당사자가 아닙니다. 상품 정보와 거래에 대한 책임은 각 판매자에게 있습니다.</footer>
+<div id="pay-bar" class="pay"><p id="paybar-summary">노이즈캔슬링 무선 헤드폰 오로라 맥스 2세대 · 미드나잇 블루 1개 외 상품 2건</p><button id="btn-pay" class="cta">1,217,400원 결제하기</button></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+{
+  "suite": "game-desktop",
+  "defects": [
+    {
+      "id": "D-01",
+      "scenario_id": "SC-game-run-01",
+      "category": "reach",
+      "element_selector": "hs-jump",
+      "profile_condition": {
+        "grip": "two_thumbs"
+      },
+      "severity_min": "P2",
+      "description": "Jump virtual button (canvas hotspot hs-jump; the most frequent, time-critical input of the runner) sits in the top-right corner in 780x360 landscape: box {x:708,y:12,w:60,h:60}, centre (738,42) = 318 CSS px (~58 mm on Galaxy S24, ~0.183 mm/CSS px) above the bottom edge and 42 px from the right edge. In a two-thumb landscape grip the right thumb rests near the lower-right; every jump needs a long upward thumb extension/regrip out of the comfortable zone, then a return. Clean variant: jump at {x:560,y:184,w:72,h:72} inside the lower-right thumb arc.",
+      "human_factors_basis": "Functional thumb area on touchscreens (Bergstrom-Lehtovirta & Oulasvirta, CHI 2014) and landscape two-handed touch-zone guidance (Hoober 2013; Clark, Designing for Touch 2015): primary/frequent game actions belong in the lower corners where thumbs rest; top corners require extension and grip shifts, increasing movement time (Fitts' law) and grip instability."
+    },
+    {
+      "id": "D-02",
+      "scenario_id": "SC-game-run-01",
+      "category": "reach",
+      "element_selector": "hs-attack",
+      "profile_condition": {
+        "grip": "two_thumbs"
+      },
+      "severity_min": "P2",
+      "description": "Attack virtual button (hs-attack, declared primary) is in the top-left corner {x:12,y:12,w:60,h:60} while the movement stick is at the bottom-left {x:4,y:300,w:56,h:56}. In landscape two-thumb grip the LEFT thumb must leave the stick and travel ~286 CSS px (~52 mm) upward to attack, so moving and attacking cannot be done together and each attack is a stretch out of the thumb's comfortable zone. Clean variant: attack at bottom-right {x:648,y:228,w:92,h:92} under the right thumb.",
+      "human_factors_basis": "Thumb functional area / reach models (Bergstrom-Lehtovirta & Oulasvirta 2014; Hoober 2013 landscape zones); mobile game control-layout guidance (Game Accessibility Guidelines: place controls for comfortable reach, avoid simultaneous inputs on the same digit) and Fitts' law movement time for long thumb excursions."
+    },
+    {
+      "id": "D-03",
+      "scenario_id": "SC-game-run-01",
+      "category": "game",
+      "element_selector": "hs-stick",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "Virtual joystick (hs-stick) is tiny and flush to the screen corner: base 56x56 CSS px (~10 mm diameter, i.e. about one thumb-pad contact width, knob excursion only ~+/-28 px = +/-5 mm) at {x:4,y:300}, only 4 px (~0.7 mm) from both the left and bottom edges. The thumb occludes the whole control, direction resolution is poor, and the control lies inside the Android gesture-navigation system-gesture insets (edge back-swipe / bottom home zone), so drags from the edge can trigger system gestures. Clean variant: 132x132 base with 40 px margins from both edges.",
+      "human_factors_basis": "Thumb contact size and touch-target research (Parhi, Karlson & Bederson 2006: >=9.6 mm for single taps, larger for continuous thumb control); Android developer guidance on gesture navigation (keep interactive controls out of system-gesture insets) and Apple HIG (avoid controls near screen edges/Home indicator); Game Accessibility Guidelines: make virtual controls large and well spaced."
+    },
+    {
+      "id": "D-04",
+      "scenario_id": "SC-game-run-01",
+      "category": "perception",
+      "element_selector": "#hud-stats",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "HUD score/HP text (#hud-stats, '점수 … · HP …/100') is rendered at font-size 10px (box 122x20 at x=106,y=22). On Galaxy S24 (~0.183 mm/CSS px) digits are ~1.3 mm tall, ~13-15 arcmin at a 300-350 mm handheld viewing distance, below the ISO 9241-303 minimum character height of 16 arcmin and below platform minimum text sizes (Apple HIG 11 pt, Material 12 sp). Contrast is fine (14.4:1) - this is a size defect. Clean variant: 15px.",
+      "human_factors_basis": "ISO 9241-303:2011 / ANSI-HFES 100-2007 minimum character height 16 arcmin (preferred 20-22); Apple HIG minimum 11 pt, Material Design minimum 12 sp; Game Accessibility Guidelines / Xbox Accessibility Guideline 101 (text legibility, adequate default text size); worse for presbyopic and low-acuity players."
+    },
+    {
+      "id": "D-05",
+      "scenario_id": "SC-game-run-01",
+      "category": "perception",
+      "element_selector": "#subtitle",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Dialogue subtitle (#subtitle) is white #ffffff text with no backing plate directly over the bright sky game art (#stage background #8fd3ff; clouds pass behind it): contrast 1.62:1, far below 4.5:1 for 15px text. The subtitle carries the instructions needed to play each stage. Clean variant: opaque #15191e plate, 16px, 17.7:1.",
+      "human_factors_basis": "WCAG 2.2 SC 1.4.3 Contrast (Minimum) 4.5:1; Game Accessibility Guidelines / Xbox Accessibility Guideline 104 (subtitles and captions: use a background or letterbox so text is readable over any game art); worse in bright sunlight glare."
+    },
+    {
+      "id": "D-06",
+      "scenario_id": "SC-game-run-01",
+      "category": "game",
+      "element_selector": "#qte",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Quick-time prompt (#qte, declared timed; timing window qte-1) is visible for only 300 ms (measured 300 ms in Playwright; the prompt stays up for its whole window even when hit, so visible_duration equals the response window). A human must detect the prompt, decide, move the thumb ~100+ px to it and touch within 300 ms, which is shorter than typical visual choice reaction time (~350-500 ms) plus movement time and touch/display latency (~50-100 ms). A miss costs HP and repeats. Clean variant: 2500 ms window.",
+      "human_factors_basis": "Human reaction-time literature (simple visual RT ~200-250 ms, choice RT ~350-500 ms, Hick-Hyman law; slower with age) plus Fitts movement time and end-to-end touch latency; Game Accessibility Guidelines (avoid/allow adjustment of QTEs and timing), Xbox Accessibility Guideline 107 (input timing adjustable); analogous to WCAG 2.2.1 Timing Adjustable."
+    },
+    {
+      "id": "D-07",
+      "scenario_id": "SC-game-run-01",
+      "category": "game",
+      "element_selector": "#flash",
+      "profile_condition": {},
+      "severity_min": "P1",
+      "description": "Hit effect (#flash, timing window hit-fx) is a full-viewport (780x360, 100% of the screen) saturated red #ff1a1a overlay at 0.85 opacity toggled every 60 ms for ~2 s after the player is hit: measured 17 on-phases in 2.04 s, max 9 flashes within any 1-second window. Exceeds the 3-flashes-per-second limit with a large area and a saturated-red transition (photosensitive seizure risk). Clean variant: one single 1.5 s appearance of a small 111x24 px '피격! HP -20' chip (under 1% of the screen).",
+      "human_factors_basis": "WCAG 2.2 SC 2.3.1 Three Flashes or Below Threshold (general and red flash thresholds); ITU-R BT.1702 / Ofcom photosensitive epilepsy guidance (no more than 3 flashes per second, saturated red transitions); Harding test criteria."
+    },
+    {
+      "id": "D-08",
+      "scenario_id": "SC-game-run-01",
+      "category": "game",
+      "element_selector": "#mash",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Grab escape (#mash, '연타해서 탈출! n/15') requires 15 separate rapid taps and offers no hold, toggle or assist alternative (a 1.5 s press-and-hold was verified not to escape). Repeated rapid input is fatiguing and impossible for players with tremor, RSI or limited dexterity, and hard in a two-thumb grip. Clean variant: hold >= 600 ms or 3 taps.",
+      "human_factors_basis": "Game Accessibility Guidelines (basic): avoid repeated inputs / button mashing, provide alternatives; Xbox Accessibility Guideline 107 (input: provide hold/toggle alternatives to rapid repeated presses); AbleGamers Includification; WCAG 2.1.1/2.5.1 spirit (operable without demanding repeated/complex gestures)."
+    },
+    {
+      "id": "D-09",
+      "scenario_id": "SC-game-run-01",
+      "category": "perception",
+      "element_selector": "#radar",
+      "profile_condition": {
+        "vision": {
+          "cvd": "deutan"
+        }
+      },
+      "severity_min": "P2",
+      "description": "Supply-target picker (#radar with markers #radar-1 and #radar-2, both identical 56 px circles without text or shape difference) distinguishes enemy vs ally only by colour: red #ec3c32 vs green #34a614 (legend is also colour dots only). Under Machado-2009 deuteranopia simulation the two markers differ by only dE76 ~0.1 (normal vision dE76 ~122), so a deutan player cannot tell which marker is the ally and the task step (tap the ally) becomes a guess; the wrong pick costs HP. (Protan simulation still leaves dE76 ~38, so this is deutan-specific.) Findings on #radar-1/#radar-2 count. Clean variant: orange square labelled '적' vs blue circle labelled '아군'.",
+      "human_factors_basis": "WCAG 2.2 SC 1.4.1 Use of Color; red-green (deutan) colour-vision deficiency affects roughly 5-6% of males; CVD simulation per Machado, Oliveira & Fernandes (2009); Game Accessibility Guidelines: do not convey information by colour alone."
+    },
+    {
+      "id": "D-10",
+      "scenario_id": "SC-admin-members-01",
+      "category": "pointing",
+      "element_selector": "#tools",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "List toolbar icon buttons (#tools-add, #tools-copy, #tools-move, #tools-filter, #tools-refresh inside #tools) are 14x14 CSS px with 2 px gaps (16 px pitch, x 1396-1474, y 162). They are below the 24x24 minimum and fail the spacing exception (24 px circles centred on adjacent targets overlap). #tools-add is used in the task flow. Clean variant: 32x32 buttons with 8 px gaps.",
+      "human_factors_basis": "WCAG 2.2 SC 2.5.8 Target Size (Minimum) 24x24 CSS px with spacing exception; Fitts' law (small width -> longer movement time, higher error rate); pointing error rises further with tremor or ageing (Wobbrock et al. 2008 error model)."
+    },
+    {
+      "id": "D-11",
+      "scenario_id": "SC-admin-members-01",
+      "category": "pointing",
+      "element_selector": "#delete-all",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Destructive '전체 삭제' (#delete-all, red, box x 1510-1611, y 720-760) is fused to the primary '저장' button (#save, x 1426-1510) as a split-button pair with 0 px gap and equal size; clicking it wipes the member list immediately with no confirmation or undo. A small overshoot/slip from Save lands on Delete all. Clean variant: delete-all moved to the opposite end of the action row (>1100 px from Save), outline style, with a confirmation dialog.",
+      "human_factors_basis": "Nielsen heuristic #5 error prevention; Apple HIG / Material Design guidance to visually and spatially separate destructive actions from primary actions and confirm irreversible ones; Fitts/endpoint-distribution models of pointing error (adjacent targets without a gap turn overshoot into activation of the neighbour)."
+    },
+    {
+      "id": "D-12",
+      "scenario_id": "SC-admin-members-01",
+      "category": "gaze",
+      "element_selector": "#notice",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Critical system status (#notice, declared critical_message: '결제 모듈 동기화 실패 - 새 멤버 권한이 반영되지 않을 수 있음') is rendered as a gradient promo card with a sticker badge, decorative art and pill CTA in the far-right rail (x 1664-1904, y 88-347), directly above a real ad (#promo) with the identical card template. Users performing the form task in the main column are unlikely to look at or read it (banner blindness, peripheral/right-rail position). Clean variant: plain amber inline alert (role=alert) at the top of the main content column.",
+      "human_factors_basis": "Banner blindness (Benway & Lane 1998; Pagendarm & Schaumburg 2001; Nielsen Norman Group eyetracking 2007/2018: users ignore ad-like styling and right-rail content); visual attention concentrates on the task area (F-pattern / useful field of view)."
+    },
+    {
+      "id": "D-13",
+      "scenario_id": "SC-admin-members-01",
+      "category": "perception",
+      "element_selector": "#member",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "New-member form inputs (#member-name, #member-email, #member-role inside fieldset #member) are identified only by a 1px #e0e0e0 border on a white card: non-text contrast 1.32:1 < 3:1, so the field boundaries are hard to perceive (low vision, glare, low-quality monitors). Clean variant: #6b7280 border, 4.83:1.",
+      "human_factors_basis": "WCAG 2.2 SC 1.4.11 Non-text Contrast (3:1 for visual information required to identify UI components and their boundaries)."
+    },
+    {
+      "id": "D-14",
+      "scenario_id": "SC-admin-members-01",
+      "category": "gaze",
+      "element_selector": "#form-errors",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "After clicking Save with the email empty, the only error feedback is a small summary #form-errors that appears in the page title row (box x 576-896, y 90-123, 14px); the user's pointer/gaze is on #save (x 1426-1510, y 720-760). Nearest-edge distance ~798 px (~20 deg of visual angle on a 24-inch 1080p monitor at 600 mm), centre distance ~968 px (~24 deg). There is no inline message at the field, no focus move, no scroll and nothing changes near the button, so the failed save is likely missed. Clean variant: summary directly beside Save (12 px gap), inline error under the email field, focus moved to the field.",
+      "human_factors_basis": "Feedback should appear at the locus of attention: useful field of view / inattentional & change blindness (Ball et al. UFOV; Simons & Levin 1997); NN/g error-message guidelines (place errors next to the source field); GOV.UK error-summary pattern requires moving focus to the summary plus inline errors; WCAG 3.3.1 / 3.3.3."
+    },
+    {
+      "id": "D-15",
+      "scenario_id": "SC-admin-members-01",
+      "category": "perception",
+      "element_selector": "#apply-note",
+      "profile_condition": {
+        "vision": {
+          "presbyopia": true
+        }
+      },
+      "severity_min": "P3",
+      "description": "Important consequence text (#apply-note: permission changes take up to 24 h to apply) is 12px #5f6368 (contrast 6.05:1 passes). On a 24-inch 1080p monitor (~0.277 mm/px) Hangul glyphs are ~2.9 mm, ~16-17 arcmin at 600 mm - at the ISO minimum and below the preferred 20-22 arcmin; presbyopic / 60s+ users at intermediate distance will struggle. Subtle, profile-specific. Clean variant: 15px.",
+      "human_factors_basis": "ISO 9241-303 character height (min 16', preferred 20-22'); presbyopia and age-related acuity loss at intermediate viewing distances; age-inclusive guidelines (W3C WAI older users; NN/g senior usability) recommend >=16px body text."
+    },
+    {
+      "id": "D-16",
+      "scenario_id": "SC-admin-members-01",
+      "category": "cognition",
+      "element_selector": "#toast",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Save confirmation toast (#toast, declared status/timed; timing window save-toast) carries a 14-word / ~45-syllable message with an important caveat (approval required, up to 24 h delay, old permissions stay) but auto-dismisses after 1500 ms (measured 1500-1501 ms), with no way to extend or reopen it. Reading it takes roughly 3.5-4.5 s at average adult silent-reading speed (~200-240 wpm) plus time to notice it and move the eyes there - longer for older, low-vision or distracted users - so 1.5 s allows reading only about a third. Clean variant: toast persists until the user closes it (닫기).",
+      "human_factors_basis": "WCAG 2.2 SC 2.2.1 Timing Adjustable (auto-dismissing content must be adjustable/extendable) and 4.1.3 Status Messages; Material Design snackbar guidance (4-10 s, longer text needs longer or persistent display); reading-rate data (Brysbaert 2019 meta-analysis: ~238 wpm silent reading for adults), slower for older/low-vision readers."
+    }
+  ],
+  "decoys": [
+    {
+      "id": "N-01",
+      "scenario_id": "SC-game-run-01",
+      "category": "reach",
+      "element_selector": "hs-pause",
+      "description": "Pause hotspot at top-centre {x:368,y:8,w:44,h:44} is outside the two-thumb comfort zone, but it is an infrequent, non-time-critical control; placing it away from the resting thumbs deliberately prevents accidental pauses (Hoober: put infrequent/disruptive actions outside the natural thumb zone). Size meets 44 pt."
+    },
+    {
+      "id": "N-02",
+      "scenario_id": "SC-game-run-01",
+      "category": "perception",
+      "element_selector": "#logo",
+      "description": "Game title wordmark '별빛 러너' on the start screen is #2f3b4c on #0d1117 (1.67:1), but it is a logotype - WCAG 1.4.3 exempts text that is part of a logo or brand name; the actionable text '화면을 탭해서 시작' is high-contrast."
+    },
+    {
+      "id": "N-03",
+      "scenario_id": "SC-game-run-01",
+      "category": "cognition",
+      "element_selector": "#pop",
+      "description": "Score pop-up '+100' (#pop, declared timed) shows for only 600 ms, but it is short, non-essential, redundant feedback (the score is persistently shown in the HUD) and requires no action - not a timing barrier."
+    },
+    {
+      "id": "N-04",
+      "scenario_id": "SC-game-run-01",
+      "category": "game",
+      "element_selector": "#coin",
+      "description": "HUD coin icon (#coin, 16x16 px, ~0.09% of the screen) pulses opacity 1.0->0.6 at 1 Hz continuously: fewer than 3 flashes per second and far below the area threshold, so it passes WCAG 2.3.1."
+    },
+    {
+      "id": "N-05",
+      "scenario_id": "SC-admin-members-01",
+      "category": "pointing",
+      "element_selector": "#nav-help",
+      "description": "Help icon button is 20x20 px (< 24) but its nearest neighbouring target (#avatar) is 40 px away, so a 24 px circle centred on it intersects nothing: passes WCAG 2.5.8 via the spacing exception."
+    },
+    {
+      "id": "N-06",
+      "scenario_id": "SC-admin-members-01",
+      "category": "perception",
+      "element_selector": "#export",
+      "description": "Disabled 'CSV 내보내기' button has low text contrast (#a3a9b3 on #f3f4f6, 2.15:1) but is disabled; inactive user-interface components are exempt from WCAG 1.4.3 and 1.4.11."
+    },
+    {
+      "id": "N-07",
+      "scenario_id": "SC-admin-members-01",
+      "category": "perception",
+      "element_selector": "#brand",
+      "description": "Header wordmark 'ORBIT Console' has a light 'Console' part (#c9ced6 on white, 1.58:1); it is part of the logotype, which WCAG 1.4.3 exempts."
+    },
+    {
+      "id": "N-08",
+      "scenario_id": "SC-admin-members-01",
+      "category": "pointing",
+      "element_selector": "#row-remove",
+      "description": "Row delete icon is destructive but 32x32 px, separated by 24 px from the neighbouring edit icon, not adjacent to the primary action, and asks for confirmation in a dialog before deleting - acceptable."
+    },
+    {
+      "id": "N-09",
+      "scenario_id": "SC-admin-members-01",
+      "category": "gaze",
+      "element_selector": "#promo",
+      "description": "Promotional card in the right rail (declared ad_like, labelled '광고') is likely ignored (banner blindness), which is harmless: it is not critical to the task. Only the critical status styled like it is a problem."
+    }
+  ],
+  "clean_controls": [
+    {
+      "scenario_id": "SC-game-run-01-clean",
+      "notes": "game-clean.html: same flow with defects fixed - jump/attack in the lower-right thumb arc, 132 px stick with 40 px edge margins, 15px HUD text, subtitles on an opaque plate (17.7:1), 2500 ms QTE window, a single small hit chip instead of strobing, hold-or-3-taps escape, shape+text ally/enemy markers (orange square '적' / blue circle '아군'). Decoys (hs-pause, #logo, #pop, #coin) are unchanged."
+    },
+    {
+      "scenario_id": "SC-admin-members-01-clean",
+      "notes": "admin-clean.html: same flow with defects fixed - 32x32 toolbar buttons with 8 px gaps, delete-all at the far end of the action row with outline style and a confirmation dialog, sync failure shown as an inline alert at the top of the main column, #6b7280 input borders (4.83:1), error summary directly beside Save plus inline field error and focus move (no layout shift), 15px apply note, persistent toast with a close button. Decoys (#nav-help, #export, #brand, #row-remove, #promo) are unchanged."
+    }
+  ]
+}

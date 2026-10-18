@@ -1,0 +1,589 @@
+{
+  "product": "civil",
+  "variants": {
+    "defect": "civil-a.html",
+    "clean": "civil-b.html"
+  },
+  "defects": [
+    {
+      "id": "D-civil-01",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "reach",
+      "element_selector": "#btn-next",
+      "profile_condition": {
+        "grip": [
+          "one_hand_right",
+          "one_hand_left"
+        ]
+      },
+      "severity_min": "P2",
+      "description": "1~4단계의 유일한 진행 버튼 '다음'(#btn-next)이 고정 헤더 오른쪽 위(화면 맨 위에서 약 5mm)에만 있다. 한 손 엄지로 조작하는 사용자는 단계마다 휴대폰을 고쳐 잡거나 다른 손을 써야 한다.",
+      "human_factors_basis": "한 손 파지에서 엄지의 기능적 도달 영역은 파지점을 중심으로 화면 하단~중단에 걸친 호 모양이며, 6인치 이상 화면의 상단 모서리는 재파지 없이 닿지 않는다(Bergstrom-Lehtovirta & Oulasvirta, CHI 2014; Hoober 2013 관찰에서 49%가 한 손 사용). 갤럭시 S24 기준 버튼 중심(뷰포트 y≈28px)은 화면 아래 끝에서 130mm 이상 위에 있어, 엄지 길이(약 60~70mm)로 닿는 범위를 크게 벗어난다. 지하철 손잡이를 잡거나 짐을 든 채 재파지하면 떨어뜨림과 조작 실패가 늘고, 이 버튼은 신청 한 번에 최소 4번 눌러야 한다.",
+      "detectable_by": "model",
+      "audience_relevance": "primary",
+      "taxonomy_ref": "Thumb reach / one-handed grip — Bergstrom-Lehtovirta & Oulasvirta (CHI 2014) functional area of the thumb; Hoober (2013) 'How do users really hold mobile devices?'; app-review complaint type 'controls hard to reach'",
+      "build_notes": "결함(civil-a): #app-header 안 오른쪽에 <button type='button' id='btn-next' class='hdr-next'>다음</button>. CSS .hdr-next{position:absolute;top:4px;right:8px;height:48px;min-width:64px;padding:0 12px;border:0;border-radius:8px;background:transparent;color:#1d5fd1;font-size:17px;font-weight:700}(흰 배경 5.8:1, 64×48로 크기 기준은 충족 — 문제는 위치뿐). 1~4단계에서만 보이고 안내·5단계·완료 화면에서는 hidden. 페이지 아래쪽에는 다른 진행 버튼이 없다(하단 바 없음, body 하단 여백 없음). 정상(civil-b): 헤더 오른쪽은 비워 둔다. 푸터 뒤(body 직계)에 <div class='bottom-bar'>(id 없음) 안에 <button type='button' id='btn-next' class='btn-primary'>다음</button>(폭 100%·최대 528px 가운데 정렬(.bottom-bar .btn-primary{max-width:528px;margin:0 auto}), 높이 52px). CSS .bottom-bar{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid #e5e8eb;padding:12px 16px calc(12px + env(safe-area-inset-bottom))}(바 높이 약 77px). 바가 보일 때 body.has-bar{padding-bottom:calc(88px + env(safe-area-inset-bottom))}와 html{scroll-padding-bottom:96px}로 푸터 끝과 초점 요소가 바에 가리지 않게 한다. 바는 1~4단계에서만 보이고(바 전체 hidden + body.has-bar 토글) 나머지 화면에서는 숨긴다. 클릭 핸들러·검사 로직은 두 변형 동일."
+    },
+    {
+      "id": "D-civil-02",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "semantics",
+      "element_selector": "#applicant-name",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "1단계에서 '다음'을 눌러 검사에 실패하면 첫 오류 칸(시나리오 경로에서는 성명 #applicant-name)으로 초점을 옮기면서, 고정 헤더를 빼지 않고 계산한 위치로 스크롤해 그 칸을 화면 맨 위(y=0)에 붙인다. 입력란은 고정 헤더(0~56px)에, 오류 문구 #applicant-name-err(약 54~76px)는 헤더와 단계 표시줄(56~96px)에 완전히 가려지고 라벨은 화면 위로 밀려나, 초점이 어디 있는지와 무엇이 잘못됐는지 보이지 않는다. 키보드 Tab·Shift+Tab 이동은 페이지의 scroll-padding 덕분에 가려지지 않으며, 문제는 오류 칸으로 옮기는 스크롤뿐이다.",
+      "human_factors_basis": "키보드·스위치·화면 확대 사용자는 초점 표시로 현재 위치를 파악한다. 초점 받은 요소가 작성자가 만든 고정 헤더에 완전히 가려지면 WCAG 2.2 SC 2.4.11(AA) 실패(F110). 터치 사용자도 오류 칸 대신 바로 아래 주민등록번호 칸을 보게 되어 무엇을 고쳐야 할지 모른 채 같은 동작을 반복한다.",
+      "detectable_by": "measurement",
+      "audience_relevance": "primary",
+      "taxonomy_ref": "WCAG 2.2 SC 2.4.11 Focus Not Obscured (Minimum), failure F110 (sticky header or footer completely hides the focused component)",
+      "build_notes": "두 변형 공통: html{scroll-padding-top:104px}(헤더 56 + 단계 표시줄 40 + 여유 8 — 키보드 Tab·Shift+Tab 이동과 scrollIntoView는 고정 헤더 밑으로 숨지 않는다). function focusFirstError(form){ var el=form.querySelector('[aria-invalid=\"true\"]'); if(!el) return; (변형별 스크롤); el.focus({preventScroll:true}); } — 1·2단계 입력 검사 실패 때만 호출(4단계 #auth-err는 두 변형 모두 scrollIntoView({block:'nearest'})로만 드러내고, 5단계 #submit-err는 #agree-final.focus()로 처리). 결함(civil-a): 스크롤을 window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY)로 직접 계산해 scroll-padding과 고정 헤더를 무시한다. 시나리오 첫 '다음'(성명 비움)에서 360×780 기준 scrollY=257, #applicant-name이 y 0~48로 #app-header(0~56)에 완전히 덮이고(중심점 elementFromPoint = #app-title), #applicant-name-err(54~76.5)는 헤더·#stepper(56~96)에 덮이며(중심점 = #stepper), 라벨은 y −32~−8(화면 밖), document.activeElement는 #applicant-name. 이 현상이 일어나려면 1단계 문서가 충분히 길어야 한다: scrollHeight − innerHeight ≥ #applicant-name의 문서 기준 top(검증 단계 측정: 360×780 1442−780=662 ≥ 257, 384×824(드라이버의 S24 Ultra 뷰포트) 1392−824=568 ≥ 233, 430×932 1320−932=388 ≥ 233). 정상(civil-b): el.scrollIntoView({block:'start'})로 스크롤하고 input,textarea,select{scroll-margin-top:32px}(라벨 높이)를 더해, 360×780에서 scrollY=121, 입력란 y=136~184, 라벨 y=104~128(단계 표시줄 아래), 오류 문구 y=190~212.5가 모두 보인다."
+    },
+    {
+      "id": "D-civil-03",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "semantics",
+      "element_selector": "#rrn-back",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "주민등록번호 뒤 7자리 입력란(#rrn-back)에 프로그램으로 연결된 이름이 없다. 보이는 라벨 '주민등록번호'는 앞자리 칸(#rrn-front)에만 for로 연결되어 있고, 뒷자리 칸은 label·aria-label·aria-labelledby·title·placeholder가 모두 없어 화면낭독기가 '편집, 보안 텍스트'로만 읽는다.",
+      "human_factors_basis": "화면낭독 사용자는 초점이 간 입력란의 이름으로 무엇을 입력할지 판단한다. 이름 없는 보안 입력란은 정체를 알 수 없어 입력을 주저하게 하거나 앞자리 칸에 13자리를 모두 넣는 오류로 이어진다(WCAG 1.3.1·4.1.2, F68). 한국 공공 서식에서 주민등록번호 분할 입력란의 뒷자리 레이블 누락은 웹 접근성 진단에서 흔히 지적되는 항목이다.",
+      "detectable_by": "measurement",
+      "audience_relevance": "edge",
+      "taxonomy_ref": "WCAG 2.2 SC 1.3.1 Info and Relationships — input not programmatically labelled (sufficient technique H44 absent); the same gap fails SC 4.1.2 via F68; axe-core rule 'label'; KWCAG 2.2 '레이블 제공'",
+      "build_notes": "두 변형 공통 뼈대: <div class='field' id='field-rrn'> [라벨] <div class='rrn-row' id='rrn'>(display:flex;align-items:center;gap:8px) <input id='rrn-front' type='text' inputmode='numeric' maxlength='6' autocomplete='off' aria-describedby='rrn-front-err'> <span class='dash' aria-hidden='true'>-</span> <input id='rrn-back' type='password' inputmode='numeric' maxlength='7' autocomplete='off' aria-describedby='rrn-back-err'> </div> <p class='err' id='rrn-front-err'></p><p class='err' id='rrn-back-err'></p> </div>. 두 입력란 flex:1, 높이 48px, placeholder 없음, 자동 칸 이동 없음. 결함(civil-a): 라벨은 <label class='lb' for='rrn-front'>주민등록번호</label> 하나뿐. #rrn-back에는 label·aria-label·aria-labelledby·title·placeholder가 전혀 없어 접근 가능한 이름이 빈 문자열. 정상(civil-b): <label class='lb' for='rrn-front'>주민등록번호<span class='sr-only'> 앞 6자리</span></label>, 그리고 .rrn-row 바로 앞에 <label class='sr-only' for='rrn-back'>주민등록번호 뒤 7자리</label>(id 없음) → 이름 '주민등록번호 앞 6자리' / '주민등록번호 뒤 7자리'(보이는 라벨 '주민등록번호'를 포함하므로 2.5.3도 충족). 화면 모습은 두 변형이 같다."
+    },
+    {
+      "id": "D-civil-04",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "heuristic",
+      "element_selector": "#phone",
+      "profile_condition": {},
+      "severity_min": "P1",
+      "description": "휴대전화 번호를 흔히 쓰는 010-4827-3391처럼 하이픈을 넣어 입력하면 거부하고, 칸 아래에 '입력값 형식이 올바르지 않습니다. (오류코드: CV-4102)'만 보여 준다. 무엇이 틀렸는지(하이픈)와 어떻게 고치는지(숫자만)를 알려 주지 않으며, 입력 전 안내 문구에도 형식 정보가 없다.",
+      "human_factors_basis": "오류 메시지는 문제를 쉬운 말로 알리고 해결 방법을 제시해야 한다(Nielsen 휴리스틱 9; WCAG 3.3.3 오류 수정 제안; ISO 9241-110 오류 허용성). 한국 사용자는 전화번호를 010-XXXX-XXXX로 적는 습관이 강하고 휴대폰 전화 키패드에도 '-'가 있어, 서식 문자를 거부하는 것 자체가 불필요한 오류를 만든다(Baymard: 서식 문자를 받아들여 정규화할 것). 원인을 추론하지 못한 사용자는 같은 값을 반복 입력하다 이탈하거나 고객센터에 전화한다 — 처음 쓰는 어르신에게 특히 치명적이어서 다수 이용자의 과업이 막힌다.",
+      "detectable_by": "agent_judgment",
+      "audience_relevance": "primary",
+      "taxonomy_ref": "WCAG 2.2 SC 3.3.3 Error Suggestion; Nielsen heuristic #9 (help users recognize, diagnose, and recover from errors); Baymard form usability — accept and normalise formatting characters in phone fields; app-review complaint type 'unclear error message / error code only'",
+      "build_notes": "두 변형 공통 마크업: <div class='field' id='field-phone'><label class='lb' for='phone'>휴대전화 번호</label><input id='phone' type='tel' inputmode='tel' autocomplete='tel' aria-describedby='phone-hint phone-err'><p class='help' id='phone-hint'>(문구는 변형별)</p><p class='err' id='phone-err'></p></div>, maxlength 없음. 결함(civil-a): #phone-hint 문구 '휴대전화 번호를 입력해 주세요.'(형식 정보 없음). 검사: 빈 값이면 '필수 입력 항목입니다.', 값이 있으면 원문 그대로 /^01[016789]\\d{7,8}$/ 검사 → 불일치 시 '입력값 형식이 올바르지 않습니다. (오류코드: CV-4102)'. 시나리오 첫 입력 '010-4827-3391'이 여기서 걸린다. 정상(civil-b): #phone-hint 문구 '숫자만 입력하거나 - 를 넣어도 돼요. 예) 010-1234-5678'(뒤쪽 '예) 010-1234-5678'은 <span class='nw'>로 감싸 번호 중간에서 줄이 바뀌지 않게 함). 검사 전에 value.replace(/[\\s-]/g,'')로 정규화한 뒤 같은 정규식 → 빈 값 '휴대전화 번호를 입력해 주세요.', 불일치 '휴대전화 번호 10~11자리를 확인해 주세요. 예) 010-1234-5678'. 통과한 값은 blur 때 010-XXXX-XXXX 형태로 다시 표시. 따라서 정상 변형에서는 '010-4827-3391'과 '01048273391' 모두 통과한다. 4·5단계와 완료 화면의 번호 표시는 두 변형 모두 정규화한 010-4827-3391."
+    },
+    {
+      "id": "D-civil-05",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "heuristic",
+      "element_selector": "#rrn",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "1단계 검사에 실패하면 입력 폼을 다시 그리면서 이미 맞게 입력한 주민등록번호 두 칸(#rrn 안의 #rrn-front 앞 6자리, #rrn-back 뒤 7자리)을 조용히 비운다. 두 칸은 오류가 아니었으므로 비운 이유도 다시 넣으라는 안내도 없고, 성명·전화번호만 고치고 다시 '다음'을 누르면 이번에는 '주민등록번호 앞 6자리를 입력해 주세요.'·'주민등록번호 뒤 7자리를 입력해 주세요.' 오류가 새로 나온다.",
+      "human_factors_basis": "사용자는 오류를 고칠 때 이미 맞게 넣은 값이 유지된다고 기대한다. 같은 과정에서 이미 입력한 정보를 다시 넣게 하는 것은 WCAG 2.2 SC 3.3.7(중복 입력) 위반이며, 서버 전송 전 클라이언트 검사에서는 보안상 비울 이유도 없다. 사용자는 오류 문구가 붙은 칸만 고치므로 조용히 비워진 칸(특히 가려진 뒤 7자리)을 놓치기 쉽고, '고쳤는데 또 오류'라는 반복 실패 루프가 생긴다. 이는 폼 이탈의 주요 원인이다(Baymard 폼 사용성 연구).",
+      "detectable_by": "agent_judgment",
+      "audience_relevance": "primary",
+      "taxonomy_ref": "WCAG 2.2 SC 3.3.7 Redundant Entry; Baymard form usability — never clear valid fields after a validation error; Nielsen heuristic #5 (error prevention); ODC/app-review complaint type 'lost input'",
+      "build_notes": "결함(civil-a): 1단계 폼 #form-applicant의 마크업을 JS 문자열 TPL_APPLICANT로도 가진다(처음 HTML과 글자 하나까지 동일). '다음' 처리 순서: ① 현재 입력값으로 검사(errors 계산 — 시나리오에서는 이 시점에 주민등록번호 두 칸이 모두 정상) ② state.name/phone(원문 그대로)/email만 갱신하고 state.rrnFront·state.rrnBack은 검사를 모두 통과해 2단계로 갈 때만 저장('주민등록번호는 저장하지 않는다'는 식의 구현) ③ 오류가 있으면 renderApplicantForm(): #form-applicant.innerHTML=TPL_APPLICANT 후 state에서 성명·전화·이메일만 다시 채움(#rrn-front·#rrn-back은 빈 칸) → showErrors(errors)(시나리오에서는 성명·전화 오류만 표시) → focusFirstError(#form-applicant). ④ 오류가 없으면 showErrors({})로 남아 있던 오류 문구·aria-invalid를 모두 지운 뒤 state.name·email을 trim하고 주민등록번호 두 칸을 저장해 goTo(2)(검증 단계에서 추가: 이것이 없으면 뒤로 가기·'수정'으로 1단계에 돌아왔을 때 이미 고친 칸에 옛 오류가 남는 의도하지 않은 결함이 생긴다). 입력 관련 이벤트는 #form-applicant에 위임해 재렌더 뒤에도 동작하게 한다. 비워진 두 칸에 대한 안내·오류는 이 시점에 없다. 정상(civil-b): 재렌더하지 않고 기존 입력란의 aria-invalid·오류 문구만 토글하며, 모든 값(주민등록번호 두 칸 포함)을 그대로 둔다."
+    },
+    {
+      "id": "D-civil-06",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "semantics",
+      "element_selector": "#addr-modal",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "주소 검색 창(#addr-modal)이 화면 전체를 덮지만 대화상자로 선언되어 있지 않고, 열릴 때 초점이 창 안으로 옮겨 가지 않는다. 초점은 뒤에 가려진 '주소 검색' 버튼에 남고, 창의 요소들은 문서 맨 끝(푸터 뒤)에 있어 Tab·화면낭독 순서로는 가려진 배경의 기본·상세 주소 칸과 푸터 링크를 모두 지나야 도달한다. 결과를 고르거나 닫으면 초점이 body로 사라진다.",
+      "human_factors_basis": "모달이 열리면 초점이 모달 안으로 이동하고 배경은 비활성화되어야 한다(WAI-ARIA APG Dialog 패턴). 그렇지 않으면 화면낭독·키보드·스위치 사용자는 보이지 않는 배경을 순회하며 검색 창을 찾지 못하고, 닫은 뒤에는 위치를 잃는다. 트리거와 떨어진 곳에 삽입되어 초점이 옮겨 가지 않는 대화상자는 WCAG 2.4.3 실패 기법 F85에 해당한다.",
+      "detectable_by": "measurement",
+      "audience_relevance": "edge",
+      "taxonomy_ref": "WCAG 2.2 SC 2.4.3 Focus Order (failure F85: dialog not adjacent to its trigger in the sequential navigation order, focus not moved into it); WAI-ARIA APG Dialog (Modal) pattern",
+      "build_notes": "두 변형 공통 모습·위치: body의 마지막 자식 <div id='addr-modal' class='layer' hidden>, CSS #addr-modal{position:fixed;inset:0;z-index:100;background:#fff;overflow-y:auto} #addr-modal[hidden]{display:none}. 내부(공통): <div class='am-head'>(height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 16px;border-bottom:1px solid #e5e8eb) <h2 id='addr-modal-title'(18px/700)>주소 검색</h2><button type='button' id='addr-modal-close' class='btn-text'(min-width:64px)>닫기</button></div> <div class='am-search'(padding:16px)><label class='lb' for='addr-modal-q'>도로명, 건물명 또는 지번</label><div class='am-row'(display:flex;gap:8px)><input id='addr-modal-q' type='search' enterkeyhint='search' autocomplete='off'(flex:1)><button type='button' id='addr-modal-go' class='btn-search'(flex:none;width:72px;height:48px;border:0;border-radius:10px;background:#1d5fd1;color:#fff;font-size:16px;font-weight:700)>검색</button></div><p class='help' id='addr-modal-hint'>예) 새솔로 128, 새솔마을, 신수동 91-3</p></div> <p class='help' id='addr-modal-results-count'(padding:0 16px)></p> <ul id='addr-modal-results' class='am-results'></ul>. 열 때 공통: #addr-modal-q 값·결과 목록·#addr-modal-results-count 비우고 힌트 문구 원래대로, document.body.style.overflow='hidden'; 닫을 때 overflow 복구. 결함(civil-a): role·aria-modal·aria-labelledby 없음. 열기 = hidden 해제뿐, 초점 이동 없음(초점은 #btn-addr-search에 남음). 배경(#skip-link, #app-header, #stepper, #main, #site-footer)에 inert·aria-hidden 없음 → Tab 순서가 #btn-addr-search → #addr-base(읽기 전용 textarea, 초점 받음) → #addr-detail → 푸터 링크 4개 → #addr-modal-close → #addr-modal-q → #addr-modal-go(빌드 단계에서 키보드로 확인). Esc 무반응. 닫기(#addr-modal-close·결과 선택) = hidden만 다시 설정 → 초점이 body로 떨어짐. 정상(civil-b): <div id='addr-modal' class='layer' role='dialog' aria-modal='true' aria-labelledby='addr-modal-title' hidden>. 열 때 모달을 뺀 body 직계 자식 전부 inert=true 후 #addr-modal-q.focus(). Esc·#addr-modal-close → inert 해제 후 초점을 #btn-addr-search로 되돌림. 결과 선택 → 값을 채우고 inert 해제 후 초점을 #addr-detail로."
+    },
+    {
+      "id": "D-civil-07",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "heuristic",
+      "element_selector": "#addr-modal",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "주소 검색 창에서 결과가 0건이면(예: '새솔로128'처럼 도로명과 건물번호를 붙여 쓴 경우) 목록만 비우고 아무 표시도 하지 않는다. '검색'(#addr-modal-go)을 눌러도 화면이 전혀 바뀌지 않아 검색이 된 것인지, 결과가 없는 것인지, 버튼이 안 눌린 것인지 알 수 없고, 띄어 쓰면 된다는 해결 방법도 알려 주지 않는다. 건수 표시 자리(#addr-modal-results-count)는 결과가 있을 때도 비어 있다.",
+      "human_factors_basis": "시스템은 사용자의 행동에 대해 적절한 시간 안에 알맞은 피드백을 주어야 한다(Nielsen 휴리스틱 1; Shneiderman 'informative feedback'). '결과 없음' 상태를 알리지 않으면 사용자는 버튼을 반복해서 누르거나 서비스가 고장 났다고 판단해 이탈한다. 상태 메시지는 초점을 옮기지 않고도 보조기술에 전달되어야 한다(WCAG 4.1.3).",
+      "detectable_by": "agent_judgment",
+      "audience_relevance": "primary",
+      "taxonomy_ref": "Nielsen heuristic #1 Visibility of system status; WCAG 2.2 SC 4.1.3 Status Messages; app-review complaint type 'no feedback / nothing happens'",
+      "build_notes": "검색 로직(두 변형 동일): #addr-modal-go 클릭 또는 #addr-modal-q에서 Enter → q=value.trim().replace(/\\s+/g,' '); q가 비면 #addr-modal-hint를 '검색어를 입력해 주세요.'로 바꾸고 끝(두 변형 동일). 아니면 tokens=q.split(' '); matches=ADDR_DB.filter(a=>tokens.every(t=>(a.road+' '+a.jibun).includes(t))); 결과를 #addr-modal-results-1..N 버튼으로 렌더(build_plan.addr_data). '새솔로128' → 0건, '새솔로 128' → 3건(새솔마을2단지, 128-4, 128-12 순). 결함(civil-a): 0건이면 #addr-modal-results.innerHTML=''만 하고 끝. #addr-modal-results-count는 어떤 경우에도 비어 있고 role·aria-live가 없다. 힌트 문구도 그대로. 정상(civil-b): #addr-modal-results-count에 role='status' aria-live='polite'. 결과가 있으면 '검색 결과 3건', 0건이면 '‘새솔로128’ 검색 결과가 없어요. 도로명과 건물번호 사이를 띄어 입력해 보세요. 예) 새솔로 128'(따옴표 안에는 입력한 q 그대로). 목록 비우기·렌더는 결함 변형과 동일."
+    },
+    {
+      "id": "D-civil-08",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "semantics",
+      "element_selector": "#opt-rrn",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "발급 옵션의 '본인 주민등록번호 뒷자리 표시'(#opt-rrn-self)와 '세대원 주민등록번호 뒷자리 표시'(#opt-rrn-members) 스위치가 클릭 이벤트만 붙인 div로 만들어졌다. role·aria-checked·이름·tabindex가 없어 보조기술에는 용도와 켜짐/꺼짐 상태가 전달되지 않고, 키보드로 초점을 줄 수도 조작할 수도 없다.",
+      "human_factors_basis": "사용자 인터페이스 구성요소는 이름·역할·상태를 프로그램이 알 수 있어야 한다(WCAG 4.1.2, F59). 제출처가 요구한 '본인 뒷자리 표시'를 화면낭독·키보드 사용자가 확인하거나 설정할 수 없으면 조건에 맞지 않는 등본이 발급되어 수수료를 다시 내고 재신청해야 한다. 키보드로 조작할 수 없는 것은 SC 2.1.1 위반이다.",
+      "detectable_by": "measurement",
+      "audience_relevance": "edge",
+      "taxonomy_ref": "WCAG 2.2 SC 4.1.2 Name, Role, Value (failure F59: script-driven div/span used as a control without role and state); SC 2.1.1 Keyboard; KWCAG 2.2 '웹 애플리케이션 접근성 준수'",
+      "build_notes": "공통 컨테이너 <div class='opt' id='opt-rrn'>(margin-top:24px) 안에 행 두 개. 행 .sw-row{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;padding:8px 0;border-bottom:1px solid #e5e8eb}: 왼쪽 <div class='sw-text'><span class='sw-label' id='lbl-rrn-self'>본인 주민등록번호 뒷자리 표시</span><span class='help' id='help-rrn-self'>끄면 뒷자리가 *******로 가려져요.</span></div>(두 span display:block, 라벨 16px/600), 오른쪽 스위치 #opt-rrn-self. 둘째 행 같은 구조: #lbl-rrn-members '세대원 주민등록번호 뒷자리 표시', #help-rrn-members '세대원 모두의 뒷자리가 보여요. 꼭 필요할 때만 켜세요.', 스위치 #opt-rrn-members. 스위치 CSS(공통, 탭 영역 60×48에 트랙 52×32): .switch{position:relative;flex:none;width:60px;height:48px;border:0;padding:0;background:transparent;cursor:pointer} .switch .track{position:absolute;left:4px;top:8px;width:52px;height:32px;border-radius:16px;background:#8b95a1} .switch .knob{position:absolute;top:3px;left:3px;width:26px;height:26px;border-radius:50%;background:#fff;transition:left .15s} .switch.on .track{background:#1d5fd1} .switch.on .knob{left:23px}(트랙 #8b95a1은 흰 배경 3.0:1, 켜짐은 색과 손잡이 위치 둘 다로 구분). 기본값 둘 다 꺼짐. 결함(civil-a): <div id='opt-rrn-self' class='switch'><span class='track'><span class='knob'></span></span></div>(#opt-rrn-members도 같은 div). addEventListener('click')로 class 'on' 토글 + state 반영. role·aria-checked·aria-label(ledby)·tabindex·키 이벤트 없음. 정상(civil-b): <button type='button' id='opt-rrn-self' class='switch' role='switch' aria-checked='false' aria-labelledby='lbl-rrn-self' aria-describedby='help-rrn-self'><span class='track'><span class='knob'></span></span></button>(#opt-rrn-members도 같은 방식). 클릭 때 class 'on'과 aria-checked를 함께 토글. 보이는 모양은 두 변형 동일."
+    },
+    {
+      "id": "D-civil-09",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "pointing",
+      "element_selector": "#opt-history",
+      "profile_condition": {
+        "motor.tremor": [
+          "mild",
+          "moderate"
+        ]
+      },
+      "severity_min": "P3",
+      "description": "과거의 주소 변동 사항 선택지 세 개(전체 포함 / 최근 5년 포함 / 포함하지 않음)가 각각 높이 28px 줄로 간격 없이 세로로 붙어 있다. 손 떨림이 있으면 '최근 5년 포함'을 누르려다 위아래의 '전체 포함'이나 '포함하지 않음'이 선택되기 쉽고, '전체 포함'이 선택된 채 넘어가면 과거 주소 전부가 등본에 찍혀 나간다.",
+      "human_factors_basis": "떨림이 있으면 터치 착지점의 분산이 수 mm 수준으로 커진다. 높이 28px(갤럭시 S24에서 약 5mm) 표적이 틈 없이 붙어 있으면 이웃 선택지 오선택 확률이 급격히 커진다(Bi, Li & Zhai, CHI 2013 FFitts law; Parhi, Karlson & Bederson 2006은 엄지 조작 표적 약 9.6mm 권장). WCAG 2.5.8의 최소 24px는 넘지만 Material 48dp·Apple 44pt 권장에는 크게 못 미친다.",
+      "detectable_by": "model",
+      "audience_relevance": "secondary",
+      "taxonomy_ref": "Touch target size and spacing under tremor — Material Design 48dp / Apple HIG 44pt; Bi, Li & Zhai (CHI 2013) FFitts law; Parhi, Karlson & Bederson (MobileHCI 2006) target size for one-handed thumb use",
+      "build_notes": "공통 마크업: <fieldset class='opt' id='opt-history-set'(border:0;margin-top:24px)><legend class='lb' id='lbl-history'>과거의 주소 변동 사항</legend><p class='help' id='history-help'>이전에 살았던 주소를 등본에 얼마나 표시할지 골라요.</p><div id='opt-history'(margin-top:8px)> <label class='hist-opt' id='opt-history-all'><input type='radio' name='history' value='all' id='opt-history-all-input' aria-describedby='history-help'> 전체 포함</label> <label class='hist-opt' id='opt-history-5y'><input type='radio' name='history' value='5y' id='opt-history-5y-input' aria-describedby='history-help'> 최근 5년 포함</label> <label class='hist-opt' id='opt-history-none'><input type='radio' name='history' value='none' id='opt-history-none-input' aria-describedby='history-help' checked> 포함하지 않음</label> </div></fieldset>. 공통 CSS: .hist-opt{cursor:pointer} .hist-opt input{flex:none;margin:0;accent-color:#1d5fd1} .hist-opt:has(input:checked){font-weight:700;color:#1d5fd1}. 결함(civil-a): .hist-opt{display:flex;align-items:center;gap:8px;height:28px;margin:0;padding:0 4px;font-size:15px;line-height:28px} .hist-opt input{width:16px;height:16px} — 세 줄이 틈 없이 붙은 폭 약 328px·높이 28px 표적(합계 84px). 정상(civil-b): .hist-opt{display:flex;align-items:center;gap:12px;min-height:52px;margin-top:8px;padding:0 14px;border:1px solid #d1d6db;border-radius:10px;font-size:16px} .hist-opt:first-child{margin-top:0} .hist-opt input{width:24px;height:24px} .hist-opt:has(input:checked){border:2px solid #1d5fd1}."
+    },
+    {
+      "id": "D-civil-10",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "layout",
+      "element_selector": "#fee-summary",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "3단계의 '예상 수수료' 상자(#fee-summary)가 400px 고정 폭(금액 줄은 줄바꿈 금지)이라 360px 폭 휴대폰에서 화면 밖으로 56px (384px 폭 S24 Ultra에서 32px, 320 CSS px 재배치 기준에서는 96px) 넘친다. 페이지 전체가 가로로 스크롤되고, 오른쪽 정렬된 금액이 화면 가장자리에서 잘려 (360px에서 발급 수수료 '800원'은 x≈359~399로 거의 통째로, 합계 '3,330원'은 x≈340~399로 뒷부분이) 가로로 밀어야 보인다.",
+      "human_factors_basis": "콘텐츠는 320 CSS px 폭에서 두 방향 스크롤 없이 읽을 수 있어야 한다(WCAG 1.4.10). 세로로 읽다가 가로 스크롤까지 해야 하면 저시력·확대 사용자는 위치를 잃고, 일반 사용자도 잘린 금액을 잘못 읽을 수 있다. 금액 목록은 2차원 배치가 필요한 콘텐츠가 아니므로 예외에 해당하지 않는다.",
+      "detectable_by": "measurement",
+      "audience_relevance": "primary",
+      "taxonomy_ref": "WCAG 2.2 SC 1.4.10 Reflow (320 CSS px)",
+      "build_notes": "공통 마크업: <div id='fee-summary' role='group' aria-labelledby='fee-summary-title'><h3 id='fee-summary-title' class='fs-title'>예상 수수료</h3><div class='row' id='fee-summary-copies'><span>발급 수수료 (400원 × <span id='fee-summary-n'>1</span>통)</span><span id='fee-summary-copies-amt'>400원</span></div><div class='row' id='fee-summary-post'><span>등기 우편요금</span><span>2,530원</span></div><div class='row total' id='fee-summary-total'><span>합계</span><span id='fee-summary-total-amt'>2,930원</span></div></div>. 부수가 바뀌면 n·금액 갱신(합계 = 400×n + 2,530). 공통 CSS: #fee-summary{margin-top:28px;padding:16px;border:1px solid #d1d6db;border-radius:12px;background:#f9fafb} .fs-title{font-size:16px;font-weight:700;margin-bottom:8px} #fee-summary .row{display:flex;justify-content:space-between;gap:24px;padding:6px 0;font-size:15px} #fee-summary .row.total{border-top:1px solid #d1d6db;margin-top:6px;padding-top:10px;font-size:17px;font-weight:800}. html·body·main에는 두 변형 모두 overflow-x:hidden을 두지 않는다. 결함(civil-a): #fee-summary{width:400px} #fee-summary .row{white-space:nowrap} → 360px 뷰포트에서 상자 오른쪽 끝 x=416(documentElement.scrollWidth 약 416 > 360), 320px에서 약 96px 넘침, 합계 금액이 x≈340~400에 걸려 잘린다. 384px(S24 Ultra)에서도 scrollWidth 416 > 384로 넘쳐 합계 금액 끝(x≈399)이 잘리고, 430px(iPhone 15 Pro Max)에서는 넘치지 않는다. 정상(civil-b): #fee-summary{width:auto;max-width:100%} #fee-summary .row{flex-wrap:wrap}. 뷰포트(두 변형 동일): viewport 메타에 minimum-scale=1을 둔다. 모바일 Chrome(Playwright isMobile 에뮬레이션 포함)은 가로로 넘치는 내용이 생기면 페이지 배율을 줄여(shrink-to-fit) innerWidth를 416으로 넓히므로, 이것이 없으면 가로 스크롤 대신 3단계 전체가 약 87%로 축소되어(innerWidth 416, 글자도 작아짐) 결함이 다른 모습(글자 축소)으로 나타난다. minimum-scale=1은 축소만 막고 확대는 막지 않는다. 확인(빌드 단계, 360×780 isMobile): 결함 변형 3단계 innerWidth 360, documentElement.scrollWidth 416, #fee-summary right 416, #fee-summary-total-amt x 339~399; 정상 변형 scrollWidth 360(320 폭에서 320)."
+    },
+    {
+      "id": "D-civil-11",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "layout",
+      "element_selector": "#review-addr",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "5단계 신청 내용 확인에서 받을 주소 값(#review-addr, 폭 178px@360 / 202px@384)이 한 줄 말줄임 처리되어 '[04092] 서울특별시 마…'(갤럭시 S24)나 '[04092] 서울특별시 마포구 …'(S24 Ultra) 정도까지만 보인다. 확인이 가장 필요한 도로명·건물번호·단지명과 상세 주소(203동 1504호)가 모두 잘려, 동·호수를 잘못 넣었더라도 신청 전에 발견할 수 없다.",
+      "human_factors_basis": "확인 단계의 목적은 제출 전에 오류를 발견하게 하는 것이다(Nielsen 휴리스틱 5 오류 예방; WCAG 3.3.4가 요구하는 '확인' 수단). 핵심 값이 잘리면 확인 단계가 형식만 남고, 개인정보가 담긴 등본이 엉뚱한 곳으로 가는 오배송·반송으로 이어진다. 잘린 텍스트는 XCTest 접근성 감사의 textClipped 유형에 해당한다.",
+      "detectable_by": "measurement",
+      "audience_relevance": "primary",
+      "taxonomy_ref": "XCTest accessibility audit textClipped (XCUIAccessibilityAuditType.textClipped); truncated key value on a review/confirmation step (Baymard checkout review-step guidance)",
+      "build_notes": "공통 마크업: <div id='review'>에 카드 세 개 <section class='rv-card' aria-labelledby='rv-…-h'>(.rv-card{border:1px solid #d1d6db;border-radius:12px;padding:16px;margin-top:16px}). 카드 머리 .rv-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}에 <h3>(17px/700)와 '수정' 버튼(.btn-text, 보이는 글자 '수정' + sr-only 보강 ' 신청인 정보'/' 받을 주소'/' 발급 옵션'). 행 <div class='rv-row'>(display:grid;grid-template-columns:104px minmax(0,1fr);gap:12px;padding:6px 0) <dt>(15px, #4e5968) <dd>(margin:0;font-size:15px;color:#191f28). 카드1 '신청인'(#rv-applicant-h, #edit-applicant): 성명 #review-name / 주민등록번호 #review-rrn('580312-2******') / 휴대전화 #review-phone. 카드2 '받을 주소'(#rv-address-h, #edit-address): 주소 #review-addr('[04092] 서울특별시 마포구 새솔로 128 (신수동, 새솔마을2단지) 203동 1504호'). 카드3 '발급 옵션'(#rv-options-h, #edit-options): 주소 변동 사항 #review-history / 뒷자리 표시 #review-rrn-opt / 발급 부수 #review-copies / 수수료 #review-fee('3,330원'). 결함(civil-a): .rv-row dd{white-space:nowrap;overflow:hidden;text-overflow:ellipsis} — 360px에서 dd 폭 약 178px(=360−32−2−32−104−12)라 주소만 잘리고(scrollWidth > clientWidth), 다른 dd는 모두 한 줄에 다 들어간다(가장 긴 '580312-2******'도 약 125px). 정상(civil-b): .rv-row dd{white-space:normal;overflow:visible;word-break:keep-all;overflow-wrap:anywhere}."
+    },
+    {
+      "id": "D-civil-12",
+      "scenario_id": "SC-d2-civil-a",
+      "product": "civil",
+      "category": "perception",
+      "element_selector": "#agree-text",
+      "profile_condition": {
+        "vision.presbyopia": true
+      },
+      "severity_min": "P3",
+      "description": "신청하기 버튼 바로 위의 신청 사실 확인 문구(#agree-text: '본인은 위 신청 내용이 사실과 같음을 확인합니다. 다른 사람의 정보를 도용하거나 거짓으로 신청하면 「주민등록법」에 따라 처벌받을 수 있습니다.')가 11px로 표시된다. 노안이 있는 사용자는 휴대폰을 멀리 들어도 읽기 어려워, 내용을 모른 채 동의하게 된다.",
+      "human_factors_basis": "노안(40대 중반 이후 대부분)으로 근거리 초점 조절이 어려우면 휴대폰을 35~40cm 이상 떨어뜨려 보게 되고, 11px(갤럭시 S24에서 글자 틀 약 2mm, 한글 자형 높이 약 1.8mm) 한글은 35~40cm에서 시각 약 15~18분으로 ISO 9241-303 권장 문자 높이(20~22분)에 못 미치며 임계 글자 크기(Legge & Bigelow 2011) 근처라 읽기 속도와 정확도가 크게 떨어진다. 법적 책임을 알리는 고지는 반드시 읽혀야 하는 문구다.",
+      "detectable_by": "model",
+      "audience_relevance": "primary",
+      "taxonomy_ref": "Minimum text size / presbyopia — ISO 9241-303 character height (min 16′, preferred 20–22′ of arc); Legge & Bigelow (J. Vision 2011) critical print size; Material body text 14–16sp / Apple HIG body 17pt",
+      "build_notes": "공통 마크업: <div id='agree-box'(margin-top:24px)><label id='agree-row' for='agree-final'><input type='checkbox' id='agree-final' aria-describedby='submit-err'><span id='agree-text'>본인은 위 신청 내용이 사실과 같음을 확인합니다. 다른 사람의 정보를 도용하거나 거짓으로 신청하면 「주민등록법」에 따라 처벌받을 수 있습니다.</span></label><p class='err' id='submit-err'></p></div> 다음에 <button type='button' id='btn-submit' class='btn-primary'(margin-top:16px)>신청하기</button>. 공통 CSS: #agree-row{display:flex;align-items:flex-start;gap:12px;min-height:48px;padding:12px;border:1px solid #d1d6db;border-radius:12px;cursor:pointer} #agree-final{flex:none;width:24px;height:24px;margin:0;accent-color:#1d5fd1}(입력 자체도 24×24, 라벨 전체가 탭 영역) #agree-text{color:#4e5968}(흰 배경 7.1:1). 결함(civil-a): #agree-text{font-size:11px;line-height:1.45}. 정상(civil-b): #agree-text{font-size:15px;line-height:1.6}. 탭 영역(라벨 전체)·색은 두 변형 동일."
+    }
+  ],
+  "decoys": [
+    {
+      "id": "N-civil-01",
+      "scenario_id": "SC-d2-civil-a",
+      "category": "semantics",
+      "element_selector": "#btn-back",
+      "description": "헤더 왼쪽 뒤로 가기 버튼(#btn-back)은 CSS로 그린 꺾쇠만 보이고 보이는 글자도 aria-label도 없어 '이름 없는 아이콘 버튼'처럼 보이지만, 버튼 안의 시각적으로 숨긴 텍스트(.sr-only '이전 단계로 돌아가기')가 접근 가능한 이름이 되므로 WCAG 4.1.2·1.1.1을 충족한다. 탭 영역 48×48px, 초점 표시 있음.",
+      "build_notes": "두 변형 동일: <button type='button' id='btn-back' class='icon-back'><span class='sr-only'>이전 단계로 돌아가기</span></button>. CSS .icon-back{position:absolute;left:4px;top:4px;width:48px;height:48px;border:0;border-radius:8px;background:transparent;display:flex;align-items:center;justify-content:center} .icon-back::before{content:'';width:12px;height:12px;border-left:2.5px solid #191f28;border-bottom:2.5px solid #191f28;transform:translateX(3px) rotate(45deg)}. 1~5단계에서만 보임(안내·완료 화면 hidden). 동작: 1단계 → 안내 화면, 2~5단계 → 이전 단계(입력값 유지)."
+    },
+    {
+      "id": "N-civil-02",
+      "scenario_id": "SC-d2-civil-a",
+      "category": "layout",
+      "element_selector": "#fee-guide",
+      "description": "안내 화면의 '발급 방법별 수수료' 표는 표 자체가 최소 520px(내용 때문에 실제 약 552px)라 320~360px 화면보다 넓어 재배치 실패처럼 보이지만, 가로 스크롤은 표를 감싼 영역(#fee-guide) 안에서만 일어나고 페이지 전체는 가로로 넘치지 않는다. 행·열 관계가 의미를 가지는 데이터 표는 WCAG 1.4.10의 '2차원 배치가 필요한 콘텐츠' 예외이며, 영역은 키보드 초점을 받아 스크롤할 수 있고 이름(캡션)과 '표를 옆으로 밀면 더 볼 수 있어요' 안내가 있다.",
+      "build_notes": "두 변형 동일: <h3 id='fee-guide-cap'>발급 방법별 수수료</h3><p class='help'>표를 옆으로 밀면 더 볼 수 있어요.</p><div id='fee-guide' class='table-scroll' role='region' aria-labelledby='fee-guide-cap' tabindex='0'><table><thead><tr><th scope='col'>발급 방법</th><th scope='col'>수수료(1통)</th><th scope='col'>받는 방법</th><th scope='col'>걸리는 시간</th></tr></thead><tbody><tr><th scope='row'>온라인 발급</th><td>무료</td><td>직접 출력</td><td>즉시</td></tr><tr><th scope='row'>무인민원발급기</th><td>200원</td><td>현장 출력</td><td>즉시</td></tr><tr><th scope='row'>주민센터 방문</th><td>400원</td><td>창구 수령</td><td>즉시</td></tr><tr><th scope='row'>우편 발송</th><td>400원 + 등기 우편요금 2,530원</td><td>등기우편</td><td>2~3일</td></tr></tbody></table></div>. CSS .table-scroll{overflow-x:auto;margin-top:8px;border:1px solid #d1d6db;border-radius:12px} #fee-guide table{min-width:520px;border-collapse:collapse;font-size:15px} #fee-guide th,#fee-guide td{padding:10px 12px;border-bottom:1px solid #e5e8eb;text-align:left;white-space:nowrap} #fee-guide thead th{background:#f2f4f6}. 안내 화면에서 320·360 폭 모두 documentElement.scrollWidth == innerWidth여야 한다(빌드 단계 확인: 표 폭 552px, #fee-guide clientWidth 326(360 폭), 페이지 scrollWidth == innerWidth)."
+    },
+    {
+      "id": "N-civil-03",
+      "scenario_id": "SC-d2-civil-a",
+      "category": "heuristic",
+      "element_selector": "#btn-submit",
+      "description": "신청하기(#btn-submit)는 수수료가 청구되는 법적 신청이라 되돌릴 수 없는 위험 동작처럼 보이지만, 앞 단계에서 전체 내용을 확인·수정할 수 있고, 신청 사실 확인 동의와 '이대로 신청할까요?' 확인 창(#confirm-dialog)을 거치며, 발송 전까지는 '나의 민원'에서 취소할 수 있다. 법률·금융 거래의 오류 예방 요건(WCAG 3.3.4: 되돌림·확인·검토 중 하나 이상)을 모두 충족한다.",
+      "build_notes": "두 변형 동일. #btn-submit 클릭: #agree-final이 체크되지 않았으면 #submit-err '신청 내용 확인에 동의해 주세요.' + #agree-final에 aria-invalid='true' + #agree-final.focus()(스크롤 조작 없음). 체크돼 있으면 확인 창을 연다: <div id='confirm-dialog' role='alertdialog' aria-modal='true' aria-labelledby='confirm-title' aria-describedby='confirm-desc' hidden><div class='cd-box'><h2 id='confirm-title'>이대로 신청할까요?</h2><p id='confirm-desc'>수수료 <b id='confirm-fee'>3,330원</b>은 신청 후 휴대전화로 보내 드리는 결제 링크에서 결제해요. 발송이 시작되기 전까지는 '나의 민원'에서 신청을 취소할 수 있어요.</p><div class='cd-btns'><button type='button' id='confirm-cancel' class='btn-secondary'>다시 확인</button><button type='button' id='confirm-ok' class='btn-primary'>신청</button></div></div></div>. CSS #confirm-dialog{position:fixed;inset:0;z-index:110;background:rgba(0,0,0,.5);display:flex;align-items:flex-end} #confirm-dialog[hidden]{display:none} .cd-box{width:100%;background:#fff;border-radius:20px 20px 0 0;padding:24px 16px calc(16px + env(safe-area-inset-bottom))} #confirm-title{font-size:20px;font-weight:800} #confirm-desc{margin-top:8px;font-size:16px;color:#4e5968} .cd-btns{display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-top:20px} .cd-btns button{width:100%;height:52px}. 열 때 확인 창을 뺀 body 직계 자식을 inert, 초점은 #confirm-cancel. Esc·'다시 확인' → 닫고 inert 해제, 초점 #btn-submit. '신청' → 닫고 inert 해제 후 goTo('done')."
+    },
+    {
+      "id": "N-civil-04",
+      "scenario_id": "SC-d2-civil-a",
+      "category": "semantics",
+      "element_selector": "#step-title",
+      "description": "화면(단계)이 바뀔 때마다 초점이 버튼이 아닌 제목(#step-title, tabindex='-1')으로 옮겨 가 '비대화형 요소로 초점 이동'이나 초점 순서 이상처럼 보이지만, 한 페이지 안에서 내용을 바꾸는 흐름에서 새 내용의 제목으로 초점을 보내는 것은 권장되는 초점 관리 방법이다(WCAG 2.4.3 충족; WAI-ARIA APG·GOV.UK Design System 방식). tabindex='-1'이라 Tab 순서에는 끼지 않고, 스크롤 맨 위에서 옮기므로 헤더·단계 표시줄에 가려지지도 않는다.",
+      "build_notes": "두 변형 동일: #main 맨 앞의 <h2 id='step-title' tabindex='-1'> 하나를 쓰고 화면마다 문구만 바꾼다. goTo()에서 window.scrollTo(0,0) 다음 #step-title.focus({preventScroll:true}). CSS #step-title{font-size:22px;font-weight:800;margin-bottom:8px}; 별도의 outline:none을 두지 않는다(전역 :focus-visible 규칙을 따름). 위치 y≈116px로 헤더·단계 표시줄(0~96px) 아래라 가려지지 않는다."
+    }
+  ],
+  "clean_controls": [
+    {
+      "scenario_id": "SC-d2-civil-b",
+      "notes": "civil-b.html: civil-a.html과 같은 흐름·같은 문구·같은 id·같은 시나리오 단계에서 D-civil-01~12를 모두 고친 정상 변형(하단 고정 '다음' 바, 오류 칸으로 옮길 때 고정 헤더를 고려한 스크롤(scrollIntoView + scroll-margin), 뒷자리 레이블, 하이픈 허용과 구체적 오류 문구, 입력값 유지, 대화상자 초점 관리, 검색 결과 상태 메시지, role=switch 버튼, 52px 선택지, 유동 폭 수수료 상자, 확인 화면 줄바꿈, 15px 동의 문구). 미끼 N-civil-01~04는 두 변형에 똑같이 있다. 두 변형 공통 동작(검증 단계에서 정리): 1단계를 통과하면 남은 오류 표시를 지우고, 4단계에서 확인 대기 상자가 닫힐 때 초점을 '다음'(완료) 또는 '인증 요청'(시간 초과)으로 옮기며, 확인 전 '다음'의 오류 문구는 화면 안으로 스크롤해 보여 준다."
+    }
+  ],
+  "build_plan": {
+    "variant_rule": "civil-a.html(결함 변형)과 civil-b.html(정상 변형)은 같은 골격·같은 한국어 문구·같은 id 집합을 쓰고, defects[].build_notes에 적힌 차이만 둔다. 두 파일의 id 집합은 완전히 같아야 한다(고친 쪽에만 필요한 보조 요소는 id 없이 class만 쓰거나, 결함 쪽에도 같은 id로 두되 동작만 다르게 한다). 어느 쪽이 결함 변형인지 드러나는 주석·class 이름·문구(bug, fix, clean, defect, broken, ok, v2 등)를 쓰지 않는다. 외부 네트워크·빌드 단계 없이 HTML 파일 하나에 CSS·JS를 인라인으로 넣는다. 미끼(decoys)는 두 변형에 똑같이 넣는다.",
+    "page": "<!doctype html>, <html lang='ko'>, <meta charset='utf-8'>, <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1'>(minimum-scale=1은 모바일 Chrome의 넘침 자동 축소(shrink-to-fit)만 막고 확대는 막지 않는다 — maximum-scale·user-scalable 없음; 이유는 D-civil-10 build_notes), <title>나래민원 · 주민등록표 등본 우편 발급 신청</title>. 모든 화면은 한 파일 안의 section을 hidden 속성으로 전환한다(SPA). URL 해시·history API는 쓰지 않는다. CSS는 <head>의 <style> 하나, JS는 <head>의 <script> 하나에 두고 DOMContentLoaded 뒤에 실행해, #addr-modal이 말 그대로 body의 마지막 자식이 되게 한다(body 안에 script 없음). 위치: benchmarks/dev-2/site/civil/civil-a.html, civil-b.html.",
+    "tokens_css": "공통 CSS(두 변형 동일): *{box-sizing:border-box;margin:0;padding:0} body{font-family:-apple-system,'Apple SD Gothic Neo','Noto Sans KR','Malgun Gothic',sans-serif;font-size:16px;line-height:1.5;color:#191f28;background:#fff;-webkit-text-size-adjust:100%;word-break:keep-all;overflow-wrap:break-word}(한국어를 어절 단위로 줄바꿈 — 두 변형 동일; 결함 변형의 nowrap 규칙(D-civil-10·11)에는 영향 없음). .nw{white-space:nowrap}(예시 번호가 하이픈에서 끊기지 않게). 색: 본문 #191f28 / 보조 #4e5968(흰 배경 7.1:1) / 힌트·placeholder #6b7684(4.6:1) / 선 #d1d6db / 입력 테두리 #8b95a1(3.0:1) / 옅은 배경 #f2f4f6 / 브랜드 #1d5fd1(흰 글자 5.8:1) / 오류 #c92a2a(5.5:1). :focus-visible{outline:3px solid #1d5fd1;outline-offset:2px} — 어떤 요소에도 대체 없는 outline:none 금지. [hidden]{display:none !important}(display:grid·flex를 준 요소도 hidden 속성으로 확실히 숨김). .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}. .lb{display:block;font-size:16px;font-weight:700;margin-bottom:8px}. input[type=text],input[type=tel],input[type=email],input[type=password],input[type=search]{width:100%;height:48px;border:1px solid #8b95a1;border-radius:10px;padding:0 14px;font:inherit;font-size:16px;color:#191f28;background:#fff} ::placeholder{color:#6b7684}. [aria-invalid='true']{border:2px solid #c92a2a}(input[type=…]·#addr-base 규칙보다 우선하도록 실제로는 input[aria-invalid='true'],textarea[aria-invalid='true'] 및 #addr-base[aria-invalid='true']로 쓴다). .field{margin-top:20px}. .help{margin-top:6px;font-size:15px;color:#4e5968}. .err{margin-top:6px;font-size:15px;font-weight:600;color:#c92a2a} .err:empty{display:none}. .lead{font-size:16px;color:#4e5968}. .btn-primary{display:block;width:100%;height:52px;border:0;border-radius:12px;background:#1d5fd1;color:#fff;font-size:17px;font-weight:700} .btn-secondary{height:48px;padding:0 16px;border:1px solid #8b95a1;border-radius:10px;background:#fff;color:#191f28;font-size:16px;font-weight:600} .btn-text{min-width:48px;height:48px;padding:0 8px;border:0;background:none;color:#1d5fd1;font-size:15px;font-weight:700}. 의미 있는 모든 글자는 15px 이상(푸터 포함; D-civil-12 결함 변형의 #agree-text만 예외). 모든 버튼·링크의 탭 영역은 최소 48×48 CSS px(D-civil-09 결함 변형의 라디오 줄만 예외; 체크박스·라디오는 감싸는 label 전체가 탭 영역). 그 밖의 대비·크기·초점 문제를 두 변형 어디에도 만들지 않는다.",
+    "skeleton": "body 직계 자식 순서(두 변형 동일, 정상 변형의 하단 바만 추가): ① <a id='skip-link' class='skip' href='#main'>본문 바로가기</a> (.skip{position:absolute;left:8px;top:-60px;z-index:50;padding:12px 14px;background:#191f28;color:#fff;border-radius:8px} .skip:focus{top:8px}). ② <header id='app-header'>: position:sticky;top:0;z-index:20;height:56px;background:#fff;border-bottom:1px solid #e5e8eb;display:flex;align-items:center;justify-content:center. 안에 #btn-back(미끼 N-civil-01), <h1 id='app-title'>등본 발급 신청</h1>(font-size:17px;font-weight:700). 결함 변형은 헤더 오른쪽에 #btn-next가 들어간다(D-civil-01). ③ <div id='stepper'>: position:sticky;top:56px;z-index:19;height:40px;background:#f2f4f6;padding:0 16px;display:flex;align-items:center;font-size:15px;color:#4e5968; 내용 <span class='st-text'>단계 <b id='step-num'>1</b>/5 · <span id='step-name'>신청인 정보</span></span>(flex 안에서 낱말 사이 공백이 사라지지 않게 span 하나로 감쌈), 바닥 진행 막대 <span id='step-bar' aria-hidden='true'>(position:absolute;left:0;bottom:0;height:3px;background:#1d5fd1;width:N/5×100%). 안내·완료 화면에서는 hidden. ④ <main id='main'>: max-width:560px;margin:0 auto;padding:20px 16px 32px. 맨 앞 <h2 id='step-title' tabindex='-1'>(미끼 N-civil-04), 이어서 section#screen-intro, #step-1, #step-2, #step-3, #step-4, #step-5, #done. ⑤ <footer id='site-footer'>: background:#f2f4f6;padding:28px 16px 40px;font-size:15px;line-height:1.7;color:#4e5968. 내용은 <div class='ft-in'>(max-width:560px;margin:0 auto) 안에: 링크 줄 <p class='ft-links'> '개인정보처리방침 | 이용약관 | 저작권정책 | 웹 접근성 정책'(각 <a href='#'>, display:inline-block;padding:12px 6px;color:#333d4b;font-weight:600 — 높이 약 49px; 구분자 '|'는 <span aria-hidden='true'>, 색 #4e5968), 이어서 문단 '나래민원 고객센터 1600-0000 (평일 09:00~18:00)', '신청 관련 문의는 접수번호를 알려 주시면 빠르게 도와드려요.', '이 누리집은 웹 접근성 품질인증을 받았습니다.', '© 나래민원'. 높이 약 260px. ⑥ (정상 변형만) <div class='bottom-bar'> 고정 하단 바(D-civil-01). ⑦ <div id='confirm-dialog'>(미끼 N-civil-03, 두 변형 동일). ⑧ <div id='addr-modal'>(body의 마지막 자식, 속성·초점 처리는 D-civil-06).",
+    "screen_intro": "section#screen-intro(두 변형 동일): <p class='lead'>주민센터에 가지 않아도 등본을 등기우편으로 받아 볼 수 있어요. 로그인 없이 본인 확인만 하면 돼요.</p> / <dl id='intro-facts'> 네 행(각 행 div{display:grid;grid-template-columns:88px minmax(0,1fr);gap:8px;padding:12px 0;border-bottom:1px solid #e5e8eb}, dt 15px #4e5968, dd 16px): 처리 기간 — 결제 후 영업일 1일 안에 발송, 2~3일 뒤 도착 / 수수료 — 1통 400원 + 등기 우편요금 2,530원 / 받는 방법 — 등기우편(받는 분 서명 필요) / 신청 자격 — 본인 또는 같은 세대원. / <h3 id='fee-guide-cap'>(18px/700, margin-top:28px) '발급 방법별 수수료' + <p class='help'>표를 옆으로 밀면 더 볼 수 있어요.</p> + #fee-guide(미끼 N-civil-02). / <div class='notice'>(margin-top:20px;padding:14px 16px;background:#f2f4f6;border-radius:12px;font-size:15px;color:#4e5968) '신청 전에 제출처가 요구한 조건(주소 변동 이력, 주민등록번호 뒷자리 표시, 부수)을 확인해 두세요.' / <button type='button' id='btn-start' class='btn-primary'>(margin-top:24px) '신청하기' → goTo(1).",
+    "screen_step1": "section#step-1(뼈대는 두 변형 동일, 차이는 D-civil-03·04·05): <p class='lead'>등본을 신청하는 본인의 정보를 입력해 주세요.</p> <form id='form-applicant' novalidate> ① <div class='field' id='field-name'><label class='lb' for='applicant-name'>성명</label><input id='applicant-name' type='text' autocomplete='name' aria-describedby='applicant-name-err'><p class='err' id='applicant-name-err'></p></div> ② <div class='field' id='field-rrn'> … D-civil-03 … </div> ③ <div class='field' id='field-phone'> … D-civil-04 … </div> ④ <div class='field' id='field-email'><label class='lb' for='email'>이메일 (선택)</label><input id='email' type='email' autocomplete='email' aria-describedby='email-help email-err'><p class='help' id='email-help'>처리 결과를 이메일로도 알려 드려요.</p><p class='err' id='email-err'></p></div> </form> 이어서 <section id='privacy-box' aria-labelledby='privacy-title'>(margin-top:28px;padding:16px;background:#f2f4f6;border-radius:12px;font-size:15px;line-height:1.6;color:#4e5968) <h3 id='privacy-title'>(16px/700, #191f28) 개인정보 수집·이용 안내</h3> <ul>(padding-left:18px) 여섯 항목: 수집 항목 — 성명, 주민등록번호, 휴대전화 번호, 이메일(선택), 받을 주소 / 이용 목적 — 민원서류 발급·발송과 처리 결과 안내 / 보유 기간 — 신청일로부터 5년 / 제3자 제공 — 등기 발송을 위해 우체국에 성명·주소·휴대전화 번호 제공 / 동의를 거부할 권리 — 필수 항목 수집을 거부할 수 있지만 이 경우 우편 발급 신청을 할 수 없어요 / 문의 — 나래민원 개인정보 보호 담당 1600-0000 </ul></section>. 이 단계 문서 높이는 D-civil-02 조건(아래 self_checks)을 만족해야 한다.",
+    "validation_step1": "1단계에서 #btn-next를 누르면 모든 칸을 한꺼번에 검사한다(두 변형 공통 규칙, 휴대전화만 D-civil-04). 성명: trim 후 빈 값 '성명을 입력해 주세요.' / /^[가-힣a-zA-Z ]{2,20}$/ 불일치 '성명은 한글 또는 영문 2~20자로 입력해 주세요.'. 앞 6자리(#rrn-front): 빈 값 '주민등록번호 앞 6자리를 입력해 주세요.' / /^\\d{6}$/ 불일치이거나 월 01~12·일 01~31이 아니면 '주민등록번호 앞 6자리(생년월일)를 확인해 주세요.'. 뒤 7자리(#rrn-back): 빈 값 '주민등록번호 뒤 7자리를 입력해 주세요.' / /^[1-4]\\d{6}$/ 불일치 '주민등록번호 뒤 7자리를 확인해 주세요.' — 두 문구 모두 #rrn-back-err에, 앞자리 문구는 #rrn-front-err에. 이메일: 비면 통과, 값이 있는데 /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/ 불일치면 '이메일 주소를 확인해 주세요. 예) name@example.com'. 오류 칸: aria-invalid='true' + 해당 <p class='err' id='<칸 id>-err'>에 문구(오류 문단은 두 변형 모두 처음부터 aria-describedby로 연결되어 있음). 고쳐진 칸: aria-invalid 제거, 문구 비움. 오류가 하나라도 있으면 (결함 변형은 D-civil-05의 재렌더 후) showErrors → focusFirstError(#form-applicant)(D-civil-02) 하고 단계를 넘기지 않는다. 모두 통과하면 state에 저장하고 goTo(2).",
+    "screen_step2": "section#step-2(두 변형 동일): <p class='lead'>등본을 받을 주소를 입력해 주세요. 등기우편은 받는 분이 직접 서명해야 해요.</p> <form id='form-address' novalidate> ① <div class='field' id='field-zip'><label class='lb' for='zip'>우편번호</label><div class='zip-row'(display:flex;gap:8px)><input id='zip' type='text' readonly aria-describedby='addr-base-err'(flex:1;background:#f9fafb)><button type='button' id='btn-addr-search' class='btn-secondary'(flex:none;width:112px)>주소 검색</button></div></div> ② <div class='field' id='field-addr-base'><label class='lb' for='addr-base'>기본 주소</label><textarea id='addr-base' rows='1' readonly aria-describedby='addr-base-err'></textarea><p class='err' id='addr-base-err'></p></div> — #addr-base{display:block;width:100%;min-height:48px;padding:12px 14px;border:1px solid #8b95a1;border-radius:10px;font:inherit;font-size:16px;line-height:1.5;resize:none;overflow:hidden;background:#f9fafb}, 값을 채울 때마다 style.height='auto' 후 scrollHeight로 맞춰 글자가 잘리지 않게 한다. ③ <div class='field' id='field-addr-detail'><label class='lb' for='addr-detail'>상세 주소</label><input id='addr-detail' type='text' autocomplete='address-line2' placeholder='예) 101동 1001호' aria-describedby='addr-detail-err'><p class='err' id='addr-detail-err'></p></div> </form> <p class='help'>건물 이름과 동·호수까지 정확히 적어야 반송되지 않아요.</p>. 검사(#btn-next): 우편번호·기본 주소가 비면 #addr-base에 aria-invalid, #addr-base-err '주소 검색으로 받을 주소를 선택해 주세요.' / 상세 주소가 비면 '상세 주소(동·호수)를 입력해 주세요.' → 오류 시 focusFirstError(#form-address), 통과 시 goTo(3). #btn-addr-search → 주소 검색 창 열기(D-civil-06).",
+    "addr_data": "주소 데이터와 결과 목록(두 변형 동일). ADDR_DB = [ {zip:'04092', road:'서울특별시 마포구 새솔로 128 (신수동, 새솔마을2단지)', jibun:'서울특별시 마포구 신수동 91-3'}, {zip:'04092', road:'서울특별시 마포구 새솔로 128-4 (신수동)', jibun:'서울특별시 마포구 신수동 91-17'}, {zip:'04093', road:'서울특별시 마포구 새솔로 128-12 (신수동, 새솔어린이집)', jibun:'서울특별시 마포구 신수동 92-5'}, {zip:'04093', road:'서울특별시 마포구 새솔로12길 8 (신수동, 새솔빌라)', jibun:'서울특별시 마포구 신수동 88-2'}, {zip:'04101', road:'서울특별시 마포구 신수로 56 (신수동)', jibun:'서울특별시 마포구 신수동 63-1'} ]. 검색 규칙은 D-civil-07 build_notes('새솔로128' → 0건, '새솔로 128' → 위 1·2·3번 순서로 3건). 결과 항목: <li><button type='button' class='am-item' id='addr-modal-results-N'><span class='am-zip'>04092</span><span class='am-road'>(road)</span><span class='am-jibun'>지번 (jibun)</span></button></li>, N은 1부터. CSS .am-results{list-style:none;border-top:1px solid #e5e8eb} .am-item{display:block;width:100%;min-height:72px;padding:12px 16px;border:0;border-bottom:1px solid #e5e8eb;background:#fff;text-align:left} .am-item span{display:block} .am-zip{font-size:15px;font-weight:700;color:#1d5fd1} .am-road{font-size:16px;font-weight:600;color:#191f28} .am-jibun{font-size:15px;color:#4e5968} — 줄바꿈 허용, 잘림 없음. 결과 선택: #zip=zip, #addr-base=road(높이 자동), #addr-base의 aria-invalid·오류 문구 제거, state 저장, 창 닫기(닫기 후 초점 처리는 D-civil-06의 변형별 규칙).",
+    "screen_step3": "section#step-3(뼈대 두 변형 동일): <p class='lead'>제출할 곳에서 요구한 조건에 맞게 골라 주세요.</p> ① '과거의 주소 변동 사항' 라디오 묶음 #opt-history(D-civil-09, 기본 '포함하지 않음') ② 스위치 묶음 #opt-rrn(D-civil-08, 둘 다 기본 꺼짐) ③ <div class='opt' id='opt-copies'(margin-top:24px)><span class='lb' id='lbl-copies'>발급 부수</span><div class='copies-row'(display:flex;align-items:center;gap:12px)><button type='button' id='copies-minus' class='btn-secondary' aria-label='1통 줄이기'(width:48px;height:48px;padding:0;font-size:22px)>−</button><output id='copies-value' aria-live='polite' aria-labelledby='lbl-copies'(min-width:56px;text-align:center;font-size:18px;font-weight:700)>1통</output><button type='button' id='copies-plus' class='btn-secondary' aria-label='1통 늘리기'(48×48)>+</button></div><p class='help'>한 번에 최대 5통까지 신청할 수 있어요.</p></div> — 1~5 범위로 고정, 바뀔 때 #fee-summary 갱신. ④ <div class='opt' id='opt-receive'(margin-top:24px)><span class='lb'>받는 방법</span><p>등기우편 (받는 분 서명 필요)</p></div> ⑤ #fee-summary(D-civil-10). 이 단계는 필수 입력이 없으므로 #btn-next → goTo(4).",
+    "screen_step4": "section#step-4(두 변형 동일): <p class='lead'>신청인 본인인지 확인할게요.</p> <p id='auth-who'(margin-top:12px;padding:12px 14px;background:#f2f4f6;border-radius:10px;font-size:15px)>김순자 · 010-4827-3391</p>(state 값, 번호는 010-XXXX-XXXX) <h3 class='sub'(16px/700;margin-top:20px)>인증 방법</h3> <div id='auth-methods' role='group' aria-label='인증 방법'> 버튼 세 개 .auth-method{display:block;width:100%;min-height:56px;margin-top:8px;padding:0 16px;border:1px solid #8b95a1;border-radius:12px;background:#fff;text-align:left;font-size:16px;font-weight:600} [aria-pressed='true']{border:2px solid #1d5fd1;background:#f0f5ff}: #auth-method-simple '간편인증 (민간 인증서 앱)', #auth-method-mid '모바일 신분증', #auth-method-cert '공동·금융인증서' </div> <div id='auth-apps' role='group' aria-label='간편인증 앱' hidden>(display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px) 버튼 여섯 개 .auth-app{height:72px;border:1px solid #8b95a1;border-radius:12px;background:#fff;font-size:15px;font-weight:600} [aria-pressed='true']{border:2px solid #1d5fd1;background:#f0f5ff}: #auth-app-1 '모아톡', #auth-app-2 '한결포털', #auth-app-3 '하늘통신', #auth-app-4 '누리은행', #auth-app-5 '페이온', #auth-app-6 '바른인증' </div> <button type='button' id='btn-auth-req' class='btn-primary' hidden(margin-top:16px)>인증 요청</button> <div id='auth-wait' hidden(margin-top:16px;padding:16px;border:1px solid #d1d6db;border-radius:12px)><p id='auth-wait-msg'>{앱} 앱으로 인증 요청을 보냈어요. 앱에서 인증을 마친 뒤 아래 '인증 완료'를 눌러 주세요.</p><p id='auth-timer'(margin-top:8px;font-size:16px)>남은 시간 <b id='auth-timer-left'>5:00</b></p><div class='auth-wait-btns'(display:grid;grid-template-columns:1fr 2fr;gap:8px;margin-top:12px)><button type='button' id='btn-auth-extend' class='btn-secondary'>시간 연장</button><button type='button' id='btn-auth-done' class='btn-primary'>인증 완료</button></div></div> <p id='auth-status' class='help' role='status' aria-live='polite'></p> <p class='err' id='auth-err'></p>. 동작: 간편인증 선택 → #auth-apps 표시, 앱을 고르면 #btn-auth-req 표시. 모바일 신분증·공동·금융인증서 선택 → #auth-apps 숨기고 #btn-auth-req 바로 표시(앱 이름 자리에 방법 이름). #btn-auth-req → #auth-wait 표시, 남은 시간 300초부터 1초마다 감소(m:ss), requestAt=Date.now(), #auth-status '{앱} 앱으로 인증 요청을 보냈어요.'. #btn-auth-extend → 남은 시간 +300초(최대 10회, 이후 '연장 횟수를 모두 썼어요.' 표시), #auth-status '인증 시간을 5분 늘렸어요.'. 남은 60초가 되면 #auth-status '인증 시간이 1분 남았어요. 필요하면 시간 연장을 눌러 주세요.'. 0초 → 타이머 정지, #auth-wait 숨김, #auth-status '인증 시간이 지났어요. 인증 요청을 다시 눌러 주세요.'. #btn-auth-done → Date.now()-requestAt < 1000ms면 #auth-status '아직 인증이 끝나지 않았어요. 앱에서 인증을 마친 뒤 다시 눌러 주세요.', 아니면 verified=true, 타이머 정지, #auth-wait 숨김, #auth-status '본인 확인이 끝났어요. ({앱} · HH:MM)'. 새로 나타난 요소 보이기(두 변형 동일): 간편인증을 고르면(앱을 아직 안 골랐을 때) #auth-apps를, 앱이나 다른 인증 방법을 고르면 #btn-auth-req를, #btn-auth-req를 누른 뒤에는 #auth-status를 scrollIntoView({block:'nearest'})로 화면 안에 들인다 — 360×780에서 대기 상자·타이머·'인증 완료'가 화면 아래(또는 정상 변형의 하단 바 밑)에 머물지 않게 하려는 것으로, 정상 변형은 html scroll-padding-bottom 덕분에 바 위에 온다. 이미 눌린 방법·앱을 다시 누르면 아무것도 바꾸지 않고, 다른 방법·앱을 고르면 진행 중인 요청(타이머·대기 상자)과 확인 완료 상태·상태 문구를 초기화한다. #btn-next(4단계): verified가 아니면 #auth-err '본인 확인을 먼저 마쳐 주세요.' 후 reveal(#auth-err)(scrollIntoView nearest — 검증 단계에서 추가: 인증 요청 뒤 '다음'을 먼저 누르면 오류 문구가 화면 아래 밖(결함 변형)이나 하단 바 밑(정상 변형)에 생겨 보이지 않던 의도하지 않은 문제를 두 변형 모두에서 없앰), 맞으면 goTo(5). 초점 유지(두 변형 동일, 검증 단계에서 추가): '인증 완료'로 확인이 끝나 #auth-wait를 숨길 때 초점이 그 안에 있으면 #btn-next로, 인증 시간이 다 되어 숨길 때는 #btn-auth-req로 옮긴다 — 숨겨지는 버튼과 함께 초점이 body로 사라지는 문제(D-civil-06의 닫기 후 초점 유실과 같은 종류)가 두 변형 어디에도 없게 한다.",
+    "screen_step5": "section#step-5(뼈대 두 변형 동일): <p class='lead'>신청 전에 내용을 한 번 더 확인해 주세요.</p> <div id='review'> 카드 세 개(D-civil-11 build_notes의 마크업·CSS) — 각 카드의 '수정' 버튼 #edit-applicant→goTo(1), #edit-address→goTo(2), #edit-options→goTo(3)(입력값 유지, 이후 '다음'으로 다시 진행) </div> 이어서 동의 상자 #agree-box와 #btn-submit(D-civil-12·미끼 N-civil-03). 5단계에는 #btn-next가 없다(두 변형 모두 숨김). 표시 값: #review-name=성명, #review-rrn=앞 6자리+'-'+뒤 첫 자리+'******', #review-phone=010-4827-3391 형태, #review-addr='['+zip+'] '+road+' '+상세 주소, #review-history=('전체 포함'|'최근 5년 포함'|'포함하지 않음'), #review-rrn-opt=(둘 다 끔 '표시 안 함' | 본인만 '본인만 표시' | 세대원만 '세대원만 표시' | 둘 다 '본인·세대원 표시'), #review-copies=N+'통', #review-fee=합계(예: '3,330원').",
+    "screen_done": "section#done(두 변형 동일, #step-title 문구 '신청이 접수되었어요'): <p id='receipt-no'(font-size:18px)>접수번호 <b>2026-0928-104713</b></p> <dl id='done-summary' class='done-card'>(margin-top:16px;padding:16px;border:1px solid #d1d6db;border-radius:12px; 행 div.done-row{display:grid;grid-template-columns:88px minmax(0,1fr);gap:8px;padding:6px 0} — .rv-row 클래스를 쓰지 않는다: 신청 서류 — dd#done-doc '주민등록표 등본 2통' / 받을 주소 — dd#done-addr '[04092] 서울특별시 마포구 새솔로 128 (신수동, 새솔마을2단지) 203동 1504호' / 결제 금액 — dd#done-fee '3,330원 (결제 대기)'(세 값과 #done-pay는 완료 화면으로 갈 때 state로 채움); dd는 두 변형 모두 white-space:normal;word-break:keep-all로 줄바꿈, 잘림 없음) <p id='done-pay'(margin-top:16px;font-size:16px)>휴대전화 010-4827-3391로 결제 링크를 보냈어요. 24시간 안에 결제하면 영업일 기준 1일 안에 발송돼요.</p> <p id='done-cancel' class='help'>발송 전까지 '나의 민원 &gt; 신청 내역'에서 신청을 취소할 수 있어요.</p> <button type='button' id='btn-my' class='btn-secondary'(width:100%;margin-top:24px)>나의 민원 보기</button> <p id='done-my-msg' class='help' role='status'></p> <button type='button' id='btn-home' class='btn-primary'(margin-top:8px)>처음으로</button>. #btn-my → #done-my-msg '신청 내역은 접수번호와 휴대전화 번호로 조회할 수 있어요.'. #btn-home → state·폼 초기화 후 goTo('intro').",
+    "navigation_and_state": "goTo(screen)(두 변형 동일): 모든 section에 hidden → 대상만 표시; #stepper 갱신(안내·완료 화면에서는 hidden; #step-num, #step-name '신청인 정보'|'받을 주소'|'발급 옵션'|'본인 확인'|'신청 내용 확인', #step-bar 폭); #step-title 문구 교체(안내 '주민등록표 등본 우편 발급' / 1 '신청인 정보' / 2 '받을 주소' / 3 '발급 옵션' / 4 '본인 확인' / 5 '신청 내용 확인' / 완료 '신청이 접수되었어요'); #btn-back은 1~5단계에서만 보임; #btn-next는 1~4단계에서만 보임(결함 변형: 헤더 안 버튼의 hidden 토글, 정상 변형: .bottom-bar 전체 hidden 토글 + body.has-bar 토글); window.scrollTo(0,0) 후 #step-title.focus({preventScroll:true}). 5단계로 들어갈 때 #review 값을 state로 채운다. #btn-back: 1단계→안내, 2~5단계→이전 단계(입력값 유지). #btn-next: 현재 단계(1~4) 검사 후 다음 단계. state = {name, rrnFront, rrnBack, phone, email, zip, road, addrDetail, history:'none', rrnSelf:false, rrnMembers:false, copies:1, authApp, verified:false}. 수수료 = 400×copies + 2,530(원), 표기는 toLocaleString('ko-KR')+'원'.",
+    "scenario_plan": {
+      "status": "단계 3에서 작성·실행을 마치고 단계 4(독립 검증)에서 고친 상태(as built). scenarios/SC-d2-civil-a.json 과 SC-d2-civil-b.json 이 기준이며, 이 블록은 그 내용을 옮겨 적은 요약이다. 시나리오를 고치면 파일을 먼저 고친다.",
+      "files": {
+        "civil-a.html": "SC-d2-civil-a",
+        "civil-b.html": "SC-d2-civil-b"
+      },
+      "surface_url": "{BASE}/dev-2/site/civil/civil-a.html 와 {BASE}/dev-2/site/civil/civil-b.html",
+      "device_ids": [
+        "galaxy-s24",
+        "galaxy-s24-ultra"
+      ],
+      "task_goal_ko": "나래민원 모바일 웹에서 주민등록표 등본을 등기우편으로 받도록 신청한다. 신청인은 김순자(주민등록번호 580312-2084517, 휴대전화 010-4827-3391)이고, 받을 주소는 우편번호 04092 서울특별시 마포구 새솔로 128 (신수동, 새솔마을2단지) 203동 1504호다. 먼저 성명을 비워 둔 채 주민등록번호와 휴대전화 번호(010-4827-3391)만 입력하고 '다음'을 눌러 오류 안내를 확인한 뒤, 성명 '김순자'를 넣고 필요한 부분을 고쳐 다시 진행한다. 받을 주소 단계에서는 '주소 검색'을 열어 먼저 '새솔로128'로 검색해 보고, 원하는 주소가 나오지 않으면 '새솔로 128'로 다시 검색해 '새솔마을2단지' 주소를 고른 다음 상세 주소에 '203동 1504호'를 입력한다. 발급 옵션은 과거의 주소 변동 사항 '최근 5년 포함', 본인 주민등록번호 뒷자리 표시 '켜짐'(세대원은 표시 안 함), 발급 부수 2통으로 정하고 예상 수수료 합계가 3,330원(400원 × 2통 + 등기 우편요금 2,530원)인지 확인한다. 본인 확인은 간편인증 '모아톡' 앱으로 '인증 요청'을 누른 뒤 '인증 완료'까지 마치고, 신청 내용 확인 화면에서 신청 사실 확인에 동의한 다음 '신청하기'를 누르고 확인 창에서 '신청'을 눌러 접수를 완료한다.",
+      "steps": [
+        {
+          "action": "snapshot"
+        },
+        {
+          "action": "tap",
+          "target": "#btn-start"
+        },
+        {
+          "action": "wait",
+          "ms": 300
+        },
+        {
+          "action": "type",
+          "target": "#rrn-front",
+          "text": "580312"
+        },
+        {
+          "action": "type",
+          "target": "#rrn-back",
+          "text": "2084517"
+        },
+        {
+          "action": "type",
+          "target": "#phone",
+          "text": "010-4827-3391"
+        },
+        {
+          "action": "tap",
+          "target": "#btn-next"
+        },
+        {
+          "action": "wait",
+          "ms": 500
+        },
+        {
+          "action": "snapshot"
+        },
+        {
+          "action": "scroll",
+          "dy": -200
+        },
+        {
+          "action": "wait",
+          "ms": 200
+        },
+        {
+          "action": "type",
+          "target": "#applicant-name",
+          "text": "김순자"
+        },
+        {
+          "action": "type",
+          "target": "#rrn-front",
+          "text": "580312"
+        },
+        {
+          "action": "type",
+          "target": "#rrn-back",
+          "text": "2084517"
+        },
+        {
+          "action": "tap",
+          "target": "#phone"
+        },
+        {
+          "action": "press",
+          "key": "Control+A"
+        },
+        {
+          "action": "press",
+          "key": "Backspace"
+        },
+        {
+          "action": "type",
+          "target": "#phone",
+          "text": "01048273391"
+        },
+        {
+          "action": "tap",
+          "target": "#btn-next"
+        },
+        {
+          "action": "wait",
+          "ms": 400
+        },
+        {
+          "action": "tap",
+          "target": "#btn-addr-search"
+        },
+        {
+          "action": "wait",
+          "ms": 300
+        },
+        {
+          "action": "snapshot"
+        },
+        {
+          "action": "type",
+          "target": "#addr-modal-q",
+          "text": "새솔로128"
+        },
+        {
+          "action": "tap",
+          "target": "#addr-modal-go"
+        },
+        {
+          "action": "wait",
+          "ms": 500
+        },
+        {
+          "action": "snapshot"
+        },
+        {
+          "action": "tap",
+          "target": "#addr-modal-q"
+        },
+        {
+          "action": "press",
+          "key": "Control+A"
+        },
+        {
+          "action": "press",
+          "key": "Backspace"
+        },
+        {
+          "action": "type",
+          "target": "#addr-modal-q",
+          "text": "새솔로 128"
+        },
+        {
+          "action": "tap",
+          "target": "#addr-modal-go"
+        },
+        {
+          "action": "wait",
+          "ms": 500
+        },
+        {
+          "action": "tap",
+          "target": "#addr-modal-results-1"
+        },
+        {
+          "action": "wait",
+          "ms": 300
+        },
+        {
+          "action": "snapshot"
+        },
+        {
+          "action": "type",
+          "target": "#addr-detail",
+          "text": "203동 1504호"
+        },
+        {
+          "action": "tap",
+          "target": "#btn-next"
+        },
+        {
+          "action": "wait",
+          "ms": 400
+        },
+        {
+          "action": "tap",
+          "target": "#opt-history-5y"
+        },
+        {
+          "action": "tap",
+          "target": "#opt-rrn-self"
+        },
+        {
+          "action": "snapshot"
+        },
+        {
+          "action": "scroll",
+          "dy": 450
+        },
+        {
+          "action": "wait",
+          "ms": 200
+        },
+        {
+          "action": "tap",
+          "target": "#copies-plus"
+        },
+        {
+          "action": "snapshot"
+        },
+        {
+          "action": "tap",
+          "target": "#btn-next"
+        },
+        {
+          "action": "wait",
+          "ms": 400
+        },
+        {
+          "action": "tap",
+          "target": "#auth-method-simple"
+        },
+        {
+          "action": "tap",
+          "target": "#auth-app-1"
+        },
+        {
+          "action": "tap",
+          "target": "#btn-auth-req"
+        },
+        {
+          "action": "wait",
+          "ms": 1500
+        },
+        {
+          "action": "snapshot"
+        },
+        {
+          "action": "tap",
+          "target": "#btn-auth-done"
+        },
+        {
+          "action": "wait",
+          "ms": 300
+        },
+        {
+          "action": "tap",
+          "target": "#btn-next"
+        },
+        {
+          "action": "wait",
+          "ms": 400
+        },
+        {
+          "action": "snapshot"
+        },
+        {
+          "action": "tap",
+          "target": "#agree-final"
+        },
+        {
+          "action": "tap",
+          "target": "#btn-submit"
+        },
+        {
+          "action": "wait",
+          "ms": 300
+        },
+        {
+          "action": "snapshot"
+        },
+        {
+          "action": "tap",
+          "target": "#confirm-ok"
+        },
+        {
+          "action": "wait",
+          "ms": 800
+        },
+        {
+          "action": "snapshot"
+        }
+      ],
+      "targets": {
+        "primary": [
+          "#btn-start",
+          "#btn-next",
+          "#addr-modal-go",
+          "#btn-auth-req",
+          "#btn-auth-done",
+          "#btn-submit",
+          "#confirm-ok"
+        ],
+        "destructive": [],
+        "irreversible": [],
+        "critical_message": [
+          "#agree-text",
+          "#confirm-desc",
+          "#done-pay"
+        ],
+        "error_message": [
+          "#applicant-name-err",
+          "#rrn-front-err",
+          "#rrn-back-err",
+          "#phone-err",
+          "#email-err",
+          "#addr-base-err",
+          "#addr-detail-err",
+          "#auth-err",
+          "#submit-err"
+        ],
+        "status": [
+          "#addr-modal-results-count",
+          "#auth-status"
+        ],
+        "navigation": [
+          "#btn-back"
+        ],
+        "ad_like": [],
+        "hud": [],
+        "game_control": [],
+        "timed": [
+          "#auth-timer"
+        ]
+      },
+      "timing_windows": [],
+      "success": {
+        "selector_visible": "#done"
+      },
+      "notes": "두 시나리오는 scenario_id·surface.url 을 빼고 글자 하나까지 같다. 드라이버(검은 상자)로 확인한 사실: (1) type 은 요소 중앙을 탭한 뒤 키보드로 입력하므로 기존 값 뒤에 이어 쓴다(값을 교체하지 않는다). maxlength 가 있는 주민등록번호 칸은 넘치는 글자가 무시돼 우연히 문제가 없지만 #phone·#addr-modal-q 는 이어 쓰기가 되므로, 고칠 때는 tap → press Control+A → press Backspace 로 지운 뒤 type 한다. (2) 드라이버는 요소 중심이 뷰포트 밖일 때만 스크롤한다. 중심이 뷰포트 안이어도 다른 요소에 가려져 있으면 스크롤하지 않고 가린 요소를 탭한다. (3) 결함 변형(civil-a)에서 첫 '다음' 실패 뒤 #applicant-name 은 y 0~48 로 고정 헤더(0~56) 밑에 있어 탭이 헤더에 떨어지고 초점이 body 로 빠져 성명이 입력되지 않는다(D-civil-02 자체의 효과). 그래서 scroll dy=-200 으로 입력란을 먼저 드러낸다(정상 변형에서는 scrollY 가 0 으로 돌아갈 뿐 무해). (4) 정상 변형(civil-b)의 하단 '다음' 바는 뷰포트 아래쪽 약 77px 를 덮는다. 3단계에서 스크롤 없이 #copies-plus 를 탭하면 S24(360×780)에서 중심 y=758.5 가 바 안이라 '다음'이 눌려 신청이 1통·2,930원으로 진행된다(exit 0 이라 알아채기 어려움). 그래서 옵션 두 개를 탭하고 scroll dy=450 으로 부수 조절과 수수료 상자를 뷰포트 가운데로 올린 뒤 #copies-plus 를 탭한다. (5) 드라이버가 허용하는 targets 역할은 primary, destructive, critical_message, error_message, status, navigation, ad_like, hud, game_control, timed 이다. 'irreversible' 은 무시하고 경고만 남기지만(빈 목록, heldout-mixed 관례) 신청하기는 확인 창·동의·발송 전 취소가 있어 어차피 비워 둔다. timing_windows 는 비어 있다: 사라지는 안내 문구가 페이지에 없고(setTimeout 없음, #auth-status 문구는 다음 문구로 바뀔 때까지 남음), 시간 제한 입력은 5분(10회까지 연장 가능) 인증 대기뿐이라 1.5초짜리 스크립트로는 측정할 수 없다. 그래서 qte/transient_text 창을 만들지 않고 #auth-timer 를 targets.timed 로만 선언한다. 검증(단계 3): a/b × galaxy-s24/galaxy-s24-ultra 4개 조합 모두 exit 0 이고, 별도 Playwright 재현 스크립트로 드라이버가 기록한 탭 좌표와 모두 일치(불일치 0), 모든 탭이 의도한 요소에 닿고(오탭 0), 네 조합 모두 마지막 상태가 2통·3,330원·최근 5년 포함·본인만 표시로 같음을 확인했다. 검증(단계 4): 주소 결과를 고른 직후(wait 300 다음)에 snapshot 1개를 추가해 창을 닫은 뒤의 초점 위치(D-civil-06: 결함 변형 body, 정상 변형 #addr-detail)를 기록한다 — 65단계. 페이지 수정(D-civil-02 스크롤 방식, 1단계 통과 시 오류 표시 정리, 4단계 초점 유지·오류 문구 드러내기) 뒤 a/b × galaxy-s24(360×780)/galaxy-s24-ultra(드라이버 뷰포트 384×824) 4개 조합을 다시 실행해 모두 exit 0, 별도 Playwright 재생으로 네 조합 모두 오탭 0, 마지막 상태 2통·3,330원·최근 5년 포함·본인만 표시를 확인했다."
+    },
+    "self_checks": [
+      "두 파일의 id 집합이 완전히 같은지 비교(예: 정규식으로 id='…' 추출 후 diff).",
+      "두 파일의 diff가 defects[].build_notes에 적힌 차이(12건)만 포함하는지 확인.",
+      "D-civil-02 전제: 360×780, 384×832, 430×932 뷰포트의 1단계에서 document.documentElement.scrollHeight − innerHeight ≥ #applicant-name의 문서 기준 top(scrollY + getBoundingClientRect().top).",
+      "결함 변형: 시나리오 첫 '다음' 직후 #applicant-name의 rect(약 y 0~48)가 #app-header(0~56)에 완전히 덮이고 document.activeElement가 #applicant-name이며 #rrn-front·#rrn-back 값이 비어 있는지. 정상 변형: #applicant-name이 y≈136에, 라벨이 y≥96에 보이고 두 칸 값이 유지되는지.",
+      "결함 변형: 1·3단계에서 페이지를 끝까지 내린 뒤 Shift+Tab으로 거슬러 올라가도 초점 요소가 #app-header·#stepper(0~96px)에 가려지지 않는지(html scroll-padding-top:104px 공통) — 초점 가림은 오류 칸으로 옮기는 스크롤(D-civil-02)에서만 생겨야 한다.",
+      "결함 변형 3단계(360 폭): documentElement.scrollWidth ≈ 416 > innerWidth, #fee-summary 오른쪽 끝 > 360. 정상 변형: scrollWidth == innerWidth(320 폭에서도).",
+      "결함 변형 5단계: #review-addr만 scrollWidth > clientWidth, 다른 dd는 모두 scrollWidth ≤ clientWidth. 정상 변형: 주소 전체가 줄바꿈되어 보임.",
+      "안내 화면(두 변형, 320·360 폭): scrollWidth == innerWidth(미끼 N-civil-02의 표는 #fee-guide 안에서만 가로 스크롤).",
+      "드라이버로 두 시나리오를 각 기기에서 실행해 exit 0(단계 완료 + #done 표시) 확인."
+    ]
+  }
+}

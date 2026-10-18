@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>장바구니 | 봄마켓</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Noto Sans CJK KR","Malgun Gothic",Roboto,"WenQuanYi Zen Hei",sans-serif;color:#191f28;background:#f2f4f6;font-size:15px;line-height:1.45;-webkit-tap-highlight-color:transparent}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:#fff;position:relative;padding-bottom:88px}
+button,input{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+.topbar{position:sticky;top:0;z-index:10;height:52px;display:flex;align-items:center;padding:0 4px;background:#fff;border-bottom:1px solid #eef0f2}
+.topbar h1{font-size:17px;font-weight:700;flex:1;text-align:center}
+.icon-btn{width:44px;height:44px;font-size:28px;line-height:40px;text-align:center}
+.icon-spacer{width:44px;height:44px}
+
+.promo{display:flex;align-items:center;gap:8px;margin:12px 16px 4px;padding:6px 4px 6px 14px;background:#fff4e6;border-radius:12px}
+.promo-text{flex:1;font-size:14px;line-height:1.4;color:#5c3b00}
+.promo-text strong{display:block;font-size:15px;color:#8a4b00}
+.promo-get{height:44px;padding:0 16px;border-radius:22px;background:#a14a00;color:#fff;font-size:14px;font-weight:700}
+.promo-get:disabled{background:#f3e3cf;color:#a88a66}
+.promo-close{width:44px;height:44px;font-size:20px;line-height:44px;color:#8a4b00;text-align:center}
+
+.list-head{display:flex;align-items:center;justify-content:space-between;padding:12px 8px 4px 16px}
+.list-head h2{font-size:16px;font-weight:700}
+.text-btn{height:44px;padding:0 10px;font-size:14px;color:#4e5968;font-weight:600}
+.item{display:flex;gap:12px;padding:14px 16px;border-bottom:1px solid #f2f4f6}
+.thumb{width:64px;height:64px;border-radius:10px;flex:none}
+.info{flex:1;min-width:0}
+.name{font-size:15px;font-weight:600}
+.opt{font-size:14px;color:#4e5968}
+.price{font-size:16px;font-weight:700;margin-top:2px}
+.stock{font-size:14px;color:#c62828;font-weight:600;margin-top:2px}
+.qty{display:flex;align-items:center;border:1px solid #d1d6db;border-radius:8px;height:46px;align-self:flex-end}
+.qty button{width:44px;height:44px;font-size:18px}
+.qty span{min-width:22px;text-align:center}
+.empty{padding:48px 16px;text-align:center;color:#4e5968}
+
+.sec{padding:18px 16px;border-top:8px solid #f2f4f6}
+.sec h2{font-size:16px;font-weight:700;margin-bottom:12px}
+.row{display:flex;align-items:center;justify-content:space-between;min-height:44px;gap:8px}
+.row .muted{flex:1;text-align:right;color:#4e5968;font-size:14px}
+.val{display:flex;align-items:center;gap:6px}
+.ship-row{margin-bottom:12px}
+.info-ic{width:20px;height:20px;border-radius:50%;border:1.5px solid #4e5968;color:#4e5968;font-size:12px;font-weight:700;line-height:17px;text-align:center;font-style:italic}
+.tip{font-size:14px;color:#4e5968;background:#f2f4f6;border-radius:8px;padding:10px 12px;margin-top:6px}
+.btn-sm{height:44px;padding:0 14px;border-radius:8px;background:#1b64da;color:#fff;font-size:14px;font-weight:700}
+.btn-sm:disabled{background:#f1f3f5;color:#aaaaaa}
+
+.methods{display:flex;flex-direction:column;gap:8px}
+.methods button{display:flex;align-items:center;gap:8px;height:52px;padding:0 14px;border:1px solid #d1d6db;border-radius:10px;font-size:15px;background:#fff;text-align:left}
+.methods button::before{content:"";width:18px;height:18px;border-radius:50%;border:2px solid #6b7684;flex:none}
+.methods button[aria-checked="true"]{border:2px solid #1b64da;background:#f2f7ff;color:#1b64da;font-weight:700}
+.methods button[aria-checked="true"]::before{border:6px solid #1b64da}
+.tag{margin-left:auto;font-size:14px;font-weight:600;color:#1b64da;background:#e8f0fe;border-radius:6px;padding:2px 8px}
+.more{width:100%;height:44px;margin-top:8px;font-size:14px;color:#4e5968;font-weight:600}
+.more-list{display:flex;flex-direction:column;gap:8px;margin-top:4px}
+.note{font-size:14px;color:#4e5968;margin-top:10px;line-height:1.5}
+
+.summary .row{min-height:32px;font-size:15px}
+.summary .minus{color:#d32f2f}
+.summary .total{margin-top:6px;padding-top:10px;border-top:1px solid #eef0f2;font-size:17px}
+
+.bottom-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;display:flex;padding:12px 16px;background:#fff;border-top:1px solid #eef0f2;z-index:20}
+.btn-primary{flex:1;height:52px;border-radius:12px;background:#1b64da;color:#fff;font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-primary[aria-busy="true"]{cursor:progress}
+.spinner{width:18px;height:18px;border-radius:50%;border:2.5px solid rgba(255,255,255,.45);border-top-color:#fff;animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.dialog-wrap{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:24px}
+.dialog{background:#fff;border-radius:16px;padding:22px 18px 14px;width:100%;max-width:320px}
+.dialog h3{font-size:18px;margin-bottom:6px}
+.dialog p{font-size:15px;color:#4e5968;margin-bottom:18px}
+.dialog .btns{display:flex;gap:8px}
+.dialog .btns button{flex:1;height:48px;border-radius:10px;font-weight:700}
+.btn-secondary{background:#f2f4f6;color:#333d4b}
+.btn-danger-fill{background:#c62828;color:#fff}
+
+.done{position:fixed;inset:0;background:#fff;z-index:50;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+.done .check{width:64px;height:64px;border-radius:50%;background:#1b64da;color:#fff;font-size:32px;line-height:64px;margin:0 auto 16px}
+.done h2{font-size:22px;margin-bottom:8px}
+.done p{color:#4e5968;font-size:15px}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <button id="back" class="icon-btn" aria-label="뒤로 가기">‹</button>
+    <h1>장바구니</h1>
+    <span class="icon-spacer" aria-hidden="true"></span>
+  </header>
+
+  <section id="promo" class="promo" aria-label="쿠폰 안내">
+    <p class="promo-text"><strong>첫 구매 3,000원 할인</strong>지금 쿠폰 받고 바로 쓰세요</p>
+    <button id="promo-get" class="promo-get">받기</button>
+    <button id="promo-close" class="promo-close" aria-label="쿠폰 안내 닫기">×</button>
+  </section>
+
+  <div class="list-head"><h2>담은 상품 2개</h2><button id="btn-clear" class="text-btn">전체 삭제</button></div>
+  <main id="cart">
+    <article class="item">
+      <div class="thumb" style="background:#dfe7f5" aria-hidden="true"></div>
+      <div class="info">
+        <p class="name">무선 이어폰 프로 2</p>
+        <p class="opt">화이트 · 1개</p>
+        <p class="price">129,000원</p>
+      </div>
+      <div class="qty"><button aria-label="수량 줄이기">−</button><span>1</span><button aria-label="수량 늘리기">+</button></div>
+    </article>
+    <article class="item">
+      <div class="thumb" style="background:#ece3f7" aria-hidden="true"></div>
+      <div class="info">
+        <p class="name">실리콘 케이스</p>
+        <p class="opt">라벤더 · 1개</p>
+        <p class="price">19,900원</p>
+        <p id="stock-badge" class="stock">⚠ 품절 임박 · 1개 남음</p>
+      </div>
+      <div class="qty"><button aria-label="수량 줄이기">−</button><span>1</span><button aria-label="수량 늘리기">+</button></div>
+    </article>
+  </main>
+  <div id="cart-empty" class="empty" hidden>장바구니가 비어 있어요.</div>
+
+  <section class="sec">
+    <h2>배송 · 할인</h2>
+    <div class="row ship-row"><span>배송비</span><span class="val">무료 <button id="ship-info" class="info-ic" aria-label="배송비 안내" aria-expanded="false">i</button></span></div>
+    <p id="ship-tip" class="tip" hidden>3만원 이상 구매 시 무료배송이에요. 제주·도서산간은 추가 배송비가 있어요.</p>
+    <div class="row"><span>쿠폰</span><span class="muted">사용 가능한 쿠폰 없음</span><button id="coupon-apply" class="btn-sm" disabled>적용</button></div>
+  </section>
+
+  <section class="sec">
+    <h2>결제 수단</h2>
+    <div id="pay-methods" class="methods" role="radiogroup" aria-label="결제 수단">
+      <button role="radio" aria-checked="true" data-method="tosspay">토스페이<span class="tag">최근 사용</span></button>
+      <button role="radio" aria-checked="false" data-method="card">신용·체크카드</button>
+      <button role="radio" aria-checked="false" data-method="kakaopay">카카오페이</button>
+    </div>
+    <button id="more-methods" class="more" aria-expanded="false" aria-controls="more-list">다른 결제 수단 9개 보기 ▾</button>
+    <div id="more-list" class="methods more-list" role="radiogroup" aria-label="다른 결제 수단" hidden>
+      <button role="radio" aria-checked="false" data-method="naverpay">네이버페이</button>
+      <button role="radio" aria-checked="false" data-method="payco">페이코</button>
+      <button role="radio" aria-checked="false" data-method="samsungpay">삼성페이</button>
+      <button role="radio" aria-checked="false" data-method="phone">휴대폰 결제</button>
+      <button role="radio" aria-checked="false" data-method="bank">계좌이체</button>
+      <button role="radio" aria-checked="false" data-method="vbank">무통장입금</button>
+      <button role="radio" aria-checked="false" data-method="ssgpay">SSG페이</button>
+      <button role="radio" aria-checked="false" data-method="lpay">L.PAY</button>
+      <button role="radio" aria-checked="false" data-method="giftcard">문화상품권</button>
+    </div>
+    <p id="installment-note" class="note">5만원 이상 결제 시 2~6개월 무이자 할부가 적용되며, 일부 법인·체크·기프트카드는 제외됩니다.</p>
+  </section>
+
+  <section class="sec summary">
+    <h2>결제 금액</h2>
+    <div class="row"><span>상품 금액</span><span>148,900원</span></div>
+    <div class="row"><span>즉시 할인</span><span class="minus">−5,000원</span></div>
+    <div class="row total"><span>최종 결제 금액</span><strong id="total">143,900원</strong></div>
+  </section>
+
+  <div class="bottom-bar">
+    <button id="pay" class="btn-primary"><span id="pay-label">143,900원 결제하기</span></button>
+  </div>
+
+  <div id="clear-dialog" class="dialog-wrap" hidden>
+    <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="clear-title">
+      <h3 id="clear-title">담은 상품을 모두 삭제할까요?</h3>
+      <p>삭제한 상품은 다시 담아야 해요.</p>
+      <div class="btns"><button id="clear-cancel" class="btn-secondary">취소</button><button id="clear-confirm" class="btn-danger-fill">삭제</button></div>
+    </div>
+  </div>
+
+  <div id="order-done" class="done" role="status" hidden>
+    <div>
+      <div class="check" aria-hidden="true">✓</div>
+      <h2>주문이 완료되었어요</h2>
+      <p>주문번호 2026092801873</p>
+      <p>결제 수단 <span id="done-method">토스페이</span> · 143,900원</p>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var chosen = '토스페이';
+  function bindGroup(group){
+    group.addEventListener('click', function(e){
+      var b = e.target.closest('button[data-method]');
+      if(!b) return;
+      document.querySelectorAll('button[data-method]').forEach(function(x){ x.setAttribute('aria-checked','false'); });
+      b.setAttribute('aria-checked','true');
+      chosen = b.firstChild.textContent.trim();
+    });
+  }
+  bindGroup(document.getElementById('pay-methods'));
+  bindGroup(document.getElementById('more-list'));
+  document.getElementById('more-methods').addEventListener('click', function(){
+    var list = document.getElementById('more-list');
+    list.hidden = !list.hidden;
+    this.setAttribute('aria-expanded', String(!list.hidden));
+    this.textContent = list.hidden ? '다른 결제 수단 9개 보기 ▾' : '접기 ▴';
+  });
+
+  document.getElementById('promo-get').addEventListener('click', function(){
+    this.textContent = '받음'; this.disabled = true;
+  });
+  document.getElementById('promo-close').addEventListener('click', function(){
+    document.getElementById('promo').hidden = true;
+  });
+  document.getElementById('ship-info').addEventListener('click', function(){
+    var tip = document.getElementById('ship-tip');
+    tip.hidden = !tip.hidden;
+    this.setAttribute('aria-expanded', String(!tip.hidden));
+  });
+
+  var pay = document.getElementById('pay');
+  var label = document.getElementById('pay-label');
+  var dlg = document.getElementById('clear-dialog');
+  document.getElementById('btn-clear').addEventListener('click', function(){ dlg.hidden = false; });
+  document.getElementById('clear-cancel').addEventListener('click', function(){ dlg.hidden = true; });
+  document.getElementById('clear-confirm').addEventListener('click', function(){
+    dlg.hidden = true;
+    document.getElementById('cart').hidden = true;
+    document.getElementById('cart-empty').hidden = false;
+    document.getElementById('total').textContent = '0원';
+    label.textContent = '0원 결제하기';
+  });
+
+  var pending = false;
+  pay.addEventListener('click', function(){
+    if(pending) return;
+    pending = true;
+    pay.setAttribute('aria-busy','true');
+    pay.disabled = true;
+    var sp = document.createElement('span');
+    sp.className = 'spinner'; sp.setAttribute('aria-hidden','true');
+    pay.insertBefore(sp, label);
+    label.textContent = '결제 처리 중…';
+    setTimeout(function(){
+      document.getElementById('done-method').textContent = chosen;
+      document.getElementById('order-done').hidden = false;
+    }, 2600);
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+{
+  "schema_version": "ux-evidence-bundle.v1",
+  "bundle_id": "bundle-demo-001",
+  "permissions": {
+    "requested": ["read_only", "design_write"],
+    "granted": ["read_only"],
+    "blocked": [{"capability": "design_write", "reason": "Figma write access was not granted"}]
+  },
+  "records": {
+    "sources": [{
+      "id": "source-1",
+      "channel": "youtube",
+      "source_ref": "https://example.com/video",
+      "access_basis": "public",
+      "access_method": "aside",
+      "public_scope": "public_comment",
+      "retention_status": "retained"
+    }],
+    "evidence": [{
+      "id": "evidence-1",
+      "source_id": "source-1",
+      "evidence_type": "firsthand",
+      "epistemic_status": "observed",
+      "excerpt": "사용자가 검색 결과에서 다음 단계가 보이지 않는다고 말했다."
+    }],
+    "claims": [{
+      "id": "claim-1",
+      "claim_kind": "product_behavior",
+      "epistemic_status": "observed",
+      "verification_status": "verified",
+      "evidence_ids": ["evidence-1"],
+      "statement": "검색 결과에서 다음 단계가 드러나지 않는다."
+    }],
+    "personas": [{
+      "id": "persona-1",
+      "basis": "synthetic",
+      "adapter_revision": "adapter-1",
+      "schema_fingerprint": "sha256:persona-schema",
+      "seed": "seed-1",
+      "shard_or_config": "shard-a",
+      "max_scanned_rows": 100,
+      "max_bytes_read": 10000,
+      "timeout_ms": 1000,
+      "selected_record_ids": ["record-1"],
+      "filled_strata": ["mobile"],
+      "unfilled_strata": ["screen-reader"],
+      "stop_reason": "quota_reached",
+      "original_attributes": {"device": "mobile"},
+      "scenario_assumptions": {"network": "slow"}
+    }],
+    "scenarios": [{
+      "id": "scenario-1",
+      "persona_id": "persona-1",
+      "task": "검색 결과에서 다음 행동을 찾는다."
+    }],
+    "runs": [{
+      "id": "run-1",
+      "scenario_id": "scenario-1",
+      "status": "completed",
+      "surface_ref": "https://example.com/product"
+    }],
+    "observations": [{
+      "id": "observation-1",
+      "run_id": "run-1",
+      "epistemic_status": "observed",
+      "result": "다음 행동 버튼을 찾지 못했다."
+    }],
+    "findings": [{
+      "id": "finding-1",
+      "scenario_id": "scenario-1",
+      "observation_ids": ["observation-1"],
+      "claim_ids": ["claim-1"],
+      "verification_status": "verified",
+      "epistemic_status": "observed",
+      "severity": "P1"
+    }],
+    "proposals": [{
+      "id": "proposal-1",
+      "finding_ids": ["finding-1"],
+      "proposal_type": "interaction_and_state",
+      "expected_behavior_change": "다음 행동을 한눈에 확인한다."
+    }],
+    "figma": [{
+      "id": "figma-1",
+      "file_key": "file-1",
+      "branch_key": "main",
+      "baseline_version": "version-1",
+      "readback_version": "version-1",
+      "node_ids": ["12:34"],
+      "read_at": "2026-09-14T00:00:00Z",
+      "readback_artifact_ref": "artifact://figma-readback-1",
+      "design_status": "comparison_ready",
+      "defect_class": "implementation_defect"
+    }]
+  }
+}

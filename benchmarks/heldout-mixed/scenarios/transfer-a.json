@@ -1,0 +1,124 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-hm-transfer-a",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/heldout-mixed/site/transfer-a.html"
+  },
+  "task_goal_ko": "최근 보낸 분 목록에서 김민지에게 30만 원을 이체하고 간편 비밀번호 6자리로 승인한다",
+  "device_ids": [
+    "galaxy-s24-ultra"
+  ],
+  "targets": {
+    "primary": [
+      "#amount-next",
+      "#chk-verify",
+      "#confirm-transfer"
+    ],
+    "destructive": [],
+    "irreversible": [],
+    "critical_message": [
+      "#toast",
+      "#notice-irrev"
+    ],
+    "error_message": [
+      "#verify-need",
+      "#amount-msg"
+    ],
+    "status": [
+      "#rcpt-flag-1",
+      "#rcpt-flag-2",
+      "#rcpt-flag-3"
+    ],
+    "navigation": [
+      "#back"
+    ],
+    "ad_like": [],
+    "hud": [],
+    "game_control": [],
+    "timed": []
+  },
+  "steps": [
+    {
+      "action": "tap",
+      "target": "#rcpt-1"
+    },
+    {
+      "action": "wait",
+      "ms": 300
+    },
+    {
+      "action": "tap",
+      "target": "#chip-10"
+    },
+    {
+      "action": "tap",
+      "target": "#chip-10"
+    },
+    {
+      "action": "tap",
+      "target": "#chip-10"
+    },
+    {
+      "action": "tap",
+      "target": "#amount-next"
+    },
+    {
+      "action": "wait",
+      "ms": 300
+    },
+    {
+      "action": "tap",
+      "target": "#chk-verify"
+    },
+    {
+      "action": "tap",
+      "target": "#confirm-transfer"
+    },
+    {
+      "action": "wait",
+      "ms": 300
+    },
+    {
+      "action": "tap",
+      "target": "#pk-1"
+    },
+    {
+      "action": "tap",
+      "target": "#pk-3"
+    },
+    {
+      "action": "tap",
+      "target": "#pk-5"
+    },
+    {
+      "action": "tap",
+      "target": "#pk-7"
+    },
+    {
+      "action": "tap",
+      "target": "#pk-9"
+    },
+    {
+      "action": "tap",
+      "target": "#pk-0"
+    },
+    {
+      "action": "wait",
+      "ms": 1000
+    }
+  ],
+  "timing_windows": [
+    {
+      "id": "notice-toast",
+      "selector": "#toast",
+      "measure": "visible_duration",
+      "kind": "transient_text",
+      "text": "평소 이 분께 보내던 금액보다 큰 금액이에요. 받는 분 이름과 계좌번호가 맞는지 다시 확인해 주세요."
+    }
+  ],
+  "success": {
+    "selector_visible": "#done"
+  },
+  "hotspots": []
+}

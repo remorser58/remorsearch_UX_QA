@@ -1,0 +1,186 @@
+[
+ {
+  "page": "product1-b.html",
+  "selector": "h1",
+  "category": "overlapping_text",
+  "severity": "P1",
+  "evidence": "At 360 and 393 the line-height of the two-line menu title is too tight, so \"버섯\" and \"샐러드 세트\" overlap vertically.",
+  "fix": "Set line-height to about 1.3."
+ },
+ {
+  "page": "product1-b.html",
+  "selector": "#nutrition-row-sodium",
+  "category": "off_screen",
+  "severity": "P1",
+  "evidence": "The nutrition row is forced onto one line. The 나트륨 card spans x=352–456 at 360/393, so it falls outside the viewport and is cut off.",
+  "fix": "Use a 2x2 grid or flex-wrap."
+ },
+ {
+  "page": "product1-b.html",
+  "selector": "#chip-sauce-spicy",
+  "category": "clipped_text",
+  "severity": "P1",
+  "evidence": "The \"아주 매운맛 +1,000원\" chip is clipped to \"+1,0\". scrollWidth 150 > clientWidth 102.",
+  "fix": "Remove the fixed width and use white-space:nowrap with width:auto."
+ },
+ {
+  "page": "product1-b.html",
+  "selector": "#spice-note",
+  "category": "small_text",
+  "severity": "P2",
+  "evidence": "The spice notice is 10px and hard to read.",
+  "fix": "Use 13px or larger."
+ },
+ {
+  "page": "product2-a.html",
+  "selector": "h1",
+  "category": "clipped_text",
+  "severity": "P1",
+  "evidence": "The title does not wrap, so it is cut off at the right edge after \"41\".",
+  "fix": "Remove white-space:nowrap."
+ },
+ {
+  "page": "product2-a.html",
+  "selector": ".stats (stat cards)",
+  "category": "clipped_text",
+  "severity": "P1",
+  "evidence": "The value \"1시간 46분\" is cut off horizontally, and the bottom of each stat label is cut off vertically.",
+  "fix": "Shrink the value font size or use a 1-column layout, and remove the fixed height."
+ },
+ {
+  "page": "product2-a.html",
+  "selector": "h2 (처음 세운 가설…)",
+  "category": "overlapping_text",
+  "severity": "P1",
+  "evidence": "The two-line heading has a line-height below 1, so the lines overlap.",
+  "fix": "Set line-height to 1.35."
+ },
+ {
+  "page": "product2-a.html",
+  "selector": "ol li:nth-child(3)",
+  "category": "alignment",
+  "severity": "P2",
+  "evidence": "The number and body of step 3 are indented about 4px more to the right than steps 1, 2 and 4.",
+  "fix": "Use the same padding and margin as the other steps."
+ },
+ {
+  "page": "product2-a.html",
+  "selector": "#lesson-body",
+  "category": "small_text",
+  "severity": "P2",
+  "evidence": "The body text under \"배운 점\" is 10px.",
+  "fix": "Use 15px, the same as the body text."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "h1",
+  "category": "covered_text",
+  "severity": "P0",
+  "evidence": "The page title \"세일즈 2팀 주간 성과\" is hidden under the 64px fixed header, with only the bottom of the letters showing.",
+  "fix": "Add a top offset of at least the header height to the content."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "#tab-cohort",
+  "category": "clipped_text",
+  "severity": "P1",
+  "evidence": "The tab label is clipped to \"리텐션 코호트 !\". scrollWidth 104 > clientWidth 84.",
+  "fix": "Remove the fixed tab width."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "KPI 고객 이탈률 description",
+  "category": "clipped_text",
+  "severity": "P1",
+  "evidence": "The churn explanation is forced onto one line and is cut off at the card edge after \"연간 플\".",
+  "fix": "Allow it to wrap."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "휴면 고객 복귀 row, 담당 cell",
+  "category": "overlapping_text",
+  "severity": "P1",
+  "evidence": "The \"휴가\" badge covers the name, so only \"남궁서\" is visible.",
+  "fix": "Place the badge in flow with a gap."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "최근 활동 3rd item",
+  "category": "spacing",
+  "severity": "P3",
+  "evidence": "The gap above the 3rd activity item is about 10px narrower than between the other items.",
+  "fix": "Use the same margin."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "이번 주 인사이트 h3",
+  "category": "overlapping_text",
+  "severity": "P1",
+  "evidence": "The two lines of the insight heading overlap.",
+  "fix": "Set line-height to 1.35."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "10월 목표 달성률 card",
+  "category": "alignment",
+  "severity": "P3",
+  "evidence": "The card starts about 3px to the right of the other cards in the right column.",
+  "fix": "Align it to the same column."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "arrival banner",
+  "category": "covered_text",
+  "severity": "P0",
+  "evidence": "The arrival time \"10월 20일 오전 7시\" is hidden under the fixed header, with only its second line partly visible.",
+  "fix": "Add a top offset for the header height."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "address",
+  "category": "clipped_text",
+  "severity": "P1",
+  "evidence": "The address does not wrap and is cut off after \"101동\".",
+  "fix": "Allow it to wrap."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "#price-headphone",
+  "category": "clipped_text",
+  "severity": "P1",
+  "evidence": "The price is clipped to \"1,249,000\". scrollWidth 79 > clientWidth 62.",
+  "fix": "Increase the price column width or use nowrap."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "#installment-table",
+  "category": "off_screen",
+  "severity": "P1",
+  "evidence": "The table spans x=16–421, so the 총 납부 금액 column is cut off at 360 and 393 and cannot be scrolled into view.",
+  "fix": "Wrap the table in an overflow-x:auto container or reduce the number of columns."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "쿠폰 section header",
+  "category": "covered_text",
+  "severity": "P1",
+  "evidence": "The \"사용 가능 2장\" label and the first coupon (5% 할인) are covered by the sticky payment bar and are hard to see.",
+  "fix": "Review the bar placement or add bottom padding."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "#coupon-terms",
+  "category": "small_text",
+  "severity": "P2",
+  "evidence": "The coupon terms text is 10px.",
+  "fix": "Use 13px."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "배송비 label",
+  "category": "alignment",
+  "severity": "P3",
+  "evidence": "The label is indented about 4px more to the right than the other summary labels.",
+  "fix": "Remove the extra padding."
+ }
+]

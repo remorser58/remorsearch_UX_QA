@@ -1,0 +1,475 @@
+{
+  "fixture_only": true,
+  "assembled_at": "2026-09-30T20:20:40.174604+00:00",
+  "browser_executed_in_this_review": false,
+  "original_bundle_sha256": "6090bad3dd947f6ecce3c37f63b006668e976a11d7f68bf88675152c7f5161b9",
+  "original_capture_receipts_supplied": false,
+  "original_text_dumps_supplied": false,
+  "current_build_id": null,
+  "capture_copy_records": [
+    {
+      "source_artifact": "_evidence/dogfood-persona/runs/R-B-S24/S-R-B-S24-012.png",
+      "copied_artifact": "assets/qa-request-before.png",
+      "sha256": "8c0e2a33616d473a7366492845eba2c721bf78c08f8bb581426d1e25ca03507c",
+      "pixels": [
+        1440,
+        3090
+      ],
+      "captured_at": null,
+      "build_id": null,
+      "receipt_written_during_original_run": false,
+      "text_dump_kind": "manual_selected_visible_text",
+      "verification_status": "unverified"
+    },
+    {
+      "source_artifact": "_evidence/dogfood-persona/runs/R-B-S24/S-R-B-S24-023.png",
+      "copied_artifact": "assets/qa-request-after.png",
+      "sha256": "eda1e5fe1f93b10cfe563e71e43b9f64530ffe0cc8b0747d716eef2cd10e0806",
+      "pixels": [
+        1440,
+        3090
+      ],
+      "captured_at": null,
+      "build_id": null,
+      "receipt_written_during_original_run": false,
+      "text_dump_kind": "manual_selected_visible_text",
+      "verification_status": "unverified"
+    },
+    {
+      "source_artifact": "_evidence/dogfood-persona/runs/R-B-keyboard/S-R-B-keyboard-006.png",
+      "copied_artifact": "assets/qa-keyboard.png",
+      "sha256": "657be5e1a2abbbb09af2074f04aba93fc9e3919063439a276ab9c3c271b85e1c",
+      "pixels": [
+        1179,
+        2556
+      ],
+      "captured_at": null,
+      "build_id": null,
+      "receipt_written_during_original_run": false,
+      "text_dump_kind": "manual_selected_visible_text",
+      "verification_status": "unverified"
+    }
+  ],
+  "original_runs": [
+    {
+      "id": "R-A-S24",
+      "scenario_id": "S-A-galaxy-s24-ultra",
+      "status": "completed",
+      "surface_ref": "http://127.0.0.1:8765/dev-2/site/delivery/delivery-a.html",
+      "artifact_ref": "runs/R-A-S24/run.json",
+      "browser": "chromium",
+      "browser_version": "141.0.7390.37",
+      "device": {
+        "id": "galaxy-s24-ultra",
+        "viewport_css": [
+          384,
+          824
+        ],
+        "dpr": 3.75,
+        "orientation": "portrait",
+        "input": "touch",
+        "form_factor": "phone"
+      },
+      "input_channel": "screenshot",
+      "started_at": "2026-09-30T17:24:38Z",
+      "ended_at": "2026-09-30T17:29:49Z",
+      "driver_success": true,
+      "task_assessment": "관찰한 과업 성공",
+      "operator": {
+        "model": "host-reported model (exact model id unavailable)",
+        "model_family": "openai",
+        "effort": "host supplied; not exposed",
+        "seed": 1,
+        "input_channel": "screenshot",
+        "persona_arm": "neutral"
+      }
+    },
+    {
+      "id": "R-A-i15",
+      "scenario_id": "S-A-iphone-15",
+      "status": "completed",
+      "surface_ref": "http://127.0.0.1:8765/dev-2/site/delivery/delivery-a.html",
+      "artifact_ref": "runs/R-A-i15/run.json",
+      "browser": "chromium",
+      "browser_version": "141.0.7390.37",
+      "device": {
+        "id": "iphone-15",
+        "viewport_css": [
+          393,
+          852
+        ],
+        "dpr": 3,
+        "orientation": "portrait",
+        "input": "touch",
+        "form_factor": "phone"
+      },
+      "input_channel": "screenshot",
+      "started_at": "2026-09-30T17:36:30Z",
+      "ended_at": "2026-09-30T17:42:19Z",
+      "driver_success": true,
+      "task_assessment": "관찰한 과업 성공",
+      "operator": {
+        "model": "host-reported model (exact model id unavailable)",
+        "model_family": "openai",
+        "effort": "host supplied; not exposed",
+        "seed": 1,
+        "input_channel": "screenshot",
+        "persona_arm": "neutral"
+      }
+    },
+    {
+      "id": "R-A-keyboard",
+      "scenario_id": "S-A-keyboard",
+      "status": "completed",
+      "surface_ref": "http://127.0.0.1:8765/dev-2/site/delivery/delivery-a.html",
+      "artifact_ref": "runs/R-A-keyboard/run.json",
+      "browser": "chromium",
+      "browser_version": "141.0.7390.37",
+      "device": {
+        "id": "iphone-15",
+        "viewport_css": [
+          393,
+          852
+        ],
+        "dpr": 3,
+        "orientation": "portrait",
+        "input": "touch",
+        "form_factor": "phone"
+      },
+      "input_channel": "screenshot+a11y",
+      "started_at": "2026-09-30T17:55:06Z",
+      "ended_at": "2026-09-30T17:58:38Z",
+      "driver_success": true,
+      "task_assessment": "명시한 보충 과업만 완료",
+      "operator": {
+        "model": "host-reported model (exact model id unavailable)",
+        "model_family": "openai",
+        "effort": "host supplied; not exposed",
+        "seed": 1,
+        "input_channel": "screenshot+a11y",
+        "persona_arm": "neutral"
+      }
+    },
+    {
+      "id": "R-B-S24",
+      "scenario_id": "S-B-galaxy-s24-ultra",
+      "status": "completed",
+      "surface_ref": "http://127.0.0.1:8765/dev-2/site/delivery/delivery-b.html",
+      "artifact_ref": "runs/R-B-S24/run.json",
+      "browser": "chromium",
+      "browser_version": "141.0.7390.37",
+      "device": {
+        "id": "galaxy-s24-ultra",
+        "viewport_css": [
+          384,
+          824
+        ],
+        "dpr": 3.75,
+        "orientation": "portrait",
+        "input": "touch",
+        "form_factor": "phone"
+      },
+      "input_channel": "screenshot",
+      "started_at": "2026-09-30T17:29:49Z",
+      "ended_at": "2026-09-30T17:36:29Z",
+      "driver_success": true,
+      "task_assessment": "요청 보존 실패; 결제 완료",
+      "operator": {
+        "model": "host-reported model (exact model id unavailable)",
+        "model_family": "openai",
+        "effort": "host supplied; not exposed",
+        "seed": 1,
+        "input_channel": "screenshot",
+        "persona_arm": "neutral"
+      }
+    },
+    {
+      "id": "R-B-i15",
+      "scenario_id": "S-B-iphone-15",
+      "status": "completed",
+      "surface_ref": "http://127.0.0.1:8765/dev-2/site/delivery/delivery-b.html",
+      "artifact_ref": "runs/R-B-i15/run.json",
+      "browser": "chromium",
+      "browser_version": "141.0.7390.37",
+      "device": {
+        "id": "iphone-15",
+        "viewport_css": [
+          393,
+          852
+        ],
+        "dpr": 3,
+        "orientation": "portrait",
+        "input": "touch",
+        "form_factor": "phone"
+      },
+      "input_channel": "screenshot",
+      "started_at": "2026-09-30T17:42:19Z",
+      "ended_at": "2026-09-30T17:49:21Z",
+      "driver_success": true,
+      "task_assessment": "요청 재입력 대처 뒤 완료",
+      "operator": {
+        "model": "host-reported model (exact model id unavailable)",
+        "model_family": "openai",
+        "effort": "host supplied; not exposed",
+        "seed": 1,
+        "input_channel": "screenshot",
+        "persona_arm": "neutral"
+      }
+    },
+    {
+      "id": "R-B-keyboard",
+      "scenario_id": "S-B-keyboard",
+      "status": "completed",
+      "surface_ref": "http://127.0.0.1:8765/dev-2/site/delivery/delivery-b.html",
+      "artifact_ref": "runs/R-B-keyboard/run.json",
+      "browser": "chromium",
+      "browser_version": "141.0.7390.37",
+      "device": {
+        "id": "iphone-15",
+        "viewport_css": [
+          393,
+          852
+        ],
+        "dpr": 3,
+        "orientation": "portrait",
+        "input": "touch",
+        "form_factor": "phone"
+      },
+      "input_channel": "screenshot+a11y",
+      "started_at": "2026-09-30T17:50:59Z",
+      "ended_at": "2026-09-30T17:55:06Z",
+      "driver_success": true,
+      "task_assessment": "필수 부위 키보드 접근 실패",
+      "operator": {
+        "model": "host-reported model (exact model id unavailable)",
+        "model_family": "openai",
+        "effort": "host supplied; not exposed",
+        "seed": 1,
+        "input_channel": "screenshot+a11y",
+        "persona_arm": "neutral"
+      }
+    },
+    {
+      "id": "R-B-reflow-320",
+      "scenario_id": "S-B-reflow-320",
+      "status": "completed",
+      "surface_ref": "http://127.0.0.1:8765/dev-2/site/delivery/delivery-b.html",
+      "artifact_ref": "runs/R-B-reflow-320/run.json",
+      "browser": "chromium",
+      "browser_version": "141.0.7390.37",
+      "device": {
+        "id": "iphone-15-reflow-320",
+        "viewport_css": [
+          320,
+          852
+        ],
+        "dpr": 1,
+        "orientation": "portrait",
+        "input": "touch",
+        "form_factor": "phone"
+      },
+      "input_channel": "screenshot+a11y",
+      "started_at": "2026-09-30T18:03:49Z",
+      "ended_at": "2026-09-30T18:04:05Z",
+      "driver_success": true,
+      "task_assessment": "명시한 보충 과업만 완료",
+      "operator": {
+        "model": "host-reported model (exact model id unavailable)",
+        "model_family": "openai",
+        "effort": "host supplied; not exposed",
+        "seed": 1,
+        "input_channel": "screenshot+a11y",
+        "persona_arm": "neutral"
+      }
+    }
+  ],
+  "original_observations": [
+    {
+      "id": "OBS-01",
+      "run_id": "R-B-S24",
+      "epistemic_status": "observed",
+      "result": "B는 28/50에서 0/50 빈 칸으로 돌아옴. 갤럭시에서 그대로 결제하면 가게 요청 “없음”. 아이폰에서도 같은 이동으로 유실되며, 결제 직전에 재입력하면 최종 요약에 남음",
+      "artifact_refs": [
+        {
+          "run_id": "R-B-S24",
+          "snapshot_id": "S-R-B-S24-012",
+          "artifact_ref": "runs/R-B-S24/S-R-B-S24-012.png",
+          "snapshot_ref": "runs/R-B-S24/S-R-B-S24-012.json"
+        },
+        {
+          "run_id": "R-B-S24",
+          "snapshot_id": "S-R-B-S24-014",
+          "artifact_ref": "runs/R-B-S24/S-R-B-S24-014.png",
+          "snapshot_ref": "runs/R-B-S24/S-R-B-S24-014.json"
+        },
+        {
+          "run_id": "R-B-S24",
+          "snapshot_id": "S-R-B-S24-023",
+          "artifact_ref": "runs/R-B-S24/S-R-B-S24-023.png",
+          "snapshot_ref": "runs/R-B-S24/S-R-B-S24-023.json"
+        },
+        {
+          "run_id": "R-B-i15",
+          "snapshot_id": "S-R-B-i15-011",
+          "artifact_ref": "runs/R-B-i15/S-R-B-i15-011.png",
+          "snapshot_ref": "runs/R-B-i15/S-R-B-i15-011.json"
+        },
+        {
+          "run_id": "R-B-i15",
+          "snapshot_id": "S-R-B-i15-013",
+          "artifact_ref": "runs/R-B-i15/S-R-B-i15-013.png",
+          "snapshot_ref": "runs/R-B-i15/S-R-B-i15-013.json"
+        },
+        {
+          "run_id": "R-B-i15",
+          "snapshot_id": "S-R-B-i15-023",
+          "artifact_ref": "runs/R-B-i15/S-R-B-i15-023.png",
+          "snapshot_ref": "runs/R-B-i15/S-R-B-i15-023.json"
+        },
+        {
+          "run_id": "R-A-S24",
+          "snapshot_id": "S-R-A-S24-010",
+          "artifact_ref": "runs/R-A-S24/S-R-A-S24-010.png",
+          "snapshot_ref": "runs/R-A-S24/S-R-A-S24-010.json"
+        },
+        {
+          "run_id": "R-A-S24",
+          "snapshot_id": "S-R-A-S24-012",
+          "artifact_ref": "runs/R-A-S24/S-R-A-S24-012.png",
+          "snapshot_ref": "runs/R-A-S24/S-R-A-S24-012.json"
+        }
+      ]
+    },
+    {
+      "id": "OBS-02",
+      "run_id": "R-B-keyboard",
+      "epistemic_status": "observed",
+      "result": "Tab은 뼈·순살을 건너뛰어 소스로 이동함. 부위는 캡처에서 div/generic, 클릭 대상 검사 SM-08은 focusable=false. 담기 Enter 후 같은 옵션 화면에 머묾. A는 Tab→방향키로 순살·매운 양념 22,500원까지 선택됨",
+      "artifact_refs": [
+        {
+          "run_id": "R-B-keyboard",
+          "snapshot_id": "S-R-B-keyboard-003",
+          "artifact_ref": "runs/R-B-keyboard/S-R-B-keyboard-003.png",
+          "snapshot_ref": "runs/R-B-keyboard/S-R-B-keyboard-003.json"
+        },
+        {
+          "run_id": "R-B-keyboard",
+          "snapshot_id": "S-R-B-keyboard-005",
+          "artifact_ref": "runs/R-B-keyboard/S-R-B-keyboard-005.png",
+          "snapshot_ref": "runs/R-B-keyboard/S-R-B-keyboard-005.json"
+        },
+        {
+          "run_id": "R-B-keyboard",
+          "snapshot_id": "S-R-B-keyboard-006",
+          "artifact_ref": "runs/R-B-keyboard/S-R-B-keyboard-006.png",
+          "snapshot_ref": "runs/R-B-keyboard/S-R-B-keyboard-006.json"
+        },
+        {
+          "run_id": "R-B-i15",
+          "snapshot_id": "S-R-B-i15-003",
+          "artifact_ref": "runs/R-B-i15/S-R-B-i15-003.png",
+          "snapshot_ref": "runs/R-B-i15/S-R-B-i15-003.json"
+        },
+        {
+          "run_id": "R-A-keyboard",
+          "snapshot_id": "S-R-A-keyboard-003",
+          "artifact_ref": "runs/R-A-keyboard/S-R-A-keyboard-003.png",
+          "snapshot_ref": "runs/R-A-keyboard/S-R-A-keyboard-003.json"
+        },
+        {
+          "run_id": "R-A-keyboard",
+          "snapshot_id": "S-R-A-keyboard-006",
+          "artifact_ref": "runs/R-A-keyboard/S-R-A-keyboard-006.png",
+          "snapshot_ref": "runs/R-A-keyboard/S-R-A-keyboard-006.json"
+        }
+      ]
+    },
+    {
+      "id": "OBS-03",
+      "run_id": "R-B-S24",
+      "epistemic_status": "observed",
+      "result": "B의 +/−는 role=button, name=\"\", name_source=none. +로 수량 변경은 되지만 보조기술에 전달할 이름이 없음. A에는 “반반치킨 수량 늘리기/줄이기” 이름이 있음",
+      "artifact_refs": [
+        {
+          "run_id": "R-B-S24",
+          "snapshot_id": "S-R-B-S24-009",
+          "artifact_ref": "runs/R-B-S24/S-R-B-S24-009.png",
+          "snapshot_ref": "runs/R-B-S24/S-R-B-S24-009.json"
+        },
+        {
+          "run_id": "R-B-S24",
+          "snapshot_id": "S-R-B-S24-010",
+          "artifact_ref": "runs/R-B-S24/S-R-B-S24-010.png",
+          "snapshot_ref": "runs/R-B-S24/S-R-B-S24-010.json"
+        },
+        {
+          "run_id": "R-B-i15",
+          "snapshot_id": "S-R-B-i15-008",
+          "artifact_ref": "runs/R-B-i15/S-R-B-i15-008.png",
+          "snapshot_ref": "runs/R-B-i15/S-R-B-i15-008.json"
+        },
+        {
+          "run_id": "R-B-i15",
+          "snapshot_id": "S-R-B-i15-009",
+          "artifact_ref": "runs/R-B-i15/S-R-B-i15-009.png",
+          "snapshot_ref": "runs/R-B-i15/S-R-B-i15-009.json"
+        },
+        {
+          "run_id": "R-A-S24",
+          "snapshot_id": "S-R-A-S24-007",
+          "artifact_ref": "runs/R-A-S24/S-R-A-S24-007.png",
+          "snapshot_ref": "runs/R-A-S24/S-R-A-S24-007.json"
+        }
+      ]
+    }
+  ],
+  "additional_findings": [
+    {
+      "id": "F-04",
+      "title": "소스 카드에서 추가 금액 끝이 잘림",
+      "severity": "P2",
+      "confidence": "high",
+      "observed": "두 크기 모두 가로 3칸에서 금액 끝이 잘림. 선택해도 잘림이 유지됨. LY-01은 두 span이 label에서 x 방향으로 잘린다고 기록함. A는 세로 목록에서 이름과 금액이 모두 보임",
+      "validation": "384·393·320 CSS px 및 글자 확대 조건에서 세 소스의 가격과 단위를 선택 전후 모두 읽을 수 있는지 검사함"
+    },
+    {
+      "id": "F-05",
+      "title": "추가 옵션 글자는 반응하지 않고 작은 체크박스만 눌러야 함",
+      "severity": "P2",
+      "confidence": "high",
+      "observed": "B는 글자를 눌러도 금액·체크 변화 없음. 체크박스를 누르면 22,500→25,000원. 캡처된 체크박스는 18×18 CSS px. A는 글자 누르기로 선택됨. B 체크박스에는 이름이 있어 이름 부재 문제로는 보고하지 않음",
+      "validation": "행의 글자·빈 공간·체크박스를 각각 눌러 한 번만 토글되는지 확인하고 한 손 실제 기기 시험을 수행함"
+    },
+    {
+      "id": "F-06",
+      "title": "쿠폰 오타 오류가 내부 코드만 알려 주고 고치는 방법을 주지 않음",
+      "severity": "P2",
+      "confidence": "high",
+      "observed": "B는 “쿠폰을 적용할 수 없습니다. (CPN-4003)”만 표시함. 정상 코드로 고치면 5,000원 할인됨. A는 없는 코드와 철자·10자리 형식을 안내함",
+      "validation": "오타→정상 코드 복구를 재검사함. 만료와 30,000원 미만 경로는 추가 시험하여 실제 사유와 안내가 일치하는지 확인함"
+    },
+    {
+      "id": "F-07",
+      "title": "주문 현황에서 현재 조리 단계를 색 외 단서로 명확하게 구분하지 않음",
+      "severity": "P2",
+      "confidence": "medium",
+      "observed": "B 제목은 “주문이 정상적으로 처리되고 있어요”. 접수와 조리 중은 같은 크기의 채워진 원이며 녹색/빨간색이 구분 단서임. “진행 중” 표시는 없음. A는 “가게에서 조리하고 있어요”, 접수 체크, 큰 현재 원과 “진행 중”을 제공함",
+      "validation": "접수·조리·배달·완료를 각각 재생해 현재 단계를 문구로 찾을 수 있는지 확인함. 회색조·실제 보조기술·명도 차이 예외를 별도 검사함"
+    },
+    {
+      "id": "F-08",
+      "title": "320 CSS px에서 결제 금액 요약의 오른쪽 금액이 잘림",
+      "severity": "P2",
+      "confidence": "high",
+      "observed": "실제 320 px 렌더에서 금액 끝과 원 단위가 오른쪽 밖으로 나감. #price-summary는 360 px 폭, page scroll_width=360. 384·393 px 정상 크기에서 같은 가로 넘침을 주장하지 않음",
+      "validation": "320 px에서 scroll_width≤client_width와 모든 금액·단위 표시를 확인하고 요청·쿠폰·결제 버튼의 인접 상태도 재검사함"
+    }
+  ],
+  "quantity_artifact": {
+    "source_artifact": "_evidence/dogfood-persona/runs/R-B-S24/S-R-B-S24-010.png",
+    "copied": false,
+    "receipt_written_during_original_run": false,
+    "captured_at": null,
+    "build_id": null
+  }
+}

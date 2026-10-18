@@ -1,0 +1,140 @@
+{
+ "suite": "mobile-commerce",
+ "runs": [
+  {
+   "run_id": "R-SC-booking-01-clean-galaxy-s24",
+   "scenario_id": "SC-booking-01-clean",
+   "exit": 0,
+   "seconds": 28.6,
+   "run_dir": ".ergo-bench/mobile-v1/runs/R-SC-booking-01-clean-galaxy-s24"
+  },
+  {
+   "run_id": "R-SC-booking-01-galaxy-s24",
+   "scenario_id": "SC-booking-01",
+   "exit": 0,
+   "seconds": 28.6,
+   "run_dir": ".ergo-bench/mobile-v1/runs/R-SC-booking-01-galaxy-s24"
+  },
+  {
+   "run_id": "R-SC-checkout-01-clean-galaxy-s24",
+   "scenario_id": "SC-checkout-01-clean",
+   "exit": 0,
+   "seconds": 8.6,
+   "run_dir": ".ergo-bench/mobile-v1/runs/R-SC-checkout-01-clean-galaxy-s24"
+  },
+  {
+   "run_id": "R-SC-checkout-01-galaxy-s24",
+   "scenario_id": "SC-checkout-01",
+   "exit": 0,
+   "seconds": 11.1,
+   "run_dir": ".ergo-bench/mobile-v1/runs/R-SC-checkout-01-galaxy-s24"
+  },
+  {
+   "run_id": "R-SC-settings-01-clean-galaxy-s24",
+   "scenario_id": "SC-settings-01-clean",
+   "exit": 0,
+   "seconds": 4.2,
+   "run_dir": ".ergo-bench/mobile-v1/runs/R-SC-settings-01-clean-galaxy-s24"
+  },
+  {
+   "run_id": "R-SC-settings-01-galaxy-s24",
+   "scenario_id": "SC-settings-01",
+   "exit": 0,
+   "seconds": 4.1,
+   "run_dir": ".ergo-bench/mobile-v1/runs/R-SC-settings-01-galaxy-s24"
+  },
+  {
+   "run_id": "R-SC-transfer-01-clean-galaxy-s24",
+   "scenario_id": "SC-transfer-01-clean",
+   "exit": 0,
+   "seconds": 17.1,
+   "run_dir": ".ergo-bench/mobile-v1/runs/R-SC-transfer-01-clean-galaxy-s24"
+  },
+  {
+   "run_id": "R-SC-transfer-01-galaxy-s24",
+   "scenario_id": "SC-transfer-01",
+   "exit": 0,
+   "seconds": 23.9,
+   "run_dir": ".ergo-bench/mobile-v1/runs/R-SC-transfer-01-galaxy-s24"
+  }
+ ],
+ "run_failures": [],
+ "measured_only": {
+  "suite": "mobile-commerce",
+  "defects": 17,
+  "recall_strict": 0.294,
+  "recall_lenient": 0.471,
+  "severity_agreement": 0.235,
+  "decoys": 10,
+  "decoys_flagged": 3,
+  "clean_control_findings": 33,
+  "precision_labeled": 0.25,
+  "unlabeled_findings_in_defect_variants": 43,
+  "findings": 88,
+  "severity_counts": {
+   "P0": 0,
+   "P1": 7,
+   "P2": 4,
+   "P3": 77
+  }
+ },
+ "single_profile": {
+  "suite": "mobile-commerce",
+  "defects": 17,
+  "recall_strict": 0.647,
+  "recall_lenient": 0.706,
+  "severity_agreement": 0.588,
+  "decoys": 10,
+  "decoys_flagged": 3,
+  "clean_control_findings": 60,
+  "precision_labeled": 0.229,
+  "unlabeled_findings_in_defect_variants": 73,
+  "findings": 152,
+  "severity_counts": {
+   "P0": 0,
+   "P1": 13,
+   "P2": 35,
+   "P3": 104
+  }
+ },
+ "swarm": {
+  "suite": "mobile-commerce",
+  "defects": 17,
+  "recall_strict": 0.824,
+  "recall_lenient": 0.941,
+  "severity_agreement": 0.647,
+  "decoys": 10,
+  "decoys_flagged": 7,
+  "clean_control_findings": 232,
+  "precision_labeled": 0.101,
+  "unlabeled_findings_in_defect_variants": 234,
+  "findings": 493,
+  "severity_counts": {
+   "P0": 0,
+   "P1": 43,
+   "P2": 49,
+   "P3": 401
+  }
+ },
+ "swarm_gain_over_single": [
+  "D-06",
+  "D-07",
+  "D-08"
+ ],
+ "swarm_gain_over_measured": [
+  "D-01",
+  "D-04",
+  "D-06",
+  "D-07",
+  "D-08",
+  "D-09",
+  "D-10",
+  "D-15",
+  "D-16"
+ ],
+ "missed_by_swarm": [
+  "D-03",
+  "D-13",
+  "D-14"
+ ]
+}

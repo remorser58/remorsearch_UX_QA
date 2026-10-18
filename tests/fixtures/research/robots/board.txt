@@ -1,0 +1,5 @@
+# Fixture: RFC 9309 precedence. urllib.robotparser answers "disallowed" for
+# /board/view?id=1 (first match, prefix only); the longest match allows it.
+User-agent: *
+Disallow: /board/
+Allow: /board/view

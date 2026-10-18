@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>보안문자 입력 - 테스트 커뮤니티</title>
+</head>
+<body>
+<div class="wrap">
+  <p>자동입력 방지를 위해 아래 보안문자를 입력해 주세요.</p>
+  <img src="/captcha/image?key=fixture" alt="보안문자">
+  <form method="post" action="/captcha/check">
+    <input name="captcha_code">
+    <button type="submit">확인</button>
+  </form>
+</div>
+</body>
+</html>

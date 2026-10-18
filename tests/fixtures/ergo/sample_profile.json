@@ -1,0 +1,49 @@
+{
+  "schema_version": "ergo-profile.v1",
+  "profile_id": "EP-01",
+  "origin": "manual",
+  "persona_ref": null,
+  "label_ko": "왼손잡이 · 한 손 파지 · 이동 중",
+  "attributes": {
+    "age_band": "30s",
+    "handedness": "left",
+    "grip": "one_hand_left",
+    "thumb_length_mm": 62.0,
+    "hand_percentile": 50,
+    "device_id": "galaxy-s24",
+    "orientation": "portrait",
+    "vision": {
+      "acuity": "normal",
+      "presbyopia": false,
+      "cvd": "none",
+      "cvd_severity": 1.0,
+      "viewing_distance_mm": 300
+    },
+    "motor": {
+      "tremor": "none",
+      "touch_sigma_mm": 1.5
+    },
+    "context": {
+      "mobility": "walking",
+      "lighting": "indoor",
+      "free_hands": 1,
+      "interruptions": false
+    },
+    "cognition": {
+      "familiarity": "first_use",
+      "time_pressure": "low",
+      "reading_wpm_ko": 0
+    },
+    "reaction_time_ms": 250
+  },
+  "assumption_fields": [
+    "handedness",
+    "grip",
+    "thumb_length_mm",
+    "vision",
+    "motor",
+    "context",
+    "device_id"
+  ],
+  "base_rate_refs": {}
+}

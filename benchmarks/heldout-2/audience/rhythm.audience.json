@@ -1,0 +1,1799 @@
+{
+ "schema_version": "ergo-audience.v1",
+ "audience_id": "AU-rhythm-202609",
+ "product": {
+  "name": "하루비트 (HaruBeat)",
+  "category": "리워드(앱테크) 앱 내 미니게임 · 20초 세로 리듬게임 (모바일 웹/웹뷰)",
+  "surface": "web",
+  "locale": "ko-KR",
+  "brief_ref": "benchmarks/heldout-2/products/rhythm/brief.md"
+ },
+ "researched_at": "2026-09-29",
+ "researcher": {
+  "kind": "agent",
+  "model": "claude-opus-5-5",
+  "time_box_min": 90
+ },
+ "method": {
+  "summary": "브리프(유일한 제품 자료)를 끝까지 읽고 사용자 유형 4개·이용 맥락·과업 T1~T7·기본값을 뽑은 뒤, 제품 수치(내부 집계 2026-08, 설문 2026-06 n=1,240)는 브리프 요약표에서 인용했다. 공개 근거는 WebSearch 25회로 모았다(벤치마크 고정 방식; ux_research.py 오디언스 파이프라인은 돌리지 않음). WebFetch는 시도한 모든 도메인(welcon.kocca.kr, v.daum.net, s-journal.co.kr, korea.kr, kosis.kr, gallup.co.kr, nia.or.kr, pmc.ncbi.nlm.nih.gov, ko.wikipedia.org, a11ykr.github.io)에서 egress 프록시가 거부해, 웹 인용은 모두 검색 결과 발췌(quote_basis: snippet)다. 로그인·유료벽·사람 확인을 넘지 않았고, 합성 페르소나나 LLM 출력은 출처로 쓰지 않았다. 세그먼트는 브리프의 4개 유형을 따르되 '틈새 시간형(40~60대)'에서 60대 이상(측정 10%)을 edge 세그먼트로 분리했다(판단). 세그먼트 비중은 60대 이상(측정)과 애호가(설문 대리 지표)만 수치가 있고 나머지는 미상이다. 세그먼트별 기기 구성·연령 구성·노안 비중은 표시된 추론이다.",
+  "segmentation": "judgment",
+  "search_count": 25,
+  "fetch_attempts": {
+   "tried": 10,
+   "succeeded": 0,
+   "reason": "EGRESS_BLOCKED by the network egress proxy"
+  },
+  "limitations": [
+   "웹 페이지를 하나도 열지 못했다(egress 차단). 25개 출처 중 웹 출처 22개의 인용은 모두 검색 도구가 보여 준 발췌이며, 일부는 여러 페이지를 합친 요약이거나 영어 번역(SRC-07, SRC-09, SRC-24)이라 원문 문구와 다를 수 있다. 사용 전에 원문으로 확인해야 한다.",
+   "제품 수치는 PM의 요약표로만 확인했다(원자료 미확인). 설문(2026-06, n=1,240)은 정식 오픈(2026-07) 전이라 모집단이 현재 이용자와 다를 수 있고, 표집 방법·방식이 적혀 있지 않다. 내부 집계(2026-08)는 오픈 한 달 뒤라 초기 이용자·프로모션 영향이 섞였을 수 있다.",
+   "세그먼트 비중: 60대 이상(0.10, 측정)과 리듬게임 애호가(0.15, '자주 한다' 대리 추정)만 수치가 있고, 출퇴근형·틈새 시간형·도전장 체험자는 미상(상한만 기록)이라 조합 가중치는 우선순위 기본값이다.",
+   "세그먼트별 기기 구성은 제품 전체 계열 비중을 한국갤럽 연령 패턴(발췌, 연도 혼재 가능)으로 재가중한 추론이며, 10대 애플 비중 50%와 40·50·60대 애플 비중은 발췌 수치에서 추정했다. 기타 안드로이드 8%와 태블릿은 카탈로그에 대응시키지 않았다.",
+   "노안 비중: 한국 연령별 임상 유병률을 찾지 못해 농촌 중국 연구(40대 27.6%, 60대 81.8%, 50대 수치 없음)와 한국 40~55세 기업 자기보고 설문(작은 글씨 불편 73%)을 함께 썼다. 틈새 시간형 0.73(하한 0.39)은 두 값 차이가 커서 기본 프로필의 노안 여부가 이 선택에 달려 있다.",
+   "이용 맥락 비율(서서/앉아서, 어두운 방, 맥락별 무음 여부)은 근거가 없어 모두 share 없음으로 두었다 → 맥락·조명 facet은 만들어지지 않고 어두운 방은 untested다.",
+   "출퇴근형 파지 0.5/0.5와 애호가 파지 two_thumbs 1.0은 브리프·커뮤니티가 파지 종류만 알려 주는 상태에서 둔 배분 가정이다.",
+   "커뮤니티·리뷰 근거가 얇다: 앱스토어 리뷰 본문과 커뮤니티 글 본문을 읽지 못했고(제목·발췌만), 하루비트 자체에 대한 공개 후기는 없다(2026-07 오픈).",
+   "설문의 리듬게임 경험은 장르 경험이지 이 제품 사용 경험이 아니다. familiarity의 first_use 0.45는 제품 전체 주간값을 세그먼트에 그대로 적용한 추론이다."
+  ]
+ },
+ "sources": [
+  {
+   "source_id": "SRC-01",
+   "type": "product_brief",
+   "tag": "brief",
+   "title": "하루비트 (HaruBeat) 제품 브리프 v1.3 (2026-09, 모아포인트 미니게임 스쿼드 PM) — 게임 규칙, 화면, 과업 T1~T7, 이용 맥락",
+   "url": null,
+   "accessed_at": "2026-09-29",
+   "mode": "brief",
+   "publisher": "모아포인트 미니게임 스쿼드 PM"
+  },
+  {
+   "source_id": "SRC-02",
+   "type": "product_analytics",
+   "tag": "derived",
+   "title": "하루비트 내부 집계 (2026-08, 하루비트 진입 사용자 기준) — 브리프 §2~§3 요약으로만 확인",
+   "url": null,
+   "accessed_at": "2026-09-29",
+   "mode": "product_analytics",
+   "period": "2026-08",
+   "population": "하루비트 진입 사용자 (모아포인트 미니게임 탭 + 모바일 웹)",
+   "geography": "KR",
+   "note": "Raw data not seen; numbers read from the PM's summary table in the brief."
+  },
+  {
+   "source_id": "SRC-03",
+   "type": "survey",
+   "tag": "derived",
+   "title": "하루비트 사용자 설문 (2026-06, n=1,240) — 브리프 §3 요약으로만 확인",
+   "url": null,
+   "accessed_at": "2026-09-29",
+   "mode": "online_panel",
+   "n": 1240,
+   "period": "2026-06",
+   "population": "사용자 설문 응답자 (정식 오픈 2026-07 이전 시점; 모집 방법 미기재)",
+   "geography": "KR",
+   "note": "Survey predates the 2026-07 official launch; sampling frame and mode are not stated in the brief (mode recorded as online_panel is an assumption)."
+  },
+  {
+   "source_id": "SRC-04",
+   "type": "official_statistics",
+   "tag": "report",
+   "title": "2025 게임이용자 실태조사 (한국콘텐츠진흥원, 2025-12-18 발간) — 언론 보도 검색 발췌",
+   "url": "https://welcon.kocca.kr/ko/info/trend/1956850",
+   "via_urls": [
+    "https://zdnet.co.kr/view/?no=20251218172447",
+    "https://m.gamemeca.com/view.php?gid=1769353"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "한국콘텐츠진흥원",
+   "population": "전국 만 10~69세",
+   "n": 10000,
+   "mode": "online_panel",
+   "period": "2025",
+   "geography": "KR",
+   "note": "Mode not confirmed (report not opened); recorded as online_panel by assumption."
+  },
+  {
+   "source_id": "SRC-05",
+   "type": "official_statistics",
+   "tag": "report",
+   "title": "2024 디지털정보격차 실태조사 (과학기술정보통신부·한국지능정보사회진흥원, 2025-03-27 발표) — 검색 발췌",
+   "url": "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?cbIdx=81623&bcIdx=27832&parentSeq=27832",
+   "via_urls": [
+    "https://theindigo.co.kr/archives/61549",
+    "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156681128"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "과학기술정보통신부·NIA",
+   "population": "전국 17개 시·도 15,000명 (일반국민 및 취약계층). 고령층의 연령 정의(만 55세 이상으로 알려짐)는 이번에 페이지로 확인하지 못함",
+   "n": 15000,
+   "mode": "probability_face_to_face",
+   "period": "2024",
+   "geography": "KR",
+   "note": "Mode recorded as face-to-face from the survey's usual design; not confirmed on the page."
+  },
+  {
+   "source_id": "SRC-06",
+   "type": "market_report",
+   "tag": "snippet",
+   "title": "한국갤럽 스마트폰 사용률·브랜드 조사 (2025) — 언론 보도 검색 발췌 (데이터뉴스, EBN)",
+   "url": "https://www.datanews.co.kr/news/article.html?no=139581",
+   "via_urls": [
+    "https://www.ebn.co.kr/news/articleView.html?idxno=1716204",
+    "https://www.topstarnews.net/news/articleView.html?idxno=16133000"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "한국갤럽 (보도: 데이터뉴스·EBN)",
+   "population": "전국 만 13세 이상 (보도 발췌 기준)",
+   "mode": "probability_phone",
+   "period": "2025",
+   "geography": "KR",
+   "note": "Two survey waves appear in the excerpts (2025: 삼성 72%·애플 24%; another wave: 81%·19%); the year of the second wave could not be confirmed. Used only to shape per-segment device mixes (inference). Mode (phone) assumed from Gallup's usual design; not confirmed."
+  },
+  {
+   "source_id": "SRC-07",
+   "type": "research_paper",
+   "tag": "paper",
+   "title": "BCLA CLEAR Presbyopia: Epidemiology and impact (Contact Lens and Anterior Eye, 2024) — 농촌 중국 인구기반 연구 인용 (n = 1008)",
+   "url": "https://www.contactlensjournal.com/article/S1367-0484(24)00049-3/fulltext",
+   "via_urls": [
+    "https://www.sciencedirect.com/science/article/pii/S1367048424000493",
+    "https://iovs.arvojournals.org/article.aspx?articleid=2126903"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "British Contact Lens Association",
+   "population": "농촌 중국 성인 (한국 아님)",
+   "n": 1008,
+   "geography": "CN",
+   "note": "Not Korean data; used as the nearest age-specific East Asian prevalence found. 50–59 figure not available in the excerpt."
+  },
+  {
+   "source_id": "SRC-08",
+   "type": "research_paper",
+   "tag": "paper",
+   "title": "한국 성인에서 색각이상의 전국 인구기반 연구 (한국안광학회지; 국민건강영양조사 2014~2015 자료)",
+   "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002973406",
+   "via_urls": [
+    "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11440735"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "한국안광학회",
+   "population": "한국 성인 (국민건강영양조사 2014~2015)",
+   "mode": "probability_face_to_face",
+   "period": "2014-2015",
+   "geography": "KR",
+   "note": "Mode recorded from the KNHANES design (face-to-face examination); page not opened."
+  },
+  {
+   "source_id": "SRC-09",
+   "type": "research_paper",
+   "tag": "paper",
+   "title": "The Prevalence of Essential Tremor in Elderly Koreans (J Korean Med Sci 2014;29(12):1694)",
+   "url": "https://pubmed.ncbi.nlm.nih.gov/25469072/",
+   "via_urls": [
+    "https://www.jkms.kr/DOIx.php?id=10.3346%2Fjkms.2014.29.12.1694"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "Journal of Korean Medical Science",
+   "population": "한국 65세 이상 지역사회 노인",
+   "n": 714,
+   "mode": "probability_face_to_face",
+   "period": "2014 이전",
+   "geography": "KR",
+   "note": "Essential tremor only; other tremor types and milder action tremor not counted. Age 65+, not 60+. Mode recorded as in-person examination per the abstract excerpt ('in-person neurological examinations')."
+  },
+  {
+   "source_id": "SRC-10",
+   "type": "competitor",
+   "tag": "snippet",
+   "title": "비교 제품: 리워드(앱테크) 앱 이용자 구성 — 캐시워크 등 (보도 검색 발췌: 르데스크 '앱테크마저 세대 별 온도차…40·50 “매우 쏠쏠” 20·30 “푼돈 무관심”', 이데일리 '앱테크族 알고보니 40대가 제일 많네', 모비인사이드 App Ape 캐시워크 분석)",
+   "url": "https://www.ledesk.co.kr/view.php?uid=14998",
+   "via_urls": [
+    "https://edaily.co.kr/news/read?mediaCodeNo=0&newsId=03184886635776200",
+    "https://www.mobiinside.co.kr/2019/12/19/app-ape-cashwalk/"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "르데스크·이데일리·모비인사이드(App Ape)",
+   "population": "캐시워크 등 리워드 앱 이용자 (패널 추정)",
+   "mode": "device_telemetry",
+   "period": "2019-2025 (기사별 상이)",
+   "geography": "KR",
+   "note": "The search excerpt merged several pages; which page carries which number was not visible. Panel-based app estimates (comparable products, not HaruBeat)."
+  },
+  {
+   "source_id": "SRC-11",
+   "type": "news",
+   "tag": "snippet",
+   "title": "카톡·토스 앱에서 게임 한판…\"체류시간 늘리고 광고 수익 올리고\" (2026-07-09 보도, 다음 뉴스) — 앱 내 미니게임·광고 충전 관행",
+   "url": "https://v.daum.net/v/20260709101951920",
+   "via_urls": [
+    "https://www.banronbodo.com/news/articleView.html?idxno=32883"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "다음 뉴스 게재 기사",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public",
+   "mode": "community",
+   "note": "Page itself blocked by the egress proxy; excerpt only."
+  },
+  {
+   "source_id": "SRC-12",
+   "type": "community",
+   "tag": "snippet",
+   "title": "리듬게임 × 무선(블루투스) 이어폰 지연 게시글 — 클리앙 '무선이어폰으로 리듬게임 가능한가요?', 프로젝트 세카이 마이너 갤러리 '블루투스 이어폰 싱크 문제 해결(버즈편)', Samsung Members '원래 블루투스 이어폰끼고 게임하면 소리 지연되나요??'",
+   "url": "https://www.clien.net/service/board/cm_iphonien/10810786",
+   "via_urls": [
+    "https://m.dcinside.com/board/pjsekai/338707",
+    "https://r1.community.samsung.com/t5/%EA%B0%A4%EB%9F%AD%EC%8B%9C-s/%EC%9B%90%EB%9E%98-%EB%B8%94%EB%A3%A8%ED%88%AC%EC%8A%A4-%EC%9D%B4%EC%96%B4%ED%8F%B0%EB%81%BC%EA%B3%A0-%EA%B2%8C%EC%9E%84%ED%95%98%EB%A9%B4-%EC%86%8C%EB%A6%AC-%EC%A7%80%EC%97%B0%EB%90%98%EB%82%98%EC%9A%94/td-p/15920757"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "클리앙·디시인사이드·Samsung Members (공개 게시판)",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public",
+   "mode": "community",
+   "note": "Pages not opened (egress blocked); existence evidence only. The excerpt merged posts; attribution of each sentence to one post is uncertain."
+  },
+  {
+   "source_id": "SRC-13",
+   "type": "official_docs",
+   "tag": "snippet",
+   "title": "서울교통공사, 지하철 도착역 놓치지 않게 '휴대폰 알람'해준다 (서울시 내 손안에 서울 교통 소식)",
+   "url": "https://news.seoul.go.kr/traffic/archives/36360",
+   "accessed_at": "2026-09-29",
+   "publisher": "서울특별시",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public",
+   "note": "Excerpt only; supports the existence of arrival alerts that interrupt phone use on the subway."
+  },
+  {
+   "source_id": "SRC-14",
+   "type": "news",
+   "tag": "snippet",
+   "title": "“글자가 안 보여” 노안 오는 게이머, 게임사 대처는? (게임메카)",
+   "url": "https://www.gamemeca.com/view.php?gid=1760699",
+   "accessed_at": "2026-09-29",
+   "publisher": "게임메카",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public",
+   "note": "Cites 2024 대한민국 게임백서; the number is used as existence context only (news source)."
+  },
+  {
+   "source_id": "SRC-15",
+   "type": "news",
+   "tag": "snippet",
+   "title": "언제까지 '롤', '배그' 할 수 있을 것 같아? 고령화가 바꾸는 게임 시장의 흐름 (네이트 뉴스, 2026-01-09)",
+   "url": "https://m.news.nate.com/view/20260109n24511",
+   "via_urls": [
+    "https://bravo.etoday.co.kr/view/atc_view/12270"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "네이트 뉴스 게재 기사",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public"
+  },
+  {
+   "source_id": "SRC-16",
+   "type": "community",
+   "tag": "snippet",
+   "title": "카카오톡 링크가 인앱 브라우저로 열리는 문제 — 카카오 데브톡 '카카오 인앱브라우저의 문제점', '카카오톡 인앱브라우저 호출 오류', 개발 블로그 '카카오 알림톡의 인앱 브라우저 문제 해결'",
+   "url": "https://devtalk.kakao.com/t/topic/27890",
+   "via_urls": [
+    "https://devtalk.kakao.com/t/topic/140588",
+    "https://inblog.ai/spencer-tech/%EC%B9%B4%EC%B9%B4%EC%98%A4-%EC%95%8C%EB%A6%BC%ED%86%A1%EC%9D%98-%EC%9D%B8%EC%95%B1-%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80-%EB%AC%B8%EC%A0%9C-%ED%95%B4%EA%B2%B0-24632"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "카카오 데브톡 (개발자 공개 포럼)·개인 개발 블로그",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public",
+   "mode": "community",
+   "note": "Developer posts, not player posts; existence of the in-app-browser path only."
+  },
+  {
+   "source_id": "SRC-17",
+   "type": "official_statistics",
+   "tag": "report",
+   "title": "2024년 등록장애인 263만 1천 명, 전체 인구 대비 5.1% (보건복지부 보도자료, 2025-04)",
+   "url": "https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1485363&act=view",
+   "via_urls": [
+    "http://www.bokjitimes.com/news/articleView.html?idxno=40591",
+    "https://www.medifonews.com/news/article.html?no=201922"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "보건복지부",
+   "population": "등록장애인 (2024년 말)",
+   "n": 2631356,
+   "mode": "census_admin",
+   "period": "2024-12-31",
+   "geography": "KR",
+   "note": "Registration is not functional limitation; under-registration likely (e.g., age-related hearing loss)."
+  },
+  {
+   "source_id": "SRC-18",
+   "type": "official_docs",
+   "tag": "standard",
+   "title": "한국형 웹 콘텐츠 접근성 지침 2.2 (KS X OT0003, 2022-12-28 개정) — 광과민성 발작 예방",
+   "url": "https://www.webwatch.or.kr/pds/(KS%20X%20OT0003)%20%ED%95%9C%EA%B5%AD%ED%98%95%20%EC%9B%B9%20%EC%BD%98%ED%85%90%EC%B8%A0%20%EC%A0%91%EA%B7%BC%EC%84%B1%20%EC%A7%80%EC%B9%A8%202.2.pdf",
+   "via_urls": [
+    "https://a11ykr.github.io/kwcag22/"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "국가표준 (한국지능정보사회진흥원 주관)",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public",
+   "note": "Standard text read only as a search excerpt (a11ykr.github.io and webwatch.or.kr not reachable)."
+  },
+  {
+   "source_id": "SRC-19",
+   "type": "community",
+   "tag": "snippet",
+   "title": "모바일 리듬게임 '엄지족 vs 검지족' 플레이 자세 게시글 — 아르케아 마이너 갤러리 '엄지 검지 떡밥에 대한 고찰(장문)', 아카라이브 리듬 게임 채널 '엄지충은 리겜하기 힘듬?', 루리웹 '모바일 리듬게임은 검지가 엄지보다 유리한걸까', 게임제너레이션 '모바일 리듬 게임에서 엄지러를 선택하기'",
+   "url": "https://m.dcinside.com/board/arcaea/90423",
+   "via_urls": [
+    "https://arca.live/b/mgamm/52344250",
+    "https://bbs.ruliweb.com/community/board/300779/read/40543223",
+    "https://www.gamegeneration.or.kr/article/9a5b557e-4595-495f-b1fe-e262fa15e9f5",
+    "http://www.todayhumor.co.kr/board/view.php?no=39891&page=1&s_no=39891&table=mobilegame"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "디시인사이드·아카라이브·루리웹·오늘의유머·게임제너레이션 (공개 게시판/기고)",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public",
+   "mode": "community",
+   "note": "Existence of two play postures only (two thumbs holding the phone vs phone on a surface with index fingers); no shares."
+  },
+  {
+   "source_id": "SRC-20",
+   "type": "official_statistics",
+   "tag": "report",
+   "title": "통근 근로자 이동 특성 분석 결과 (통계청, 2024-12-20 발표) — 언론 보도 검색 발췌 (서울신문, 복지투데이)",
+   "url": "https://www.seoul.co.kr/news/society/2024/12/20/20241220500107",
+   "via_urls": [
+    "https://www.bokjitoday.com/news/articleView.html?idxno=5226"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "통계청",
+   "population": "통근 근로자 (행정자료 연계 분석)",
+   "mode": "census_admin",
+   "period": "2024 발표",
+   "geography": "KR",
+   "note": "Mode recorded as administrative data by assumption; not confirmed on the page."
+  },
+  {
+   "source_id": "SRC-21",
+   "type": "community",
+   "tag": "snippet",
+   "title": "게임 중 메신저 알림 방해 게시글 — Samsung Members '게임 중 알림 안오게 하는 방법 있나요??', '게임할때 카카오톡 및 메신저 알림', '게임중 카톡알림 안받으려면 뭘설정해야하나요?'",
+   "url": "https://r1.community.samsung.com/t5/%EA%B0%A4%EB%9F%AD%EC%8B%9C-z/%EA%B2%8C%EC%9E%84-%EC%A4%91-%EC%95%8C%EB%A6%BC-%EC%95%88%EC%98%A4%EA%B2%8C-%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-%EC%9E%88%EB%82%98%EC%9A%94/td-p/19278969",
+   "via_urls": [
+    "https://r1.community.samsung.com/t5/gaming-hub/%EA%B2%8C%EC%9E%84%ED%95%A0%EB%95%8C-%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1-%EB%B0%8F-%EB%A9%94%EC%8B%A0%EC%A0%80-%EC%95%8C%EB%A6%BC/td-p/19361727",
+    "https://www.samsungsvc.co.kr/solution/1017693"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "Samsung Members (공개 커뮤니티)·삼성전자서비스",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public",
+   "mode": "community",
+   "note": "Existence only; post bodies not read."
+  },
+  {
+   "source_id": "SRC-22",
+   "type": "news",
+   "tag": "snippet",
+   "title": "“온종일 해도 몇백원” 재주는 소비자가 부리고 돈은 앱이 버네 (더스쿠프) — 리워드 앱 이용 실태",
+   "url": "https://www.thescoop.co.kr/news/articleView.html?idxno=302817",
+   "via_urls": [
+    "https://www.thescoop.co.kr/news/articleView.html?idxno=302826"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "더스쿠프",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public"
+  },
+  {
+   "source_id": "SRC-23",
+   "type": "community",
+   "tag": "snippet",
+   "title": "리워드 광고 포인트 미지급 관련 (앱인토스 개발자 커뮤니티 게시글)",
+   "url": "https://techchat-apps-in-toss.toss.im/t/topic/3398",
+   "accessed_at": "2026-09-29",
+   "publisher": "토스 앱인토스 개발자 커뮤니티 (공개 포럼)",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public",
+   "mode": "community",
+   "note": "Developer-side report; only the title was visible."
+  },
+  {
+   "source_id": "SRC-24",
+   "type": "official_docs",
+   "tag": "snippet",
+   "title": "노안 질환 정보 (서울아산병원 질환백과·질병관리청 국가건강정보포털·서울대학교병원 의학정보) — 검색 발췌",
+   "url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5226",
+   "via_urls": [
+    "https://www.amc.seoul.kr/asan/mobile/healthinfo/disease/diseaseDetail.do?contentId=32231",
+    "https://www.snuh.org/health/nMedInfo/nView.do?category=DIS&medid=AA000562"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "질병관리청·서울아산병원·서울대학교병원",
+   "access_basis": "search_result_excerpt",
+   "public_scope": "public",
+   "note": "The search tool returned an English rendering of the Korean pages; which of the three pages carries the sentence is not known. Qualitative onset only."
+  },
+  {
+   "source_id": "SRC-25",
+   "type": "market_report",
+   "tag": "snippet",
+   "title": "한국인들, 노안 불편해도 ‘그냥 참는다’…J&J 노안 대응 실태 조사 결과 공개 (이투데이) — 40~55세 한국인 대상 기업 설문",
+   "url": "https://www.etoday.co.kr/news/view/2490424",
+   "via_urls": [
+    "https://www.medipharmhealth.co.kr/news/article.html?no=109311"
+   ],
+   "accessed_at": "2026-09-29",
+   "publisher": "존슨앤드존슨 비전 (보도: 이투데이·메디팜헬스뉴스)",
+   "population": "40~55세 한국인",
+   "mode": "online_panel",
+   "period": "보도 시점 기준 (연도 미확인)",
+   "geography": "KR",
+   "note": "Company-commissioned self-report survey (sells presbyopia lenses); n, mode and year not visible in the excerpt; mode recorded as online_panel by assumption."
+  }
+ ],
+ "segments": [
+  {
+   "segment_id": "SEG-commute-points",
+   "name_ko": "출퇴근 대중교통에서 하루 3판을 몰아 하는 포인트 수집 직장인",
+   "summary": "30~40대 직장인. 지하철·버스에서 서서(한 손은 손잡이) 또는 앉아서 오늘의 3판을 연속으로 하고, 판 사이 결과 화면에서 포인트를 확인한다. 메뉴·결과·설정은 한 손, 플레이는 가능하면 두 엄지. 포인트가 목적이라 빨리 끝내고 싶어 하고, 하차·알림 때문에 도중에 멈추는 일이 잦으며, 대부분 무음으로 한다. 브리프가 '가장 큰 집단'이라고 적었지만 비중은 집계되지 않았다.",
+   "role": "operator",
+   "priority": "primary",
+   "share": {
+    "value": null,
+    "basis": "unknown",
+    "source_ids": [
+     "SRC-01",
+     "SRC-02",
+     "SRC-20"
+    ],
+    "high": 0.51,
+    "of": "하루비트 진입 사용자 (2026-08 내부 집계)",
+    "note": "상한 0.51 = 30대 26% + 40대 25% (이 유형의 연령 정의, SRC-02). 40대는 틈새 시간형과 겹치고, 전국 통근 근로자 중 대중교통 통근은 35.6%(SRC-20)라 실제 비중은 더 작다. 브리프는 '가장 큰 집단'이라고만 적었다."
+   },
+   "confidence": "medium",
+   "confidence_basis": "존재와 행동은 제품팀 브리프(내부 집계·설문 요약)에, 연령 상한은 제품 집계에, 통근 맥락은 공식 통계(SRC-20)에 근거. 비중 자체는 측정되지 않아 high가 아님.",
+   "evidence": [
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "제품팀이 이 유형을 가장 큰 사용자 집단으로 규정하고, 대중교통에서 하루 3판을 몰아서 한다고 기술",
+     "quote": "출퇴근 포인트 모으기형 (30~40대 직장인, 가장 큰 집단) … 지하철·버스에서 하루 3판을 몰아서 한다.",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-02",
+     "kind": "statistic",
+     "claim": "30~40대가 하루비트 진입 사용자의 51% (이 세그먼트 비중의 상한)",
+     "quote": "30대 26% · 40대 25%",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "서 있을 때 메뉴·결과·설정은 한 손 조작, 플레이는 가능하면 두 엄지 (파지 근거)",
+     "quote": "서 있을 때는 한 손으로 손잡이를 잡고 다른 한 손으로 폰을 든 채 메뉴·결과·설정을 조작하고, 플레이가 시작되면 가능하면 두 엄지로 패드를 누른다.",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "포인트가 목적이라 빨리 끝내고 싶어 하며(시간 압박), 알림·하차로 도중 중단이 잦다",
+     "quote": "포인트가 목적이라 빨리 한 판을 끝내고 싶어 한다. … 알림이나 하차 때문에 플레이 도중 멈춰야 하는 일이 잦다.",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-03",
+     "kind": "statistic",
+     "claim": "대중교통·사무실에서 대부분 무음으로 플레이 (설문 전체값; 세그먼트별 분해 없음)",
+     "quote": "대중교통·사무실에서는 소리를 끄고 하는 경우가 많음(설문 응답자의 62%가 \"대부분 무음으로 한다\")",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-20",
+     "kind": "statistic",
+     "claim": "전국 통근 근로자 중 대중교통 통근은 35.6%뿐이라 이 유형은 통근자 일부에 한정된다. 평균 왕복 73.9분(수도권 82.0분)이면 약 25초짜리 3판과 결과 확인이 한 번의 이동에 충분히 들어간다",
+     "quote": "통근 근로자의 평균 출·퇴근 소요 시간은 73.9분 … 수도권이 82.0분으로 가장 길었고 … 대중교통 이용은 35.6%",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-13",
+     "kind": "official",
+     "claim": "지하철에서 폰·이어폰에 몰두해 도착역을 놓치는 승객을 위해 도착 알림을 보낸다 — 하차 알림이 플레이를 끊는 맥락의 존재 근거",
+     "quote": "지하철에서 이어폰으로 음악을 듣느라 어디를 지나는지 깜박하는 시민들도 지하철 내 방송을 미처 듣지 못해도 도착역을 놓치지 않을 수 있다",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-21",
+     "kind": "firsthand",
+     "claim": "게임 중 메신저 알림을 막고 싶다는 사용자 질문이 공개 커뮤니티에 있다 (존재 근거, 크기 아님)",
+     "quote": "게임 중 알림 안오게 하는 방법 있나요??",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-01",
+     "kind": "inference",
+     "claim": "하루비트는 모바일 웹/웹뷰라 설치형 게임에 적용되는 게임 부스터류 알림 차단의 대상이 아닐 가능성이 높다 → 알림 배너가 상단 HUD(일시정지)를 가릴 수 있다 (화면에서 확인할 가설)",
+     "quote": "모바일 웹(모아포인트 앱 웹뷰 포함) 단일 페이지 정적 번들.",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-06",
+     "kind": "statistic",
+     "claim": "30~40대는 전국적으로 아이폰 비중이 제품 평균보다 높다 → 세그먼트 기기 구성 추론에 사용 (시장 조사, 발췌)",
+     "quote": "30대는 삼성 50%, 애플 47% … 40대는 67%로 삼성 선호가 우세",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-02",
+     "kind": "inference",
+     "claim": "세그먼트 기기 구성은 제품 전체 계열 비중을 연령 패턴으로 재가중한 추론값 (device_note 참조)",
+     "quote": "안드로이드 71%(갤럭시 S 시리즈 29%, 갤럭시 A 시리즈 34%, 기타 8%) · iOS 29%",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-08",
+     "kind": "statistic",
+     "claim": "한국 성인 색각이상은 남 5.6%·여 0.2%, 남성 색각이상의 72.3%가 제2색각(녹색각)이상 → cvd_deutan 비중 계산 근거",
+     "quote": "성별에 따른 색각이상 유병률은 남자가 5.6%(95% CI: 4.6, 6.8)로 여자 0.2%(95% CI: 0.1, 0.6)에 비해 높았습니다 … 남자에서 제2색각이상(녹색각이상)이 86명(72.30%)으로 가장 많았으며",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-23",
+     "kind": "firsthand",
+     "claim": "리워드 광고 시청 후 포인트 미지급 문제가 개발자 커뮤니티에 올라온 적이 있다 (존재 근거; 제목만 확인)",
+     "quote": "리워드 광고 포인트 미지급 관련",
+     "quote_basis": "snippet"
+    }
+   ],
+   "age_bands": {
+    "30s": 0.51,
+    "40s": 0.49
+   },
+   "age_note": "추론: 브리프의 '30~40대' 정의에 제품 집계 30대 26% : 40대 25% 비율을 적용.",
+   "sex_mix_note": "제품 전체 성비 여성 58% · 남성 42%(SRC-02); 세그먼트별 성비는 미상이라 sex_mix를 두지 않음.",
+   "devices": {
+    "iphone-15": 0.33,
+    "galaxy-a55": 0.32,
+    "galaxy-s24": 0.27
+   },
+   "device_source_ids": [
+    "SRC-02",
+    "SRC-06",
+    "SRC-01"
+   ],
+   "device_note": "추론: 제품 전체 기기 계열 비중(SRC-02: 갤럭시 S 29%, 갤럭시 A 34%, 기타 안드로이드 8%, iOS 29%)을 한국갤럽 연령별 애플 비중(SRC-06 발췌: 20대 60%, 30대 47%, 40대 삼성 67%→애플 약 31% 가정, 50대 삼성 89%→약 10%, 60대 이상 삼성 92%→약 6%; 10대는 발췌에 없어 50% 가정)으로 재가중하고, 제품 연령 구성으로 가중한 합(0.346)이 제품 실측 iOS 29%와 같아지도록 0.839배 보정한 뒤 세그먼트 연령 구성으로 합산. 안드로이드 몫은 제품 비율 S:A:기타 = 29:34:8로 나눔. 모델 대표는 브리프가 지정한 주 사용 기기(갤럭시 S24·A55·아이폰 15). 기타 안드로이드(약 0.06~0.11)는 카탈로그 대응 모델이 없어 비워 둠(합계 < 1).",
+   "orientation": "portrait",
+   "left_hand_share": null,
+   "grips": {
+    "one_hand": 0.5,
+    "two_thumbs": 0.5
+   },
+   "grips_basis": "브리프(SRC-01)가 이 유형에 대해 두 파지만 기술: 서서 메뉴·결과·설정은 한 손, 플레이는 가능하면 두 엄지. 0.5/0.5는 두 파지를 모두 시험하기 위한 배분 가정이며 측정값이 아님.",
+   "familiarity": {
+    "first_use": 0.45,
+    "returning": 0.55
+   },
+   "familiarity_basis": "추론: 제품 전체값 '해당 주 진입자의 약 45%가 그 주에 처음 플레이(신곡 프로모션 주간 60%)'(SRC-02)를 그대로 적용. 매일 3판 하는 이 유형은 실제 첫 사용 비중이 더 낮을 수 있음.",
+   "conditions": [
+    {
+     "condition": "cvd_deutan",
+     "share": 0.02,
+     "stakes": "high",
+     "cause": "permanent",
+     "source_ids": [
+      "SRC-08",
+      "SRC-02"
+     ],
+     "why": "한국 성인 색각이상 유병률 남 5.6%·여 0.2%, 남성 색각이상의 72.3%가 제2색각(녹색각)이상(SRC-08) × 제품 성비 남 42%(SRC-02) ≈ 0.017 (세그먼트 성비 미상, 추론). 탭 노트/피하기 노트 구분과 판정 표시가 색에만 의존하면 피하기 노트를 눌러 MISS·콤보 끊김·등급 하락 → 쿠폰으로 바꾸는 포인트 손실이라 stakes high. 색 의존 여부는 화면에서 확인할 가설."
+    },
+    {
+     "condition": "presbyopia",
+     "share": 0.36,
+     "low": 0.14,
+     "stakes": "normal",
+     "cause": "permanent",
+     "source_ids": [
+      "SRC-25",
+      "SRC-07",
+      "SRC-24"
+     ],
+     "why": "명시적 선언. 40대 비중 0.49 × 한국 40~55세 '핸드폰 화면의 작은 글씨 읽기' 불편 73%(SRC-25, 기업 설문·자기보고) ≈ 0.36; 임상 기준 하한은 0.49 × 40~49세 27.6%(농촌 중국, SRC-07) ≈ 0.14. 30대는 0으로 둠. 국내 임상 설명상 40대 중반부터 시작(SRC-24). 소수 조건이므로 기본 프로필은 노안 아님."
+    },
+    {
+     "condition": "deaf",
+     "share": 0.62,
+     "stakes": "normal",
+     "cause": "situational",
+     "source_ids": [
+      "SRC-03",
+      "SRC-01"
+     ],
+     "why": "상황적 무음(영구 청각장애 아님): 설문 응답자의 62%가 '대부분 무음으로 한다'(제품 전체값, 대중교통·사무실에서 많음). 소리·효과음 단서가 전혀 없는 상태이며 모델이 시뮬레이션하지 않으므로 untested로 남는다 → exclusions의 test_instead(무음·진동 끔 상태에서 T1·T5 수행)로 따로 점검."
+    }
+   ],
+   "contexts": [
+    {
+     "context_id": "CTX-commute-standing",
+     "mobility": "transit",
+     "lighting": "indoor",
+     "one_handed": true,
+     "interruptions": true,
+     "time_pressure": "high",
+     "share": null,
+     "source_ids": [
+      "SRC-01",
+      "SRC-13",
+      "SRC-20"
+     ],
+     "sound": "muted",
+     "note_ko": "움직이는 지하철·버스에 서서 한 손은 손잡이, 다른 손으로 폰을 들고 메뉴·결과·설정 조작. 하차·알림으로 중단. 서서/앉아서 비율은 미상이라 share 없음."
+    },
+    {
+     "context_id": "CTX-commute-seated",
+     "mobility": "transit",
+     "lighting": "indoor",
+     "one_handed": false,
+     "interruptions": true,
+     "time_pressure": "high",
+     "share": null,
+     "source_ids": [
+      "SRC-01"
+     ],
+     "sound": "muted",
+     "note_ko": "앉아서 두 엄지로 플레이. 비율 미상."
+    }
+   ],
+   "tasks": [
+    {
+     "task_id": "T-commute-result-home",
+     "brief_task": "T2",
+     "goal_ko": "결과 화면에서 등급·적립 포인트를 확인하고 홈으로 돌아가 남은 판 수 확인",
+     "jtbd": "When 출근길 지하철에서 오늘의 첫 판을 끝냈을 때, I want to 결과 화면에서 등급과 적립 포인트를 한눈에 보고 한 손으로 홈으로 돌아가기를, so I can 내리기 전에 남은 2판을 이어서 할 수 있다",
+     "frequency": "daily",
+     "criticality": "money",
+     "concrete_data": {
+      "result": "32,600점 · A등급 · +30P",
+      "judgements": "PERFECT 20 · GREAT 4 · GOOD 1 · MISS 2 · 최대 콤보 14",
+      "accuracy_check": "(20 + 4×0.7 + 1×0.4) ÷ 탭 노트 27 = 85.9% → A (80% 이상 95% 미만)",
+      "button": "홈으로",
+      "remaining_plays": "3/3 → 2/3"
+     },
+     "success_ko": "홈 화면 복귀, 남은 판 2/3 표시",
+     "success_criteria": {
+      "must_see": [
+       "+30P",
+       "A",
+       "2/3"
+      ]
+     },
+     "source_ids": [
+      "SRC-01"
+     ]
+    },
+    {
+     "task_id": "T-commute-pause",
+     "brief_task": "T5",
+     "goal_ko": "플레이 중 한 손으로 일시정지했다가 이어서 하기",
+     "jtbd": "When 하차 안내나 메신저 알림 때문에 곡 중간에 멈춰야 할 때, I want to 한 손으로 일시정지를 누르고 다시 계속하기를, so I can 오늘의 판을 잃지 않고 끝낼 수 있다",
+     "frequency": "daily",
+     "criticality": "money",
+     "concrete_data": {
+      "pause_at": "곡 10초 지점 (피버 타임 8~11초 구간 안)",
+      "pause_button": "상단 HUD 일시정지",
+      "choice": "계속하기",
+      "avoid": "나가기 (오늘의 판 1회 차감)"
+     },
+     "success_ko": "3·2·1 카운트다운 후 멈춘 지점부터 이어서 플레이",
+     "source_ids": [
+      "SRC-01",
+      "SRC-13"
+     ]
+    },
+    {
+     "task_id": "T-commute-ad-double",
+     "brief_task": "T6",
+     "goal_ko": "결과 화면에서 광고를 보고 포인트 2배 받기",
+     "jtbd": "When 결과 화면에서 +30P를 받았을 때, I want to 15초 광고를 보고 포인트를 2배로 받기를, so I can 같은 한 판으로 +60P를 모을 수 있다",
+     "frequency": "daily",
+     "criticality": "money",
+     "concrete_data": {
+      "button": "광고 보고 포인트 2배 받기",
+      "ad_length": "15초",
+      "points": "+30P → +60P",
+      "grade": "A"
+     },
+     "success_ko": "적립 포인트가 +60P로 표시",
+     "source_ids": [
+      "SRC-01",
+      "SRC-11"
+     ]
+    },
+    {
+     "task_id": "T-commute-sound-off",
+     "brief_task": "T4",
+     "goal_ko": "지하철에서 소리·진동 줄이기",
+     "jtbd": "When 지하철에서 주변에 소리를 내지 않고 해야 할 때, I want to 배경음악·효과음을 낮추고 진동을 끄기를, so I can 다음 판을 조용히 할 수 있다",
+     "frequency": "rare",
+     "criticality": "convenience",
+     "concrete_data": {
+      "bgm_volume": "70 → 40",
+      "sfx_volume": "80 → 30",
+      "vibration": "켬 → 끔",
+      "then": "저장"
+     },
+     "success_ko": "다음 판에 적용 (설정은 기기에 저장되어 다음 방문에도 유지)",
+     "source_ids": [
+      "SRC-01",
+      "SRC-03"
+     ]
+    }
+   ],
+   "pain_points": [
+    {
+     "text": "알림·하차로 도중에 멈출 일이 잦은데 일시정지는 상단 HUD에 있어, 손잡이를 잡고 한 손으로 폰을 든 상태에서 엄지가 닿기 어려울 수 있다 (가설).",
+     "source_ids": [
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "complaint_type": "interface design",
+     "maps_to": "reach"
+    },
+    {
+     "text": "게임 중 메신저 알림을 막고 싶다는 질문이 있다. 웹/웹뷰 게임은 설치형 게임의 알림 차단 기능 대상이 아닐 수 있어 알림 배너가 상단 HUD를 가릴 수 있다 (가설).",
+     "source_ids": [
+      "SRC-21",
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "gaze"
+    },
+    {
+     "text": "대부분 무음으로 하므로(62%) 카운트다운·박자·피버 시작을 소리 없이도 알아볼 수 있어야 한다.",
+     "source_ids": [
+      "SRC-03",
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "out_of_scope"
+    },
+    {
+     "text": "무선 이어폰으로 들으면 소리가 늦게 들려 판정이 어긋난다는 리듬게임 이용자 글이 있는데, 설정에는 싱크(오프셋) 조절 항목이 없다.",
+     "source_ids": [
+      "SRC-12",
+      "SRC-01"
+     ],
+     "kind": "firsthand",
+     "complaint_type": "feature request",
+     "maps_to": "out_of_scope"
+    },
+    {
+     "text": "리워드 광고를 봤는데 포인트가 지급되지 않는 문제가 개발자 커뮤니티에 보고된 적이 있다 → T6에서 2배 적립이 실제로 반영되는지 확인.",
+     "source_ids": [
+      "SRC-23"
+     ],
+     "kind": "firsthand",
+     "complaint_type": "functional error",
+     "maps_to": "out_of_scope"
+    }
+   ]
+  },
+  {
+   "segment_id": "SEG-gap-casual",
+   "name_ko": "점심·집안일 사이·잠들기 전에 짬짬이 하는 40~50대 리듬게임 초보",
+   "summary": "게임보다 포인트와 소소한 재미가 목적. 리듬게임 경험이 거의 없고, 처음 몇 판에서 어렵다고 느끼면 다시 오지 않는다(이번 분기 목표: 40대 이상 7일 재방문율 개선). 점심시간 사무실, 집 소파·집안일 사이, 잠들기 전 어두운 방에서 한다. 브리프의 '틈새 시간형(40~60대)' 중 60대 이상은 별도 edge 세그먼트(SEG-senior-60plus)로 나눴다.",
+   "role": "operator",
+   "priority": "primary",
+   "share": {
+    "value": null,
+    "basis": "unknown",
+    "source_ids": [
+     "SRC-02",
+     "SRC-01"
+    ],
+    "high": 0.43,
+    "of": "하루비트 진입 사용자 (2026-08 내부 집계)",
+    "note": "상한 0.43 = 40대 25% + 50대 18% (SRC-02). 40대는 출퇴근형과 겹쳐 실제 비중은 미상."
+   },
+   "confidence": "medium",
+   "confidence_basis": "존재·동기·이탈 양상은 브리프, 연령 상한은 제품 집계, 비교 리워드 앱의 40·50대 중심 구성(SRC-10)과 공식 통계(SRC-05)가 뒷받침. 비중은 측정되지 않음.",
+   "evidence": [
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "틈새 시간형: 점심·집안일 사이·잠들기 전 어두운 방에서 하고, 포인트가 목적이며 리듬게임 경험이 거의 없고 초반에 어려우면 이탈",
+     "quote": "틈새 시간형 (40~60대) … 점심시간, 집안일 사이, 잠들기 전 어두운 방에서 한다. 게임 자체보다 포인트와 소소한 재미가 목적이다. 리듬게임 경험이 거의 없고, 처음 몇 판에서 어렵다고 느끼면 다시 오지 않는다.",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-02",
+     "kind": "statistic",
+     "claim": "40~50대가 하루비트 진입 사용자의 43% (이 세그먼트 비중의 상한)",
+     "quote": "40대 25% · 50대 18%",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "이번 분기 제품 목표가 40대 이상의 재방문과 첫 판 완료율 개선",
+     "quote": "40대 이상 사용자의 7일 재방문율 개선.",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-03",
+     "kind": "statistic",
+     "claim": "제품 설문 전체에서 리듬게임을 해본 적 없는 사람이 41% (세그먼트별 분해 없음)",
+     "quote": "\"해본 적 없다\" 41% · \"가끔 한다\" 44% · \"자주 한다\" 15%",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-10",
+     "kind": "statistic",
+     "claim": "비교 리워드 앱(캐시워크 등)도 40·50대 중심 → 앱테크 핵심층과 일치 (비교 제품·패널 추정)",
+     "quote": "2025년 기준 캐시워크 이용자 중 40대가 31.7%, 50대가 34.3%로 40·50세대 이용자가 전체의 약 66%를 차지",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-25",
+     "kind": "statistic",
+     "claim": "40~55세 한국인의 다수가 폰 화면의 작은 글씨 읽기를 불편해함 (기업 설문·자기보고)",
+     "quote": "응답자의 94%가 한 가지 이상의 노안 증상을 경험 … 약병 라벨 또는 핸드폰 화면의 작은 글씨 읽기(73%)",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-07",
+     "kind": "statistic",
+     "claim": "임상 기준 노안 유병률은 40대 27.6%에서 60대 81.8%로 증가 (농촌 중국, 한국 아님)",
+     "quote": "In rural China, the prevalence increased from 27.6% at the age of 40–49 years to 81.8% at the age of 60–69 years",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-24",
+     "kind": "official",
+     "claim": "국내 의료 정보: 노안은 40대 중반에 시작 (검색 도구의 영어 번역 발췌)",
+     "quote": "Presbyopia typically begins in the mid-40s and tends to stop progressing after the late 50s.",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-15",
+     "kind": "firsthand",
+     "claim": "빠른 실시간 반응 게임은 40~50대에게 버겁고 노안으로 눈이 쉽게 피로하다는 보도 (존재 근거)",
+     "quote": "실시간으로 빠르게 반응해야 하는 게임을 오래 즐기는 것은 40~50대에게 버거우며, 노안이 시작되는 나이이기 때문에 오랜 시간 화면을 보고 있으면 눈이 금방 피로해집니다.",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-05",
+     "kind": "statistic",
+     "claim": "고령층(NIA 정의상 만 55세 이상으로 알려짐; 이번에 페이지로 확인하지 못함)의 디지털정보화 수준은 일반국민 대비 71.4% — 50대 후반 일부에 해당",
+     "quote": "고령층의 디지털정보화 수준은 71.4%로 나타났으며",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-02",
+     "kind": "inference",
+     "claim": "세그먼트 기기 구성은 제품 전체 계열 비중을 연령 패턴으로 재가중한 추론값 (device_note 참조)",
+     "quote": "안드로이드 71%(갤럭시 S 시리즈 29%, 갤럭시 A 시리즈 34%, 기타 8%) · iOS 29%",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-22",
+     "kind": "firsthand",
+     "claim": "리워드 앱 이용자는 걷기·광고·퀴즈로 몇십~몇백 원을 모은다는 보도 — 포인트가 목적인 짧은 과업 반복의 존재 근거",
+     "quote": "이용자들이 열심히 걷고, 광고도 보고, 퀴즈도 맞히지만 노력한 대가로 손에 넣는 금액은 몇십원에서 몇백원에 불과합니다.",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-18",
+     "kind": "official",
+     "claim": "국가 접근성 지침은 초당 3~50회 번쩍이는 콘텐츠를 금지 — 어두운 방에서의 피버 연출 점검 근거",
+     "quote": "초당 3∼50회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 합니다.",
+     "quote_basis": "snippet"
+    }
+   ],
+   "age_bands": {
+    "40s": 0.58,
+    "50s": 0.42
+   },
+   "age_note": "추론: 40대 25% : 50대 18% (SRC-02) 비율. 60대 이상은 SEG-senior-60plus로 분리.",
+   "devices": {
+    "galaxy-a55": 0.39,
+    "galaxy-s24": 0.33,
+    "iphone-15": 0.19
+   },
+   "device_source_ids": [
+    "SRC-02",
+    "SRC-06",
+    "SRC-01"
+   ],
+   "device_note": "추론: 제품 전체 기기 계열 비중(SRC-02: 갤럭시 S 29%, 갤럭시 A 34%, 기타 안드로이드 8%, iOS 29%)을 한국갤럽 연령별 애플 비중(SRC-06 발췌: 20대 60%, 30대 47%, 40대 삼성 67%→애플 약 31% 가정, 50대 삼성 89%→약 10%, 60대 이상 삼성 92%→약 6%; 10대는 발췌에 없어 50% 가정)으로 재가중하고, 제품 연령 구성으로 가중한 합(0.346)이 제품 실측 iOS 29%와 같아지도록 0.839배 보정한 뒤 세그먼트 연령 구성으로 합산. 안드로이드 몫은 제품 비율 S:A:기타 = 29:34:8로 나눔. 모델 대표는 브리프가 지정한 주 사용 기기(갤럭시 S24·A55·아이폰 15). 기타 안드로이드(약 0.06~0.11)는 카탈로그 대응 모델이 없어 비워 둠(합계 < 1).",
+   "orientation": "portrait",
+   "left_hand_share": null,
+   "familiarity": {
+    "first_use": 0.45,
+    "returning": 0.55
+   },
+   "familiarity_basis": "추론: 제품 전체값 45%(SRC-02) 적용. 리듬게임 자체 경험은 더 적다(브리프: '거의 없고').",
+   "conditions": [
+    {
+     "condition": "presbyopia",
+     "share": 0.73,
+     "low": 0.39,
+     "stakes": "normal",
+     "cause": "permanent",
+     "source_ids": [
+      "SRC-25",
+      "SRC-07",
+      "SRC-24"
+     ],
+     "why": "명시적 선언. 기능 기준: 40~55세 한국인의 73%가 '핸드폰 화면의 작은 글씨 읽기'를 노안 증상으로 꼽음(SRC-25, 기업 의뢰 자기보고 설문, n 미상). 임상 기준 하한: 40대 27.6%·60대 81.8%(농촌 중국, SRC-07)를 50대 약 55%로 선형 보간해 0.58×0.276 + 0.42×0.55 ≈ 0.39. 두 값 차이가 크므로 신뢰도 낮음. 0.73을 쓰면 기본 프로필이 노안."
+    },
+    {
+     "condition": "deaf",
+     "share": null,
+     "stakes": "normal",
+     "cause": "situational",
+     "source_ids": [
+      "SRC-03",
+      "SRC-01"
+     ],
+     "why": "상황적 무음: 점심시간 사무실 등에서 소리를 끄고 함(설문 전체 62%, 이 세그먼트 몫은 미상). 모델이 시뮬레이션하지 않음 → untested, exclusions의 무음 점검으로 대체."
+    }
+   ],
+   "contexts": [
+    {
+     "context_id": "CTX-gap-lunch-office",
+     "mobility": "seated",
+     "lighting": "indoor",
+     "one_handed": false,
+     "interruptions": false,
+     "time_pressure": "low",
+     "share": null,
+     "source_ids": [
+      "SRC-01",
+      "SRC-03"
+     ],
+     "sound": "muted",
+     "note_ko": "점심시간 사무실 자리. 무음이 많음. 비율 미상."
+    },
+    {
+     "context_id": "CTX-gap-home-chores",
+     "mobility": "seated",
+     "lighting": "indoor",
+     "one_handed": false,
+     "interruptions": true,
+     "time_pressure": "low",
+     "share": null,
+     "source_ids": [
+      "SRC-01"
+     ],
+     "note_ko": "집 소파·집안일 사이. 중간에 불려 가는 일(중단) 가정. 비율 미상."
+    },
+    {
+     "context_id": "CTX-gap-bed-dark",
+     "mobility": "seated",
+     "lighting": "dark",
+     "one_handed": false,
+     "interruptions": false,
+     "time_pressure": "low",
+     "share": null,
+     "source_ids": [
+      "SRC-01"
+     ],
+     "note_ko": "잠들기 전 어두운 방 침대(누운 자세는 mobility enum에 없어 seated로 기록). 비율 미상 → 조명 facet 근거 부족(AP-03)."
+    }
+   ],
+   "tasks": [
+    {
+     "task_id": "T-gap-first-play",
+     "brief_task": "T1",
+     "goal_ko": "튜토리얼을 보고 첫 판을 끝까지 하기",
+     "jtbd": "When 모아포인트 미니게임 탭에서 하루비트를 처음 열었을 때, I want to 튜토리얼 3장을 읽고 첫 판을 끝까지 해보기를, so I can 포인트를 받고 계속할 만한지 판단할 수 있다",
+     "frequency": "once",
+     "criticality": "access",
+     "concrete_data": {
+      "song": "여름밤 산책 (하루비트 사운드 · 120 BPM · 0:20)",
+      "difficulty": "보통",
+      "start": "시작",
+      "tutorial": "3장: ① 노트가 판정선에 닿을 때 탭 ② 탭 노트와 피하기 노트 ③ 피버 타임과 설정 안내 → 다음 ×3",
+      "countdown": "3·2·1",
+      "notes": "노트 33개 (탭 27 · 피하기 6), 피버 타임 8~11초"
+     },
+     "success_ko": "결과 화면 도달",
+     "source_ids": [
+      "SRC-01"
+     ]
+    },
+    {
+     "task_id": "T-gap-slow-down",
+     "brief_task": "T3",
+     "goal_ko": "노트 속도를 낮추고 화면 효과 끄기",
+     "jtbd": "When 첫 판에서 노트가 너무 빠르고 화면 연출이 눈에 부담스러웠을 때, I want to 노트 속도를 낮추고 화면 효과를 끄기를, so I can 다음 판을 덜 어렵게 하고 계속 포인트를 모을 수 있다",
+     "frequency": "rare",
+     "criticality": "access",
+     "concrete_data": {
+      "open": "홈 → 설정",
+      "note_speed": "2.0x → 1.5x",
+      "screen_effects": "켜기 → 끄기",
+      "then": "저장 → 홈으로"
+     },
+     "success_ko": "홈 설정 요약에 \"노트 속도 1.5x · 화면 효과 끔\" 표시, 다음 판에 적용",
+     "source_ids": [
+      "SRC-01"
+     ]
+    }
+   ],
+   "pain_points": [
+    {
+     "text": "처음 몇 판에서 어렵다고 느끼면 다시 오지 않는다 (제품팀 관찰; 첫 판 완료율 78%).",
+     "source_ids": [
+      "SRC-01",
+      "SRC-02"
+     ],
+     "kind": "inference",
+     "maps_to": "game"
+    },
+    {
+     "text": "작은 HUD 글자(점수·콤보)와 판정 표시가 노안에서 읽히지 않을 수 있다 — 40~55세 73%가 폰의 작은 글씨를 불편해함 (가설).",
+     "source_ids": [
+      "SRC-25",
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "perception"
+    },
+    {
+     "text": "빠른 반응을 요구하는 게임은 40~50대에게 버겁고 눈이 쉽게 피로하다는 보도 → 기본 노트 속도 2.0x와 피버 연출이 부담일 수 있음 (가설).",
+     "source_ids": [
+      "SRC-15",
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "game"
+    },
+    {
+     "text": "잠들기 전 어두운 방에서 피버 타임 화면 연출(번쩍임)이 눈부심·광과민 위험이 될 수 있다 (가설; 조명 비율 근거 없음).",
+     "source_ids": [
+      "SRC-01",
+      "SRC-18"
+     ],
+     "kind": "inference",
+     "maps_to": "game"
+    }
+   ]
+  },
+  {
+   "segment_id": "SEG-rhythm-fans",
+   "name_ko": "노트 속도를 올리고 판정을 따지며 같은 곡을 반복하는 리듬게임 애호가 (주로 20대)",
+   "summary": "점수와 친구 도전장이 목적. 노트 속도를 올리고 판정(PERFECT ±50ms)을 신경 쓰며 한 곡을 여러 번 다시 한다. 하루 무료 3판과 광고 충전 판(하루 최대 5판) 안에서 반복한다. 주로 20대이며 아이폰 비중이 높다(갤럽 연령 패턴에서 추론). 결과 화면 공유(도전장) 버튼은 다음 스프린트 예정이라 이번 빌드에는 없다.",
+   "role": "operator",
+   "priority": "secondary",
+   "share": {
+    "value": 0.15,
+    "basis": "estimated",
+    "source_ids": [
+     "SRC-03",
+     "SRC-02"
+    ],
+    "of": "하루비트 설문 응답자 (2026-06, n=1,240)",
+    "note": "대리 지표: 설문의 리듬게임 경험 '자주 한다' 15%(SRC-03). 20대 비중 17%(SRC-02)와의 교집합은 미상이고, 설문이 정식 오픈(2026-07) 전이라 현재 이용자와 다를 수 있음."
+   },
+   "confidence": "medium",
+   "confidence_basis": "행동은 브리프, 크기는 제품 설문의 대리 지표(n=1,240, 오픈 전), 파지·무선 이어폰 문제는 커뮤니티 존재 근거.",
+   "evidence": [
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "리듬게임을 좋아하는 20대: 점수·도전장이 목적, 노트 속도를 올리고 판정을 신경 쓰며 같은 곡을 반복",
+     "quote": "리듬게임을 좋아하는 20대 … 점수와 친구 도전장이 목적이다. 노트 속도를 올리고 판정을 신경 쓴다. 한 곡을 여러 번 다시 한다.",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-03",
+     "kind": "statistic",
+     "claim": "설문 응답자 중 리듬게임을 자주 하는 사람 15% (세그먼트 크기의 대리 지표)",
+     "quote": "\"자주 한다\" 15%",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-02",
+     "kind": "statistic",
+     "claim": "20대는 진입 사용자의 17%",
+     "quote": "20대 17%",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "반복 횟수의 상한: 무료 3판 + 광고 충전으로 하루 최대 5판",
+     "quote": "하루 3판 무료, 추가 판은 광고 시청으로 1판씩 충전(하루 최대 5판).",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-06",
+     "kind": "statistic",
+     "claim": "20대는 전국적으로 아이폰 사용자가 더 많다 → 세그먼트 기기 구성 추론에 사용 (시장 조사, 발췌)",
+     "quote": "20대는 애플(60%) 사용자가 삼성(40%)보다 많아",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-19",
+     "kind": "firsthand",
+     "claim": "모바일 리듬게임 이용자는 폰을 들고 두 엄지로 치거나(어디서나 가능) 폰을 바닥에 놓고 검지로 친다(고난도에 유리) — 파지의 존재 근거",
+     "quote": "엄지로 플레이할 경우 장소에 구애를 거의 받지 않으며, 탁자 등의 받칠 것이 필요 없어 앉아서든, 서서든, 걸어다니면서, 심지어 누워서도 할 수 있습니다. … 검지 플레이는 높은 난이도의 곡을 처리하는 데 더 유리",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-12",
+     "kind": "firsthand",
+     "claim": "무선 이어폰 지연 때문에 리듬게임 판정이 어긋나며, 게임 안 딜레이(싱크) 조절 옵션이 있어야 해결된다는 이용자 글",
+     "quote": "리듬게임은 1ms 정도의 차이도 느끼는데, 무선 이어폰의 딜레이를 극복하기 어렵습니다. 다만 게임 안에서 딜레이 조절 옵션이 있으면 어느 정도 해결이 가능합니다.",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "설정에는 싱크(오프셋) 조절 항목이 없다",
+     "quote": "배경음악 볼륨(0~100), 효과음 볼륨(0~100), 진동, 화면 효과(켜기/줄이기/끄기), 노트 속도(1.0x~4.0x, 0.5 단위), 튜토리얼 다시 보기, 저장",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-02",
+     "kind": "inference",
+     "claim": "세그먼트 기기 구성은 제품 전체 계열 비중을 연령 패턴으로 재가중한 추론값 (device_note 참조)",
+     "quote": "안드로이드 71%(갤럭시 S 시리즈 29%, 갤럭시 A 시리즈 34%, 기타 8%) · iOS 29%",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-11",
+     "kind": "firsthand",
+     "claim": "비교 앱 내 미니게임 이용자는 충전 대기 대신 15~30초 광고를 보고 판을 충전한다는 보도 (존재 근거) — 광고 충전 과업의 근거",
+     "quote": "하트는 15분 간격으로 자동 1개씩 충전되지만, 이용자들은 그 시간을 기다리기보다 15~30초 분량의 무료 광고를 시청하고 급속 충전합니다.",
+     "quote_basis": "snippet"
+    }
+   ],
+   "age_bands": {
+    "20s": 1.0
+   },
+   "age_note": "브리프 정의(20대). 10대(4%)·30대 애호가도 있을 수 있으나 근거 없음.",
+   "devices": {
+    "iphone-15": 0.5,
+    "galaxy-a55": 0.24,
+    "galaxy-s24": 0.2
+   },
+   "device_source_ids": [
+    "SRC-02",
+    "SRC-06",
+    "SRC-01"
+   ],
+   "device_note": "추론: 제품 전체 기기 계열 비중(SRC-02: 갤럭시 S 29%, 갤럭시 A 34%, 기타 안드로이드 8%, iOS 29%)을 한국갤럽 연령별 애플 비중(SRC-06 발췌: 20대 60%, 30대 47%, 40대 삼성 67%→애플 약 31% 가정, 50대 삼성 89%→약 10%, 60대 이상 삼성 92%→약 6%; 10대는 발췌에 없어 50% 가정)으로 재가중하고, 제품 연령 구성으로 가중한 합(0.346)이 제품 실측 iOS 29%와 같아지도록 0.839배 보정한 뒤 세그먼트 연령 구성으로 합산. 안드로이드 몫은 제품 비율 S:A:기타 = 29:34:8로 나눔. 모델 대표는 브리프가 지정한 주 사용 기기(갤럭시 S24·A55·아이폰 15). 기타 안드로이드(약 0.06~0.11)는 카탈로그 대응 모델이 없어 비워 둠(합계 < 1).",
+   "orientation": "portrait",
+   "left_hand_share": null,
+   "grips": {
+    "two_thumbs": 1.0
+   },
+   "grips_basis": "커뮤니티(SRC-19)가 보여 주는 두 자세 중 파지 enum으로 표현 가능한 것은 두 엄지뿐(폰을 바닥에 두고 검지로 치는 자세는 enum에 없어 exclusions로 넘김). 1.0은 가정이며 측정값이 아님.",
+   "familiarity": {
+    "expert": 0.55,
+    "first_use": 0.45
+   },
+   "familiarity_basis": "추론: 리듬게임 숙련(자주 한다)이 세그먼트 정의라 expert, 이 제품 첫 사용 비중은 제품 전체 45%(SRC-02)를 적용.",
+   "conditions": [],
+   "contexts": [
+    {
+     "context_id": "CTX-fan-home-seated",
+     "mobility": "seated",
+     "lighting": "indoor",
+     "one_handed": false,
+     "interruptions": false,
+     "time_pressure": "low",
+     "share": null,
+     "source_ids": [
+      "SRC-01",
+      "SRC-19"
+     ],
+     "sound": "unknown",
+     "note_ko": "집 소파 등에서 앉아 반복 플레이(브리프의 일반 이용 맥락에서 추론). 소리를 켜는지 여부는 미상. 비율 미상."
+    }
+   ],
+   "tasks": [
+    {
+     "task_id": "T-fan-speed-up",
+     "brief_task": "T3 (변형)",
+     "goal_ko": "노트 속도를 올리고 화면 효과를 줄이기",
+     "jtbd": "When 기본 노트 속도 2.0x에서는 노트가 겹쳐 보여 판정 타이밍을 읽기 어려울 때, I want to 노트 속도를 3.0x로 올리고 화면 효과를 줄이기를, so I can 노트를 또렷하게 보고 S등급을 노릴 수 있다",
+     "frequency": "rare",
+     "criticality": "convenience",
+     "concrete_data": {
+      "open": "홈 → 설정",
+      "note_speed": "2.0x → 3.0x (범위 1.0x~4.0x, 0.5 단위)",
+      "screen_effects": "켜기 → 줄이기",
+      "then": "저장 → 홈으로"
+     },
+     "success_ko": "홈 설정 요약에 노트 속도 3.0x와 화면 효과 '줄이기' 상태가 표시되고 다음 판에 적용",
+     "source_ids": [
+      "SRC-01"
+     ]
+    },
+    {
+     "task_id": "T-fan-replay-hard",
+     "brief_task": "T1·T2 (변형)",
+     "goal_ko": "어려움 난이도로 하고 결과를 확인한 뒤 바로 다시하기",
+     "jtbd": "When A등급이 나와 판정 내역에서 GREAT·MISS가 아쉬울 때, I want to 판정 내역을 확인하고 바로 다시하기를, so I can 같은 곡으로 S등급(+50P)을 노릴 수 있다",
+     "frequency": "daily",
+     "criticality": "money",
+     "concrete_data": {
+      "difficulty": "어려움",
+      "result_example": "32,600점 · A등급 · PERFECT 20 · GREAT 4 · GOOD 1 · MISS 2 · 최대 콤보 14",
+      "judgement_windows": "PERFECT ±50ms · GREAT ±90ms · GOOD ±140ms",
+      "target": "S등급 (정확도 95% 이상, 50P)",
+      "button": "다시하기"
+     },
+     "success_ko": "결과 화면에서 다시하기 → 3·2·1 카운트다운 후 같은 곡 새 판 시작",
+     "source_ids": [
+      "SRC-01"
+     ]
+    },
+    {
+     "task_id": "T-fan-ad-recharge",
+     "brief_task": "브리프 §2 규칙 (과업 표에는 없음)",
+     "goal_ko": "무료 3판을 다 쓴 뒤 광고를 보고 1판 충전",
+     "jtbd": "When 오늘의 무료 3판을 모두 썼을 때, I want to 광고를 보고 1판을 충전하기를, so I can 같은 곡을 한 번 더 할 수 있다",
+     "frequency": "daily",
+     "criticality": "money",
+     "concrete_data": {
+      "remaining_plays": "0/3",
+      "action": "광고 시청으로 1판 충전",
+      "daily_max": "하루 최대 5판"
+     },
+     "success_ko": "광고 시청 후 새 판을 시작할 수 있음 (하루 최대 5판). 충전 버튼의 화면 위치는 브리프에 없음",
+     "source_ids": [
+      "SRC-01",
+      "SRC-11"
+     ]
+    }
+   ],
+   "pain_points": [
+    {
+     "text": "무선 이어폰 지연으로 판정이 어긋난다는 글이 있는데 설정에 싱크(오프셋) 조절이 없다.",
+     "source_ids": [
+      "SRC-12",
+      "SRC-01"
+     ],
+     "kind": "firsthand",
+     "complaint_type": "feature request",
+     "maps_to": "out_of_scope"
+    },
+    {
+     "text": "폰을 바닥에 두고 검지로 치는 숙련자는 파지 모델에 없다 → 사람 점검 필요.",
+     "source_ids": [
+      "SRC-19"
+     ],
+     "kind": "firsthand",
+     "maps_to": "out_of_scope"
+    },
+    {
+     "text": "점수를 친구에게 보내는 결과 화면 공유 버튼은 다음 스프린트 예정이라 이번 빌드에서 도전장 보내기는 시험 대상이 아니다.",
+     "source_ids": [
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "out_of_scope"
+    },
+    {
+     "text": "웹(웹뷰) 입력 지연이 ±50ms PERFECT 판정 창을 잠식할 수 있다 (가설; 입력→판정 표시 지연을 측정해 확인).",
+     "source_ids": [
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "cognition"
+    }
+   ]
+  },
+  {
+   "segment_id": "SEG-senior-60plus",
+   "name_ko": "노안·느린 손으로 첫 판부터 버거운 60대 이상 포인트 수집자",
+   "summary": "모아포인트 포인트를 모으려고 하루비트를 해 보는 60대 이상. 리듬게임 경험이 거의 없고 대부분 노안이며 일부는 손떨림·난청·저시력이 있다. 브리프의 '틈새 시간형(40~60대)'에서 60대 이상을 떼어 낸 edge 세그먼트: 튜토리얼·판정 창·작은 HUD 글자를 따라가지 못하면 첫 판에서 포인트와 재방문을 모두 잃는다. 집 소파나 잠들기 전 침대에서 한다.",
+   "role": "operator",
+   "priority": "edge",
+   "share": {
+    "value": 0.1,
+    "basis": "measured",
+    "source_ids": [
+     "SRC-02"
+    ],
+    "of": "하루비트 진입 사용자 (2026-08 내부 집계)",
+    "note": "세그먼트 정의 = 60대 이상 진입 사용자. 70대 이상 비중은 따로 집계되지 않음."
+   },
+   "confidence": "medium",
+   "confidence_basis": "비중은 제품 집계(측정)지만 브리프 요약으로만 확인했고, 노안·떨림·난청 비중은 제품 밖 연구·공식 통계(국가·연령이 다름)에서 가져와 high로 두지 않음.",
+   "evidence": [
+    {
+     "source_id": "SRC-02",
+     "kind": "statistic",
+     "claim": "60대 이상이 하루비트 진입 사용자의 10%",
+     "quote": "60대 이상 10%",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "브리프의 틈새 시간형은 60대까지 포함하며 리듬게임 경험이 거의 없고 초반에 어려우면 이탈",
+     "quote": "틈새 시간형 (40~60대) … 리듬게임 경험이 거의 없고, 처음 몇 판에서 어렵다고 느끼면 다시 오지 않는다.",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-04",
+     "kind": "statistic",
+     "claim": "60대의 게임 이용률은 23.1%로 낮아(10~69세 조사) 게임 조작 경험이 적은 연령대",
+     "quote": "10대의 이용률은 80.9%로 여전히 높지만, 60대는 23.1%에 불과합니다.",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-05",
+     "kind": "statistic",
+     "claim": "고령층 디지털정보화 수준은 일반국민 대비 71.4%",
+     "quote": "고령층의 디지털정보화 수준은 71.4%로 나타났으며",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-07",
+     "kind": "statistic",
+     "claim": "60~69세 노안 유병률 81.8% (농촌 중국, 한국 아님)",
+     "quote": "81.8% at the age of 60–69 years",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-09",
+     "kind": "statistic",
+     "claim": "한국 65세 이상 본태성 떨림 조유병률 3.64/100 (n=714)",
+     "quote": "The crude prevalence of essential tremor (ET) was 3.64 per 100 persons.",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-17",
+     "kind": "statistic",
+     "claim": "등록장애인의 55.3%가 65세 이상이며, 청각 16.8%·시각 9.4%; 2024년 신규 등록의 31.7%가 청각 — 고령층의 청각·시각 제한 존재 근거(등록 ≠ 기능 제한)",
+     "quote": "청각장애(16.8%), 시각장애(9.4%) … 65세 이상의 비율은 꾸준히 증가하여 55.3%(1,455,782명) … 청각(31.7%)",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-06",
+     "kind": "statistic",
+     "claim": "60대 이상은 전국적으로 삼성 사용이 92% → 기기 구성 추론에 사용 (시장 조사, 발췌)",
+     "quote": "60대 이상에서 삼성 사용 비중이 92%로 압도적",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-14",
+     "kind": "firsthand",
+     "claim": "노안·약시를 지원하는 게임이 적다는 보도 (존재 근거)",
+     "quote": "노안과 약시를 지원하는 게임은 상대적으로 적습니다.",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-02",
+     "kind": "inference",
+     "claim": "세그먼트 기기 구성은 제품 전체 계열 비중을 연령 패턴으로 재가중한 추론값 (device_note 참조)",
+     "quote": "안드로이드 71%(갤럭시 S 시리즈 29%, 갤럭시 A 시리즈 34%, 기타 8%) · iOS 29%",
+     "quote_basis": "document"
+    }
+   ],
+   "age_bands": {
+    "60s": 1.0
+   },
+   "age_note": "제품 집계가 '60대 이상 10%'만 제공해 70대 이상 비중은 미상. 70s+ 대역은 근거 없이 넣지 않음.",
+   "devices": {
+    "galaxy-a55": 0.45,
+    "galaxy-s24": 0.39,
+    "iphone-15": 0.05
+   },
+   "device_source_ids": [
+    "SRC-02",
+    "SRC-06",
+    "SRC-01"
+   ],
+   "device_note": "추론: 제품 전체 기기 계열 비중(SRC-02: 갤럭시 S 29%, 갤럭시 A 34%, 기타 안드로이드 8%, iOS 29%)을 한국갤럽 연령별 애플 비중(SRC-06 발췌: 20대 60%, 30대 47%, 40대 삼성 67%→애플 약 31% 가정, 50대 삼성 89%→약 10%, 60대 이상 삼성 92%→약 6%; 10대는 발췌에 없어 50% 가정)으로 재가중하고, 제품 연령 구성으로 가중한 합(0.346)이 제품 실측 iOS 29%와 같아지도록 0.839배 보정한 뒤 세그먼트 연령 구성으로 합산. 안드로이드 몫은 제품 비율 S:A:기타 = 29:34:8로 나눔. 모델 대표는 브리프가 지정한 주 사용 기기(갤럭시 S24·A55·아이폰 15). 기타 안드로이드(약 0.06~0.11)는 카탈로그 대응 모델이 없어 비워 둠(합계 < 1).",
+   "orientation": "portrait",
+   "left_hand_share": null,
+   "familiarity": {
+    "first_use": 0.45,
+    "returning": 0.55
+   },
+   "familiarity_basis": "추론: 제품 전체값 45%(SRC-02). 리듬게임 자체는 대부분 처음(브리프, SRC-04의 낮은 게임 이용률).",
+   "conditions": [
+    {
+     "condition": "presbyopia",
+     "share": 0.82,
+     "stakes": "normal",
+     "cause": "permanent",
+     "source_ids": [
+      "SRC-07",
+      "SRC-24"
+     ],
+     "why": "명시적 선언. 60~69세 노안 유병률 81.8%(농촌 중국, SRC-07; 한국 연령별 수치는 찾지 못함). 기본 프로필은 노안."
+    },
+    {
+     "condition": "tremor_mild",
+     "share": 0.04,
+     "stakes": "high",
+     "cause": "permanent",
+     "source_ids": [
+      "SRC-09"
+     ],
+     "why": "한국 65세 이상 본태성 떨림 3.64/100(SRC-09; 60~64세는 더 낮을 것, 다른 떨림은 미포함). 4개 패드 ±140ms 판정 창에서 오터치·MISS → 포인트 손실이라 stakes high."
+    },
+    {
+     "condition": "low_vision",
+     "share": null,
+     "stakes": "normal",
+     "cause": "permanent",
+     "source_ids": [
+      "SRC-17"
+     ],
+     "why": "등록 시각장애는 등록장애인의 9.4%(2024), 등록장애인의 55.3%가 65세 이상. 60대 이상 이용자 중 기능적 저시력 비율은 미상."
+    },
+    {
+     "condition": "hearing_loss",
+     "share": null,
+     "stakes": "normal",
+     "cause": "permanent",
+     "source_ids": [
+      "SRC-17"
+     ],
+     "why": "등록장애인의 16.8%가 청각장애, 2024년 신규 등록의 31.7%가 청각. 노인성 난청 비중은 미상. 모델이 시뮬레이션하지 않음 → untested, exclusions의 무음 점검으로 대체."
+    }
+   ],
+   "contexts": [
+    {
+     "context_id": "CTX-senior-home",
+     "mobility": "seated",
+     "lighting": "indoor",
+     "one_handed": false,
+     "interruptions": false,
+     "time_pressure": "low",
+     "share": null,
+     "source_ids": [
+      "SRC-01"
+     ],
+     "note_ko": "집 소파(브리프의 틈새 시간형 맥락을 60대 이상에 적용한 추론). 비율 미상."
+    },
+    {
+     "context_id": "CTX-senior-bed-dark",
+     "mobility": "seated",
+     "lighting": "dark",
+     "one_handed": false,
+     "interruptions": false,
+     "time_pressure": "low",
+     "share": null,
+     "source_ids": [
+      "SRC-01"
+     ],
+     "note_ko": "잠들기 전 어두운 방(누운 자세는 enum에 없어 seated). 비율 미상 → 조명 facet 근거 부족(AP-03)."
+    }
+   ],
+   "tasks": [
+    {
+     "task_id": "T-senior-first-play-easy",
+     "brief_task": "T1 (난이도 쉬움)",
+     "goal_ko": "쉬움 난이도로 튜토리얼을 보고 첫 판을 끝까지 하기",
+     "jtbd": "When 포인트를 더 모으려고 하루비트를 처음 해 볼 때, I want to 가장 쉬운 난이도를 골라 튜토리얼을 차근차근 읽고 첫 판을 끝내기를, so I can 포인트를 받고 다음에도 할 수 있겠다고 느낄 수 있다",
+     "frequency": "once",
+     "criticality": "access",
+     "concrete_data": {
+      "song": "여름밤 산책 (120 BPM · 0:20)",
+      "difficulty": "쉬움",
+      "start": "시작",
+      "tutorial": "3장 → 다음 ×3 (건너뛰기 누르지 않음)",
+      "countdown": "3·2·1",
+      "notes": "탭 노트는 누르고 피하기 노트는 누르지 않기"
+     },
+     "success_ko": "결과 화면 도달",
+     "source_ids": [
+      "SRC-01"
+     ]
+    },
+    {
+     "task_id": "T-senior-slowest",
+     "brief_task": "T3 (변형)",
+     "goal_ko": "노트 속도를 가장 느리게 하고 화면 효과 끄기",
+     "jtbd": "When 노트가 너무 빨리 떨어지고 번쩍이는 연출 때문에 노트를 놓칠 때, I want to 노트 속도를 가장 느리게 하고 화면 효과를 끄기를, so I can 판정선에 닿는 순간을 볼 시간을 벌 수 있다",
+     "frequency": "rare",
+     "criticality": "access",
+     "concrete_data": {
+      "open": "홈 → 설정",
+      "note_speed": "2.0x → 1.0x (최저값)",
+      "screen_effects": "켜기 → 끄기",
+      "then": "저장 → 홈으로"
+     },
+     "success_ko": "홈 설정 요약에 \"노트 속도 1.0x · 화면 효과 끔\" 표시, 다음 판에 적용",
+     "source_ids": [
+      "SRC-01"
+     ]
+    },
+    {
+     "task_id": "T-senior-tutorial-again",
+     "brief_task": "T7",
+     "goal_ko": "설정에서 튜토리얼 다시 보기",
+     "jtbd": "When 탭 노트와 피하기 노트의 차이가 헷갈릴 때, I want to 설정에서 튜토리얼을 처음부터 다시 보기를, so I can 규칙을 다시 익히고 MISS를 줄일 수 있다",
+     "frequency": "rare",
+     "criticality": "access",
+     "concrete_data": {
+      "open": "홈 → 설정",
+      "button": "튜토리얼 다시 보기",
+      "expect": "1장 '노트가 판정선에 닿을 때 탭'부터"
+     },
+     "success_ko": "튜토리얼 1장부터 표시",
+     "source_ids": [
+      "SRC-01"
+     ]
+    }
+   ],
+   "pain_points": [
+    {
+     "text": "노안에서 상단 HUD(점수·콤보·곡 진행)와 판정 표시 글자가 작으면 읽히지 않는다 (가설).",
+     "source_ids": [
+      "SRC-07",
+      "SRC-14",
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "perception"
+    },
+    {
+     "text": "손떨림이 있으면 하단 패드 4개 사이 오터치와 ±140ms 밖 입력(MISS)이 늘어 포인트가 줄어든다 (가설).",
+     "source_ids": [
+      "SRC-09",
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "pointing"
+    },
+    {
+     "text": "게임 경험이 적은 연령대(60대 게임 이용률 23.1%)라 탭 노트/피하기 노트 규칙과 피버 타임을 튜토리얼만으로 익히기 어렵다 (가설).",
+     "source_ids": [
+      "SRC-04",
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "cognition"
+    },
+    {
+     "text": "난청이면 카운트다운·효과음 단서를 못 듣는다 → 시각 단서만으로 시작 시점을 알 수 있어야 한다 (가설).",
+     "source_ids": [
+      "SRC-17",
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "out_of_scope"
+    }
+   ]
+  },
+  {
+   "segment_id": "SEG-challenge-trial",
+   "name_ko": "카카오톡 '점수 도전장' 링크로 처음 들어온 비회원 체험자",
+   "summary": "모아포인트 회원이 아니어도 카카오톡 링크를 눌러 모바일 브라우저에서 1판을 체험한다(체험 판은 포인트 없음). 튜토리얼과 첫 판 경험이 회원 가입 전환을 좌우한다. 카카오톡에서 연 링크는 기본적으로 카카오톡 인앱 브라우저로 열린다. 결과 화면 공유 버튼은 다음 스프린트 예정이라 현재 유입 규모와 연령은 미상.",
+   "role": "operator",
+   "priority": "edge",
+   "share": {
+    "value": null,
+    "basis": "unknown",
+    "source_ids": [
+     "SRC-01"
+    ],
+    "of": "하루비트 첫 판 진입 (회원 + 체험)",
+    "note": "체험 유입 수는 브리프에 없음. 제품 집계(SRC-02)가 체험 판을 포함하는지도 미상."
+   },
+   "confidence": "low",
+   "confidence_basis": "존재는 브리프의 설계 의도(product_brief)와 카카오 인앱 브라우저 개발자 글(존재 근거)뿐. 크기·연령·기기 모두 추론.",
+   "evidence": [
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "비회원이 카카오톡 링크로 들어와 모바일 브라우저에서 첫 판을 하며, 튜토리얼과 첫 판이 가입 전환을 좌우",
+     "quote": "도전장 체험 유입 (비회원) … 카카오톡 링크로 들어와 모바일 브라우저에서 첫 판을 한다. 튜토리얼과 첫 판 경험이 회원 가입 전환을 좌우한다.",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "체험 판은 포인트가 없고, 결과 화면 공유 버튼은 다음 스프린트에 추가 예정",
+     "quote": "받은 사람은 모아포인트 회원이 아니어도 모바일 브라우저에서 1판 체험할 수 있다(체험 판은 포인트 없음, 다음 스프린트에서 결과 화면 공유 버튼 추가 예정).",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-01",
+     "kind": "official",
+     "claim": "오디오는 첫 탭 이후에만 재생되고 무음 모드에서도 플레이 가능해야 함 — 브라우저 첫 진입 조건",
+     "quote": "오디오는 첫 사용자 탭 이후 재생(iOS 정책). 무음 모드에서도 플레이 가능해야 한다.",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-02",
+     "kind": "statistic",
+     "claim": "첫 판 완료율 78% — 첫 판을 시작한 사람의 약 22%가 결과 화면에 닿지 못함 (회원 포함 전체 지표)",
+     "quote": "첫 판 완료율(현재 78%, 목표 85%)",
+     "quote_basis": "document"
+    },
+    {
+     "source_id": "SRC-16",
+     "kind": "firsthand",
+     "claim": "카카오톡에서 연 링크가 인앱 브라우저로 제한되는 문제를 다룬 개발자 글이 있다 (존재 근거)",
+     "quote": "카카오 인앱 브라우저에서 링크가 열릴 때 내부 브라우저로 제한되는 문제",
+     "quote_basis": "snippet"
+    },
+    {
+     "source_id": "SRC-02",
+     "kind": "inference",
+     "claim": "체험자 연령·기기는 미상이라 제품 전체 분포를 그대로 적용 (도전장은 기존 이용자의 지인에게 간다는 가정)",
+     "quote": "10대 4% · 20대 17% · 30대 26% · 40대 25% · 50대 18% · 60대 이상 10%",
+     "quote_basis": "document"
+    }
+   ],
+   "age_bands": {
+    "10s": 0.04,
+    "20s": 0.17,
+    "30s": 0.26,
+    "40s": 0.25,
+    "50s": 0.18,
+    "60s": 0.1
+   },
+   "age_note": "추론: 제품 전체 연령 분포(SRC-02)를 그대로 적용. '60대 이상'은 60s로 기록.",
+   "devices": {
+    "galaxy-a55": 0.34,
+    "galaxy-s24": 0.29,
+    "iphone-15": 0.29
+   },
+   "device_source_ids": [
+    "SRC-02",
+    "SRC-01"
+   ],
+   "device_note": "추론: 제품 전체 계열 비중(SRC-02)을 그대로 적용, 모델 대표는 브리프의 주 사용 기기. 기타 안드로이드 8%는 비워 둠. 브라우저(카카오톡 인앱·Safari·Chrome) 구분은 기기 카탈로그에 없음.",
+   "orientation": "portrait",
+   "left_hand_share": null,
+   "familiarity": {
+    "first_use": 1.0
+   },
+   "familiarity_basis": "세그먼트 정의상 전원 첫 사용(비회원 1판 체험).",
+   "conditions": [],
+   "contexts": [
+    {
+     "context_id": "CTX-trial-kakao-link",
+     "mobility": "seated",
+     "lighting": "indoor",
+     "one_handed": false,
+     "interruptions": false,
+     "time_pressure": "low",
+     "share": null,
+     "source_ids": [
+      "SRC-01",
+      "SRC-16"
+     ],
+     "browser": "kakaotalk_inapp (기본), 외부 브라우저로 열 수도 있음",
+     "note_ko": "링크를 받은 장소·자세·조명은 미상이라 기본값으로 기록. 알려진 것은 비회원·첫 방문·모바일 브라우저(대개 카카오톡 인앱)뿐."
+    }
+   ],
+   "tasks": [
+    {
+     "task_id": "T-trial-first-play",
+     "brief_task": "T1 (비회원 체험)",
+     "goal_ko": "도전장 링크로 들어와 가입 없이 1판 체험하기",
+     "jtbd": "When 친구가 카카오톡으로 보낸 '점수 도전장' 링크를 눌렀을 때, I want to 가입 없이 바로 튜토리얼을 넘기고 1판을 해 보기를, so I can 친구 점수와 비교해 보고 모아포인트에 가입할지 정할 수 있다",
+     "frequency": "once",
+     "criticality": "access",
+     "concrete_data": {
+      "entry": "카카오톡 '점수 도전장' 링크 → 모바일 브라우저(카카오톡 인앱 브라우저), 비회원",
+      "challenge_score": "32,600점 · A등급 (브리프 T2 예시 점수를 친구 점수로 가정)",
+      "song": "여름밤 산책",
+      "difficulty": "보통",
+      "first_tap": "시작 (첫 탭 이후 오디오 재생)",
+      "tutorial": "건너뛰기",
+      "points": "없음 (체험 판)"
+     },
+     "success_ko": "결과 화면 도달 (체험 판이라 적립 포인트 없음)",
+     "source_ids": [
+      "SRC-01",
+      "SRC-16"
+     ]
+    }
+   ],
+   "pain_points": [
+    {
+     "text": "카카오톡 인앱 브라우저로 열리면 브라우저 툴바가 세로 화면 일부를 차지하고, 첫 탭 전에는 오디오가 나오지 않는다 → 하단 패드·카운트다운이 가려지거나 소리 없이 시작될 수 있다 (가설).",
+     "source_ids": [
+      "SRC-16",
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "layout"
+    },
+    {
+     "text": "튜토리얼을 건너뛴 체험자가 피하기 노트 규칙을 모른 채 플레이할 수 있다 (가설).",
+     "source_ids": [
+      "SRC-01"
+     ],
+     "kind": "inference",
+     "maps_to": "cognition"
+    },
+    {
+     "text": "첫 판 완료율 78%: 첫 판을 시작한 사람의 약 22%가 결과 화면에 닿지 못한다 (전체 지표).",
+     "source_ids": [
+      "SRC-02"
+     ],
+     "kind": "inference",
+     "maps_to": "game"
+    }
+   ]
+  }
+ ],
+ "exclusions": [
+  {
+   "group": "화면낭독기(TalkBack·VoiceOver) 사용자 — 전맹·중증 시각장애",
+   "why": "4레인 시각 타이밍 게임 자체는 화면낭독기로 할 수 없고, 모델은 보조기술을 시뮬레이션하지 않음. 홈·설정·결과 화면은 대상이 될 수 있음. 모집단 참고: 등록 시각장애 = 등록장애인 2,631,356명의 9.4% (2024, SRC-17).",
+   "test_instead": "TalkBack·VoiceOver로 홈(오늘의 곡·난이도·시작·남은 판 수), 설정(볼륨 슬라이더·진동·화면 효과·노트 속도·저장), 결과(등급·점수·포인트·광고 2배 버튼)의 읽는 순서와 이름을 점검하고, 시각장애 사용자 2명에게 메뉴 과업(T3·T4·T7)을 확인.",
+   "source_ids": [
+    "SRC-17"
+   ]
+  },
+  {
+   "group": "청각장애·난청 사용자(영구) 및 무음으로 하는 사용자(상황적)",
+   "why": "deaf·hearing_loss는 선언만 하고 시뮬레이션하지 않는 조건. 설문 응답자의 62%가 대부분 무음(SRC-03)이라 소리 없는 플레이가 오히려 다수 상황.",
+   "test_instead": "기기 무음 + 배경음악 0 · 효과음 0 · 진동 끔 상태에서 T1(튜토리얼 포함)과 T5(일시정지→계속하기)를 수행해 카운트다운, 판정, 피버 시작, 튜토리얼 안내를 시각 단서만으로 알 수 있는지 확인하고, 청각장애 사용자 2명에게 확인.",
+   "source_ids": [
+    "SRC-03",
+    "SRC-17"
+   ]
+  },
+  {
+   "group": "광과민성 발작 위험이 있는 사용자",
+   "why": "피버 타임(곡 8~11초) 화면 연출이 번쩍일 수 있음. KWCAG 2.2는 '초당 3∼50회 주기로 깜빡이거나 번쩍이는 콘텐츠를 제공하지 않아야 합니다'(SRC-18). 조건 enum에 없고 프로필이 모델링하지 않음.",
+   "test_instead": "피버 타임을 화면 효과 켜기·줄이기·끄기 각각에서 녹화해 섬광 검사(GM-04 또는 PEAT)로 초당 번쩍임 횟수와 면적을 확인.",
+   "source_ids": [
+    "SRC-18",
+    "SRC-01"
+   ]
+  },
+  {
+   "group": "폰을 바닥에 놓고 양손 검지로 치는 리듬게임 숙련자",
+   "why": "커뮤니티에 존재가 보이지만(SRC-19) 파지 enum(one_hand·cradle·two_thumbs)에 없어 프로필로 만들 수 없음.",
+   "test_instead": "폰을 책상에 놓고 양손 검지로 4레인 패드 간격·오터치·판정선 가림을 사람이 1회 확인.",
+   "source_ids": [
+    "SRC-19"
+   ]
+  },
+  {
+   "group": "태블릿 사용자",
+   "why": "브리프: '태블릿은 세로 레이아웃을 가운데 정렬로 표시'. 기기 집계에 태블릿 구분이 없어 비중을 알 수 없으므로 어느 세그먼트에도 넣지 않음.",
+   "test_instead": "galaxy-tab-s9 세로에서 T1·T3를 1회씩 스모크 점검(가운데 정렬 시 패드 크기·HUD 글자 크기).",
+   "source_ids": [
+    "SRC-01",
+    "SRC-02"
+   ]
+  },
+  {
+   "group": "스위치·키보드 전용 조작 사용자",
+   "why": "20초 4레인 타이밍 게임은 스위치 조작으로 사실상 할 수 없음; switch_access는 시뮬레이션하지 않는 조건. 근거 자료는 찾지 않음(판단).",
+   "test_instead": "홈·설정·결과 화면의 키보드 초점 이동·활성화만 점검(SM-05류).",
+   "source_ids": [
+    "SRC-01"
+   ]
+  },
+  {
+   "group": "곡 스폰서(음원 유통사)·광고주 — 비용을 내지만 게임을 조작하지 않는 고객",
+   "role": "customer",
+   "why": "브리프 §2의 수익원(곡 스폰서 신곡 프로모션 주간, 결과 화면 보상형 광고)을 사는 쪽이며 화면을 조작하지 않음. Cooper의 customer 역할이라 프로필을 만들지 않음. 세그먼트 수 상한(5) 때문에 segments 대신 여기에 기록.",
+   "test_instead": "스폰서 곡 카드 표기와 광고 노출 위치는 UX 과업이 아니라 운영 검수로 확인. 사용자 쪽 영향(광고 2배 버튼, 광고 충전)은 T-commute-ad-double·T-fan-ad-recharge로 시험.",
+   "source_ids": [
+    "SRC-01"
+   ]
+  }
+ ],
+ "floors": [
+  "left_hand",
+  "cvd_deutan",
+  "presbyopia",
+  "walking"
+ ]
+}

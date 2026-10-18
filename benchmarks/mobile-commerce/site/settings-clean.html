@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>설정 | 봄마켓</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Noto Sans CJK KR","Malgun Gothic",Roboto,"WenQuanYi Zen Hei",sans-serif;color:#191f28;background:#f2f4f6;font-size:15px;line-height:1.45;-webkit-tap-highlight-color:transparent}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:#fff;position:relative;padding-bottom:84px}
+button,input{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+a{color:#1b64da}
+.topbar{position:sticky;top:0;z-index:10;height:52px;display:flex;align-items:center;padding:0 4px;background:#fff;border-bottom:1px solid #eef0f2}
+.topbar h1{font-size:17px;font-weight:700;flex:1;text-align:center}
+.icon-btn{width:44px;height:44px;font-size:18px;font-weight:700;line-height:44px;text-align:center;color:#333d4b}
+.icon-btn span{display:inline-block;width:24px;height:24px;line-height:21px;border:2px solid #333d4b;border-radius:50%;font-size:14px}
+.icon-spacer{width:44px;height:44px}
+
+.toast-bottom{position:fixed;bottom:84px;left:50%;transform:translateX(-50%);z-index:30;background:#333d4b;color:#fff;font-size:15px;font-weight:600;padding:10px 18px;border-radius:20px;white-space:nowrap;pointer-events:none}
+
+.profile{display:flex;align-items:center;gap:12px;padding:18px 16px}
+.avatar{width:48px;height:48px;border-radius:50%;background:#e8f0fe;color:#1b64da;font-size:20px;font-weight:700;line-height:48px;text-align:center}
+.pname{font-size:17px;font-weight:700}
+.pmail{font-size:14px;color:#4e5968}
+
+.group{border-top:8px solid #f2f4f6;padding:8px 16px 12px}
+.group-head{display:flex;align-items:center;justify-content:space-between;height:40px}
+.group h2{font-size:15px;font-weight:700;color:#333d4b}
+.saved{font-size:14px;color:#4e5968}
+.setting{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px;border-bottom:1px solid #f2f4f6}
+.s-title{font-size:16px}
+.s-desc{font-size:14px;color:#4e5968}
+.s-val{font-size:15px;color:#4e5968}
+
+.switch{position:relative;flex:none;width:52px;height:44px;padding:6px 0;background-clip:content-box;border-radius:16px/22px;background-color:#1b64da;transition:background-color .15s}
+.switch .knob{position:absolute;top:9px;left:23px;width:26px;height:26px;border-radius:50%;background:#fff;transition:left .15s}
+.switch[aria-checked="false"]{background-color:#6b7684}
+.switch[aria-checked="false"] .knob{left:3px}
+.policy{font-size:14px;color:#4e5968;margin-top:12px;line-height:1.6}
+
+.row-btn{display:flex;align-items:center;justify-content:space-between;width:100%;height:56px;font-size:16px;text-align:left;border-bottom:1px solid #f2f4f6}
+.row-btn::after{content:"›";font-size:22px;color:#6b7684}
+.row-danger{color:#c62828}
+.group-danger{margin-top:0}
+
+.bottom-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;padding:12px 16px;background:#fff;border-top:1px solid #eef0f2;z-index:20}
+.btn-block{width:100%;height:52px;border-radius:12px;background:#1b64da;color:#fff;font-size:16px;font-weight:700}
+
+.dialog-wrap{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;padding:24px}
+.dialog{background:#fff;border-radius:16px;padding:22px 18px 14px;width:100%;max-width:320px}
+.dialog h3{font-size:18px;margin-bottom:6px}
+.dialog p{font-size:15px;color:#4e5968;margin-bottom:18px}
+.dialog .btns{display:flex;gap:8px}
+.dialog .btns button{flex:1;height:48px;border-radius:10px;font-weight:700}
+.btn-secondary{background:#f2f4f6;color:#333d4b}
+.btn-danger-fill{background:#c62828;color:#fff}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <span class="icon-spacer" aria-hidden="true"></span>
+    <h1>설정</h1>
+    <button id="help" class="icon-btn" aria-label="고객센터"><span aria-hidden="true">?</span></button>
+  </header>
+
+  <main>
+    <section class="profile">
+      <div class="avatar" aria-hidden="true">김</div>
+      <div><p class="pname">김서연</p><p class="pmail">seoyeon.kim@example.com</p></div>
+    </section>
+
+    <section class="group" aria-labelledby="notif-title">
+      <div class="group-head"><h2 id="notif-title">알림</h2><span id="saved-state" class="saved" hidden>변경사항 저장됨</span></div>
+      <div class="setting">
+        <div><p class="s-title">주문·배송 알림</p><p class="s-desc">결제, 배송 출발·완료 소식</p></div>
+        <button id="toggle-order" class="switch" role="switch" aria-checked="true" aria-label="주문·배송 알림"><span class="knob"></span></button>
+      </div>
+      <div class="setting">
+        <div><p class="s-title">혜택·이벤트 알림</p><p class="s-desc">마케팅 정보 수신 동의 (선택)</p></div>
+        <button id="toggle-marketing" class="switch" role="switch" aria-checked="true" aria-label="혜택·이벤트 알림"><span class="knob"></span></button>
+      </div>
+      <div class="setting">
+        <div><p class="s-title">야간 알림</p><p class="s-desc">21시~08시에도 주문·배송 알림 받기</p></div>
+        <button id="toggle-night" class="switch" role="switch" aria-checked="true" aria-label="야간 알림"><span class="knob"></span></button>
+      </div>
+      <p class="policy">마케팅 정보 수신 동의는 언제든 철회할 수 있으며, 자세한 내용은 <a href="#privacy" id="privacy-link">개인정보 처리방침</a>에서 확인할 수 있어요.</p>
+    </section>
+
+
+    <section class="group">
+      <div class="group-head"><h2>계정</h2></div>
+      <button id="btn-logout" class="row-btn">로그아웃</button>
+    </section>
+    <section class="group group-danger">
+      <button id="btn-withdraw" class="row-btn row-danger">회원탈퇴</button>
+    </section>
+  </main>
+
+  <div class="bottom-bar"><button id="save" class="btn-block">저장</button></div>
+  <div id="save-toast" class="toast-bottom" role="status" hidden>저장되었어요</div>
+
+  <div id="withdraw-dialog" class="dialog-wrap" hidden>
+    <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="withdraw-title">
+      <h3 id="withdraw-title">정말 탈퇴하시겠어요?</h3>
+      <p>적립금과 쿠폰, 주문 내역이 모두 삭제되며 되돌릴 수 없어요.</p>
+      <div class="btns"><button id="withdraw-cancel" class="btn-secondary">취소</button><button id="withdraw-confirm" class="btn-danger-fill">탈퇴하기</button></div>
+    </div>
+  </div>
+  <div id="logout-dialog" class="dialog-wrap" hidden>
+    <div class="dialog" role="alertdialog" aria-modal="true" aria-labelledby="logout-title">
+      <h3 id="logout-title">로그아웃할까요?</h3>
+      <p>다시 이용하려면 로그인해야 해요.</p>
+      <div class="btns"><button id="logout-cancel" class="btn-secondary">취소</button><button id="logout-confirm" class="btn-secondary">로그아웃</button></div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  document.querySelectorAll('.switch').forEach(function(sw){
+    sw.addEventListener('click', function(){
+      sw.setAttribute('aria-checked', sw.getAttribute('aria-checked') === 'true' ? 'false' : 'true');
+      document.getElementById('saved-state').hidden = true;
+    });
+  });
+  var toast = document.getElementById('save-toast'), timer = null;
+  document.getElementById('save').addEventListener('click', function(){
+    toast.hidden = false;
+    document.getElementById('saved-state').hidden = false;
+    clearTimeout(timer);
+    timer = setTimeout(function(){ toast.hidden = true; }, 2500);
+  });
+  function wire(openId, dlgId, cancelId, confirmId){
+    var d = document.getElementById(dlgId);
+    document.getElementById(openId).addEventListener('click', function(){ d.hidden = false; });
+    document.getElementById(cancelId).addEventListener('click', function(){ d.hidden = true; });
+    document.getElementById(confirmId).addEventListener('click', function(){ d.hidden = true; });
+  }
+  wire('btn-withdraw','withdraw-dialog','withdraw-cancel','withdraw-confirm');
+  wire('btn-logout','logout-dialog','logout-cancel','logout-confirm');
+})();
+</script>
+</body>
+</html>

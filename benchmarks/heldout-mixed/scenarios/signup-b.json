@@ -1,0 +1,98 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-hm-signup-b",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/heldout-mixed/site/signup-b.html"
+  },
+  "task_goal_ko": "이메일로 회원가입한다. 처음에는 비밀번호 확인을 잘못 입력해 오류를 확인하고, 고쳐서 가입을 완료한다",
+  "device_ids": [
+    "laptop-1440"
+  ],
+  "targets": {
+    "primary": [
+      "#submit"
+    ],
+    "destructive": [],
+    "irreversible": [],
+    "critical_message": [],
+    "error_message": [
+      "#form-errors"
+    ],
+    "status": [],
+    "navigation": [],
+    "ad_like": [],
+    "hud": [],
+    "game_control": [],
+    "timed": []
+  },
+  "steps": [
+    {
+      "action": "type",
+      "target": "#email",
+      "text": "minji.kim@example.com"
+    },
+    {
+      "action": "type",
+      "target": "#pw",
+      "text": "Sunny!2026"
+    },
+    {
+      "action": "type",
+      "target": "#pw2",
+      "text": "Sunny!2025"
+    },
+    {
+      "action": "type",
+      "target": "#name",
+      "text": "김민지"
+    },
+    {
+      "action": "type",
+      "target": "#phone",
+      "text": "01012345678"
+    },
+    {
+      "action": "click",
+      "target": "#agree-terms"
+    },
+    {
+      "action": "click",
+      "target": "#agree-privacy"
+    },
+    {
+      "action": "click",
+      "target": "#submit"
+    },
+    {
+      "action": "wait",
+      "ms": 3500
+    },
+    {
+      "action": "type",
+      "target": "#pw2",
+      "text": "Sunny!2026"
+    },
+    {
+      "action": "click",
+      "target": "#submit"
+    },
+    {
+      "action": "wait",
+      "ms": 800
+    }
+  ],
+  "timing_windows": [
+    {
+      "id": "form-error-summary",
+      "selector": "#form-errors",
+      "measure": "visible_duration",
+      "kind": "transient_text",
+      "text": "입력하신 정보를 다시 확인해 주세요. 일부 항목이 올바르지 않거나 비어 있어요."
+    }
+  ],
+  "success": {
+    "selector_visible": "#done"
+  },
+  "hotspots": []
+}

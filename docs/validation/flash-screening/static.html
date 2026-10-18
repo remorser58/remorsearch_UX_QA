@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>(g) 정적 화면</title>
+<!-- Control: a still, high-contrast page (dark header, text, red banner, photo-like blocks). Must pass. -->
+<style>
+  html, body { margin: 0; background: #ffffff; color: #202124; font-family: sans-serif; }
+  header { background: #1a237e; color: #ffffff; padding: 16px; font-size: 20px; font-weight: 700; }
+  p { font-size: 16px; line-height: 24px; margin: 12px 16px; }
+  .alert { margin: 12px 16px; padding: 12px; background: #d50000; color: #ffffff; font-weight: 700; }
+  .photos { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 16px; }
+  .photos div { height: 120px; }
+  button { margin: 12px 16px; width: calc(100% - 32px); height: 48px; background: #000000; color: #ffffff; font-size: 16px; border: 0; }
+</style>
+</head>
+<body>
+<header>정적 화면</header>
+<p>이 화면에는 움직이거나 깜빡이는 요소가 없습니다. 대비가 높은 색이 섞여 있을 뿐입니다.</p>
+<div class="alert">결제 수단을 확인하세요</div>
+<div class="photos">
+  <div style="background:#000000"></div><div style="background:#ffeb3b"></div>
+  <div style="background:#2e7d32"></div><div style="background:#ff0000"></div>
+</div>
+<button type="button">계속</button>
+</body>
+</html>

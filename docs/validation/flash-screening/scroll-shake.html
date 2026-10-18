@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>(k) 흔들리는 스크롤</title>
+<!--
+  A script shakes the page scroll by 80 px back and forth, one reversal every 100 ms,
+  over full-width black and white bands 80 px tall (a scroll-anchoring loop or a
+  "shake" effect). Every region alternates black/white about five times a second.
+  Scrolling that reverses direction is not smooth motion in one direction (ITC/Ofcom,
+  ISO 9241-391): it must fail, although each frame's change is explained by the scroll.
+-->
+<style>
+  html, body { margin: 0; background: #ffffff; }
+  .band { height: 80px; }
+  .band:nth-child(odd) { background: #000000; }
+</style>
+</head>
+<body>
+<div id="bands"></div>
+<script>
+  (function () {
+    var html = '';
+    for (var i = 0; i < 60; i++) html += '<div class="band"></div>';
+    document.getElementById('bands').innerHTML = html;
+    window.scrollTo(0, 800);
+    var down = true;
+    setInterval(function () {
+      window.scrollBy(0, down ? 80 : -80);
+      down = !down;
+    }, 100);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>reflow fixture</title>
+<!--
+  Reflow pass fixture (driver self-test): #fixed-box is 400 px wide and must be found
+  at 320 px; #fee-table (a table) and #chips (its own horizontal scroll box) are
+  two-dimensional or self-scrolling and exempt; #fluid fits. Pressing #next shows a
+  second screen whose #wide-note is 380 px wide: the pass must keep both screens.
+  #bar-timer fits at 360 px but is cut by #bar at 320 px (lost); #slide-2 is hidden by
+  its carousel at both widths (not lost); #chip-t is cut by its fixed-width label
+  (LY-01, ancestor clipping). #shell-note sits 600 px down a 90vh shell with
+  overflow:hidden: it shows at the device height and must not count as lost because a
+  shorter zoomed viewport would hide it (only the narrower width counts).
+  Inside a 1.25x scale, #scaled-clean fits its button (right-aligned, so unscaled client
+  sizes would read as a cut) and #scaled-cut does not. #mirror-label is transparent
+  sizing text over #ink-label (nothing collides); #gradient-b is gradient text clipped
+  to its glyphs drawn over #gradient-a (a collision, not a covering box).
+  #span-cut and #span-clean keep their words in a span (the control reports for it);
+  #span-over is drawn over the span label of #span-link.
+  #mixed-cut has direct text and a cut span label; #helper-link holds a 1 px visually
+  hidden helper (not a cut); #stack-cut names a symbol font only as a fallback; the label
+  of #contents-cut is display: contents; #inner-tab, a tabindex control inside
+  #outer-link, owns its cut label; #ghost-btn only holds transparent sizing text.
+-->
+<style>
+  body { margin: 0; font-family: sans-serif; }
+  #fixed-box { width: 400px; padding: 8px; background: #eef; }
+  #fee-table { border-collapse: collapse; }
+  #fee-table td { padding: 4px 40px; white-space: nowrap; }
+  #chips { overflow-x: auto; white-space: nowrap; }
+  #chips span { display: inline-block; width: 120px; margin-right: 8px; background: #efe; }
+  #fluid { max-width: 100%; }
+  #wide-note { width: 380px; background: #fee; }
+  #bar { display: flex; white-space: nowrap; overflow: hidden; background: #ddd; }
+  #bar span { flex: none; }
+  #bar-title { width: 296px; }
+  #bar-timer { width: 60px; }
+  #carousel { overflow: hidden; white-space: nowrap; width: 300px; }
+  #carousel div { display: inline-block; width: 300px; }
+  #shell { height: 90vh; overflow: hidden; }
+  #shell-pad { height: 600px; }
+  #chip-l { display: inline-block; width: 80px; overflow: hidden; white-space: nowrap; border: 1px solid #999; }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<div id="bar"><span id="bar-title">최종평가 응답 3/5</span><span id="bar-timer">남은 09:41</span></div>
+<div id="carousel"><div id="slide-1">첫 번째 배너</div><div id="slide-2">두 번째 배너</div></div>
+<label id="chip-l"><input type="radio" name="s"><span id="chip-t">매운 양념 +500원</span></label>
+<div style="position:absolute;top:700px;left:0;max-width:100%">
+  <button id="clipped-button" style="width:90px;overflow:hidden;white-space:nowrap">Continue to secure checkout</button>
+  <a id="clipped-link" href="#" style="display:block;width:90px;overflow:hidden;white-space:nowrap">Read complete delivery terms</a>
+  <button id="clean-button" style="width:100%;max-width:300px">Continue to secure checkout</button>
+  <button id="ellipsis-button" style="width:90px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">Optional order details</button>
+  <button id="decorated-button" style="position:relative;width:180px;height:48px;overflow:hidden">Continue<span aria-hidden="true" style="position:absolute;left:0;top:0;width:300px;height:100px;opacity:0"></span></button>
+  <button id="child-label-button" style="width:90px;overflow:hidden;white-space:nowrap">Go<span id="tagged-label" data-ergo-role="primary"> to secure checkout with extra details</span></button>
+  <div style="width:200px;transform:scale(1.25);transform-origin:0 0">
+    <button id="scaled-clean" style="display:block;width:200px;overflow:hidden;white-space:nowrap;text-align:right">Pay now</button>
+    <button id="scaled-cut" style="display:block;width:90px;overflow:hidden;white-space:nowrap">Continue to secure checkout</button>
+  </div>
+  <button id="span-cut" style="display:block;width:90px;overflow:hidden;white-space:nowrap"><span>Continue to secure checkout</span></button>
+  <button id="span-clean" style="display:block;width:200px;overflow:hidden;white-space:nowrap"><span>Pay now</span></button>
+  <button id="mixed-cut" style="display:block;width:90px;overflow:hidden;white-space:nowrap">Go<span> to secure checkout now</span></button>
+  <a id="helper-link" href="#" style="display:block;position:relative">Details<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap">opens the delivery terms in a new window</span></a>
+  <button id="stack-cut" style="display:block;width:90px;overflow:hidden;white-space:nowrap;font-family:Arial, 'Segoe UI Symbol', sans-serif"><span>Continue to secure checkout</span></button>
+  <button id="contents-cut" style="display:block;width:90px;overflow:hidden;white-space:nowrap"><span style="display:contents">Continue to secure checkout</span></button>
+  <a id="outer-link" href="#" style="display:block"><div id="inner-tab" tabindex="0" style="width:90px;overflow:hidden;white-space:nowrap"><span>Continue to secure checkout</span></div></a>
+  <button id="ghost-btn" style="display:block;color:transparent"><span>sizing copy</span></button>
+</div>
+<div style="position:absolute;top:300px;left:8px;width:300px">
+  <p id="ink-label" style="margin:0">배송 메모를 남겨 주세요</p>
+  <p id="mirror-label" style="position:absolute;top:0;left:0;margin:0;color:transparent;white-space:pre">배송 메모를 남겨 주세요 </p>
+</div>
+<div style="position:absolute;top:360px;left:8px;width:300px">
+  <p id="gradient-a" style="margin:0">오늘 도착 보장</p>
+  <p id="gradient-b" style="position:absolute;top:6px;left:0;margin:0;color:transparent;background:linear-gradient(90deg,#c00,#06c);-webkit-background-clip:text;background-clip:text">오늘 도착 보장 특가</p>
+</div>
+<div style="position:absolute;top:420px;left:8px;width:300px">
+  <a id="span-link" href="#" style="display:block"><span>배송 조회하기</span></a>
+  <p id="span-over" style="position:absolute;top:5px;left:0;margin:0">배송 조회 안내</p>
+</div>
+<div id="step1">
+  <div id="fixed-box">수수료 합계 3,000원 (등기 우편 포함)</div>
+  <table id="fee-table"><tr><td>등본</td><td>1,000원</td><td>우편</td><td>2,000원</td></tr></table>
+  <div id="chips"><span>일반</span><span>빠른</span><span>등기</span><span>택배</span></div>
+  <p id="fluid">줄바꿈되는 안내 문장입니다. 좁은 화면에서도 가로로 넘치지 않습니다.</p>
+  <button id="next" type="button">다음</button>
+</div>
+<div id="step2" hidden>
+  <p id="wide-note">두 번째 화면의 고정 폭 안내문</p>
+</div>
+<div id="shell"><div id="shell-pad"></div><p id="shell-note">셸 아래쪽 안내</p></div>
+<script>
+  document.getElementById('next').addEventListener('click', () => {
+    document.getElementById('step1').hidden = true;
+    document.getElementById('step2').hidden = false;
+  });
+</script>
+</body>
+</html>

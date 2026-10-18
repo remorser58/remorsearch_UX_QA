@@ -1,0 +1,70 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-settings-01-clean",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/mobile-commerce/site/settings-clean.html"
+  },
+  "task_goal_ko": "혜택·이벤트(마케팅) 알림 수신을 끄고 설정을 저장한다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {
+    "primary": [
+      "#save"
+    ],
+    "destructive": [
+      "#btn-withdraw"
+    ],
+    "critical_message": [],
+    "error_message": [],
+    "status": [
+      "#save-toast",
+      "#saved-state"
+    ],
+    "ad_like": [],
+    "hud": [],
+    "game_control": [],
+    "timed": [
+      "#save-toast"
+    ]
+  },
+  "steps": [
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#toggle-marketing"
+    },
+    {
+      "action": "wait",
+      "ms": 300
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#save"
+    },
+    {
+      "action": "wait",
+      "ms": 300
+    },
+    {
+      "action": "snapshot"
+    }
+  ],
+  "timing_windows": [
+    {
+      "id": "save-toast",
+      "selector": "#save-toast",
+      "measure": "visible_duration"
+    }
+  ],
+  "success": {
+    "selector_visible": "#saved-state"
+  },
+  "hotspots": []
+}

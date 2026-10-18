@@ -1,0 +1,17 @@
+# Fixture: groups naming other AI agents. Fixture tokens only (tests/fixtures/research/agent-tokens.test.json).
+# FixtureFetcher-User fetches for a user: its disallows are honoured as if they named RemorsearchUXQA, but its
+# Allow lines never lift a '*' disallow. FixtureTrainBot collects training data: a recorded signal only.
+User-agent: *
+Disallow: /private/
+Allow: /
+
+User-agent: FixtureFetcher-User
+Disallow: /agent-blocked/
+Allow: /private/
+Crawl-delay: 11
+
+User-agent: FixtureTrainBot
+Disallow: /
+
+User-agent: FixtureQuietBot
+Allow: /

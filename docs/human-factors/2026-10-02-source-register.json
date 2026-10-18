@@ -1,0 +1,686 @@
+{
+  "reviewed_on": "2026-10-02",
+  "sources": [
+    {
+      "id": "D01",
+      "title": "WCAG 2.2 normative specification",
+      "urls": [
+        "https://www.w3.org/TR/2024/REC-WCAG22-20241212/"
+      ],
+      "version": "W3C Recommendation",
+      "date": "2024-12-12",
+      "kind": "normative_web_standard",
+      "sections": [
+        "1.3.4",
+        "1.4.4",
+        "1.4.8",
+        "1.4.10",
+        "1.4.12",
+        "2.4.11",
+        "2.4.12"
+      ],
+      "rules": [
+        "Orientation restrictions need essential-orientation justification; no preferred aspect ratio."
+      ],
+      "units": [
+        "CSS px",
+        "percent"
+      ],
+      "exceptions": [
+        "Essential orientation examples include piano, check, certain slides and VR."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D02",
+      "title": "Understanding SC 1.4.4 Resize Text",
+      "urls": [
+        "https://www.w3.org/WAI/WCAG22/Understanding/resize-text.html"
+      ],
+      "version": "WCAG 2.2 Understanding, live informative guidance",
+      "date": null,
+      "kind": "official_standard_explanation",
+      "sections": [
+        "SC",
+        "Intent",
+        "incremental scaling",
+        "user-agent controlled UI"
+      ],
+      "rules": [
+        "200% text enlargement without loss of content or functionality using at least one supported text scaling mechanism."
+      ],
+      "units": [
+        "percent"
+      ],
+      "exceptions": [
+        "Captions and images of text are excluded from this SC.",
+        "Browser/platform-controlled UI is not author content.",
+        "Clone injection alone cannot certify the complete real scaling mechanism."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D03",
+      "title": "Understanding SC 1.4.8 Visual Presentation",
+      "urls": [
+        "https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation.html"
+      ],
+      "version": "WCAG 2.2 AAA Understanding, live",
+      "date": null,
+      "kind": "official_standard_explanation",
+      "sections": [
+        "SC",
+        "Note 1",
+        "Intent",
+        "Second Requirement"
+      ],
+      "rules": [
+        "Mechanism permits blocks of text at <=80 characters/glyphs, <=40 for CJK; at least 1.5 line spacing and paragraph spacing >=1.5 line spacing."
+      ],
+      "units": [
+        "characters_or_glyphs",
+        "font-relative ratio"
+      ],
+      "exceptions": [
+        "AAA scope; default line length alone is not an AA failure.",
+        "User agent can supply the adjustment mechanism.",
+        "Do not substitute CSS ch width or UTF-16 code-unit count for actual glyph count."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D04",
+      "title": "Understanding SC 1.4.10 Reflow",
+      "urls": [
+        "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html"
+      ],
+      "version": "WCAG 2.2 AA Understanding, live",
+      "date": null,
+      "kind": "official_standard_explanation",
+      "sections": [
+        "SC",
+        "Basic text reflow",
+        "responsive applications",
+        "sizing intent"
+      ],
+      "rules": [
+        "Vertical-scrolling content fits 320 CSS px width; horizontal-scrolling content fits 256 CSS px height without information/function loss or scrolling in two dimensions.",
+        "1280 CSS px at 400% zoom is an equivalence example, not the zoom level of every 320px run."
+      ],
+      "units": [
+        "CSS px",
+        "percent"
+      ],
+      "exceptions": [
+        "Only sections requiring 2D layout for meaning/use are exempt.",
+        "Table cells and surrounding text remain applicable.",
+        "A horizontally scrolling carousel panel can pass if its content fits the required width."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D05",
+      "title": "Understanding SC 1.4.12 Text Spacing",
+      "urls": [
+        "https://www.w3.org/WAI/WCAG22/Understanding/text-spacing.html"
+      ],
+      "version": "WCAG 2.2 AA Understanding, live",
+      "date": null,
+      "kind": "official_standard_explanation",
+      "sections": [
+        "SC",
+        "Author Responsibility",
+        "Applicability",
+        "Use of ellipses"
+      ],
+      "rules": [
+        "Simultaneously change only line height >=1.5, paragraph-after >=2, letter spacing >=0.12, word spacing >=0.16, each relative to font size; no content/function loss."
+      ],
+      "units": [
+        "font-size multipliers",
+        "em"
+      ],
+      "exceptions": [
+        "Not a required default style or proof of optimal spacing.",
+        "Only applicable properties for the language/script are required.",
+        "Images/canvas text are treated as images of text; PDF not applicable to this SC.",
+        "Ellipsis can conform when full text remains accessible.",
+        "Failed override injection is not itself a content failure unless actively prevented."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D06",
+      "title": "Understanding SC 2.4.11 Focus Not Obscured Minimum",
+      "urls": [
+        "https://www.w3.org/WAI/WCAG22/Understanding/focus-not-obscured-minimum.html"
+      ],
+      "version": "WCAG 2.2 AA Understanding, live",
+      "date": null,
+      "kind": "official_standard_explanation",
+      "sections": [
+        "SC",
+        "notes",
+        "Intent",
+        "component vs indicator"
+      ],
+      "rules": [
+        "Focused component must not be entirely obscured by author-created content; partial occlusion differs from 2.4.12 AAA."
+      ],
+      "units": [
+        "component visible area, qualitative full obscuration"
+      ],
+      "exceptions": [
+        "User-opened content exception requires revealing without advancing focus.",
+        "Movable UI uses initial positions.",
+        "Semitransparent/blur overlap is not automatically complete obscuration and may raise contrast issues.",
+        "Evaluate component separately from external focus ring."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D07",
+      "title": "CSSOM View Module",
+      "urls": [
+        "https://www.w3.org/TR/2025/WD-cssom-view-1-20250916/"
+      ],
+      "version": "W3C Working Draft",
+      "date": "2025-09-16",
+      "kind": "official_draft_api_specification",
+      "sections": [
+        "2.1 CSS pixels",
+        "2.2 Zooming",
+        "2.3 web-exposed screens",
+        "4 devicePixelRatio",
+        "12.1 VisualViewport"
+      ],
+      "rules": [
+        "DPR equals current page-zoom CSS pixel size divided by device pixel size at visual scale 1.",
+        "VisualViewport offsets, width/height are CSS coordinates and scale is separately exposed.",
+        "Derived calibrated conversion: h_mm = glyph_css_px * runtime_DPR * pinch_scale * panel_mm_per_device_px."
+      ],
+      "units": [
+        "CSS px",
+        "device px",
+        "mm",
+        "dimensionless scale"
+      ],
+      "exceptions": [
+        "Do not count page zoom twice.",
+        "Emulation, rescaled capture, remote streaming or changed output resolution may lack physical calibration.",
+        "getBoundingClientRect/CSS transform geometry and painted glyph metrics differ.",
+        "Spec is a WD; verify actual browser behavior."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D08",
+      "title": "Requirements for Hangul Text Layout and Typography",
+      "urls": [
+        "https://www.w3.org/TR/2026/DNOTE-klreq-20260321/"
+      ],
+      "version": "W3C Group Note Draft, English authoritative",
+      "date": "2026-03-21",
+      "kind": "official_draft_script_layout_guidance",
+      "sections": [
+        "4.1 Fonts",
+        "7.1 line breaking",
+        "7.4.1 Line spacing"
+      ],
+      "rules": [
+        "Both proportional and fixed-width Hangul fonts occur; word-based and character-based breaks are possible.",
+        "160% line spacing is a figure example, not an experimentally supported optimum."
+      ],
+      "units": [
+        "characters",
+        "words",
+        "font-relative percent"
+      ],
+      "exceptions": [
+        "Draft note not W3C-endorsed Recommendation.",
+        "Do not force all CJK text to share word-space rules.",
+        "Use rendered glyphs and script/language context rather than one Hangul syllable regex for geometry."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D09",
+      "title": "Apple HIG Typography and Layout",
+      "urls": [
+        "https://developer.apple.com/design/human-interface-guidelines/typography",
+        "https://developer.apple.com/design/human-interface-guidelines/layout"
+      ],
+      "version": "Live Apple HIG, official DocC JSON",
+      "date": null,
+      "kind": "official_platform_guidance",
+      "sections": [
+        "Ensuring legibility",
+        "Supporting Dynamic Type",
+        "Adaptability",
+        "Guides and safe areas"
+      ],
+      "rules": [
+        "iOS/iPadOS default 17pt and minimum 11pt; platform-specific type guidance.",
+        "Respect actual available window, safe areas, Dynamic Type and display changes; columns may need to stack."
+      ],
+      "units": [
+        "Apple platform pt",
+        "native window geometry"
+      ],
+      "exceptions": [
+        "Apple point guidance does not establish universal mobile CSS px requirements.",
+        "Orientation/device type alone does not identify available space.",
+        "Alert date is not proven last modification timestamp.",
+        "A fixed preferred aspect ratio is not prescribed."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D10",
+      "title": "Android Use window size classes",
+      "urls": [
+        "https://developer.android.com/develop/adaptive-apps/guides/use-window-size-classes"
+      ],
+      "version": "Current adaptive/Material window size guidance",
+      "date": "2026-09-22",
+      "kind": "official_platform_guidance",
+      "sections": [
+        "window size table",
+        "height caveat",
+        "Material mapping",
+        "testing"
+      ],
+      "rules": [
+        "Width classes boundaries 600,840,1200,1600 dp; height boundaries 480,900 dp.",
+        "Available app window is dynamic; compact-height wide windows can make two panes impractical."
+      ],
+      "units": [
+        "Android dp"
+      ],
+      "exceptions": [
+        "Not physical-screen/device classification.",
+        "Not universal browser CSS breakpoint or failure threshold.",
+        "Linked Material URL returned 404; numerical evidence from Android page itself."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D11",
+      "title": "Microsoft Xbox Accessibility Guideline 101",
+      "urls": [
+        "https://learn.microsoft.com/en-us/xbox/accessibility/xbox-accessibility-guidelines/101"
+      ],
+      "version": "XAG 101 current public page",
+      "date": "2026-03-04",
+      "kind": "official_game_platform_guidance",
+      "sections": [
+        "Measuring text size",
+        "Text size",
+        "Text scaling",
+        "Text spacing"
+      ],
+      "rules": [
+        "Text height is rendered body ascender-to-descender height.",
+        "Console minimum default 26px at1080p,52px at4K; PC/VR18px,36px; mobile18px at100DPI linearly with DPI.",
+        "Enable text scaling up to200% of minimum sizes while retaining meaning/function."
+      ],
+      "units": [
+        "rendered body device px",
+        "DPI",
+        "percent"
+      ],
+      "exceptions": [
+        "CSS em is not observed body pixel height.",
+        "Game/platform scope; no universal web minimum.",
+        "Hardware panel height scaling alone is wrong for mobile DPI branch.",
+        "Distance and personal configuration still matter."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D12",
+      "title": "NASA-STD-3001 Volume 2 Revision F",
+      "urls": [
+        "https://standards.nasa.gov/node/237",
+        "https://standards.nasa.gov/system/files/tmp/NASA-STD-3001%20Vol%202%20Rev%20F.pdf"
+      ],
+      "version": "Active Rev F",
+      "date": "2026-07-14",
+      "kind": "official_spaceflight_system_standard",
+      "sections": [
+        "10.1.3 V2 10150",
+        "Appendix F.5.1.g"
+      ],
+      "rules": [
+        "Display uppercase character height minimum0.25deg; >=0.4deg preferred."
+      ],
+      "units": [
+        "degrees, uppercase cap height"
+      ],
+      "exceptions": [
+        "Spaceflight system context; not a universal web/WCAG/ISO minimum.",
+        "Do not use font em height or x-height as cap height.",
+        "Current location is Appendix F in Rev F, not old Rev C Table33."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D13",
+      "title": "Legge and Bigelow Does Print Size Matter for Reading",
+      "urls": [
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC3428264/",
+        "https://doi.org/10.1167/11.5.8"
+      ],
+      "version": "JOV11(5):8, PMC author manuscript",
+      "date": "2011-08-09",
+      "kind": "peer_reviewed_author_review_and_empirical_typographic_data",
+      "sections": [
+        "CPS and fluent range",
+        "font body vs x-height",
+        "viewing distance"
+      ],
+      "rules": [
+        "Typical normal-vision CPS0.15–0.3deg x-height; consensus0.2deg.",
+        "CPS differs from letter/reading acuity."
+      ],
+      "units": [
+        "degrees,x-height",
+        "mm",
+        "viewing distance mm"
+      ],
+      "exceptions": [
+        "Individual, font, stimulus and measurement variation.",
+        "Continuous reading conditions; not guaranteed reading/comprehension threshold for every UI label.",
+        "Low vision needs individualized calibration."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D14",
+      "title": "He Baek Legge Korean reading speed",
+      "urls": [
+        "https://legge.psych.umn.edu/sites/legge.psych.umn.edu/files/files/media/he18_korean_reading_speed-_effects_of_print_size_and_retinal_eccentricity.pdf",
+        "https://doi.org/10.1016/j.visres.2018.06.013"
+      ],
+      "version": "Vision Research150:8–14, publicly author-hosted published PDF",
+      "date": "2018-07-19",
+      "kind": "peer_reviewed_primary_experiment",
+      "sections": [
+        "2.1 subjects",
+        "2.2 measurement metric",
+        "Table1",
+        "4.2 CPS discussion"
+      ],
+      "rules": [
+        "n6 normal-vision native Korean speakers,mean age22;Nanum Gothic RSVP.",
+        "Experimental Korean print size aligned inter-character spacing with Courier New x-height; Korean ink height≈1.33 times experimental unit.",
+        "Foveal CPS0.17deg in experimental unit≈0.23deg ink height; no universal age-specific threshold."
+      ],
+      "units": [
+        "degrees",
+        "ink height vs experimental size",
+        "RSVP wpm"
+      ],
+      "exceptions": [
+        "Small young bilingual sample; English comparator from separate earlier study.",
+        "RSVP word rates are not UI prose/toast reading rates.",
+        "Peripheral 10deg condition does not model ordinary gaze movement.",
+        "PMC URL CAPTCHA; original author-lab PDF read without bypass."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "D15",
+      "title": "Apple iPhone15 Tech Specs",
+      "urls": [
+        "https://support.apple.com/en-us/111831"
+      ],
+      "version": "2023 device official current support specification",
+      "date": null,
+      "kind": "official_hardware_specification",
+      "sections": [
+        "Size and Weight",
+        "Display",
+        "rounded-corner diagonal note"
+      ],
+      "rules": [
+        "1179×2556 pixels,460ppi;6.1-inch marketing diagonal;6.12-inch full rectangle; actual visible area less.",
+        "mm per square panel pixel =25.4/PPI, subject to published rounding."
+      ],
+      "units": [
+        "panel px",
+        "ppi",
+        "inch",
+        "mm"
+      ],
+      "exceptions": [
+        "Does not verify CSS viewport/DPR or browser chrome.",
+        "Catalog6.1-inch display diagonal carries rounding vs6.12 exact rectangle note.",
+        "No physical-device measurements made."
+      ],
+      "read_status": "primary_full_source_relevant_sections_read"
+    },
+    {
+      "id": "CM-01",
+      "title": "Soukoreff & MacKenzie, Towards a standard for pointing device evaluation",
+      "year": 2004,
+      "url": "https://www.yorku.ca/mack/ijhcs2004.pdf",
+      "kind": "primary_paper_author_host",
+      "read_status": "full_text_downloaded_relevant_sections_read",
+      "locator": "Sections 2–3; pp. 755–757",
+      "claim": "Effective width is 4.133 times within-person endpoint SD along the motion axis; speed and accuracy should also be reported separately.",
+      "applicability": "Repeated rapid pointing with known input device and task conditions.",
+      "limitation": "A DOM box or one selection does not supply empirical effective width or throughput. Empirical coefficients do not transfer automatically to another input device."
+    },
+    {
+      "id": "CM-02",
+      "title": "Bi, Li & Zhai, FFitts Law: Modeling Finger Touch with Fitts’ Law",
+      "year": 2013,
+      "url": "https://www3.cs.stonybrook.edu/~xiaojun/pdf/FFitts.pdf",
+      "kind": "primary_paper_author_host",
+      "read_status": "full_text_downloaded_relevant_sections_read",
+      "locator": "Eq. 2; Eq. 8–10; Table 1; pp. 1364–1367",
+      "claim": "FFitts uses observed endpoint SD and a separately calibrated absolute finger-imprecision component. Target width is not interchangeable with the observed SD.",
+      "applicability": "Small-target touch pointing under measured experimental conditions.",
+      "limitation": "The paper does not establish an impossible-target floor at nominal W < 4.133 × sigma_a."
+    },
+    {
+      "id": "CM-03",
+      "title": "Yamanaka & Usuba, Rethinking the Dual Gaussian Distribution Model for Predicting Touch Accuracy in On-screen-start Pointing Tasks",
+      "year": 2020,
+      "url": "https://www.miyashita.com/researches/5IOWK0vLh7zus0TZk7PZNo/assets/%20Rethinking%20the%20Dual%20Gaussian%20Distribution%20Model%20for%20Predicting%20Touch%20Accuracy%20in%20On-screen-start%20Pointing%20Tasks.pdf",
+      "kind": "primary_paper_academic_lab_host",
+      "read_status": "full_text_downloaded_relevant_sections_read",
+      "locator": "Eq. 6; Sections 9.1, 9.3–9.5; Conclusion",
+      "claim": "The dual-Gaussian model structure worked for on-screen-start tasks after appropriate parameter fitting; adding movement distance gave limited benefit. Previously published coefficients did not transfer reliably to the new user/device sample.",
+      "applicability": "Seated right-handed index-finger use on an iPhone XS Max; small screens, balanced speed/accuracy instructions.",
+      "limitation": "This supports model structure, not universal alpha/sigma_a values or age/grip/walking multipliers. Worst prediction error was 10.07 percentage points among the tested conditions."
+    },
+    {
+      "id": "CM-04",
+      "title": "Accot & Zhai, Beyond Fitts’ Law: Models for Trajectory-Based HCI Tasks",
+      "year": 1997,
+      "url": "https://research.cs.vt.edu/ns/cs5724papers/2.humanperf.fitts.accot.beyondfitts.pdf",
+      "kind": "primary_paper_university_mirror_with_author_metadata",
+      "read_status": "full_text_downloaded_relevant_sections_read",
+      "locator": "Experiments; integral/local form; conclusion",
+      "claim": "Steering time scales with the path integral of inverse corridor width; path width is perpendicular to the local trajectory.",
+      "applicability": "Constrained continuous traversal such as a menu corridor, rather than an unconstrained drop target.",
+      "limitation": "Coefficients are fitted to task/device conditions; the law is not a universal drag-severity threshold."
+    },
+    {
+      "id": "CM-05",
+      "title": "Holz & Baudisch, Understanding Touch",
+      "year": 2011,
+      "url": "https://www.christianholz.net/2011-chi11-holz-baudisch-understanding_touch.pdf",
+      "kind": "primary_paper_author_host",
+      "read_status": "full_text_downloaded_relevant_sections_read",
+      "locator": "Related work / Modeling pointing; three studies; projected-center model",
+      "claim": "Touch errors include systematic offsets caused by the relationship between visual finger features, posture, viewing geometry and the sensed contact centroid. Finger occlusion can remove visual feedback.",
+      "applicability": "Touch-point interpretation and the distinction between bias, variance and hand occlusion.",
+      "limitation": "A universal 35-degree hand wedge or one scalar variance multiplier is not provided by this paper; 2011 sensing results do not directly set modern platform target-size floors."
+    },
+    {
+      "id": "CM-06",
+      "title": "Ng, Brewster & Williamson, Investigating the Effects of Encumbrance on One- and Two-Handed Interactions with Mobile Devices",
+      "year": 2014,
+      "url": "https://eprints.gla.ac.uk/117068/1/117068.pdf",
+      "kind": "primary_paper_author_institution_repository",
+      "read_status": "full_text_downloaded_relevant_sections_read",
+      "locator": "Experimental design; Results; Discussion, pp. 4–8",
+      "claim": "The reported 40% thumb error increase is mean absolute distance from target center to touch-down, measured while carrying bags and walking. It is not a measured per-axis standard-deviation multiplier.",
+      "applicability": "18 participants, mean age 25, right-hand preferred input, bag-in-each-hand and controlled individual walking speed.",
+      "limitation": "The design did not isolate a general walking factor from a seated baseline. Grip, screen position, bias and spread vary; a mean radial-distance ratio does not identify sigma_x or sigma_y."
+    },
+    {
+      "id": "CM-07",
+      "title": "Findlater et al., Age-Related Differences in Performance with Touchscreens Compared to Traditional Mouse Input",
+      "year": 2013,
+      "url": "https://faculty.washington.edu/wobbrock/pubs/chi-13.04.pdf",
+      "kind": "primary_paper_author_host",
+      "read_status": "full_text_downloaded_relevant_sections_read",
+      "locator": "Study method; Movement time; Error rate; Discussion",
+      "claim": "Older participants were slower, while touch reduced the age performance gap relative to mouse. There was no significant older-versus-younger error-rate difference for the tested device conditions.",
+      "applicability": "20 adults aged 19–51 and 20 aged 61–86; flat iPad 3 and desktop mouse; relatively large touch targets.",
+      "limitation": "This study does not calibrate a phone-thumb age multiplier, infer errors from slower speed, or establish results for tremor/low vision/walking combinations."
+    },
+    {
+      "id": "CM-08",
+      "title": "Miller, Response time in man-computer conversational transactions",
+      "year": 1968,
+      "url": "https://yusufarslan.net/sites/yusufarslan.net/files/upload/content/Miller1968.pdf",
+      "kind": "primary_paper_archival_scan_on_personal_mirror",
+      "read_status": "full_text_downloaded_relevant_sections_read",
+      "locator": "Introduction; Basis of response-time estimates; response-type topics",
+      "claim": "Acceptable latency depends on the response being timed and on task closure. The author explicitly presents indicative estimates rather than conclusive universal bounds.",
+      "applicability": "Distinguishing control acknowledgment, receipt/progress feedback and task-result completion.",
+      "limitation": "Historical terminal context and indicative estimates; 100/1000/10000 ms bands do not measure attention loss, workload or modern SLA compliance by themselves. The mirror is not an official publisher host."
+    },
+    {
+      "id": "CM-09",
+      "title": "NASA Task Load Index: Paper and Pencil Package, Volume 1.0",
+      "year": 1986,
+      "url": "https://ntrs.nasa.gov/api/citations/20000021488/downloads/20000021488.pdf",
+      "kind": "official_technical_manual",
+      "read_status": "full_text_downloaded_relevant_sections_read",
+      "locator": "Description; subject instructions; rating scales",
+      "claim": "NASA-TLX collects subjective human ratings for mental, physical and temporal demands, performance, effort and frustration following a task or segment.",
+      "applicability": "Human participant workload validation and factor-specific outcome collection.",
+      "limitation": "Synthetic personas cannot supply experienced-workload scores. Age, number of choices or a broad persona label does not directly produce TLX ratings. Official overview is marked historical and not actively maintained."
+    },
+    {
+      "id": "CM-10",
+      "title": "WCAG 2.2: timed information/action, status messages and error prevention",
+      "year": 2024,
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "kind": "official_normative_standard_and_informative_explanations",
+      "read_status": "official_full_html_targeted_sections_read",
+      "locator": "SC 2.2.1, 2.5.8, 3.3.4, 3.3.7, 4.1.3",
+      "claim": "A timed toast does not create a time-adjustability requirement if the same information or function is available without a timer. Status messages can be programmatically announced without changing focus. Specified consequential submissions need reversible, checked or confirmable behavior.",
+      "applicability": "Content-authored time limits, markup status messages and the stated categories of consequential transactions/data changes.",
+      "limitation": "Understanding documents are informative. A self-declared alternative is insufficient evidence that the same function can actually be used. Compliance floors are not universal tap-success or reading-speed models."
+    },
+    {
+      "id": "S01",
+      "summary": "S01, UEyes, CHI 2023, 실험·모델. [저자 프로젝트](https://userinterfaces.aalto.fi/ueyeschi23/), [원문](https://userinterfaces.aalto.fi/ueyeschi23/paper.pdf), DOI [10.1145/3544548.3581096](https://doi.org/10.1145/3544548.3581096)",
+      "read_scope": "저자 PDF를 메모리에서 읽음: §3, §4.1, §6.1–6.2. 수정 안내와 수정 표를 이미지로 확인. ACM 직접 접근은 403.",
+      "study_context": "최종 62명, 1,980장, 종류별 495장. 정적 UI를 7초 관찰. 24인치 1920×1200, 52×32.5cm, 50–65cm, GP3 60Hz. 모바일도 종류 간 동일 시야각을 사용.",
+      "supported_claim": "종류별 위치·경로 차이. 1/3/7초 지도. 표 2는 보정 오류를 고친 **경로 평가 표**다.",
+      "limitation": "특정 목표 수행·한국인·휴대 조작 검증은 없다. 수작업 Gaussian prior의 정확한 평균/분산을 논문값으로 취급하지 않는다.",
+      "validation_rights": "[Zenodo v1](https://zenodo.org/records/8010312), CC BY 4.0. 지도 CC/NSS와 경로 DTW 등을 구분. 전체 ZIP 12.9GB는 이 조사에서 받지 않음. 수정 데이터가 이 v1에 어떻게 반영됐는지 명시적 변경 기록은 미확인."
+    },
+    {
+      "id": "S02",
+      "summary": "S02, Leiva 등, MobileHCI 2020, 실험·모델. [원문 v1](https://arxiv.org/html/2101.09176v1), DOI [10.1145/3379503.3403557](https://doi.org/10.1145/3379503.3403557)",
+      "read_scope": "§3–6, §8 원문 확인. [저자 데이터 링크](https://userinterfaces.aalto.fi/mobile-saliency/resources/mobile-ui-saliency.zip) 존재 확인.",
+      "study_context": "중국어 모어 30명, 평균 25.9세. 중국어 UI 193장, 3.5초 자유 관찰. UI 1080×2160를 35%로 표시, 24.5인치 FHD 모니터, 60–70cm, RED250 250Hz/0.4°.",
+      "supported_claim": "위 왼쪽 사분면 43.3%. 색·크기보다 위치·텍스트·이미지 효과가 두드러짐. 사람이 분할한 시각 요소의 bbox가 있다.",
+      "limitation": "실제 휴대전화 터치·스크롤 실험은 아니다. 폰 시야각을 크기·거리로 근사했다. 요소 유형·AOI를 학습 후보로 쓰되 고정 가중치의 근거로 사용하지 않는다.",
+      "validation_rights": "원저자 ZIP 약 45MB, bbox·고정점·시간·지도 포함. NSS/CC, AOI 방문 여부 검증에 유용. ZIP 내부 및 명시적 재배포 라이선스는 이번 조사에서 미확인."
+    },
+    {
+      "id": "S03",
+      "summary": "S03, Zheng 등, ECCV 2018, 과업 조건 모델. [CVF](https://openaccess.thecvf.com/content_ECCV_2018/html/Quanlong_Zheng_Task-driven_Webpage_Saliency_ECCV_2018_paper.html), [원문](https://quanlzheng.github.io/projects/Task-driven-Webpage-Saliency/1672.pdf), [부록](https://quanlzheng.github.io/projects/Task-driven-Webpage-Saliency/1672-supp.pdf)",
+      "read_scope": "원문 §3.1–3.2, §5.1–5.3, 부록 과업 절차 확인.",
+      "study_context": "평가 24명, 200페이지. 가입·폼 작성·정보 탐색·쇼핑·커뮤니티 가입 5종. 페이지/과업별 10명의 시선. 목표를 제시하고 이미지 선택 등으로 수행. 정확한 물리 화면 수치는 읽은 절에 없다.",
+      "supported_claim": "동일 페이지도 과업에 따라 주목하는 의미 요소가 달라진다. task-free와 task-specific 성분을 함께 사용.",
+      "limitation": "실제로 폼을 입력한 로그와 동등하지 않다. 시나리오 목표/의미 역할을 조건으로 넣고, 임의 ‘primary’ 정답 주입을 평가 입력과 분리한다.",
+      "validation_rights": "KL/sAUC/NSS. [저자 프로젝트](https://quanlzheng.github.io/projects/Task-driven-Webpage-Saliency.html)에 Data·Codes 링크. Drive 파일 및 데이터 라이선스는 미확인."
+    },
+    {
+      "id": "S04",
+      "summary": "S04, Das 등, HCEye, ETRA 2024, 강조·인지 부하 실험. [원문 v3](https://arxiv.org/html/2404.14232v3), DOI [10.1145/3655610](https://doi.org/10.1145/3655610)",
+      "read_scope": "§3–5, §6.2–6.3 원문 확인. OSF 공개 API의 파일 목록 확인.",
+      "study_context": "27명, 20–37세, 영어 밝은 배경 페이지 150장. 5초 관찰 중 동적 강조는 3초에 등장. 25.5인치 2560×1440, 65–75cm, Fusion 250Hz. 구술 숫자 계산으로 부하 조절.",
+      "supported_claim": "고부하의 정적 강조 AOI 효과와 동적 강조 효과가 다르다. 고정점 수·체류시간·최초 고정점 시간(ms)을 별도로 측정.",
+      "limitation": "`NOTICE_PERSONA_SCALE=0.7`을 나이·저시력·고부하 모두에 공통 적용할 근거가 없다. 동적 강조를 static/new-object 한 범주로 단순화하지 않는다. 인지·이해 성공률은 측정하지 않았다.",
+      "validation_rights": "[OSF](https://osf.io/x8p9b/), [처리 자료](https://osf.io/z8bgm/). 논문은 비상업적 이용을 명시. node_license는 null. AOI 처리 CSV 12.5MB, raw ZIP 3.07GB. 원자료는 받지 않았으며 배포물에 포함하지 않는다."
+    },
+    {
+      "id": "S05",
+      "summary": "S05, Wolfe, Guided Search 6.0, 2021, 이론·모형 검토. [저자 PDF](https://search.bwh.harvard.edu/new/pubs/Wolfe2021_GS6.pdf), DOI [10.3758/s13423-020-01859-9](https://doi.org/10.3758/s13423-020-01859-9)",
+      "read_scope": "다섯 guidance 요인, spatial/FVF 절, 논의 원문 확인.",
+      "study_context": "개별 UI 실험 표본을 제공하는 논문이 아니다. 여러 시각 검색 실험과 시뮬레이션을 종합한다.",
+      "supported_claim": "feature, history, reward, scene context가 우선순위를 형성한다. 분해능·탐색 안구운동·은밀한 주의의 FVF를 구분한다.",
+      "limitation": "‘주의 선택 20회/초’를 눈 고정점 20회/초로 쓰면 안 된다. 논문 시뮬레이션은 눈 움직임을 구현하지 않았다. λ=5°·IOR=0.1·방향 bias=0.3의 계수를 검증해 주지 않는다.",
+      "validation_rights": "과업별 AOI hit와 검색 완료 시간 등을 별도 평가. 검색 FVF와 피드백 감지의 문턱을 동일시하지 않는다. UI 데이터셋 라이선스 해당 없음."
+    },
+    {
+      "id": "S06",
+      "summary": "S06, Strasburger, 2020, 주변시·군집 효과 교정 검토. [기관 원문](https://epub.ub.uni-muenchen.de/88027/1/2041669520913052.pdf), DOI [10.1177/2041669520913052](https://doi.org/10.1177/2041669520913052)",
+      "read_scope": "Misconception 1–2와 식 (2), (9) 원문 확인.",
+      "study_context": "문자·flanker 심리물리 연구 종합. 특정 웹 UI 표본이 아니다.",
+      "supported_claim": "빈 간격과 중심 간 간격을 구분. 같은 글자 폭 w의 중심 간 표현은 d≈0.5E+w; d,E,w는 시야각 단위. 중심부 intercept를 생략하면 겹치는 자극이 된다.",
+      "limitation": "보편적인 `간격 < 0.5×편심 → 읽기 불가` 판정은 부정확하다. 유사성·방향·구조도 중요하다. 글자 군집과 독립 버튼 간 여백을 분리한다.",
+      "validation_rights": "CC BY 4.0 원문. 문자 인식률 검증용이며 실제 UI 오류율 계수가 아니다. 가독성·시각적 혼잡 후보에 적용하고 고정 임계값을 늘리지 않는다."
+    },
+    {
+      "id": "S07",
+      "summary": "S07, Kim·Radach·Vorstius, Reading and Writing 2012, 한국어 읽기 실험. [저자 기관 원문](https://allgemeinepsychologie.uni-wuppertal.de/fileadmin/psychologie/allgemeinepsychologie/Artikel/Artikel_Radach/Kim_Vorstius_Radach_Korean_Reading_RW_2012.pdf), DOI [10.1007/s11145-011-9349-0](https://doi.org/10.1007/s11145-011-9349-0)",
+      "read_scope": "방법·결과·논의 원문 확인.",
+      "study_context": "한국어 모어 24명, 26–45세, 미국 대학 커뮤니티. 한 줄 문장의 조사 preview를 바꾸는 과업. 21인치 CRT 1024×768, 82cm, 바탕 14pt, 글자 폭 0.5°, EyeLink 1000Hz.",
+      "supported_claim": "한국어 읽기에서도 주변 단어의 조사·의미 정보를 처리한다. 고정점 위치와 읽기 시간(ms)을 측정했다.",
+      "limitation": "‘왼쪽 1자·오른쪽 6–7자’ span을 이 논문의 결과로 돌릴 수 없다. 한국어 GUI나 다국어 화면 prior를 영어 연구에서 자동 복제하지 않는다.",
+      "validation_rights": "단어별 초기·후기 읽기 시간을 구분. 공개 원자료/명시적 데이터 라이선스 미확인. 원문은 Springer 저작권."
+    },
+    {
+      "id": "S08",
+      "summary": "S08, Bylinskii 등, TPAMI 2019, 평가 방법 연구. [MIT 기록](https://dspace.mit.edu/entities/publication/c3cbb9e5-6030-496b-92f7-f631c8ea0af5), [원문 HTML](https://arxiv.org/html/1604.03605v1), DOI [10.1109/TPAMI.2018.2815601](https://doi.org/10.1109/TPAMI.2018.2815601)",
+      "read_scope": "원고의 NSS·IG·지표 선택 절, 최신 PDF 접근 확인.",
+      "study_context": "자연 이미지 시선과 합성 예시로 지표 성질 분석. UI 행동 성공률 연구가 아니다.",
+      "supported_claim": "NSS=mean((S−mean(S))/sd(S))를 실제 고정점에서 계산. IG=mean(log₂P(f)−log₂B(f)), bits/fixation. NSS/CC는 위치 편향을 포함하고 IG는 기준선 대비 개선을 본다.",
+      "limitation": "모델 점수나 MC 반복 hit 비율을 human probability로 보정하지 않는다. 지도 평가와 AOI 사건 확률 평가를 구분한다.",
+      "validation_rights": "NSS/CC+IG 권고. 0 variance·정규화·ε·블러 설정을 기록. B는 훈련 자료로만 만든 기준선. HTML은 2016 v1 원고로, 2019 판본과의 전체 문구 비교는 미수행."
+    },
+    {
+      "id": "S09",
+      "summary": "S09, Buscher·Cutrell·Morris, CHI 2009, 웹 시선·DOM 모델. [MSR 원문](https://www.microsoft.com/en-us/research/wp-content/uploads/2009/04/WebEyeTracking_CHI2009.pdf), [공식 기록](https://www.microsoft.com/en-us/research/publication/what-do-you-see-when-youre-surfing-using-eye-tracking-to-predict-salient-regions-of-web-pages/)",
+      "read_scope": "방법·AOI 대응·결과·전처리 원문 확인.",
+      "study_context": "영어 모어 20명, 18–69세. 정보 탐색·페이지 인식, 361페이지/2,126 view. IE7, 보이는 영역 996×716, 17인치 1024×768, x50 50Hz/0.5°. 거리 미확인.",
+      "supported_claim": "bbox 중심 한 점보다 고정점 주변 Gaussian과 AOI의 겹친 면적을 대응했다. 거대 BODY류 AOI는 모델 학습에서 제외했다.",
+      "limitation": "오래된 데스크톱 웹 결과. 중심점만 보는 모델의 개선 후보로 사용한다. 별칭 병합 규칙이나 보편적인 F형을 실증한 연구는 아니다.",
+      "validation_rights": "AOI 관찰 빈도·최초 고정점 시간·fixation impact. 공개 원자료 경로와 데이터 이용권은 미확인."
+    },
+    {
+      "id": "S10",
+      "summary": "S10, Jiang 등, EyeFormer 2024, 경로 모델. [원문 v2](https://arxiv.org/html/2404.10163v2), [버전 기록](https://arxiv.org/abs/2404.10163)",
+      "read_scope": "§3.4–3.5, §4.1–4.2 확인. v2는 2024-04-21.",
+      "study_context": "UEyes와 OSIE, 여러 참가자 경로. 개인화에는 실제 해당 사용자의 경로 표본을 제공한다.",
+      "supported_claim": "첫 고정점을 화면 중심으로 설정했다. UEyes 이미지 train/test 1,872/108, 개인 검증 train/test 참가자 53/9를 별도로 분리. UEyes 평균 15.3 fixations/image.",
+      "limitation": "MC를 무작위로 돌린 것만으로 개인화·human calibration이 되지 않는다. 4번 고정점≈1초는 보편 규칙이 아니다. 시작 조건·시간 horizon을 명시한다.",
+      "validation_rights": "DTW·DTWD·MultiMatch. 원고 CC BY 4.0. 데이터 권리는 각 원본에 따른다. 이 조사에서 모델을 실행하거나 개인화 성능을 재현하지 않았다."
+    },
+    {
+      "id": "S11",
+      "summary": "S11, PsychoPy 공식 기술 문서, 확인일 2026-10-02. [단위 문서](https://psychopy.org/general/units.html)",
+      "read_scope": "height/norm/cm/deg/degFlat 절 실제 확인.",
+      "study_context": "실험용 디스플레이 보정 문서. UI 인구 연구가 아니다. 버전 고정 없는 현재 문서.",
+      "supported_claim": "시야각에는 화면 물리 폭·px·관찰 거리가 필요하다. norm의 x/y 동일 수치는 비정방 화면에서 정사각형을 만들지 않는다. 평면 화면의 위치·크기 보정을 구분한다.",
+      "limitation": "해상도·DPR만으로 개인의 실제 시야각이 확인되는 것은 아니다. 공식 문서의 구체적 edge error 수치도 실험 조건 밖으로 일반화하지 않는다.",
+      "validation_rights": "물리 크기 고정 후 해상도만 바뀌는 경우, 축척 변경, 비정방 화면, 가장자리·중앙을 기하학적으로 검증하는 데 쓴다. 새 의존성 도입을 권하는 자료가 아니다."
+    }
+  ],
+  "gaze_ledger": "Primary source URLs and limitations embedded in S01-S11 records.",
+  "note": "Compact index of verified source sections; implementation acceptance recorded separately.",
+  "source_count": 36
+}

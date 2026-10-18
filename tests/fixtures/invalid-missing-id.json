@@ -1,0 +1,17 @@
+{
+  "schema_version": "ux-evidence-bundle.v1",
+  "bundle_id": "bundle-invalid-id",
+  "permissions": {"requested": ["read_only"], "granted": ["read_only"], "blocked": []},
+  "records": {
+    "sources": [{"channel": "other", "source_ref": "x", "access_basis": "public", "access_method": "other", "public_scope": "unknown", "retention_status": "retained"}],
+    "evidence": [],
+    "claims": [],
+    "personas": [],
+    "scenarios": [],
+    "runs": [],
+    "observations": [],
+    "findings": [],
+    "proposals": [],
+    "figma": []
+  }
+}

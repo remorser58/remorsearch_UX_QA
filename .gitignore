@@ -1,0 +1,20 @@
+__pycache__/
+*.py[cod]
+
+# Local checkpoints, test sandboxes and CLI-generated reports
+.ux-loop/
+.ux-loop-*.txt
+
+# Public-page reader run folders used in development and tests. The default run
+# folder is outside the project (${XDG_STATE_HOME:-~/.local/state}/remorsearch-ux-qa).
+.ux-research/
+
+# Ergonomic swarm benchmark outputs and scratch runs
+.ergo-bench/
+.ergo-runs/
+.ergo-bench-*.log
+node_modules/
+dist/
+
+# Keep the pinned web driver install reproducible, including with local excludes.
+!skills/remorsearch-ux-qa/drivers/web/package-lock.json

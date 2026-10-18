@@ -1,0 +1,9 @@
+{
+  "artifact_path": "../../_evidence/dogfood-persona/runs/R-B-S24/S-R-B-S24-010.png",
+  "sha256": "54576daa40836b60f0cbfcffd89017cacbe2f6d7f1729bc007aa897be5e8d5da",
+  "captured_at": null,
+  "surface_url": "http://127.0.0.1:8765/dev-2/site/delivery/delivery-b.html",
+  "build_id": null,
+  "device": "galaxy-s24-ultra; 384x824 CSS px; DPR 3.75",
+  "quoted_ui_text": "50,000원 주문하기"
+}

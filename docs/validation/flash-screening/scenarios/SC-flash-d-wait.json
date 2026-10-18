@@ -1,0 +1,22 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-flash-d-wait",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/wait-flash.html"
+  },
+  "task_goal_ko": "화면이 바뀌기를 기다린다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {},
+  "steps": [
+    {
+      "action": "wait",
+      "ms": 5000
+    }
+  ],
+  "success": {
+    "url_contains": "wait-flash.html"
+  }
+}

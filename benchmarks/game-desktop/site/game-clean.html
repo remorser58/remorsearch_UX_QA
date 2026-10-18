@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>별빛 러너</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:#0d1117}
+body{font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+button{font:inherit;touch-action:manipulation;cursor:pointer}
+[hidden]{display:none!important}
+#stage{position:fixed;inset:0;background:#8fd3ff;overflow:hidden;touch-action:none}
+#view{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+#flash{position:absolute;left:16px;top:48px;z-index:11;pointer-events:none;background:#b3261e;color:#ffffff;font-size:14px;font-weight:700;padding:3px 10px;border-radius:4px}
+#hud{position:absolute;display:flex;align-items:center;gap:6px;z-index:10;pointer-events:none;left:16px;top:14px}
+#coin{width:16px;height:16px;border-radius:50%;background:#ffd54a;border:2px solid #9a6b00;animation:coin 1s ease-in-out infinite}
+@keyframes coin{0%,100%{opacity:1}50%{opacity:.6}}
+#hud-stats{background:#1e2227;color:#f1f3f4;border-radius:4px;padding:3px 8px;font-weight:600;white-space:nowrap;font-size:15px}
+#subtitle{position:absolute;left:0;right:0;top:60px;margin:0 auto;width:max-content;max-width:72%;z-index:10;pointer-events:none;text-align:center;line-height:1.4;font-weight:600;font-size:16px;color:#ffffff;background:#15191e;padding:6px 12px;border-radius:6px}
+#pop{position:absolute;left:210px;top:150px;z-index:12;pointer-events:none;background:#1e2227;color:#ffd54a;font-size:14px;font-weight:700;padding:2px 8px;border-radius:4px}
+#qte:disabled{cursor:default}
+#qte{position:absolute;right:44px;bottom:140px;width:84px;height:84px;border-radius:50%;border:4px solid #1e2227;background:#ffd54a;color:#1e2227;font-size:20px;font-weight:800;z-index:20;padding:0}
+#mash{position:absolute;right:32px;bottom:40px;width:220px;height:72px;border-radius:12px;border:3px solid #ffffff;background:#b3261e;color:#ffffff;font-size:16px;font-weight:700;line-height:1.3;z-index:20;padding:4px 10px}
+#radar{position:absolute;right:24px;bottom:24px;width:260px;background:#1e2227;color:#f1f3f4;border-radius:12px;padding:10px 14px 12px;z-index:20;font-size:14px}
+#radar .rt{font-weight:700;margin-bottom:8px}
+#radar .row{display:flex;justify-content:center;gap:40px;margin-bottom:8px}
+#radar .mk{width:56px;height:56px;border:3px solid #f1f3f4;padding:0;color:#ffffff;font-size:14px;font-weight:800}
+#radar .legend{display:flex;justify-content:center;align-items:center;gap:6px;color:#f1f3f4;white-space:nowrap}
+#radar .sw{display:inline-block;width:14px;height:14px;border:2px solid #f1f3f4}
+#radar-1{background:#c75000;border-radius:6px}
+#radar-2{background:#1a5fd0;border-radius:50%}
+#radar .sw.e{background:#c75000;border-radius:2px}
+#radar .sw.a{background:#1a5fd0;border-radius:50%}
+#start{position:absolute;inset:0;width:100%;height:100%;margin:0;border:0;z-index:30;background:#0d1117;color:#e6edf3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+#logo{font-size:44px;font-weight:900;letter-spacing:.08em;color:#2f3b4c}
+#start .hint{font-size:16px;color:#e6edf3}
+#paused{position:absolute;inset:0;width:100%;height:100%;margin:0;border:0;z-index:30;background:#0d1117;color:#e6edf3;font-size:18px;font-weight:700}
+#clear{position:absolute;inset:0;z-index:30;background:#0d1117;color:#e6edf3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}
+#clear .big{font-size:28px;font-weight:800}
+#clear #final{font-size:16px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="view" aria-label="게임 화면"></canvas>
+  <div id="flash" hidden aria-hidden="true">피격! HP -20</div>
+  <div id="hud" hidden><span id="coin" aria-hidden="true"></span><span id="hud-stats">점수 0 · HP 100/100</span></div>
+  <div id="subtitle" hidden aria-live="polite"></div>
+  <div id="pop" hidden aria-hidden="true"></div>
+  <button id="qte" hidden aria-label="지금 누르기">탭!</button>
+  <button id="mash" hidden></button>
+  <div id="radar" hidden role="group" aria-label="보급 대상 선택">
+    <div class="rt">보급 대상 선택</div>
+    <div class="row"><button id="radar-1" class="mk" aria-label="대상 1">적</button><button id="radar-2" class="mk" aria-label="대상 2">아군</button></div>
+    <div class="legend"><span class="sw e"></span><span>네모: 적</span><span class="sw a" style="margin-left:10px"></span><span>원: 아군</span></div>
+  </div>
+  <button id="paused" hidden>일시정지됨 · 탭해서 계속</button>
+  <div id="clear" hidden role="status"><div class="big">스테이지 클리어!</div><div id="final"></div></div>
+  <button id="start"><span id="logo">별빛 러너</span><span class="hint">화면을 탭해서 시작</span></button>
+</div>
+<script>
+(function () {
+  'use strict';
+  var CFG = { qteDelayMs: 1000, qteMs: 2500, qteMaxTries: 3, fxMs: 1500, fxPeriodMs: 1500, mashTaps: 3, mashHoldMs: 600, mashLabel: '길게 누르거나 3번 탭해서 탈출' };
+
+  function layout(W, H) {
+    return {
+      stick:  { x: 40,       y: H - 172, w: 132, h: 132 },
+      attack: { x: W - 132,  y: H - 132, w: 92,  h: 92 },
+      jump:   { x: W - 220,  y: H - 176, w: 72,  h: 72 },
+      pause:  { x: Math.round(W / 2 - 22), y: 8, w: 44, h: 44 }
+    };
+  }
+
+  var $ = function (id) { return document.getElementById(id); };
+  var stageEl = $('stage'), cv = $('view'), ctx = cv.getContext('2d');
+  var hud = $('hud'), hudStats = $('hud-stats'), sub = $('subtitle'), pop = $('pop');
+  var qte = $('qte'), mash = $('mash'), radar = $('radar'), fx = $('flash');
+  var clearEl = $('clear'), startBtn = $('start'), pausedEl = $('paused');
+  var W = 0, H = 0, L = null;
+
+  function resize() {
+    W = stageEl.clientWidth; H = stageEl.clientHeight;
+    var dpr = window.devicePixelRatio || 1;
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    L = layout(W, H);
+  }
+  window.addEventListener('resize', resize);
+  resize();
+
+  var S = { stage: 0, score: 0, hp: 100, paused: false, jumpT: -1, swingT: -1, hitT: -1,
+            attackReady: false, s1: false, s2: false, qteTries: 0, qteToken: 0,
+            mashN: 0, escaped: false, stickDx: 0, px: 0, obsX: null, enemyX: null, enemyState: 'none' };
+
+  function later(ms, fn) {
+    setTimeout(function tick() { if (S.paused) { setTimeout(tick, 100); return; } fn(); }, ms);
+  }
+  function fmt(n) { return n.toLocaleString('ko-KR'); }
+  function renderHud() { hudStats.textContent = '점수 ' + fmt(S.score) + ' · HP ' + S.hp + '/100'; }
+  function say(t) { sub.textContent = t; sub.hidden = false; }
+  var popTimer = null;
+  function popText(t) {
+    pop.textContent = t; pop.hidden = false;
+    clearTimeout(popTimer); popTimer = setTimeout(function () { pop.hidden = true; }, 600);
+  }
+  function addScore(n) { S.score += n; renderHud(); popText('+' + n); }
+  function damage(n) { S.hp = Math.max(1, S.hp - n); renderHud(); }
+
+  function hitFx() {
+    var end = performance.now() + CFG.fxMs;
+    fx.hidden = false;
+    var iv = setInterval(function () {
+      if (performance.now() >= end - 1) { clearInterval(iv); fx.hidden = true; return; }
+      fx.hidden = !fx.hidden;
+    }, CFG.fxPeriodMs);
+  }
+
+  /* ---------- stage flow ---------- */
+  function begin() {
+    if (S.stage !== 0) return;
+    startBtn.hidden = true; hud.hidden = false; renderHud();
+    S.stage = 1; S.obsX = W + 40;
+    say('하늘: 앞에 가시덤불이야! 점프해서 넘어가.');
+  }
+  function doJump() {
+    if (S.stage < 1 || S.stage > 3) return;
+    S.jumpT = performance.now();
+    if (S.stage === 1 && !S.s1) {
+      S.s1 = true; addScore(100);
+      later(700, enterStage2);
+    }
+  }
+  function enterStage2() {
+    S.stage = 2; S.enemyX = W + 30; S.enemyState = 'approach';
+    say('하늘: 경비병이 덮친다! 맞고 나면 공격으로 반격해.');
+    later(700, function () {
+      S.enemyState = 'strike'; S.hitT = performance.now();
+      damage(20); hitFx(); S.attackReady = true;
+    });
+  }
+  function doAttack() {
+    if (S.stage < 1 || S.stage > 3) return;
+    S.swingT = performance.now();
+    if (S.stage === 2 && S.attackReady && !S.s2) {
+      S.s2 = true; S.enemyState = 'down'; addScore(200);
+      later(400, enterStage3);
+    }
+  }
+  function enterStage3() {
+    S.stage = 3; S.qteTries = 0;
+    say('하늘: 표시가 뜨면 바로 눌러!');
+    later(CFG.qteDelayMs, showQte);
+  }
+  function showQte() {
+    var token = ++S.qteToken;
+    S.qteHit = false; qte.disabled = false; qte.textContent = '탭!'; qte.hidden = false;
+    later(CFG.qteMs, function () {
+      if (token !== S.qteToken) return;
+      if (S.qteHit) { qte.hidden = true; later(500, enterStage4); }
+      else missQte();
+    });
+  }
+  function onQte() {
+    if (qte.hidden || qte.disabled || S.stage !== 3) return;
+    S.qteHit = true; qte.disabled = true; qte.textContent = '성공!'; addScore(300);
+  }
+  function missQte() {
+    S.qteToken++; qte.hidden = true; S.qteTries++; damage(10);
+    if (S.qteTries < CFG.qteMaxTries) { say('하늘: 놓쳤어! 다시 온다!'); later(1200, showQte); }
+    else { later(500, enterStage4); }
+  }
+  function mashLabel() { return CFG.mashLabel + ' ' + S.mashN + '/' + CFG.mashTaps; }
+  function enterStage4() {
+    S.stage = 4; S.mashN = 0; S.escaped = false; S.enemyX = 270 + S.px; S.enemyState = 'grab';
+    say('하늘: 붙잡혔어! 빠져나와!');
+    later(500, function () { mash.textContent = mashLabel(); mash.hidden = false; });
+  }
+  function escapeGrab() {
+    if (S.escaped) return;
+    S.escaped = true; mash.hidden = true; S.enemyState = 'down'; addScore(150);
+    later(400, enterStage5);
+  }
+  function onMash() {
+    if (mash.hidden || S.stage !== 4 || S.escaped) return;
+    S.mashN++; mash.textContent = mashLabel();
+    if (S.mashN >= CFG.mashTaps) escapeGrab();
+  }
+  var holdTimer = null;
+  mash.addEventListener('pointerdown', function () {
+    if (CFG.mashHoldMs > 0) { clearTimeout(holdTimer); holdTimer = setTimeout(escapeGrab, CFG.mashHoldMs); }
+  });
+  ['pointerup', 'pointercancel', 'pointerleave'].forEach(function (ev) {
+    mash.addEventListener(ev, function () { clearTimeout(holdTimer); });
+  });
+  mash.addEventListener('click', onMash);
+  function enterStage5() {
+    S.stage = 5; S.enemyState = 'none';
+    say('하늘: 보급품을 아군에게 던져 줘.');
+    radar.hidden = false;
+  }
+  function pick(which) {
+    if (S.stage !== 5) return;
+    if (which === 2) {
+      addScore(500); S.stage = 6; radar.hidden = true; sub.hidden = true; hud.hidden = true;
+      $('final').textContent = '최종 점수 ' + fmt(S.score) + ' · 남은 HP ' + S.hp;
+      clearEl.hidden = false;
+    } else {
+      damage(10); say('하늘: 그건 적이야! 아군을 골라.');
+    }
+  }
+  $('radar-1').addEventListener('click', function () { pick(1); });
+  $('radar-2').addEventListener('click', function () { pick(2); });
+  qte.addEventListener('click', onQte);
+  startBtn.addEventListener('click', begin);
+
+  function togglePause() {
+    if (S.stage < 1 || S.stage > 5) return;
+    S.paused = !S.paused; pausedEl.hidden = !S.paused;
+  }
+  pausedEl.addEventListener('click', togglePause);
+
+  /* ---------- virtual controls (drawn on canvas) ---------- */
+  function activeHotspots() {
+    if (S.stage < 1 || S.stage > 5 || S.paused) return [];
+    var a = [{ id: 'hs-stick', name: '이동 스틱', box: L.stick }, { id: 'hs-pause', name: '일시정지', box: L.pause }];
+    if (S.stage <= 3) {
+      a.push({ id: 'hs-jump', name: '점프', box: L.jump });
+      a.push({ id: 'hs-attack', name: '공격', box: L.attack });
+    }
+    return a;
+  }
+  window.__ergoqa__ = {
+    hotspots: function () {
+      return activeHotspots().map(function (h) {
+        return { id: h.id, name: h.name, box: { x: h.box.x, y: h.box.y, w: h.box.w, h: h.box.h }, roles: ['game_control'] };
+      });
+    }
+  };
+  function inside(b, x, y) { return x >= b.x && x <= b.x + b.w && y >= b.y && y <= b.y + b.h; }
+  var stickPid = null;
+  function stickMove(x) {
+    var b = L.stick, cx = b.x + b.w / 2, r = b.w / 2;
+    S.stickDx = Math.max(-1, Math.min(1, (x - cx) / r));
+  }
+  cv.addEventListener('pointerdown', function (e) {
+    var hs = activeHotspots();
+    for (var i = 0; i < hs.length; i++) {
+      if (!inside(hs[i].box, e.clientX, e.clientY)) continue;
+      e.preventDefault();
+      switch (hs[i].id) {
+        case 'hs-jump': doJump(); break;
+        case 'hs-attack': doAttack(); break;
+        case 'hs-pause': togglePause(); break;
+        case 'hs-stick':
+          stickPid = e.pointerId;
+          try { cv.setPointerCapture(e.pointerId); } catch (err) { /* ignore */ }
+          stickMove(e.clientX); break;
+      }
+      return;
+    }
+  });
+  cv.addEventListener('pointermove', function (e) { if (e.pointerId === stickPid) stickMove(e.clientX); });
+  ['pointerup', 'pointercancel'].forEach(function (ev) {
+    cv.addEventListener(ev, function (e) { if (e.pointerId === stickPid) { stickPid = null; S.stickDx = 0; } });
+  });
+  window.addEventListener('keydown', function (e) {
+    if (e.repeat) return;
+    if (S.stage === 0 && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); begin(); return; }
+    switch (e.code) {
+      case 'Space': case 'ArrowUp': e.preventDefault(); doJump(); break;
+      case 'KeyJ': doAttack(); break;
+      case 'KeyE': case 'Enter': e.preventDefault(); if (!qte.hidden) onQte(); else if (!mash.hidden) onMash(); break;
+      case 'Escape': togglePause(); break;
+      case 'ArrowLeft': S.stickDx = -1; break;
+      case 'ArrowRight': S.stickDx = 1; break;
+    }
+  });
+  window.addEventListener('keyup', function (e) {
+    if (e.code === 'ArrowLeft' || e.code === 'ArrowRight') S.stickDx = 0;
+  });
+
+  /* ---------- rendering ---------- */
+  var bgX = 0, last = performance.now();
+  var clouds = [{ x: 120, y: 118, s: 1 }, { x: 430, y: 140, s: 0.8 }, { x: 650, y: 112, s: 1.2 }];
+  function cloud(x, y, s) {
+    ctx.fillStyle = '#ffffff';
+    ctx.beginPath();
+    ctx.arc(x, y, 16 * s, 0, 7); ctx.arc(x + 18 * s, y - 8 * s, 20 * s, 0, 7); ctx.arc(x + 40 * s, y, 15 * s, 0, 7);
+    ctx.fill();
+  }
+  function person(x, gy, body, head, lift) {
+    var y = gy - lift;
+    ctx.fillStyle = body; ctx.fillRect(x - 12, y - 40, 24, 32);
+    ctx.fillStyle = '#3b2f2a'; ctx.fillRect(x - 10, y - 8, 8, 8); ctx.fillRect(x + 2, y - 8, 8, 8);
+    ctx.fillStyle = head; ctx.beginPath(); ctx.arc(x, y - 50, 11, 0, 7); ctx.fill();
+  }
+  function roundBtn(b, label) {
+    var cx = b.x + b.w / 2, cy = b.y + b.h / 2, r = Math.min(b.w, b.h) / 2 - 2;
+    ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7);
+    ctx.fillStyle = 'rgba(20,24,30,0.82)'; ctx.fill();
+    ctx.lineWidth = 3; ctx.strokeStyle = '#ffffff'; ctx.stroke();
+    if (label) {
+      ctx.fillStyle = '#ffffff'; ctx.font = '700 14px system-ui, sans-serif';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(label, cx, cy);
+    }
+  }
+  function drawControls() {
+    var hs = activeHotspots();
+    for (var i = 0; i < hs.length; i++) {
+      var h = hs[i], b = h.box;
+      if (h.id === 'hs-stick') {
+        var cx = b.x + b.w / 2, cy = b.y + b.h / 2, r = b.w / 2 - 2;
+        ctx.beginPath(); ctx.arc(cx, cy, r, 0, 7);
+        ctx.fillStyle = 'rgba(20,24,30,0.6)'; ctx.fill();
+        ctx.lineWidth = 3; ctx.strokeStyle = '#ffffff'; ctx.stroke();
+        ctx.beginPath(); ctx.arc(cx + S.stickDx * r * 0.5, cy, r * 0.45, 0, 7);
+        ctx.fillStyle = '#ffffff'; ctx.fill();
+      } else if (h.id === 'hs-pause') {
+        roundBtn(b, '');
+        ctx.fillStyle = '#ffffff';
+        ctx.fillRect(b.x + b.w / 2 - 7, b.y + b.h / 2 - 8, 5, 16);
+        ctx.fillRect(b.x + b.w / 2 + 2, b.y + b.h / 2 - 8, 5, 16);
+      } else {
+        roundBtn(b, h.name);
+      }
+    }
+  }
+  function frame(now) {
+    var dt = Math.min(50, now - last); last = now;
+    var running = S.stage >= 1 && S.stage <= 5 && !S.paused;
+    if (running) {
+      bgX += dt * 0.08;
+      S.px = Math.max(-40, Math.min(140, S.px + S.stickDx * dt * 0.12));
+    }
+    ctx.clearRect(0, 0, W, H);
+    var gy = H - 88;
+    for (var c = 0; c < clouds.length; c++) {
+      var cx = ((clouds[c].x - bgX * 0.3 * clouds[c].s) % (W + 120) + W + 120) % (W + 120) - 60;
+      cloud(cx, clouds[c].y, clouds[c].s);
+    }
+    ctx.fillStyle = '#6fb36f';
+    for (var k = -1; k < W / 160 + 2; k++) {
+      var hx = k * 160 - (bgX * 0.5) % 160;
+      ctx.beginPath(); ctx.arc(hx, gy + 10, 90, Math.PI, 0); ctx.fill();
+    }
+    ctx.fillStyle = '#6b4f3a'; ctx.fillRect(0, gy, W, H - gy);
+    ctx.fillStyle = '#56402f';
+    for (var s = 0; s < W / 40 + 2; s++) ctx.fillRect(s * 40 - (bgX % 40), gy + 14, 20, 6);
+
+    var px = 230 + S.px;
+    var lift = 0;
+    if (S.jumpT >= 0) { var t = (now - S.jumpT) / 600; if (t < 1) lift = Math.sin(Math.PI * t) * 70; }
+    if (S.stage === 1 && S.obsX !== null && running) S.obsX = Math.max(px + 90, S.obsX - dt * 0.18);
+    if (S.stage >= 2 && S.obsX !== null && running) { S.obsX -= dt * 0.3; if (S.obsX < -40) S.obsX = null; }
+    if (S.obsX !== null) {
+      ctx.fillStyle = '#2f5d2f';
+      ctx.beginPath(); ctx.moveTo(S.obsX - 22, gy); ctx.lineTo(S.obsX - 10, gy - 30); ctx.lineTo(S.obsX, gy - 12);
+      ctx.lineTo(S.obsX + 10, gy - 34); ctx.lineTo(S.obsX + 22, gy); ctx.closePath(); ctx.fill();
+    }
+    if (S.enemyX !== null && S.enemyState !== 'none') {
+      if (S.enemyState === 'approach' && running) S.enemyX = Math.max(px + 60, S.enemyX - dt * 1.0);
+      if (S.enemyState === 'down' && running) S.enemyX += dt * 0.25;
+      if (S.enemyX > W + 60) S.enemyState = 'none';
+      person(S.enemyX, gy, '#5a5f6b', '#d9b99b', 0);
+    }
+    var swing = S.swingT >= 0 && now - S.swingT < 200;
+    person(px, gy, '#f28c28', '#f1d1b5', lift);
+    if (swing) { ctx.fillStyle = '#ffffff'; ctx.fillRect(px + 12, gy - lift - 36, 30, 5); }
+    if (S.stage >= 1 && S.stage <= 5) drawControls();
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "schema_version": "ux-evidence-bundle.v1",
+  "bundle_id": "bundle-invalid-synthetic",
+  "permissions": {"requested": ["read_only"], "granted": ["read_only"], "blocked": []},
+  "records": {
+    "sources": [{"id": "source-1", "channel": "other", "source_ref": "user-provided", "access_basis": "public", "access_method": "other", "public_scope": "unknown", "retention_status": "retained"}],
+    "evidence": [{"id": "evidence-1", "source_id": "source-1", "epistemic_status": "observed"}],
+    "claims": [{"id": "claim-1", "claim_kind": "user_preference", "support_basis": "synthetic_persona", "persona_ids": ["persona-1"], "evidence_ids": ["evidence-1"], "epistemic_status": "observed", "verification_status": "verified"}],
+    "personas": [{"id": "persona-1", "basis": "synthetic", "adapter_revision": "a", "schema_fingerprint": "b", "seed": "c", "shard_or_config": "d", "max_scanned_rows": 1, "max_bytes_read": 1, "timeout_ms": 1, "selected_record_ids": [], "filled_strata": [], "unfilled_strata": [], "stop_reason": "complete", "original_attributes": {}, "scenario_assumptions": {}}],
+    "scenarios": [],
+    "runs": [],
+    "observations": [],
+    "findings": [],
+    "proposals": [],
+    "figma": []
+  }
+}

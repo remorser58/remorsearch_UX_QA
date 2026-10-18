@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>예약하기 | 헤어살롱 봄</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Noto Sans CJK KR","Malgun Gothic",Roboto,"WenQuanYi Zen Hei",sans-serif;color:#191f28;background:#f2f4f6;font-size:15px;line-height:1.45;-webkit-tap-highlight-color:transparent}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:#fff;position:relative;padding-bottom:84px}
+button,input,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+.topbar{position:sticky;top:0;z-index:10;height:52px;display:flex;align-items:center;padding:0 4px;background:#fff;border-bottom:1px solid #eef0f2}
+.topbar h1{font-size:17px;font-weight:700;flex:1;text-align:center}
+.icon-btn{width:44px;height:44px;font-size:28px;line-height:40px;text-align:center}
+.icon-spacer{width:44px;height:44px}
+
+.pad{padding:0 16px}
+.store{padding:8px 16px;background:#f9fafb;border-bottom:1px solid #eef0f2}
+.store-name{font-size:16px;font-weight:700}
+.store-sub{font-size:14px;font-weight:400;color:#4e5968}
+.lbl{font-size:15px;font-weight:700;margin:12px 0 8px}
+.dates{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:0 -4px}
+.dates button{height:52px;border-radius:10px;border:1px solid #d1d6db;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.2;font-size:14px}
+.dates button b{font-size:16px}
+.dates button[aria-pressed="true"]{background:#191f28;border-color:#191f28;color:#fff}
+.people{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.people .lbl{margin:0}
+.stepper{display:flex;align-items:center;border:1px solid #d1d6db;border-radius:10px}
+.stepper button{width:44px;height:44px;font-size:20px}
+.stepper span{min-width:40px;text-align:center;font-weight:700}
+
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.slot{height:44px;border-radius:10px;font-size:15px;font-weight:600;color:#191f28;border:2px solid #289828;background:#eaf6ec}
+.slot.full{border-color:#d8383a;background:#fdeaea}
+.slot[aria-pressed="true"]{background:#1b64da;border-color:#1b64da;color:#fff}
+.legend{display:flex;gap:14px;align-items:center;font-size:14px;color:#4e5968;margin-top:8px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:0}
+.dot.ok{background:#289828}.dot.full{background:#d8383a}
+
+.summary{display:flex;align-items:center;gap:12px;margin-top:12px;padding:8px 8px 8px 14px;background:#f2f4f6;border-radius:14px}
+.summary p{flex:1;font-size:15px;font-weight:600}
+.fab{flex:none;width:56px;height:56px;border-radius:50%;background:#1b64da;color:#fff;font-size:15px;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+
+.form-error{margin:12px 16px 0;padding:10px 14px;background:#fdecec;color:#b3261e;border-radius:10px;font-size:14px;font-weight:600}
+.form-error ul{margin-top:2px;padding-left:18px}
+.picked{margin:12px 16px 4px;font-size:15px;font-weight:700}
+.field{display:block;margin-top:12px}
+.field span{display:block;font-size:14px;color:#4e5968;margin-bottom:4px}
+.field input,.field textarea{width:100%;height:48px;border:1px solid #8b95a1;border-radius:10px;padding:0 12px;font-size:16px;background:#fff}
+.field textarea{height:64px;padding:10px 12px;resize:none}
+.notice{font-size:14px;color:#6b6b6b;margin-top:12px;line-height:1.5}
+.agree{display:flex;align-items:center;gap:10px;min-height:48px;margin-top:8px;font-size:15px}
+.agree input{width:20px;height:20px;accent-color:#1b64da;flex:none}
+
+.bottom-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;padding:12px 16px;background:#fff;border-top:1px solid #eef0f2;z-index:20}
+.btn-block{width:100%;height:52px;border-radius:12px;background:#4a9af5;color:#fff;font-size:16px;font-weight:700}
+
+.done{position:fixed;inset:0;background:#fff;z-index:50;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+.done .check{width:64px;height:64px;border-radius:50%;background:#1b64da;color:#fff;font-size:32px;line-height:64px;margin:0 auto 16px}
+.done h2{font-size:22px;margin-bottom:8px}
+.done p{color:#4e5968;font-size:15px}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);width:calc(100% - 32px);max-width:448px;z-index:70;background:#333d4b;color:#fff;font-size:15px;line-height:1.5;padding:12px 16px;border-radius:12px;pointer-events:none}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <button id="back" class="icon-btn" aria-label="뒤로 가기">‹</button>
+    <h1>예약하기</h1>
+    <span class="icon-spacer" aria-hidden="true"></span>
+  </header>
+
+  <section id="step-1">
+    <div class="store"><p class="store-name">헤어살롱 봄 강남점 <span class="store-sub">· 여성 커트 60분 · 35,000원</span></p></div>
+    <div class="pad">
+      <h2 class="lbl">날짜</h2>
+      <div id="dates" class="dates">
+        <button aria-pressed="false" data-date="2026-09-29" data-label="9월 29일(화)">화<b>29</b></button>
+        <button aria-pressed="false" data-date="2026-09-30" data-label="9월 30일(수)">수<b>30</b></button>
+        <button aria-pressed="false" data-date="2026-10-01" data-label="10월 1일(목)">목<b>1</b></button>
+        <button aria-pressed="false" data-date="2026-10-02" data-label="10월 2일(금)">금<b>2</b></button>
+        <button aria-pressed="false" data-date="2026-10-03" data-label="10월 3일(토)">토<b>3</b></button>
+        <button aria-pressed="false" data-date="2026-10-04" data-label="10월 4일(일)">일<b>4</b></button>
+        <button aria-pressed="false" data-date="2026-10-05" data-label="10월 5일(월)">월<b>5</b></button>
+      </div>
+      <div class="people">
+        <h2 class="lbl">인원</h2>
+        <div class="stepper"><button id="people-minus" aria-label="인원 줄이기">−</button><span id="people">1</span><button id="people-plus" aria-label="인원 늘리기">+</button></div>
+      </div>
+      <h2 class="lbl">시간</h2>
+      <div id="time-slots" class="slots">
+        <button class="slot" aria-pressed="false" data-time="10:30">10:30</button>
+        <button class="slot full" aria-disabled="true" data-time="11:00">11:00</button>
+        <button class="slot full" aria-disabled="true" data-time="13:00">13:00</button>
+        <button class="slot" aria-pressed="false" data-time="13:30">13:30</button>
+        <button class="slot" aria-pressed="false" data-time="14:00">14:00</button>
+        <button class="slot full" aria-disabled="true" data-time="15:00">15:00</button>
+        <button class="slot" aria-pressed="false" data-time="15:30">15:30</button>
+        <button class="slot full" aria-disabled="true" data-time="16:00">16:00</button>
+      </div>
+      <p class="legend"><span><span class="dot ok"></span>예약 가능</span><span><span class="dot full"></span>마감</span></p>
+      <div class="summary">
+        <p id="pick-summary">날짜와 시간을 선택해 주세요</p>
+        <button id="next" class="fab">다음</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="step-2" hidden>
+    <div id="form-error" class="form-error" role="alert" hidden></div>
+    <p id="picked" class="picked"></p>
+    <div class="pad">
+      <label class="field"><span>이름</span><input id="name" autocomplete="name"></label>
+      <label class="field"><span>휴대폰 번호</span><input id="phone" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000"></label>
+      <label class="field"><span>요청사항 (선택)</span><textarea id="memo" rows="2"></textarea></label>
+      <p id="notice" class="notice">예약 시간보다 10분 이상 늦으시면 다음 고객을 위해 예약이 취소될 수 있어요.</p>
+      <label class="agree"><input type="checkbox" id="agree"> 개인정보 수집·이용 동의 (필수)</label>
+    </div>
+    <div class="bottom-bar"><button id="submit" class="btn-block">예약 신청하기</button></div>
+  </section>
+
+  <div id="booking-done" class="done" role="status" hidden>
+    <div>
+      <div class="check" aria-hidden="true">✓</div>
+      <h2>예약 신청 완료</h2>
+      <p id="done-detail"></p>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" hidden></div>
+</div>
+<script>
+(function(){
+  var sel = {date:null, dateLabel:'', time:null, people:1};
+  var summary = document.getElementById('pick-summary');
+  function updateSummary(){
+    if(sel.dateLabel && sel.time) summary.textContent = sel.dateLabel + ' ' + sel.time + ' · ' + sel.people + '명';
+    else summary.textContent = '날짜와 시간을 선택해 주세요';
+  }
+  var dates = document.getElementById('dates');
+  dates.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-date]');
+    if(!b) return;
+    dates.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+    b.setAttribute('aria-pressed','true');
+    sel.date = b.dataset.date; sel.dateLabel = b.dataset.label;
+    updateSummary();
+  });
+  var slots = document.getElementById('time-slots');
+  slots.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-time]');
+    if(!b || b.getAttribute('aria-disabled') === 'true') return;
+    slots.querySelectorAll('button[aria-pressed]').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+    b.setAttribute('aria-pressed','true');
+    sel.time = b.dataset.time;
+    updateSummary();
+  });
+  var peopleEl = document.getElementById('people');
+  document.getElementById('people-minus').addEventListener('click', function(){ sel.people = Math.max(1, sel.people - 1); peopleEl.textContent = sel.people; updateSummary(); });
+  document.getElementById('people-plus').addEventListener('click', function(){ sel.people = Math.min(4, sel.people + 1); peopleEl.textContent = sel.people; updateSummary(); });
+
+  document.getElementById('next').addEventListener('click', function(){
+    if(!sel.date || !sel.time){ updateSummary(); return; }
+    document.getElementById('step-1').hidden = true;
+    document.getElementById('step-2').hidden = false;
+    document.getElementById('picked').textContent = sel.dateLabel + ' ' + sel.time + ' · ' + sel.people + '명';
+    window.scrollTo(0, 0);
+  });
+
+  var formError = document.getElementById('form-error');
+  document.getElementById('submit').addEventListener('click', function(){
+    var errs = [];
+    var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.replace(/\D/g, '');
+    if(!name) errs.push('이름을 입력해 주세요.');
+    if(!/^01\d{8,9}$/.test(phone)) errs.push('휴대폰 번호를 정확히 입력해 주세요.');
+    if(!document.getElementById('agree').checked) errs.push('개인정보 수집·이용에 동의해 주세요.');
+    if(errs.length){
+      formError.innerHTML = '입력 내용을 확인해 주세요.<ul>' + errs.map(function(t){ return '<li>' + t + '</li>'; }).join('') + '</ul>';
+      formError.hidden = false;
+      return;
+    }
+    formError.hidden = true;
+    document.getElementById('done-detail').textContent = '헤어살롱 봄 강남점 · ' + sel.dateLabel + ' ' + sel.time + ' · ' + sel.people + '명';
+    document.getElementById('step-2').hidden = true;
+    document.getElementById('booking-done').hidden = false;
+    var toast = document.getElementById('toast');
+    toast.textContent = '예약 신청이 접수되었어요. 매장에서 확인한 뒤 예약 확정 여부를 카카오 알림톡으로 30분 안에 보내드릴게요.';
+    toast.hidden = false;
+    setTimeout(function(){ toast.hidden = true; }, 1500);
+  });
+})();
+</script>
+</body>
+</html>

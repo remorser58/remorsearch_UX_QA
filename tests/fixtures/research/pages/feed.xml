@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>앨리스의 테스트 블로그</title>
+<link>http://feedsite.test:{{PORT}}/alice</link>
+<description>테스트용으로 작성된 가상의 블로그 피드</description>
+<item>
+<title>충전 앱 한 손 조작 후기</title>
+<link>http://feedsite.test:{{PORT}}/alice/42</link>
+<description><![CDATA[<p>피드로 읽은 본문입니다. 버스 손잡이를 잡은 채 한 손으로 충전하려니 결제 버튼까지 엄지가 닿지 않았어요. 화면 아래쪽에 버튼이 있으면 좋겠습니다. FEED-ITEM-SENTINEL</p>]]></description>
+<pubDate>Mon, 21 Sep 2026 08:00:00 +0900</pubDate>
+</item>
+<item>
+<title>다른 글</title>
+<link>http://feedsite.test:{{PORT}}/alice/41</link>
+<description>이 항목은 요청한 글이 아니므로 결과에 들어가면 안 됩니다. OTHER-ITEM-SENTINEL</description>
+</item>
+</channel>
+</rss>

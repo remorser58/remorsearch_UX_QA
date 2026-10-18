@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>(b) 역위상 반쪽 섬광</title>
+<!--
+  Case (b): the left and right halves of the viewport swap black and white at
+  5 Hz (counter-phase). The mean luminance of the viewport stays constant, so a
+  whole-viewport mean sees nothing, although every point of the screen flashes.
+-->
+<style>
+  html, body { margin: 0; height: 100%; background: #ffffff; }
+  .half { position: fixed; top: 0; bottom: 0; width: 50%; }
+  #left { left: 0; background: #000000; }
+  #right { right: 0; background: #ffffff; }
+</style>
+</head>
+<body>
+<div class="half" id="left"></div>
+<div class="half" id="right"></div>
+<script>
+  (function () {
+    var left = document.getElementById('left');
+    var right = document.getElementById('right');
+    var n = 0;
+    setInterval(function () {
+      n += 1;
+      left.style.background = n % 2 ? '#ffffff' : '#000000';
+      right.style.background = n % 2 ? '#000000' : '#ffffff';
+    }, 100);
+  })();
+</script>
+</body>
+</html>

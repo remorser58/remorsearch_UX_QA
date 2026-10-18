@@ -1,0 +1,22 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-flash-a2-box-small",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/box-small.html"
+  },
+  "task_goal_ko": "작게 깜빡이는 상자가 있는 화면을 지켜본다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {},
+  "steps": [
+    {
+      "action": "wait",
+      "ms": 2000
+    }
+  ],
+  "success": {
+    "url_contains": "box-small.html"
+  }
+}

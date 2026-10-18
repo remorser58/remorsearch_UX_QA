@@ -1,0 +1,80 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-checkout-summary-01",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/visual-layout/site/checkout-summary.html"
+  },
+  "task_goal_ko": "도착 예정 시간, 배송지, 주문 상품 가격, 쿠폰 조건, 카드 할부 안내, 결제 금액을 끝까지 확인한 뒤 결제 버튼을 찾는다",
+  "device_ids": [
+    "galaxy-s24",
+    "iphone-15"
+  ],
+  "targets": {
+    "primary": [
+      "#btn-pay"
+    ],
+    "destructive": [],
+    "critical_message": [],
+    "error_message": [],
+    "status": [],
+    "ad_like": [],
+    "hud": [],
+    "game_control": [],
+    "timed": []
+  },
+  "steps": [
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "scroll",
+      "dy": 600
+    },
+    {
+      "action": "wait",
+      "ms": 250
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "scroll",
+      "dy": 600
+    },
+    {
+      "action": "wait",
+      "ms": 250
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "scroll",
+      "dy": 600
+    },
+    {
+      "action": "wait",
+      "ms": 250
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "scroll",
+      "dy": 600
+    },
+    {
+      "action": "wait",
+      "ms": 250
+    },
+    {
+      "action": "snapshot"
+    }
+  ],
+  "timing_windows": [],
+  "success": {
+    "selector_visible": "#btn-pay"
+  },
+  "hotspots": []
+}

@@ -1,0 +1,10 @@
+{
+  "schema_version": "ux-research-agent-tokens.v1",
+  "version": "fixture",
+  "note": "Fixture tokens for tests/test_ux_read.py; added to the packaged list by `start --agent-tokens`.",
+  "tokens": [
+    {"token": "FixtureFetcher-User", "category": "fetch_on_behalf", "operator": "fixture", "doc": null, "verified": false},
+    {"token": "FixtureTrainBot", "category": "training_or_index", "operator": "fixture", "doc": null, "verified": false},
+    {"token": "FixtureQuietBot", "category": "training_or_index", "operator": "fixture", "doc": null, "verified": false}
+  ]
+}

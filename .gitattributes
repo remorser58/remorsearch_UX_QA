@@ -1,0 +1,2 @@
+# Captured benchmark data stays inspectable without obscuring authored changes.
+docs/validation/**/local-evidence/** linguist-generated=true

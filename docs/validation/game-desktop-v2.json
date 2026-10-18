@@ -1,0 +1,110 @@
+{
+ "suite": "game-desktop",
+ "runs": [
+  {
+   "run_id": "R-SC-admin-members-01-clean-desktop-1920",
+   "scenario_id": "SC-admin-members-01-clean",
+   "exit": 0,
+   "seconds": 21.1,
+   "run_dir": ".ergo-bench/game-v2/runs/R-SC-admin-members-01-clean-desktop-1920"
+  },
+  {
+   "run_id": "R-SC-admin-members-01-desktop-1920",
+   "scenario_id": "SC-admin-members-01",
+   "exit": 0,
+   "seconds": 21.4,
+   "run_dir": ".ergo-bench/game-v2/runs/R-SC-admin-members-01-desktop-1920"
+  },
+  {
+   "run_id": "R-SC-game-run-01-clean-galaxy-s24",
+   "scenario_id": "SC-game-run-01-clean",
+   "exit": 0,
+   "seconds": 24.7,
+   "run_dir": ".ergo-bench/game-v2/runs/R-SC-game-run-01-clean-galaxy-s24"
+  },
+  {
+   "run_id": "R-SC-game-run-01-galaxy-s24",
+   "scenario_id": "SC-game-run-01",
+   "exit": 0,
+   "seconds": 47.9,
+   "run_dir": ".ergo-bench/game-v2/runs/R-SC-game-run-01-galaxy-s24"
+  }
+ ],
+ "run_failures": [],
+ "measured_only": {
+  "suite": "game-desktop",
+  "defects": 16,
+  "recall_strict": 0.312,
+  "recall_lenient": 0.375,
+  "severity_agreement": 0.312,
+  "decoys": 9,
+  "decoys_flagged": 0,
+  "clean_control_findings": 4,
+  "precision_labeled": 0.81,
+  "unlabeled_findings_in_defect_variants": 3,
+  "findings": 24,
+  "severity_counts": {
+   "P0": 0,
+   "P1": 7,
+   "P2": 14,
+   "P3": 3
+  }
+ },
+ "single_profile": {
+  "suite": "game-desktop",
+  "defects": 16,
+  "recall_strict": 0.688,
+  "recall_lenient": 0.688,
+  "severity_agreement": 0.625,
+  "decoys": 9,
+  "decoys_flagged": 1,
+  "clean_control_findings": 30,
+  "precision_labeled": 0.415,
+  "unlabeled_findings_in_defect_variants": 26,
+  "findings": 78,
+  "severity_counts": {
+   "P0": 0,
+   "P1": 8,
+   "P2": 24,
+   "P3": 46
+  }
+ },
+ "swarm": {
+  "suite": "game-desktop",
+  "defects": 16,
+  "recall_strict": 0.812,
+  "recall_lenient": 0.812,
+  "severity_agreement": 0.75,
+  "decoys": 9,
+  "decoys_flagged": 2,
+  "clean_control_findings": 31,
+  "precision_labeled": 0.421,
+  "unlabeled_findings_in_defect_variants": 26,
+  "findings": 81,
+  "severity_counts": {
+   "P0": 0,
+   "P1": 8,
+   "P2": 25,
+   "P3": 48
+  }
+ },
+ "swarm_gain_over_single": [
+  "D-09",
+  "D-15"
+ ],
+ "swarm_gain_over_measured": [
+  "D-01",
+  "D-02",
+  "D-06",
+  "D-09",
+  "D-12",
+  "D-14",
+  "D-15",
+  "D-16"
+ ],
+ "missed_by_swarm": [
+  "D-04",
+  "D-07",
+  "D-08"
+ ]
+}

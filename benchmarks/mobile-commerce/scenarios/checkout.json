@@ -1,0 +1,75 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-checkout-01",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/mobile-commerce/site/checkout.html"
+  },
+  "task_goal_ko": "쿠폰 안내 배너를 닫고 토스페이로 장바구니 상품을 결제한다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {
+    "primary": [
+      "#pay"
+    ],
+    "destructive": [
+      "#btn-clear"
+    ],
+    "critical_message": [],
+    "error_message": [],
+    "status": [
+      "#order-done"
+    ],
+    "ad_like": [
+      "#promo"
+    ],
+    "hud": [],
+    "game_control": [],
+    "timed": []
+  },
+  "steps": [
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#promo-close"
+    },
+    {
+      "action": "wait",
+      "ms": 300
+    },
+    {
+      "action": "tap",
+      "target": "#pay-methods [data-method=\"tosspay\"]"
+    },
+    {
+      "action": "wait",
+      "ms": 300
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "tap",
+      "target": "#pay"
+    },
+    {
+      "action": "wait",
+      "ms": 500
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "wait",
+      "ms": 2600
+    }
+  ],
+  "timing_windows": [],
+  "success": {
+    "selector_visible": "#order-done"
+  },
+  "hotspots": []
+}

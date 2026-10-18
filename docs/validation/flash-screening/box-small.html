@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>(a') 기준 미만 섬광 상자</title>
+<!--
+  Control for case (a): the same 5 Hz white/black flash on a 100 x 100 CSS px
+  box. On a Galaxy S24 at 300 mm that is ~0.0037 sr, below the WCAG 2.3.1 area
+  threshold (0.006 sr), so it passes 2.3.1 although it flashes 5 times a second.
+-->
+<style>
+  html, body { margin: 0; background: #ffffff; color: #202124; font-family: sans-serif; }
+  p { font-size: 16px; line-height: 24px; margin: 16px; }
+  #box { position: absolute; left: 131px; top: 341px; width: 100px; height: 100px; background: #ffffff; outline: 1px solid #dadce0; }
+</style>
+</head>
+<body>
+<p>작은 상자 하나가 초당 5회 깜빡입니다(면적 기준 미만).</p>
+<div id="box"></div>
+<script>
+  (function () {
+    var box = document.getElementById('box');
+    var n = 0;
+    setInterval(function () {
+      n += 1;
+      box.style.background = n % 2 ? '#000000' : '#ffffff';
+    }, 100);
+  })();
+</script>
+</body>
+</html>

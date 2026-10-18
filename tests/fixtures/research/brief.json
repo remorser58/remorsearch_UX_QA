@@ -1,0 +1,25 @@
+{
+  "schema_version": "ux-research-brief.v1",
+  "product": {
+    "name": "테스트 교통카드 앱",
+    "surface": "mobile web",
+    "url": "https://product.example/app",
+    "locale": "ko-KR",
+    "category": "transit payments",
+    "release_date": "2026-08-01",
+    "current_version": "3.2.0"
+  },
+  "personas_for": "both",
+  "audience_questions": ["segments", "contexts_of_use", "key_tasks", "pain_points"],
+  "languages": {"primary": "ko-KR", "secondary": ["en"]},
+  "channels": {"include": ["community", "app_store_reviews"], "exclude": []},
+  "time_windows": [{"from": "2026-01-01", "to": "2026-09-28", "label": "since the redesign"}],
+  "budgets": {"per_host": 20, "per_run": 150, "search_queries": 100, "min_interval_s": 10},
+  "access_policy": {
+    "deny_hosts": ["denied.test"],
+    "allow_wayback_for_official": true,
+    "render": "host_browser"
+  },
+  "team_analytics_available": false,
+  "report_lang": "ko"
+}

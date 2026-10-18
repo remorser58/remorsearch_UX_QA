@@ -1,0 +1,22 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-flash-i-slow",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/slow.html"
+  },
+  "task_goal_ko": "천천히 바뀌는 화면을 지켜본다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {},
+  "steps": [
+    {
+      "action": "wait",
+      "ms": 3000
+    }
+  ],
+  "success": {
+    "url_contains": "slow.html"
+  }
+}

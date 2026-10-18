@@ -1,0 +1,1452 @@
+{
+ "items": 68,
+ "judges_per_item": 2,
+ "agreement": 0.912,
+ "cohen_kappa": 0.715,
+ "consensus": {
+  "invalid": 52,
+  "valid": 10,
+  "split": 6
+ },
+ "by_check": {
+  "CG-01": {
+   "invalid": 6
+  },
+  "CG-03": {
+   "invalid": 3
+  },
+  "GM-05": {
+   "valid": 1,
+   "invalid": 3
+  },
+  "GZ-01": {
+   "invalid": 5,
+   "split": 1
+  },
+  "GZ-02": {
+   "invalid": 5
+  },
+  "GZ-04": {
+   "invalid": 5,
+   "valid": 1
+  },
+  "PC-02": {
+   "invalid": 6
+  },
+  "PC-04": {
+   "invalid": 4,
+   "valid": 1,
+   "split": 1
+  },
+  "PC-05": {
+   "split": 3,
+   "valid": 1
+  },
+  "PT-02": {
+   "valid": 1,
+   "invalid": 2
+  },
+  "PT-04": {
+   "valid": 3,
+   "split": 1,
+   "invalid": 2
+  },
+  "RH-01": {
+   "invalid": 3,
+   "valid": 1
+  },
+  "CG-02": {
+   "invalid": 2
+  },
+  "PC-03": {
+   "invalid": 2
+  },
+  "PT-01": {
+   "valid": 1
+  },
+  "RH-02": {
+   "invalid": 2
+  },
+  "GM-02": {
+   "invalid": 2
+  }
+ },
+ "by_pool": {
+  "clean": {
+   "invalid": 31,
+   "split": 2,
+   "valid": 3
+  },
+  "unlabeled": {
+   "invalid": 21,
+   "valid": 7,
+   "split": 4
+  }
+ },
+ "severity_of_valid": {
+  "ok": 21,
+  "too_high": 5
+ },
+ "verdicts": {
+  "0": {
+   "finding": "EF-075",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "CG-01",
+   "severity": "P3",
+   "element_key": "#pk-1|1",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The 12 'same-shaped choices' are the 3x4 PIN pad in S-009: 10 digits plus the 재배열 and ← keys, which have different labels and styling. The count is literally correct. But PIN entry means pressing a digit the user already knows on a standard keypad; it is not a Hick-Hyman choice among equally likely options. The 10 digit keys cannot be reduced, so the finding cannot be acted on. No careful reviewer would report 'choice overload' on a numeric PIN pad."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The 12 'same-shaped choices' are the standard 3x4 PIN keypad of the 간편 비밀번호 sheet: digits 1-9 and 0, plus 재배열 and ←, in the ordered phone-pad layout. The count is correct, but typing a memorised PIN is not a decision among alternatives. Digit keys have a highly practised, compatible mapping, so the Hick-Hyman cost is negligible. The grid is also structured, and the cited doc says to flag large sets only when they lack grouping (the limit of 9 is a policy value). This is a conventional banking pattern, not a usability problem a reviewer would report."
+    }
+   ]
+  },
+  "1": {
+   "finding": "EF-074",
+   "suite": "heldout-mixed",
+   "pool": "unlabeled",
+   "check_id": "CG-01",
+   "severity": "P3",
+   "element_key": "#pk-1|1",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same as EF-075, on the transfer-a PIN sheet (S-009): 10 digit keys plus shuffle and backspace, all 128x36. A numeric PIN pad is a recall-driven, canonical layout and not a decision-overload case, and the digit count is fixed by the task. The keys are short (36 px tall, about 6.8 mm), but that is a target-size question, not CG-01."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same as EF-075: the 12 elements are the conventional ordered PIN keypad (0-9, 재배열, ←), used to enter a remembered code. Hick-Hyman choice cost does not meaningfully apply to a practised digit layout, and the grid is structured. In transfer-a the keys are short (about 34 CSS px rows), but that is a target-size concern for PT checks, not choice overload."
+    }
+   ]
+  },
+  "2": {
+   "finding": "EF-073",
+   "suite": "heldout-mixed",
+   "pool": "unlabeled",
+   "check_id": "CG-03",
+   "severity": "P3",
+   "element_key": "hotspot:hs-boost|부스터",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Mis-measured. The boost tap at t=6106 ms came about 170 ms after the QTE prompt had closed (it was open 5042 to 5934 ms). The page's handler only boosts while qteOpen, and the score stayed at 20 (S-006 to S-007). The first DOM mutation at +852.9 ms is the HUD '남은 시간' text tick: the game started around 952 ms, so seconds roll over near 5952 and 6952 ms, and 6106 + 853 = 6959. The driver also logged 2 ambient mutations. The tap's own feedback (a canvas press dim) is immediate, and a boost inside the window updates the score on the next frame. There is no feedback-latency problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The latency is mis-measured. The '지금 부스터!' QTE prompt appeared at 5042 ms and was visible for 891.9 ms, so it closed at about 5934 ms. The step-7 booster tap came at 6106 ms, after the window closed. The score stayed at 20 from snapshot 006 to 007, so the tap had no effect. The 'first DOM change' at +852.9 ms (about 6959 ms) matches the 1-second countdown tick: the timer shows 11→9 across those snapshots, with ticks at about 5952 and 6952 ms from game start at about 952 ms. The driver logged 2 ambient mutations in the prior 500 ms, and CG-03 does not discount them. In starlight-b, the same booster tap inside the window got feedback in 19.5 ms (score 20→320). The booster does not respond slowly. The real issues are the short QTE window and late taps being silently ignored, which belong to other checks."
+    }
+   ]
+  },
+  "3": {
+   "finding": "EF-027",
+   "suite": "heldout-mixed",
+   "pool": "unlabeled",
+   "check_id": "GM-05",
+   "severity": "P2",
+   "element_key": "hotspot:hs-boost|부스터",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "The measurement is correct. The boost hotspot is 28x28 CSS px on iPhone 15 (about 0.1655 mm/px), which is 4.6 mm, and the page hit-tests exactly this box, which is also the drawn circle. It sits 10 px (1.7 mm) from the right edge. It is a time-limited QTE control (900 ms window), placed far from the thumb's resting point on the central 탭 button, and the Bi & Zhai baseline hit rate at 4.6 mm is about 85%. This is a real ergonomic problem. P2 (< 7 mm) fits: a miss loses a bonus but does not block progress."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "Correctly measured and attributed. hotspot:hs-boost is 28x28 CSS px at (355,436), which is about 4.6 mm on the iPhone 15 (about 0.165 mm/px). It is 10 px (1.7 mm) from the right edge and matches the tiny orange ⚡ circle in the screenshot. It is a timed game control: the QTE window is only 0.9 s and the booster is worth +300. The Bi & Zhai model gives about a 14% baseline miss at 4.6 mm, worse one-handed, and the edge position adds bezel and case interference. starlight-b's 72 px central booster shows the fix. GM-05's P2 for under 7 mm is appropriate; the timing risk is covered separately by GM-03."
+    }
+   ]
+  },
+  "4": {
+   "finding": "EF-077",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "GM-05",
+   "severity": "P3",
+   "element_key": "hotspot:hs-pause|일시정지",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The pause hotspot is 44x44 CSS px, which is 44 pt (7.3 mm) on iPhone 15: exactly the Apple HIG minimum. It sits 2.3 mm from the edge, so it passes the 2 mm edge rule. The 9.6 mm threshold is Parhi's value for serial thumb tapping, and pause is an occasional single tap, not a repeated gameplay control. The modelled hit rate at about 7 mm is about 97.5%. This is not a meaningful problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The pause hotspot is 44x44 CSS px (7.3 mm), exactly Apple HIG's 44 pt minimum. It is 2.3 mm from the edge, which clears the 2 mm edge rule. The 9.6 mm threshold is Parhi's value for serial thumb tapping; pause is a discrete, infrequent tap (baseline P(hit) about 0.97). A modest corner pause button is conventional and also limits accidental pauses. A careful reviewer would not report this."
+    }
+   ]
+  },
+  "5": {
+   "finding": "EF-107",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "GZ-01",
+   "severity": "P3",
+   "element_key": "#chk-verify|✓ 받는 분과 직접 통화하거나 만나서 요청 내용을 확인했어요. (보이스피",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The value comes from an occluded state. Rerunning GZ-01 per snapshot, the checkbox passes on the actual confirm screen: p=0.58 (S-006), 0.60 (S-007) and 0.65 (S-008, already checked). The reported 0.18 is from S-009 onward, where the checkbox is already ticked and hidden under the PIN bottom sheet; the tool does not account for a modal covering the element. The cited evidence snapshot (006) does not support the value, and the checkbox sits directly above the CTA under a highlighted warning."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The finding is attributed to the wrong state. The P=0.18 observation was computed on snapshot 009. There the checkbox is already checked (✓ in its name) and fully covered by the PIN bottom sheet: the sheet spans y≈355-824 and the checkbox sits at y=660-740. On the actual confirm screen (snapshot 006, the cited screenshot), the same model gives P=0.58 and the check passes. The checkbox there is a full-width bordered card directly above the CTA, and skipping it triggers a '아래 확인란을 체크해 주세요' prompt. There is no real hierarchy problem."
+    }
+   ]
+  },
+  "6": {
+   "finding": "EF-083",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "GZ-01",
+   "severity": "P3",
+   "element_key": "#play|재생",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "Player screen S-001. The only way to start the clip is a small white ▶ in a 56 px button at the far left of the dark control bar. The page code shows the video area and caption do nothing when tapped (only #play has a click handler), and there is no central play overlay, which tablet users expect. The caption '▶ 버튼을 누르면…' is larger and more central than the real button and contains a ▶ that cannot be tapped, so it is a false affordance, and the design needed an instruction at all. The model's p=0.16 is plausible. The weak hierarchy for the primary action is worth a P3."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The play control is the conventional ▶ at the left of the video control bar. It is 56x56 CSS px (about 10 mm), white on #16181d, with high contrast. Lesson-a also shows a large 22 px caption, '▶ 버튼을 누르면 요약 강의가 시작돼요', that points users to it. The low probability of a fixation within the first 4 fixations (about 1 s) comes from the free-viewing position prior: the code block and caption draw the first fixations. Users looking for play will find it. The same design appears in lesson-b. Having checked the hierarchy, it is adequate."
+    }
+   ]
+  },
+  "7": {
+   "finding": "EF-086",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "GZ-02",
+   "severity": "P3",
+   "element_key": "#res-2|✗ 오답 · 2번 실수형(float)",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Tapping 제출하기 replaces the whole screen with the '퀴즈 결과' page (S-012 to S-013). #res-2 is the page's main content, directly under the heading and score line, in bold 18 px red text with ✗ on a pink row. The GZ-02 model measures distance from the tap point, which assumes a small change on an otherwise unchanged screen. Salience was scored only as row background against the page (1.11), ignoring the high-contrast red text. Users will not miss this."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "#res-2 is not peripheral feedback. Tapping 제출하기 replaces the whole quiz view with a new '퀴즈 결과' screen (new title, h2 and score line), so the change is globally salient and users re-orient to the top of the new page. The red ✗ row sits directly under '2문제 중 1문제를 맞혔어요'. The 'non-salient' flag comes from the pink box versus white (1.11) and ignores the red bold text and ✗ icon as well as the page transition. Per-question feedback had also been shown earlier. 'Likely missed' does not hold."
+    }
+   ]
+  },
+  "8": {
+   "finding": "EF-097",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "GZ-02",
+   "severity": "P3",
+   "element_key": "#submit-error|⚠ 가입할 수 없어요. ‘비밀번호 확인’ 칸: 비밀번호가 서로 달라요. ",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The error summary appears directly below the 가입하기 button that was just clicked, about 3 degrees from the pointer. It is red ⚠ text (about 6:1 on its box), and the '비밀번호 확인' field also gets a red border and an inline message. That is textbook error placement, with no hand occlusion on desktop. The tool rated it 'non-salient' only because the box background matches the container (1.01), ignoring the red text. It will be noticed."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The summary error appears directly under the clicked 가입하기 button (about 3°). It uses red #b42323 text with a ⚠ icon, names the field, and the offending 비밀번호 확인 field also gets a red 2 px border and an inline message. This is a best-practice error pattern. The 'non-salient' classification uses only the box background contrast (1.01) and ignores the red text. The message will be noticed."
+    }
+   ]
+  },
+  "9": {
+   "finding": "EF-110",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "GZ-04",
+   "severity": "P3",
+   "element_key": "#confirm-transfer|이체하기",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "This is an occlusion artefact. #confirm-transfer is not rendered at all in the evidence snapshot S-000 (0x0). Recomputing shows it has 0 competitors on the confirm screen (S-006 to S-008). The count of 13 comes from S-009, where the PIN bottom sheet covers 이체하기; the keypad keys (#pk-1, #pk-2 and so on) are rightly the dominant controls there, and the covered button is not actionable."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The finding is attributed to an element that is not usable at that moment. The count of 13 comes from snapshot 009, where the 이체하기 button (120,752,248,56) is covered by the PIN keypad sheet (keys at y=568-824). The listed 'competitors' even include the modal's #pk-1 and #pk-2. The cited snapshot 000 is the recipient screen, where #confirm-transfer is hidden. On the real confirm screen (006), 이체하기 is a full-width filled blue button and the most prominent control. There is no real hierarchy problem."
+    }
+   ]
+  },
+  "10": {
+   "finding": "EF-081",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "GZ-04",
+   "severity": "P3",
+   "element_key": "#lec-2|3-2 숫자형과 문자열 요약 클립 · 이서연 강사 이어서 보기",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "Course page S-000. The user's next step, resuming lesson 3-2, is one of four identical white cards. Its '이어서 보기' marker uses the same grey chip style as '수강 완료' and '미수강', with no primary emphasis, even though a deadline banner urges quick action. Recomputed competitors are the menu, the profile, 3-1 and 3-3: 4, exactly at the threshold, and GZ-01 for this card is also low (p=0.09). A reviewer would suggest highlighting the resume card or adding a clear 'continue' CTA. This is minor, so P3."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "This is borderline but a legitimate minor issue. On the lecture list, the task's primary action (3-2, '이어서 보기') is one of four identically styled cards. Its '이어서 보기' chip is styled like the passive status chips '수강 완료' and '미수강', and the card is second in reading order. The next step (resume) is not visually prioritised, and a reviewer would reasonably suggest highlighting it or adding a resume CTA. The count of 4 (#menu, #profile, #lec-1, #lec-3) is at the threshold and driven by the position prior, so model-only P3 is right and nothing higher."
+    }
+   ]
+  },
+  "11": {
+   "finding": "EF-035",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "PC-02",
+   "severity": "P2",
+   "element_key": "#opt-c|③ _count",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The quiz answers are text buttons (role=radio) whose label '③ _count' is rendered at 20 px. The text identifies the control: WCAG 1.4.11 does not require a boundary for text-labelled controls, and the tool's own rule exempts text buttons. The selected state is a 2 px #1d5fd1 border plus tint (about 5.8:1 against white, S-007), so the state is perceivable. The 1.23:1 #e5e8eb outline is decorative, and the whole 376x112 card is tappable."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "#opt-c is a text-labelled selectable card (role=radio, no radio circle drawn). Its visible text '③ _count' identifies the control. The W3C Understanding for 1.4.11 does not require a 3:1 boundary when text identifies the component, and the check's own rule exempts text buttons. The state that matters, selection, is shown by a 2 px #1d5fd1 border (about 5.8:1 against white) plus a tint (step 007). The 1.23:1 #e5e8eb resting border is decorative, so this is not a 1.4.11 failure."
+    }
+   ]
+  },
+  "12": {
+   "finding": "EF-038",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "PC-02",
+   "severity": "P2",
+   "element_key": "#chk-verify|✓ 받는 분과 직접 통화하거나 만나서 요청 내용을 확인했어요. (보이스피",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The wrong boundary was measured: the outer outline (#e5e8eb, 1.23:1) of the 352x80 card. The actual checkbox is a square inside the card whose border I measured from pixels as #6b7684, 4.62:1 on white; it fills blue with a white check when checked, and it has a text label. The component and its state meet 3:1 under 1.4.11."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The wrong boundary was measured. The 1.23:1 value is the #e5e8eb border of the label card that wraps the checkbox. The checkbox's own indicator, the square, renders as #6b7684 on white, about 4.6:1 (pixel-sampled in snapshot 006), and the text label identifies the control. WCAG 1.4.11 is met."
+    }
+   ]
+  },
+  "13": {
+   "finding": "EF-185",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "PC-04",
+   "severity": "P3",
+   "element_key": "#quick-phone|휴대폰 간편인증으로 가입",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The arithmetic is right: 16 px is 3.35 mm, about 23 arcmin at 50 cm on a 14-inch 2880x1800 screen. But critical print size is about reading speed for continuous text. '휴대폰 간편인증으로 가입' is a 13-character bold button label that only passes the ≥12-character heuristic because spaces are counted. It is at the standard 16 px web body size and well above the 16-arcmin legibility floor, and the Hangul critical-print-size value is flagged in the tool's own docs as unconfirmed. Not a meaningful problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "This is a 16 px bold, dark-on-white button label ('휴대폰 간편인증으로 가입') in a 438x52 button on a 14-inch laptop at 50 cm (23′ em). It is a short button label, not continuous text; the critical-print-size tier is about reading speed of running text. It meets the KRDS 16 px minimum. The 24.6′ Hangul CPS value is snippet-level with an unconfirmed metric, and Korean MNREAD data put young adults' CPS at or below 0.2 logMAR, far smaller. Laptop users read this label easily. It is not a meaningful problem."
+    }
+   ]
+  },
+  "14": {
+   "finding": "EF-136",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "PC-04",
+   "severity": "P3",
+   "element_key": "li:nth-of-type(2)|② <class 'str'>",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Wrong element. The tool read the <li>'s inherited 17 px, but the visible option text is rendered by the child button at 20 px. The page CSS has .opts button{font-size:20px}, the snapshot button shows fs=20, and in pixels the ② glyph is 18.5 px tall versus 16 px for a 17 px paragraph. At 20 px (0.185 mm/px, 40 cm) the angle is about 31.8 arcmin, which is at least 31.2, so there is no finding. It is also a short answer label, not continuous text, and the evidence snapshot 005 shows different text ('② 2nd_value')."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The font size is mis-measured. 17 px is the li's own computed style, but the visible option text is rendered by the child radio or label at 20 px. The ink is 18.5 CSS px tall and 128 px wide, identical to lesson-b's declared 20 px span with the same text. At 20 px (about 3.65-3.7 mm at 400 mm) the angle is about 31.4-31.8′, which passes even the 31.2′ older-adult threshold. It is also a short code option, not continuous text. The cited snapshot 005 shows question 1's text rather than '② <class 'str'>' (the value came from snapshot 009)."
+    }
+   ]
+  },
+  "15": {
+   "finding": "EF-159",
+   "suite": "heldout-mixed",
+   "pool": "unlabeled",
+   "check_id": "PC-05",
+   "severity": "P3",
+   "element_key": "#start-quiz|확인 퀴즈 풀기",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "Confirmed white 18 px/800 text on #1d5fd1, which is 5.82:1. That passes AA, but under the tool's documented sunlight model (2000 nit, 50 klx, ρ 0.02, black 0.5) the effective contrast is about 4.0:1, below 4.5:1 for normal text; 18 px bold is just under the 18.66 px large-text limit. So the bright-sun profile (EP-09) loses a real, if modest, amount of legibility on the primary CTA. This is a margin finding, and P3 fits: a quiz screen is not critical outdoor UI."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The value is correct (white on #1d5fd1 is 5.82:1 and passes AA), but it is not a meaningful problem even for the bright-sun profile. The label is 18 px weight 800, essentially large bold text (WCAG's cutoff is 18.66 px bold, for which AAA needs only 4.5:1). It sits on a large 216x64 button whose identity also comes from shape, colour and position. The docs' own ambient model (2000 nits, 50 klx, ρ 0.02) gives about 4.0:1, above the 3:1 large-text target. The 7:1 figure is a policy tied to one assumption set, and all content degrades in direct sun. A reviewer would not report this for an e-learning CTA."
+    }
+   ]
+  },
+  "16": {
+   "finding": "EF-154",
+   "suite": "heldout-mixed",
+   "pool": "unlabeled",
+   "check_id": "PC-05",
+   "severity": "P3",
+   "element_key": "#quiz-submit|제출하기",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "Same button style as EF-159: 제출하기 is white 18 px/800 on #1d5fd1, 5.82:1, verified in S-010. Under the bright-sun model the effective contrast drops to about 4.0:1, below 4.5:1 for normal-size text, so there is a modest legibility loss on the primary submit action for EP-09. Correctly measured and attributed, and P3 as a situational margin finding is appropriate."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same as EF-159. 제출하기 is 18 px weight-800 white on #1d5fd1 (5.82:1, AA pass) on a 160x64 primary button. Under the tool's own sunlight model the effective contrast is about 4.0:1, above 3:1 for this near-large bold label. The button stays identifiable by shape, colour and position, and the 7:1 bright-light threshold is a policy, not a standard. The situational margin is marginal and not a real usability problem."
+    }
+   ]
+  },
+  "17": {
+   "finding": "EF-214",
+   "suite": "heldout-mixed",
+   "pool": "unlabeled",
+   "check_id": "PT-02",
+   "severity": "P3",
+   "element_key": "#chk-verify|보이스피싱 예방 확인",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "Measured correctly: #chk-verify hit area is exactly 44x44 CSS px (the visible box is 24 px). At 3.75 DPR / 505 ppi that is 8.29 mm, below Parhi's 9.2 mm one-thumb size, and all triggered profiles use one-handed grips. It is also 44 dp on Android, under Material/Accessibility Scanner's 48 dp. This is the required (필수) anti-phishing checkbox on the transfer path. The source shows only the button has a click handler; the adjacent <p> label cannot be tapped, so the small box is the only target. A reviewer would want it reported (enlarge it or make the row/label tappable). A miss costs one retry and there is an inline prompt, so P3 per the rule is right."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "Measurement checks out: #chk-verify is a 44x44 CSS px button, which is 8.29 mm on the S24 Ultra (72.38 mm display over 384 px). The label paragraph next to it is a plain <p> with no click handler, and only transfer-b makes the whole row tappable. So this button is the only hit area for a required (필수) anti-phishing confirmation on the transfer path. That is below Parhi's 9.2 mm one-thumb size and below 48 dp on Android. All six triggered profiles are one-hand grips. The dual-Gaussian miss rate is 0.9% at baseline, 5.7% at k=1.3 and 18-27% for the 70s+ and tremor profiles. A miss is harmless (retry, plus the '체크해 주세요' error), so P3 is right. Fix: make the whole row tappable."
+    }
+   ]
+  },
+  "18": {
+   "finding": "EF-041",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "PT-04",
+   "severity": "P2",
+   "element_key": "hotspot:hs-pause|일시정지",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "too_high",
+     "reason": "Pause hotspot is 44x44 CSS = 44 pt = 7.27 mm on iPhone 15, and the maths is right (baseline 2.0% miss; 9.3% with sigma x1.3). It sits in the top-right corner, the hardest one-thumb spot, and Parhi found significantly more errors at 7.7 mm than at 11.5 mm, so a small real one-thumb issue exists. But it meets Apple HIG 44 pt and WCAG 2.5.5. It is off the task path and used rarely. A miss lands on empty canvas: hit() returns null, so nothing misfires. The baseline is below every threshold and the finding rests only on the assumed multiplier. The tool's own game-control rule (GM-05, <9.6 mm) and MP-02 policy (P2 needs a critical-path or frequent control) point to P3 at most, not P2."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "too_high",
+     "reason": "The hotspot (335,54,44,44) matches the drawn pause button, and the numbers reproduce: 7.27 mm on iPhone 15, 2.0% miss at baseline and 9.3% at k=1.3 (24% for 70s+, 34% for tremor). That is below the 9.2 mm one-thumb size, in the far top corner. It is a real but minor ergonomic issue for one-handed, older and tremor players. P2 is too high: pause was never used on the task path, 44 pt meets Apple HIG, and a missed tap hits no hotspot (the game only reacts to hotspots), so the cost is a retry. The tool's own game-control rule GM-05 rates 7.27 mm as P3. Should be P3."
+    }
+   ]
+  },
+  "19": {
+   "finding": "EF-040",
+   "suite": "heldout-mixed",
+   "pool": "unlabeled",
+   "check_id": "PT-04",
+   "severity": "P2",
+   "element_key": "hotspot:hs-pause|일시정지",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "too_high",
+     "reason": "Identical to item 18: in starlight-a the pause hotspot is the same 44x44 CSS (7.27 mm), same position and handler. It meets the Apple 44 pt minimum and is below the one-thumb research size, in the hard-to-reach top-right corner. A small real ergonomic note, but it is off-path, rarely used, a miss has no consequence, and only the assumed sigma multiplier triggers it. P3 is appropriate, not P2."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "too_high",
+     "reason": "Same pause control as starlight-b: identical 44x44 pt hotspot at top-right, 7.27 mm. Model reproduces (baseline 2.0%, 9.3% at k=1.3, higher for 70s+ and tremor). It is a real minor issue for one-handed, older and tremor players in the far corner. But pause is off the task path (never tapped in the run), meets the 44 pt platform minimum, and misses have no side effect (only hotspots respond). P3, not P2; GM-05 would itself give P3."
+    }
+   ]
+  },
+  "20": {
+   "finding": "EF-064",
+   "suite": "heldout-mixed",
+   "pool": "unlabeled",
+   "check_id": "RH-01",
+   "severity": "P2",
+   "element_key": "#play|일시정지",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "This applies a phone one-thumb reach model (bottom-corner pivot, 111 mm thumb) to an 11-inch Galaxy Tab S9 (166x254 mm body). No one operates that tablet across the screen with the holding thumb; 'needs a grip change' is the normal state. The tool's own handedness-grip-reach.md (HGR-9, lines 217/310) says tablets are held two-handed with side-band thumb zones or set down, and one-hand reach should not be applied. The two_thumbs profile in the list uses the same corner pivots, which is also the wrong model. #play (x=12-68, y=518-574, left edge near mid-height) is in the left thumb's side band, and video viewing is normally done with the device set down (HGR-9 caps that at P3). A standard bottom-left video play/pause control is not a reach defect."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The phone thumb-reach model is applied to an 11-inch Galaxy Tab S9 (148x237 mm display) under a one-hand-thumb grip. Its pivot sits 35 mm above the bottom corner (clamped), so almost the whole screen scores 'out' and 'needs a grip change' says nothing specific. Nobody reaches across an 11-inch tablet with the thumb of the holding hand. The two-thumb profile also fails only because of that bottom-corner pivot. In realistic tablet grips (index finger, or two hands at mid-sides), #play sits under the left thumb: left edge of a standard video control bar, x=12, about 43% down. Conventional placement; nothing actionable."
+    }
+   ]
+  },
+  "21": {
+   "finding": "EF-215",
+   "suite": "heldout-mixed",
+   "pool": "clean",
+   "check_id": "RH-01",
+   "severity": "P3",
+   "element_key": "#opt-a|① <class 'int'>",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same flawed premise as item 20: one-handed thumb reach on an 11-inch tablet. #opt-a is a very large quiz card (376x112 CSS, about 70x21 mm) spanning 3-73 mm from the left edge. Two-handed holders reach it with the left thumb, and set-down use needs no reach. Also, the evidence snapshot labels #opt-a '① my_name' while the finding says '① <class 'int'>', a different question state. Not a meaningful problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same inapplicable one-hand phone-thumb model on an 11-inch tablet. Quiz option ① is a large 376x112 CSS px card (about 70x21 mm) in the left column of a standard 2x2 answer grid (lesson-a, snapshots 009-012). It is 'out' only because nearly every tablet position is out for a thumb pivoting from the bottom corner. With index-finger or mid-side two-hand grips it is easy to reach. Not a meaningful problem."
+    }
+   ]
+  },
+  "22": {
+   "finding": "EF-083",
+   "suite": "mobile-commerce",
+   "pool": "clean",
+   "check_id": "CG-01",
+   "severity": "P3",
+   "element_key": "#back|뒤로 가기",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Wrong grouping. The '10 same-shaped choices' mixes the back chevron (#back 44x44, no border), 7 bordered date chips (44.6x52) and the people -/+ stepper (44x44). They were merged only because the w/8, h/8 size-bucket rounding coincided (52/8 = 6.5 rounds to 6). These are three unrelated controls, not one Hick-Hyman decision. The real choice set, 7 dates in a standard week picker, is within the 9 threshold, and the screenshot shows clearly different shapes. No overload problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The group is an artifact of CG-01's coarse key (tag, role, round(w/8), round(h/8), weight). It lumps together three unrelated controls: the borderless back chevron (44x44), the 7 bordered two-line date pills (44.56x52) and the people stepper -/+ (44x44 inside a bordered stepper). They do not look alike and are never one decision, so Hick-Hyman does not apply. The actual choice sets are 7 dates and 8 time slots, both 9 or fewer. False positive."
+    }
+   ]
+  },
+  "23": {
+   "finding": "EF-082",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "CG-01",
+   "severity": "P3",
+   "element_key": "#back|뒤로 가기",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same mis-grouping as item 22 on the non-clean booking page. #back, 7 date buttons and the -/+ stepper are merged by size-bucket rounding. The only real choice group is 7 dates (9 or fewer), and navigation and the stepper are not alternatives in that decision. Not a choice-overload issue."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same size-bucket artifact as the clean variant: back chevron + 7 date pills + stepper minus/plus counted as '10 same-shaped choices'. The screenshot shows three unrelated, differently styled controls. The real choice sets (7 dates, 8 time slots) are within 9. Hick-Hyman choice overload does not apply."
+    }
+   ]
+  },
+  "24": {
+   "finding": "EF-014",
+   "suite": "mobile-commerce",
+   "pool": "clean",
+   "check_id": "CG-02",
+   "severity": "P2",
+   "element_key": "#toast|toast",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Measurement artefact. booking-clean.html hides the toast with setTimeout(4000), exactly the 4 s floor; the measured 3995.2 ms is capture timing. The binding threshold is the floor: 11 syllables need about 3.0 s even at 330 syl/min x1.5. The same confirmation also stays on the completion screen (#booking-done '예약 신청 완료' with details), so nothing is lost. P2 would be unjustified even if it were counted."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "booking-clean.html shows the toast with setTimeout(...,4000), exactly the 4 s floor the rule uses. The measured 3995.2 ms is polling jitter. The need for this 11-syllable message at 330/min is 2.5 s x 1.5 = 3.75 s, so the floor applies. The toast only repeats the persistent '예약 신청 완료' completion screen visible in the same screenshot, and it is role=status. Nothing is lost if it is missed, and P2 is unjustified in any case."
+    }
+   ]
+  },
+  "25": {
+   "finding": "EF-097",
+   "suite": "mobile-commerce",
+   "pool": "clean",
+   "check_id": "GZ-01",
+   "severity": "P3",
+   "element_key": "#pay|결제 처리 중…",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The flagged element label '결제 처리 중…' is the disabled processing state (snapshots 7-10, enabled=false), when there is no action to look for. In the actionable state (snapshot 000) '143,900원 결제하기' is a full-width, saturated blue, sticky bottom CTA, by far the most conspicuous element and where users expect it on a cart page. A free-viewing, upper-left-biased model predicting it is not fixated in the first ~1 s says nothing about goal-directed checkout. The rule itself calls GZ-01 only a prompt to check hierarchy, and the hierarchy is fine."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Wrong state. The label '결제 처리 중…' exists only after #pay was tapped (snapshots 007-010). Re-running the check shows this observation comes from snapshot 010 (p=0.177, priority 0.312). There #pay is disabled and hidden behind the full-screen '주문이 완료되었어요' result. Asking whether a user fixates an already-used, disabled, covered button is meaningless, and GZ-01 does not filter disabled primaries. On the actual checkout screen (evidence 000) the CTA is a full-width blue sticky button."
+    }
+   ]
+  },
+  "26": {
+   "finding": "EF-103",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "GZ-01",
+   "severity": "P3",
+   "element_key": "#next|다음",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The model rates '다음' as the top-priority element on the screen (priority 1.0). It is the only filled saturated-blue button, placed right after the amount chips in the natural recipient > amount > next flow. The low 4-fixation probability (0.35) comes from the upper-left start prior and distance penalty, not a hierarchy defect. Users filling in the form reach it in sequence, so a careful reviewer would not report a visibility problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "On the first transfer screen, '다음' is the single most conspicuous element (model priority 1.0; the only filled blue button). It sits directly under the amount field and chips in reading order, and at step 000 the user must first pick a recipient and amount. The 0.35 comes from a free-viewing scanpath starting at the upper-left with a distance penalty, and the rule itself says this does not model goal-directed search. The hierarchy check the P3 asks for finds nothing to fix."
+    }
+   ]
+  },
+  "27": {
+   "finding": "EF-019",
+   "suite": "mobile-commerce",
+   "pool": "clean",
+   "check_id": "GZ-02",
+   "severity": "P2",
+   "element_key": "#send-error|⚠ 1일 이체 한도(1,000,000원)를 초과했어요. 취소 후 금액을 ",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Salience is mis-measured. The error was called non-salient from the #fdecec box vs container #f2f4f6 (1.04:1), but the rendered sheet is white. The message has bold red text #b3261e (5.7:1), a ⚠ icon and a 320x63 px box (about 11 degrees). It is a new, salient object 3.8 degrees from the tap, inside the 'likely noticed' band even with the x0.7 scale. The layout is best practice: inline, directly above the 보내기 button, and it stays until the user acts. The sheet also stays open with no success screen. Left-thumb occlusion lasts only for the tap. A reviewer would not report this as a missed-error problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The salience is mis-measured. The tool compared the box fill #fdecec with the container #f2f4f6 (1.04:1). The new object is bold red text #b3261e at 5.7:1 against its box, with a ⚠ icon, so it is salient by the rule's own 3:1 definition. At 3.8° from the tap it falls in the 'likely noticed' band even with the x0.7 factor. It appears inline, right above the tapped 보내기 inside the sheet, stays until the user acts, and is role=alert. The P2 comes only from the unconfirmed thumb-occlusion wedge for left-hand grips, and that is momentary (the thumb lifts after the tap). This is good error placement."
+    }
+   ]
+  },
+  "28": {
+   "finding": "EF-101",
+   "suite": "mobile-commerce",
+   "pool": "clean",
+   "check_id": "GZ-02",
+   "severity": "P3",
+   "element_key": "#saved-state|변경사항 저장됨",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "After tapping 저장, the main feedback is a salient dark toast '저장되었어요' at (117,654), about 3 degrees above the tap point. The flagged #saved-state '변경사항 저장됨' is a redundant, persistent section label at the top-right. Missing that secondary label, and only for 70s+ profiles under an assumed x0.7 band scale, has no consequence because save confirmation is delivered near the action and stays visible. This is good feedback design, not a problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Tapping 저장 shows a dark '저장되었어요' toast directly above the button, about 2° from the tap and visible in the evidence screenshot. That toast is the primary feedback. The flagged '변경사항 저장됨' is a small supplementary label that stays by the '알림' header. It falling outside the 70+ notice band (19.5° vs 14°) does not leave the user without feedback, and since it persists it can be seen later. No meaningful change-blindness risk."
+    }
+   ]
+  },
+  "29": {
+   "finding": "EF-111",
+   "suite": "mobile-commerce",
+   "pool": "clean",
+   "check_id": "GZ-04",
+   "severity": "P3",
+   "element_key": "#send|보내기",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The 'competing' elements (#amount, amount chips, recipient cards) are behind the confirm sheet. .sheet-wrap is position:fixed; inset:0 with a .dim scrim and aria-modal='true', so they are neither interactive nor visually prominent. In the screenshot they are dimmed and '보내기' is clearly the most conspicuous control. The model ignored the modal scrim and used undimmed DOM colours, so this is a mis-measurement."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Re-running the check per snapshot: GZ-04 for #send passes on the confirmation sheet (0 competitors at 007-009 and 011-012). It fails only at 010/019, when the full-screen '보내는 중…' overlay covers the page after send was already tapped. The five 'competing' elements (recipient chips, amount field, +5만/+10만) are behind the overlay, and the model ignores that occlusion. No action is available in that state, so the finding is an artifact."
+    }
+   ]
+  },
+  "30": {
+   "finding": "EF-106",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "GZ-04",
+   "severity": "P3",
+   "element_key": "#send|보내기",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same error as item 29 on the non-clean transfer. The counted competitors sit under the modal dim layer (.sheet-wrap fixed inset:0 plus .dim, aria-modal) and cannot be used while the sheet is open. The screenshot shows '보내기' as the only saturated control in the sheet. Not a real hierarchy problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same artifact in the non-clean variant. GZ-04 for #send passes on the confirmation sheet (1 competitor at 007-009 and 015-016). It fails only at 010/017, during the full-screen '보내는 중…' overlay after send was tapped, counting 6 elements that sit behind the overlay. It does not describe the screen where the user chooses to send."
+    }
+   ]
+  },
+  "31": {
+   "finding": "EF-031",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "PC-02",
+   "severity": "P2",
+   "element_key": "#pay-methods > button:nth-of-type(2)|카카오페이",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The unselected '카카오페이' is a text-labelled card (role=radio) whose label identifies it, so WCAG 1.4.11 does not require its boundary to reach 3:1; the tool's own PC-02 rule exempts text buttons. The selected state is shown by more than colour: a '✓ ' prefix, a 2px #1b64da border (5.4:1 vs white, 3.7:1 vs the unselected border), bold blue text and a tinted fill. The value is also mis-measured: pixel sampling shows the #d1d6db border sits on white, giving 1.46:1, not the 1.33:1 computed against the unseen body background #f2f4f6."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "카카오페이 is a text-labelled role=radio chip. Under WCAG 1.4.11 (Understanding: when button text identifies the control, the border needs no 3:1) and the tool's own 'text buttons are exempt' rule, the faint border is not required. The selected state is clearly shown by a 2px #1b64da border, blue tint, bold blue text and a ✓. The measurement also used the wrong background: the pixels around the chip are #ffffff, giving 1.46:1, not the body #f2f4f6 (1.33:1)."
+    }
+   ]
+  },
+  "32": {
+   "finding": "EF-022",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "PC-02",
+   "severity": "P2",
+   "element_key": "#phone|휴대폰 번호",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Mis-measured. The contrast was computed against the body background #f2f4f6, but the input sits inside .app (background #fff, 480px max, covering the 360px viewport). Rendered pixels on both sides of the 1px border are pure white (255,255,255) and the border is #8b95a1. #8b95a1 on #fff is 3.04:1, which passes WCAG 1.4.11's 3:1."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Mis-measurement. The tool took the page body background #f2f4f6 as the input's container. Sampled screenshot pixels on both sides of #phone's 1px #8b95a1 border are #ffffff, giving 3.04:1, which meets WCAG 1.4.11's 3:1. The field is also identified by a visible label '휴대폰 번호' and a placeholder, and its border is clearly visible in the screenshot."
+    }
+   ]
+  },
+  "33": {
+   "finding": "EF-164",
+   "suite": "mobile-commerce",
+   "pool": "clean",
+   "check_id": "PC-03",
+   "severity": "P3",
+   "element_key": "li:nth-of-type(1) > span:nth-of-type(2)|출금 −30,000원",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The state is not colour-only. Each amount carries an explicit word and sign ('출금 −30,000원' vs '입금 +12,000원'), and the rule says explicit state words or icons count as a non-colour cue. The finding survived only because STATE_WORDS lacks 출금/입금 and ±. The red/green is redundant, so WCAG 1.4.1 is met and a deutan user loses no information."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The two states have explicit text cues: '출금 −30,000원' vs '입금 +12,000원' (words and −/+ signs, visible in the screenshot). So colour is redundant and WCAG 1.4.1 is met, and the rule itself exempts explicit state words. The false positive comes from the tool's STATE_WORDS list, which lacks 출금/입금/±. Losing the red/green difference under deutan simulation costs nothing."
+    }
+   ]
+  },
+  "34": {
+   "finding": "EF-155",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "PC-03",
+   "severity": "P3",
+   "element_key": "li:nth-of-type(1) > span:nth-of-type(2)|출금 −30,000원",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The colour difference is measured correctly: #d32f2f vs #2e7d32 gives ΔE00 64.3 normally and 9.1 under deutan simulation. But the state is not shown by colour alone. The two texts carry explicit state words (출금 / 입금) and signs (−30,000 / +12,000), so the colour is redundant and WCAG 1.4.1 is met. The rule itself says explicit state words are a valid non-colour cue. The tool's STATE_WORDS list simply lacks 입금/출금 and the +/− signs."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The deutan ΔE00 of 9.1 checks out (state contrast 1.03), but colour is not the only cue. The spans read '출금 −30,000원' and '입금 +12,000원', so the words 출금/입금 and the −/+ signs carry the state. The rule itself counts explicit state words as a state cue, and WCAG 1.4.1 is met. The tool's STATE_WORDS list lacks 입금/출금 and ± signs, which is why the exemption was missed."
+    }
+   ]
+  },
+  "35": {
+   "finding": "EF-165",
+   "suite": "mobile-commerce",
+   "pool": "clean",
+   "check_id": "PC-04",
+   "severity": "P3",
+   "element_key": "li:nth-of-type(1)|09.25 김민수 출금 −30,000원",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The flagged element is the li transaction row. Its text is two separately styled, left/right aligned spans: '09.25 김민수' (9 characters) and '출금 −30,000원' (11 characters). It only passes the 12-character 'continuous text' gate because the two spans were joined. The row is glanceable data, not prose. Critical print size is a reading-speed measure for continuous text, and the research doc itself says glanceable labels are a different task. At 29′ the labels are well above legibility threshold, so the claimed reading-speed problem does not apply here."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The flagged <li> is a transaction row. Its text joins two separate short spans at opposite ends of the row: '09.25 김민수' (9 chars) and '출금 −30,000원' (11 chars). This is a glanceable data row, not continuous text, so the Hangul critical-print-size (CPS) reading-speed rule (continuous text of 12+ chars only) does not apply; the row passed the 12-char filter only because the spans were joined. At 29′ the text is far above legibility limits, and 14px secondary list text is a standard pattern."
+    }
+   ]
+  },
+  "36": {
+   "finding": "EF-127",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "PC-04",
+   "severity": "P3",
+   "element_key": "#promo > p|첫 구매 3,000원 할인 지금 쿠폰 받고 바로 쓰세요",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "#promo > p is real continuous text: a two-line sentence whose second line '지금 쿠폰 받고 바로 쓰세요' is 14px regular. On the S24 (0.183 mm per CSS px) 14px is 2.57 mm, which is 29.4′ at 30 cm. That is below the 31.2′ older-adult Hangul critical print size and below the KRDS 16px body-text size, and it holds under either reading of the metric. The finding is correctly attributed and applies to the presbyopic 50s–70s profiles. It is minor: ad-like, dismissible, short copy, about 1px short, and the threshold is only snippet-level. P3 is right."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "#promo > p is a real continuous sentence. Its second line, '지금 쿠폰 받고 바로 쓰세요', renders at 14px (only the <strong> first line is 15px bold). On the S24, 14px = 2.57mm = 29.4′ at 30cm, below the 31.2′ older-adult Hangul CPS and the KRDS 16px body minimum. That matters for the presbyopic 50s–70s+ profiles. Promo copy is not needed for the task (the task closes the banner), so the minor P3 fits."
+    }
+   ]
+  },
+  "37": {
+   "finding": "EF-150",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "PC-05",
+   "severity": "P3",
+   "element_key": "#next|다음",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "#next is the primary CTA (role primary): white text on #1b64da, measured at 5.41:1, which I confirmed. Under the doc's sunlight model (2000 nits, 50 klx, ρ 0.02) the effective contrast is about 3.82:1. That is below 4.5:1 for 16px bold text, which does not count as large text. This is in the rule's scope for the bright-sun profile (EP-09). It is a margin warning that depends on assumptions, and the big blue button stays conspicuous, so the impact is small. P3 is appropriate."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The measurement is correct: white on #1b64da is 5.41:1, and the tool's glare model gives about 3.8:1 at 2000 nit/50 klx and 4.2:1 at the S24's peak brightness. But '다음' is a 16px bold two-syllable label on the page's only filled blue button, so position, shape and colour make it recognisable without reading the label. It stays legible for the normal-vision EP-09 profile and passes WCAG AA. The 7:1 bar is a policy margin that almost every brand-coloured button fails, so reporting it adds noise."
+    }
+   ]
+  },
+  "38": {
+   "finding": "EF-114",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "PC-05",
+   "severity": "P3",
+   "element_key": "#form-error|입력 내용을 확인해 주세요. 휴대폰 번호를 정확히 입력해 주세요.",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "#form-error has role error_message: 14px semibold #b3261e on #fdecec, measured at 5.72:1 (confirmed). Under the sunlight model the effective contrast is about 3.81:1, below 4.5:1. This error box is the only cue that the phone number is missing, since the field itself is not highlighted. Reduced legibility outdoors could cause repeated failed submits. It is correctly measured and attributed, and P3 fits a margin finding."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "#b3261e on #fdecec is 5.72:1, verified. The glare model gives about 3.8:1 at 2000 nit/50 klx, below the 4.5:1 needed for 14px semibold text. This two-line error is the only cue telling the user which field failed, because the #phone input has no error styling, so the user must read it to recover. That makes a sunlight contrast shortfall on it a real, minor issue for the bright-sun profile, and P3 fits."
+    }
+   ]
+  },
+  "39": {
+   "finding": "EF-061",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "PT-01",
+   "severity": "P2",
+   "element_key": "#btn-logout|로그아웃",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "#btn-logout is 56×18 CSS px, and #btn-withdraw starts only 2px below it (y=523.17). The 24px spacing circle centred at (44, 512.2) reaches y=524.2, so it overlaps the withdraw box, and the two circles overlap (centres 20px apart). These are standalone stacked buttons, not text inside a sentence, and there is no equivalent control, so none of the exceptions applies. This is a genuine WCAG 2.5.8 AA failure. It is not a primary, path or declared-destructive target, and both actions have confirmation dialogs, so P2 is appropriate."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "#btn-logout is 56×18 CSS px. Its centre is 20px from the 회원탈퇴 button's centre (2px gap), so the 24px spacing circles overlap, and it is a standalone button, so no inline or equivalent exception applies: a real WCAG 2.5.8 AA failure. It is on neither the task path nor destructive, so P2 per the rule. Sitting next to account deletion (which has a confirmation dialog) also supports P2."
+    }
+   ]
+  },
+  "40": {
+   "finding": "EF-172",
+   "suite": "mobile-commerce",
+   "pool": "clean",
+   "check_id": "PT-02",
+   "severity": "P3",
+   "element_key": "#name|이름",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "#name is a full-width 328×48 CSS px input (60.1×8.8 mm). It is wrapped in a <label> that is 328×72 px (about 13 mm tall), so the real hit area exceeds 9.2 mm on both axes. Even the input alone meets Material 48dp and Apple 44pt. Under the tool's own dual-Gaussian model the field has a lower miss rate (about 2% at k=1.3) than a 9.2 mm square that would pass. A 0.4 mm shortfall on one axis of a large field is not a meaningful problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The input is wrapped by its label (<label class=field><span>이름</span><input id=name></label>), so tapping anywhere in the 328×72 px label focuses the field. The effective target is therefore about 60×13.3mm, not 8.8mm. Even the bare 48px box meets 48dp/44pt, it is only 0.4mm under Parhi's 9.2mm, it is 60mm wide, and a miss is harmless. Not a meaningful problem."
+    }
+   ]
+  },
+  "41": {
+   "finding": "EF-169",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "PT-02",
+   "severity": "P3",
+   "element_key": "#phone|휴대폰 번호",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same situation as item 40. #phone is a full-width 328×48 px field (60.1×8.8 mm) wrapped in a 328×72 px label, so the effective hit area is about 60×13 mm. The field is easier to hit than a passing 9.2 mm square under the tool's own model. The 8.8 vs 9.2 mm comparison on one axis is meaningless here."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same as #name: #phone sits inside its <label> (label box 328×72 px, about 13.3mm tall), so the real tap area is well above 9.2mm. The 48px, 60mm-wide input alone meets platform guidance, and a miss only lands on the label (which focuses the field) or the gap. The 8.8mm figure understates the effective target."
+    }
+   ]
+  },
+  "42": {
+   "finding": "EF-067",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "PT-04",
+   "severity": "P2",
+   "element_key": "#amount-clear|금액 지우기",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "too_high",
+     "reason": "#amount-clear is a 44×44 CSS px (8.07 mm square) '×' button on the error-recovery path; the scenario taps it after the transfer-limit error. It is below Parhi's 9.2 mm one-thumb size on both axes. I recomputed miss rates of 6.35% at k=1.3 (versus 3.8% for a 9.2 mm square), rising to about 12–28% for the 60s, 70s+ and tremor profiles. So it is a real ergonomic weakness for these profiles. But it meets Apple 44pt and WCAG AAA 44px, and most misses land on the non-interactive '원' label, the margin or the input, which just means a cheap retry. Minor, so P3 rather than P2."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "#amount-clear (44×44 CSS px = 8.07mm) is on the task path: the scenario taps it to clear the over-limit amount. The Bi & Zhai model reproduces a 6.4% miss at σ×1.3 for one-hand thumb use, which matches Parhi's 9.2mm one-thumb finding. The other triggered profiles (60s, 70s+, tremor) reach 12–28%. The target is under 9.2mm, so a profile-only finding is allowed. The P2 cap is justified by those high-risk profiles, even though each miss is low-consequence."
+    }
+   ]
+  },
+  "43": {
+   "finding": "EF-059",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "PT-04",
+   "severity": "P2",
+   "element_key": "button:nth-of-type(4)|토스페이",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "토스페이 is 104×48 CSS px (19.1×8.8 mm), which meets Material 48dp and Apple 44pt. It was flagged only because its shorter side is 8.8 mm, under 9.2. With the same k=1.69 the tool's model predicts 8.4% miss for this button versus 13.8% for a 9.2 mm square that would not be flagged, so the P2 is an artefact of stacked assumed multipliers plus a shorter-side cutoff. A miss lands in the 8px gap or selects a neighbouring payment method, which is visible and recoverable before paying. Not a meaningful problem."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "The 토스페이 radio (104×48 px = 19.1×8.8mm) is on the task path. It sits in a dense 3×4 grid with 8px (1.5mm) gaps. Its height is below 9.2mm, and at σ×1.69 (70s+, one hand) the model gives 8.4% misses, about 2% of which select an adjacent payment method; walking and tremor profiles reach 11–14%. That is a real error risk for older and impaired users on a payment step, and the capped P2 fits."
+    }
+   ]
+  },
+  "44": {
+   "finding": "EF-189",
+   "suite": "mobile-commerce",
+   "pool": "clean",
+   "check_id": "RH-01",
+   "severity": "P3",
+   "element_key": "#dates > button:nth-of-type(2)|수 30",
+   "verdicts": [
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "The '수 30' chip (44.6×52 px) is on the task path and sits at the top-left, centred at 15.2, 29.3 mm on a 66×143 mm display. Even its nearest corner is at ρ≈0.87 of a 111 mm right thumb from the pivot, which is out of reach; left-hand profiles with a 102.6 mm thumb are also out. The upper-left of a 6.2-inch phone genuinely needs a grip shift one-handed. It is also actionable: there is about 280px of empty space above the bottom CTA. The model is uncalibrated and the case is borderline, so P3 as the rule gives for on-path non-primary controls is right."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "The '수 30' chip (44.6×52 px) is centred about 15mm from the left and 29mm from the top of the S24's 6.2-inch display. For right one-hand grips with 107–111mm thumbs, the reach model puts the centre at 0.92 of thumb length (0.87 at the nearest corner), past the 0.85 cut-off, so it is out of reach. Top-left is the known hard zone for right-thumb use. It is an on-path, non-primary control, so P3 per the rule. The page leaves a large empty lower area, so date selection could sit lower. Minor but real for the stated right-hand condition."
+    }
+   ]
+  },
+  "45": {
+   "finding": "EF-187",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "RH-01",
+   "severity": "P3",
+   "element_key": "#name|이름",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The 'out of reach' difficulty was computed at the centre (33, 27 mm) of a full-width 328×48 input. For the reported 111 mm right thumb, the field's near end (about 63, 31 mm) is at ρ≈0.76, which is the stretch zone (D≈0.6); the same holds for left-hand profiles, mirrored. A one-handed user can tap that end without changing grip. Under the rule, a field in the stretch zone produces no finding. A form field at the top of the page, followed by keyboard typing, is also expected."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Reach was computed at the centre of a full-width (328px) text field, but users tap wherever they can reach. The field's near end (about 63×31mm) is at 0.76–0.83 of thumb length for every one-hand profile: a stretch, not out of reach. The rule reports on-path non-key controls only when they are out of reach, so no finding should exist, and 'requires a grip change' is a measurement error."
+    }
+   ]
+  },
+  "46": {
+   "finding": "EF-195",
+   "suite": "mobile-commerce",
+   "pool": "unlabeled",
+   "check_id": "RH-02",
+   "severity": "P3",
+   "element_key": "#btn-withdraw|회원탈퇴",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The zone calculation is right: for the right hand the 회원탈퇴 button is in the natural zone (ρ 0.59). But it is a small grey 56×18 text link at the bottom of settings, which is the conventional place for it. It is away from the task controls (the toggles and the top-left save). Tapping it opens a '정말 탈퇴하시겠어요?' confirmation dialog, so thumb-zone placement adds no meaningful risk of accidental account deletion. The real hazard on this page is the 18px height and 2px gap next to 로그아웃, which is a target-size/misfire issue and is covered by PT-01, not RH-02."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The zone value is right (natural zone for the right thumb), but it is not a meaningful hazard. 회원탈퇴 opens a confirmation dialog, and it is not on or near the task's thumb path (toggle at right-middle, save at top-left). Account deletion at the bottom of settings is the standard placement. This page's real defects (18px height, 2px from logout, identical styling) are size and misfire issues for PT-01/PT-03, not a thumb-zone problem."
+    }
+   ]
+  },
+  "47": {
+   "finding": "EF-197",
+   "suite": "mobile-commerce",
+   "pool": "clean",
+   "check_id": "RH-02",
+   "severity": "P3",
+   "element_key": "#btn-withdraw|회원탈퇴",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "On the clean page, 회원탈퇴 is a full-width, red-labelled list row with a chevron, in its own '계정' section. It sits 45px (8 mm) above the save CTA and leads to a confirmation dialog. That is a conventional, well-separated, recoverable design. Being in the natural thumb zone does not create a meaningful risk of accidental activation, so this heuristic flag is noise."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "On the clean page, 회원탈퇴 is a full-width red row in its own section, about 45px from the save button, and it opens a confirmation dialog. That is a conventional, well-separated, clearly labelled placement. A destructive action being easy to reach is not a problem here, so the RH-02 heuristic only adds noise."
+    }
+   ]
+  },
+  "48": {
+   "finding": "EF-043",
+   "suite": "game-desktop",
+   "pool": "clean",
+   "check_id": "CG-01",
+   "severity": "P3",
+   "element_key": "#tools-add|멤버 추가",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The 17 'equal choices' are 5 toolbar icon buttons (add, copy, move, filter, refresh) grouped with 12 per-row edit/delete icons, because they are all 32×32. Row actions are chosen hierarchically: find the row by member name, then pick pencil or trash. The toolbar is a separate 5-item group. Hick–Hyman's N equally likely alternatives do not describe this, and it is the standard admin-table pattern. No choice overload."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The '17 choices' combine 5 toolbar icons with 12 per-row pencil/trash icons. Users pick a row by name and then make a 2-way edit/delete choice; the toolbar is a separate group of 5. Hick-Hyman's N-way choice model does not apply to repeated row actions in a table, which is a standard, well-understood pattern. Choice overload is misapplied."
+    }
+   ]
+  },
+  "49": {
+   "finding": "EF-042",
+   "suite": "game-desktop",
+   "pool": "unlabeled",
+   "check_id": "CG-01",
+   "severity": "P3",
+   "element_key": "#row-edit|박지훈 편집",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The 12 'choices' are 6 table rows × one edit and one delete icon each. The user locates the row by name and then chooses between two actions; they never pick among 12 undifferentiated options. Hick–Hyman choice overload does not apply to repeated per-row actions in a data table, and a careful reviewer would not report this."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The 12 'choices' are 6 table rows × identical edit/delete icons. That is not a 12-way decision: users find the member row, then choose between two clearly different icons. It is the standard admin-table pattern, so the Hick-Hyman overload claim is not a real problem."
+    }
+   ]
+  },
+  "50": {
+   "finding": "EF-015",
+   "suite": "game-desktop",
+   "pool": "clean",
+   "check_id": "CG-02",
+   "severity": "P2",
+   "element_key": "#flash|hit-fx",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "#flash is the scenario's 'hit-fx' window: an in-game hit indicator '피격! HP -20', shown for 1.5 s right below the persistent HUD '점수 100 · HP 80/100', which already shows the same HP change. It has no action and the player does not need to read it to proceed. The tool classified it as transient text only because it is at least 8 characters, then applied Material's 4-second snackbar floor. That standard does not fit game feedback effects, and no information is lost."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "#flash '피격! HP -20' is an aria-hidden, one-shot hit effect (fxMs 1500). It fires alongside damage(20), which updates the persistent HUD 'HP 80/100' at the same moment, so nothing is lost when it disappears. It is combat feedback, not a message the player must read. The 4000ms threshold comes from the Material snackbar floor, which does not fit game hit feedback; the un-floored reading time is about 1.5s (2.2s with the 1.5× factor)."
+    }
+   ]
+  },
+  "51": {
+   "finding": "EF-014",
+   "suite": "game-desktop",
+   "pool": "unlabeled",
+   "check_id": "CG-03",
+   "severity": "P2",
+   "element_key": "#qte|지금 누르기",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The measurement is an artifact. The tap was dispatched at t=13175.7 ms (t_start_ms = dispatch). The QTE's second appearance ran from 12850.4 ms for 306.9 ms, so the button was already hidden about 18 ms before the tap. onQte() returns immediately when qte.hidden, so the tap did nothing. The 'first change' at +1164.7 ms is the scheduled respawn (missQte -> later(1200, showQte)), which the 14357 ms third appearance confirms. That is ambient game logic, not feedback to the tap. A tap inside the window gets instant feedback ('성공!'). The real defect is the 300 ms timed-input window (GM-03), not feedback latency, and 'needs progress indicator' is the wrong remedy."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Mis-attributed latency. From run.json, the qte-1 window was visible 11346-11650, 12850-13157 and 14357-14658 ms (about 300 ms each). The step-6 tap started at 13175.7 ms, 18 ms after the second window closed. S-007 still shows '탭!', the score is unchanged at 300 and HP drops 70->50, so the tap never registered. The DOM change at +1164.7 ms (about 14340 ms) is the game re-showing the QTE on its own 1200 ms timer, not a response to the tap (ambient_mutations=2). When the QTE is hit (clean run) feedback arrives in 16 ms. The real defect is the 300 ms QTE window, already reported by GM-03/EF-002 (P1). 'Needs a progress indicator' is the wrong diagnosis."
+    }
+   ]
+  },
+  "52": {
+   "finding": "EF-012",
+   "suite": "game-desktop",
+   "pool": "clean",
+   "check_id": "CG-03",
+   "severity": "P2",
+   "element_key": "#member-email|이메일",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The clean page's showErrors() calls emailIn.focus() after the failed save. The before-snapshot 007 already shows #member-email focused, with a dark focus ring and caret. Clicking an already-focused text field cannot change anything. A text field's feedback is its focus ring and caret, not a DOM mutation. The 'no_feedback' result is a false positive, not a usability problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The field was already focused. In admin-clean, showErrors() calls emailIn.focus() after the failed save at step 5; S-005 shows the caret and focus ring in #member-email. Step 8 clicks that already-focused input. A pixel diff of S-007 vs S-008 differs only in a 1x16 px caret blink at x=746, y=707-722. Clicking an input that already has focus needs no further feedback, and the page's error handling here is good practice. In the unlabeled run, with no auto-focus, the same click registered a change at 0 ms."
+    }
+   ]
+  },
+  "53": {
+   "finding": "EF-041",
+   "suite": "game-desktop",
+   "pool": "clean",
+   "check_id": "GM-02",
+   "severity": "P2",
+   "element_key": "hotspot:hs-pause|일시정지",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The measurement is correct: 60 mm from the thumb rest, in the top band. The rule is misapplied, though. Pause is an infrequent secondary control, and the rule's own source (Apple HIG as quoted in HGR-11) says 'place secondary controls such as menus at the top'. In the clean layout the frequent controls (stick, jump, attack) already sit by the thumbs. A top-centre pause is conventional and recommended. The evidence frame is also the start overlay, where the hotspot is only a scenario fallback."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Contradicts its own cited guidance. The pause button (44 px at top centre, same in both versions) is a secondary/menu control. Apple HIG, as quoted in HGR-11, says to put frequent buttons near the thumbs and 'secondary controls such as menus at the top'. The frequent-control reach/top-band rule does not apply to an occasional pause control. The clean layout (stick lower-left, jump/attack lower-right, pause top-centre) is the canonical mobile-game layout."
+    }
+   ]
+  },
+  "54": {
+   "finding": "EF-040",
+   "suite": "game-desktop",
+   "pool": "unlabeled",
+   "check_id": "GM-02",
+   "severity": "P2",
+   "element_key": "hotspot:hs-pause|일시정지",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same as the clean variant: the pause hotspot is identical and sits top-centre, which the cited HIG guidance recommends for menu/pause controls. This variant's real reach problem is attack and jump placed in the top corners, not pause. Flagging pause at P2 contradicts the guideline the rule cites."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same pause hotspot and geometry as EF-041. Top-centre is the HIG-recommended place for menu/pause controls, and the pause is not a frequently used control, so thumb-travel and top-band penalties do not apply. The real reach problems in this version are attack at the top-left and jump at the top-right; the pause is not one of them."
+    }
+   ]
+  },
+  "55": {
+   "finding": "EF-044",
+   "suite": "game-desktop",
+   "pool": "unlabeled",
+   "check_id": "GM-05",
+   "severity": "P3",
+   "element_key": "hotspot:hs-pause|일시정지",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "At 44 CSS px (about 8.1 mm), pause clears the 7 mm floor, HIG 44 pt and the 28 pt HGR-11 allows for less important controls. 9.6 mm is Parhi's figure for serial taps, and pause is a single discrete tap. The 1.5 mm is from the hit box's top to the viewport edge, but the thumb aims at the centre about 5.5 mm in. The top edge in landscape is not a tap-conflicting gesture or safe-area inset, and in a real browser the viewport top sits below the toolbar. Not a meaningful problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Wrong criterion plus a marginal edge claim. The 9.6 mm Parhi threshold is for serial thumb taps. The pause is an occasional control (never tapped in the run), and the current GM-05 code itself says pause is not serial. At 44 CSS px it is about 8.1 mm (correctly measured), which exceeds Apple's 44 pt for frequent controls and 28 pt for secondary ones. The edge is 1.5 mm from the landscape top edge. That edge is not a safe-area or home-indicator zone (the S24 punch-hole sits on a short side in landscape), and a tap there does not trigger the top swipe gesture. This is conventional pause placement, not a meaningful problem."
+    }
+   ]
+  },
+  "56": {
+   "finding": "EF-046",
+   "suite": "game-desktop",
+   "pool": "clean",
+   "check_id": "GM-05",
+   "severity": "P3",
+   "element_key": "hotspot:hs-pause|일시정지",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The pause control is identical to the non-clean variant. The serial-tap 9.6 mm criterion does not apply to a one-off pause tap. The 8.1 mm size exceeds the platform and HIG sizes for secondary controls. Edge proximity at the top of a landscape screen does not interfere with tap input (the button centre is about 5.5 mm from the edge). Noise, not a real ergonomic issue."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Identical to EF-044 (same 44 px pause hotspot at y=8 in the clean game). The serial-tap size threshold is misapplied to an occasional control, and 8.1 mm meets platform guidance. The 1.5 mm top-edge gap in landscape does not overlap system safe-area insets. It is the standard HIG placement for pause/menus."
+    }
+   ]
+  },
+  "57": {
+   "finding": "EF-049",
+   "suite": "game-desktop",
+   "pool": "clean",
+   "check_id": "GZ-01",
+   "severity": "P3",
+   "element_key": "#save|저장",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The model artifact comes from the wrong moment. The free-viewing scanpath starts at the '+' click (1298,233), and Save is about 15° away at the end of a form that is still empty (focus is in the name field). Save is the only solid-blue button in the content, at the conventional bottom-right end of the form. Goal-directed search after filling the fields finds it easily, and the rule itself admits free-viewing priors don't model this. No hierarchy problem is visible."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "A free-viewing artefact, not a hierarchy defect. In S-001 (form just opened, focus in the name field) '저장' is the only filled blue button, at the conventional end of the '새 멤버' form. '전체 삭제…' is a de-emphasised outline button on the far left. The model starts at the last click (the + tool) and the 5° distance penalty keeps early fixations far from Save. Users fill the fields before they need Save. The rule itself says GZ-01 only prompts a hierarchy check, and that check finds no problem."
+    }
+   ]
+  },
+  "58": {
+   "finding": "EF-048",
+   "suite": "game-desktop",
+   "pool": "unlabeled",
+   "check_id": "GZ-01",
+   "severity": "P3",
+   "element_key": "#save|저장",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "This has the same artifact. Save sits at the conventional end-of-form position, attached to a highly salient red button, so it is hardly inconspicuous. The genuine issue in this variant is the adjoining filled red '전체 삭제' (destructive action fused to the primary, a false hierarchy and misclick risk). That belongs to a different check; the claim that Save isn't seen within about 1 s is not the problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Save is still a prominent filled blue button at the end of the form, so findability is not the problem. The real defect on this page is the red '전체 삭제' fused to Save with equal visual weight. That is a destructive-adjacency and misfire issue, covered by the pointing findings, and this finding does not describe it. The model even scores this layout higher (0.11) than the clean layout (0.07), so it is not detecting that hierarchy problem. The claim that the primary is not in the first 4 fixations does not describe a real usability problem for this task."
+    }
+   ]
+  },
+  "59": {
+   "finding": "EF-018",
+   "suite": "game-desktop",
+   "pool": "clean",
+   "check_id": "GZ-02",
+   "severity": "P2",
+   "element_key": "#form-errors|저장하지 못했습니다. 이메일을 입력해 주세요.",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The measurement is wrong. The 5.2° is to the message centroid, but the #form-errors box (1195-1515 px) ends 12 px left of the Save button. Its nearest point is about 54 px (about 1.3°) from the click, inside even the non-salient 'likely noticed' band under the gaze doc's nearest-point rule. 'Contrast 1.04' compares the pale fill with the page grey (#f3f4f6) and ignores the bold dark-red text. Redundant channels are also present: role=alert, focus moves to the email field, a red 2 px border and an inline error under the field. It is not likely to be missed."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Measurement artefact. #form-errors (x 1195-1515) sits 12 px left of the clicked Save button (x 1527-1611, click at 1569,836). Its near edge is about 54 px (about 1.3°) from the click; the 5.2° is to the centre of a 320 px wide box. 'Non-salient' comes from box contrast 1.04 against a mis-resolved container (#f3f4f6; the card is white). The message is a new object with dark-red text (about 8:1 on #fdecea) and a bold lead. The clean page also shows an inline #email-error, a red 2 px border, and moves focus to the email field. This is recommended error placement, and the message would not plausibly be missed."
+    }
+   ]
+  },
+  "60": {
+   "finding": "EF-053",
+   "suite": "game-desktop",
+   "pool": "clean",
+   "check_id": "GZ-04",
+   "severity": "P3",
+   "element_key": "hotspot:hs-attack|공격",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The evidence frame is the start screen (snapshot 000), where the full-screen '화면을 탭해서 시작' overlay covers everything. The page exposes no active hotspots in that state; the attack, jump, pause and stick boxes are scenario fallbacks that aren't rendered. Counting #start and the full-screen #view canvas as competitors to an invisible attack button is meaningless. The attributed element and state are both wrong."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Wrong frame. The evidence is S-000, the start screen: the #start overlay covers the viewport, and the game draws no controls at stage 0 (activeHotspots() returns []). The hotspots are scenario-declared 'manual' boxes injected into every snapshot, so a phantom 'attack' is compared with phantom jump/pause/stick plus #start and the canvas #view. In real play the clean attack button is the largest control (92 px, lower right) and clearly dominant."
+    }
+   ]
+  },
+  "61": {
+   "finding": "EF-051",
+   "suite": "game-desktop",
+   "pool": "unlabeled",
+   "check_id": "GZ-04",
+   "severity": "P3",
+   "element_key": "hotspot:hs-attack|공격",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Snapshot 023 is the supply-target stage. The page's active hotspots there are only stick and pause, and the screenshot shows no attack or jump buttons; the hs-attack box is a scenario fallback. The 'competitors' radar-1 and radar-2 are the task's actual controls at that moment. The primary it claims is out-prioritised does not exist on screen."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "S-023 is stage 5 (the '보급 대상 선택' radar panel). The game no longer draws attack or jump at that stage; activeHotspots adds them only for stage <= 3, and the screenshot shows no attack button. The 'primary' is therefore a non-rendered hotspot, while the actual task at that moment is choosing the ally in the radar. Counting radar buttons, the canvas and pause as out-prioritising an invisible control is a mis-measurement."
+    }
+   ]
+  },
+  "62": {
+   "finding": "EF-023",
+   "suite": "game-desktop",
+   "pool": "clean",
+   "check_id": "PC-02",
+   "severity": "P2",
+   "element_key": "#tools-add|멤버 추가",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "WCAG 1.4.11 does not require a visible boundary or fill on a button. For an icon-only button, the icon identifies the control, and here it is #374151 on white (about 10:1). The button background is transparent. The 1.02 comes from comparing the light hover tint (#eef2ff) with the page grey, which is not needed to identify the control. At 32x32 px with a clear glyph, this passes the cited standard."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Acceptable under WCAG 1.4.11 and mis-measured. #tools-add is an icon-only button with a transparent fill, and its + icon is #374151 on white (about 10:1). The Understanding doc for 1.4.11 says that if an icon or text is visible and no hit area is indicated, the criterion passes; no boundary is required. The 1.02 comes from S-001/S-002, where the mouse was still hovering: hover background #eef2ff against a mis-resolved container #f3f4f6 gives 1.02 (the card is actually #fff). In S-000 the fill equals the container. This is not a real contrast problem."
+    }
+   ]
+  },
+  "63": {
+   "finding": "EF-022",
+   "suite": "game-desktop",
+   "pool": "unlabeled",
+   "check_id": "PC-02",
+   "severity": "P2",
+   "element_key": "#tools-add|멤버 추가",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The contrast reasoning is the same as the clean variant: the icon glyph is high contrast, and the fill tint is not required by WCAG 1.4.11. This variant does have a real defect on this element, but it is target size (14x14 px with 2 px gaps, a WCAG 2.5.8/PT-01 failure), not boundary contrast. The finding misstates the problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Same mechanism as EF-023. The value is the transient hover fill (#eef2ff vs #f3f4f6 = 1.02), not the identifying visual. The icon (#374151 on white, about 10:1) identifies the button, and WCAG 1.4.11 needs no boundary for a visible icon. The genuine defect of this 14x14 px control is its target size, which is reported separately by the pointing checks (EF-009). It is not a boundary-contrast problem."
+    }
+   ]
+  },
+  "64": {
+   "finding": "EF-074",
+   "suite": "game-desktop",
+   "pool": "clean",
+   "check_id": "PC-04",
+   "severity": "P3",
+   "element_key": "#form-errors|저장하지 못했습니다. 이메일을 입력해 주세요.",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "This one is borderline, but I judged it not meaningful. 14 px at 65 cm is about 20′ em, which clears the ISO 9241-303 16′ minimum and is a mainstream desktop UI size. The 24.6′ Hangul critical print size is snippet-level with an unconfirmed metric, and the Korean MNREAD data suggest young adults' critical print size is lower. The text is a 25-character alert, not continuous reading, so any reading-speed effect is negligible, and the same message is repeated inline at the field. At most a general base-font note, not an element defect."
+    },
+    {
+     "verdict": "valid",
+     "severity_assessment": "ok",
+     "reason": "Correctly measured and attributed. 14 px x 0.2745 mm (23.8-inch 1080p) = 3.84 mm, which is 20.3' at 650 mm. That is below the young Hangul critical print size (24.6', about KRDS's 17 px default at this geometry), well below the older 31.2', and below KRDS's 16 px body guidance. The element is a sentence-level error message (26 chars) that users must read to recover, so it is in the rule's continuous-text scope. The impact is minor: the message is short, the bold inline error repeats it, and the Hangul CPS metric is unconfirmed. P3 is the right severity."
+    }
+   ]
+  },
+  "65": {
+   "finding": "EF-065",
+   "suite": "game-desktop",
+   "pool": "unlabeled",
+   "check_id": "PC-04",
+   "severity": "P3",
+   "element_key": "tr:nth-of-type(1) > td:nth-of-type(2)|jihoon.park@example.com",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "This is misapplied. The text is a Latin e-mail address in a table cell, so the Hangul critical print size does not apply, and it is a data value, not continuous prose where reading speed matters. 14 px table text on a 24-inch 1080p monitor at 65 cm is ordinary and legible."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Out of the rule's scope and mislabelled. The critical-print-size tier applies to continuous reading text only. 'jihoon.park@example.com' is a Latin data value in a table cell, read at a glance rather than as a sentence; only the >= 12-character proxy let it in. The finding also cites the Hangul CPS for Latin text. Small base text could at most be one page-wide note, not a per-cell reading-speed finding."
+    }
+   ]
+  },
+  "66": {
+   "finding": "EF-036",
+   "suite": "game-desktop",
+   "pool": "unlabeled",
+   "check_id": "PT-04",
+   "severity": "P2",
+   "element_key": "hotspot:hs-pause|일시정지",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The baseline miss rate is 1.1%. The 6.4% comes only from an assumed ×1.3 thumb multiplier, which extrapolates beyond the model's fitted range. Pause is an infrequent, non-destructive, instantly retryable secondary control at 44 CSS px (about 8.1 mm), above HIG 44 pt/28 pt and Material 48 dp. A miss lands on inert canvas, because the pointer handler ignores taps outside hotspots. The pointing doc itself rates such controls P3 at most; not a meaningful problem."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Not a meaningful problem; the P2 comes only from an assumed profile multiplier. The baseline miss is 1.1%, below every band; 6.4% is the sigma x1.3 inflation, which is a declared assumption. The target is the pause, a secondary, occasional control never tapped in the run. It is 44 CSS px (8.1 mm), which meets iOS 44 pt and WCAG 2.5.5 AAA 44 px and is only marginally under Material's 48 dp. A miss lands on empty canvas and costs one retap, so this is not 'meaningful extra effort'. The current code caps such non-path, non-primary profile findings at P3."
+    }
+   ]
+  },
+  "67": {
+   "finding": "EF-037",
+   "suite": "game-desktop",
+   "pool": "clean",
+   "check_id": "PT-04",
+   "severity": "P2",
+   "element_key": "hotspot:hs-pause|일시정지",
+   "verdicts": [
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "The pause hotspot is identical to the non-clean variant, so the reasoning is the same. The P2 rests purely on an extrapolated profile multiplier. The control is platform-standard size, secondary and infrequent, and a miss is harmless because it hits inert canvas and the user simply taps again. A careful reviewer would not report it."
+    },
+    {
+     "verdict": "invalid",
+     "severity_assessment": "n/a",
+     "reason": "Identical pause-button geometry in the clean game (44x44 CSS px at top centre, far from other controls), with the same reasoning as EF-036. The baseline model predicts a 1.1% miss and the 6.4% is purely the assumed sigma x1.3 inflation. It is an infrequent secondary control meeting 44 pt/44 px guidance, and a miss is a harmless retap on the canvas. This does not merit a P2 or a report."
+    }
+   ]
+  }
+ }
+}

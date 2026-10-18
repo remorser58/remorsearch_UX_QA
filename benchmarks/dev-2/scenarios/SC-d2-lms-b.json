@@ -1,0 +1,195 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-d2-lms-b",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/dev-2/site/lms/lms-b.html"
+  },
+  "task_goal_ko": "박서연(경영지원팀) 학습자로서 내 강의실의 '개인정보보호 기본과정 (일반 직원용)' 카드에서 '이어서 학습'을 눌러 강의실에 들어간다. 먼저 '최종평가 응시하기'를 눌러 지금 평가에 응시할 수 있는지 확인한다. 이어서 4차시 '개인정보 유출 사고 대응 절차'를 '자막'을 켜고 자막 문구를 읽으며 배속 1.5x로 12:24부터 끝(12:40)까지 시청한 뒤, 학습 현황에 진도가 반영됐는지 확인한다. 다시 '최종평가 응시하기'를 눌러 응시 안내를 확인하고 '응시 시작'으로 최종평가(5문항, 제한시간 10분)를 시작한다. 1번은 ③ 여권번호, 2번은 ③ 회사 이메일 주소, 4번은 ② 종이 문서는 분쇄하거나 소각한다를 고르고 5번(단답형)에는 72를 입력한다. 3번은 확신이 없어 일단 비워 둔 채 '답안 제출'을 눌러 무슨 안내가 나오는지 확인한다. 안내에 따라 3번에 ① 유출 경로를 확인하고 추가 유출을 막는다를 고른 다음, 1~5번이 모두 답해졌는지 확인하고 비어 있는 문항이 있으면 앞에서 정한 답으로 다시 채운다. '임시 저장'을 누른 뒤 '답안 제출'을 누르고, 확인 창에서 '제출하기'로 제출해 결과 화면에서 100점과 평가 통과를 확인한다.",
+  "device_ids": [
+    "laptop-1440",
+    "galaxy-tab-s9"
+  ],
+  "targets": {
+    "primary": [
+      "#courses-1-go",
+      "#btn-play",
+      "#go-quiz-btn",
+      "#start-dialog-ok",
+      "#quiz-footer-submit",
+      "#submit-confirm-ok"
+    ],
+    "destructive": [],
+    "critical_message": [
+      "#start-dialog-rules",
+      "#submit-confirm-desc"
+    ],
+    "error_message": [
+      "#go-quiz-msg",
+      "#qform-error"
+    ],
+    "status": [
+      "#progress-rate",
+      "#progress-note",
+      "#qbar-count",
+      "#quiz-footer-status",
+      "#result-status"
+    ],
+    "navigation": [],
+    "ad_like": [],
+    "hud": [],
+    "game_control": [],
+    "timed": [
+      "#qbar-timer"
+    ]
+  },
+  "steps": [
+    {
+      "action": "click",
+      "target": "#courses-1-go"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "click",
+      "target": "#go-quiz-btn"
+    },
+    {
+      "action": "wait",
+      "ms": 600
+    },
+    {
+      "action": "click",
+      "target": "#btn-cc"
+    },
+    {
+      "action": "click",
+      "target": "#speed-btn"
+    },
+    {
+      "action": "click",
+      "target": "#speed-150"
+    },
+    {
+      "action": "click",
+      "target": "#btn-play"
+    },
+    {
+      "action": "wait",
+      "ms": 12500
+    },
+    {
+      "action": "click",
+      "target": "#go-quiz-btn"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "click",
+      "target": "#start-dialog-ok"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "click",
+      "target": "#qform-mc1-o3"
+    },
+    {
+      "action": "click",
+      "target": "#qform-mc2-o3"
+    },
+    {
+      "action": "click",
+      "target": "#qform-mc4-o2"
+    },
+    {
+      "action": "type",
+      "target": "#qform-sa-input",
+      "text": "72"
+    },
+    {
+      "action": "click",
+      "target": "#quiz-footer-submit"
+    },
+    {
+      "action": "wait",
+      "ms": 1500
+    },
+    {
+      "action": "click",
+      "target": "#qform-mc3-o1"
+    },
+    {
+      "action": "click",
+      "target": "#qform-mc1-o3"
+    },
+    {
+      "action": "click",
+      "target": "#qform-mc2-o3"
+    },
+    {
+      "action": "click",
+      "target": "#qform-mc4-o2"
+    },
+    {
+      "action": "click",
+      "target": "#qform-sa-input"
+    },
+    {
+      "action": "press",
+      "key": "End"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "press",
+      "key": "Backspace"
+    },
+    {
+      "action": "type",
+      "target": "#qform-sa-input",
+      "text": "72"
+    },
+    {
+      "action": "click",
+      "target": "#quiz-footer-save"
+    },
+    {
+      "action": "wait",
+      "ms": 600
+    },
+    {
+      "action": "click",
+      "target": "#quiz-footer-submit"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "click",
+      "target": "#submit-confirm-ok"
+    },
+    {
+      "action": "wait",
+      "ms": 800
+    }
+  ],
+  "timing_windows": [],
+  "success": {
+    "selector_visible": "#result-score"
+  },
+  "hotspots": []
+}

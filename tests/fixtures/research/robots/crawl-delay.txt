@@ -1,0 +1,4 @@
+# Fixture: Crawl-delay longer than the minimum interval.
+User-agent: *
+Crawl-delay: 12
+Disallow: /admin/

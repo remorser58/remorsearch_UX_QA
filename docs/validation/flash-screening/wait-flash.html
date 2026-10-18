@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>(d) 대기 중 섬광</title>
+<!--
+  Case (d): the page is still for 2.5 s after load, then a 320 x 400 CSS px
+  panel flashes white/black at 5 Hz for 2 s and stops. The scenario only waits,
+  so the flash happens after the load sampling window and during a wait step,
+  which the old driver never sampled.
+-->
+<style>
+  html, body { margin: 0; background: #ffffff; color: #202124; font-family: sans-serif; }
+  p { font-size: 16px; line-height: 24px; margin: 16px; }
+  #panel { position: absolute; left: 20px; top: 200px; width: 320px; height: 400px; background: #ffffff; outline: 1px solid #dadce0; }
+</style>
+</head>
+<body>
+<p>잠시 후 큰 패널이 2초 동안 깜빡입니다.</p>
+<div id="panel"></div>
+<script>
+  (function () {
+    var panel = document.getElementById('panel');
+    setTimeout(function () {
+      var n = 0;
+      var t = setInterval(function () {
+        n += 1;
+        panel.style.background = n % 2 ? '#000000' : '#ffffff';
+        if (n >= 20) { clearInterval(t); panel.style.background = '#ffffff'; }
+      }, 100);
+    }, 2500);
+  })();
+</script>
+</body>
+</html>

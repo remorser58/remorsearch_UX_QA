@@ -1,0 +1,202 @@
+[
+ {
+  "page": "product1-b.html",
+  "selector": "#menu-title",
+  "category": "overlapping_text",
+  "severity": "P2",
+  "evidence": "Title 24px with line-height 16.8px (0.7); the two wrapped lines collide in the 360px screenshot.",
+  "fix": "Set line-height to about 1.3 (31px)."
+ },
+ {
+  "page": "product1-b.html",
+  "selector": "#nutrition-row-sodium",
+  "category": "off_screen",
+  "severity": "P2",
+  "evidence": "4th nutrition card (나트륨 2,140mg) at x=352-456 on a 360px viewport; parent main has overflow hidden, so it cannot be reached.",
+  "fix": "Use a 2x2 grid like product1-a, or let the row wrap."
+ },
+ {
+  "page": "product1-b.html",
+  "selector": "#opt-size-large-ribbon",
+  "category": "covered_text",
+  "severity": "P2",
+  "evidence": "BEST ribbon (x57-98, absolute) sits on top of the option name #opt-size-large-name (starts x63), hiding the '라지' text.",
+  "fix": "Place the badge inline after the name or add left padding equal to badge width."
+ },
+ {
+  "page": "product1-b.html",
+  "selector": "#chip-sauce-spicy",
+  "category": "clipped_text",
+  "severity": "P2",
+  "evidence": "Chip '아주 매운맛 +1,000원' content 150px in a 102px box with overflow hidden; shows '아주 매운맛 +1,0'.",
+  "fix": "Remove the fixed width and let the chip size to its content."
+ },
+ {
+  "page": "product1-b.html",
+  "selector": "#spice-note",
+  "category": "small_text",
+  "severity": "P2",
+  "evidence": "Allergy/spice warning set at 10px.",
+  "fix": "Use at least 13-14px like product1-a."
+ },
+ {
+  "page": "product2-a.html",
+  "selector": "#cs-title",
+  "category": "clipped_text",
+  "severity": "P1",
+  "evidence": "Article title is one nowrap line, H34, in a 328px box; text cut at '배차 확정 시간을 4'; document scrollWidth 583 vs 360.",
+  "fix": "Allow wrapping (white-space: normal)."
+ },
+ {
+  "page": "product2-a.html",
+  "selector": "#summary-body",
+  "category": "overlapping_text",
+  "severity": "P2",
+  "evidence": "Summary body spans y441-573 but #summary-callout starts at y543, covering the last line (about 30px).",
+  "fix": "Remove the negative margin/fixed height so the callout follows the text."
+ },
+ {
+  "page": "product2-a.html",
+  "selector": "#stat-dispatch",
+  "category": "clipped_text",
+  "severity": "P2",
+  "evidence": "Stat card 104x106 with overflow hidden holds 135px content: '1시간 46분' shown as '1시간 4(' and labels cut at the bottom.",
+  "fix": "Let cards wrap/stack, reduce value font, remove overflow hidden."
+ },
+ {
+  "page": "product2-a.html",
+  "selector": "#sec-process-title",
+  "category": "overlapping_text",
+  "severity": "P2",
+  "evidence": "Heading 22px with line-height 15.4px; two lines overprint each other.",
+  "fix": "Set line-height about 1.35."
+ },
+ {
+  "page": "product2-a.html",
+  "selector": "#step-3",
+  "category": "alignment",
+  "severity": "P3",
+  "evidence": "Step 3 starts at x=20 (others x=16); its title at x=60 vs 56; the number badge is shifted.",
+  "fix": "Remove the extra 4px margin on #step-3."
+ },
+ {
+  "page": "product2-a.html",
+  "selector": "#lesson-body",
+  "category": "small_text",
+  "severity": "P2",
+  "evidence": "'배운 점' body paragraph set at 10px while other body text is 16px.",
+  "fix": "Use the 16px body style."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "#kpi-churn-delta",
+  "category": "clipped_text",
+  "severity": "P2",
+  "evidence": "Scan: delta text '지난주 3.1% → 이번 주 4.6% · 해지 38건 중…' is cut by the #kpi-churn card box.",
+  "fix": "Allow wrapping or increase card height; drop overflow hidden."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "#tab-cohort",
+  "category": "clipped_text",
+  "severity": "P2",
+  "evidence": "Tab label '리텐션 코호트 분석' clipped by its fixed-width tab.",
+  "fix": "Size tabs to content."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "#cell-owner-4-name",
+  "category": "covered_text",
+  "severity": "P2",
+  "evidence": "Owner name '남궁서연' is covered by the overlaid #cell-owner-4-flag.",
+  "fix": "Put the flag in flow beside the name, not absolutely on top."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "#page-title",
+  "category": "covered_text",
+  "severity": "P1",
+  "evidence": "Page title '세일즈 2팀 주간 성과' sits under the fixed top header and is never revealed by scrolling.",
+  "fix": "Add top padding equal to the header height to the content."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "#insight-title",
+  "category": "overlapping_text",
+  "severity": "P2",
+  "evidence": "Insight title lines overlap; line-height smaller than font size.",
+  "fix": "Set line-height about 1.35."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "#panel-goals",
+  "category": "alignment",
+  "severity": "P3",
+  "evidence": "Goals panel is offset 3px from the start line of its sibling panels.",
+  "fix": "Remove the stray 3px offset."
+ },
+ {
+  "page": "product3-b.html",
+  "selector": "li:nth-of-type(3)",
+  "category": "spacing",
+  "severity": "P3",
+  "evidence": "Activity list item 3 has an 8px gap above while others have 20px.",
+  "fix": "Use the same 20px gap."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "#eta-box",
+  "category": "covered_text",
+  "severity": "P1",
+  "evidence": "Delivery ETA box at y12-82 is under the fixed #co-header (0-56); the date line '10월 20일 오전 7시 전 도착 예정' is hidden.",
+  "fix": "Add padding-top 56px to the content below the fixed header."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "#addr-box-line",
+  "category": "clipped_text",
+  "severity": "P1",
+  "evidence": "Address line nowrap; #addr-box 326px wide scrolls to 568px with overflow hidden; '101동 1203호 (공동현관 비밀번호…)' cut off.",
+  "fix": "Allow address text to wrap."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "#price-headphone",
+  "category": "clipped_text",
+  "severity": "P2",
+  "evidence": "Price cell 62px wide holds 79px; shows '1,249,000' with '원' cut.",
+  "fix": "Let price column size to content (min-width: max-content)."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "#installment-table",
+  "category": "off_screen",
+  "severity": "P2",
+  "evidence": "Table is 405px wide in a 328px column; 총 납부 금액 column cut at the right edge and the app wrapper has overflow hidden so it cannot scroll.",
+  "fix": "Wrap the table in an overflow-x:auto container or reduce columns/font to fit."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "#coupon-terms",
+  "category": "small_text",
+  "severity": "P2",
+  "evidence": "Coupon terms at 10px.",
+  "fix": "Use 13-14px as in product4-b."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "#sum-row-shipping",
+  "category": "alignment",
+  "severity": "P3",
+  "evidence": "'배송비' label indented about 4px relative to other summary rows.",
+  "fix": "Remove the extra left padding."
+ },
+ {
+  "page": "product4-a.html",
+  "selector": "#biz-info",
+  "category": "small_text",
+  "severity": "P3",
+  "evidence": "Business info at 10px (same in product4-b, legal footer).",
+  "fix": "Use at least 12px."
+ }
+]

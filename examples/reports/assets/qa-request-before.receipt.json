@@ -1,0 +1,9 @@
+{
+  "artifact_path": "assets/qa-request-before.png",
+  "sha256": "8c0e2a33616d473a7366492845eba2c721bf78c08f8bb581426d1e25ca03507c",
+  "captured_at": null,
+  "surface_url": "http://127.0.0.1:8765/dev-2/site/delivery/delivery-b.html",
+  "build_id": null,
+  "device": "galaxy-s24-ultra; 384x824 CSS px; DPR 3.75",
+  "quoted_ui_text": "땅콩 알레르기가 있어요. 양념에 땅콩가루 빼 주세요"
+}

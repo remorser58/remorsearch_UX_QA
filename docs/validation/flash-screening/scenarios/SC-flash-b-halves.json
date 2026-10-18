@@ -1,0 +1,22 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-flash-b-halves",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/halves.html"
+  },
+  "task_goal_ko": "역위상으로 깜빡이는 화면을 지켜본다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {},
+  "steps": [
+    {
+      "action": "wait",
+      "ms": 2000
+    }
+  ],
+  "success": {
+    "url_contains": "halves.html"
+  }
+}

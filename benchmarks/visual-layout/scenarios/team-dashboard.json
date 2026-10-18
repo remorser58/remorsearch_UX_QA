@@ -1,0 +1,57 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-team-dashboard-01",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/visual-layout/site/team-dashboard.html"
+  },
+  "task_goal_ko": "세일즈 2팀 주간 성과 대시보드에서 KPI, 진행 중인 캠페인 표, 최근 활동, 목표 달성률과 이번 주 인사이트를 읽는다",
+  "device_ids": [
+    "laptop-1440"
+  ],
+  "targets": {
+    "primary": [
+      "#btn-export"
+    ],
+    "destructive": [],
+    "critical_message": [],
+    "error_message": [],
+    "status": [],
+    "ad_like": [],
+    "hud": [],
+    "game_control": [],
+    "timed": []
+  },
+  "steps": [
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "scroll",
+      "dy": 600
+    },
+    {
+      "action": "wait",
+      "ms": 250
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "scroll",
+      "dy": 600
+    },
+    {
+      "action": "wait",
+      "ms": 250
+    },
+    {
+      "action": "snapshot"
+    }
+  ],
+  "timing_windows": [],
+  "success": {
+    "selector_visible": "#btn-export"
+  },
+  "hotspots": []
+}

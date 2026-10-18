@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>(c) 적색 섬광</title>
+<!--
+  Case (c): the whole viewport alternates #ff0000 and #7f7f7f at 5 Hz. Both have
+  almost the same relative luminance (0.2126 vs 0.2122), so there is no general
+  flash; it is a WCAG 2.3.1 red flash (saturated red, R/(R+G+B) >= 0.8).
+-->
+<style>
+  html, body { margin: 0; height: 100%; background: #7f7f7f; }
+</style>
+</head>
+<body>
+<script>
+  (function () {
+    var n = 0;
+    setInterval(function () {
+      n += 1;
+      document.body.style.background = n % 2 ? '#ff0000' : '#7f7f7f';
+      document.documentElement.style.background = document.body.style.background;
+    }, 100);
+  })();
+</script>
+</body>
+</html>

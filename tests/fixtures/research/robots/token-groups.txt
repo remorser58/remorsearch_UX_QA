@@ -1,0 +1,13 @@
+# Fixture: the group naming our product token wins over the '*' group, the
+# token matches case-insensitively, and duplicate groups for one token merge.
+User-agent: *
+Disallow: /
+
+User-agent: remorsearchuxqa
+Disallow: /private/
+
+User-agent: OtherBot
+Disallow: /
+
+User-agent: RemorsearchUXQA
+Allow: /private/open-notes

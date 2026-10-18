@@ -1,0 +1,42 @@
+{
+ "product1-a.html": {
+  "source": "menu-options-clean.html",
+  "kind": "clean",
+  "product": "menu-options"
+ },
+ "product1-b.html": {
+  "source": "menu-options.html",
+  "kind": "defect",
+  "product": "menu-options"
+ },
+ "product2-a.html": {
+  "source": "case-study.html",
+  "kind": "defect",
+  "product": "case-study"
+ },
+ "product2-b.html": {
+  "source": "case-study-clean.html",
+  "kind": "clean",
+  "product": "case-study"
+ },
+ "product3-a.html": {
+  "source": "team-dashboard-clean.html",
+  "kind": "clean",
+  "product": "team-dashboard"
+ },
+ "product3-b.html": {
+  "source": "team-dashboard.html",
+  "kind": "defect",
+  "product": "team-dashboard"
+ },
+ "product4-a.html": {
+  "source": "checkout-summary.html",
+  "kind": "defect",
+  "product": "checkout-summary"
+ },
+ "product4-b.html": {
+  "source": "checkout-summary-clean.html",
+  "kind": "clean",
+  "product": "checkout-summary"
+ }
+}

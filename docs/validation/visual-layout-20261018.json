@@ -1,0 +1,363 @@
+{
+ "schema": "remorsearch-validation-scores.v1",
+ "scorer": "ergoqa.bench.score(exact_viewport=True)",
+ "date": "2026-10-18",
+ "note": "single_profile and measured_only use one default profile per device; earlier-suite before cells re-scored that way from the saved findings",
+ "detector_before": "61d0fd9 (before the layout checks)",
+ "detector_first_blind": "first score of benchmarks/visual-layout before any change made after seeing it",
+ "detector_final": "release candidate after the third review",
+ "final_provenance": {
+  "code_sha256": "7b261f8e0a88b38d736af9b8f81ba9466136a7283a62b9a529585edd933d182a",
+  "driver_sha256": "5c2d0518816dd65e94dd1ea034adb59154dce180f1fa093f2d79af78e07cfd5e",
+  "platform": "macOS 27.2 arm64, Chromium 141.0.7390.37, Playwright 1.56.1, Node.js 22.23.3"
+ },
+ "final_linux_provenance": {
+  "code_sha256": "7b261f8e0a88b38d736af9b8f81ba9466136a7283a62b9a529585edd933d182a",
+  "driver_sha256": "5c2d0518816dd65e94dd1ea034adb59154dce180f1fa093f2d79af78e07cfd5e",
+  "platform": "Ubuntu 24.04.4 arm64 VM, Chromium 141.0.7390.37, Playwright 1.56.1, Node.js 22.23.3, Korean font WenQuanYi Zen Hei"
+ },
+ "before": {
+  "mobile-commerce/measured_only": {
+   "detected": 6,
+   "defects": 17,
+   "recall_strict": 0.353,
+   "decoys_flagged": 0,
+   "clean_control_findings": 7,
+   "unlabeled_findings_in_defect_variants": 9,
+   "findings": 27
+  },
+  "mobile-commerce/single_profile": {
+   "detected": 12,
+   "defects": 17,
+   "recall_strict": 0.706,
+   "decoys_flagged": 0,
+   "clean_control_findings": 14,
+   "unlabeled_findings_in_defect_variants": 20,
+   "findings": 62
+  },
+  "mobile-commerce/swarm": {
+   "detected": 14,
+   "defects": 17,
+   "recall_strict": 0.824,
+   "decoys_flagged": 1,
+   "clean_control_findings": 23,
+   "unlabeled_findings_in_defect_variants": 24,
+   "findings": 81
+  },
+  "game-desktop/measured_only": {
+   "detected": 6,
+   "defects": 16,
+   "recall_strict": 0.375,
+   "decoys_flagged": 0,
+   "clean_control_findings": 19,
+   "unlabeled_findings_in_defect_variants": 21,
+   "findings": 54
+  },
+  "game-desktop/single_profile": {
+   "detected": 13,
+   "defects": 16,
+   "recall_strict": 0.812,
+   "decoys_flagged": 0,
+   "clean_control_findings": 28,
+   "unlabeled_findings_in_defect_variants": 32,
+   "findings": 83
+  },
+  "game-desktop/swarm": {
+   "detected": 15,
+   "defects": 16,
+   "recall_strict": 0.938,
+   "decoys_flagged": 0,
+   "clean_control_findings": 28,
+   "unlabeled_findings_in_defect_variants": 31,
+   "findings": 84
+  },
+  "heldout-mixed/measured_only": {
+   "detected": 3,
+   "defects": 20,
+   "recall_strict": 0.15,
+   "decoys_flagged": 0,
+   "clean_control_findings": 31,
+   "unlabeled_findings_in_defect_variants": 44,
+   "findings": 84
+  },
+  "heldout-mixed/single_profile": {
+   "detected": 9,
+   "defects": 20,
+   "recall_strict": 0.45,
+   "decoys_flagged": 1,
+   "clean_control_findings": 41,
+   "unlabeled_findings_in_defect_variants": 65,
+   "findings": 137
+  },
+  "heldout-mixed/swarm": {
+   "detected": 18,
+   "defects": 20,
+   "recall_strict": 0.9,
+   "decoys_flagged": 1,
+   "clean_control_findings": 50,
+   "unlabeled_findings_in_defect_variants": 64,
+   "findings": 162
+  },
+  "visual-layout/measured_only": {
+   "detected": 3,
+   "defects": 28,
+   "recall_strict": 0.107,
+   "decoys_flagged": 3,
+   "clean_control_findings": 6,
+   "unlabeled_findings_in_defect_variants": 7,
+   "findings": 16
+  },
+  "visual-layout/single_profile": {
+   "detected": 6,
+   "defects": 28,
+   "recall_strict": 0.214,
+   "decoys_flagged": 4,
+   "clean_control_findings": 18,
+   "unlabeled_findings_in_defect_variants": 13,
+   "findings": 51
+  },
+  "visual-layout/swarm": {
+   "detected": 6,
+   "defects": 28,
+   "recall_strict": 0.214,
+   "decoys_flagged": 4,
+   "clean_control_findings": 40,
+   "unlabeled_findings_in_defect_variants": 25,
+   "findings": 92
+  }
+ },
+ "first_blind": {
+  "visual-layout/measured_only": {
+   "detected": 19,
+   "defects": 28,
+   "recall_strict": 0.679,
+   "decoys_flagged": 3,
+   "clean_control_findings": 6,
+   "unlabeled_findings_in_defect_variants": 7,
+   "findings": 33
+  },
+  "visual-layout/single_profile": {
+   "detected": 22,
+   "defects": 28,
+   "recall_strict": 0.786,
+   "decoys_flagged": 4,
+   "clean_control_findings": 18,
+   "unlabeled_findings_in_defect_variants": 19,
+   "findings": 68
+  },
+  "visual-layout/swarm": {
+   "detected": 22,
+   "defects": 28,
+   "recall_strict": 0.786,
+   "decoys_flagged": 4,
+   "clean_control_findings": 40,
+   "unlabeled_findings_in_defect_variants": 35,
+   "findings": 109
+  }
+ },
+ "final": {
+  "visual-layout/measured_only": {
+   "detected": 25,
+   "defects": 28,
+   "recall_strict": 0.893,
+   "decoys_flagged": 3,
+   "clean_control_findings": 6,
+   "unlabeled_findings_in_defect_variants": 7,
+   "findings": 44
+  },
+  "visual-layout/single_profile": {
+   "detected": 28,
+   "defects": 28,
+   "recall_strict": 1.0,
+   "decoys_flagged": 4,
+   "clean_control_findings": 18,
+   "unlabeled_findings_in_defect_variants": 19,
+   "findings": 79
+  },
+  "visual-layout/swarm": {
+   "detected": 28,
+   "defects": 28,
+   "recall_strict": 1.0,
+   "decoys_flagged": 4,
+   "clean_control_findings": 40,
+   "unlabeled_findings_in_defect_variants": 38,
+   "findings": 120
+  },
+  "mobile-commerce/measured_only": {
+   "detected": 6,
+   "defects": 17,
+   "recall_strict": 0.353,
+   "decoys_flagged": 0,
+   "clean_control_findings": 7,
+   "unlabeled_findings_in_defect_variants": 9,
+   "findings": 27
+  },
+  "mobile-commerce/single_profile": {
+   "detected": 12,
+   "defects": 17,
+   "recall_strict": 0.706,
+   "decoys_flagged": 0,
+   "clean_control_findings": 14,
+   "unlabeled_findings_in_defect_variants": 20,
+   "findings": 62
+  },
+  "mobile-commerce/swarm": {
+   "detected": 14,
+   "defects": 17,
+   "recall_strict": 0.824,
+   "decoys_flagged": 1,
+   "clean_control_findings": 23,
+   "unlabeled_findings_in_defect_variants": 24,
+   "findings": 81
+  },
+  "game-desktop/measured_only": {
+   "detected": 6,
+   "defects": 16,
+   "recall_strict": 0.375,
+   "decoys_flagged": 0,
+   "clean_control_findings": 19,
+   "unlabeled_findings_in_defect_variants": 21,
+   "findings": 54
+  },
+  "game-desktop/single_profile": {
+   "detected": 13,
+   "defects": 16,
+   "recall_strict": 0.812,
+   "decoys_flagged": 0,
+   "clean_control_findings": 28,
+   "unlabeled_findings_in_defect_variants": 32,
+   "findings": 83
+  },
+  "game-desktop/swarm": {
+   "detected": 15,
+   "defects": 16,
+   "recall_strict": 0.938,
+   "decoys_flagged": 0,
+   "clean_control_findings": 28,
+   "unlabeled_findings_in_defect_variants": 31,
+   "findings": 84
+  },
+  "heldout-mixed/measured_only": {
+   "detected": 3,
+   "defects": 20,
+   "recall_strict": 0.15,
+   "decoys_flagged": 0,
+   "clean_control_findings": 31,
+   "unlabeled_findings_in_defect_variants": 44,
+   "findings": 84
+  },
+  "heldout-mixed/single_profile": {
+   "detected": 9,
+   "defects": 20,
+   "recall_strict": 0.45,
+   "decoys_flagged": 1,
+   "clean_control_findings": 41,
+   "unlabeled_findings_in_defect_variants": 65,
+   "findings": 137
+  },
+  "heldout-mixed/swarm": {
+   "detected": 18,
+   "defects": 20,
+   "recall_strict": 0.9,
+   "decoys_flagged": 1,
+   "clean_control_findings": 50,
+   "unlabeled_findings_in_defect_variants": 64,
+   "findings": 162
+  }
+ },
+ "final_linux": {
+  "visual-layout/measured_only": {
+   "detected": 25,
+   "defects": 28,
+   "recall_strict": 0.893,
+   "decoys_flagged": 2,
+   "clean_control_findings": 10,
+   "unlabeled_findings_in_defect_variants": 7,
+   "findings": 48
+  },
+  "visual-layout/single_profile": {
+   "detected": 28,
+   "defects": 28,
+   "recall_strict": 1.0,
+   "decoys_flagged": 3,
+   "clean_control_findings": 22,
+   "unlabeled_findings_in_defect_variants": 19,
+   "findings": 83
+  },
+  "visual-layout/swarm": {
+   "detected": 28,
+   "defects": 28,
+   "recall_strict": 1.0,
+   "decoys_flagged": 3,
+   "clean_control_findings": 44,
+   "unlabeled_findings_in_defect_variants": 38,
+   "findings": 124
+  }
+ },
+ "dev-2": {
+  "suite": "benchmarks/dev-2, a development suite whose keys were read while tuning (training fit)",
+  "command": "ergo_eval.py record, analyse and score",
+  "configs": {
+   "C1": "measured checks, default persona",
+   "C2": "all checks, default persona",
+   "C3": "stratified profiles"
+  },
+  "run_health": {
+   "ok": 4,
+   "degraded": 4,
+   "failed": 4
+  },
+  "before": {
+   "C1": {
+    "detected": 9,
+    "defects": 36,
+    "recall_strict": 0.25,
+    "recall_lenient": 0.417,
+    "decoys_flagged": 1,
+    "clean_control_findings": 32
+   },
+   "C2": {
+    "detected": 11,
+    "defects": 36,
+    "recall_strict": 0.306,
+    "recall_lenient": 0.472,
+    "decoys_flagged": 1,
+    "clean_control_findings": 70
+   },
+   "C3": {
+    "detected": 17,
+    "defects": 36,
+    "recall_strict": 0.472,
+    "recall_lenient": 0.639,
+    "decoys_flagged": 1,
+    "clean_control_findings": 99
+   }
+  },
+  "final": {
+   "C1": {
+    "detected": 10,
+    "defects": 36,
+    "recall_strict": 0.278,
+    "recall_lenient": 0.417,
+    "decoys_flagged": 1,
+    "clean_control_findings": 32
+   },
+   "C2": {
+    "detected": 12,
+    "defects": 36,
+    "recall_strict": 0.333,
+    "recall_lenient": 0.472,
+    "decoys_flagged": 1,
+    "clean_control_findings": 70
+   },
+   "C3": {
+    "detected": 18,
+    "defects": 36,
+    "recall_strict": 0.5,
+    "recall_lenient": 0.639,
+    "decoys_flagged": 1,
+    "clean_control_findings": 99
+   }
+  }
+ }
+}

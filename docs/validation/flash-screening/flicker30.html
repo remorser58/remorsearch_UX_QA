@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>(e) 30 Hz 깜빡임</title>
+<!--
+  Case (e): the whole viewport toggles black/white on every animation frame
+  (30 Hz flicker at a 60 Hz frame rate). A capture loop phase-locked to ~30 fps
+  sees the same phase every time, i.e. a still image.
+-->
+<style>
+  html, body { margin: 0; height: 100%; background: #000000; }
+</style>
+</head>
+<body>
+<script>
+  (function () {
+    var n = 0;
+    function tick() {
+      n += 1;
+      document.body.style.background = n % 2 ? '#ffffff' : '#000000';
+      requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,1473 @@
+{
+  "schema_version": "ergo-audience.v1",
+  "audience_id": "AU-orderstand-202609",
+  "product": {
+    "name": "오더스탠드 3.2 (카운터형 태블릿 셀프 주문 · QR 모바일 주문)",
+    "category": "카페·소형 패스트푸드 셀프 주문 키오스크 웹앱 (11인치 태블릿 세로 거치 + 휴대폰 QR 주문)",
+    "surface": "web",
+    "locale": "ko-KR",
+    "brief_ref": "benchmarks/heldout-2/products/kiosk/brief.md"
+  },
+  "researched_at": "2026-09-28",
+  "method": {
+    "summary": "ISO 9241-11 사용 맥락(사용자·목표와 과업·자원·환경) 틀로 브리프(SRC-01)에서 후보 집단과 과업을 뽑고, 공공 통계(행정안전부 주민등록 인구, 서울디지털재단 디지털역량 조사, 한국소비자원 키오스크 실태조사, 과기정통부·NIA 디지털정보격차 조사, 보건복지부 등록장애인·장애인차별금지법 이행 실태조사, 한국은행 지급수단 조사), 법령·표준(장애인차별금지법 시행령, KS X 9211), 연구 논문(노안·색각이상·본태성 떨림), 시장 조사(한국갤럽 스마트폰 브랜드), 공개 커뮤니티 글로 크기·조건·맥락·불편을 보강했다. 웹 검색 23회(원문 열람 WebFetch 7회는 모두 차단). 세그먼트 크기는 브리프의 파일럿 수치만 쓰고 나머지는 unknown으로 두었다. 과업의 구체 데이터는 브리프의 메뉴·가격·옵션·결제 수단에서 만들었다.",
+    "limitations": [
+      "WebFetch가 egress 프록시에 막혀(시도한 7개 도메인 모두) 원문 페이지를 열지 못했다. 브리프 외 인용은 모두 검색 결과 스니펫이다(sources[].access_method=web_search_snippet). 스니펫 문장을 원문처럼 쓰지 말고 게시 전에 원문과 대조해야 한다.",
+      "세그먼트 크기 0.55·0.30은 파일럿 2개 매장(2026년 7~8월)의 주문 건수 비중이며 사람 수가 아니다. POS에는 나이가 없어 연령 구분에 관찰 추정이 섞였다. 0.30은 주엽점(주거지·병원 인근) 한 곳 기준이라 업무지구 매장에서는 더 낮다.",
+      "age_bands는 주민등록 인구 비중으로 세그먼트 연령 범위를 나눈 대리값(inference)이다. 연령대별 카페 이용률 차이는 반영하지 않았다. 저시력 세그먼트는 시각장애인 연령 분포를 찾지 못해 성인 인구 비중을 썼다(실제로는 고령 쪽으로 치우쳤을 가능성이 크다).",
+      "노안 0.9는 연령대별 근용 가입도 평균(연구 국가 미확인)에서 추론한 값이다. 매장에서 돋보기를 쓰지 않는 비율은 미확인이다(브리프: '흔하다').",
+      "키오스크 경험률(familiarity)은 서울 거주자 조사(2021·2023)다. 전국 값은 더 낮고, 2026년 값은 더 높을 수 있다.",
+      "맥락 비중은 고령 세그먼트(파생값 0.68/0.32)를 빼면 출처가 없어 null로 두었다. null 맥락도 facet으로 뽑힐 수 있지만 순서가 늦다: 예산 10에서 창가 햇빛(bright_sun)은 직장인 세그먼트에서만 시험되고 고령·저시력 세그먼트의 햇빛 맥락, 고령 줄 압박 맥락, 휴대폰 테이블 착석 맥락은 미시험이다. 휴대폰 세그먼트의 대표 맥락(입구에서 걸으며 주문)은 브리프의 '포장 픽업'에서 고른 추론이다.",
+      "카탈로그의 galaxy-tab-s9 시청 거리 400mm는 브리프의 45~60cm보다 가깝다 → 글자 크기(PC-04) 판정이 관대해질 수 있다. 서서 누르는 키오스크는 프로필에서 seated로 표현되고, 팔 도달·설치 높이(105cm, 15°)는 모델에 없다.",
+      "휴대폰 기종 비중은 18~29세 브랜드 점유율(한국갤럽 2025)로 대신했고 10대 값은 없다. iphone-15·galaxy-s24는 카탈로그에서 고른 대리 기종이다(360px 최소 폭은 galaxy-s24).",
+      "과업 빈도(frequency)는 브리프 맥락에서 추론했다(측정 아님). 모바일 주문 결제 수단은 브리프에 없어 키오스크 결제 수단 목록에서 골랐다.",
+      "예산 10 구성에서 휴대폰 경로는 프로필 1개(iphone-15, 걷는 중)뿐이다. 브리프의 최소 폭 360px(galaxy-s24)와 휴대폰 왼손 엄지 도달은 세그먼트 비중이 작아(0.09) 예산 약 16~18 이전에는 뽑히지 않는다. 360px은 사용자 비중이 아니라 요구사항 경계이므로 페르소나 예산과 별도로 galaxy-s24 배치 점검을 돌려야 한다.",
+      "고령 세그먼트의 70대 이상(첫 사용 약 81%, 가장 느린 읽기)은 age facet이 순서상 마지막이라 예산 10에서 미시험이다. 60초 무입력 초기화·90초 결제 타이머는 70대 이상 프로필을 수동 추가하거나 시나리오 타이밍 창을 그 읽기 속도로 잡아 확인해야 한다.",
+      "구성기의 cradle 파지 이름('왼손으로 받치고 오른손 검지')은 휴대 기기 표현이다. 거치대 태블릿에서는 '받치는 손 없이 서서 검지로 누름'으로 읽는다. 키오스크 왼손 거울 프로필은 휴대폰 왼손 프로필보다 새로 찾는 것이 적을 수 있다.",
+      "제품팀에 요청할 분석: 세그먼트별 모바일 주문 비중, 역삼점 50대 이상 주문 비중, 시간대별 주문·대기열, 직원 호출·결제 실패·60초 초기화 로그, 키패드 액세서리 사용 건수."
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SRC-01",
+      "type": "product_brief",
+      "title": "오더스탠드 제품 브리프 v3.2 (2026년 4분기 가맹 확대용; 파일럿 모퉁이커피 역삼점·일산 주엽점 2026년 7~8월 관찰·POS 요약 포함)",
+      "url": "benchmarks/heldout-2/products/kiosk/brief.md",
+      "accessed_at": "2026-09-28",
+      "access_method": "file_read",
+      "note": "제품팀 문서. 파일럿 수치는 원자료가 아니라 브리프의 요약이다."
+    },
+    {
+      "source_id": "SRC-02",
+      "type": "official_statistics",
+      "title": "서울디지털재단 「2023 서울시민 디지털역량실태조사」(2차) 키오스크 문항 — 서울신문 2024-06-12 등 보도",
+      "url": "https://www.seoul.co.kr/news/society/2024/06/12/20240612500136",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "서울 거주자 대상. 고령층=만 55세 이상(SRC-13과 같은 조사 계열). 원문 페이지는 egress 프록시 차단으로 열지 못했다."
+    },
+    {
+      "source_id": "SRC-03",
+      "type": "official_statistics",
+      "title": "한국소비자원 키오스크(무인정보단말기) 이용 실태조사 (2022년 7월, 키오스크 이용 경험 소비자 500명 온라인 설문, 엠브레인퍼블릭 의뢰; 2022-11 발표) — 경향신문 2022-11-24 등 보도",
+      "url": "https://www.khan.co.kr/article/202211241559001",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "원 보고서: 한국소비자원 「키오스크(무인정보단말기) 이용 실태조사」 2022. 9. 시장조사국(clik.nanet.go.kr 수록 PDF). 원문 미열람. 키오스크 이용 경험자만 표본."
+    },
+    {
+      "source_id": "SRC-04",
+      "type": "official_statistics",
+      "title": "과학기술정보통신부·한국지능정보사회진흥원(NIA) 「2024 디지털정보격차 실태조사」 (2025-03-27 발표)",
+      "url": "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?cbIdx=81623&bcIdx=27832&parentSeq=27832",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "일반국민=100 기준 상대 지수. 키오스크 문항 수치는 확인하지 못했다."
+    },
+    {
+      "source_id": "SRC-05",
+      "type": "official_statistics",
+      "title": "행정안전부 2025년 주민등록 인구통계 연령대별 비중 (2026-01 발표; 머니투데이 2026-01-04 보도)",
+      "url": "https://www.mt.co.kr/policy/2026/01/04/2026010216565058654",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "전체 주민등록 인구 구조이며 매장 손님 구성이 아니다. 연령대 가중치의 대리값으로만 쓴다."
+    },
+    {
+      "source_id": "SRC-06",
+      "type": "research_paper",
+      "title": "Fricke TR et al. Global Prevalence of Presbyopia and Vision Impairment from Uncorrected Presbyopia: Systematic Review, Meta-analysis, and Modelling. Ophthalmology 2018;125(10):1492-1499",
+      "url": "https://www.aaojournal.org/article/S0161-6420(17)33797-1/fulltext",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "전 세계 전 연령 추정. 한국 연령대별 수치가 아니다."
+    },
+    {
+      "source_id": "SRC-07",
+      "type": "research_paper",
+      "title": "Presbyopia and associated factors specific to age groups. Clinical and Experimental Optometry 2025 (doi:10.1080/08164622.2025.2461737)",
+      "url": "https://www.tandfonline.com/doi/full/10.1080/08164622.2025.2461737",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "건강한 3,000명의 연령대별 근용 가입도 평균. 연구 국가는 스니펫에서 확인하지 못했다."
+    },
+    {
+      "source_id": "SRC-08",
+      "type": "news",
+      "title": "\"장애인에게 여전히 높은 '키오스크 장벽'…'없는 식당 찾아가요'\" (다음 뉴스 2024-04-19; 국가인권위원회 2022 「장애인 무인정보단말기 접근·이용 모니터링」 결과 인용)",
+      "url": "https://v.daum.net/v/20240419071723521",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "뉴스이므로 존재 근거로만 쓴다(수치도 firsthand로 기록)."
+    },
+    {
+      "source_id": "SRC-09",
+      "type": "official_statistics",
+      "title": "보건복지부 보도자료 「2024년 장애인차별금지법 이행 실태조사 결과 발표」 (무인정보단말기·응용소프트웨어 정보접근성 중심; 2025년 게시)",
+      "url": "https://mohw.go.kr/board.es?act=view&bid=0027&list_no=1487151&mid=a10503000000",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "표본 수·조사 방식·정확한 게시일은 스니펫에서 확인하지 못했다(정책브리핑 newsId=156702194에도 게재)."
+    },
+    {
+      "source_id": "SRC-10",
+      "type": "official_docs",
+      "title": "보건복지부 보도자료 「키오스크 및 모바일앱 장애인 접근성 제고를 위한 정당한 편의 제공」 (장애인차별금지법 시행령 개정, 2023-03-28 국무회의 의결; 첨부 「무인정보단말기 접근성 검증 기준」)",
+      "url": "https://www.mohw.go.kr/board.es?mid=a10503010100&bid=0027&act=view&list_no=375590",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet"
+    },
+    {
+      "source_id": "SRC-11",
+      "type": "official_statistics",
+      "title": "보건복지부 2025년 등록장애인 현황 통계 (2026-04-20 발표; 한국의약통신 보도)",
+      "url": "https://www.kmpnews.co.kr/news/articleView.html?idxno=70802",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "등록 기준이며 기능 제한 인구와 같지 않다(미등록 저시력·난청 다수 가능)."
+    },
+    {
+      "source_id": "SRC-12",
+      "type": "official_docs",
+      "title": "보건복지부 보도자료 「장벽 없는 키오스크, 합리적 제도개선으로 장애인 정보접근권 강화」 (장애인차별금지법 시행령 일부개정, 2025-11-11 국무회의 의결)",
+      "url": "https://mohw.go.kr/board.es?act=view&bid=0027&list_no=1487865&mid=a10503000000",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet"
+    },
+    {
+      "source_id": "SRC-13",
+      "type": "official_statistics",
+      "title": "서울디지털재단 「서울시민 디지털역량 실태조사」 1차 (2021년 10~12월, 만 19세 이상 서울시민 5,000명 가구 면접) — 한국경제 2022-05-16 등 보도",
+      "url": "https://www.hankyung.com/article/202205168165Y",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "서울 거주자 대상, 2021년 값. 같은 검색 결과에 2023년 2차 연령대별 값도 함께 보도됨(SRC-02)."
+    },
+    {
+      "source_id": "SRC-14",
+      "type": "research_paper",
+      "title": "The incidence of congenital color deficiency among Koreans. J Korean Med Sci 1989;4(3):117-120 (H-R-R 가성동색표)",
+      "url": "https://jkms.org/DOIx.php?id=10.3346%2Fjkms.1989.4.3.117",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "1989년 값. 제2색각(deutan)만의 비율은 확인하지 못했다(적록 전체 값)."
+    },
+    {
+      "source_id": "SRC-15",
+      "type": "market_report",
+      "title": "한국갤럽 「스마트폰 사용률·브랜드 조사 2012-2025」 (2025년 7월 발표; 갤럽리포트 seqNo=1566, 한국갤럽 X 계정 게시물)",
+      "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1566",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "성인(18세 이상) 전화 조사. 브랜드이지 기종·화면 폭이 아니다. 10대 값 없음."
+    },
+    {
+      "source_id": "SRC-16",
+      "type": "official_statistics",
+      "title": "한국은행 「2024년 지급수단 및 모바일금융서비스 이용행태 조사결과」 (지급결제조사자료 2025-2, 2025-03-25 발간)",
+      "url": "https://www.bok.or.kr/portal/bbs/B0000232/view.do?menuNo=200706&nttId=10090464",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "선호 지급수단은 전체 소비 기준이며 카페 키오스크에 한정되지 않는다."
+    },
+    {
+      "source_id": "SRC-17",
+      "type": "research_paper",
+      "title": "The Prevalence of Essential Tremor in Elderly Koreans. J Korean Med Sci 2014;29(12):1694 (65세 이상 714명 지역사회 연구)",
+      "url": "https://www.jkms.kr/DOIx.php?id=10.3346%2Fjkms.2014.29.12.1694",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "본태성 떨림만 해당(파킨슨 등 다른 떨림 제외), 65세 이상만."
+    },
+    {
+      "source_id": "SRC-18",
+      "type": "community",
+      "title": "Threads 공개 게시물 '카페 키오스크 1.바쁘지 않아도 키오스크로 주문하게 하는 매장이 많음…' (작성자 식별정보 생략)",
+      "url": "https://www.threads.com/@yfd866j/post/C9cEIO_Suzp",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "access_basis": "public_post",
+      "public_scope": "public",
+      "note": "검색 결과 제목에 노출된 본문 앞부분만 확인. 한 사람의 의견이며 존재 근거로만 쓴다."
+    },
+    {
+      "source_id": "SRC-19",
+      "type": "official_docs",
+      "title": "KS X 9211 「무인정보단말기 접근성 지침」 (국가표준, 2022-02-25 개정판 표기)",
+      "url": "https://standard.go.kr/KSCI/standardIntro/getStandardSearchView.do?ksNo=KSX9211",
+      "accessed_at": "2026-09-28",
+      "access_method": "web_search_snippet",
+      "note": "조작부 높이 등 수치 기준은 스니펫에서 확인하지 못했다(원문 확인 필요)."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "SEG-office-peak",
+      "role": "operator",
+      "name_ko": "점심·출근 피크에 줄 선 채 카운터 태블릿으로 포장 주문하는 인근 직장인",
+      "summary": "업무지구 매장(역삼점형)에서 08:00~09:30, 11:40~13:10에 11인치 세로 태블릿으로 음료+베이커리를 포장 주문하고 법인카드(IC)나 삼성페이로 결제한 뒤 영수증을 챙기는 20~40대. 뒤에 줄이 있어 1분 안에 끝내려 하며, 추천 세트 제안·영수증 선택 같은 추가 단계와 결제 오류에 민감하다.",
+      "priority": "primary",
+      "share": {
+        "value": 0.55,
+        "basis": "estimated",
+        "source_ids": [
+          "SRC-01"
+        ]
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "kind": "statistic",
+          "quote": "인근 직장인(20~40대, 주문의 약 55%)",
+          "claim": "파일럿 2개 매장(2026년 7~8월) 관찰·POS 기준 주문 건수의 약 55%. 사람 수가 아니고, POS에는 나이가 없어 연령 구분에 관찰 추정이 섞였으므로 basis는 estimated로 둔다."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "점심 11:40~13:10, 출근 08:00~09:30에 몰린다. 대부분 포장, 뒤에 줄이 있어 빨리 끝내고 싶어 한다. 법인카드 결제 후 영수증을 챙겨야 하는 경우가 많다.",
+          "claim": "피크 시간·포장·시간 압박·영수증이 이 집단의 핵심 맥락이다."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "주문 완료 시간 중앙값: 음료 1 + 베이커리 1 기준 60초 이내",
+          "claim": "과업 성공 기준(시간)."
+        },
+        {
+          "source_id": "SRC-03",
+          "kind": "statistic",
+          "quote": "'주문이 늦어서 뒷사람 눈치가 보임'이 52.8%로 가장 많았고, '조작 어려움'(46.8%), '기기 오류'(39.1%)",
+          "claim": "키오스크 이용 경험자(전 연령, n=500) 중 불편·피해 경험자의 이유. 줄 압박과 기기 오류가 일반적인 불편임을 보여 준다(이 세그먼트 크기 근거 아님)."
+        },
+        {
+          "source_id": "SRC-13",
+          "kind": "statistic",
+          "quote": "55세 미만의 같은 응답 비율(94.1%)",
+          "claim": "서울 55세 미만의 키오스크 이용 경험 94.1%(2021, 5,000명 가구 면접)."
+        },
+        {
+          "source_id": "SRC-13",
+          "kind": "inference",
+          "quote": "55세 미만의 같은 응답 비율(94.1%)",
+          "claim": "업무지구 20~40대에 서울 55세 미만 값을 적용해 familiarity first_use 0.06·returning 0.94로 둔다. 이 제품 UI를 가맹 확대 초기에 모두 처음 쓴다는 점은 별개다.",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-16",
+          "kind": "statistic",
+          "quote": "20~30대는 모바일카드(각각 36.8%, 34.9%), 40~50대는 신용카드(각각 62.4%, 68.8%)",
+          "claim": "결제 수단 선택 데이터(IC 신용카드·삼성페이 NFC)의 근거."
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "statistic",
+          "quote": "40대(14.83%), 70대 이상(13.76%), 30대(13.06%), 20대(11.12%)",
+          "claim": "주민등록 인구 비중(2025년 말): 20대 11.12%, 30대 13.06%, 40대 14.83%."
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "inference",
+          "quote": "40대(14.83%), 70대 이상(13.76%), 30대(13.06%), 20대(11.12%)",
+          "claim": "age_bands 0.29/0.33/0.38은 위 비중을 20~40대 안에서 정규화한 대리값이다(인구 ≠ 손님, 연령별 카페 이용률 차이 미반영).",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-18",
+          "kind": "firsthand",
+          "quote": "아이스 아메리카노만 주문하는 단골 옴",
+          "claim": "같은 메뉴를 반복 주문하는 단골이 있다는 공개 글(존재 근거만)."
+        },
+        {
+          "source_id": "SRC-14",
+          "kind": "statistic",
+          "quote": "5.90% in men, 0.44% in women",
+          "claim": "한국인 선천 색각이상: 남 5.90%, 여 0.44%(1989, H-R-R 검사)."
+        },
+        {
+          "source_id": "SRC-14",
+          "kind": "inference",
+          "quote": "5.90% in men, 0.44% in women",
+          "claim": "세그먼트 성비 미확인 → 50:50 가정 시 약 3% → cvd_deutan 0.03. 제2색각만의 비율은 미확인이라 적록 전체 값을 상한으로 쓴다.",
+          "confidence": "low"
+        }
+      ],
+      "age_bands": {
+        "20s": 0.29,
+        "30s": 0.33,
+        "40s": 0.38
+      },
+      "devices": {
+        "galaxy-tab-s9": 1.0
+      },
+      "orientation": "portrait",
+      "left_hand_share": null,
+      "familiarity": {
+        "first_use": 0.06,
+        "returning": 0.94
+      },
+      "conditions": [
+        {
+          "condition": "cvd_deutan",
+          "share": 0.03,
+          "stakes": "normal",
+          "cause": "permanent",
+          "source_ids": [
+            "SRC-14"
+          ],
+          "why": "적록 색각이상 남 5.90%·여 0.44%(1989). 세그먼트 성비 미확인 → 50:50 가정 시 약 3%. 제2색각만의 비율은 미확인이라 적록 전체 값을 상한으로 쓴다. 브랜드 번트 오렌지 계열로 선택 상태·품절 표시를 색만으로 구분하면 HOT/ICE·사이즈 오선택(재제조 비용)으로 이어질 수 있다."
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-office-peak-queue",
+          "mobility": "standing",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": false,
+          "time_pressure": "high",
+          "share": null,
+          "source_ids": [
+            "SRC-01",
+            "SRC-03"
+          ],
+          "note": "브리프: 피크에 몰리고 뒤에 줄이 있다('대부분'). 수치 없음 → share null. 서서 검지로 누름(프로필에서는 seated로 표현됨)."
+        },
+        {
+          "context_id": "CTX-office-window-sun",
+          "mobility": "standing",
+          "lighting": "bright_sun",
+          "one_handed": false,
+          "interruptions": false,
+          "time_pressure": "low",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ],
+          "note": "브리프: 입구·창가 설치가 많아 오후에 햇빛이 화면에 비친다. 비중 출처 없음 → null."
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-office-takeout-latte",
+          "goal_ko": "포장으로 카페라떼(ICE·라지·샷 1회·시럽 없음)와 소금빵(데우지 않음)을 담고, 크로플 세트 제안을 거절하고, 법인 신용카드를 IC로 결제한 뒤 영수증을 출력해 주문번호를 받는다.",
+          "jtbd": "점심 피크에 뒤에 줄이 서 있을 때, 늘 마시는 옵션 그대로 음료와 빵을 1분 안에 주문하고 법인카드 영수증을 챙기고 싶다. 그래야 늦지 않게 픽업해 사무실로 돌아가고 경비 처리를 할 수 있다.",
+          "frequency": "daily",
+          "criticality": "money",
+          "concrete_data": {
+            "dine_option": "포장해 가요",
+            "menu_1": "카페라떼 4,500원",
+            "temperature": "ICE",
+            "size": "라지 473ml (+700원)",
+            "shot": "샷 추가 1회 (+500원)",
+            "syrup": "없음",
+            "menu_2": "소금빵 3,200원",
+            "warm": "데우지 않음",
+            "upsell": "크로플 세트(3,800원 → 3,000원) 제안 거절",
+            "payment": "신용카드 IC 투입 (법인카드)",
+            "receipt": "출력",
+            "expected_total": "8,900원",
+            "order_number_example": "127",
+            "time_target": "주문 시작~결제 완료 60초 이내"
+          },
+          "success_ko": "합계 8,900원(5,700원 + 3,200원)으로 승인되고 주문번호와 영수증을 받는다. 온도·사이즈·샷 누락 없음. 60초 안팎.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-16"
+          ]
+        },
+        {
+          "task_id": "T-office-cart-fix",
+          "goal_ko": "아메리카노 ICE 레귤러를 2잔 담았다가 장바구니에서 1잔으로 줄이고, 실수로 담은 휘낭시에를 개별 삭제한 뒤, 크로플 세트 제안을 거절하고 삼성페이(NFC)로 결제한다.",
+          "jtbd": "급하게 누르다 수량과 메뉴를 잘못 담았을 때, 처음부터 다시 하지 않고 장바구니에서 바로 고치고 싶다. 그래야 줄을 오래 막지 않고 원하는 것만 결제할 수 있다.",
+          "frequency": "weekly",
+          "criticality": "money",
+          "concrete_data": {
+            "dine_option": "포장해 가요",
+            "menu": "아메리카노 4,000원",
+            "temperature": "ICE",
+            "size": "레귤러 355ml",
+            "quantity_from": "2",
+            "quantity_to": "1",
+            "remove_item": "휘낭시에 2,500원 (개별 삭제)",
+            "upsell": "크로플 세트 제안 거절",
+            "payment": "삼성페이 (NFC 터치)",
+            "receipt": "출력 안 함",
+            "expected_total": "4,000원"
+          },
+          "success_ko": "전체 취소 없이 장바구니에서 수량 1·휘낭시에 삭제가 반영되고 4,000원으로 결제된다.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-16"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "뒤에 줄이 있어 추가 단계(크로플 세트 제안, 영수증 출력 여부)가 길어지면 60초 목표를 넘기거나 제안을 잘못 수락할 수 있다(가설).",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "키오스크 이용 불편 이유 1위가 '주문이 늦어서 뒷사람 눈치가 보임'(52.8%)이다.",
+          "source_ids": [
+            "SRC-03"
+          ],
+          "kind": "firsthand"
+        },
+        {
+          "text": "'기기 오류'(39.1%)를 겪는다 → IC 투입 실패·네트워크 끊김 시 재시도 안내와 이중 결제 방지를 화면에서 확인해야 한다(가설).",
+          "source_ids": [
+            "SRC-03",
+            "SRC-01"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "말로 옵션을 전하다 온도·사이즈·샷이 누락되는 주문 실수가 재제조 비용을 만든다 → 필수 옵션 누락을 막는지가 핵심이다.",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-older-residential",
+      "role": "operator",
+      "name_ko": "주거지·병원 근처 매장에서 돋보기 없이 천천히 읽고 누르는 50~70대 손님",
+      "summary": "일산 주엽점 같은 주거지·병원 인근 매장의 50~70대. 키오스크가 익숙하지 않거나 천천히 읽고 누르며, 돋보기 없이 45~60cm 거리에서 화면을 본다. 뒤에 사람이 서면 눈치를 보고, 옵션(온도·사이즈·샷) 적용·용어·결제에서 막히면 직원을 부른다. 60대 이상은 현금을 상대적으로 많이 선호하지만 키오스크는 현금을 받지 않는다. 점주는 이들이 직원 호출 없이 스스로 끝내기를 가장 바란다.",
+      "priority": "primary",
+      "share": {
+        "value": 0.3,
+        "basis": "estimated",
+        "source_ids": [
+          "SRC-01"
+        ]
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "kind": "statistic",
+          "quote": "주거지·병원 인근 매장의 50~70대 손님(주엽점 기준 약 30%)",
+          "claim": "주엽점 1곳의 주문 비중 약 30%(관찰 추정 포함). 업무지구 매장에서는 더 낮을 것이므로 배분용 가중치로만 쓴다."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "키오스크가 익숙하지 않거나 천천히 읽고 누른다. 돋보기 없이 화면을 보는 경우가 흔하다. 점주는 이 손님들이 직원을 부르지 않고 스스로 주문을 끝내기를 가장 바란다.",
+          "claim": "비숙련·느린 읽기·교정 안 된 노안이 이 집단의 정의적 특징이며, 직원 호출 없는 완료가 목표다."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "키오스크 앞 직원 호출·도움 요청: 100건당 3건 이하(50대 이상 손님 별도 집계)",
+          "claim": "성공 지표가 이 집단을 따로 집계한다 → priority primary 근거."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "60초 동안 입력이 없으면 처음 화면으로 돌아간다(다음 손님을 위해).",
+          "claim": "느리게 읽는 손님에게 무입력 초기화가 위험 요인이 된다(과업 데이터에 반영)."
+        },
+        {
+          "source_id": "SRC-02",
+          "kind": "statistic",
+          "quote": "55~64세 79.1%, 65~74세 50.4%, 75세 이상 19.1%",
+          "claim": "서울 고령층(만 55세 이상) 키오스크 이용 경험(2023). 나이가 많을수록 첫 사용 비중이 급격히 커진다."
+        },
+        {
+          "source_id": "SRC-02",
+          "kind": "statistic",
+          "quote": "키오스크 이용을 경험한 서울 고령층은 2021년에 비해 11.3%p 상승한 57.1%",
+          "claim": "서울 만 55세 이상의 키오스크 이용 경험 57.1%(2023, 2021년 대비 +11.3%p)."
+        },
+        {
+          "source_id": "SRC-02",
+          "kind": "inference",
+          "quote": "키오스크 이용을 경험한 서울 고령층은 2021년에 비해 11.3%p 상승한 57.1%",
+          "claim": "한 번도 써 보지 않은 비율 약 43%를 50~70대 세그먼트에 적용 → familiarity.first_use 0.43, 조건 first_use 0.43. 서울 값이라 전국보다 경험률이 높고, 2026년에는 더 높을 수 있다.",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-02",
+          "kind": "statistic",
+          "quote": "고령층은 59.6%가 '있다'고 응답",
+          "claim": "키오스크 이용 중 어려움을 겪은 고령층 59.6%(2023)."
+        },
+        {
+          "source_id": "SRC-02",
+          "kind": "statistic",
+          "quote": "'뒷사람 눈치가 보여서'를 53.6%",
+          "claim": "어려움을 겪은 서울 고령층이 꼽은 이유 중 '뒷사람 눈치가 보여서' 53.6%(2023, 중복응답)."
+        },
+        {
+          "source_id": "SRC-02",
+          "kind": "inference",
+          "quote": "'뒷사람 눈치가 보여서'를 53.6%",
+          "claim": "어려움 경험 59.6% × 줄 압박 이유 53.6% ≈ 0.32 → CTX-older-queue 0.32, 나머지 0.68 → CTX-older-calm(파생값, 줄 압박을 느낀 적이 있다는 뜻이지 매 주문의 맥락 비율이 아니다).",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-02",
+          "kind": "statistic",
+          "quote": "'선택사항 적용이 어려워서'(46.3%), '용어가 어려워서'(34.0%)",
+          "claim": "옵션 적용과 용어가 주된 장애물이다(과업 T-older-fix-shot의 근거)."
+        },
+        {
+          "source_id": "SRC-13",
+          "kind": "statistic",
+          "quote": "패스트푸드점(53.3%), 카페(45.7%), 음식점(44.4%)",
+          "claim": "75세 이상이 사용하기 어려운 키오스크로 카페를 두 번째로 꼽음(2021)."
+        },
+        {
+          "source_id": "SRC-03",
+          "kind": "statistic",
+          "quote": "60대 이상은 '조작 어려움(53.6%)'의 비중이 컸고, 다른 연령대에 비해 '주문화면의 작은 글씨로 인한 불편'(23.2%) 비율도 높았습니다",
+          "claim": "작은 글씨가 60대 이상에서 두드러진 불편이다."
+        },
+        {
+          "source_id": "SRC-04",
+          "kind": "statistic",
+          "quote": "고령층 71.4%(+0.7%p)",
+          "claim": "고령층 디지털정보화 수준은 일반국민 대비 71.4%(2024)."
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "statistic",
+          "quote": "50대(16.89%), 60대(15.50%), 40대(14.83%), 70대 이상(13.76%)",
+          "claim": "주민등록 인구 비중(2025년 말): 50대 16.89%, 60대 15.50%, 70대 이상 13.76%."
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "inference",
+          "quote": "50대(16.89%), 60대(15.50%), 40대(14.83%), 70대 이상(13.76%)",
+          "claim": "age_bands 0.37/0.33/0.30은 위 비중의 정규화 대리값이다. 70대 이상에는 80대 이상이 포함되고, 연령별 카페 이용률 차이는 반영하지 않았다.",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-07",
+          "kind": "statistic",
+          "quote": "1.21 ± 0.66 D in the 40s, 2.16 ± 0.59 D in the 50s, and 2.72 ± 0.44 D in the 60s",
+          "claim": "연령대별 평균 근용 가입도: 40대 1.21D, 50대 2.16D(SD 0.59), 60대 2.72D(건강한 3,000명; 연구 국가 미확인)."
+        },
+        {
+          "source_id": "SRC-07",
+          "kind": "inference",
+          "quote": "1.21 ± 0.66 D in the 40s, 2.16 ± 0.59 D in the 50s, and 2.72 ± 0.44 D in the 60s",
+          "claim": "45~60cm를 보려면 약 1.7~2.2D의 조절이 필요하므로 50대 이상 대부분은 교정 없이 흐리게 본다 → presbyopia 0.9(추론값). 매장에서 돋보기를 쓰지 않는 비율은 미확인이다(브리프: '흔하다').",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-06",
+          "kind": "statistic",
+          "quote": "826 million (95% CI, 686–960 million)",
+          "claim": "전 세계 노안 18억 명(2015) 중 8억 2,600만 명이 교정이 없거나 부족해 근거리 시력 저하를 겪는다."
+        },
+        {
+          "source_id": "SRC-16",
+          "kind": "statistic",
+          "quote": "60대 이상에서는 현금(30.2%)이 상대적으로 높게",
+          "claim": "60대 이상은 현금 선호가 상대적으로 높다 → 키오스크에 현금이 없을 때의 안내 과업(T-older-cash-counter)."
+        },
+        {
+          "source_id": "SRC-17",
+          "kind": "statistic",
+          "quote": "crude prevalence of 3.64 per 100 persons",
+          "claim": "65세 이상 한국인 714명 중 본태성 떨림 조유병률 3.64/100(2014)."
+        },
+        {
+          "source_id": "SRC-17",
+          "kind": "inference",
+          "quote": "crude prevalence of 3.64 per 100 persons",
+          "claim": "세그먼트 tremor_mild를 0.04로 둔다. 50대가 포함된 세그먼트 전체로는 과대이고, 파킨슨 떨림 등은 빠진 값이다.",
+          "confidence": "low"
+        }
+      ],
+      "age_bands": {
+        "50s": 0.37,
+        "60s": 0.33,
+        "70s+": 0.3
+      },
+      "devices": {
+        "galaxy-tab-s9": 1.0
+      },
+      "orientation": "portrait",
+      "left_hand_share": null,
+      "familiarity": {
+        "first_use": 0.43,
+        "returning": 0.57
+      },
+      "conditions": [
+        {
+          "condition": "presbyopia",
+          "share": 0.9,
+          "stakes": "normal",
+          "cause": "permanent",
+          "source_ids": [
+            "SRC-07",
+            "SRC-06",
+            "SRC-01"
+          ],
+          "why": "명시적 선언. 50대 평균 근용 가입도 2.16D·60대 2.72D(SRC-07)라 45~60cm 화면을 교정 없이 보면 흐리다. 0.9는 가입도 분포에서 추론한 값(inference)이고, 브리프는 '돋보기 없이 화면을 보는 경우가 흔하다'고 적었다. 매장에서 돋보기를 안 쓰는 비율은 미확인."
+        },
+        {
+          "condition": "first_use",
+          "share": 0.43,
+          "stakes": "high",
+          "cause": "situational",
+          "source_ids": [
+            "SRC-02",
+            "SRC-01"
+          ],
+          "why": "서울 만 55세 이상 키오스크 이용 경험 57.1%(2023) → 한 번도 써 본 적 없는 비율 약 43%(75세 이상은 약 81%). 첫 사용 고령 손님의 실패는 직원 호출·주문 포기로 이어져 서비스 접근을 잃는다(access) — 브리프가 50대 이상 직원 호출을 따로 집계하고 점주가 가장 바라는 결과라 stakes high. familiarity.first_use와 같은 사실이다."
+        },
+        {
+          "condition": "tremor_mild",
+          "share": 0.04,
+          "stakes": "normal",
+          "cause": "permanent",
+          "source_ids": [
+            "SRC-17"
+          ],
+          "why": "65세 이상 본태성 떨림 3.64/100(2014). 파킨슨 떨림 등은 제외된 값이고 50대는 더 낮다. 샷 추가 +/− 같은 작은 인접 버튼 오터치 위험을 본다."
+        },
+        {
+          "condition": "hearing_loss",
+          "share": null,
+          "stakes": "normal",
+          "cause": "permanent",
+          "source_ids": [
+            "SRC-01",
+            "SRC-11"
+          ],
+          "why": "선언만 하고 재현하지 않는다. 음료 제조 소음·음악이 있는 매장(SRC-01)에서 카드 투입·제거·결제 완료 같은 소리 안내를 놓칠 수 있다. 세그먼트 내 비율 미확인(등록 청각장애는 등록장애인의 17.1%로 인구 상한 참고용)."
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-older-calm",
+          "mobility": "standing",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": false,
+          "time_pressure": "low",
+          "share": 0.68,
+          "source_ids": [
+            "SRC-02"
+          ],
+          "note": "파생값: 1 − 0.32(줄 압박 경험). 서서 검지로 누름."
+        },
+        {
+          "context_id": "CTX-older-queue",
+          "mobility": "standing",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": false,
+          "time_pressure": "high",
+          "share": 0.32,
+          "source_ids": [
+            "SRC-02"
+          ],
+          "note": "파생값: 어려움 경험 59.6% × 그 이유 중 '뒷사람 눈치' 53.6% ≈ 0.32(서울 만 55세 이상, 2023)."
+        },
+        {
+          "context_id": "CTX-older-window-sun",
+          "mobility": "standing",
+          "lighting": "bright_sun",
+          "one_handed": false,
+          "interruptions": false,
+          "time_pressure": "low",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ],
+          "note": "브리프: 입구·창가 설치로 오후 햇빛. 비중 출처 없음."
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-older-eatin-latte",
+          "goal_ko": "매장에서 먹어요를 고르고 카페라떼 HOT 레귤러(샷·시럽 없음)와 휘낭시에를 담은 뒤, 크로플 세트 제안을 거절하고 체크카드를 IC로 결제한다. 영수증은 받지 않는다. 직원을 부르지 않고 끝낸다.",
+          "jtbd": "병원 진료 뒤 근처 카페에서 따뜻한 라떼와 과자를 먹고 싶을 때, 직원을 부르지 않고 천천히 읽으면서 혼자 주문을 끝내고 싶다. 그래야 뒷사람 눈치를 덜 보고 원하는 것을 정확히 받을 수 있다.",
+          "frequency": "weekly",
+          "criticality": "access",
+          "concrete_data": {
+            "dine_option": "매장에서 먹어요",
+            "menu_1": "카페라떼 4,500원",
+            "temperature": "HOT",
+            "size": "레귤러 355ml",
+            "shot": "없음",
+            "syrup": "없음",
+            "menu_2": "휘낭시에 2,500원",
+            "upsell": "크로플 세트(3,800원 → 3,000원) 제안 거절",
+            "payment": "체크카드 IC 투입",
+            "receipt": "출력 안 함",
+            "expected_total": "7,000원",
+            "inactivity_limit": "60초 무입력 시 처음 화면(읽는 동안 초기화되지 않아야 함)",
+            "staff_call": "사용하지 않음"
+          },
+          "success_ko": "직원 호출 없이 7,000원으로 결제되고 주문번호를 확인한다. 읽는 도중 60초 초기화로 담은 내용이 사라지지 않는다.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-02"
+          ]
+        },
+        {
+          "task_id": "T-older-fix-shot",
+          "goal_ko": "포장으로 디카페인 아메리카노 HOT 레귤러를 고르다가 샷 추가를 실수로 2회 눌렀으면 0회로 되돌리고, 크로플 세트 제안은 수락(데워 주세요)한 뒤 신용카드 IC로 결제한다.",
+          "jtbd": "옵션 화면에서 잘못 누른 것을 알아챘을 때, 무엇이 추가됐는지 금액으로 확인하고 쉽게 되돌리고 싶다. 그래야 원하지 않은 샷 값을 내지 않고 다시 만들 일도 없다.",
+          "frequency": "weekly",
+          "criticality": "money",
+          "concrete_data": {
+            "dine_option": "포장해 가요",
+            "menu": "디카페인 아메리카노 4,500원",
+            "temperature": "HOT",
+            "size": "레귤러 355ml",
+            "shot_mistake": "샷 추가 2회(+1,000원) → 0회로 수정",
+            "syrup": "없음",
+            "upsell": "크로플 세트 제안 수락 (3,000원)",
+            "upsell_warm": "데워 주세요",
+            "payment": "신용카드 IC 투입",
+            "receipt": "출력",
+            "expected_total": "7,500원"
+          },
+          "success_ko": "샷 0회가 반영된 4,500원 + 크로플 세트 3,000원 = 7,500원으로 결제된다. 샷 금액이 남아 있지 않다.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-02"
+          ]
+        },
+        {
+          "task_id": "T-older-cash-counter",
+          "goal_ko": "유자차 HOT 레귤러를 담은 뒤 현금으로 내고 싶을 때, 키오스크 화면에서 현금은 카운터에서 받는다는 안내를 찾아 주문을 이어갈 방법을 안다.",
+          "jtbd": "현금으로 계산하고 싶은데 결제 화면에 현금이 없을 때, 어디서 어떻게 내면 되는지 화면에서 바로 알고 싶다. 그래야 뒤에 줄을 세워 둔 채 헤매지 않는다.",
+          "frequency": "monthly",
+          "criticality": "money",
+          "concrete_data": {
+            "dine_option": "매장에서 먹어요",
+            "menu": "유자차 4,800원",
+            "temperature": "HOT",
+            "size": "레귤러 355ml",
+            "payment_wanted": "현금",
+            "expected_guidance": "현금·쿠폰은 카운터에서 결제한다는 안내(키오스크 결제 수단에는 현금 없음)",
+            "expected_total": "4,800원"
+          },
+          "success_ko": "결제 단계 전후에 현금 결제 위치 안내를 찾고, 담은 주문을 잃지 않은 채 카운터로 넘어갈 수 있다(또는 안내가 없으면 결함 후보).",
+          "source_ids": [
+            "SRC-01",
+            "SRC-16"
+          ]
+        },
+        {
+          "task_id": "T-older-cancel-restart",
+          "goal_ko": "메뉴를 여러 개 잘못 담아 장바구니에서 전체 취소(확인 포함)로 비운 뒤, 처음부터 아메리카노 HOT 레귤러 1잔만 다시 담아 결제 직전까지 간다.",
+          "jtbd": "무엇을 잘못 담았는지 헷갈릴 때, 하나씩 고치기보다 전부 지우고 처음부터 다시 하고 싶다. 그래야 틀린 금액을 내지 않는다.",
+          "frequency": "monthly",
+          "criticality": "money",
+          "concrete_data": {
+            "wrong_items": "카라멜 마키아또 5,200원 + 크로플 3,800원 (잘못 담음)",
+            "cancel": "장바구니 전체 취소 → 확인 창에서 확인",
+            "restart_dine_option": "포장해 가요",
+            "restart_menu": "아메리카노 4,000원",
+            "temperature": "HOT",
+            "size": "레귤러 355ml",
+            "expected_total": "4,000원"
+          },
+          "success_ko": "전체 취소가 확인 뒤에만 실행되고(결제 버튼 옆 오터치로 바로 지워지지 않음), 다시 담은 주문이 4,000원으로 표시된다.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-02"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "고령층 어려움 이유: '뒷사람 눈치가 보여서'(53.6%), '선택사항 적용이 어려워서'(46.3%), '용어가 어려워서'(34.0%).",
+          "source_ids": [
+            "SRC-02"
+          ],
+          "kind": "firsthand"
+        },
+        {
+          "text": "60대 이상은 '조작 어려움'(53.6%)과 '주문화면의 작은 글씨로 인한 불편'(23.2%)을 상대적으로 많이 겪는다.",
+          "source_ids": [
+            "SRC-03"
+          ],
+          "kind": "firsthand"
+        },
+        {
+          "text": "돋보기 없이 45~60cm에서 보므로 가격·옵션 글자가 작으면 흐리게 보인다(가설: PC-04로 확인).",
+          "source_ids": [
+            "SRC-01",
+            "SRC-07"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "천천히 읽는 동안 60초 무입력 초기화가 오면 담은 주문이 사라진다(가설).",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "메뉴 이름(아인슈페너·콜드브루·휘낭시에)과 '레귤러/라지', 'HOT/ICE' 같은 용어가 어렵다(가설: 용어 34.0%에서 도출).",
+          "source_ids": [
+            "SRC-02",
+            "SRC-01"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "현금을 원하지만 키오스크에는 현금 결제가 없다 → 카운터 안내가 없으면 직원 호출로 이어진다(가설).",
+          "source_ids": [
+            "SRC-16",
+            "SRC-01"
+          ],
+          "kind": "inference"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-young-mobile",
+      "role": "operator",
+      "name_ko": "테이블·입구 QR로 휴대폰에서 주문하고 픽업대에서 번호로 받는 대학생·청소년",
+      "summary": "빠르고 익숙한 10~20대. 매장 QR을 찍어 휴대폰 브라우저(폭 360~430px)에서 키오스크와 같은 흐름으로 주문하고, 간편결제로 결제한 뒤 픽업대 모니터에서 주문번호를 기다린다. 옵션을 많이 바꾸고(샷·시럽), 한 손으로 서거나 걸으며 조작하기도 한다(추정).",
+      "priority": "secondary",
+      "share": {
+        "value": null,
+        "basis": "unknown",
+        "source_ids": [
+          "SRC-01"
+        ]
+      },
+      "confidence": "low",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "빠르고 익숙하다. 모바일 주문 비중이 높다.",
+          "claim": "브리프가 이 집단을 모바일 주문 중심으로 규정한다. 주문 비중 수치는 없다 → share unknown."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "모바일 주문: 테이블·입구의 QR을 찍으면 휴대폰 브라우저(폭 360~430px)에서 같은 흐름이 열리고, 픽업대에서 주문번호로 받는다.",
+          "claim": "기기는 휴대폰, 폭 360~430px, 진입은 QR, 수령은 주문번호."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "같은 화면을 매장 QR로 열면 휴대폰 모바일 주문(포장 픽업)으로도 쓴다.",
+          "claim": "모바일 주문은 포장 픽업용으로 설계됐다."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "inference",
+          "quote": "같은 화면을 매장 QR로 열면 휴대폰 모바일 주문(포장 픽업)으로도 쓴다.",
+          "claim": "그래서 입구 QR에서 줄을 피해 걸어 들어오며 주문하는 맥락을 대표(첫 번째)로 둔다. 비중은 미확인이다.",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-15",
+          "kind": "statistic",
+          "quote": "애플(60%)",
+          "claim": "18~29세 주 사용 스마트폰 브랜드: 애플 60%, 삼성 40%(2025년 7월)."
+        },
+        {
+          "source_id": "SRC-15",
+          "kind": "inference",
+          "quote": "애플(60%)",
+          "claim": "devices를 iphone-15 0.6, galaxy-s24 0.4로 둔다. 브랜드를 카탈로그 대표 기종으로 바꾼 대리값이고 10대(13~17세) 값은 없다.",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-15",
+          "kind": "statistic",
+          "quote": "현재 주 사용 스마트폰 브랜드: 삼성 72%, 애플 24%, 기타 2% 20대 애플 강세",
+          "claim": "전체 성인은 삼성 우세이나 20대는 애플 강세(한국갤럽 게시물 원문)."
+        },
+        {
+          "source_id": "SRC-16",
+          "kind": "statistic",
+          "quote": "20~30대는 모바일카드(각각 36.8%, 34.9%)",
+          "claim": "20~30대가 가장 선호하는 지급수단은 모바일카드 → 간편결제 과업 데이터 근거."
+        },
+        {
+          "source_id": "SRC-13",
+          "kind": "statistic",
+          "quote": "55세 미만의 같은 응답 비율(94.1%)",
+          "claim": "서울 55세 미만의 키오스크 이용 경험 94.1%(2021)."
+        },
+        {
+          "source_id": "SRC-13",
+          "kind": "inference",
+          "quote": "55세 미만의 같은 응답 비율(94.1%)",
+          "claim": "10~20대에 적용해 familiarity first_use 0.06·returning 0.94로 둔다(브리프: '빠르고 익숙하다').",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "statistic",
+          "quote": "20대(11.12%), 10대(9.05%)",
+          "claim": "주민등록 인구 비중(2025년 말): 20대 11.12%, 10대 9.05%."
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "inference",
+          "quote": "20대(11.12%), 10대(9.05%)",
+          "claim": "age_bands 10대 0.45·20대 0.55는 위 비중의 정규화 대리값이다. 10대에는 10~12세가 포함된다.",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-14",
+          "kind": "statistic",
+          "quote": "5.90% in men, 0.44% in women",
+          "claim": "한국인 선천 색각이상: 남 5.90%, 여 0.44%(1989)."
+        },
+        {
+          "source_id": "SRC-14",
+          "kind": "inference",
+          "quote": "5.90% in men, 0.44% in women",
+          "claim": "성비 50:50 가정 시 약 3% → cvd_deutan 0.03.",
+          "confidence": "low"
+        }
+      ],
+      "age_bands": {
+        "10s": 0.45,
+        "20s": 0.55
+      },
+      "devices": {
+        "iphone-15": 0.6,
+        "galaxy-s24": 0.4
+      },
+      "orientation": "portrait",
+      "left_hand_share": null,
+      "familiarity": {
+        "first_use": 0.06,
+        "returning": 0.94
+      },
+      "conditions": [
+        {
+          "condition": "cvd_deutan",
+          "share": 0.03,
+          "stakes": "normal",
+          "cause": "permanent",
+          "source_ids": [
+            "SRC-14"
+          ],
+          "why": "적록 색각이상 남 5.90%·여 0.44%(1989), 성비 50:50 가정 약 3%. 품절·선택 상태를 색만으로 구분하는지 본다."
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-young-entrance-walk",
+          "mobility": "walking",
+          "lighting": "indoor",
+          "one_handed": true,
+          "interruptions": false,
+          "time_pressure": "high",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ],
+          "note": "대표 맥락으로 첫 번째에 둔다(inference, 비중 미확인): 브리프가 모바일 주문을 '포장 픽업'으로 규정하고 입구 QR을 두므로, 줄을 피해 입구에서 QR을 찍고 걸어 들어오며 주문하는 장면을 기준으로 삼았다. 터치 기기 걷기 바닥(floor)이 카운터 거치 태블릿에 붙는 비현실 조합도 이것으로 막는다."
+        },
+        {
+          "context_id": "CTX-young-table-qr",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": true,
+          "interruptions": true,
+          "time_pressure": "low",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ],
+          "note": "테이블 QR로 앉아서 주문(브리프). 동행과 대화로 끊김 가능(추정). 비중 출처 없음."
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-young-mobile-takeout",
+          "goal_ko": "입구 QR로 휴대폰에서 주문 화면을 열어 포장으로 아메리카노 ICE 라지와 초코칩 쿠키를 담고, 크로플 세트 제안을 거절하고, 카카오페이로 결제한 뒤 픽업 번호를 확인한다.",
+          "jtbd": "카운터 줄이 길어 보일 때, 줄을 서지 않고 휴대폰으로 미리 주문하고 싶다. 그래야 번호가 불리면 바로 받아 갈 수 있다.",
+          "frequency": "weekly",
+          "criticality": "money",
+          "concrete_data": {
+            "entry": "매장 입구 QR 스캔 → 휴대폰 브라우저",
+            "dine_option": "포장해 가요",
+            "menu_1": "아메리카노 4,000원",
+            "temperature": "ICE",
+            "size": "라지 473ml (+700원)",
+            "menu_2": "초코칩 쿠키 2,800원",
+            "upsell": "크로플 세트 제안 거절",
+            "payment": "카카오페이 (브리프의 결제 수단 목록; 모바일 흐름의 결제 방식은 브리프에 명시 없음)",
+            "expected_total": "7,500원",
+            "pickup": "픽업대 모니터에서 주문번호 확인"
+          },
+          "success_ko": "360~430px 폭에서 잘림 없이 7,500원으로 결제되고 주문번호가 휴대폰 화면에 남는다.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-16"
+          ]
+        },
+        {
+          "task_id": "T-young-max-shots",
+          "goal_ko": "테이블 QR로 매장에서 먹어요를 고르고 콜드브루 ICE 라지에 샷 추가 3회(최대)와 헤이즐넛 시럽을 넣고, 4회째 샷 추가가 막히는지 확인한 뒤, 치즈 베이글(데워 주세요)을 담아 네이버페이로 결제한다.",
+          "jtbd": "진하게 마시려고 옵션을 최대로 바꿀 때, 한도와 추가 금액을 바로 알고 싶다. 그래야 예상한 금액으로 원하는 음료를 받을 수 있다.",
+          "frequency": "weekly",
+          "criticality": "money",
+          "concrete_data": {
+            "entry": "테이블 QR 스캔",
+            "dine_option": "매장에서 먹어요",
+            "menu_1": "콜드브루 4,800원",
+            "temperature": "ICE",
+            "size": "라지 473ml (+700원)",
+            "shot": "샷 추가 3회 (+1,500원, 최대)",
+            "shot_boundary": "4회째 추가 시도 → 막혀야 함",
+            "syrup": "헤이즐넛 (+500원)",
+            "menu_2": "치즈 베이글 3,900원",
+            "warm": "데워 주세요",
+            "upsell": "크로플 세트 제안 거절",
+            "payment": "네이버페이",
+            "expected_total": "11,400원"
+          },
+          "success_ko": "샷은 3회에서 멈추고 합계 11,400원(7,500원 + 3,900원)으로 결제된다.",
+          "source_ids": [
+            "SRC-01"
+          ]
+        },
+        {
+          "task_id": "T-young-soldout-switch",
+          "goal_ko": "첫 선택 메뉴가 품절로 표시돼 있으면 담기지 않는 것을 확인하고 자몽에이드 ICE 레귤러로 바꿔 장바구니까지 간다.",
+          "jtbd": "먹고 싶던 메뉴가 품절일 때, 품절이라는 것을 바로 알고 다른 메뉴로 빨리 바꾸고 싶다. 그래야 헛걸음 없이 주문을 끝낼 수 있다.",
+          "frequency": "monthly",
+          "criticality": "convenience",
+          "concrete_data": {
+            "first_choice": "품절 표시된 메뉴가 있으면 그 메뉴 (예: 딸기 요거트 스무디 5,800원 — 품절 여부는 매장 설정)",
+            "fallback": "자몽에이드 5,500원",
+            "temperature": "ICE",
+            "size": "레귤러 355ml",
+            "expected_cart_total": "5,500원"
+          },
+          "success_ko": "품절 메뉴는 표시만 되고 담기지 않으며, 자몽에이드 5,500원이 장바구니에 담긴다.",
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "360px 폭(갤럭시 기본 폭)에서 옵션·금액·결제 버튼이 잘리거나 겹칠 수 있다(가설: 브리프의 360~430px 요구에서 도출).",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "모바일 주문의 결제 수단과 픽업 번호 표시 방식이 브리프에 정해져 있지 않다 → 결제 후 번호를 잃어버리는지 확인(가설).",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-lowvision-kiosk",
+      "role": "operator",
+      "name_ko": "화면에 얼굴을 가까이 대거나 이어폰 음성 안내·키패드를 함께 쓰며 직접 주문하는 저시력 손님",
+      "summary": "브리프가 지정한 접근성 대상. 남은 시력으로 화면을 가까이 보며 터치하거나, 태블릿 화면 읽기(이어폰)와 물리 키패드(방향키·확인)를 함께 쓴다. 조사에서 시각장애인 다수가 편의 기능 부족으로 키오스크 이용이 어려웠고 직원 주문을 선호했다. 실패는 접근 차단이자 법적 의무 위반이다(모든 설치 현장 2026-01-28까지 정당한 편의 제공).",
+      "priority": "edge",
+      "share": {
+        "value": null,
+        "basis": "unknown",
+        "source_ids": [
+          "SRC-11"
+        ]
+      },
+      "confidence": "low",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "저시력·시각장애 손님(음성 안내 + 키패드 액세서리)",
+          "claim": "브리프가 사용자 집단으로 명시한다."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "접근성: 주문 화면 전체가 태블릿 화면 읽기(이어폰 음성 안내)와 물리 키패드 액세서리(방향키·확인 버튼, 키보드와 같은 방식으로 입력됨)로도 끝까지 조작되어야 한다. 모바일 주문은 휴대폰 화면 읽기(TalkBack·VoiceOver)로 동작해야 한다.",
+          "claim": "요구사항. 키패드는 키보드 입력과 같으므로 키보드 포커스 점검(SM-05·SM-06)으로 일부 확인 가능."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "가맹 본부 입찰 조건에 키오스크 접근성 대응(큰 글씨·고대비, 음성 안내·물리 키패드 액세서리 연결)이 들어가기 시작했다.",
+          "claim": "가맹 일괄 도입의 전제 조건 → stakes high."
+        },
+        {
+          "source_id": "SRC-11",
+          "kind": "statistic",
+          "quote": "시각장애는 9.3%(245,361명)",
+          "claim": "2025년 말 등록 시각장애인 245,361명(등록장애인 2,627,761명의 9.3%). 인구 상한 참고용이며 매장 손님 비중이 아니다 → share unknown."
+        },
+        {
+          "source_id": "SRC-09",
+          "kind": "statistic",
+          "quote": "휠체어 이용자(78.5%), 시각장애인(77.1%), 청각장애인(38.0%)이 '편의 기능 미비·부족으로 무인정보단말기 이용이 어려웠다'고 응답",
+          "claim": "시각장애인 77.1%가 편의 기능 부족으로 키오스크 이용이 어려웠다."
+        },
+        {
+          "source_id": "SRC-09",
+          "kind": "statistic",
+          "quote": "시각장애인의 72.3% 및 휠체어 이용자의 61.5%는 직원을 통한 주문을 선호",
+          "claim": "시각장애인 72.3%·휠체어 이용자 61.5%가 직원을 통한 주문을 선호한다(2024 조사)."
+        },
+        {
+          "source_id": "SRC-09",
+          "kind": "inference",
+          "quote": "시각장애인의 72.3% 및 휠체어 이용자의 61.5%는 직원을 통한 주문을 선호",
+          "claim": "직접 조작하는 저시력 손님은 시각장애인 중 소수일 수 있다 → 직원 도움 주문(served)은 exclusions에 따로 기록한다.",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-09",
+          "kind": "official",
+          "quote": "2026년 1월 28일까지는 장애인을 위한 정당한 편의 제공 조치를 완료하여야",
+          "claim": "공공·민간 모든 무인정보단말기 설치 현장의 법적 기한."
+        },
+        {
+          "source_id": "SRC-10",
+          "kind": "official",
+          "quote": "바닥면적 50㎡미만 시설은 보조적 수단 제공 등 별도의 조치를 한 경우 정당한 편의를 제공한 것으로 간주합니다.",
+          "claim": "20석 이하 소형 매장은 보조 수단으로 갈음될 수 있으나, 브리프상 가맹 입찰 조건이 별도로 접근성을 요구한다."
+        },
+        {
+          "source_id": "SRC-12",
+          "kind": "official",
+          "quote": "무인정보단말기 설치·운영 현장에서 요구되던 편의 제공 의무를 명확히 정비해 설치 주체의 부담을 줄이는 동시에 장애인의 정보 접근 편의성을 높이기 위한 것",
+          "claim": "2025-11 시행령 개정으로 의무가 정비됐다(세부 조항은 미확인)."
+        },
+        {
+          "source_id": "SRC-08",
+          "kind": "firsthand",
+          "quote": "648개(64.7%)에 음성·점자표시 등 시각장애인을 위한 편의기능이 없는",
+          "claim": "국가인권위 2022 모니터링(1,002대) 보도 인용. 뉴스 출처라 존재 근거로만 쓴다."
+        },
+        {
+          "source_id": "SRC-08",
+          "kind": "firsthand",
+          "quote": "없는 식당 찾아가요",
+          "claim": "장애인 당사자가 키오스크 없는 식당을 찾아간다는 보도 제목 인용(회피 행동의 존재)."
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "inference",
+          "quote": "50대(16.89%), 60대(15.50%), 40대(14.83%), 70대 이상(13.76%), 30대(13.06%), 20대(11.12%)",
+          "claim": "시각장애인 연령 분포를 찾지 못해 성인 주민등록 인구 비중을 age_bands 대리값으로 썼다(실제로는 고령 쪽으로 치우쳤을 가능성이 크다).",
+          "confidence": "low"
+        }
+      ],
+      "age_bands": {
+        "20s": 0.13,
+        "30s": 0.15,
+        "40s": 0.17,
+        "50s": 0.2,
+        "60s": 0.18,
+        "70s+": 0.17
+      },
+      "devices": {
+        "galaxy-tab-s9": 1.0
+      },
+      "orientation": "portrait",
+      "left_hand_share": null,
+      "conditions": [
+        {
+          "condition": "low_vision",
+          "share": 1.0,
+          "stakes": "high",
+          "cause": "permanent",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "why": "세그먼트 정의(브리프의 '저시력·시각장애 손님' 중 화면을 보며 직접 조작하는 사람). 전맹(화면 읽기만 사용)은 exclusions로 분리했다."
+        },
+        {
+          "condition": "screen_reader",
+          "share": null,
+          "stakes": "high",
+          "cause": "permanent",
+          "source_ids": [
+            "SRC-01",
+            "SRC-09"
+          ],
+          "why": "선언만 하고 재현하지 않는다. 브리프 요구: 태블릿 화면 읽기(이어폰)+키패드, 모바일 TalkBack·VoiceOver로 끝까지 조작. 저시력 손님도 음성 안내를 함께 쓸 수 있다."
+        },
+        {
+          "condition": "magnifier",
+          "share": null,
+          "stakes": "high",
+          "cause": "permanent",
+          "source_ids": [
+            "SRC-01",
+            "SRC-19"
+          ],
+          "why": "선언만 하고 재현하지 않는다. 크롬 키오스크 모드에서 확대가 막힐 수 있고 큰 글씨 전용 모드는 4.0으로 미뤄졌다. KS X 9211은 확대 기능 제공을 다룬다."
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-lv-counter",
+          "mobility": "standing",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": false,
+          "time_pressure": "low",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ],
+          "note": "카운터 앞에 서서 화면을 가까이 봄. 비중 출처 없음."
+        },
+        {
+          "context_id": "CTX-lv-window-sun",
+          "mobility": "standing",
+          "lighting": "bright_sun",
+          "one_handed": false,
+          "interruptions": false,
+          "time_pressure": "low",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ],
+          "note": "창가 햇빛은 저시력에 더 불리하다(추정). 비중 출처 없음."
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-lv-touch-closeup",
+          "goal_ko": "화면을 가까이 보며 터치로 매장에서 먹어요 → 카푸치노 HOT 레귤러와 버터 스콘(데워 주세요)을 담고, 크로플 세트 제안을 거절하고, 체크카드 IC로 결제한 뒤 영수증을 출력해 주문번호를 확인한다.",
+          "jtbd": "남은 시력으로 화면을 가까이 볼 때, 글자와 선택 상태가 또렷해 옵션을 틀리지 않고 고르고 싶다. 그래야 직원에게 말하지 않고도 원하는 음료를 받을 수 있다.",
+          "frequency": "weekly",
+          "criticality": "access",
+          "concrete_data": {
+            "input": "터치(화면에 가까이)",
+            "dine_option": "매장에서 먹어요",
+            "menu_1": "카푸치노 4,700원",
+            "temperature": "HOT",
+            "size": "레귤러 355ml",
+            "menu_2": "버터 스콘 3,500원",
+            "warm": "데워 주세요",
+            "upsell": "크로플 세트 제안 거절",
+            "payment": "체크카드 IC 투입",
+            "receipt": "출력 (주문번호 확인용)",
+            "expected_total": "8,200원"
+          },
+          "success_ko": "선택한 옵션(HOT·레귤러·데움)이 색 외의 방법으로도 구분되고 8,200원으로 결제된다. 주문번호를 화면과 영수증에서 읽을 수 있다.",
+          "source_ids": [
+            "SRC-01"
+          ]
+        },
+        {
+          "task_id": "T-lv-keypad-order",
+          "goal_ko": "키패드 방향키·확인 버튼만으로 포장해 가요 → 아메리카노 HOT 레귤러를 담고, 크로플 세트 제안을 키패드로 거절하고, 신용카드 IC로 결제한 뒤 주문번호를 음성과 화면으로 확인한다.",
+          "jtbd": "화면을 잘 볼 수 없을 때, 이어폰 안내를 들으며 키패드만으로 주문과 결제를 끝내고 싶다. 그래야 직원이나 동행 없이 혼자 주문할 수 있다.",
+          "frequency": "weekly",
+          "criticality": "access",
+          "concrete_data": {
+            "input": "키패드 방향키·확인만 (터치 없음; 키보드 입력과 같음)",
+            "dine_option": "포장해 가요",
+            "menu": "아메리카노 4,000원",
+            "temperature": "HOT",
+            "size": "레귤러 355ml",
+            "upsell": "크로플 세트 제안 거절 (포커스가 제안 창으로 이동하고 닫힌 뒤 돌아와야 함)",
+            "payment": "신용카드 IC 투입",
+            "payment_timer": "90초 제한 → 연장 1회 (키패드로 연장 가능해야 함)",
+            "receipt": "출력",
+            "expected_total": "4,000원"
+          },
+          "success_ko": "모든 단계가 키패드로 도달·실행되고 포커스가 항상 보이며 가려지지 않는다. 4,000원 결제 후 주문번호를 확인한다. (페르소나는 터치 프로필이므로 이 과업은 SM-05·SM-06 측정과 실사용자 테스트로 확인)",
+          "source_ids": [
+            "SRC-01",
+            "SRC-09"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "시각장애인 77.1%가 편의 기능 부족으로 무인정보단말기 이용이 어려웠다고 답했다.",
+          "source_ids": [
+            "SRC-09"
+          ],
+          "kind": "firsthand"
+        },
+        {
+          "text": "필요한 지원 1위는 '직원 배치 또는 호출벨 설치'(시각장애인 78.7%) → 화면 안에 직원 호출 수단이 있는지 확인(브리프에 명시 없음).",
+          "source_ids": [
+            "SRC-09",
+            "SRC-01"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "보도된 모니터링에서 키오스크 64.7%가 음성·점자 등 시각장애인 편의기능이 없었다(존재 근거).",
+          "source_ids": [
+            "SRC-08"
+          ],
+          "kind": "firsthand"
+        },
+        {
+          "text": "추천 세트 제안 같은 팝업이 뜰 때 키패드 포커스가 그 안으로 가지 않거나 갇히면 주문을 끝낼 수 없다(가설).",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-owner-buyer",
+      "role": "customer",
+      "name_ko": "피크 처리량·직원 호출·객단가·결제 사고를 보고 도입을 결정하는 점주·가맹 본부",
+      "summary": "구매자. 개인 카페(20석 이하, 직원 1~3명)·베이커리 카페·소형 버거/샌드위치 매장 점주와 42개 점 일괄 도입을 검토하는 가맹 본부. 손님 주문 화면을 조작하지 않으며(관리자 화면은 범위 밖), 파일럿 지표로 도입을 판단한다. 프로필을 만들지 않고 성공 기준만 제공한다.",
+      "priority": "secondary",
+      "share": {
+        "value": null,
+        "basis": "unknown",
+        "source_ids": [
+          "SRC-01"
+        ]
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "구매자는 개인 카페 점주(좌석 20석 이하, 직원 1~3명), 베이커리 카페·소형 버거/샌드위치 매장, 가맹점 일괄 도입을 검토하는 프랜차이즈 본부(현재 협상 중인 곳: '모퉁이커피' 42개 점)다.",
+          "claim": "구매자와 사용자(손님)가 다르다 → role customer."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "점주가 가장 신경 쓰는 것은 \"피크 시간 처리량\", \"직원 호출 없이 주문이 끝나는지\", \"객단가\", \"결제 사고가 없는지\"다.",
+          "claim": "구매 판단 기준."
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "quote": "점주·직원은 관리자 화면에서 메뉴·가격·품절을 관리한다(이번 문서 범위 밖).",
+          "claim": "점주가 쓰는 화면은 이번 QA 범위 밖이다."
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "inference",
+          "quote": "50대(16.89%), 60대(15.50%), 40대(14.83%), 70대 이상(13.76%), 30대(13.06%), 20대(11.12%)",
+          "claim": "점주 연령은 조사하지 않았다. age_bands는 검증기 요구를 채우는 성인 인구 대리값이며 구성에 쓰이지 않는다(role customer).",
+          "confidence": "low"
+        }
+      ],
+      "age_bands": {
+        "20s": 0.13,
+        "30s": 0.15,
+        "40s": 0.17,
+        "50s": 0.2,
+        "60s": 0.18,
+        "70s+": 0.17
+      },
+      "devices": {
+        "galaxy-tab-s9": 1.0
+      },
+      "orientation": "portrait",
+      "left_hand_share": null,
+      "conditions": [],
+      "contexts": [],
+      "tasks": [
+        {
+          "task_id": "T-owner-go-no-go",
+          "goal_ko": "파일럿 매장의 주문 지표가 가맹 확대 기준을 넘는지 판단한다. UI 시나리오가 아니라 손님 과업 시나리오의 성공 기준·타이밍 창으로 쓴다(역할 customer, 프로필 없음).",
+          "jtbd": "42개 점 일괄 도입을 결정해야 할 때, 피크 처리량·직원 호출·객단가·결제 사고가 기준 안에 드는지 보고 싶다. 그래야 가맹점에 도입을 권할 수 있다.",
+          "frequency": "monthly",
+          "criticality": "money",
+          "concrete_data": {
+            "median_order_time": "음료 1 + 베이커리 1 기준 60초 이내",
+            "completion_rate": "주문 시작 대비 결제 완료 92% 이상",
+            "abandon_rate": "5% 이하",
+            "staff_help": "100건당 3건 이하 (50대 이상 별도 집계)",
+            "remake": "주 5건 이하/매장",
+            "upsell_acceptance": "8~12% (불만 증가 없이)",
+            "payment_timer": "결제 화면 90초 (연장 가능)",
+            "inactivity_reset": "60초"
+          },
+          "success_ko": "손님 과업 시나리오가 위 기준(시간·완료·호출·재제조)을 어기는 화면 결함이 없는지로 판정한다.",
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "직원이 주문을 받는 동안 음료 제조가 멈춘다 → 직원 호출이 생기면 도입 효과가 사라진다.",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "공개 글 작성자는 바쁘지 않아도 키오스크로만 주문받는 매장이 많아 단골을 만들 기회를 놓친다고 지적한다(한 사람의 의견, 존재 근거).",
+          "source_ids": [
+            "SRC-18"
+          ],
+          "kind": "firsthand"
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "group": "전맹 시각장애 손님 (태블릿 화면 읽기+키패드, 모바일 TalkBack·VoiceOver만 사용)",
+      "why": "모델이 화면 읽기를 재현하지 않는다. 브리프는 전 과정이 화면 읽기+키패드로 끝까지 조작되어야 한다고 요구한다(SRC-01). 시각장애인 77.1%가 편의 기능 부족으로 이용이 어려웠다(SRC-09).",
+      "test_instead": "SM-01~SM-04(이름·레이블·오류 연결) 측정 점검 + 보조기술 사용자 참여 테스트(태블릿 화면 읽기+키패드로 T-lv-keypad-order, 휴대폰 TalkBack·VoiceOver로 T-young-mobile-takeout 흐름)."
+    },
+    {
+      "group": "키패드 액세서리 단독 조작 (방향키·확인, 키보드와 같은 입력)",
+      "why": "프로필 파지 목록에 키보드 입력이 없어 페르소나로 재현하지 않는다(검증기가 grips에 키보드 값을 받지 않음). 브리프 필수 요구사항이다(SRC-01).",
+      "test_instead": "웹 드라이버 키보드 포커스 순회로 전 과업을 Tab/방향키·Enter만으로 끝까지 수행: SM-05(포커스 미표시)·SM-06(고정 영역에 가려진 포커스), 추천 세트 제안 창의 포커스 이동·복귀, 결제 90초 연장 버튼 도달 여부."
+    },
+    {
+      "group": "휠체어 사용자·유모차 동반 손님",
+      "why": "화면 하단 약 105cm·뒤로 15° 기울기·카드 단말기 우측 하단(SRC-01)의 도달·시야 문제는 물리 설치 문제로 화면 모델이 재현하지 않는다. 휠체어 이용자 78.5%가 편의 기능 부족으로 이용이 어려웠고(SRC-09), 보도된 모니터링에서 화면이 내려오는 기능은 3.1%였다(SRC-08).",
+      "test_instead": "설치 현장에서 최상단 조작 요소·IC 투입구·NFC 영역의 바닥 기준 높이와 무릎 여유 공간을 KS X 9211·보건복지부 「무인정보단말기 접근성 검증 기준」 항목으로 실측(수치 기준은 원문 확인), 휠체어 사용자 현장 사용성 테스트."
+    },
+    {
+      "group": "직원 도움으로 주문하는 손님 (served: 직원이 대신 조작하거나 카운터에서 현금·쿠폰 결제)",
+      "why": "시각장애인 72.3%·휠체어 이용자 61.5%는 직원을 통한 주문을 선호하고, 필요한 지원 1위는 '직원 배치 또는 호출벨 설치'(78.7%·64.6%)다(SRC-09). 현금·쿠폰은 카운터에서 처리한다(SRC-01). 60대 이상은 현금 선호가 상대적으로 높다(30.2%, SRC-16).",
+      "test_instead": "화면에 직원 호출 수단과 카운터 결제 안내가 있는지, 직원이 이어받아 담은 주문을 잃지 않고 끝낼 수 있는지 확인. '직원 호출·도움 요청 100건당 3건' 지표는 파일럿 로그로 측정."
+    },
+    {
+      "group": "청각장애·난청 손님 (소음 속 음성·효과음 안내)",
+      "why": "모델이 소리를 재현하지 않는다. 매장에 음료 제조 소음·음악이 있고(SRC-01), 등록장애인 중 청각장애 17.1%(SRC-11), 청각장애인 38.0%가 편의 기능 부족으로 이용이 어려웠다(SRC-09).",
+      "test_instead": "카드 투입·제거, 결제 완료, 주문번호 호출 등 모든 소리 신호에 화면 표시가 함께 있는지 점검(픽업대 모니터 포함)."
+    },
+    {
+      "group": "인지·발달장애 손님",
+      "why": "모델이 이해 난이도를 재현하지 않는다. 등록장애인 중 지적장애 9.0%(SRC-11), 고령층도 '용어가 어려워서' 34.0%(SRC-02).",
+      "test_instead": "메뉴명·옵션 용어(레귤러/라지, HOT/ICE, 샷 추가)의 쉬운 말 전문가 검토와 당사자 참여 테스트."
+    },
+    {
+      "group": "외국인 관광객",
+      "why": "다국어는 이번 버전 범위 밖이다(SRC-01).",
+      "test_instead": "다국어 버전(다음 버전)에서 별도 세그먼트로 조사."
+    },
+    {
+      "group": "관리자 화면 사용자 (점주·직원의 메뉴·가격·품절 관리)",
+      "why": "이번 문서 범위 밖이다(SRC-01).",
+      "test_instead": "관리자 화면 별도 QA. 품절 표시가 손님 화면에 반영되는지는 T-young-soldout-switch로 확인."
+    }
+  ]
+}

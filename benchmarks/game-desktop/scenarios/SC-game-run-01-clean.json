@@ -1,0 +1,167 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-game-run-01-clean",
+  "surface": {
+    "kind": "game",
+    "url": "{BASE}/game-desktop/site/game-clean.html"
+  },
+  "orientation": "landscape",
+  "task_goal_ko": "가시덤불을 점프로 넘고, 경비병에게 반격하고, 표시가 뜨면 누르고, 붙잡히면 빠져나온 뒤 보급품을 아군에게 전달해 스테이지를 클리어한다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {
+    "primary": [
+      "hotspot:hs-attack"
+    ],
+    "destructive": [],
+    "critical_message": [],
+    "status": [],
+    "ad_like": [],
+    "hud": [
+      "#hud-stats",
+      "#subtitle"
+    ],
+    "game_control": [
+      "hotspot:hs-stick",
+      "hotspot:hs-jump",
+      "hotspot:hs-attack",
+      "hotspot:hs-pause",
+      "#qte",
+      "#mash",
+      "#radar-1",
+      "#radar-2"
+    ],
+    "timed": [
+      "#qte",
+      "#pop"
+    ]
+  },
+  "steps": [
+    {
+      "action": "tap",
+      "target": "#start"
+    },
+    {
+      "action": "wait",
+      "ms": 600
+    },
+    {
+      "action": "tap",
+      "target": "hotspot:hs-jump"
+    },
+    {
+      "action": "wait",
+      "ms": 2800
+    },
+    {
+      "action": "tap",
+      "target": "hotspot:hs-attack"
+    },
+    {
+      "action": "tap",
+      "target": "#qte"
+    },
+    {
+      "action": "tap",
+      "target": "#mash"
+    },
+    {
+      "action": "tap",
+      "target": "#mash"
+    },
+    {
+      "action": "tap",
+      "target": "#mash"
+    },
+    {
+      "action": "wait",
+      "ms": 500
+    },
+    {
+      "action": "tap",
+      "target": "#radar-2"
+    },
+    {
+      "action": "wait",
+      "ms": 500
+    },
+    {
+      "action": "snapshot"
+    }
+  ],
+  "timing_windows": [
+    {
+      "id": "qte-1",
+      "selector": "#qte",
+      "measure": "visible_duration"
+    },
+    {
+      "id": "hit-fx",
+      "selector": "#flash",
+      "measure": "visible_duration"
+    },
+    {
+      "id": "score-pop",
+      "selector": "#pop",
+      "measure": "visible_duration"
+    }
+  ],
+  "success": {
+    "selector_visible": "#clear"
+  },
+  "hotspots": [
+    {
+      "id": "hs-stick",
+      "name": "이동 스틱",
+      "box": {
+        "x": 40,
+        "y": 188,
+        "w": 132,
+        "h": 132
+      },
+      "roles": [
+        "game_control"
+      ]
+    },
+    {
+      "id": "hs-pause",
+      "name": "일시정지",
+      "box": {
+        "x": 368,
+        "y": 8,
+        "w": 44,
+        "h": 44
+      },
+      "roles": [
+        "game_control"
+      ]
+    },
+    {
+      "id": "hs-jump",
+      "name": "점프",
+      "box": {
+        "x": 560,
+        "y": 184,
+        "w": 72,
+        "h": 72
+      },
+      "roles": [
+        "game_control"
+      ]
+    },
+    {
+      "id": "hs-attack",
+      "name": "공격",
+      "box": {
+        "x": 648,
+        "y": 228,
+        "w": 92,
+        "h": 92
+      },
+      "roles": [
+        "game_control"
+      ]
+    }
+  ]
+}

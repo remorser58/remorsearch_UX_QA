@@ -1,0 +1,438 @@
+{
+  "suite": "visual-layout",
+  "defects": [
+    {
+      "id": "D-01",
+      "scenario_id": "SC-menu-options-01",
+      "category": "layout",
+      "element_selector": "#chip-sauce-spicy",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Sauce chip '아주 매운맛 +1,000원' is a fixed 104x40 CSS px box with overflow hidden and nowrap. The label needs 150 px (scrollWidth 150 vs clientWidth 102), so the text (x 31-152.5) is cut 33.5 px short at the box edge x 119: the chip shows '아주 매운맛 +1,' and the surcharge '000원' is hidden. Identical on iphone-15 (fixed width).",
+      "human_factors_basis": "The surcharge is the information the chip exists to show; a label clipped by its own fixed box loses it and gets worse with larger text or longer labels.",
+      "taxonomy_ref": "XCTest textClipped",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-02",
+      "scenario_id": "SC-menu-options-01",
+      "category": "layout",
+      "element_selector": "#nutrition-row",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Nutrition stat row is a flex row of four fixed 104 px cells (scrollWidth 440 vs 328 px) inside main with overflow-x hidden. On galaxy-s24 the fourth cell #nutrition-row-sodium spans x 352-456: only 8 px of its box is on screen and its text '2,140mg 나트륨' (x 365-424.1) lies entirely past the 360 px edge. On iphone-15 it shows '2,14' and '나트' and cuts '0mg' and '륨'. The page cannot be scrolled sideways.",
+      "human_factors_basis": "Content lost off the right edge at 360 and 393 px fails reflow at widths larger than the 320 px test width; sodium content is health information.",
+      "taxonomy_ref": "WCAG 1.4.10 Reflow",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-03",
+      "scenario_id": "SC-menu-options-01",
+      "category": "layout",
+      "element_selector": "#addon-cutlery",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Last option row '일회용 수저·포크 받기 무료' (focusable checkbox, y 1654.8-1708.8 in a 1731 px document) sits under the fixed add-to-cart bar #cart-bar (77 px) because the page has no bottom padding. At the end of the page the bar covers document y 1654-1731, so the whole 54 px row is hidden at every scroll position; only the group heading '기타 요청' stays visible above the bar. Same on iphone-15.",
+      "human_factors_basis": "A fixed bottom bar must reserve its height at the end of the scroll range, otherwise the last control can never be seen.",
+      "taxonomy_ref": "WCAG 2.4.11 Focus Not Obscured (Minimum)",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-04",
+      "scenario_id": "SC-menu-options-01",
+      "category": "layout",
+      "element_selector": "#opt-size-large",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "In the size option '라지 (1.5인분)', the opaque 'BEST' ribbon #opt-size-large-ribbon is absolutely positioned at left 40px (x 57-98.4, y 636.3-658.3) on top of the option name #opt-size-large-name (text x 63-150). It covers 35.4 px of the name, so '라지 (' is hidden and the row reads 'BEST 1.5인분)'. Same on iphone-15.",
+      "human_factors_basis": "The badge hides which size the user is choosing.",
+      "taxonomy_ref": "Design review: text overlapped by an absolutely positioned badge",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-05",
+      "scenario_id": "SC-menu-options-01",
+      "category": "layout",
+      "element_selector": "#menu-title",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Menu title '트러플 크림 리가토니와 구운 버섯 샐러드 세트' is 24 px with line-height 0.7 (16.8 px). It wraps to 2 lines on both phones; each line's glyph box is 29 px tall, so the lines overlap by 12.2 px.",
+      "human_factors_basis": "Wrapped lines need line spacing at least as tall as the glyphs; at 0.7 the two lines draw over each other.",
+      "taxonomy_ref": "WCAG 1.4.8 Visual Presentation (line spacing); design review: overlapping wrapped lines",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-06",
+      "scenario_id": "SC-menu-options-01",
+      "category": "layout",
+      "element_selector": "#topping-list",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "Topping list of five bordered 54 px rows uses 16 px gaps except between '베이컨 칩' and '리코타 치즈' (class add--new), where the gap is 4 px. Measured gaps 16/4/16/16 on both phones.",
+      "human_factors_basis": "Repeated items should keep one spacing rhythm; the odd gap makes two rows read as a pair.",
+      "taxonomy_ref": "Design review: consistent spacing in repeated list items",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-07",
+      "scenario_id": "SC-menu-options-01",
+      "category": "perception",
+      "element_selector": "#spice-note",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "Note under the sauce chips ('맵기는 조리를 시작하면 바꿀 수 없어요. 아주 매운맛에는 캡사이신 소스가 들어가서 어린이에게는 권하지 않아요.') is 10 px (2 lines, line-height 15.5 px). It is a condition the user must read before choosing the spice level.",
+      "human_factors_basis": "10 CSS px is about 1.8 mm on galaxy-s24, below common minimums for body text on phones.",
+      "taxonomy_ref": "Design review: minimum mobile text size (Apple HIG minimum 11 pt; Material 3 body text 12-16 sp)",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-08",
+      "scenario_id": "SC-case-study-01",
+      "category": "layout",
+      "element_selector": "#cs-title",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Article title '바람길 물류가 배차 확정 시간을 41% 줄인 6주간의 기록' is 26 px with white-space nowrap inside a wrapper with overflow-x hidden. The single line spans x 16-582.7, so 222.7 px runs past the 360 px edge: the screen shows '바람길 물류가 배차 확정 시간을 4' and '1% 줄인 6주간의 기록' is never visible. On iphone-15 '줄인 6주간의 기록' is lost (189.7 px past 393).",
+      "human_factors_basis": "The end of the headline carries the result; text that leaves the screen with sideways scrolling disabled is lost.",
+      "taxonomy_ref": "WCAG 1.4.10 Reflow",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-09",
+      "scenario_id": "SC-case-study-01",
+      "category": "layout",
+      "element_selector": "#summary",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "In the summary section the callout #summary-callout (opaque #eef4ff, position relative) has margin-top -30px, so its box (y 543.2-610.6) is drawn over the last 30 px of the paragraph #summary-body (y 441.2-573.2, line-height 26.4 px). The last line '시간에서 1시간 46분으로 줄었어요.' is hidden under the callout on galaxy-s24 ('로 줄었어요.' on iphone-15).",
+      "human_factors_basis": "The hidden line holds the outcome the summary is about.",
+      "taxonomy_ref": "Design review: text blocks overlapped through a negative margin",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-10",
+      "scenario_id": "SC-case-study-01",
+      "category": "layout",
+      "element_selector": "#stat-dispatch",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Stat card #stat-dispatch is 104 px wide with overflow hidden; its value #stat-dispatch-value '1시간 46분' is 28 px nowrap and needs 123 px (x 140-263.1), so 31.1 px is clipped at the card edge x 232: the card shows '1시간 4' and hides '6분'. On iphone-15 the card is 115 px wide and '분' is clipped (20.1 px).",
+      "human_factors_basis": "A clipped number reads as a different value.",
+      "taxonomy_ref": "XCTest textClipped",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-11",
+      "scenario_id": "SC-case-study-01",
+      "category": "layout",
+      "element_selector": "#sec-process-title",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Section heading '처음 세운 가설 세 가지를 모두 내려놓고 종이 배차표부터 다시 그린 이유' is 22 px with line-height 0.7 (15.4 px). It wraps to 2 lines on both phones; glyph boxes are 27 px tall, so the lines overlap by 11.6 px.",
+      "human_factors_basis": "Overlapping lines make the heading hard to read.",
+      "taxonomy_ref": "WCAG 1.4.8 Visual Presentation (line spacing); design review: overlapping wrapped lines",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-12",
+      "scenario_id": "SC-case-study-01",
+      "category": "layout",
+      "element_selector": "#step-3",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "Numbered steps share the left edge x 16 (#step-1, #step-2, #step-4). Step 3 (class step--key) has margin-left 4px, so its number circle and text start 4 px to the right (box x 20). Same on iphone-15.",
+      "human_factors_basis": "A near-miss offset in an aligned stack looks like a mistake and breaks the reading line.",
+      "taxonomy_ref": "Design review: alignment to a shared left edge (near-miss offset)",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-13",
+      "scenario_id": "SC-case-study-01",
+      "category": "perception",
+      "element_selector": "#lesson-body",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "The '배운 점' paragraph, the article's main takeaway, is 10 px (3 lines, line-height 16 px) while the rest of the article body is 15-16 px.",
+      "human_factors_basis": "10 CSS px is about 1.8 mm on galaxy-s24.",
+      "taxonomy_ref": "Design review: minimum mobile text size (Apple HIG minimum 11 pt; Material 3 body text 12-16 sp)",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-14",
+      "scenario_id": "SC-case-study-01",
+      "category": "layout",
+      "element_selector": "#change-list",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "List '6주 뒤 달라진 것' has four cards 20 px apart except between '재배차 요청' and '휴무 반영 누락' (class chg--new): measured gaps 20/6/20 on both phones.",
+      "human_factors_basis": "Repeated items should keep one spacing rhythm.",
+      "taxonomy_ref": "Design review: consistent spacing in repeated list items",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-15",
+      "scenario_id": "SC-case-study-01",
+      "category": "layout",
+      "element_selector": "#more-case-last",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Last 'more cases' card (link, y 1974.3-2065.2) sits under the fixed CTA bar #cta-bar (77 px); the article ends 8 px below it with no bottom padding. At the end of the page (document height 2073) the bar covers y 1996-2073, i.e. 69.2 px of the 90.9 px card: only its top 21.7 px shows, and the title '중고 가구 플랫폼의 검수 대기 시간을 이틀에서 반나절로 줄인 방법' and '커머스 · 9분 분량' cannot be read at any scroll position. Same on iphone-15.",
+      "human_factors_basis": "A fixed bottom bar must reserve its height at the end of the scroll range.",
+      "taxonomy_ref": "WCAG 2.4.12 Focus Not Obscured (Enhanced)",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-16",
+      "scenario_id": "SC-team-dashboard-01",
+      "category": "layout",
+      "element_selector": "#page-title",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Page title '세일즈 2팀 주간 성과' (28 px, box y 40-76.4) sits under the fixed 64 px top bar because main has 40 px top padding and no offset for the bar. The glyphs span y 41-74, so 23 of 33 px are behind the bar at scroll position 0 and only the bottom 10 px of the letters show; scrolling moves it further under the bar.",
+      "human_factors_basis": "The page title names the team and report; a fixed bar must not cover the first content at rest.",
+      "taxonomy_ref": "Design review: fixed app bar covers the first content at scroll position 0",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-17",
+      "scenario_id": "SC-team-dashboard-01",
+      "category": "layout",
+      "element_selector": "#tab-cohort",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Tab '리텐션 코호트 분석' is a fixed 84x36 px button with overflow hidden and nowrap. The label needs 104.3 px (scrollWidth 104 vs clientWidth 84), so '분석' is cut and the tab reads '리텐션 코호트'. The other tabs fit.",
+      "human_factors_basis": "A tab label that loses words no longer names its view.",
+      "taxonomy_ref": "XCTest textClipped",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-18",
+      "scenario_id": "SC-team-dashboard-01",
+      "category": "layout",
+      "element_selector": "#kpi-churn",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "KPI card '고객 이탈률' (#kpi-churn, 325 px wide, overflow hidden) holds the nowrap comparison line #kpi-churn-delta, which needs 375 px (x 753-1128.3) in a 279 px content box. Everything past the card's padding edge (x 1054) is clipped, so '플랜 고객이에요' at the end of '해지 38건 중 21건이 연간 플랜 고객이에요' is hidden (74.3 px).",
+      "human_factors_basis": "The hidden end of the line explains the churn increase.",
+      "taxonomy_ref": "XCTest textClipped",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-19",
+      "scenario_id": "SC-team-dashboard-01",
+      "category": "layout",
+      "element_selector": "#cell-owner-4",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "In the '담당' cell of row 4 the opaque '휴가' badge #cell-owner-4-flag is absolutely positioned at left 40px (x 547-583.8, y 612.3-634.3) over the owner name #cell-owner-4-name '남궁서연' (x 519-567.5). It covers 20.5 px of the name, so '서연' is hidden and the cell reads '남궁 휴가'.",
+      "human_factors_basis": "The covered text is the owner the user needs to contact.",
+      "taxonomy_ref": "Design review: text overlapped by an absolutely positioned badge",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-20",
+      "scenario_id": "SC-team-dashboard-01",
+      "category": "layout",
+      "element_selector": "#insight-title",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Insight heading '이번 주 전환율 하락은 대부분 신규 리드 유입 채널 한 곳에서 시작됐어요' is 20 px with line-height 0.72 (14.4 px) in a 354 px column. It wraps to 2 lines; glyph boxes are 24 px tall, so the lines overlap by 9.6 px.",
+      "human_factors_basis": "Overlapping lines make the key insight hard to read.",
+      "taxonomy_ref": "WCAG 1.4.8 Visual Presentation (line spacing); design review: overlapping wrapped lines",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-21",
+      "scenario_id": "SC-team-dashboard-01",
+      "category": "layout",
+      "element_selector": "#panel-goals",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "Right-column panels share the left edge x 1000 (#panel-detail, #panel-insight). The goals panel (class panel--goals) has margin-left 3px, so its border and content start at x 1003 and 1026 instead of 1000 and 1023.",
+      "human_factors_basis": "A 3 px jog in a stack of cards reads as a mistake.",
+      "taxonomy_ref": "Design review: alignment to a shared left edge (near-miss offset)",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-22",
+      "scenario_id": "SC-team-dashboard-01",
+      "category": "layout",
+      "element_selector": "#activity-list",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "Activity feed items are 20 px apart except above the system item '주간 목표 리포트가 자동으로 만들어졌어요' (class act--sys, margin-top 8px): measured gaps 20/8/20/20.",
+      "human_factors_basis": "Repeated items should keep one spacing rhythm.",
+      "taxonomy_ref": "Design review: consistent spacing in repeated list items",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-23",
+      "scenario_id": "SC-checkout-summary-01",
+      "category": "layout",
+      "element_selector": "#eta-box",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "The first content block, the delivery estimate #eta-box (y 12-81.6), starts under the fixed 56 px header #co-header because the page has no top offset. Its first line #eta-box-date '10월 20일(월) 오전 7시 전 도착 예정' (y 24-48.6) is completely behind the header at scroll position 0 and the top 7.4 px of the second line is cut. Scrolling only moves it further under the header. Same on iphone-15.",
+      "human_factors_basis": "The delivery time is a fact the buyer checks before paying.",
+      "taxonomy_ref": "Design review: fixed app bar covers the first content at scroll position 0",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-24",
+      "scenario_id": "SC-checkout-summary-01",
+      "category": "layout",
+      "element_selector": "#addr-box",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Delivery address panel #addr-box (x 16-344, overflow hidden) holds the nowrap line #addr-box-line, which needs 551.8 px (x 33-584.8). Everything past the panel's padding edge (x 343) is clipped: '동 1203호 (공동현관 비밀번호 1203 호출)' is hidden on galaxy-s24 and '03호 (공동현관 비밀번호 1203 호출)' on iphone-15.",
+      "human_factors_basis": "The buyer cannot verify the unit number and door code before paying.",
+      "taxonomy_ref": "XCTest textClipped",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-25",
+      "scenario_id": "SC-checkout-summary-01",
+      "category": "layout",
+      "element_selector": "#price-headphone",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Price of the first item is a fixed 62 px box with overflow hidden and nowrap. '1,249,000원' needs 79 px (scrollWidth 79 vs clientWidth 62), so it reads '1,249,00' and '0원' is cut (16.8 px). The other two prices (9,900원, 7,500원) fit.",
+      "human_factors_basis": "A truncated amount misstates the price.",
+      "taxonomy_ref": "XCTest textClipped",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-26",
+      "scenario_id": "SC-checkout-summary-01",
+      "category": "perception",
+      "element_selector": "#coupon-terms",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "Coupon conditions ('쿠폰은 할인 전 상품 금액이 5만원 이상일 때 적용돼요. ...') are 10 px (3 lines on galaxy-s24, 2 on iphone-15). They decide whether the discount applies, so the buyer must read them.",
+      "human_factors_basis": "10 CSS px is about 1.8 mm on galaxy-s24.",
+      "taxonomy_ref": "Design review: minimum mobile text size (Apple HIG minimum 11 pt; Material 3 body text 12-16 sp)",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-27",
+      "scenario_id": "SC-checkout-summary-01",
+      "category": "layout",
+      "element_selector": "#installment-table",
+      "profile_condition": {},
+      "severity_min": "P2",
+      "description": "Card installment table uses table-layout fixed and width 405 px from x 16, so it ends at x 421 inside a wrapper with overflow-x hidden. The last column '총 납부 금액' (x 292-421, right-aligned amounts ending at x 413) runs past the screen: on galaxy-s24 the header is entirely past the 360 px edge and each total shows only '1,' or '1,2'; on iphone-15 the totals read '1,217,40' and '1,292,48' and '금액' and '0원' are cut.",
+      "human_factors_basis": "The total with installment fees is the number the buyer compares.",
+      "taxonomy_ref": "WCAG 1.4.10 Reflow",
+      "detectable_by": "measurement"
+    },
+    {
+      "id": "D-28",
+      "scenario_id": "SC-checkout-summary-01",
+      "category": "layout",
+      "element_selector": "#sum-row-shipping",
+      "profile_condition": {},
+      "severity_min": "P3",
+      "description": "Payment summary rows align their labels at x 16; the '배송비' row (class row--ship) has padding-left 5px, so its label starts at x 21, 5 px off the shared edge. Same on iphone-15.",
+      "human_factors_basis": "A near-miss offset in an aligned stack looks like a mistake.",
+      "taxonomy_ref": "Design review: alignment to a shared left edge (near-miss offset)",
+      "detectable_by": "measurement"
+    }
+  ],
+  "decoys": [
+    {
+      "id": "N-01",
+      "scenario_id": "SC-menu-options-01",
+      "category": "layout",
+      "element_selector": "#sheet-header",
+      "description": "Sticky store header (position sticky, top 0, 52 px) stays in normal flow: the hero image starts at y 52, so nothing sits under the header at scroll position 0. Rows pass beneath it only while the page is scrolled and are visible at other positions. A correct sticky offset."
+    },
+    {
+      "id": "N-02",
+      "scenario_id": "SC-menu-options-01",
+      "category": "layout",
+      "element_selector": "#pairing-row",
+      "description": "Horizontal carousel '함께 주문하면 좋아요' with overflow-x auto and scroll-snap (scrollWidth 606 vs 360 px). The third card '레몬 에이드 500ml' is cut at the screen edge and the fourth is off-screen by design; the '옆으로 넘겨 보기 →' hint and the page dots show that it scrolls, and every card can be reached by swiping."
+    },
+    {
+      "id": "N-03",
+      "scenario_id": "SC-menu-options-01",
+      "category": "layout",
+      "element_selector": "#sr-required-size",
+      "description": "Screen-reader-only text ('필수 선택 항목이에요. 하나를 골라 주세요.') in a 1x1 px box with clip rect(0 0 0 0) and overflow hidden. It is meant to be invisible; the visible '필수' tag carries the same information."
+    },
+    {
+      "id": "N-04",
+      "scenario_id": "SC-case-study-01",
+      "category": "layout",
+      "element_selector": "#contributors",
+      "description": "Decorative avatar stack: four 28 px circles overlapping by 10 px (x 16-98), aria-hidden, with no text inside; the names are given in the text beside it ('김하늘 외 3명')."
+    },
+    {
+      "id": "N-05",
+      "scenario_id": "SC-case-study-01",
+      "category": "layout",
+      "element_selector": "#bottleneck-list",
+      "description": "Bulleted sub-list inside step 2, indented 18 px (text at x 74 vs 56 for the step's own paragraph). The indent marks nested items; it is far outside the 2-6 px near-miss range."
+    },
+    {
+      "id": "N-06",
+      "scenario_id": "SC-team-dashboard-01",
+      "category": "layout",
+      "element_selector": "#cell-campaign-3",
+      "description": "Campaign name in the table is a deliberate one-line ellipsis (needs 480 px in 420 px). The selected row's full name is shown in the '선택한 캠페인' panel (#detail-campaign-name, 2 lines at y 401-445) on the same 1440x900 screen at scroll position 0."
+    },
+    {
+      "id": "N-07",
+      "scenario_id": "SC-team-dashboard-01",
+      "category": "layout",
+      "element_selector": "#kpi-active-value",
+      "description": "KPI number '12,480' uses line-height 0.9 (32 px font, 28.8 px line). It is a single nowrap line, so there are no lines to overlap, and its 39 px glyph box stays inside the card padding."
+    },
+    {
+      "id": "N-08",
+      "scenario_id": "SC-team-dashboard-01",
+      "category": "layout",
+      "element_selector": "#notif-dot",
+      "description": "10x10 px unread dot overlapping the corner of the bell icon in the top bar (x 1341-1351, y 19.5-29.5). It overlaps an icon, never text."
+    },
+    {
+      "id": "N-09",
+      "scenario_id": "SC-checkout-summary-01",
+      "category": "layout",
+      "element_selector": "#paybar-summary",
+      "description": "One-line ellipsis in the fixed pay bar (needs 390 px in 328 px on galaxy-s24, 361 px on iphone-15). The same items with name, option and count are listed in full under '주문 상품 3개', which is on screen together with the pay bar at scroll position 0."
+    },
+    {
+      "id": "N-10",
+      "scenario_id": "SC-checkout-summary-01",
+      "category": "layout",
+      "element_selector": "#coupon-list",
+      "description": "Coupon list gaps are 8/8/24/8 px. The single 24 px gap separates the '사용 가능' group from the '사용 불가' group and comes with a group label, so it is intentional grouping."
+    },
+    {
+      "id": "N-11",
+      "scenario_id": "SC-checkout-summary-01",
+      "category": "perception",
+      "element_selector": "#biz-info",
+      "description": "Business registration and marketplace notice in the footer at 10 px. It is legal boilerplate the buyer does not need to read to place the order; the suite's small-text family covers only content the user must read."
+    }
+  ],
+  "clean_controls": [
+    {
+      "scenario_id": "SC-menu-options-01-clean",
+      "notes": "menu-options-clean.html: same content and ids. Title line-height 1.32; nutrition stats in a 2x2 grid; 'BEST' ribbon inline after the option name; chips sized to their labels; spice note 14 px; topping gaps all 16 px; 96 px bottom padding so the last row clears the cart bar. Decoys N-01..N-03 unchanged."
+    },
+    {
+      "scenario_id": "SC-case-study-01-clean",
+      "notes": "case-study-clean.html: title wraps (keep-all); callout 16 px below the paragraph; stat card without overflow hidden and the value wraps; section heading line-height 1.36; step 3 on the shared edge; lesson paragraph 16 px; change-list gaps all 20 px; 96 px bottom padding so the last card clears the CTA bar. Decoys N-04, N-05 unchanged."
+    },
+    {
+      "scenario_id": "SC-team-dashboard-01-clean",
+      "notes": "team-dashboard-clean.html: 104 px top padding (64 px bar + 40 px); tabs sized to their labels; KPI comparison line wraps; '휴가' badge inline after the name; insight heading line-height 1.4; goals panel on the shared edge; activity gaps all 20 px. Decoys N-06..N-08 unchanged."
+    },
+    {
+      "scenario_id": "SC-checkout-summary-01-clean",
+      "notes": "checkout-summary-clean.html: 56 px top padding below the fixed header; address wraps; prices sized to their text; coupon terms 14 px; installment table fits the column width; '배송비' row on the shared edge. Decoys N-09..N-11 unchanged."
+    }
+  ]
+}

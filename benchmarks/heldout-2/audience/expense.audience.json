@@ -1,0 +1,1200 @@
+{
+  "schema_version": "ergo-audience.v1",
+  "audience_id": "AU-expense-202609",
+  "product": {
+    "name": "정산하루 — 임직원 경비 청구·결재 웹 ('내 경비' 월 보고서 화면)",
+    "category": "B2B SaaS / employee expense claims and approval",
+    "surface": "web",
+    "locale": "ko-KR",
+    "brief_ref": "benchmarks/heldout-2/products/expense/brief.md (v2.3, 2026-09)"
+  },
+  "researched_at": "2026-09-29",
+  "method": {
+    "summary": "Stage 0 for the heldout-2 'expense' product (정산하루 '내 경비' 월 보고서 화면, PC web). Read the product brief in full (the only product material allowed), then ran 23 WebSearch queries directly (the fixed collection method for this benchmark; the research mode's audience pipeline scripts/ux_research.py was not run). All 6 WebFetch attempts were blocked by the network egress proxy, so web quotes come from search-result excerpts only. Sources: official statistics (보건복지부 2024 등록장애인 현황, 고용노동부 2024 장애인 의무고용 현황, 한국장애인고용공단 장애인경제활동실태조사, 과기정통부·NIA 2024 디지털정보격차 실태조사), official documents (질병관리청 국가건강정보포털 '색각이상', '노안'; KWCAG 2.2), two surveys on presbyopia reported by news (J&J ACUVUE 한국인 500명 40~55세; 대한안과학회 40세 이상), and two news items. Segments follow the brief's roles and the reference customer's workforce (한결물류 380명): field sales and HQ office staff (primary), 40~50대 managers who also approve (secondary; presbyopia declared explicitly, share 0.79), visually impaired staff using magnification or a screen reader (edge), and the finance/HR buyer (role customer, no profile). New hires (6~10 a month, about 2%) are a high-stakes first_use condition inside the field and office segments. Presbyopia is declared only in the 40~50대 segment so that no 30s profile is made presbyopic. Contexts use the brief's measured month-end split (61% of entries in the last 3 business days vs 39% otherwise). Floors are left at the default; the walking floor has no handheld device to attach to on this PC-only surface.",
+    "limitations": [
+      "Every WebFetch attempt (weeklytoday.com, health.kdca.go.kr, ncbi.nlm.nih.gov, jkma.org, apps.apple.com, gs.statcounter.com) was blocked by the network egress proxy, so every web quote is a search-result excerpt (quote_basis: snippet) and is unverified. Some excerpts were summaries written by the search tool: for the blind share (SRC-08), the CVD rate (SRC-04) and the presbyopia onset sentence (SRC-12) the exact page that prints the sentence is not confirmed, and the NIA figure (SRC-09) was seen only in an English summary.",
+      "Segment shares are one reference customer's headcount from the brief (140 field, 190 office, 50 logistics-site managers of 380), not analytics across customers. The field and office shares overlap the 40~50대 manager segment, whose size is unknown (40대 27% + 50대 이상 15% is only an upper bound), so the manager segment gets weight only from the unclaimed share mass.",
+      "No public firsthand user voice (app-store reviews, community posts) could be read: searches returned vendor help pages, vendor blogs and news, and review pages were blocked. Firsthand quotes come only from the four customer-interview lines printed in the brief (n and protocol unknown) plus one news headline.",
+      "No Korean population-based presbyopia prevalence was found. The presbyopia share (0.79) uses a vendor-commissioned survey item ('40대 이상 한국인 응답자 중 79%는 시력 변화로 인해 일상에서 불편'; the sponsor sells presbyopia lenses), cross-checked by a 대한안과학회 survey (73.3% had suspected presbyopia). Neither is a diagnosis rate.",
+      "Per-segment device splits for field (laptop 0.9) and office (desktop 0.9) encode the brief's '주로 노트북/데스크톱' and are inference; only the overall 58% laptop / 42% desktop access split and Chrome 81% / Edge 19% are sourced (brief). Desktop browser, resolution and zoom market data (StatCounter) could not be read.",
+      "The visually impaired share (0.004) is an inference chain (의무고용률 3.1% x 시각장애 9.4% of registered disabled, adjusted by the 43.3% vs 34% employment rates), and its low-vision (0.88) vs screen-reader (0.12) split rests on a news excerpt; no official split was found in the 2023 장애인실태조사 press material. Age and device for this segment reuse company-wide values.",
+      "No prevalence data for tremor or reduced dexterity in this workforce was found, so no tremor condition is declared; upper-limb 지체장애 and keyboard-only use are listed as an exclusion with a test to run instead.",
+      "cvd_deutan shares (0.03) assume a 50:50 sex ratio because the segments' sex mix is unknown.",
+      "The 61%/39% context split is a share of entries (brief), used as a share of use. Lighting and posture outside the office (cafe, car) are unknown, so no separate off-site context or glare context is declared; off-site gaps are kept as a pain-point hypothesis."
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SRC-01",
+      "type": "product_brief",
+      "title": "정산하루 제품 브리프 v2.3 (2026년 9월, 제품팀 PM) — 레퍼런스 고객 한결물류 수치 포함",
+      "url": null,
+      "accessed_at": "2026-09-29",
+      "access_basis": "team_provided",
+      "note": "Read in full (benchmarks/heldout-2/products/expense/brief.md). Team-provided intent and one reference customer's numbers; not analytics across customers."
+    },
+    {
+      "source_id": "SRC-02",
+      "type": "interview",
+      "title": "도입 고객 인터뷰 (2026년 8월) — 제품 브리프 9절 '사용자 목소리'에 인용된 발언 4건",
+      "url": null,
+      "accessed_at": "2026-09-29",
+      "access_basis": "team_provided",
+      "note": "Only the four quotes printed in the brief were read; interview protocol, n and recruitment are unknown."
+    },
+    {
+      "source_id": "SRC-03",
+      "type": "survey",
+      "title": "아큐브(한국 존슨앤드존슨 비전) 아시아 중장년 노안 대응 실태 설문 (아시아 2,500명, 한국인 500명, 40~55세) — 이투데이 보도 (2025년 7월)",
+      "url": "https://www.etoday.co.kr/news/view/2490424",
+      "accessed_at": "2026-09-29",
+      "access_basis": "public_anonymous",
+      "note": "Vendor-commissioned survey (the sponsor sells presbyopia lenses); reported by 이투데이 and 네이트뉴스 (20250723). WebFetch of this page was blocked by the network egress proxy; the quote was read only in a search-result excerpt (unverified)."
+    },
+    {
+      "source_id": "SRC-04",
+      "type": "official_docs",
+      "title": "질병관리청 국가건강정보포털 '색각이상(색맹)'",
+      "url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=1469",
+      "accessed_at": "2026-09-29",
+      "access_basis": "public_anonymous",
+      "note": "The search excerpt attributes the 5.9%/0.4% figure to the 국가건강정보포털 among other medical sources; the exact sentence on the page is not confirmed. WebFetch of this page was blocked by the network egress proxy; the quote was read only in a search-result excerpt (unverified)."
+    },
+    {
+      "source_id": "SRC-05",
+      "type": "official_statistics",
+      "title": "보건복지부 보도자료 '2024년 등록장애인 263만 1천 명, 전체 인구 대비 5.1%' (2025년 4월)",
+      "url": "https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1485363&act=view",
+      "accessed_at": "2026-09-29",
+      "access_basis": "public_anonymous",
+      "note": "WebFetch of this page was blocked by the network egress proxy; the quote was read only in a search-result excerpt (unverified)."
+    },
+    {
+      "source_id": "SRC-06",
+      "type": "official_statistics",
+      "title": "고용노동부 '2024년 장애인 의무고용 현황' (2024년 12월 기준) — 더인디고 보도 경유",
+      "url": "https://theindigo.co.kr/archives/62308",
+      "accessed_at": "2026-09-29",
+      "access_basis": "public_anonymous",
+      "note": "Official figures as reported by a disability-news outlet. WebFetch of this page was blocked by the network egress proxy; the quote was read only in a search-result excerpt (unverified)."
+    },
+    {
+      "source_id": "SRC-07",
+      "type": "official_statistics",
+      "title": "한국장애인고용공단 장애인경제활동실태조사 — 장애유형별 고용률 (에이블뉴스 보도 '장애인 고용률 34%‥전체 인구 63.3% 대비 절반 수준' 경유; 조사 시점 미확인)",
+      "url": "https://www.ablenews.co.kr/news/articleView.html?idxno=212498",
+      "accessed_at": "2026-09-29",
+      "access_basis": "public_anonymous",
+      "note": "Survey year not confirmed from the excerpt. WebFetch of this page was blocked by the network egress proxy; the quote was read only in a search-result excerpt (unverified)."
+    },
+    {
+      "source_id": "SRC-08",
+      "type": "news",
+      "title": "더나은미래 '색 벗겨진 블록 빛 반사된 점자 그들도 보인다' (시각장애인 중 전맹·저시력 비율 보도)",
+      "url": "https://futurechosun.com/archives/3712",
+      "accessed_at": "2026-09-29",
+      "access_basis": "public_anonymous",
+      "note": "News: supports existence only. The excerpt that carries the 12% figure came from a search summary listing this page and a JKMA review article ('국내 시각장애와 저시력 현황', jkma.org, blocked); which page prints the sentence is not confirmed. WebFetch of this page was blocked by the network egress proxy; the quote was read only in a search-result excerpt (unverified)."
+    },
+    {
+      "source_id": "SRC-09",
+      "type": "official_statistics",
+      "title": "과학기술정보통신부·한국지능정보사회진흥원 '2024 디지털정보격차 실태조사' 결과 발표 (2025년 3월)",
+      "url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156681128",
+      "accessed_at": "2026-09-29",
+      "access_basis": "public_anonymous",
+      "note": "The search tool returned an English summary of the Korean release; the Korean sentence was not seen. WebFetch of this page was blocked by the network egress proxy; the quote was read only in a search-result excerpt (unverified)."
+    },
+    {
+      "source_id": "SRC-10",
+      "type": "official_docs",
+      "title": "한국형 웹 콘텐츠 접근성 지침 2.2 (KWCAG 2.2, 2022) — 국립전파연구원 표준 자료",
+      "url": "https://www.rra.go.kr/ko/reference/kcsList_view.do?nb_seq=5247&nb_type=6",
+      "accessed_at": "2026-09-29",
+      "access_basis": "public_anonymous",
+      "note": "Standard text excerpt (also mirrored at a11ykr.github.io/kwcag22). WebFetch of this page was blocked by the network egress proxy; the quote was read only in a search-result excerpt (unverified)."
+    },
+    {
+      "source_id": "SRC-11",
+      "type": "news",
+      "title": "머니투데이 '매달 스트레스 받는 법인카드 영수증 풀칠… 이젠 필요없어 진다' (2026-05-18)",
+      "url": "https://www.mt.co.kr/finance/2026/05/18/2026051810112122116",
+      "accessed_at": "2026-09-29",
+      "access_basis": "public_anonymous",
+      "note": "News headline read in search results; supports existence of the month-end receipt burden only. WebFetch of this page was blocked by the network egress proxy; the quote was read only in a search-result excerpt (unverified)."
+    },
+    {
+      "source_id": "SRC-12",
+      "type": "official_docs",
+      "title": "질병관리청 국가건강정보포털 '노안'",
+      "url": "https://health.kdca.go.kr/healthinfo/biz/health/gnrlzHealthInfo/gnrlzHealthInfo/gnrlzHealthInfoView.do?cntnts_sn=5226",
+      "accessed_at": "2026-09-29",
+      "access_basis": "public_anonymous",
+      "note": "Two search summaries printed the same onset sentence next to this page; the exact page that prints it is not confirmed. WebFetch of this page was blocked by the network egress proxy; the quote was read only in a search-result excerpt (unverified)."
+    },
+    {
+      "source_id": "SRC-13",
+      "type": "survey",
+      "title": "대한안과학회 눈 건강 인식 설문 (40세 이상 대상으로 보도, 2020년 10월 '눈의 날') — 의협신문 보도(「'눈 건강' 관리한다 38% 불과」) 경유",
+      "url": "https://www.doctorsnews.co.kr/news/articleView.html?idxno=136503",
+      "accessed_at": "2026-09-29",
+      "access_basis": "public_anonymous",
+      "note": "Sample size and age range not seen (also reported by 한국일보 2020-10-06 '40세 이상 절반이 실명 질환 보유하고도… 38%만 눈 관리'). The 73.3% figure appeared in two search summaries with slightly different wording. WebFetch of this page was blocked by the network egress proxy; the quote was read only in a search-result excerpt (unverified)."
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "SEG-field-sales",
+      "name_ko": "외근 틈틈이, 마감 주간엔 몰아서 출장·접대 경비를 넣는 영업·외근직",
+      "summary": "14인치 노트북(폭 1440 수준)으로 월 15~30건을 청구한다. 출장 교통비·숙박비와 거래처 접대(참석자 기재 필수)가 많고, 영수증은 카드사 앱·사진첩·메신저에 흩어져 있어 입력 중 다른 창을 자주 오간다. 입력은 마감 직전 3영업일에 몰리며 Tab·Enter로 10~30건을 이어 넣으려 한다. 카페, 차량 대기, 회의 사이 틈에도 입력한다. 비중 0.37은 레퍼런스 고객 한 곳의 인원(140/380)이며 40~50대 관리자 세그먼트와 겹친다.",
+      "priority": "primary",
+      "role": "operator",
+      "share": {
+        "value": 0.37,
+        "basis": "estimated",
+        "source_ids": [
+          "SRC-01"
+        ]
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "claim": "레퍼런스 고객 380명 중 영업·외근직은 140명 (0.37)",
+          "kind": "statistic",
+          "quote": "임직원 380명. 영업·외근직 140명, 본사 사무직 190명, 물류센터 현장 관리자 50명.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "영업·외근직은 월 15~30건으로 청구량이 가장 많다",
+          "kind": "statistic",
+          "quote": "청구자 1인당 월 평균 11건, 영업·외근직은 월 15~30건.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "출장·접대 경비가 많고 주로 노트북을 쓴다",
+          "kind": "official",
+          "quote": "영업·외근직: 출장 교통비·숙박비, 거래처 접대가 많습니다. 주로 노트북을 씁니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "전체 접속은 노트북이 더 많다 (세그먼트별 분할은 없음)",
+          "kind": "statistic",
+          "quote": "접속 비중은 노트북 58%, 데스크톱 42%입니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "마감 직전에 입력이 몰린다",
+          "kind": "statistic",
+          "quote": "마감 전 3영업일 동안 한 달 입력량의 61%가 들어옵니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "사무실 밖 짧은 틈에도 입력하고, 영수증을 찾느라 창을 오간다",
+          "kind": "official",
+          "quote": "사무실 자리, 외근 중 카페나 차량 대기 시간, 회의 사이 짧은 틈에 입력합니다. 영수증 사진은 카드사 앱, 사진첩, 메신저에 흩어져 있어서 입력 도중 다른 창으로 자주 옮겨 갔다가 돌아옵니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "연속 입력 때 키보드 위주 입력을 원한다",
+          "kind": "official",
+          "quote": "마감 주간에는 한 번에 10~30건을 이어서 입력하므로 Tab·Enter 위주로 빠르게 입력하려는 요구가 많습니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-02",
+          "claim": "출장 후 여러 건을 마감 날 몰아서 넣는다 (영업팀 대리, 20대)",
+          "kind": "firsthand",
+          "quote": "출장 한 번 다녀오면 교통비, 숙박비, 식대가 한꺼번에 열 건 넘게 생겨요. 마감 날 몰아서 넣어요.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-02",
+          "claim": "카드 내역과 흩어진 영수증 맞추기가 가장 번거롭다 (영업팀 과장, 30대)",
+          "kind": "firsthand",
+          "quote": "카드 내역이랑 영수증 맞추는 게 제일 번거로워요. 영수증이 사진첩, 메일, 카톡에 다 흩어져 있어요.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-11",
+          "claim": "월말 영수증 정리 부담은 레퍼런스 고객 밖에서도 보도된다 (존재 근거만)",
+          "kind": "firsthand",
+          "quote": "매달 스트레스 받는 법인카드 영수증 풀칠… 이젠 필요없어 진다",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "세그먼트 연령 구성은 회사 전체 분포를 그대로 썼다 (세그먼트별 자료 없음)",
+          "kind": "inference",
+          "quote": "연령 분포: 20대 21%, 30대 37%, 40대 27%, 50대 이상 15%.",
+          "quote_basis": "document"
+        }
+      ],
+      "age_bands": {
+        "20s": 0.21,
+        "30s": 0.37,
+        "40s": 0.27,
+        "50s": 0.15
+      },
+      "devices": {
+        "laptop-1440": 0.9,
+        "desktop-1920": 0.1
+      },
+      "orientation": "landscape",
+      "left_hand_share": null,
+      "familiarity": {
+        "first_use": 0.02,
+        "returning": 0.98
+      },
+      "conditions": [
+        {
+          "condition": "first_use",
+          "share": 0.02,
+          "stakes": "high",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "cause": "situational",
+          "why": "매달 6~10명 입사, 입사 첫 달에 첫 경비 청구 (380명 중 월 1.6~2.6%). 규정·분류 용어를 모름. 첫 청구가 반려되거나 마감을 놓치면 지급이 한 달 밀림 (지급은 다음 달 15일; 비용 추정은 inference)."
+        },
+        {
+          "condition": "cvd_deutan",
+          "share": 0.03,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-04"
+          ],
+          "why": "국가건강정보포털 인용 수치 남 5.9%·여 0.4% (검색 발췌). 세그먼트 성비 미상 → 50:50 가정 시 색각이상 약 3.2%. 대부분이 적록(그중 녹색약형이 다수라는 일반적 이해)이라 보고 0.03 (inference, low confidence)."
+        },
+        {
+          "condition": "expert",
+          "share": null,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "why": "마감 주간 10~30건을 Tab·Enter 위주로 이어 입력하려는 요구가 많음 (브리프). 비율 미상."
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-deadline-batch",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": true,
+          "time_pressure": "high",
+          "share": 0.61,
+          "source_ids": [
+            "SRC-01",
+            "SRC-02"
+          ],
+          "note": "마감 전 3영업일에 한 달 입력량의 61% (브리프; 입력 건수 기준 비율을 사용 비율로 씀). 영수증을 찾느라 다른 창을 오가며 10~30건을 이어 입력."
+        },
+        {
+          "context_id": "CTX-off-peak",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": true,
+          "time_pressure": "low",
+          "share": 0.39,
+          "source_ids": [
+            "SRC-01"
+          ],
+          "note": "마감 주간 밖의 입력 (한 달 입력량의 나머지 39%, 브리프의 61%에서 도출). 자리·회의 사이·외근 중 틈에 한두 건씩 넣고, 영수증을 찾느라 창을 오가는 것은 같다."
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-field-add-entertainment",
+          "goal_ko": "거래처 접대 식사 한 건을 영수증과 함께 추가한다 (T1)",
+          "jtbd": "When I get back from a client dinner paid with the corporate card, I want to log it with the attendees and the receipt in about a minute, so it goes through without being sent back.",
+          "frequency": "weekly",
+          "criticality": "money",
+          "concrete_data": {
+            "사용일": "2026-09-24",
+            "금액": "48,500원 (입력 48500)",
+            "분류": "접대비 (목록: 교통비, 숙박비, 식대, 야근 식대, 회의비, 접대비, 소모품비, 기타)",
+            "결제수단": "법인카드",
+            "가맹점": "을지로 한우마을",
+            "참석자(거래처)": "(주)대성유통 김태호 부장 외 1명",
+            "사용 목적": "신규 거래처 미팅 식사",
+            "영수증": "영수증_20260924_한우마을.jpg (1.2MB)"
+          },
+          "success_ko": "내역 표에 09-24 을지로 한우마을 · 접대비 · 법인카드 · 48,500원 · 영수증 행이 생기고, 요약이 10건 395,900원으로 바뀐다.",
+          "source_ids": [
+            "SRC-01"
+          ]
+        },
+        {
+          "task_id": "T-field-receipt-rule",
+          "goal_ko": "영수증 없이 저장했다가 규정 안내를 보고 첨부해 저장한다 (T2)",
+          "jtbd": "When the service blocks my save because a spend over 30,000원 has no receipt, I want to see exactly what is missing and fix it without retyping, so I can keep going through my month-end batch.",
+          "frequency": "monthly",
+          "criticality": "money",
+          "concrete_data": {
+            "첫 저장": "T1 값을 모두 넣되 영수증 없이 저장 (48,500원 > 3만 원 기준)",
+            "기대 안내": "3만 원을 넘는 지출은 영수증(적격증빙) 첨부 필요",
+            "고친 뒤": "영수증_20260924_한우마을.jpg (1.2MB) 첨부 후 다시 저장",
+            "유지돼야 할 값": "사용일 2026-09-24, 금액 48,500원, 분류 접대비, 참석자 (주)대성유통 김태호 부장 외 1명"
+          },
+          "success_ko": "첫 저장이 막히면서 영수증 칸이 문제라는 안내가 보이고, 이미 넣은 값이 지워지지 않은 채 파일을 첨부해 저장을 마친다.",
+          "source_ids": [
+            "SRC-01"
+          ]
+        },
+        {
+          "task_id": "T-field-submit-sept",
+          "goal_ko": "9월 경비 보고서를 마감 전에 결재 상신한다 (T3)",
+          "jtbd": "When the month-end deadline is two days away, I want to check the total, the approval line and the attestation and submit in one go, so I am reimbursed on 15 October.",
+          "frequency": "monthly",
+          "criticality": "money",
+          "concrete_data": {
+            "보고서": "2026년 9월 (T1 반영 후 10건 395,900원; T1 전 9건 347,400원)",
+            "결재선": "박서연 대리(기안) → 이재훈 팀장(승인) → 정지훈 본부장(승인) → 최윤정 과장(재무 확인)",
+            "본부장 추가 사유": "보고서 합계 30만 원 초과",
+            "확인 체크": "사용 내역이 사실이며 경비 규정을 지켰음",
+            "오늘": "2026-09-28(월)",
+            "제출 마감": "2026-09-30(수) 18:00",
+            "지급일": "2026-10-15(목) 급여 계좌"
+          },
+          "success_ko": "합계 395,900원과 4단계 결재선(본부장 포함)을 확인하고 사실 확인에 체크해 상신하면, 처리 결과 알림과 결재 진행 상태가 보인다.",
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "카드 내역과 영수증 맞추기가 가장 번거롭고, 영수증이 사진첩·메일·카톡에 흩어져 있다.",
+          "source_ids": [
+            "SRC-02"
+          ],
+          "kind": "firsthand"
+        },
+        {
+          "text": "출장 한 번에 열 건 넘게 생겨 마감 날 몰아서 넣는다.",
+          "source_ids": [
+            "SRC-02"
+          ],
+          "kind": "firsthand"
+        },
+        {
+          "text": "가설: 영수증을 찾으러 다른 창에 갔다 돌아오면 입력 중인 값과 포커스가 유지돼야 한다.",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "가설: 카페·차량 대기·회의 사이의 짧은 틈에 한두 건 넣다 끊기므로, 작성 중 경비가 저장 전 사라지면 다시 입력해야 한다 (조명·자세 조건은 자료 없음).",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "가설: Tab·Enter로 10~30건을 이어 넣을 때 포커스 순서, Enter의 동작(저장/줄바꿈), 저장 뒤 다음 건으로의 이동이 끊기면 입력 시간이 늘어난다.",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-hq-office",
+      "name_ko": "자리에서 한 달 3~8건 회의비·소모품비·야근 식대를 올리는 본사 사무직",
+      "summary": "24인치 FHD 데스크톱으로 가끔(월 3~8건) 청구한다. 사용 빈도가 낮아 영수증 기준 금액, 참석자 기재, 야근 식대 한도 같은 규정을 외우지 못하고, 회의 사이 짧은 틈에 입력하다 끊긴다. 신규 입사자(월 6~10명)는 첫 달에 첫 청구를 한다. 비중 0.50은 레퍼런스 고객 한 곳의 인원(190/380)이며 40~50대 관리자 세그먼트와 겹친다.",
+      "priority": "primary",
+      "role": "operator",
+      "share": {
+        "value": 0.5,
+        "basis": "estimated",
+        "source_ids": [
+          "SRC-01"
+        ]
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "claim": "레퍼런스 고객 380명 중 본사 사무직은 190명 (0.50)",
+          "kind": "statistic",
+          "quote": "임직원 380명. 영업·외근직 140명, 본사 사무직 190명, 물류센터 현장 관리자 50명.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "회의비·소모품비·야근 식대 위주로 월 3~8건, 주로 데스크톱",
+          "kind": "statistic",
+          "quote": "본사 사무직: 회의비, 소모품비, 야근 식대 위주로 월 3~8건입니다. 주로 데스크톱을 씁니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "본사 모니터는 24인치 FHD",
+          "kind": "official",
+          "quote": "기기: 본사는 24인치 FHD(1920×1080) 모니터의 데스크톱, 외근직은 14인치 노트북(화면 폭 1440 수준)을 씁니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "직원 대부분이 경비 규정을 외우지 못한다",
+          "kind": "official",
+          "quote": "직원 대부분이 회사 경비 규정(영수증이 필요한 금액 기준, 참석자 기재, 식대 한도)을 외우고 있지 않습니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "도입 전 첫 제출 반려율",
+          "kind": "statistic",
+          "quote": "레퍼런스 고객의 도입 전 첫 제출 반려율은 23%였습니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "매달 신규 입사자가 첫 달에 청구한다",
+          "kind": "statistic",
+          "quote": "매달 6~10명이 새로 입사하며, 입사 첫 달에 첫 경비를 청구합니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "신규 입사자는 규정과 분류 용어에 익숙하지 않다",
+          "kind": "official",
+          "quote": "신규 입사자: 규정과 분류 용어에 익숙하지 않습니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-02",
+          "claim": "같은 이유의 반려가 반복된다 (재무팀 과장, 30대)",
+          "kind": "firsthand",
+          "quote": "직원들이 규정을 몰라서 같은 이유로 반려되는 게 반복돼요.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "세그먼트 연령 구성은 회사 전체 분포를 그대로 썼다 (세그먼트별 자료 없음)",
+          "kind": "inference",
+          "quote": "연령 분포: 20대 21%, 30대 37%, 40대 27%, 50대 이상 15%.",
+          "quote_basis": "document"
+        }
+      ],
+      "age_bands": {
+        "20s": 0.21,
+        "30s": 0.37,
+        "40s": 0.27,
+        "50s": 0.15
+      },
+      "devices": {
+        "desktop-1920": 0.9,
+        "laptop-1440": 0.1
+      },
+      "orientation": "landscape",
+      "left_hand_share": null,
+      "familiarity": {
+        "first_use": 0.02,
+        "returning": 0.98
+      },
+      "conditions": [
+        {
+          "condition": "first_use",
+          "share": 0.02,
+          "stakes": "high",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "cause": "situational",
+          "why": "매달 6~10명 입사, 입사 첫 달에 첫 경비 청구 (380명 중 월 1.6~2.6%). 규정·분류 용어를 모름. 첫 청구가 반려되거나 마감을 놓치면 지급이 한 달 밀림 (지급은 다음 달 15일; 비용 추정은 inference)."
+        },
+        {
+          "condition": "cvd_deutan",
+          "share": 0.03,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-04"
+          ],
+          "why": "국가건강정보포털 인용 수치 남 5.9%·여 0.4% (검색 발췌). 세그먼트 성비 미상 → 50:50 가정 시 색각이상 약 3.2%. 대부분이 적록(그중 녹색약형이 다수라는 일반적 이해)이라 보고 0.03 (inference, low confidence)."
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-deadline-batch",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": true,
+          "time_pressure": "high",
+          "share": 0.61,
+          "source_ids": [
+            "SRC-01",
+            "SRC-02"
+          ],
+          "note": "마감 전 3영업일에 한 달 입력량의 61% (브리프; 입력 건수 기준 비율을 사용 비율로 씀). 영수증을 찾느라 다른 창을 오가며 10~30건을 이어 입력."
+        },
+        {
+          "context_id": "CTX-off-peak",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": true,
+          "time_pressure": "low",
+          "share": 0.39,
+          "source_ids": [
+            "SRC-01"
+          ],
+          "note": "마감 주간 밖의 입력 (한 달 입력량의 나머지 39%, 브리프의 61%에서 도출). 자리·회의 사이·외근 중 틈에 한두 건씩 넣고, 영수증을 찾느라 창을 오가는 것은 같다."
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-office-review-flags",
+          "goal_ko": "상신 전에 확인 필요·규정 초과 건을 찾아 이유를 보고 고치거나 지운다 (T4)",
+          "jtbd": "When my report shows items the policy check flagged, I want to see which ones and why at a glance and fix or remove them, so the report is not rejected for the same reason again.",
+          "frequency": "monthly",
+          "criticality": "money",
+          "concrete_data": {
+            "확인 필요 건": "09-13(일) 쿠팡 · 소모품비 · 법인카드 · 32,900원 · 영수증 — 확인 필요 (주말 사용)",
+            "규정 초과 건": "09-16(수) 교대 순대국 · 야근 식대 · 법인카드 · 51,000원 (3명) · 영수증 — 규정 초과 (한도 36,000원)",
+            "규정": "야근 식대는 21시 이후 사용분만, 1인 12,000원 한도 (3명 → 36,000원); 초과분은 지급되지 않을 수 있음",
+            "수정 예 (브리프 규정에서 도출한 시험 값)": "09-16 금액 51,000원 → 36,000원 (합계 T1 전 347,400원 → 332,400원 / T1 후 395,900원 → 380,900원)",
+            "삭제 예": "09-16 건 삭제 시 합계 T1 후 395,900원 → 344,900원",
+            "주말 사유 입력 예 (브리프에 없는 시험 값)": "월요일 거래처 미팅 자료용 소모품 긴급 주문"
+          },
+          "success_ko": "확인 필요 1건과 규정 초과 1건을 표에서 찾아 이유를 읽고, 규정 초과 건을 고치거나 지운 뒤 합계가 맞게 바뀐 것을 확인한다.",
+          "source_ids": [
+            "SRC-01"
+          ]
+        },
+        {
+          "task_id": "T-office-add-with-rule",
+          "goal_ko": "경비 한 건을 넣다가 규정 안내(영수증 필요)를 받고 고쳐서 저장한다 (T1+T2)",
+          "jtbd": "When I only file a few expenses a month and do not remember the receipt threshold, I want the form to tell me what the rule needs before I lose my input, so my first submission is accepted.",
+          "frequency": "monthly",
+          "criticality": "money",
+          "concrete_data": {
+            "사용일": "2026-09-24",
+            "금액": "48,500원 (입력 48500)",
+            "분류": "접대비 (목록: 교통비, 숙박비, 식대, 야근 식대, 회의비, 접대비, 소모품비, 기타)",
+            "결제수단": "법인카드",
+            "가맹점": "을지로 한우마을",
+            "참석자(거래처)": "(주)대성유통 김태호 부장 외 1명",
+            "사용 목적": "신규 거래처 미팅 식사",
+            "영수증": "영수증_20260924_한우마을.jpg (1.2MB)",
+            "첫 저장": "T1 값을 모두 넣되 영수증 없이 저장 (48,500원 > 3만 원 기준)",
+            "기대 안내": "3만 원을 넘는 지출은 영수증(적격증빙) 첨부 필요"
+          },
+          "success_ko": "내역 표에 09-24 을지로 한우마을 · 접대비 · 법인카드 · 48,500원 · 영수증 행이 생기고, 요약이 10건 395,900원으로 바뀐다. 첫 저장이 막히면서 영수증 칸이 문제라는 안내가 보이고, 이미 넣은 값이 지워지지 않은 채 파일을 첨부해 저장을 마친다.",
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "직원들이 규정을 몰라 같은 이유로 반려되는 일이 반복된다.",
+          "source_ids": [
+            "SRC-02"
+          ],
+          "kind": "firsthand"
+        },
+        {
+          "text": "가설: 규정 점검 결과(정상·확인 필요·규정 초과)의 이유가 행 안에서 바로 읽히지 않으면 같은 반려가 반복된다.",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "가설: 회의 사이에 입력하다 창을 닫거나 자리를 뜨면 작성 중인 경비가 사라지는지.",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-senior-managers",
+      "name_ko": "결재도 하면서 자기 경비를 월 10건 이상 직접 넣는 40~50대 차장·부장·팀장",
+      "summary": "팀장·본부장·차장·부장급으로, 팀원 보고서를 결재하는 한편 자기 경비도 월 10건 이상 직접 입력한다. 노안으로 작은 글씨가 흐릿하게 보이는 사람이 많고, 교정 대신 글씨를 키워 보는 경우가 흔하다. 결재자로서 한도 넘은 건부터 찾아보는 습관이 자기 보고서 점검에도 이어진다. 규모는 미상 (40대 27% + 50대 이상 15%가 상한).",
+      "priority": "secondary",
+      "role": "operator",
+      "share": {
+        "value": null,
+        "basis": "unknown",
+        "source_ids": [
+          "SRC-01"
+        ]
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "claim": "40~50대 차장·부장급도 월 10건 이상 직접 입력한다",
+          "kind": "statistic",
+          "quote": "차장·부장급(40~50대) 청구자도 월 10건 이상 직접 입력합니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "승인자(팀장·본부장)는 40~50대가 다수이며 결재함에서 보고서를 검토한다",
+          "kind": "official",
+          "quote": "승인자(팀장·본부장, 40~50대가 다수)",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "레퍼런스 고객의 40대·50대 이상 비율 (세그먼트 규모의 상한)",
+          "kind": "statistic",
+          "quote": "연령 분포: 20대 21%, 30대 37%, 40대 27%, 50대 이상 15%.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-02",
+          "claim": "결재 때 한도 넘은 건부터 찾아본다 (물류운영팀 팀장, 40대)",
+          "kind": "firsthand",
+          "quote": "팀원 보고서를 볼 때 한도 넘은 건부터 찾아봐요.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-03",
+          "claim": "40대 이상 한국인 대다수가 시력 변화로 일상 불편을 겪는다 (노안 비율의 근사치)",
+          "kind": "statistic",
+          "quote": "40대 이상 한국인 응답자 중 79%는 시력 변화로 인해 일상에서 불편을 겪고 있으며",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-03",
+          "claim": "노안이어도 교정하지 않고 글씨 크기를 키워 버티는 사람이 많다",
+          "kind": "statistic",
+          "quote": "노안 진단을 받은 한국인 중 5명 중 3명(59%)은 안경이나 콘택트렌즈 등 시력 교정을 하지 않았으며, 대신 글씨 크기 확대(37%), 사진 촬영 후 확대해 보기(36%), 팔을 뻗어서 보기(33%)",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-13",
+          "claim": "학회 설문에서도 40세 이상 다수가 노안을 의심해 본 적이 있다 (벤더 설문과 교차 확인)",
+          "kind": "statistic",
+          "quote": "노안을 의심한 경험이 있는 응답자는 73.3%",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-12",
+          "claim": "노안은 40대 초반에 시작해 60대까지 진행한다 (이 세그먼트의 연령대 전체가 해당)",
+          "kind": "official",
+          "quote": "40대 초반부터 증상이 나타나고 60대까지 진행됩니다",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "기기 분할은 회사 전체 접속 비중을 썼다 (세그먼트별 자료 없음)",
+          "kind": "inference",
+          "quote": "접속 비중은 노트북 58%, 데스크톱 42%입니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "나이대 분할(40대 0.64, 50대 0.36)은 회사 전체의 40대 27%, 50대 이상 15%를 비례 배분한 것 (inference)",
+          "kind": "inference",
+          "quote": "연령 분포: 20대 21%, 30대 37%, 40대 27%, 50대 이상 15%.",
+          "quote_basis": "document"
+        }
+      ],
+      "age_bands": {
+        "40s": 0.64,
+        "50s": 0.36
+      },
+      "devices": {
+        "laptop-1440": 0.58,
+        "desktop-1920": 0.42
+      },
+      "orientation": "landscape",
+      "left_hand_share": null,
+      "familiarity": {
+        "returning": 1.0
+      },
+      "conditions": [
+        {
+          "condition": "presbyopia",
+          "share": 0.79,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-03",
+            "SRC-13",
+            "SRC-12"
+          ],
+          "cause": "permanent",
+          "why": "벤더 설문(한국인 500명, 40~55세): 40대 이상 응답자 79%가 시력 변화로 일상 불편. 대한안과학회 설문(40세 이상 보도): 노안을 의심한 경험 73.3%. 노안은 40대 초반부터 나타나 60대까지 진행 (국가건강정보포털). 진단율 자체가 아니므로 근사치. 교정하지 않은 노안인의 37%는 글씨 크기 확대로 대처 → 브라우저 확대(125~200%) 사용 가능성 (inference)."
+        },
+        {
+          "condition": "cvd_deutan",
+          "share": 0.03,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-04"
+          ],
+          "why": "국가건강정보포털 인용 수치 남 5.9%·여 0.4% (검색 발췌). 세그먼트 성비 미상 → 50:50 가정 시 색각이상 약 3.2%. 대부분이 적록(그중 녹색약형이 다수라는 일반적 이해)이라 보고 0.03 (inference, low confidence)."
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-deadline-batch",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": true,
+          "time_pressure": "high",
+          "share": 0.61,
+          "source_ids": [
+            "SRC-01",
+            "SRC-02"
+          ],
+          "note": "마감 전 3영업일에 한 달 입력량의 61% (브리프; 입력 건수 기준 비율을 사용 비율로 씀). 영수증을 찾느라 다른 창을 오가며 10~30건을 이어 입력."
+        },
+        {
+          "context_id": "CTX-off-peak",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": true,
+          "time_pressure": "low",
+          "share": 0.39,
+          "source_ids": [
+            "SRC-01"
+          ],
+          "note": "마감 주간 밖의 입력 (한 달 입력량의 나머지 39%, 브리프의 61%에서 도출). 자리·회의 사이·외근 중 틈에 한두 건씩 넣고, 영수증을 찾느라 창을 오가는 것은 같다."
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-senior-review-flags",
+          "goal_ko": "자기 9월 보고서에서 규정 초과·확인 필요 건을 먼저 찾아 처리한다 (T4)",
+          "jtbd": "When I check my own report the way I check my team's, I want the over-limit and needs-review items to stand out without squinting, so I fix them before my own approver sees them.",
+          "frequency": "monthly",
+          "criticality": "money",
+          "concrete_data": {
+            "확인 필요 건": "09-13(일) 쿠팡 · 소모품비 · 법인카드 · 32,900원 · 영수증 — 확인 필요 (주말 사용)",
+            "규정 초과 건": "09-16(수) 교대 순대국 · 야근 식대 · 법인카드 · 51,000원 (3명) · 영수증 — 규정 초과 (한도 36,000원)",
+            "규정": "야근 식대는 21시 이후 사용분만, 1인 12,000원 한도 (3명 → 36,000원); 초과분은 지급되지 않을 수 있음",
+            "수정 예 (브리프 규정에서 도출한 시험 값)": "09-16 금액 51,000원 → 36,000원 (합계 T1 전 347,400원 → 332,400원 / T1 후 395,900원 → 380,900원)",
+            "삭제 예": "09-16 건 삭제 시 합계 T1 후 395,900원 → 344,900원",
+            "주말 사유 입력 예 (브리프에 없는 시험 값)": "월요일 거래처 미팅 자료용 소모품 긴급 주문"
+          },
+          "success_ko": "확인 필요 1건과 규정 초과 1건을 표에서 찾아 이유를 읽고, 규정 초과 건을 고치거나 지운 뒤 합계가 맞게 바뀐 것을 확인한다.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-02"
+          ]
+        },
+        {
+          "task_id": "T-senior-submit",
+          "goal_ko": "합계와 결재선을 확인하고 9월 보고서를 상신한다 (T3)",
+          "jtbd": "When I submit my monthly report between approvals, I want to confirm the total, that the 본부장 step was added for a report over 300,000원, and the attestation, so it is paid on 15 October.",
+          "frequency": "monthly",
+          "criticality": "money",
+          "concrete_data": {
+            "보고서": "2026년 9월 (T1 반영 후 10건 395,900원; T1 전 9건 347,400원)",
+            "결재선": "박서연 대리(기안) → 이재훈 팀장(승인) → 정지훈 본부장(승인) → 최윤정 과장(재무 확인)",
+            "본부장 추가 사유": "보고서 합계 30만 원 초과",
+            "확인 체크": "사용 내역이 사실이며 경비 규정을 지켰음",
+            "오늘": "2026-09-28(월)",
+            "제출 마감": "2026-09-30(수) 18:00",
+            "지급일": "2026-10-15(목) 급여 계좌"
+          },
+          "success_ko": "합계 395,900원과 4단계 결재선(본부장 포함)을 확인하고 사실 확인에 체크해 상신하면, 처리 결과 알림과 결재 진행 상태가 보인다.",
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "결재자로서 한도 넘은 건부터 찾아본다.",
+          "source_ids": [
+            "SRC-02"
+          ],
+          "kind": "firsthand"
+        },
+        {
+          "text": "가설: 7열 내역 표와 작은 상태 표시가 노안에게 흐릿하고, 글씨를 키우면(브라우저 확대) 표·창이 잘리거나 겹친다.",
+          "source_ids": [
+            "SRC-03",
+            "SRC-01"
+          ],
+          "kind": "inference"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-visually-impaired",
+      "name_ko": "화면 확대나 화면 낭독 프로그램으로 같은 경비 시스템을 쓰는 시각장애 직원",
+      "summary": "장애인 의무고용 사업장인 고객사에서 시각장애 직원도 같은 화면으로 경비를 청구한다. 저시력 직원은 화면 확대를, 전맹 직원은 화면 낭독 프로그램을 쓴다(화면 낭독은 스웜이 흉내 내지 않음 → 미시험 목록). 화면을 못 쓰면 경비를 받을 길이 막히므로 실패 비용이 크다. 규모는 추정치(약 0.4%)로, 380명 고객사에서는 1~2명 수준이다.",
+      "priority": "edge",
+      "role": "operator",
+      "share": {
+        "value": 0.004,
+        "basis": "estimated",
+        "source_ids": [
+          "SRC-01",
+          "SRC-06",
+          "SRC-05",
+          "SRC-07"
+        ]
+      },
+      "confidence": "low",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "claim": "시각·지체 장애 직원이 같은 시스템을 쓰고, 저시력은 확대, 전맹은 화면 낭독을 쓴다",
+          "kind": "official",
+          "quote": "장애인 의무고용 사업장(민간 의무고용률 3.1%)으로, 시각·지체 장애가 있는 직원도 같은 시스템으로 경비를 청구합니다. 저시력 직원은 화면 확대를, 전맹 직원은 화면 낭독 프로그램을 씁니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-06",
+          "claim": "민간기업 장애인 고용률은 의무고용률 3.1%에 약간 못 미친다",
+          "kind": "statistic",
+          "quote": "민간부문은 3.03%로 법정 의무고용률(3.1%)에 여전히 미치지 못했다",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-05",
+          "claim": "등록장애인 중 시각장애는 9.4%",
+          "kind": "statistic",
+          "quote": "지체장애(43.0%), 청각장애(16.8%), 시각장애(9.4%), 뇌병변장애(8.9%), 지적장애(8.9%)",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-07",
+          "claim": "시각장애인의 고용률은 장애인 전체(34%)보다 높은 편이다",
+          "kind": "statistic",
+          "quote": "시각장애(43.3%), 지체장애(43.0%)",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-06",
+          "claim": "추정: 의무고용률 3.1% × 취업 장애인 중 시각장애 약 12% (9.4% × 43.3/34) ≈ 0.4%",
+          "kind": "inference",
+          "quote": "민간부문은 3.03%로 법정 의무고용률(3.1%)에 여전히 미치지 못했다",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-08",
+          "claim": "등록 시각장애인 대부분은 저시력이고 전맹은 소수라고 보도됨 (존재 근거; 수치 미검증)",
+          "kind": "firsthand",
+          "quote": "국내 등록 시각 장애인 중 전맹 비율은 12%대에 지나지 않습니다",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-09",
+          "claim": "장애인의 디지털정보화 수준은 일반국민보다 낮다",
+          "kind": "statistic",
+          "quote": "people with disabilities showed a digital information level of 83.5% compared to the general population",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-10",
+          "claim": "웹 접근성은 장애인차별금지법 등으로 의무이며 KWCAG 2.2가 그 표준이다",
+          "kind": "official",
+          "quote": "『지능정보화기본법』, 『장애인 차별금지 및 권리구제 등에 관한 법률』에 의거 의무화된 웹 접근성 부문의 표준으로 활용될 수 있습니다.",
+          "quote_basis": "snippet"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "연령·기기 구성은 회사 전체 값을 썼다 (세그먼트별 자료 없음)",
+          "kind": "inference",
+          "quote": "접속 비중은 노트북 58%, 데스크톱 42%입니다.",
+          "quote_basis": "document"
+        }
+      ],
+      "age_bands": {
+        "20s": 0.21,
+        "30s": 0.37,
+        "40s": 0.27,
+        "50s": 0.15
+      },
+      "devices": {
+        "laptop-1440": 0.58,
+        "desktop-1920": 0.42
+      },
+      "orientation": "landscape",
+      "left_hand_share": null,
+      "familiarity": {
+        "returning": 1.0
+      },
+      "conditions": [
+        {
+          "condition": "low_vision",
+          "share": 0.88,
+          "stakes": "high",
+          "source_ids": [
+            "SRC-01",
+            "SRC-08"
+          ],
+          "cause": "permanent",
+          "why": "저시력 직원은 화면 확대를 씀 (브리프). 등록 시각장애인 중 전맹 12%대 (보도, 검색 발췌) → 나머지 약 88%를 저시력으로 봄 (inference, low confidence). 실패 시 경비 청구 자체가 막힘."
+        },
+        {
+          "condition": "magnifier",
+          "share": 0.88,
+          "stakes": "high",
+          "source_ids": [
+            "SRC-01",
+            "SRC-08"
+          ],
+          "cause": "permanent",
+          "why": "화면 확대(브라우저 확대 또는 OS 돋보기) 사용 (브리프). 돋보기 프로그램 자체는 흉내 내지 않음 → 미시험 목록."
+        },
+        {
+          "condition": "screen_reader",
+          "share": 0.12,
+          "stakes": "high",
+          "source_ids": [
+            "SRC-01",
+            "SRC-08"
+          ],
+          "cause": "permanent",
+          "why": "전맹 직원은 화면 낭독 프로그램을 씀 (브리프). 비율은 보도의 전맹 12%대를 씀 (inference). 스웜은 화면 낭독을 흉내 내지 않음 → 미시험 목록."
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-deadline-batch",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": true,
+          "time_pressure": "high",
+          "share": 0.61,
+          "source_ids": [
+            "SRC-01",
+            "SRC-02"
+          ],
+          "note": "마감 전 3영업일 61% (회사 전체 입력 기준, 브리프). 이 세그먼트만의 비율은 미상; 확대 사용자는 입력이 느려 마감 압박이 더 클 수 있음 (inference)."
+        },
+        {
+          "context_id": "CTX-off-peak",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": true,
+          "time_pressure": "low",
+          "share": 0.39,
+          "source_ids": [
+            "SRC-01"
+          ],
+          "note": "마감 주간 밖 39% (회사 전체 입력 기준, 브리프). 이 세그먼트만의 비율은 미상."
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-vi-add-zoomed",
+          "goal_ko": "화면을 200%로 확대한 채 경비 한 건을 추가한다 (T1)",
+          "jtbd": "When I enlarge the page to read it, I want the add-expense form, its category list and the file picker to stay usable without losing my place, so I can claim my expenses myself.",
+          "frequency": "monthly",
+          "criticality": "access",
+          "concrete_data": {
+            "사용일": "2026-09-24",
+            "금액": "48,500원 (입력 48500)",
+            "분류": "접대비 (목록: 교통비, 숙박비, 식대, 야근 식대, 회의비, 접대비, 소모품비, 기타)",
+            "결제수단": "법인카드",
+            "가맹점": "을지로 한우마을",
+            "참석자(거래처)": "(주)대성유통 김태호 부장 외 1명",
+            "사용 목적": "신규 거래처 미팅 식사",
+            "영수증": "영수증_20260924_한우마을.jpg (1.2MB)",
+            "화면 확대": "브라우저 확대 200% (가능하면 400%까지 확인)"
+          },
+          "success_ko": "내역 표에 09-24 을지로 한우마을 · 접대비 · 법인카드 · 48,500원 · 영수증 행이 생기고, 요약이 10건 395,900원으로 바뀐다.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-10"
+          ]
+        },
+        {
+          "task_id": "T-vi-submit",
+          "goal_ko": "확대한 화면에서 결재선·합계를 읽고 확인 체크 후 상신한다 (T3)",
+          "jtbd": "When I submit my report with the page magnified, I want to find the attestation checkbox and the submit button and read the result message, so I know my report went in before the deadline.",
+          "frequency": "monthly",
+          "criticality": "money",
+          "concrete_data": {
+            "보고서": "2026년 9월 (T1 반영 후 10건 395,900원; T1 전 9건 347,400원)",
+            "결재선": "박서연 대리(기안) → 이재훈 팀장(승인) → 정지훈 본부장(승인) → 최윤정 과장(재무 확인)",
+            "본부장 추가 사유": "보고서 합계 30만 원 초과",
+            "확인 체크": "사용 내역이 사실이며 경비 규정을 지켰음",
+            "오늘": "2026-09-28(월)",
+            "제출 마감": "2026-09-30(수) 18:00",
+            "지급일": "2026-10-15(목) 급여 계좌",
+            "화면 확대": "브라우저 확대 200%"
+          },
+          "success_ko": "합계 395,900원과 4단계 결재선(본부장 포함)을 확인하고 사실 확인에 체크해 상신하면, 처리 결과 알림과 결재 진행 상태가 보인다.",
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "가설: 확대하면 7열 표와 경비 추가 창이 잘리거나 가로 스크롤이 생기고, 상신 확인 창의 버튼이 화면 밖으로 밀린다.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-10"
+          ],
+          "kind": "inference"
+        },
+        {
+          "text": "가설: 규정 점검 상태를 색으로만 구분하면 저시력 사용자가 놓친다.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-10"
+          ],
+          "kind": "inference"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-buyer-finance",
+      "name_ko": "경비 규정을 정하고 반려·증빙 대조를 떠안는 재무·인사 담당자 (구매 고객)",
+      "summary": "도입을 결정하고 비용을 내는 중견·중소기업(임직원 100~1,000명) 재무팀·인사팀이다. 이번 화면('내 경비')은 직접 쓰지 않고, 그 결과(반려율, 마감 내 제출률, 문의 건수)와 접근성 준수(KWCAG 2.2 도입 심사)로 제품을 판단한다. 재무 확인·지급·규정 설정 화면은 이번 범위 밖이다.",
+      "priority": "secondary",
+      "role": "customer",
+      "share": {
+        "value": null,
+        "basis": "unknown",
+        "source_ids": [
+          "SRC-01"
+        ]
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "claim": "구매 고객은 중견·중소기업의 재무팀과 인사팀",
+          "kind": "official",
+          "quote": "임직원 100~1,000명 규모 중견·중소기업의 재무팀과 인사팀입니다(물류, 유통, 제조, IT 서비스).",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "도입 심사에서 웹 접근성 준수를 확인한다",
+          "kind": "official",
+          "quote": "대기업 계열사와 공공기관 입찰에서는 도입 심사 때 웹 접근성(KWCAG 2.2) 준수 여부를 확인합니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-01",
+          "claim": "재무팀의 반려·증빙 대조 부담",
+          "kind": "statistic",
+          "quote": "재무팀은 반려·재제출 처리와 증빙 대조에 월 40시간 이상을 씁니다.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-02",
+          "claim": "같은 이유의 반려가 반복된다 (재무팀 과장, 30대)",
+          "kind": "firsthand",
+          "quote": "직원들이 규정을 몰라서 같은 이유로 반려되는 게 반복돼요.",
+          "quote_basis": "document"
+        },
+        {
+          "source_id": "SRC-10",
+          "claim": "KWCAG 2.2의 구성 (도입 심사 기준)",
+          "kind": "statistic",
+          "quote": "한국형 웹 콘텐츠 접근성 지침 2.2는 4가지 원칙과 각 원칙을 준수하기 위한 14개 지침 및 해당 지침의 준수여부를 확인하기 위해 33개의 검사항목으로 구성되어 있습니다.",
+          "quote_basis": "snippet"
+        }
+      ],
+      "age_bands": {
+        "20s": 0.21,
+        "30s": 0.37,
+        "40s": 0.27,
+        "50s": 0.15
+      },
+      "devices": {
+        "desktop-1920": 1.0
+      },
+      "orientation": "landscape",
+      "left_hand_share": null,
+      "familiarity": {
+        "returning": 1.0
+      },
+      "conditions": [],
+      "contexts": [],
+      "tasks": [
+        {
+          "task_id": "T-buyer-judge-outcomes",
+          "goal_ko": "도입 효과와 접근성 준수로 제품을 판단한다 (화면을 직접 쓰지 않음)",
+          "jtbd": "When I decide whether to renew or roll out the service, I want fewer rejected first submissions and on-time reports and a KWCAG 2.2 pass, so my team stops spending 40+ hours a month on resubmissions.",
+          "frequency": "rare",
+          "criticality": "money",
+          "concrete_data": {
+            "첫 제출 반려율": "23% → 10% 이하",
+            "마감 내 제출률": "92% → 98%",
+            "한 건 입력 시간 중앙값": "2분 → 1분",
+            "경비 관련 문의": "월 120건 → 60건 이하",
+            "접근성 기준": "KWCAG 2.2 (4원칙 14지침 33검사항목)"
+          },
+          "success_ko": "성공 지표가 목표에 닿고, 도입 심사의 KWCAG 2.2 점검을 통과한다.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-10"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "직원들이 규정을 몰라 같은 이유로 반려되는 일이 반복된다.",
+          "source_ids": [
+            "SRC-02"
+          ],
+          "kind": "firsthand"
+        },
+        {
+          "text": "반려·재제출 처리와 증빙 대조에 월 40시간 이상을 쓴다.",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference"
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "group": "화면 낭독 프로그램을 쓰는 전맹 직원",
+      "why": "브리프가 존재를 밝히지만 스웜은 화면 낭독을 흉내 내지 않는다 (SEG-visually-impaired의 screen_reader 조건으로 선언).",
+      "test_instead": "센스리더 또는 NVDA + 크롬으로 T1~T4를 실제 사용자와 과제 테스트 (레이블, 오류 안내 낭독, 확인 창 포커스, 처리 결과 알림 낭독)."
+    },
+    {
+      "group": "상지 지체장애 등으로 마우스 대신 키보드나 대체 입력을 쓰는 직원",
+      "why": "브리프는 지체장애 직원의 존재만 밝히고 사용 방식은 밝히지 않는다. 떨림·조작 정밀도 비율 자료도 찾지 못했다. 스웜은 대체 입력을 흉내 내지 않는다.",
+      "test_instead": "키보드만으로 T1~T3 수행 (포커스 순서와 표시, Esc로 창 닫기, 파일 첨부, 확인 체크), 가능하면 실제 사용자와 과제 테스트."
+    },
+    {
+      "group": "결재함에서 승인·반려하는 팀장·본부장 (결재 역할)",
+      "why": "승인자 결재함(T5)은 이번 릴리스 범위 밖. 이들이 자기 경비를 넣는 부분은 SEG-senior-managers로 다룬다.",
+      "test_instead": "결재함 개편 릴리스에서 '한도 넘은 건부터 찾기' 과업으로 따로 시험."
+    },
+    {
+      "group": "재무 확인·지급 파일·관리자 규정 설정 화면을 쓰는 재무 담당자",
+      "why": "해당 화면은 이번 릴리스 범위 밖. 구매 고객으로서의 판단은 SEG-buyer-finance(role customer)로 기록.",
+      "test_instead": "해당 화면 개편 때 재무 담당자 과업으로 따로 시험."
+    },
+    {
+      "group": "모바일 영수증 촬영 앱 사용자 (휴대폰, 이동 중)",
+      "why": "이번 범위는 PC 웹의 '내 경비' 화면뿐. 휴대 기기와 걷기 맥락이 없으므로 walking floor도 붙지 않는다.",
+      "test_instead": "영수증 촬영 앱을 시험할 때 휴대폰 기기와 이동 맥락으로 따로 구성."
+    },
+    {
+      "group": "물류센터 현장 관리자 (레퍼런스 고객 50명, 13%)",
+      "why": "브리프에 이들의 기기·과업·사용 환경이 없어 세그먼트로 만들지 않았다 (본사 사무직과 같다고 가정하지 않음).",
+      "test_instead": "고객사에 현장 PC 환경(공용 PC 여부, 해상도, 브라우저)과 청구 유형을 확인한 뒤 세그먼트를 추가."
+    }
+  ]
+}

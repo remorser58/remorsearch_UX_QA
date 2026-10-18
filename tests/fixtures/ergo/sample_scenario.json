@@ -1,0 +1,91 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-checkout-01",
+  "surface": {
+    "kind": "web",
+    "url": "http://127.0.0.1:8765/shop/index.html"
+  },
+  "task_goal_ko": "장바구니 상품을 결제한다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {
+    "primary": [
+      "#pay"
+    ],
+    "destructive": [
+      "#delete-all"
+    ],
+    "critical_message": [
+      "#error"
+    ],
+    "ad_like": [],
+    "hud": [],
+    "game_control": [
+      "hotspot:hs-jump"
+    ],
+    "timed": []
+  },
+  "steps": [
+    {
+      "action": "tap",
+      "target": "#add"
+    },
+    {
+      "action": "wait",
+      "ms": 300
+    },
+    {
+      "action": "tap",
+      "target": "text=결제하기"
+    },
+    {
+      "action": "tap",
+      "target": "hotspot:hs-jump"
+    },
+    {
+      "action": "tap",
+      "target": {
+        "x": 180,
+        "y": 724
+      }
+    },
+    {
+      "action": "type",
+      "target": "#coupon",
+      "text": "SALE 10"
+    },
+    {
+      "action": "press",
+      "key": "Enter"
+    },
+    {
+      "action": "snapshot"
+    }
+  ],
+  "timing_windows": [
+    {
+      "id": "qte-1",
+      "selector": "#qte",
+      "measure": "visible_duration"
+    }
+  ],
+  "success": {
+    "selector_visible": "#done"
+  },
+  "hotspots": [
+    {
+      "id": "hs-jump",
+      "name": "jump",
+      "box": {
+        "x": 300,
+        "y": 600,
+        "w": 64,
+        "h": 64
+      },
+      "roles": [
+        "game_control"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "schema_version": "ux-evidence-bundle.v1",
+  "bundle_id": "bundle-invalid-finding",
+  "permissions": {"requested": ["read_only"], "granted": ["read_only"], "blocked": []},
+  "records": {
+    "sources": [],
+    "evidence": [],
+    "claims": [],
+    "personas": [{"id": "persona-1", "basis": "synthetic", "adapter_revision": "a", "schema_fingerprint": "b", "seed": "c", "shard_or_config": "d", "max_scanned_rows": 1, "max_bytes_read": 1, "timeout_ms": 1, "selected_record_ids": [], "filled_strata": [], "unfilled_strata": [], "stop_reason": "complete", "original_attributes": {}, "scenario_assumptions": {}}],
+    "scenarios": [{"id": "scenario-1", "persona_id": "persona-1"}],
+    "runs": [],
+    "observations": [],
+    "findings": [{"id": "finding-1", "scenario_id": "scenario-1", "observation_ids": [], "verification_status": "verified", "epistemic_status": "observed"}],
+    "proposals": [],
+    "figma": []
+  }
+}

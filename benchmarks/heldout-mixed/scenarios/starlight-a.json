@@ -1,0 +1,127 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-hm-starlight-a",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/heldout-mixed/site/starlight-a.html"
+  },
+  "task_goal_ko": "별빛 타이밍 한 판(15초)을 시작해 박자에 맞춰 탭하고, 부스터 찬스가 뜨면 부스터를 눌러 결과 화면까지 진행한다",
+  "device_ids": [
+    "iphone-15"
+  ],
+  "targets": {
+    "primary": [],
+    "destructive": [],
+    "irreversible": [],
+    "critical_message": [],
+    "error_message": [],
+    "status": [
+      "#final-score"
+    ],
+    "navigation": [],
+    "ad_like": [],
+    "hud": [
+      "#hud-score",
+      "#hud-time"
+    ],
+    "game_control": [],
+    "timed": [
+      "#prompt"
+    ]
+  },
+  "steps": [
+    {
+      "action": "tap",
+      "target": "hotspot:hs-tap"
+    },
+    {
+      "action": "wait",
+      "ms": 800
+    },
+    {
+      "action": "tap",
+      "target": "hotspot:hs-tap"
+    },
+    {
+      "action": "wait",
+      "ms": 800
+    },
+    {
+      "action": "tap",
+      "target": "hotspot:hs-tap"
+    },
+    {
+      "action": "wait",
+      "ms": 650
+    },
+    {
+      "action": "tap",
+      "target": "hotspot:hs-boost"
+    },
+    {
+      "action": "wait",
+      "ms": 800
+    },
+    {
+      "action": "tap",
+      "target": "hotspot:hs-tap"
+    },
+    {
+      "action": "wait",
+      "ms": 12500
+    }
+  ],
+  "timing_windows": [
+    {
+      "id": "qte-boost",
+      "selector": "#prompt",
+      "measure": "visible_duration",
+      "kind": "qte",
+      "text": "지금 부스터!"
+    }
+  ],
+  "success": {
+    "selector_visible": "#result"
+  },
+  "hotspots": [
+    {
+      "id": "hs-tap",
+      "name": "탭",
+      "box": {
+        "x": 116,
+        "y": 620,
+        "w": 160,
+        "h": 160
+      },
+      "roles": [
+        "game_control"
+      ]
+    },
+    {
+      "id": "hs-boost",
+      "name": "부스터",
+      "box": {
+        "x": 355,
+        "y": 436,
+        "w": 28,
+        "h": 28
+      },
+      "roles": [
+        "game_control"
+      ]
+    },
+    {
+      "id": "hs-pause",
+      "name": "일시정지",
+      "box": {
+        "x": 335,
+        "y": 54,
+        "w": 44,
+        "h": 44
+      },
+      "roles": [
+        "game_control"
+      ]
+    }
+  ]
+}

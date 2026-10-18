@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>(h2) 고대비 피드, 내부 스크롤</title>
+<!--
+  Control: the feed of feed-scroll.html inside an app-shell scroll box (html and
+  body do not scroll; #feed does), scrolled with touch strokes. The page's own
+  scroll position does not move, so the driver's motion estimate must carry it. While the page scrolls every screen region passes
+  from black to white several times a second; this is motion (the driver's
+  block_moved flags), not a flash, and must pass.
+-->
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #ffffff; color: #202124; font-family: sans-serif; }
+  #feed { height: 100%; overflow-y: auto; }
+  .card { height: 110px; margin: 0 0 30px; }
+  .dark { background: #000000; }
+  .red { background: #ff0000; }
+  p { font-size: 16px; line-height: 24px; margin: 0 16px 30px; }
+</style>
+</head>
+<body>
+<div id="feed"></div>
+<script>
+  (function () {
+    var html = '';
+    for (var i = 0; i < 60; i++) {
+      html += '<div class="card ' + (i % 3 === 2 ? 'red' : 'dark') + '"></div>';
+      html += '<p>' + (i + 1) + '번째 게시물 — 스크롤은 움직임입니다.</p>';
+    }
+    document.getElementById('feed').innerHTML = html;
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+[
+  {
+    "page": "product1-b.html",
+    "selector": "#menu-title",
+    "category": "overlapping_text",
+    "severity": "P1",
+    "evidence": "Menu title is 24px with line-height 16.8px (0.7). Its two lines (\"...구운 버섯\" / \"샐러드 세트\") overlap by about 12px vertically at both 360 and 393 px, so the glyphs collide and the second line is hard to read.",
+    "fix": "Set line-height to about 1.3 (31px) on #menu-title."
+  },
+  {
+    "page": "product1-b.html",
+    "selector": "#nutrition-row-sodium",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The nutrition row forces 4 cards of 104px onto one line. The 4th card (나트륨 2,140mg) starts at x=352 and ends at x=456, and main clips it with overflow:hidden. At 360px only a 8px sliver shows; at 393px the text starts at x=365 and is still cut. Sodium is not readable.",
+    "fix": "Use a 2x2 grid (grid-template-columns: repeat(2, 1fr)) or let the row wrap, as in a 2-column layout."
+  },
+  {
+    "page": "product1-b.html",
+    "selector": "#opt-size-large-ribbon",
+    "category": "covered_text",
+    "severity": "P1",
+    "evidence": "The absolutely positioned BEST badge (x=57-98, y=636-658) sits on top of the size name #opt-size-large-name (x=63-150). The option reads \"BEST (1.5인분)\" and the word \"라지\" is hidden at both widths.",
+    "fix": "Render the badge inline after the name (position: static; margin-left: 6px) or move it to the card corner outside the text box."
+  },
+  {
+    "page": "product1-b.html",
+    "selector": "#chip-sauce-spicy",
+    "category": "clipped_text",
+    "severity": "P1",
+    "evidence": "The chip has a fixed width of 104px with white-space:nowrap and overflow:hidden. The label needs about 150px (122px text + 28px padding), so it shows \"아주 매운맛 +1,0\" and hides the price.",
+    "fix": "Remove the fixed width (width: auto) so the chip sizes to its label, or allow it to wrap."
+  },
+  {
+    "page": "product1-b.html",
+    "selector": "#spice-note",
+    "category": "small_text",
+    "severity": "P2",
+    "evidence": "The spice warning (that the level cannot be changed after cooking starts and is not recommended for children) is set at 10px, much smaller than the surrounding 14-16px text, and is hard to read on a phone.",
+    "fix": "Raise it to at least 13px, matching the other helper text."
+  },
+  {
+    "page": "product1-b.html",
+    "selector": "#topping-list > li.add--new",
+    "category": "spacing",
+    "severity": "P3",
+    "evidence": "The \"리코타 치즈\" row has margin-top 4px, while every other topping row has 16px. The gap above it is 4px against 16px elsewhere, which is visibly uneven.",
+    "fix": "Remove the margin override so the row uses the list default of 16px."
+  },
+  {
+    "page": "product1-b.html",
+    "selector": "#addon-cutlery",
+    "category": "covered_text",
+    "severity": "P1",
+    "evidence": "The page is 1731px tall with no bottom padding for the 77px fixed #cart-bar. At maximum scroll (scrollY 951 at 360x780) the last option \"일회용 수저·포크 받기 / 무료\" (doc y 1655-1709) is still under the cart bar, so it can never be seen or tapped. Same at 393x852.",
+    "fix": "Add bottom padding to main at least as tall as the cart bar plus a gap, e.g. padding-bottom: calc(77px + 16px + env(safe-area-inset-bottom))."
+  },
+  {
+    "page": "product2-a.html",
+    "selector": "#cs-title",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The H1 has white-space:nowrap. The text is 567px wide in a 328px column and is cut at the viewport edge, reading \"바람길 물류가 배차 확정 시간을 4\". The rest of the title is not visible at 360 or 393px.",
+    "fix": "Remove white-space:nowrap so the title wraps (white-space: normal; overflow-wrap: anywhere for long words)."
+  },
+  {
+    "page": "product2-a.html",
+    "selector": "#summary-callout",
+    "category": "covered_text",
+    "severity": "P1",
+    "evidence": "The callout has margin-top -30px. Its top (y=543) sits above the bottom of #summary-body (y=573), so the box covers the last line of the summary (\"...시간에서 1시간 46분으로 줄었어요.\").",
+    "fix": "Use a positive margin-top (e.g. 16px) so the callout starts below the paragraph."
+  },
+  {
+    "page": "product2-a.html",
+    "selector": "#stat-dispatch-value",
+    "category": "clipped_text",
+    "severity": "P1",
+    "evidence": "The value \"1시간 46분\" is 28px with white-space:nowrap. It is 123px wide inside a 104px stat card (80px content box at 360px, 115px card at 393px) with overflow:hidden, so it shows as \"1시간 46\" and the unit is cut.",
+    "fix": "Allow the value to wrap (white-space: normal) or scale it down, e.g. font-size: clamp(20px, 6vw, 28px)."
+  },
+  {
+    "page": "product2-a.html",
+    "selector": "#sec-process-title",
+    "category": "overlapping_text",
+    "severity": "P1",
+    "evidence": "The section heading is 22px with line-height 15.4px (0.7). Its two lines overlap by about 11.6px and are unreadable (\"처음 세운 가설 세 가지를 모두 내려놓고 / 종이 배차표부터 다시 그린 이유\").",
+    "fix": "Set line-height to about 1.35."
+  },
+  {
+    "page": "product2-a.html",
+    "selector": "#lesson-body",
+    "category": "small_text",
+    "severity": "P2",
+    "evidence": "The body of \"배운 점\" is set at 10px, while other article paragraphs use 16px. It reads like fine print and is hard to read on a phone.",
+    "fix": "Use the article body size (16px, line-height 1.65)."
+  },
+  {
+    "page": "product2-a.html",
+    "selector": "#step-3",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "Step 3 has margin-left 4px. Its number badge and text start at x=20, while steps 1, 2 and 4 start at x=16, so the numbered list is visibly jagged.",
+    "fix": "Remove the margin-left on #step-3."
+  },
+  {
+    "page": "product2-a.html",
+    "selector": "#change-list > li.chg--new",
+    "category": "spacing",
+    "severity": "P3",
+    "evidence": "\"휴무 반영 누락\" has margin-top 6px, while the other result rows have 20px. The gap above it is 6px against 20px elsewhere.",
+    "fix": "Remove the override so the row uses margin-top: 20px."
+  },
+  {
+    "page": "product2-a.html",
+    "selector": "#more-case-last",
+    "category": "covered_text",
+    "severity": "P1",
+    "evidence": "The page is 2073px tall with no bottom padding for the fixed 77px #cta-bar. At maximum scroll (1293 at 360x780, 1221 at 393x852) the last related case (doc y 1974-2065, \"중고 가구 플랫폼의 검수 대기 시간을...\", \"커머스 · 9분 분량\") stays behind the CTA.",
+    "fix": "Add bottom padding to the article at least as tall as the CTA bar plus a gap (about 100px plus the safe-area inset)."
+  },
+  {
+    "page": "product3-b.html",
+    "selector": "#page-title",
+    "category": "covered_text",
+    "severity": "P1",
+    "evidence": "main starts the page title at y=40-76, but the fixed header.top is 64px tall. At load the H1 \"세일즈 2팀 주간 성과\" is mostly hidden under the header and only the bottom 12px of the glyphs show.",
+    "fix": "Offset main by the header height, e.g. padding-top: 104px (64px header + 40px)."
+  },
+  {
+    "page": "product3-b.html",
+    "selector": "#tab-cohort",
+    "category": "clipped_text",
+    "severity": "P1",
+    "evidence": "Tabs have a fixed width of 84px, no horizontal padding, nowrap and overflow:hidden. \"리텐션 코호트 분석\" needs 104px, so it is cut to \"리텐션 코호트 !\" and butts against the \"리포트\" tab.",
+    "fix": "Size tabs to their content (width: auto; padding: 0 16px)."
+  },
+  {
+    "page": "product3-b.html",
+    "selector": "#kpi-churn-delta",
+    "category": "clipped_text",
+    "severity": "P1",
+    "evidence": "The churn delta line is nowrap at 13px and needs about 375px, but the KPI card leaves 279px with overflow:hidden. It is cut mid-word at \"...해지 38건 중 21건이 연간 플\".",
+    "fix": "Allow wrapping (white-space: normal) so it breaks onto two lines inside the card."
+  },
+  {
+    "page": "product3-b.html",
+    "selector": "#cell-owner-4-flag",
+    "category": "covered_text",
+    "severity": "P1",
+    "evidence": "The \"휴가\" badge is absolutely positioned at x=547-584, y=612-634 with margin-top -11px. It covers the owner name #cell-owner-4-name (x=519-567), so the row reads \"남궁/ 휴가\" and the name cannot be read.",
+    "fix": "Make the badge inline (position: static) with margin-left: 6px after the name."
+  },
+  {
+    "page": "product3-b.html",
+    "selector": "#insight-title",
+    "category": "overlapping_text",
+    "severity": "P1",
+    "evidence": "The insight headline is 20px with line-height 14.4px (0.72). Its two lines overlap by about 9.6px (\"이번 주 전환율 하락은 대부분 신규 리드 유입 / 채널 한 곳에서 시작됐어요\").",
+    "fix": "Set line-height to about 1.35."
+  },
+  {
+    "page": "product3-b.html",
+    "selector": "#panel-goals",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The goals panel has margin-left 3px. Its left edge is at x=1003 and it is 397px wide, while #panel-detail and #panel-insight sit at x=1000 with a 400px width, so the right column edge is visibly uneven.",
+    "fix": "Remove the margin-left so all right-column panels share x=1000."
+  },
+  {
+    "page": "product3-b.html",
+    "selector": "#activity-list > li.act--sys",
+    "category": "spacing",
+    "severity": "P3",
+    "evidence": "The system activity row (\"주간 목표 리포트가...\") has margin-top 8px, while the other rows have 20px. The gap above it is 8px against 20px elsewhere.",
+    "fix": "Remove the override so the row uses margin-top: 20px."
+  },
+  {
+    "page": "product4-a.html",
+    "selector": "#eta-box-date",
+    "category": "covered_text",
+    "severity": "P1",
+    "evidence": "Content starts at y=0 under the fixed 56px #co-header. At load the delivery ETA headline \"10월 20일(월) 오전 7시 전 도착 예정\" (y=24-49) is completely hidden behind the header, and only part of the next line shows.",
+    "fix": "Add padding-top equal to the header height plus a gap (about 80px) to .app."
+  },
+  {
+    "page": "product4-a.html",
+    "selector": "#addr-box-line",
+    "category": "clipped_text",
+    "severity": "P1",
+    "evidence": "The delivery address is white-space:nowrap. It is 552px wide inside a 294px box with overflow:hidden and no ellipsis, so it stops at \"...바람채아파트 101동\" and the unit number and gate code are invisible at 360 and 393px.",
+    "fix": "Let the address wrap (white-space: normal; overflow-wrap: anywhere)."
+  },
+  {
+    "page": "product4-a.html",
+    "selector": "#price-headphone",
+    "category": "clipped_text",
+    "severity": "P1",
+    "evidence": "The headphone price cell is 62px wide with nowrap and overflow:hidden, but \"1,249,000원\" needs 79px. The price displays as \"1,249,00\" at 360px and is cut similarly at 393px.",
+    "fix": "Let the price keep its natural width (width: auto; flex-shrink: 0; white-space: nowrap) and let the name column flex instead."
+  },
+  {
+    "page": "product4-a.html",
+    "selector": "#coupon-terms",
+    "category": "small_text",
+    "severity": "P2",
+    "evidence": "The coupon conditions (minimum amount, dawn-delivery exclusion, refund rules) are set at 10px. These are important purchase terms and are hard to read.",
+    "fix": "Use at least 13px with line-height 1.5."
+  },
+  {
+    "page": "product4-a.html",
+    "selector": "#installment-table",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The installment table is 405px wide in a 328px column. The 4th column \"총 납부 금액\" (x=343-413) extends past the 360 and 393px viewports and is clipped by .app overflow:hidden with no horizontal scroll, so the total for each plan (1,217,400원 / 1,292,480원) cannot be read.",
+    "fix": "Fit the table to the column (width: 100%; tighter cell padding; table-layout: fixed) or wrap it in an overflow-x: auto container."
+  },
+  {
+    "page": "product4-a.html",
+    "selector": "#sum-row-shipping",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "The shipping row has padding-left 5px. Its label \"배송비\" starts at x=21, while the other payment-summary labels start at x=16, so the label column is visibly misaligned.",
+    "fix": "Remove the padding-left on #sum-row-shipping."
+  }
+]

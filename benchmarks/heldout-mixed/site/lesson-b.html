@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>배움터 러닝 · 파이썬 기초</title>
+<style>
+:root{--ink:#191f28;--sub:#4e5968;--line:#e5e8eb;--soft:#f2f4f6;--brand:#1d5fd1}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;color:var(--ink);background:#fff;font-size:17px;overflow:hidden;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;touch-action:manipulation}
+.app{position:relative;height:100vh;overflow:hidden}
+.top{position:absolute;top:0;left:0;right:0;height:64px;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line);background:#fff;z-index:5}
+.top h1{font-size:20px;font-weight:800}
+#menu{position:absolute;left:8px;top:8px;width:48px;height:48px;font-size:24px}
+#profile{position:absolute;right:8px;top:8px;width:48px;height:48px;border-radius:50%;background:#e8f0fe;color:var(--brand);font-weight:800}
+.scr{position:absolute;top:64px;left:0;right:0;bottom:0;display:none;background:#fff}
+.scr.on{display:block}
+.due{height:64px;background:#1c1f26;display:flex;align-items:center;padding:0 24px}
+#deadline{font-size:17px;color:#ff3b30;font-weight:400}
+.course{padding:32px 24px 0}
+.course h2{font-size:28px;font-weight:800}
+.course .unit{font-size:20px;margin-top:6px}
+.course .prog{font-size:17px;color:var(--sub);margin-top:18px}
+.bar{height:10px;border-radius:5px;background:var(--soft);margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:38%;background:var(--brand)}
+.goal{margin-top:24px;padding:18px 20px;border-radius:14px;background:var(--soft);font-size:17px;line-height:1.6;color:var(--ink)}
+.grid{position:absolute;left:16px;right:16px;top:456px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{height:180px;border:1px solid var(--line);border-radius:18px;padding:22px;text-align:left;display:flex;flex-direction:column;gap:8px;background:#fff}
+.card b{font-size:20px}
+.card span{font-size:16px;color:var(--sub)}
+.card em{font-style:normal;font-size:15px;font-weight:700;margin-top:auto;align-self:flex-start;padding:5px 10px;border-radius:8px;background:var(--soft);color:var(--ink)}
+.video{height:450px;background:#0d0f14;position:relative;display:flex;align-items:center;justify-content:center}
+.slide{font-family:ui-monospace,Menlo,Consolas,monospace;color:#fff;font-size:26px;line-height:1.6;background:#16181d;padding:24px 32px;border-radius:12px}
+#caption{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);background:rgba(0,0,0,.75);color:#fff;font-size:13px;line-height:1.4;padding:4px 12px;border-radius:6px;white-space:nowrap}
+.ctrl{height:64px;background:#16181d;display:flex;align-items:center;gap:12px;padding:0 12px;color:#fff}
+.ctrl button{width:56px;height:56px;color:#fff;font-size:16px;font-weight:700;border-radius:10px}
+#play{font-size:24px}
+.track{flex:1;height:6px;border-radius:3px;background:#3b3f47;overflow:hidden}
+.track i{display:block;height:100%;width:0;background:#4dabf7}
+.time{font-size:16px;color:#fff;min-width:118px;text-align:center}
+.info{padding:24px}
+.info h2{font-size:24px;font-weight:800}
+.info .meta{font-size:16px;color:var(--sub);margin-top:6px}
+.info p{font-size:17px;line-height:1.6;margin-top:14px}
+.gate{position:absolute;right:24px;top:692px;width:216px;height:64px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:16px;color:var(--sub)}
+#start-quiz{position:absolute;right:24px;top:692px;width:216px;height:64px;border-radius:14px;background:var(--brand);color:#fff;font-size:18px;font-weight:800;display:none}
+.qhead{padding:28px 24px 0;font-size:18px;color:var(--sub);font-weight:600}
+#qtext{padding:12px 24px 0;font-size:24px;font-weight:800;line-height:1.5}
+#qcode{margin:16px 24px 0;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:22px;background:var(--soft);border-radius:12px;padding:16px 20px;display:none}
+.opts{position:absolute;left:0;right:0;top:496px;list-style:none}
+.opts li{height:64px;display:flex;align-items:center;padding:0 24px;border-bottom:1px solid var(--line)}
+.opts input{width:20px;height:20px;margin:0 16px 0 8px;flex:none;accent-color:#1d5fd1}
+.opts span{font-size:20px}
+#explain{position:absolute;left:16px;right:16px;top:776px;min-height:136px;border-radius:16px;background:#f4f7fb;border:1px solid #d7e3f4;padding:18px 22px;display:none}
+#explain.on{display:block}
+#explain .verdict{font-size:19px;font-weight:800}
+#explain .verdict.right{color:#1f7a35}
+#explain .verdict.miss{color:#b42323}
+#explain .why{font-size:18px;line-height:1.6;margin-top:8px}
+#next-q{position:absolute;right:24px;top:936px;width:216px;height:64px;border-radius:14px;background:var(--soft);font-size:18px;font-weight:800;display:none}
+#quiz-submit{position:absolute;left:320px;width:160px;top:1036px;height:64px;border-radius:14px;background:var(--brand);color:#fff;font-size:18px;font-weight:800;display:none}
+#quiz-result{z-index:3}
+.rhead{padding:40px 24px 0}
+.rhead h2{font-size:28px;font-weight:800}
+.rhead p{font-size:20px;margin-top:10px}
+.rrow{margin:16px 24px 0;padding:18px 20px;border-radius:14px;font-size:18px;font-weight:700}
+#res-1{color:#1f7a35;background:#edf9f0}
+#res-2{color:#b42323;background:#fdf0f0}
+#to-list{position:absolute;right:24px;top:560px;width:216px;height:64px;border-radius:14px;background:var(--soft);font-size:18px;font-weight:800}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top"><button id="menu" aria-label="메뉴">☰</button><h1 id="title">배움터 러닝</h1><button id="profile" aria-label="내 정보">민</button></header>
+
+  <section id="scr-list" class="scr on">
+    <div class="due"><p id="deadline">3주차 확인 퀴즈 마감 · 오늘 23:59까지</p></div>
+    <div class="course">
+      <h2>파이썬 기초 · 3주차</h2>
+      <p class="unit">변수와 자료형</p>
+      <p class="prog">진도율 38% · 강의 4개 중 1개 완료</p>
+      <div class="bar"><i></i></div>
+      <p class="goal">이번 주 목표: 변수를 만들고, 숫자형과 문자열의 차이를 설명할 수 있어요. 강의를 본 뒤 확인 퀴즈를 풀어 보세요.</p>
+    </div>
+    <div class="grid">
+      <button class="card" id="lec-1"><b>3-1 변수란 무엇인가</b><span>08:40 · 이서연 강사</span><em>수강 완료</em></button>
+      <button class="card" id="lec-2"><b>3-2 숫자형과 문자열</b><span>요약 클립 · 이서연 강사</span><em>이어서 보기</em></button>
+      <button class="card" id="lec-3"><b>3-3 형 변환</b><span>11:05 · 이서연 강사</span><em>미수강</em></button>
+      <button class="card" id="lec-4"><b>3-4 입력과 출력</b><span>09:50 · 이서연 강사</span><em>미수강</em></button>
+    </div>
+  </section>
+
+  <section id="scr-player" class="scr">
+    <div class="video">
+      <pre class="slide">age = 20
+price = 3.0
+name = "민지"
+print(type(price))</pre>
+      <p id="caption">▶ 버튼을 누르면 요약 강의가 시작돼요</p>
+    </div>
+    <div class="ctrl">
+      <button id="play" aria-label="재생">▶</button>
+      <div class="track"><i id="track"></i></div>
+      <span class="time" id="time">00:00 / 00:06</span>
+      <button id="speed" aria-label="재생 속도">1.0배</button>
+      <button id="cc" aria-label="자막 켜기 끄기">자막</button>
+    </div>
+    <div class="info">
+      <h2>3-2 숫자형과 문자열</h2>
+      <p class="meta">요약 클립 · 6초 · 이서연 강사</p>
+      <p>정수(int), 실수(float), 문자열(str)이 어떻게 다른지 짧게 정리해요. 영상을 끝까지 보면 확인 퀴즈가 열려요.</p>
+    </div>
+    <p class="gate" id="gate">영상을 끝까지 보면<br>퀴즈가 열려요</p>
+    <button id="start-quiz">확인 퀴즈 풀기</button>
+  </section>
+
+  <section id="scr-quiz" class="scr">
+    <p class="qhead" id="qhead">확인 퀴즈 · 문제 1 / 2</p>
+    <p id="qtext"></p>
+    <pre id="qcode"></pre>
+    <ul class="opts" id="opts"></ul>
+    <div id="explain" role="status"><p class="verdict" id="verdict"></p><p class="why" id="why"></p></div>
+    <button id="next-q">다음 문제</button>
+    <button id="quiz-submit">제출하기</button>
+  </section>
+
+  <section id="quiz-result" class="scr">
+    <div class="rhead"><h2>퀴즈 결과</h2><p id="score-line">2문제 중 1문제를 맞혔어요</p></div>
+    <p class="rrow" id="res-1"></p>
+    <p class="rrow" id="res-2"></p>
+    <button id="to-list">목록으로</button>
+  </section>
+</div>
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var AUTO_ADVANCE=5000;
+  function show(id,title){document.querySelectorAll('.scr').forEach(function(s){s.classList.toggle('on',s.id===id)});$('#title').textContent=title||'배움터 러닝';}
+  document.querySelectorAll('.card').forEach(function(c){c.addEventListener('click',function(){show('scr-player','3-2 숫자형과 문자열');});});
+  $('#menu').addEventListener('click',function(){show('scr-list');});
+  var caps=[[0,'변수에는 숫자와 문자열을 담을 수 있어요'],[3000,'type() 함수로 자료형을 확인해 보세요']];
+  var playing=false,t0=0,raf=0,DUR=6000;
+  function fmt(ms){var s=Math.min(6,Math.floor(ms/1000));return '00:0'+s+' / 00:06';}
+  function tick(){
+    var e=performance.now()-t0;
+    $('#track').style.width=Math.min(100,e/DUR*100)+'%';
+    $('#time').textContent=fmt(e);
+    var c=caps[0][1];caps.forEach(function(k){if(e>=k[0])c=k[1];});$('#caption').textContent=c;
+    if(e>=DUR){playing=false;$('#play').textContent='↻';$('#play').setAttribute('aria-label','다시 보기');$('#gate').style.display='none';$('#start-quiz').style.display='block';return;}
+    raf=requestAnimationFrame(tick);
+  }
+  $('#play').addEventListener('click',function(){
+    if(playing) return;
+    playing=true;t0=performance.now();$('#play').textContent='❚❚';$('#play').setAttribute('aria-label','일시정지');tick();
+  });
+  $('#speed').addEventListener('click',function(){var b=$('#speed');b.textContent=b.textContent==='1.0배'?'1.5배':'1.0배';});
+  $('#cc').addEventListener('click',function(){var c=$('#caption');c.style.visibility=c.style.visibility==='hidden'?'visible':'hidden';});
+
+  var Q=[
+    {q:'다음 중 변수 이름으로 쓸 수 없는 것은?',code:'',opts:['my_name','2nd_value','_count','total2'],ans:1,
+     why:'변수 이름은 숫자로 시작할 수 없어요. value2처럼 써요.'},
+    {q:'아래 코드를 실행하면 무엇이 출력될까요?',code:'print(type(3.0))',opts:["<class 'int'>","<class 'str'>","<class 'float'>","<class 'bool'>"],ans:2,
+     why:'소수점이 있는 3.0은 실수형(float)이에요.'}
+  ];
+  var qi=0,answers=[],advanceTimer=null;
+  var L=['a','b','c','d'],N=['①','②','③','④'];
+  function renderQ(){
+    var q=Q[qi];
+    $('#qhead').textContent='확인 퀴즈 · 문제 '+(qi+1)+' / '+Q.length;
+    $('#qtext').textContent=q.q;
+    var code=$('#qcode');code.textContent=q.code;code.style.display=q.code?'block':'none';
+    var ul=$('#opts');ul.innerHTML='';
+    q.opts.forEach(function(o,i){ul.insertAdjacentHTML('beforeend','<li><input type="radio" name="q" id="opt-'+L[i]+'" aria-label="'+N[i]+' '+o+'"><span>'+N[i]+' '+o.replace(/</g,'&lt;')+'</span></li>');});
+    L.forEach(function(l,i){var el=document.getElementById('opt-'+l);el.addEventListener('click',function(){pick(i)});});
+    $('#explain').classList.remove('on');$('#next-q').style.display='none';
+  }
+  function pick(i){
+    if(answers.length>qi) return;
+    var q=Q[qi];answers.push(i);
+    L.forEach(function(l,k){var el=document.getElementById('opt-'+l);if('checked' in el) el.checked=(k===i);el.setAttribute('aria-checked',k===i?'true':'false');el.disabled=true;});
+    var ok=i===q.ans;
+    var v=$('#verdict');v.className='verdict '+(ok?'right':'miss');
+    v.textContent=ok?'✓ 정답이에요!':'✗ 아쉬워요. 정답은 '+N[q.ans]+'번이에요.';
+    $('#why').textContent=q.why;
+    $('#explain').classList.add('on');
+    var last=qi===Q.length-1;
+    if(AUTO_ADVANCE){
+      advanceTimer=setTimeout(function(){
+        $('#explain').classList.remove('on');
+        if(last){$('#quiz-submit').style.display='block';}else{qi++;renderQ();}
+      },AUTO_ADVANCE);
+    }else{
+      if(last){$('#quiz-submit').style.display='block';}else{$('#next-q').style.display='block';}
+    }
+  }
+  $('#next-q').addEventListener('click',function(){qi++;renderQ();});
+  $('#start-quiz').addEventListener('click',function(){qi=0;answers=[];$('#quiz-submit').style.display='none';show('scr-quiz','확인 퀴즈');renderQ();});
+  $('#quiz-submit').addEventListener('click',function(){
+    var right=0;Q.forEach(function(q,i){if(answers[i]===q.ans)right++;});
+    $('#score-line').textContent=Q.length+'문제 중 '+right+'문제를 맞혔어요';
+    [0,1].forEach(function(i){
+      var ok=answers[i]===Q[i].ans;
+      $('#res-'+(i+1)).textContent=(ok?'✓ 정답':'✗ 오답')+' · '+(i+1)+'번 '+(i===0?'변수 이름 규칙':'실수형(float)');
+    });
+    show('quiz-result','퀴즈 결과');
+  });
+  $('#to-list').addEventListener('click',function(){show('scr-list');});
+})();
+</script>
+</body>
+</html>

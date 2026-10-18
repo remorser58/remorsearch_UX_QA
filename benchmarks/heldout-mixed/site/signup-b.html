@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>온결마켓 · 회원가입</title>
+<style>
+:root{--ink:#191f28;--sub:#4e5968;--line:#dee2e6;--brand:#1d5fd1}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,"Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic",sans-serif;color:var(--ink);background:#f8f9fa;font-size:16px}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+.gnb{height:64px;background:#fff;border-bottom:1px solid #e9ecef;display:flex;align-items:center;padding:0 40px}
+.logo{font-size:22px;font-weight:900;color:var(--brand);text-decoration:none}
+.gnb nav{margin-left:auto;display:flex;gap:8px}
+.gnb nav a{font-size:15px;color:var(--sub);text-decoration:none;padding:9px 12px;border-radius:8px}
+main{padding:40px 0 64px}
+.card{width:520px;margin:0 auto;background:#fff;border:1px solid #e9ecef;border-radius:20px;padding:40px}
+h1{font-size:30px;font-weight:800}
+.lead{font-size:16px;color:var(--sub);margin-top:8px;line-height:1.5}
+.quick{margin-top:24px;display:flex;flex-direction:column;gap:10px}
+.quick button{height:52px;border:1px solid #ced4da;border-radius:12px;background:#fff;font-size:16px;font-weight:700;color:var(--ink)}
+.or{display:flex;align-items:center;gap:12px;margin:28px 0 4px;font-size:15px;color:var(--sub)}
+.or::before,.or::after{content:"";flex:1;height:1px;background:#e9ecef}
+.field{margin-top:20px}
+.field label.lb{display:block;font-size:16px;font-weight:700;margin-bottom:8px}
+.lbrow{display:flex;align-items:center;gap:10px;margin-bottom:8px;position:relative}
+.lbrow label.lb{margin-bottom:0}
+.field input{width:100%;height:48px;border:1px solid #868e96;border-radius:10px;padding:0 14px;font:inherit;font-size:16px;color:var(--ink);background:#fff}
+.field input::placeholder{color:#6b7684}
+.field input:focus{outline:3px solid #a5c8ff;outline-offset:1px}
+#pw-rule{margin-top:8px;font-size:12px;color:#b3b3b3}
+#phone-help{width:20px;height:20px;border-radius:50%;border:1.5px solid #4e5968;background:#fff;color:#4e5968;font-size:13px;font-weight:800;line-height:16px;padding:0}
+#phone-tip{position:absolute;left:0;top:30px;z-index:5;background:#333d4b;color:#fff;font-size:14px;padding:8px 12px;border-radius:8px;display:none;white-space:nowrap}
+#phone-help:hover+#phone-tip,#phone-help:focus+#phone-tip{display:block}
+#form-errors{margin-top:20px;padding:14px 16px;border-radius:12px;background:#fff5f5;border:1px solid #ffc9c9;color:#b42323;font-size:15px;line-height:1.5;display:none}
+#form-errors.on{display:block}
+.terms{margin-top:28px;border:1px solid var(--line);border-radius:14px;padding:8px 16px}
+.terms hr{border:0;border-top:1px solid #e9ecef;margin:6px 0}
+.trow{display:flex;align-items:center;height:36px;font-size:16px}
+.trow input{width:16px;height:16px;margin:0 10px 0 0;flex:none;accent-color:#1d5fd1}
+.trow.all{font-weight:700}
+.view{margin-left:auto;font-size:15px;color:var(--sub);padding:7px 10px;border-radius:8px;text-decoration:underline;flex:none}
+#submit{margin-top:24px;width:100%;height:52px;border:0;border-radius:12px;background:var(--brand);color:#fff;font-size:17px;font-weight:800}
+#submit:disabled{background:#e9ecef;color:#adb5bd;cursor:not-allowed}
+.login{margin-top:18px;text-align:center;font-size:15px;color:var(--sub)}
+.login a{display:inline-block;padding:7px 8px;font-weight:700;color:var(--brand)}
+footer{text-align:center;font-size:14px;color:var(--sub);padding:0 0 40px}
+footer a{display:inline-block;padding:7px 8px;text-decoration:none}
+#done{display:none;width:520px;margin:0 auto;background:#fff;border:1px solid #e9ecef;border-radius:20px;padding:56px 40px;text-align:center}
+#done.on{display:block}
+#done h2{font-size:28px;font-weight:800}
+#done p{font-size:17px;color:var(--sub);margin-top:12px}
+#done button{margin-top:28px;width:240px;height:52px;border:0;border-radius:12px;background:var(--brand);color:#fff;font-size:17px;font-weight:800}
+</style>
+</head>
+<body>
+<header class="gnb"><a class="logo" href="#" id="logo">온결마켓</a><nav><a href="#" id="nav-login">로그인</a><a href="#" id="nav-help">고객센터</a></nav></header>
+<main>
+  <div class="card" id="signup-card">
+    <h1>회원가입</h1>
+    <p class="lead">온결마켓 계정을 만들면 첫 주문 무료배송 쿠폰을 드려요.</p>
+    <div id="form-errors" role="alert"></div>
+    <div class="quick">
+      <button type="button" id="quick-phone">휴대폰 간편인증으로 가입</button>
+      <button type="button" id="quick-cert">공동·금융인증서로 가입</button>
+    </div>
+    <p class="or">또는 이메일로 가입</p>
+    <form id="signup-form" novalidate>
+      <div class="field"><label class="lb" for="email">이메일</label><input id="email" type="email" autocomplete="email" placeholder="예) minji@example.com"></div>
+      <div class="field"><label class="lb" for="pw">비밀번호</label><input id="pw" type="password" autocomplete="new-password" aria-describedby="pw-rule"><p id="pw-rule">영문, 숫자, 특수문자를 모두 넣어 8~20자로 만들어 주세요.</p></div>
+      <div class="field"><label class="lb" for="pw2">비밀번호 확인</label><input id="pw2" type="password" autocomplete="new-password"></div>
+      <div class="field"><label class="lb" for="name">이름</label><input id="name" type="text" autocomplete="name"></div>
+      <div class="field"><div class="lbrow"><label class="lb" for="phone">휴대폰 번호</label><button type="button" id="phone-help" aria-label="휴대폰 번호 안내">?</button><span id="phone-tip" role="tooltip">본인 명의 휴대폰 번호만 가입할 수 있어요</span></div><input id="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="숫자만 입력"></div>
+      <div class="terms">
+        <div class="trow all"><input type="checkbox" id="agree-all"><span>전체 동의 (선택 항목 포함)</span></div>
+        <hr>
+        <div class="trow"><input type="checkbox" id="agree-terms"><span>[필수] 서비스 이용약관 동의</span><a href="#" class="view" id="view-terms">보기</a></div>
+        <div class="trow"><input type="checkbox" id="agree-privacy"><span>[필수] 개인정보 수집·이용 동의</span><a href="#" class="view" id="view-privacy">보기</a></div>
+        <div class="trow"><input type="checkbox" id="agree-marketing"><span>[선택] 마케팅 정보 수신 동의 (이메일·문자)</span></div>
+      </div>
+      <button type="submit" id="submit" disabled>가입하기</button>
+      
+    </form>
+    <p class="login">이미 계정이 있나요? <a href="#" id="to-login">로그인</a></p>
+  </div>
+  <section id="done" aria-live="polite"><h2 id="done-title">가입을 환영해요!</h2><p>첫 주문 무료배송 쿠폰이 발급되었어요.</p><button type="button" id="go-shop">쇼핑 시작하기</button></section>
+</main>
+<footer>© 온결마켓 · <a href="#" id="ft-terms">이용약관</a> · <a href="#" id="ft-privacy">개인정보처리방침</a></footer>
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var CHECKS=['agree-terms','agree-privacy','agree-marketing'];
+  function box(id){return document.getElementById(id+'');}
+  function refresh(){
+    $('#submit').disabled=!(box('agree-terms').checked&&box('agree-privacy').checked);
+    box('agree-all').checked=CHECKS.every(function(c){return box(c).checked;});
+  }
+  CHECKS.forEach(function(c){box(c).addEventListener('change',refresh);});
+  box('agree-all').addEventListener('change',function(){var v=box('agree-all').checked;CHECKS.forEach(function(c){box(c).checked=v;});refresh();});
+  document.querySelectorAll('.view').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+  document.querySelectorAll('a[href="#"]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();});});
+  var RULES={
+    email:function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)?'':'이메일 주소 형식이 올바르지 않아요.';},
+    pw:function(v){return (v.length>=8&&v.length<=20&&/[A-Za-z]/.test(v)&&/[0-9]/.test(v)&&/[^A-Za-z0-9]/.test(v))?'':'비밀번호는 영문, 숫자, 특수문자를 모두 넣어 8~20자로 만들어 주세요.';},
+    pw2:function(v){return v&&v===$('#pw').value?'':'비밀번호가 서로 달라요. 같은 비밀번호를 한 번 더 입력해 주세요.';},
+    name:function(v){return v.trim()?'':'이름을 입력해 주세요.';},
+    phone:function(v){return /^01[0-9]{8,9}$/.test(v.replace(/-/g,''))?'':'휴대폰 번호를 숫자 10~11자리로 입력해 주세요.';}
+  };
+  var LABEL={email:'이메일',pw:'비밀번호',pw2:'비밀번호 확인',name:'이름',phone:'휴대폰 번호'};
+  var errTimer=null;
+  $('#signup-form').addEventListener('submit',function(e){
+    e.preventDefault();
+    var bad=[];
+    Object.keys(RULES).forEach(function(id){
+      var el=document.getElementById(id),msg=RULES[id](el.value);
+      mark(id,el,msg);
+      if(msg)bad.push([id,msg]);
+    });
+    if(bad.length){
+      if(bad.some(function(b){return b[0]==='pw2';})) $('#pw2').value='';
+      report(bad);
+      return;
+    }
+    $('#signup-card').style.display='none';
+    $('#done-title').textContent='가입을 환영해요, '+$('#name').value.trim()+'님!';
+    $('#done').classList.add('on');
+  });
+  function mark(id,el,msg){el.style.border='2px solid '+(msg?'#e03131':'#2f9e44');}
+  function report(bad){
+    var box=$('#form-errors');
+    box.textContent='입력하신 정보를 다시 확인해 주세요. 일부 항목이 올바르지 않거나 비어 있어요.';
+    box.classList.add('on');
+    clearTimeout(errTimer);errTimer=setTimeout(function(){box.classList.remove('on');},3000);
+  }
+  refresh();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>(f) 흐르는 고대비 글</title>
+<!--
+  Control: high-contrast text (black on white, 16 px body, 22 px bold headings)
+  scrolls up continuously at 150 CSS px/s (a CSS transform animation), so the
+  content moves every frame. Moving text is motion, not flashing: it must pass.
+-->
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #ffffff; color: #000000; font-family: sans-serif; }
+  #roll { position: absolute; left: 0; right: 0; top: 0; padding: 0 16px; animation: roll 40s linear infinite; }
+  h2 { font-size: 22px; line-height: 30px; font-weight: 800; margin: 20px 0 8px; }
+  p { font-size: 16px; line-height: 24px; margin: 0 0 12px; }
+  @keyframes roll { from { transform: translateY(0); } to { transform: translateY(-6000px); } }
+</style>
+</head>
+<body>
+<div id="roll"></div>
+<script>
+  (function () {
+    var roll = document.getElementById('roll');
+    var ko = '광과민성 발작 선별 검사는 화면의 작은 영역이 깜빡이는지까지 살펴야 합니다. 글자가 위로 흘러가는 것은 움직임이지 섬광이 아니므로 통과해야 합니다. ';
+    var en = 'Scrolling text moves every frame, but no region of the screen alternates between light and dark states several times a second. ';
+    var html = '';
+    for (var i = 0; i < 40; i++) {
+      html += '<h2>' + (i + 1) + '. 흐르는 제목 Heading</h2>';
+      html += '<p>' + ko + en + ko + '</p>';
+      html += '<p>' + en + ko + en + '</p>';
+    }
+    roll.innerHTML = html;
+  })();
+</script>
+</body>
+</html>

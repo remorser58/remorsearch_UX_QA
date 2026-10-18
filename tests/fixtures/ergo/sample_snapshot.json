@@ -1,0 +1,169 @@
+{
+  "schema_version": "ergo-snapshot.v1",
+  "snapshot_id": "S-R-sample-01-001",
+  "run_id": "R-sample-01",
+  "step_index": 1,
+  "captured_at": "2026-09-28T12:00:01Z",
+  "surface": {
+    "kind": "web",
+    "url": "http://127.0.0.1:8765/shop/index.html",
+    "title": "장바구니",
+    "app_id": null
+  },
+  "device": {
+    "id": "galaxy-s24",
+    "viewport_css": [
+      360,
+      780
+    ],
+    "dpr": 3.0,
+    "orientation": "portrait"
+  },
+  "screenshot": {
+    "path": "S-R-sample-01-001.png",
+    "sha256": null,
+    "width_px": 1080,
+    "height_px": 2340
+  },
+  "elements": [
+    {
+      "id": "el-1",
+      "role": "button",
+      "name": "전체 삭제",
+      "text": "전체 삭제",
+      "tag": "button",
+      "selector": "#delete-all",
+      "box": {
+        "x": 318,
+        "y": 12,
+        "w": 20,
+        "h": 20
+      },
+      "interactive": true,
+      "visible": true,
+      "enabled": true,
+      "in_viewport": true,
+      "font_size_px": 12,
+      "font_weight": 400,
+      "color_fg": "#5f6368",
+      "color_bg": "#ffffff",
+      "border_color": null,
+      "roles": [
+        "destructive"
+      ],
+      "source": "dom"
+    },
+    {
+      "id": "el-2",
+      "role": "paragraph",
+      "name": "무선 이어폰 1개",
+      "text": "무선 이어폰 1개",
+      "tag": "p",
+      "selector": null,
+      "box": {
+        "x": 16,
+        "y": 96,
+        "w": 328,
+        "h": 24
+      },
+      "interactive": false,
+      "visible": true,
+      "enabled": true,
+      "in_viewport": true,
+      "font_size_px": 14,
+      "font_weight": 400,
+      "color_fg": "#202124",
+      "color_bg": "#ffffff",
+      "border_color": null,
+      "roles": [],
+      "source": "dom"
+    },
+    {
+      "id": "el-3",
+      "role": "button",
+      "name": "담기",
+      "text": "담기",
+      "tag": "button",
+      "selector": "#add",
+      "box": {
+        "x": 16,
+        "y": 140,
+        "w": 96,
+        "h": 40
+      },
+      "interactive": true,
+      "visible": true,
+      "enabled": true,
+      "in_viewport": true,
+      "font_size_px": 14,
+      "font_weight": 500,
+      "color_fg": "#1a73e8",
+      "color_bg": "#ffffff",
+      "border_color": null,
+      "roles": [],
+      "source": "dom"
+    },
+    {
+      "id": "el-12",
+      "role": "button",
+      "name": "결제하기",
+      "text": "결제하기",
+      "tag": "button",
+      "selector": "#pay",
+      "box": {
+        "x": 16,
+        "y": 700,
+        "w": 328,
+        "h": 48
+      },
+      "interactive": true,
+      "visible": true,
+      "enabled": true,
+      "in_viewport": true,
+      "font_size_px": 16,
+      "font_weight": 700,
+      "color_fg": "#ffffff",
+      "color_bg": "#1a73e8",
+      "border_color": null,
+      "roles": [
+        "primary"
+      ],
+      "source": "dom"
+    },
+    {
+      "id": "el-13",
+      "role": "alert",
+      "name": "쿠폰이 만료되었습니다",
+      "text": "쿠폰이 만료되었습니다",
+      "tag": "div",
+      "selector": "#error",
+      "box": {
+        "x": 16,
+        "y": 64,
+        "w": 328,
+        "h": 20
+      },
+      "interactive": false,
+      "visible": true,
+      "enabled": true,
+      "in_viewport": true,
+      "font_size_px": 12,
+      "font_weight": 400,
+      "color_fg": "#d93025",
+      "color_bg": "#ffffff",
+      "border_color": null,
+      "roles": [
+        "critical_message"
+      ],
+      "source": "dom"
+    }
+  ],
+  "focus_point": {
+    "x": 64,
+    "y": 160
+  },
+  "console_errors": [],
+  "notes": [
+    "authored test fixture, not a live capture"
+  ]
+}

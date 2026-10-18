@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>예약하기 | 헤어살롱 봄</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR","Noto Sans CJK KR","Malgun Gothic",Roboto,"WenQuanYi Zen Hei",sans-serif;color:#191f28;background:#f2f4f6;font-size:15px;line-height:1.45;-webkit-tap-highlight-color:transparent}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:#fff;position:relative;padding-bottom:84px}
+button,input,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+.topbar{position:sticky;top:0;z-index:10;height:52px;display:flex;align-items:center;padding:0 4px;background:#fff;border-bottom:1px solid #eef0f2}
+.topbar h1{font-size:17px;font-weight:700;flex:1;text-align:center}
+.icon-btn{width:44px;height:44px;font-size:28px;line-height:40px;text-align:center}
+.icon-spacer{width:44px;height:44px}
+
+.pad{padding:0 16px}
+.store{padding:8px 16px;background:#f9fafb;border-bottom:1px solid #eef0f2}
+.store-name{font-size:16px;font-weight:700}
+.store-sub{font-size:14px;font-weight:400;color:#4e5968}
+.lbl{font-size:15px;font-weight:700;margin:12px 0 8px}
+.dates{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin:0 -4px}
+.dates button{height:52px;border-radius:10px;border:1px solid #d1d6db;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.2;font-size:14px}
+.dates button b{font-size:16px}
+.dates button[aria-pressed="true"]{background:#191f28;border-color:#191f28;color:#fff}
+.people{display:flex;align-items:center;justify-content:space-between;margin-top:10px}
+.people .lbl{margin:0}
+.stepper{display:flex;align-items:center;border:1px solid #d1d6db;border-radius:10px}
+.stepper button{width:44px;height:44px;font-size:20px}
+.stepper span{min-width:40px;text-align:center;font-weight:700}
+
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.slot{height:48px;border-radius:10px;font-size:15px;font-weight:600;color:#191f28;border:1px solid #6b7684;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.15}
+.slot small{font-size:14px;font-weight:600}
+.slot:disabled{background:#f2f4f6;border:1px dashed #b0b8c1;color:#4e5968;cursor:not-allowed}
+.slot:disabled .t{text-decoration:line-through}
+.slot[aria-pressed="true"]{background:#1b64da;border-color:#1b64da;color:#fff}
+.slot[aria-pressed="true"] .t::before{content:"✓ "}
+
+.form-error{margin-bottom:8px;padding:8px 12px;background:#fdecec;color:#b3261e;border-radius:10px;font-size:15px;font-weight:600}
+.picked{margin:12px 16px 4px;font-size:15px;font-weight:700}
+.field{display:block;margin-top:12px}
+.field span{display:block;font-size:14px;color:#4e5968;margin-bottom:4px}
+.field input,.field textarea{width:100%;height:48px;border:1px solid #6b7684;border-radius:10px;padding:0 12px;font-size:16px;background:#fff}
+.field input[aria-invalid="true"]{border:2px solid #b3261e}
+.field textarea{height:64px;padding:10px 12px;resize:none}
+.field-error{font-size:14px;color:#b3261e;font-weight:600;margin-top:4px}
+.notice{font-size:14px;color:#6b6b6b;margin-top:12px;line-height:1.5}
+.agree{display:flex;align-items:center;gap:10px;min-height:48px;margin-top:8px;font-size:15px}
+.agree input{width:20px;height:20px;accent-color:#1b64da;flex:none}
+
+.bottom-bar{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;padding:12px 16px;background:#fff;border-top:1px solid #eef0f2;z-index:20}
+.btn-block{width:100%;height:52px;border-radius:12px;background:#1b64da;color:#fff;font-size:16px;font-weight:700}
+
+.done{position:fixed;inset:0;background:#fff;z-index:50;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+.done .check{width:64px;height:64px;border-radius:50%;background:#1b64da;color:#fff;font-size:32px;line-height:64px;margin:0 auto 16px}
+.done h2{font-size:22px;margin-bottom:8px}
+.done p{color:#4e5968;font-size:15px}
+.done .info{margin-top:16px;padding:12px 14px;background:#f2f4f6;border-radius:12px;color:#333d4b;font-size:15px;text-align:left}
+.toast{position:fixed;left:50%;bottom:96px;transform:translateX(-50%);z-index:70;background:#333d4b;color:#fff;font-size:15px;line-height:1.5;padding:10px 18px;border-radius:20px;white-space:nowrap;pointer-events:none}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <button id="back" class="icon-btn" aria-label="뒤로 가기">‹</button>
+    <h1>예약하기</h1>
+    <span class="icon-spacer" aria-hidden="true"></span>
+  </header>
+
+  <section id="step-1">
+    <div class="store"><p class="store-name">헤어살롱 봄 강남점 <span class="store-sub">· 여성 커트 60분 · 35,000원</span></p></div>
+    <div class="pad">
+      <h2 class="lbl">날짜</h2>
+      <div id="dates" class="dates">
+        <button aria-pressed="false" data-date="2026-09-29" data-label="9월 29일(화)">화<b>29</b></button>
+        <button aria-pressed="false" data-date="2026-09-30" data-label="9월 30일(수)">수<b>30</b></button>
+        <button aria-pressed="false" data-date="2026-10-01" data-label="10월 1일(목)">목<b>1</b></button>
+        <button aria-pressed="false" data-date="2026-10-02" data-label="10월 2일(금)">금<b>2</b></button>
+        <button aria-pressed="false" data-date="2026-10-03" data-label="10월 3일(토)">토<b>3</b></button>
+        <button aria-pressed="false" data-date="2026-10-04" data-label="10월 4일(일)">일<b>4</b></button>
+        <button aria-pressed="false" data-date="2026-10-05" data-label="10월 5일(월)">월<b>5</b></button>
+      </div>
+      <div class="people">
+        <h2 class="lbl">인원</h2>
+        <div class="stepper"><button id="people-minus" aria-label="인원 줄이기">−</button><span id="people">1</span><button id="people-plus" aria-label="인원 늘리기">+</button></div>
+      </div>
+      <h2 class="lbl">시간</h2>
+      <div id="time-slots" class="slots">
+        <button class="slot" aria-pressed="false" data-time="10:30"><span class="t">10:30</span></button>
+        <button class="slot" disabled data-time="11:00"><span class="t">11:00</span><small>마감</small></button>
+        <button class="slot" disabled data-time="13:00"><span class="t">13:00</span><small>마감</small></button>
+        <button class="slot" aria-pressed="false" data-time="13:30"><span class="t">13:30</span></button>
+        <button class="slot" aria-pressed="false" data-time="14:00"><span class="t">14:00</span></button>
+        <button class="slot" disabled data-time="15:00"><span class="t">15:00</span><small>마감</small></button>
+        <button class="slot" aria-pressed="false" data-time="15:30"><span class="t">15:30</span></button>
+        <button class="slot" disabled data-time="16:00"><span class="t">16:00</span><small>마감</small></button>
+      </div>
+      <p id="pick-summary" class="picked" style="margin:14px 0 0">날짜와 시간을 선택해 주세요</p>
+    </div>
+    <div class="bottom-bar"><button id="next" class="btn-block">다음</button></div>
+  </section>
+
+  <section id="step-2" hidden>
+    <p id="picked" class="picked"></p>
+    <div class="pad">
+      <label class="field"><span>이름</span><input id="name" autocomplete="name" aria-describedby="err-name"></label>
+      <p id="err-name" class="field-error" hidden>⚠ 이름을 입력해 주세요.</p>
+      <label class="field"><span>휴대폰 번호</span><input id="phone" inputmode="tel" autocomplete="tel" placeholder="010-0000-0000" aria-describedby="err-phone"></label>
+      <p id="err-phone" class="field-error" hidden>⚠ 휴대폰 번호를 정확히 입력해 주세요. 예: 010-1234-5678</p>
+      <label class="field"><span>요청사항 (선택)</span><textarea id="memo" rows="2"></textarea></label>
+      <p id="notice" class="notice">예약 시간보다 10분 이상 늦으시면 다음 고객을 위해 예약이 취소될 수 있어요.</p>
+      <label class="agree"><input type="checkbox" id="agree" aria-describedby="err-agree"> 개인정보 수집·이용 동의 (필수)</label>
+      <p id="err-agree" class="field-error" hidden>⚠ 개인정보 수집·이용에 동의해 주세요.</p>
+    </div>
+    <div class="bottom-bar">
+      <div id="form-error" class="form-error" role="alert" hidden></div>
+      <button id="submit" class="btn-block">예약 신청하기</button>
+    </div>
+  </section>
+
+  <div id="booking-done" class="done" role="status" hidden>
+    <div>
+      <div class="check" aria-hidden="true">✓</div>
+      <h2>예약 신청 완료</h2>
+      <p id="done-detail"></p>
+      <p class="info">매장에서 확인한 뒤 예약 확정 여부를 카카오 알림톡으로 30분 안에 보내드릴게요.</p>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" hidden></div>
+</div>
+<script>
+(function(){
+  var sel = {date:null, dateLabel:'', time:null, people:1};
+  var summary = document.getElementById('pick-summary');
+  function updateSummary(){
+    if(sel.dateLabel && sel.time) summary.textContent = sel.dateLabel + ' ' + sel.time + ' · ' + sel.people + '명';
+    else summary.textContent = '날짜와 시간을 선택해 주세요';
+  }
+  var dates = document.getElementById('dates');
+  dates.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-date]');
+    if(!b) return;
+    dates.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+    b.setAttribute('aria-pressed','true');
+    sel.date = b.dataset.date; sel.dateLabel = b.dataset.label;
+    updateSummary();
+  });
+  var slots = document.getElementById('time-slots');
+  slots.addEventListener('click', function(e){
+    var b = e.target.closest('button[data-time]');
+    if(!b || b.disabled) return;
+    slots.querySelectorAll('button[aria-pressed]').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+    b.setAttribute('aria-pressed','true');
+    sel.time = b.dataset.time;
+    updateSummary();
+  });
+  var peopleEl = document.getElementById('people');
+  document.getElementById('people-minus').addEventListener('click', function(){ sel.people = Math.max(1, sel.people - 1); peopleEl.textContent = sel.people; updateSummary(); });
+  document.getElementById('people-plus').addEventListener('click', function(){ sel.people = Math.min(4, sel.people + 1); peopleEl.textContent = sel.people; updateSummary(); });
+
+  document.getElementById('next').addEventListener('click', function(){
+    if(!sel.date || !sel.time){ updateSummary(); return; }
+    document.getElementById('step-1').hidden = true;
+    document.getElementById('step-2').hidden = false;
+    document.getElementById('picked').textContent = sel.dateLabel + ' ' + sel.time + ' · ' + sel.people + '명';
+    window.scrollTo(0, 0);
+  });
+
+  var formError = document.getElementById('form-error');
+  function mark(inputId, errId, bad){
+    document.getElementById(errId).hidden = !bad;
+    var el = document.getElementById(inputId);
+    if(bad) el.setAttribute('aria-invalid','true'); else el.removeAttribute('aria-invalid');
+  }
+  document.getElementById('submit').addEventListener('click', function(){
+    var name = document.getElementById('name').value.trim();
+    var phone = document.getElementById('phone').value.replace(/\D/g, '');
+    var badName = !name, badPhone = !/^01\d{8,9}$/.test(phone), badAgree = !document.getElementById('agree').checked;
+    mark('name','err-name',badName); mark('phone','err-phone',badPhone); mark('agree','err-agree',badAgree);
+    var n = (badName?1:0) + (badPhone?1:0) + (badAgree?1:0);
+    if(n){
+      var first = badPhone ? ['휴대폰 번호', '휴대폰 번호를'] : badName ? ['이름', '이름을'] : ['동의 항목', '동의 항목을'];
+      formError.textContent = '⚠ ' + (n > 1 ? first[0] + ' 외 ' + (n-1) + '개 항목을' : first[1]) + ' 확인해 주세요.';
+      formError.hidden = false;
+      return;
+    }
+    formError.hidden = true;
+    document.getElementById('done-detail').textContent = '헤어살롱 봄 강남점 · ' + sel.dateLabel + ' ' + sel.time + ' · ' + sel.people + '명';
+    document.getElementById('step-2').hidden = true;
+    document.getElementById('booking-done').hidden = false;
+    var toast = document.getElementById('toast');
+    toast.textContent = '예약 신청이 접수되었어요';
+    toast.hidden = false;
+    setTimeout(function(){ toast.hidden = true; }, 4000);
+  });
+})();
+</script>
+</body>
+</html>

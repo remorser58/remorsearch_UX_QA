@@ -1,0 +1,61 @@
+{
+  "review_kind": "labelled_self_pass_of_archived_captures",
+  "recorded_at": "2026-09-30T20:20:40.174604+00:00",
+  "report_draft_available": false,
+  "original_report_previously_read": true,
+  "independent": false,
+  "priority_scenario_packets": [
+    "R-B-S24",
+    "R-B-keyboard"
+  ],
+  "inputs": {
+    "F-01": [
+      "assets/qa-request-before.png",
+      "assets/qa-request-before.txt",
+      "assets/qa-request-after.png",
+      "assets/qa-request-after.txt"
+    ],
+    "F-02": [
+      "assets/qa-keyboard.png",
+      "assets/qa-keyboard.txt"
+    ],
+    "F-03": [
+      "../../_evidence/dogfood-persona/runs/R-B-S24/S-R-B-S24-010.png",
+      "assets/qa-quantity.txt"
+    ]
+  },
+  "records": [
+    {
+      "finding_id": "F-01",
+      "reviewer": "self",
+      "task_completed": false,
+      "control_name": "가게 요청",
+      "omitted": "앞뒤 화면 사이의 이동·쿠폰·주소 검증 이벤트, 캡처 시각과 빌드 ID",
+      "severity": "agree",
+      "inconclusive": true
+    },
+    {
+      "finding_id": "F-02",
+      "reviewer": "self",
+      "task_completed": null,
+      "control_name": "20,000원 담기",
+      "omitted": "Tab·Space·Enter 연속 기록과 필수 선택의 초점 가능 여부",
+      "severity": "disagree",
+      "inconclusive": true
+    },
+    {
+      "finding_id": "F-03",
+      "reviewer": "self",
+      "task_completed": null,
+      "control_name": "+",
+      "omitted": "수량 버튼의 접근 가능한 이름과 실제 보조기술 조작",
+      "severity": "disagree",
+      "inconclusive": true
+    }
+  ],
+  "resolutions": {
+    "F-01": "요청 입력과 요약 누락의 영향 평가는 유지합니다. 현재 빌드 및 실행 중 영수증이 없어 P0 후보는 미검증으로 둡니다.",
+    "F-02": "정지 화면으로 키보드 실패를 확정할 수 없습니다. 원본의 P1은 재시험 우선순위로 유지하고, 연속 입력 기록과 새 영수증이 생길 때까지 미검증으로 둡니다.",
+    "F-03": "이미지로 접근 가능한 이름의 부재를 확정할 수 없습니다. 원본의 P1은 재시험 우선순위로 유지하고, 접근성 트리와 실제 입력을 확인할 때까지 미검증으로 둡니다."
+  }
+}

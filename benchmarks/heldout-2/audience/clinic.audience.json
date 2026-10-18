@@ -1,0 +1,1448 @@
+{
+  "schema_version": "ergo-audience.v1",
+  "audience_id": "AU-clinic-202609",
+  "product": {
+    "name": "가람건강 — 보건소 예약·복약 알림 모바일 웹",
+    "category": "public health service: vaccination and check-up booking, chronic-medication reminders",
+    "surface": "web",
+    "locale": "ko-KR",
+    "brief_ref": "benchmarks/heldout-2/products/clinic/brief.md (v1.3, 2026-09)"
+  },
+  "researched_at": "2026-09-28",
+  "method": {
+    "summary": "Stage 0 per references/ergonomics/audience-research.md. Read the product brief (the only product material allowed), listed its user groups, contexts and tasks, then ran 29 web searches (2 more were rejected by the search API): Korean official statistics (국가데이터처 고령자 통계, 과기정통부·NIA 디지털정보격차 실태조사, 방통위 방송매체 이용행태조사, 보건복지부 등록장애인 현황, 질병관리청·건보 인플루엔자 연례보고서, KDCA PHWR), a phone-brand survey (한국갤럽), prevalence papers (Korean CVD, Korean essential tremor, Fujian presbyopia, Korea hypertension fact sheet), comparable services (2021 COVID-19 online pre-booking, 똑닥) and public community posts (82cook, dcinside, clien, instiz, theqoo) for contexts and pain points. The service opened on 2026-09-21, so no product analytics, tickets or interviews exist; ask 가람시 보건소 for channel logs before re-weighting.",
+    "limitations": [
+      "Direct page fetches (WebFetch and curl) were blocked by the network egress proxy for every host tried (korea.kr, kmcc.go.kr, eiec.kdi.re.kr, data.go.kr, bioin.or.kr, PubMed, Wikipedia, both app stores). Every external quote is a search-result title or the search tool's extract of the page, not a first-hand read; re-check numbers against the originals before a report cites them.",
+      "The search tool's extracts can paraphrase. Verbatim headlines are used as quotes where they exist; the 2021 proxy-booking guidance was seen only in an English rendering and is labelled inference.",
+      "No product analytics, support tickets, interviews or usability tests. Only the proxy segment has a share, estimated from the health centre's phone channel as reported in the brief (41% of last season's phone bookings), not from the mobile channel.",
+      "가람시 is described only in the brief. National statistics bound segments; they are not this product's user base.",
+      "No Korean age-specific presbyopia prevalence was found. Presbyopia shares use the Fujian Eye Study (China, adults over 50, uncorrected presbyopia 68.6%) as an East-Asian proxy, low confidence.",
+      "Age-band, device-model and familiarity splits inside segments are placeholders or derivations from the brief's age ranges, Gallup brand shares and the launch date, not measurements (see each segment's notes).",
+      "Firsthand evidence is limited to community post titles (medication memory, urgent health certificates). No firsthand post about proxy vaccination booking or older adults booking from a text link was found, and app-store reviews could not be read.",
+      "Community posts are self-selected and problem-skewed: they show that a pain exists, never how common it is. Disabled users rarely post about accessibility, so absence of complaints is not absence of users.",
+      "The 2025 방송매체 이용행태조사 figure for 70+ could not be retrieved; the 2024 headline figure (73%) is used. It differs from Gallup's 91% (2025) by survey mode, population and definition (owning vs using).",
+      "29 searches were run against a target of 25 because early official-statistics queries returned no numbers; no further searches were made after that."
+    ]
+  },
+  "sources": [
+    {
+      "source_id": "SRC-01",
+      "type": "product_brief",
+      "title": "가람건강 — 보건소 예약·복약 알림 모바일 웹 제품 브리프 (문서 버전 1.3)",
+      "url": null,
+      "path": "benchmarks/heldout-2/products/clinic/brief.md",
+      "publisher": "공공헬스사업부 PM",
+      "published": "2026-09",
+      "accessed_at": "2026-09-28",
+      "access_basis": "product material supplied for this run; read in full",
+      "access_method": "local file read",
+      "public_scope": "internal",
+      "retention_status": "present"
+    },
+    {
+      "source_id": "SRC-02",
+      "type": "official_statistics",
+      "title": "2025 고령자 통계 (보도자료)",
+      "url": "https://mods.go.kr/board.es?mid=a10301010000&bid=10820&tag=&act=view&list_no=438832&ref_bid=",
+      "accessed_at": "2026-09-28",
+      "publisher": "국가데이터처(구 통계청)",
+      "published": "2025-09-29",
+      "secondary_urls": [
+        "https://www.guminews.net/news/articleView.html?idxno=11246"
+      ],
+      "access_basis": "public web page; quote taken from the search result, not a first-hand read of the page",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-03",
+      "type": "official_statistics",
+      "title": "2025년 디지털 정보격차·웹 접근성·스마트폰 과의존 실태조사 결과 발표",
+      "url": "https://www.korea.kr/briefing/pressReleaseView.do?newsId=156751063",
+      "accessed_at": "2026-09-28",
+      "publisher": "과학기술정보통신부·한국지능정보사회진흥원(NIA)",
+      "published": "2026-03-26 (news date)",
+      "secondary_urls": [
+        "https://www.etoday.co.kr/news/view/2569509",
+        "https://m.news.nate.com/view/20260326n41384"
+      ],
+      "access_basis": "public web page; quote taken from the search result, not a first-hand read of the page",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-04",
+      "type": "official_statistics",
+      "title": "2024 방송매체 이용행태조사 — 70대 이상 스마트폰 보유 (보도: 디지털투데이)",
+      "url": "https://www.digitaltoday.co.kr/news/articleView.html?idxno=547708",
+      "accessed_at": "2026-09-28",
+      "publisher": "방송통신위원회·한국정보통신진흥협회 (현 방송미디어통신위원회)",
+      "published": "2024-12 (survey release; article date not verified)",
+      "secondary_urls": [
+        "https://www.kmcc.go.kr/user.do?boardId=1113&page=A05030000&dc=K00000200&boardSeq=64951&mode=view"
+      ],
+      "access_basis": "news headline reporting the official survey; 2025 edition's 70+ figure was not retrievable",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-05",
+      "type": "market_report",
+      "title": "한국갤럽 스마트폰 사용률·브랜드 조사 2012-2025 (2025년 7월, 전화조사)",
+      "url": "https://x.com/GallupKoreaNews/status/1942144620974207458",
+      "accessed_at": "2026-09-28",
+      "publisher": "한국갤럽조사연구소",
+      "published": "2025-07",
+      "secondary_urls": [
+        "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1566",
+        "https://www.datanews.co.kr/news/article.html?no=139581",
+        "https://www.edaily.co.kr/News/Read?newsId=04188566642232552&mediaCodeNo=257"
+      ],
+      "access_basis": "public web page; quote taken from the search result, not a first-hand read of the page",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-06",
+      "type": "official_statistics",
+      "title": "2024-2025절기 국가 인플루엔자 연례보고서 (질병관리청·국민건강보험공단 공동)",
+      "url": "https://dportal.kdca.go.kr/pot/bbs/BD_selectBbs.do?q_bbsSn=1010&q_bbsDocNo=20260417085017506&q_clsfNo=1",
+      "accessed_at": "2026-09-28",
+      "publisher": "질병관리청·국민건강보험공단",
+      "published": "2026-04-17",
+      "secondary_urls": [
+        "https://view.asiae.co.kr/article/2026041715312348175"
+      ],
+      "access_basis": "public web page; quote taken from the search result, not a first-hand read of the page",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-07",
+      "type": "official_docs",
+      "title": "65세 이상 어르신, 15일부터 인플루엔자·코로나19 무료 접종 (2025-2026절기, 정책브리핑)",
+      "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148950459",
+      "accessed_at": "2026-09-28",
+      "publisher": "질병관리청 (대한민국 정책브리핑 게재)",
+      "published": "2025 (month not verified)",
+      "secondary_urls": [
+        "https://nip.kdca.go.kr/irhp/mngm/goVcntMngm.do?menuLv=3&menuCd=333"
+      ],
+      "access_basis": "public web page; quote taken from the search result, not a first-hand read of the page",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-08",
+      "type": "official_statistics",
+      "title": "2025년 등록장애인 현황 (보도: 한국의약통신·뉴스핌)",
+      "url": "https://www.kmpnews.co.kr/news/articleView.html?idxno=70802",
+      "accessed_at": "2026-09-28",
+      "publisher": "보건복지부",
+      "published": "2026-04-20",
+      "secondary_urls": [
+        "https://www.newspim.com/news/view/20260417001068",
+        "https://eiec.kdi.re.kr/policy/materialView.do?num=279704"
+      ],
+      "access_basis": "public web page; quote taken from the search result, not a first-hand read of the page",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-09",
+      "type": "research_paper",
+      "title": "Prevalence of Color Vision Deficiency in an Adult Population in South Korea",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31688694",
+      "accessed_at": "2026-09-28",
+      "publisher": "PubMed abstract (Korean adult population study)",
+      "published": "2019 (inferred from PMID; journal not verified)",
+      "access_basis": "public web page; quote taken from the search result, not a first-hand read of the page",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-10",
+      "type": "research_paper",
+      "title": "The Prevalence of Essential Tremor in Elderly Koreans (J Korean Med Sci 2014;29(12):1694)",
+      "url": "https://www.jkms.kr/DOIx.php?id=10.3346%2Fjkms.2014.29.12.1694",
+      "accessed_at": "2026-09-28",
+      "publisher": "Journal of Korean Medical Science",
+      "published": "2014",
+      "secondary_urls": [
+        "https://pubmed.ncbi.nlm.nih.gov/25469072/"
+      ],
+      "access_basis": "public web page; quote taken from the search result, not a first-hand read of the page",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-11",
+      "type": "research_paper",
+      "title": "Prevalence and associated factors of uncorrected presbyopia among adults in cross-sectional Fujian Eye Study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41836951/",
+      "accessed_at": "2026-09-28",
+      "publisher": "PubMed abstract (Fujian, China)",
+      "published": "2026 (inferred from PMID; not verified)",
+      "access_basis": "PubMed abstract via search snippet; China, not Korea — used only as an East-Asian proxy",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-12",
+      "type": "research_paper",
+      "title": "Korea Hypertension Fact Sheet 2024 (대한고혈압학회), as reported by 메디칼타임즈",
+      "url": "https://www.medicaltimes.com/Mobile/News/NewsView.html?ID=1161270",
+      "accessed_at": "2026-09-28",
+      "publisher": "대한고혈압학회 (보도: 메디칼타임즈)",
+      "published": "2024-2025",
+      "access_basis": "news article quoting the fact sheet; attribution of the snippet to this article is likely but not verified",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-13",
+      "type": "official_statistics",
+      "title": "고혈압 유병률 추이, 2014–2023년 (주간 건강과 질병 PHWR 2025;18(17))",
+      "url": "https://www.phwr.org/journal/view.html?doi=10.56786%2FPHWR.2025.18.17.3",
+      "accessed_at": "2026-09-28",
+      "publisher": "질병관리청",
+      "published": "2025",
+      "access_basis": "search snippet listed with this report and news articles; attribution of the sentence to this page is likely but not verified",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-14",
+      "type": "community",
+      "title": "혈압약 드시는분들 만약 아침에 내가 먹었는지 기억이 안난다면...",
+      "url": "https://www.82cook.com/entiz/read.php?bn=15&num=2970204",
+      "accessed_at": "2026-09-28",
+      "channel": "82cook 자유게시판",
+      "access_basis": "public post; title read from the search result only",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-15",
+      "type": "community",
+      "title": "혈압약 아침에 먹었는지 생각이 안나요 ㅜ",
+      "url": "https://www.82cook.com/entiz/read.php?bn=15&num=3194723&page=1",
+      "accessed_at": "2026-09-28",
+      "channel": "82cook 자유게시판",
+      "access_basis": "public post; title read from the search result only",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-16",
+      "type": "community",
+      "title": "혈압약 먹었는지 안먹었는지 기억이 안나면 어찌해야하나요?",
+      "url": "https://gall.dcinside.com/mgallery/board/view/?id=gopressure&no=874&page=1",
+      "accessed_at": "2026-09-28",
+      "channel": "디시인사이드 고혈압 마이너 갤러리",
+      "access_basis": "public post; title read from the search result only",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-17",
+      "type": "community",
+      "title": "약먹기 앱 추천 해주세요...",
+      "url": "https://www.clien.net/service/board/cm_iphonien/16051695",
+      "accessed_at": "2026-09-28",
+      "channel": "클리앙 아이포니앙 게시판",
+      "access_basis": "public post; title read from the search result only",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-18",
+      "type": "community",
+      "title": "익들아 급해 ㅠㅠ 알바할려고 하는데 보건증 필요하다고 하는데",
+      "url": "https://www.instiz.net/name/37211711",
+      "accessed_at": "2026-09-28",
+      "channel": "인스티즈 일상",
+      "access_basis": "public post; title read from the search result only",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-19",
+      "type": "community",
+      "title": "보건증 없이 출근 못 해??",
+      "url": "https://www.instiz.net/name/64992172?category=1",
+      "accessed_at": "2026-09-28",
+      "channel": "인스티즈 일상",
+      "access_basis": "public post; title read from the search result only",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-20",
+      "type": "community",
+      "title": "보건증 발급 받으려는데요...당일 검사도 가능한가요",
+      "url": "https://www.82cook.com/entiz/read.php?bn=15&num=2591991",
+      "accessed_at": "2026-09-28",
+      "channel": "82cook 자유게시판",
+      "access_basis": "public post; title read from the search result only",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-21",
+      "type": "competitor",
+      "title": "똑닥(병원 예약 앱) 앱 전용 예약 논란 보도의 커뮤니티 재게시",
+      "url": "https://theqoo.net/square/3032333793",
+      "accessed_at": "2026-09-28",
+      "secondary_urls": [
+        "https://theqoo.net/square/3025573845"
+      ],
+      "channel": "더쿠 스퀘어",
+      "access_basis": "news reposted on a public community board; title from the search result, body sentence from the search tool's extract",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-22",
+      "type": "market_report",
+      "title": "\"엄마 나 종수야\" 호칭·이름까지 정확… 스미싱 범죄 더 악랄해졌다 (한국일보)",
+      "url": "https://www.hankookilbo.com/news/article/A2026073114470000889",
+      "accessed_at": "2026-09-28",
+      "publisher": "한국일보",
+      "published": "2026-07-31",
+      "access_basis": "newspaper report of victim data whose original publisher (agency or security firm) was not identified",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-23",
+      "type": "official_docs",
+      "title": "\"모르는 링크 접속하지 마세요\"…추석 스미싱 주의보 (아시아타임즈)",
+      "url": "https://www.asiatime.co.kr/article/20260922500288",
+      "accessed_at": "2026-09-28",
+      "publisher": "아시아타임즈 (정부 주의보 보도)",
+      "published": "2026-09-22",
+      "access_basis": "news headline relaying a public smishing warning; issuing agency not verified",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-24",
+      "type": "research_paper",
+      "title": "스마트폰 한글 타이포그래피가 고령자의 가독성에 미치는 영향 (한국콘텐츠학회논문지 2016)",
+      "url": "https://www.koreascience.or.kr/article/JAKO201606776007417.pdf",
+      "accessed_at": "2026-09-28",
+      "publisher": "한국콘텐츠학회 (doi 10.5392/JKCA.2016.16.11.661)",
+      "published": "2016",
+      "access_basis": "search snippet; attributing the n=24 (65+) type-size finding to this paper is likely but not verified",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    },
+    {
+      "source_id": "SRC-25",
+      "type": "competitor",
+      "title": "60~74세 사전예약 최종 80.7%…당국 \"달성하기 어려운 높은 수치\" (2021 코로나19 예방접종 사전예약, 이데일리)",
+      "url": "https://edaily.co.kr/News/Read?mediaCodeNo=257&newsId=02046726629078440",
+      "accessed_at": "2026-09-28",
+      "publisher": "이데일리 (코로나19 예방접종대응추진단 발표 보도)",
+      "published": "2021-06 (not verified)",
+      "secondary_urls": [
+        "https://www.korea.kr/news/policyNewsView.do?newsId=148887030"
+      ],
+      "access_basis": "news headline; the proxy-booking guidance was seen only as the search tool's English rendering",
+      "access_method": "WebSearch result title/snippet (page fetch blocked by the network egress proxy)",
+      "public_scope": "public",
+      "retention_status": "not re-checked (page not fetched)"
+    }
+  ],
+  "segments": [
+    {
+      "segment_id": "SEG-proxy-child",
+      "name_ko": "점심시간·출퇴근길에 부모 접종을 대신 예약하는 40~50대 직장인 자녀",
+      "summary": "Adult children, mostly employed, who book, check, change or cancel a registered parent's free flu shot or check-up from a KakaoTalk alimtalk/SMS link: one-handed on a bus or subway, or at the desk at lunch after siblings agree in a group chat who books. They want it done within about five minutes and share a screenshot of the result. The costly error is the wrong parent name or birth date (on-site re-registration).",
+      "role": "operator",
+      "priority": "primary",
+      "share": {
+        "value": 0.41,
+        "basis": "estimated",
+        "source_ids": [
+          "SRC-01"
+        ],
+        "note": "41% of last season's PHONE bookings were proxy bookings (brief section 2). The mobile share is not measured; it is plausibly higher because the children are the more digital party (inference)."
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "kind": "statistic",
+          "claim": "About 41% of last season's phone bookings were made by someone else, and proxy bookings often carried the wrong name or birth date, forcing re-registration on site.",
+          "quote": "지난 절기 전화 예약의 약 41%가 대리 예약이었고, 대리 예약에서 대상자 이름·생년월일을 잘못 전달해 현장에서 다시 접수한 사례가 많았다.",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "claim": "The brief names children in their 40s-50s, mostly employed, as the main proxy bookers.",
+          "quote": "부모 대신 예약하는 40~50대 자녀 | 대리 예약의 주 사용자. 직장인 비중이 높다.",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "claim": "On the commute one hand holds a strap; they enter from an alimtalk link and want to finish in five minutes.",
+          "quote": "출퇴근 버스·지하철 안: 자녀 사용자가 손잡이를 잡은 채 다른 손 하나로 부모 예약을 한다. 알림톡 링크로 들어와 5분 안에 끝내고 싶어 한다.",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "claim": "At lunch, siblings decide in a group chat who books, then book and share a screenshot of the result.",
+          "quote": "점심시간 사무실: 형제끼리 단톡방에서 \"엄마 독감 주사 누가 예약해?\"를 정한 뒤 바로 예약하고 결과 화면을 캡처해 공유한다.",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "statistic",
+          "claim": "On-site re-registrations caused by wrong target-person data in family proxy bookings run at about 300 a month; the first-season target is 30 or fewer.",
+          "quote": "가족 대리 예약 중 대상자 정보 오류로 인한 현장 재접수 | 월 300건 수준 | 월 30건 이하",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "statistic",
+          "claim": "Main phone brand, people in their 50s: Samsung 89% (Gallup, July 2025).",
+          "quote": "50대에서 삼성 사용 비중이 89%",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "statistic",
+          "claim": "Main phone brand, people in their 40s: Samsung 67%, so an iPhone minority exists in this segment.",
+          "quote": "40대도 67%로 삼성 선호가 우세",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-07",
+          "kind": "official",
+          "claim": "Free flu shots open by age band on different days (75+ first), which concentrates proxy bookings on each band's first day.",
+          "quote": "75세 이상 어르신의 경우 10월 15일부터 무료로 접종받을 수 있으며, 70~74세는 20일, 65~69세는 22일부터",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-09",
+          "kind": "statistic",
+          "claim": "Korean adults: deutan deficiency 2.5% of all participants, protan 0.4%.",
+          "quote": "deutan deficiency (2.5%) had a higher prevalence than protan deficiency (0.4%)",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        }
+      ],
+      "age_bands": {
+        "40s": 0.5,
+        "50s": 0.5
+      },
+      "devices": {
+        "galaxy-s24": 0.78,
+        "iphone-15": 0.22
+      },
+      "orientation": "portrait",
+      "left_hand_share": null,
+      "familiarity": {
+        "first_use": 0.7,
+        "returning": 0.3
+      },
+      "notes": {
+        "age_bands": "Placeholder: the brief gives 40~50대 without a split. Its worked example (박지훈, born 1978) is in his 40s.",
+        "devices": "Brand mix = mean of Gallup 2025 Samsung shares for the 40s (67%) and 50s (89%) = 78%; the rest is assigned to iPhone. Models within a brand are assumptions.",
+        "familiarity": "Inference, not measured: the service opened 2026-09-21 and flu booking opens 2026-09-28, so first-season bookers are new to it.",
+        "presbyopia": "Not declared: onset is in the 40s, but no Korean figure for this age mix was found; the tool's default (50s+ presbyopic) applies."
+      },
+      "conditions": [
+        {
+          "condition": "cvd_deutan",
+          "share": 0.025,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-09"
+          ],
+          "cause": "permanent",
+          "why": "Korean adult population study: deutan 2.5% of all participants (any CVD: male 6.5%, female 1.1%). Slot availability (open/full) and status chips may rely on colour.",
+          "confidence": "medium"
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-proxy-transit",
+          "label_ko": "출퇴근 버스·지하철, 손잡이를 잡고 다른 손 하나로 조작",
+          "mobility": "transit",
+          "lighting": "indoor",
+          "one_handed": true,
+          "interruptions": true,
+          "time_pressure": "high",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ]
+        },
+        {
+          "context_id": "CTX-proxy-lunch",
+          "label_ko": "점심시간 사무실, 형제 단톡방에서 정한 뒤 예약하고 결과 화면 캡처·공유",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": true,
+          "time_pressure": "high",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-proxy-flu-book",
+          "goal_ko": "등록 가족 어머니 박순자의 독감 무료접종을 본소 10월 15일(목) 오전 10:30으로 예약한다",
+          "jtbd": "When free flu shots for people 75+ open and the health centre's phone line is jammed, I want to book my mother's shot from the alimtalk link in under five minutes, so she gets a first-day slot without me calling during work.",
+          "frequency": "rare",
+          "criticality": "health",
+          "concrete_data": {
+            "applicant": "박지훈 (1978년 5월 11일생, 010-2345-6789)",
+            "target_person": "등록 가족 어머니 박순자 (1950년 3월 2일생, 만 76세)",
+            "vaccine": "독감(인플루엔자) 2026-2027절기, 무료",
+            "site": "가람시 보건소 본소 (가람로 120, 2층 예방접종실)",
+            "date": "2026년 10월 15일(목) (만 75세 이상 무료접종 첫날)",
+            "time": "오전 10:30",
+            "prescreen_answers": "발열 아니오 · 알레르기 아니오 · 이전 이상반응 아니오 · 최근 다른 접종 아니오 (예진 4문항; 답은 시나리오 선택)",
+            "consent": "건강정보 수집·이용 동의",
+            "expected_sms_to": "신청자 번호 010-2345-6789"
+          },
+          "success_ko": "예약번호가 표시되고, 박순자 · 독감 · 10월 15일(목) 오전 10:30 · 본소가 한 화면에 보이며, 신청자 번호로 안내 문자가 간다는 안내가 나온다 (형제에게 캡처해 보낼 수 있는 화면)",
+          "source_ids": [
+            "SRC-01",
+            "SRC-07"
+          ]
+        },
+        {
+          "task_id": "T-proxy-change",
+          "goal_ko": "'내 예약'에서 어머니 독감 예약을 같은 날 오후 2:30으로 바꾸고, 못 가게 되면 취소한다",
+          "jtbd": "When my mother's slot no longer fits my day, I want to move it to another time the same day or cancel it, so she is not a no-show and the slot goes to someone else.",
+          "frequency": "rare",
+          "criticality": "health",
+          "concrete_data": {
+            "existing_booking": "박순자 · 독감 · 10월 15일(목) 오전 10:30 · 본소",
+            "new_time": "2026년 10월 15일(목) 오후 2:30",
+            "fallback": "예약 취소 (취소한 자리는 바로 다른 신청자에게 열림)"
+          },
+          "success_ko": "내 예약에 박순자 · 독감 · 10월 15일(목) 오후 2:30 · 본소로 바뀌어 보이거나, 취소 완료가 표시된다",
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "Target-person selection may be error-prone: the brief reports about 300 on-site re-registrations a month from wrong names or birth dates in proxy bookings (phone channel). Check that the chosen family member's name and birth date are shown before submit.",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference",
+          "confidence": "low"
+        },
+        {
+          "text": "The confirmation SMS goes to the applicant, not the parent, so the parent learns the time and place only if the child forwards it; the result screen has to work as a screenshot.",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference",
+          "confidence": "low"
+        },
+        {
+          "text": "One hand holds a strap: the date/time picker and the submit button must be reachable with one thumb.",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference",
+          "confidence": "low"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-senior-self",
+      "name_ko": "자녀가 보내 준 링크로 직접 접종을 예약하는 65세 이상 어르신",
+      "summary": "Older adults eligible for free flu, COVID-19 and pneumococcal shots who book for themselves at home or in a senior centre from a link a child forwarded, and check the booking again in the health centre's waiting room on the day. Large budget Galaxy phones with enlarged system text, often used without reading glasses; many are first-time users who ask someone nearby or go back to the phone line when a step is unclear.",
+      "role": "operator",
+      "priority": "primary",
+      "share": {
+        "value": null,
+        "basis": "unknown",
+        "note": "Only population bounds are known: 65+ are about 23% of 가람시's 380,000 residents (brief), 20.3% nationally (SRC-02), and 81.6% of them got the free flu shot last season (SRC-06). Their share of this product's users is unknown."
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "claim": "The brief: 65+ are about 23% of 가람시; they use large budget Galaxy phones bought by their children, often with enlarged text and often without reading glasses.",
+          "quote": "가람시 인구 38만 명 중 약 23%. 독감·코로나19·폐렴구균 무료접종 대상. 자녀가 사 준 대화면 갤럭시 보급형을 많이 쓰고, 글자를 크게 설정해 둔 경우가 많다. 돋보기를 벗고 쓰는 일이 흔하다.",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "claim": "Many are first-time users at home or in a senior centre who ask someone nearby or go back to the phone when a step is unclear.",
+          "quote": "어르신의 집 거실·경로당: 자녀가 보내 준 링크로 직접 예약한다. 처음 써 보는 경우가 많고, 모르는 단계가 나오면 옆 사람에게 묻거나 전화로 돌아간다.",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "statistic",
+          "claim": "About 1,900 wasted visits last season came from people who did not know their age band's start date.",
+          "quote": "시작일을 모르고 헛걸음하는 방문이 지난 절기 약 1,900건이었다.",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-02",
+          "kind": "statistic",
+          "claim": "National bound: people aged 65+ are 20.3% of the population in 2025.",
+          "quote": "65세 이상 고령인구는 1,051만 4,000명으로 전체 인구의 20.3%",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-06",
+          "kind": "statistic",
+          "claim": "81.6% of people aged 65+ (about 8.39 million) got the free flu shot in 2024-2025, so the booking task reaches most of this age group every season.",
+          "quote": "65세 이상 어르신 81.6%(약 839만명)",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-03",
+          "kind": "statistic",
+          "claim": "Older adults' digital level is 71.8% of the general public's (2025), the lowest of the groups reported.",
+          "quote": "고령층(71.8%)과 농어민(80.6%), 장애인(84.1%)",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-03",
+          "kind": "statistic",
+          "claim": "Across the vulnerable groups, competence (65.9%) is the weakest component, below access and use.",
+          "quote": "디지털 접근 수준이 96.6%로 가장 높았고, 활용 수준은 80.5%, 역량 수준은 65.9%",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-04",
+          "kind": "statistic",
+          "claim": "About 73% of people aged 70+ owned a smartphone in 2024 (face-to-face household survey), so part of the group cannot open a link at all.",
+          "quote": "70대 이상 고령층 스마트폰 보급률 73%…역대 최고치",
+          "quote_basis": "verbatim headline or post title in the search result"
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "statistic",
+          "claim": "Gallup phone survey (July 2025): 91% of people aged 70+ use a smartphone (differs from SRC-04 by population, mode and definition).",
+          "quote": "70대 이상 91%",
+          "quote_basis": "verbatim headline or post title in the search result"
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "statistic",
+          "claim": "Main phone brand, people 60+: Samsung 92%.",
+          "quote": "60대 이상에서 삼성 사용 비중이 92%",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-07",
+          "kind": "official",
+          "claim": "Free-shot start dates differ by age band (75+ Oct 15, 70-74 Oct 20, 65-69 Oct 22 in 2025-2026; the brief uses the same dates).",
+          "quote": "75세 이상 어르신의 경우 10월 15일부터 무료로 접종받을 수 있으며, 70~74세는 20일, 65~69세는 22일부터",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-21",
+          "kind": "inference",
+          "claim": "News reposted on a community board reports that app-only booking at clinics (똑닥) shut older patients out; the same risk applies if this service crowds out the phone line.",
+          "quote": "[단독] \"똑닥앱 예약 많다\" 현장접수 닫은 병원…8곳 행정지도",
+          "quote_basis": "verbatim headline or post title in the search result",
+          "confidence": "low"
+        },
+        {
+          "source_id": "SRC-22",
+          "kind": "statistic",
+          "claim": "People aged 50+ were 94% of 1,856 smishing victims between 2025-12-08 and 2026-07-14 (newspaper report; original data owner not identified).",
+          "quote": "스미싱 피해자 1,856명 중 50대 이상이 94%",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-23",
+          "kind": "official",
+          "claim": "A public smishing warning before Chuseok 2026 told people not to open unknown links (headline; issuing agency not verified).",
+          "quote": "\"모르는 링크 접속하지 마세요\"…추석 스미싱 주의보",
+          "quote_basis": "verbatim headline or post title in the search result"
+        },
+        {
+          "source_id": "SRC-11",
+          "kind": "statistic",
+          "claim": "East-Asian proxy for presbyopia at phone distance: uncorrected presbyopia 68.6% among adults over 50 (Fujian, China).",
+          "quote": "among residents over 50 years, the prevalence of uncorrected presbyopia was 68.6%",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-10",
+          "kind": "statistic",
+          "claim": "Essential tremor in a Korean community sample aged 65+ (n=714): 3.64 per 100.",
+          "quote": "The overall crude prevalence of essential tremor (ET) was 3.64 per 100 persons aged 65 years or older",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-08",
+          "kind": "statistic",
+          "claim": "56.9% of registered disabled people are 65+ (2025).",
+          "quote": "등록장애인 중 65세 이상의 비율은 꾸준히 증가하여 56.9%(1,496,135명)",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-08",
+          "kind": "statistic",
+          "claim": "Visual disability is 9.3% of registered disabled people (2025); the age mix of visual disability alone was not found.",
+          "quote": "시각장애(9.3%)",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-24",
+          "kind": "statistic",
+          "claim": "In a readability study of 24 people aged 65+, larger smartphone type was preferred (13pt over 12pt over 11pt).",
+          "quote": "서체의 크기에서는 13pt, 12pt, 11pt 순으로 서체 크기가 클수록 고령자가 선호",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        }
+      ],
+      "age_bands": {
+        "60s": 0.4,
+        "70s+": 0.6
+      },
+      "devices": {
+        "galaxy-a55": 0.92,
+        "iphone-15": 0.08
+      },
+      "orientation": "portrait",
+      "left_hand_share": null,
+      "familiarity": {
+        "first_use": 0.7,
+        "returning": 0.3
+      },
+      "notes": {
+        "age_bands": "Placeholder: '60s' here means 65-69. No sourced split; 70+ weighted higher because the first free-shot day is for 75+ and the brief's example person is 76 (inference).",
+        "devices": "Samsung 92% for 60+ (Gallup 2025); the brief's '대화면 갤럭시 보급형' maps to galaxy-a55 (assumption). The remaining 8% (Apple and others, including discontinued LG phones) is put on iphone-15.",
+        "familiarity": "Inference from the brief ('처음 써 보는 경우가 많고') and the 2026-09-21 launch; split not measured.",
+        "text_size": "Enlarged system text is common (brief) but the profile has no text-size attribute: see exclusions."
+      },
+      "conditions": [
+        {
+          "condition": "presbyopia",
+          "share": 0.69,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-11",
+            "SRC-01"
+          ],
+          "cause": "permanent",
+          "why": "Declared explicitly. Uncorrected presbyopia was 68.6% among adults over 50 in the Fujian Eye Study (China; no Korean age-specific figure was found). The brief says this group often uses the phone without reading glasses, so the at-use share at 65+ is probably higher. Low confidence.",
+          "confidence": "low"
+        },
+        {
+          "condition": "tremor_mild",
+          "share": 0.036,
+          "stakes": "high",
+          "source_ids": [
+            "SRC-10"
+          ],
+          "cause": "permanent",
+          "why": "Essential tremor 3.64 per 100 people aged 65+ in a Korean community sample (n=714). Excludes Parkinsonian and drug-induced tremor, so a lower bound for tremor of any cause. A mis-tap on a date, time slot or submit books the wrong slot or loses it.",
+          "confidence": "medium"
+        },
+        {
+          "condition": "low_vision",
+          "share": null,
+          "stakes": "high",
+          "source_ids": [
+            "SRC-08",
+            "SRC-01"
+          ],
+          "cause": "permanent",
+          "why": "Share unknown. Visual disability is 9.3% of 2,627,761 registered disabled people, and 56.9% of registered disabled people are 65+ (2025), but the age mix of visual disability alone was not found and registration undercounts functional low vision. The public-sector contract requires KWCAG compliance."
+        },
+        {
+          "condition": "cvd_deutan",
+          "share": 0.025,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-09"
+          ],
+          "cause": "permanent",
+          "why": "Korean adult population study: deutan 2.5% of all participants (any CVD: male 6.5%, female 1.1%). The study covers adults of all ages; acquired colour deficits in older eyes are not separated.",
+          "confidence": "medium"
+        },
+        {
+          "condition": "screen_reader",
+          "share": null,
+          "stakes": "high",
+          "source_ids": [
+            "SRC-01",
+            "SRC-08"
+          ],
+          "cause": "permanent",
+          "why": "Declared, not simulated. The contract requires KWCAG and mobile accessibility compliance; test with TalkBack/VoiceOver (see exclusions)."
+        },
+        {
+          "condition": "cognitive",
+          "share": null,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "cause": "permanent",
+          "why": "Declared, not simulated. The service books 치매 조기검진 (dementia screening), so users with early cognitive decline are expected; share unknown."
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-senior-home",
+          "label_ko": "집 거실·경로당에서 자녀가 보내 준 링크로 직접 예약",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": false,
+          "time_pressure": "low",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ]
+        },
+        {
+          "context_id": "CTX-senior-outdoor",
+          "label_ko": "시장·산책길에서 알림 확인 (햇빛 아래)",
+          "mobility": "walking",
+          "lighting": "bright_sun",
+          "one_handed": true,
+          "interruptions": true,
+          "time_pressure": "low",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ]
+        },
+        {
+          "context_id": "CTX-senior-waiting",
+          "label_ko": "접종 당일 보건소 대기실에서 예약 내역·준비물 재확인",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": true,
+          "time_pressure": "high",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-senior-self-book",
+          "goal_ko": "본인 독감 무료접종을 만 75세 이상 첫날 오전으로 예약한다 (예진 4문항 답하고 동의 후 신청)",
+          "jtbd": "When my child sends me the link and free flu shots for my age open, I want to book my own shot without waiting on the phone, so I get a morning slot on the first day I'm eligible.",
+          "frequency": "rare",
+          "criticality": "health",
+          "concrete_data": {
+            "self": "본인 박순자 (1950년 3월 2일생, 만 76세) — 본인 계정 가정; 브리프 예시에서는 박지훈 계정의 등록 가족",
+            "vaccine": "독감(인플루엔자) 2026-2027절기, 무료",
+            "site": "가람시 보건소 본소 (가람로 120, 2층 예방접종실)",
+            "date": "2026년 10월 15일(목)",
+            "time": "오전 10:30",
+            "fallback_time": "같은 날 오후 2:30 (브리프 과업 2의 대체 시간)",
+            "prescreen_answers": "발열 아니오 · 알레르기 아니오 · 이전 이상반응 아니오 · 최근 다른 접종 아니오 (답은 시나리오 선택)",
+            "consent": "건강정보 수집·이용 동의",
+            "eligibility_rule": "만 75세 이상 10월 15일, 만 70~74세 10월 20일, 만 65~69세 10월 22일부터 무료"
+          },
+          "success_ko": "예약번호와 10월 15일(목) 오전 10:30 · 본소 예약 완료가 돋보기 없이 읽히고, 안내 문자 발송이 안내된다",
+          "source_ids": [
+            "SRC-01",
+            "SRC-07"
+          ]
+        },
+        {
+          "task_id": "T-senior-dayof-check",
+          "goal_ko": "접종 당일 대기실에서 '내 예약'으로 시간·장소·준비물을 다시 확인한다",
+          "jtbd": "When I'm waiting at the health centre on the day, I want to see my booking time, room and what to bring at a glance, so I don't miss my turn or get sent home.",
+          "frequency": "rare",
+          "criticality": "health",
+          "concrete_data": {
+            "booking": "박순자 · 독감 · 2026년 10월 15일(목) 오전 10:30 · 본소 2층 예방접종실",
+            "bring": "신분증",
+            "defer_rule": "37.5℃ 이상 발열 등 몸 상태가 좋지 않으면 접종을 미룸"
+          },
+          "success_ko": "예약 시간·장소, 신분증 지참, 발열 시 연기 안내가 한 화면에서 확인된다",
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "Entry is a link in an SMS or KakaoTalk message while older users are warned not to open links in texts: expect hesitation or abandonment on the first screen unless the sender and address are recognisably the health centre's (hypothesis).",
+          "source_ids": [
+            "SRC-01",
+            "SRC-22",
+            "SRC-23"
+          ],
+          "kind": "inference",
+          "confidence": "low"
+        },
+        {
+          "text": "Age-staggered free-shot start dates caused about 1,900 wasted visits last season; the date picker has to say why a date is not available for the chosen person (hypothesis to check).",
+          "source_ids": [
+            "SRC-01",
+            "SRC-07"
+          ],
+          "kind": "inference",
+          "confidence": "low"
+        },
+        {
+          "text": "Enlarged system text and no reading glasses: small date/time chips, pre-screening radio buttons and the consent checkbox risk being unreadable or clipped (hypothesis).",
+          "source_ids": [
+            "SRC-01",
+            "SRC-24"
+          ],
+          "kind": "inference",
+          "confidence": "low"
+        },
+        {
+          "text": "App-only booking elsewhere was criticised for shutting older patients out.",
+          "source_ids": [
+            "SRC-21"
+          ],
+          "kind": "inference",
+          "confidence": "low"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-chronic-meds",
+      "name_ko": "아침 식사 뒤 약을 먹고 그 자리에서 '복용 완료'를 누르는 고혈압·당뇨 등록관리 대상자",
+      "summary": "People in the health centre's hypertension/diabetes registry (about 12,000 in 가람시, ages 40-70s) who take pills one to three times a day, get a reminder, tap 'taken' at the breakfast table with a cup or pill box in the other hand, undo a mistaken tap, and look at weekly adherence and the latest blood pressure. They also read reminders outdoors in sunlight. The feature exists because they forget whether they already took a dose.",
+      "role": "operator",
+      "priority": "primary",
+      "share": {
+        "value": null,
+        "basis": "unknown",
+        "note": "Registry size only (about 12,000 in 가람시, brief). Their share of this product's users is unknown; they are the most frequent users (daily)."
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "claim": "About 12,000 registered hypertension/diabetes patients in 가람시 often skip or double doses; 'I can't remember whether I took this morning's pill' recurs in counselling.",
+          "quote": "보건소 고혈압·당뇨 등록관리 대상자(가람시 약 1만 2천 명)는 약을 빠뜨리거나 두 번 먹는 일이 잦다. 방문 상담 때 \"오늘 아침 약을 먹었는지 기억이 안 난다\"는 응답이 반복적으로 나온다.",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "claim": "Right after breakfast at the table, often holding a cup or pill box in one hand.",
+          "quote": "아침 식사 직후 식탁: 복약 알림을 받고 약을 먹은 뒤 그 자리에서 복용 완료를 누른다. 한 손에는 물컵이나 약통을 들고 있는 경우가 많다.",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-14",
+          "kind": "firsthand",
+          "claim": "A blood-pressure patient asks others what to do when they cannot remember whether they took the morning pill.",
+          "quote": "혈압약 드시는분들 만약 아침에 내가 먹었는지 기억이 안난다면...",
+          "quote_basis": "verbatim headline or post title in the search result"
+        },
+        {
+          "source_id": "SRC-15",
+          "kind": "firsthand",
+          "claim": "The same problem in a separate post.",
+          "quote": "혈압약 아침에 먹었는지 생각이 안나요 ㅜ",
+          "quote_basis": "verbatim headline or post title in the search result"
+        },
+        {
+          "source_id": "SRC-16",
+          "kind": "firsthand",
+          "claim": "The same problem in a hypertension patients' board.",
+          "quote": "혈압약 먹었는지 안먹었는지 기억이 안나면 어찌해야하나요?",
+          "quote_basis": "verbatim headline or post title in the search result"
+        },
+        {
+          "source_id": "SRC-17",
+          "kind": "firsthand",
+          "claim": "People ask for pill-reminder apps (post on an iPhone users' board; the poster's condition is unknown), so some users arrive already knowing reminder apps.",
+          "quote": "약먹기 앱 추천 해주세요...",
+          "quote_basis": "verbatim headline or post title in the search result"
+        },
+        {
+          "source_id": "SRC-12",
+          "kind": "statistic",
+          "claim": "Of about 13 million Korean adults with hypertension, 5.8 million are 65+ (about 45%), so the segment skews old.",
+          "quote": "우리나라 20세 이상 인구의 30%인 1300만명이 고혈압을 가진 것으로 추정되고, 이 중에서 65세 이상이 580만명",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-13",
+          "kind": "statistic",
+          "claim": "Hypertension prevalence is about 50% in the 60s and about 70% at 70+ (2023).",
+          "quote": "60대 고혈압 유병률은 약 50%, 70세 이상은 70% 수준",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-08",
+          "kind": "statistic",
+          "claim": "Hearing disability is 17.1% of registered disabled people (2025); reminders rely on a notification.",
+          "quote": "청각장애(17.1%)",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        }
+      ],
+      "age_bands": {
+        "40s": 0.15,
+        "50s": 0.25,
+        "60s": 0.3,
+        "70s+": 0.3
+      },
+      "devices": {
+        "galaxy-a55": 0.55,
+        "galaxy-s24": 0.32,
+        "iphone-15": 0.13
+      },
+      "orientation": "portrait",
+      "left_hand_share": null,
+      "familiarity": {
+        "returning": 0.7,
+        "first_use": 0.3
+      },
+      "notes": {
+        "age_bands": "Inference: the brief gives 40~70대; 65+ are about 45% of adults with hypertension (SRC-12). The split across bands is not measured.",
+        "devices": "Derived from Gallup 2025 Samsung shares by age (40s 67%, 50s 89%, 60+ 92%) weighted by the placeholder age mix: about 87% Samsung. 60+ members mapped to galaxy-a55, 40-50s to galaxy-s24 (assumption).",
+        "familiarity": "Inference: a daily task, so most sessions after the first days are returning users; split not measured."
+      },
+      "conditions": [
+        {
+          "condition": "presbyopia",
+          "share": 0.6,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-11",
+            "SRC-01"
+          ],
+          "cause": "permanent",
+          "why": "Declared explicitly. 68.6% uncorrected presbyopia over 50 (Fujian Eye Study, China) applied to the ~85% of this segment assumed to be 50+; low confidence.",
+          "confidence": "low"
+        },
+        {
+          "condition": "tremor_mild",
+          "share": 0.036,
+          "stakes": "high",
+          "source_ids": [
+            "SRC-10"
+          ],
+          "cause": "permanent",
+          "why": "Essential tremor 3.64 per 100 aged 65+ in Korea; lower in the 40-50s part. A mis-tap on '복용 완료' records a dose that was not taken, which can lead to a skipped or doubled dose.",
+          "confidence": "medium"
+        },
+        {
+          "condition": "cvd_deutan",
+          "share": 0.025,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-09"
+          ],
+          "cause": "permanent",
+          "why": "Korean adult population study: deutan 2.5% of all participants (any CVD: male 6.5%, female 1.1%). Taken/not-taken states and the adherence chart may rely on red/green.",
+          "confidence": "medium"
+        },
+        {
+          "condition": "hearing_loss",
+          "share": null,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-08",
+            "SRC-01"
+          ],
+          "cause": "permanent",
+          "why": "Declared, not simulated. Reminders depend on a notification; hearing disability is 17.1% of registered disabled people (2025). Share in this segment unknown."
+        },
+        {
+          "condition": "cognitive",
+          "share": null,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-01",
+            "SRC-14"
+          ],
+          "cause": "permanent",
+          "why": "Declared, not simulated. Memory lapses about doses are the reason for the feature; share unknown."
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-chronic-breakfast",
+          "label_ko": "아침 식사 직후 식탁, 한 손에 물컵이나 약통",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": true,
+          "interruptions": false,
+          "time_pressure": "low",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ]
+        },
+        {
+          "context_id": "CTX-chronic-outdoor",
+          "label_ko": "시장·산책길에서 복약 알림 확인 (햇빛 아래)",
+          "mobility": "walking",
+          "lighting": "bright_sun",
+          "one_handed": true,
+          "interruptions": true,
+          "time_pressure": "low",
+          "share": null,
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-med-taken",
+          "goal_ko": "아침 약(아모잘탄정 5/50mg 1정)을 먹은 뒤 '복용 완료'를 누르고, 잘못 눌렀으면 되돌린다",
+          "jtbd": "When I've just taken my morning pill at the breakfast table with a cup in one hand, I want to mark it taken in one tap, so I neither skip it nor take it twice later.",
+          "frequency": "daily",
+          "criticality": "health",
+          "concrete_data": {
+            "date": "2026년 9월 28일(월)",
+            "morning_med": "아모잘탄정 5/50mg 1정 — 아침 식사 후 오전 8:00",
+            "evening_med": "메트포르민정 500mg 1정 — 저녁 식사 후 오후 7:00 (아직 복용 전)",
+            "action": "아침 약 '복용 완료' 누르기 → 잘못 눌렀을 때 되돌리기"
+          },
+          "success_ko": "아침 약만 복용 완료로 표시되고 저녁 약은 미완료로 남으며, 되돌리면 아침 약이 다시 미완료가 된다",
+          "source_ids": [
+            "SRC-01"
+          ]
+        },
+        {
+          "task_id": "T-med-review",
+          "goal_ko": "주간 복약률과 최근 혈압 기록을 확인한다",
+          "jtbd": "When I want to know how I've been doing before my next counselling visit, I want to see my weekly adherence and latest blood pressure together, so I can tell the nurse and notice missed doses.",
+          "frequency": "weekly",
+          "criticality": "health",
+          "concrete_data": {
+            "weekly_adherence": "지난 7일 14회 중 12회, 86%",
+            "latest_bp": "132/84 mmHg (9월 27일 저녁)"
+          },
+          "success_ko": "86%(14회 중 12회)와 132/84 mmHg · 9월 27일 저녁이 읽힌다",
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "Users forget whether they already took a dose; the taken state must be unmistakable at a glance and the undo easy to find.",
+          "source_ids": [
+            "SRC-01",
+            "SRC-14",
+            "SRC-15",
+            "SRC-16"
+          ],
+          "kind": "firsthand"
+        },
+        {
+          "text": "One hand holds a cup or pill box: '복용 완료' must be reachable and large enough for one thumb (hypothesis).",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference",
+          "confidence": "low"
+        },
+        {
+          "text": "Reminders read outdoors in sunlight: low-contrast text or colour-only status may wash out (hypothesis).",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference",
+          "confidence": "low"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-cert-young",
+      "name_ko": "알바·취업 서류로 보건증 검진을 급히 예약하는 20~30대",
+      "summary": "Young adults who need a 건강진단결과서 (formerly 보건증) or a TB test for a food-service or part-time job, often urgently before a start date. They book a weekday-morning slot at a branch (fee 3,000원) once, many on iPhones, as first-time users of this service.",
+      "role": "operator",
+      "priority": "secondary",
+      "share": {
+        "value": null,
+        "basis": "unknown"
+      },
+      "confidence": "low",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "claim": "The brief lists people in their 20s-30s who need a health certificate or TB test for job or food-hygiene paperwork.",
+          "quote": "검진 예약이 필요한 20~30대 | 건강진단결과서(옛 보건증) 발급, 결핵 검사 | 취업·위생업 종사 서류 준비",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-18",
+          "kind": "firsthand",
+          "claim": "A young user needs a health certificate urgently to start a part-time job.",
+          "quote": "익들아 급해 ㅠㅠ 알바할려고 하는데 보건증 필요하다고 하는데",
+          "quote_basis": "verbatim headline or post title in the search result"
+        },
+        {
+          "source_id": "SRC-19",
+          "kind": "firsthand",
+          "claim": "Worry about not being allowed to start work without it.",
+          "quote": "보건증 없이 출근 못 해??",
+          "quote_basis": "verbatim headline or post title in the search result"
+        },
+        {
+          "source_id": "SRC-20",
+          "kind": "firsthand",
+          "claim": "Asks whether same-day testing is possible (time pressure).",
+          "quote": "보건증 발급 받으려는데요...당일 검사도 가능한가요",
+          "quote_basis": "verbatim headline or post title in the search result"
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "statistic",
+          "claim": "Main phone brand, 20s: Apple 60%, Samsung 40% (Gallup, July 2025).",
+          "quote": "20대는 애플(60%) 사용자가 삼성(40%)보다 많",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        },
+        {
+          "source_id": "SRC-05",
+          "kind": "statistic",
+          "claim": "Main phone brand, 30s: Samsung 50%, Apple 47%.",
+          "quote": "삼성 50%, 애플 47%",
+          "quote_basis": "search tool's extract of the page (may paraphrase; re-verify)"
+        }
+      ],
+      "age_bands": {
+        "20s": 0.5,
+        "30s": 0.5
+      },
+      "devices": {
+        "iphone-15": 0.54,
+        "galaxy-s24": 0.46
+      },
+      "orientation": "portrait",
+      "left_hand_share": null,
+      "familiarity": {
+        "first_use": 0.9,
+        "returning": 0.1
+      },
+      "notes": {
+        "age_bands": "Placeholder: the brief gives 20~30대 without a split.",
+        "devices": "Mean of Gallup 2025 brand shares for the 20s and 30s: Apple about 54%, Samsung 45%.",
+        "familiarity": "Inference: a once-off need on a new service.",
+        "account": "The brief's example for this task is 박지훈 (born 1978), older than this segment; scenarios must check which account the test build holds."
+      },
+      "conditions": [
+        {
+          "condition": "cvd_deutan",
+          "share": 0.025,
+          "stakes": "normal",
+          "source_ids": [
+            "SRC-09"
+          ],
+          "cause": "permanent",
+          "why": "Korean adult population study: deutan 2.5% of all participants (any CVD: male 6.5%, female 1.1%). Slot availability may rely on colour.",
+          "confidence": "medium"
+        }
+      ],
+      "contexts": [
+        {
+          "context_id": "CTX-young-urgent",
+          "label_ko": "출근·알바 시작 전에 급하게 예약 (장소는 근거 없음, 실내 착석 가정)",
+          "mobility": "seated",
+          "lighting": "indoor",
+          "one_handed": false,
+          "interruptions": false,
+          "time_pressure": "high",
+          "share": null,
+          "source_ids": [
+            "SRC-18",
+            "SRC-20"
+          ]
+        }
+      ],
+      "tasks": [
+        {
+          "task_id": "T-cert-book",
+          "goal_ko": "본인 건강진단결과서(옛 보건증) 검진을 동부분소 평일 오전으로 예약한다",
+          "jtbd": "When a new job needs a health certificate before my first shift, I want to book the earliest weekday-morning test at the nearest branch, so I get the certificate in time.",
+          "frequency": "once",
+          "criticality": "legal",
+          "concrete_data": {
+            "exam": "건강진단결과서(옛 보건증) 검진",
+            "site": "동부분소",
+            "slot": "평일 오전 중 가장 빠른 빈 시간",
+            "fee": "3,000원",
+            "person": "본인 (브리프 예시 계정: 박지훈, 1978년 5월 11일생)"
+          },
+          "success_ko": "동부분소 · 평일 오전 · 건강진단결과서 검진 예약 완료와 수수료 3,000원 안내가 보인다",
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "Urgency before a job start: if the flow hides the next available weekday morning or when the certificate is ready, users may walk in or go elsewhere (hypothesis).",
+          "source_ids": [
+            "SRC-18",
+            "SRC-19",
+            "SRC-20"
+          ],
+          "kind": "inference",
+          "confidence": "low"
+        }
+      ]
+    },
+    {
+      "segment_id": "SEG-served-parent",
+      "name_ko": "자녀가 대신 예약해 주고 당일 보건소에 가는 75세 이상 부모",
+      "summary": "Parents (for example 박순자, 76) whose child books for them. They do not operate the service during a proxy booking; the confirmation SMS goes to the applicant's number, so they depend on the child for time, place and what to bring. Listed so the plan shows them as untested rather than covered by the proxy profiles.",
+      "role": "served",
+      "priority": "primary",
+      "share": {
+        "value": null,
+        "basis": "unknown",
+        "note": "They are the other side of the 41% proxy phone bookings (brief), but their share of the people the service affects is unknown."
+      },
+      "confidence": "medium",
+      "evidence": [
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "claim": "In the core task the target person is the applicant's registered mother, and the confirmation SMS goes to the applicant's number.",
+          "quote": "신청이 끝나면 예약번호와 함께 안내 문자가 신청자 번호로 간다.",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-01",
+          "kind": "official",
+          "claim": "A family member can be chosen only after registration at the health centre or a family-relationship check.",
+          "quote": "가족 등록은 보건소 방문 또는 가족관계 확인 후 가능하며, 앱에서는 등록된 가족만 대상자로 고를 수 있다.",
+          "quote_basis": "document (read in full)"
+        },
+        {
+          "source_id": "SRC-04",
+          "kind": "statistic",
+          "claim": "About 73% of people 70+ owned a smartphone in 2024, so roughly a quarter can only be served by a proxy or the phone line.",
+          "quote": "70대 이상 고령층 스마트폰 보급률 73%…역대 최고치",
+          "quote_basis": "verbatim headline or post title in the search result"
+        },
+        {
+          "source_id": "SRC-25",
+          "kind": "inference",
+          "claim": "In the comparable 2021 national COVID-19 online pre-booking for ages 60-74, authorities asked families to book for parents (seen only in the search tool's English rendering; Korean text not retrieved). The final booking rate was 80.7%; the proxy share was not found.",
+          "quote": "60~74세 사전예약 최종 80.7%…당국 \"달성하기 어려운 높은 수치\"",
+          "quote_basis": "verbatim headline or post title in the search result",
+          "confidence": "low"
+        }
+      ],
+      "age_bands": {
+        "70s+": 1.0
+      },
+      "devices": {
+        "galaxy-a55": 1.0
+      },
+      "notes": {
+        "priority": "Primary because the core task exists to get them vaccinated; as a served group they get no profile.",
+        "age_bands": "The core task's target person is 76; the first free-shot day is for 75+.",
+        "devices": "Required by the contract but unused: served people get no profile. If they own a phone it is most likely a Galaxy (Samsung 92% for 60+, SRC-05); about a quarter of 70+ own none (SRC-04)."
+      },
+      "tasks": [
+        {
+          "task_id": "T-served-attend",
+          "goal_ko": "자녀가 예약해 준 날짜·시간·장소와 준비물을 전달받아 제시간에 신분증을 들고 보건소에 간다",
+          "jtbd": "When my child has booked my flu shot for me, I want to know the date, time, place and what to bring, so I arrive on time with my ID and am not sent home.",
+          "frequency": "rare",
+          "criticality": "health",
+          "concrete_data": {
+            "booking": "박순자 · 독감 · 2026년 10월 15일(목) 오전 10:30 · 본소 2층 예방접종실",
+            "info_channel": "자녀가 전달한 안내 문자 또는 결과 화면 캡처 (안내 문자는 신청자 번호 010-2345-6789로 감)",
+            "bring": "신분증"
+          },
+          "success_ko": "부모가 자녀에게서 받은 캡처·문자만으로 날짜·시간·장소·준비물을 알 수 있다 (대리 예약 결과 화면이 전달용으로 충분한지로 간접 확인)",
+          "source_ids": [
+            "SRC-01"
+          ]
+        }
+      ],
+      "pain_points": [
+        {
+          "text": "The parent may not know the booked time and place, or that an ID card is needed, if the child does not forward the SMS or screenshot (hypothesis).",
+          "source_ids": [
+            "SRC-01"
+          ],
+          "kind": "inference",
+          "confidence": "low"
+        }
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "group": "보건소 운영자 (예방접종실 간호사·민원 담당)",
+      "why": "They use a separate admin screen; the brief covers only the citizen mobile web.",
+      "test_instead": "관리자 화면(예약 현황·정원·현장 접수)은 별도 과업 테스트"
+    },
+    {
+      "group": "구매 기관 (시·군·구 보건소 건강증진과·감염병관리팀) — role customer",
+      "why": "Buys the SaaS and judges it by the brief's KPIs (phone share, completion, re-registration, no-show) but does not operate the citizen web.",
+      "test_instead": "성공 지표(전화 예약 비중, 완료율, 대리 예약 오류, 노쇼) 계측 설계 검토 — 스웜 대상 아님"
+    },
+    {
+      "group": "스크린리더 사용자 (TalkBack·VoiceOver)",
+      "why": "Assistive technology is not simulated. The public-sector contract requires KWCAG and mobile accessibility compliance; visual disability is 9.3% of registered disabled people (2025), 56.9% of whom are 65+.",
+      "test_instead": "TalkBack(삼성 인터넷·크롬)과 VoiceOver(사파리)로 과업 T-proxy-flu-book·T-med-taken 수행: 대상자·날짜·시간 선택, 예진 문항, 동의, 복용 완료·되돌리기의 레이블·포커스 순서·오류 안내 확인"
+    },
+    {
+      "group": "시스템 글자 크기를 키운 사용자 (큰 글씨 설정)",
+      "why": "The brief says many older users enlarge system text; the ergo-profile has no text-size attribute, so text reflow at large font scales is not simulated.",
+      "test_instead": "안드로이드 글꼴 크기 최대 + 삼성 인터넷 텍스트 크기 200%, iOS 더 큰 텍스트에서 T-senior-self-book·T-med-taken 재실행: 잘림·겹침·가로 스크롤·버튼 가림 확인"
+    },
+    {
+      "group": "스마트폰이 없는 어르신",
+      "why": "About 73% of people aged 70+ owned a smartphone in 2024 (SRC-04), so roughly a quarter cannot open the link at all; they are served only by a proxy or the phone line.",
+      "test_instead": "전화 예약·현장 접수 경로가 유지되는지 운영 정책으로 확인 (브리프 목표: 전화 예약 비중 50% 이하, 0%가 아님)"
+    },
+    {
+      "group": "태블릿·PC 사용자",
+      "why": "Out of scope in the brief (section 9: phone portrait only)."
+    }
+  ]
+}

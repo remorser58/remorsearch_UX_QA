@@ -1,0 +1,3679 @@
+{
+ "suite": "heldout-2",
+ "defects": 48,
+ "decoys": 16,
+ "clean_scenarios": 4,
+ "products": [
+  "clinic",
+  "expense",
+  "kiosk",
+  "rhythm"
+ ],
+ "provenance_analysis": {
+  "commit": "0a4fd680d31ae98441328862ef6576491833408f",
+  "dirty": false,
+  "code_sha256": "a66b10c7503a709c852c5c0d58578635f7f9094fdc1ec0f5babf746c017d97db"
+ },
+ "provenance_score": {
+  "commit": "0a4fd680d31ae98441328862ef6576491833408f",
+  "dirty": false,
+  "code_sha256": "a66b10c7503a709c852c5c0d58578635f7f9094fdc1ec0f5babf746c017d97db"
+ },
+ "run_health": {
+  "failed": 1,
+  "ok": 25
+ },
+ "configs": {
+  "C1": {
+   "recall_strict": {
+    "k": 11,
+    "n": 48,
+    "rate": 0.229,
+    "ci95": [
+     0.133,
+     0.365
+    ]
+   },
+   "recall_strict_by_operating_point": {
+    "p0_p1": 0.146,
+    "p0_p2": 0.146,
+    "all": 0.229
+   },
+   "recall_strict_unconditioned": 0.458,
+   "condition_identified": 0.0,
+   "recall_condition_attributed": 0.229,
+   "conditioned_defects": 24,
+   "recall_lenient": 0.312,
+   "severity_agreement": 0.208,
+   "by": {
+    "category": {
+     "cognition": {
+      "k": 0,
+      "n": 3,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.562
+      ]
+     },
+     "game": {
+      "k": 1,
+      "n": 2,
+      "rate": 0.5,
+      "ci95": [
+       0.095,
+       0.905
+      ]
+     },
+     "gaze": {
+      "k": 0,
+      "n": 4,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.49
+      ]
+     },
+     "heuristic": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "layout": {
+      "k": 3,
+      "n": 6,
+      "rate": 0.5,
+      "ci95": [
+       0.188,
+       0.812
+      ]
+     },
+     "perception": {
+      "k": 1,
+      "n": 9,
+      "rate": 0.111,
+      "ci95": [
+       0.02,
+       0.435
+      ]
+     },
+     "pointing": {
+      "k": 1,
+      "n": 5,
+      "rate": 0.2,
+      "ci95": [
+       0.036,
+       0.624
+      ]
+     },
+     "reach": {
+      "k": 0,
+      "n": 3,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.562
+      ]
+     },
+     "semantics": {
+      "k": 5,
+      "n": 8,
+      "rate": 0.625,
+      "ci95": [
+       0.306,
+       0.863
+      ]
+     }
+    },
+    "detectable_by": {
+     "agent_judgment": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "measurement": {
+      "k": 11,
+      "n": 18,
+      "rate": 0.611,
+      "ci95": [
+       0.386,
+       0.797
+      ]
+     },
+     "model": {
+      "k": 0,
+      "n": 22,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.149
+      ]
+     }
+    },
+    "audience_relevance": {
+     "edge": {
+      "k": 5,
+      "n": 10,
+      "rate": 0.5,
+      "ci95": [
+       0.237,
+       0.763
+      ]
+     },
+     "none": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "ci95": [
+       0.207,
+       1.0
+      ]
+     },
+     "primary": {
+      "k": 3,
+      "n": 24,
+      "rate": 0.125,
+      "ci95": [
+       0.043,
+       0.31
+      ]
+     },
+     "secondary": {
+      "k": 2,
+      "n": 13,
+      "rate": 0.154,
+      "ci95": [
+       0.043,
+       0.422
+      ]
+     }
+    }
+   },
+   "units": 27,
+   "matched_units": 12,
+   "validity_lb_units": 0.444,
+   "precision_labelled_subset_units": 0.632,
+   "clean_control_units": 6,
+   "clean_control_units_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 3,
+    "P3": 3
+   },
+   "clean_units_per_clean_scenario": {
+    "p0_p1": 0.0,
+    "p0_p2": 0.75,
+    "all": 1.5
+   },
+   "decoy_units": 1,
+   "decoys_flagged": 2,
+   "unlabeled_units": 8,
+   "hypotheses_excluded": 0,
+   "discrimination": {
+    "recall_discriminating": 0.208,
+    "non_discriminating": 1,
+    "youden_by_category": {
+     "cognition": {
+      "n": 3,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "game": {
+      "n": 2,
+      "tpr": 0.5,
+      "fpr_twin": 0.5,
+      "youden_j": 0.0
+     },
+     "gaze": {
+      "n": 4,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "heuristic": {
+      "n": 8,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "layout": {
+      "n": 6,
+      "tpr": 0.5,
+      "fpr_twin": 0.0,
+      "youden_j": 0.5
+     },
+     "perception": {
+      "n": 9,
+      "tpr": 0.111,
+      "fpr_twin": 0.0,
+      "youden_j": 0.111
+     },
+     "pointing": {
+      "n": 5,
+      "tpr": 0.2,
+      "fpr_twin": 0.0,
+      "youden_j": 0.2
+     },
+     "reach": {
+      "n": 3,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "semantics": {
+      "n": 8,
+      "tpr": 0.625,
+      "fpr_twin": 0.0,
+      "youden_j": 0.625
+     }
+    },
+    "youden_mean": 0.16
+   },
+   "clusters": {
+    "n_products": 4,
+    "per_product": {
+     "clinic": {
+      "k": 3,
+      "n": 12,
+      "rate": 0.25,
+      "ci95": [
+       0.089,
+       0.532
+      ]
+     },
+     "expense": {
+      "k": 2,
+      "n": 12,
+      "rate": 0.167,
+      "ci95": [
+       0.047,
+       0.448
+      ]
+     },
+     "kiosk": {
+      "k": 3,
+      "n": 12,
+      "rate": 0.25,
+      "ci95": [
+       0.089,
+       0.532
+      ]
+     },
+     "rhythm": {
+      "k": 3,
+      "n": 12,
+      "rate": 0.25,
+      "ci95": [
+       0.089,
+       0.532
+      ]
+     }
+    },
+    "recall_cluster_ci95": [
+     0.104,
+     0.354
+    ],
+    "recall_lopo_range": [
+     0.222,
+     0.25
+    ],
+    "note": "descriptive: fewer than 10 products"
+   },
+   "noise_gate": {
+    "table": {
+     "p0": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p1": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p2": {
+      "clean_units": 3,
+      "per_clean_scenario": 0.75,
+      "poisson_upper95_per_scenario": 2.192,
+      "recall_strict_at_threshold": 0.146
+     },
+     "all": {
+      "clean_units": 6,
+      "per_clean_scenario": 1.5,
+      "poisson_upper95_per_scenario": 3.265,
+      "recall_strict_at_threshold": 0.229
+     }
+    },
+    "verdict": "fail"
+   }
+  },
+  "C2": {
+   "recall_strict": {
+    "k": 14,
+    "n": 48,
+    "rate": 0.292,
+    "ci95": [
+     0.182,
+     0.432
+    ]
+   },
+   "recall_strict_by_operating_point": {
+    "p0_p1": 0.146,
+    "p0_p2": 0.208,
+    "all": 0.292
+   },
+   "recall_strict_unconditioned": 0.542,
+   "condition_identified": 0.0,
+   "recall_condition_attributed": 0.271,
+   "conditioned_defects": 24,
+   "recall_lenient": 0.417,
+   "severity_agreement": 0.271,
+   "by": {
+    "category": {
+     "cognition": {
+      "k": 1,
+      "n": 3,
+      "rate": 0.333,
+      "ci95": [
+       0.061,
+       0.792
+      ]
+     },
+     "game": {
+      "k": 1,
+      "n": 2,
+      "rate": 0.5,
+      "ci95": [
+       0.095,
+       0.905
+      ]
+     },
+     "gaze": {
+      "k": 1,
+      "n": 4,
+      "rate": 0.25,
+      "ci95": [
+       0.046,
+       0.699
+      ]
+     },
+     "heuristic": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "layout": {
+      "k": 3,
+      "n": 6,
+      "rate": 0.5,
+      "ci95": [
+       0.188,
+       0.812
+      ]
+     },
+     "perception": {
+      "k": 1,
+      "n": 9,
+      "rate": 0.111,
+      "ci95": [
+       0.02,
+       0.435
+      ]
+     },
+     "pointing": {
+      "k": 1,
+      "n": 5,
+      "rate": 0.2,
+      "ci95": [
+       0.036,
+       0.624
+      ]
+     },
+     "reach": {
+      "k": 1,
+      "n": 3,
+      "rate": 0.333,
+      "ci95": [
+       0.061,
+       0.792
+      ]
+     },
+     "semantics": {
+      "k": 5,
+      "n": 8,
+      "rate": 0.625,
+      "ci95": [
+       0.306,
+       0.863
+      ]
+     }
+    },
+    "detectable_by": {
+     "agent_judgment": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "measurement": {
+      "k": 11,
+      "n": 18,
+      "rate": 0.611,
+      "ci95": [
+       0.386,
+       0.797
+      ]
+     },
+     "model": {
+      "k": 3,
+      "n": 22,
+      "rate": 0.136,
+      "ci95": [
+       0.047,
+       0.333
+      ]
+     }
+    },
+    "audience_relevance": {
+     "edge": {
+      "k": 5,
+      "n": 10,
+      "rate": 0.5,
+      "ci95": [
+       0.237,
+       0.763
+      ]
+     },
+     "none": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "ci95": [
+       0.207,
+       1.0
+      ]
+     },
+     "primary": {
+      "k": 6,
+      "n": 24,
+      "rate": 0.25,
+      "ci95": [
+       0.12,
+       0.449
+      ]
+     },
+     "secondary": {
+      "k": 2,
+      "n": 13,
+      "rate": 0.154,
+      "ci95": [
+       0.043,
+       0.422
+      ]
+     }
+    }
+   },
+   "units": 58,
+   "matched_units": 16,
+   "validity_lb_units": 0.276,
+   "precision_labelled_subset_units": 0.421,
+   "clean_control_units": 19,
+   "clean_control_units_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 7,
+    "P3": 12
+   },
+   "clean_units_per_clean_scenario": {
+    "p0_p1": 0.0,
+    "p0_p2": 1.75,
+    "all": 4.75
+   },
+   "decoy_units": 3,
+   "decoys_flagged": 4,
+   "unlabeled_units": 20,
+   "hypotheses_excluded": 39,
+   "discrimination": {
+    "recall_discriminating": 0.271,
+    "non_discriminating": 1,
+    "youden_by_category": {
+     "cognition": {
+      "n": 3,
+      "tpr": 0.333,
+      "fpr_twin": 0.0,
+      "youden_j": 0.333
+     },
+     "game": {
+      "n": 2,
+      "tpr": 0.5,
+      "fpr_twin": 0.5,
+      "youden_j": 0.0
+     },
+     "gaze": {
+      "n": 4,
+      "tpr": 0.25,
+      "fpr_twin": 0.0,
+      "youden_j": 0.25
+     },
+     "heuristic": {
+      "n": 8,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "layout": {
+      "n": 6,
+      "tpr": 0.5,
+      "fpr_twin": 0.0,
+      "youden_j": 0.5
+     },
+     "perception": {
+      "n": 9,
+      "tpr": 0.111,
+      "fpr_twin": 0.0,
+      "youden_j": 0.111
+     },
+     "pointing": {
+      "n": 5,
+      "tpr": 0.2,
+      "fpr_twin": 0.0,
+      "youden_j": 0.2
+     },
+     "reach": {
+      "n": 3,
+      "tpr": 0.333,
+      "fpr_twin": 0.0,
+      "youden_j": 0.333
+     },
+     "semantics": {
+      "n": 8,
+      "tpr": 0.625,
+      "fpr_twin": 0.0,
+      "youden_j": 0.625
+     }
+    },
+    "youden_mean": 0.261
+   },
+   "clusters": {
+    "n_products": 4,
+    "per_product": {
+     "clinic": {
+      "k": 4,
+      "n": 12,
+      "rate": 0.333,
+      "ci95": [
+       0.138,
+       0.609
+      ]
+     },
+     "expense": {
+      "k": 4,
+      "n": 12,
+      "rate": 0.333,
+      "ci95": [
+       0.138,
+       0.609
+      ]
+     },
+     "kiosk": {
+      "k": 3,
+      "n": 12,
+      "rate": 0.25,
+      "ci95": [
+       0.089,
+       0.532
+      ]
+     },
+     "rhythm": {
+      "k": 3,
+      "n": 12,
+      "rate": 0.25,
+      "ci95": [
+       0.089,
+       0.532
+      ]
+     }
+    },
+    "recall_cluster_ci95": [
+     0.167,
+     0.438
+    ],
+    "recall_lopo_range": [
+     0.278,
+     0.306
+    ],
+    "note": "descriptive: fewer than 10 products"
+   },
+   "noise_gate": {
+    "table": {
+     "p0": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p1": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p2": {
+      "clean_units": 7,
+      "per_clean_scenario": 1.75,
+      "poisson_upper95_per_scenario": 3.606,
+      "recall_strict_at_threshold": 0.208
+     },
+     "all": {
+      "clean_units": 19,
+      "per_clean_scenario": 4.75,
+      "poisson_upper95_per_scenario": 7.418,
+      "recall_strict_at_threshold": 0.292
+     }
+    },
+    "verdict": "fail"
+   }
+  },
+  "C3": {
+   "recall_strict": {
+    "k": 27,
+    "n": 48,
+    "rate": 0.562,
+    "ci95": [
+     0.423,
+     0.693
+    ]
+   },
+   "recall_strict_by_operating_point": {
+    "p0_p1": 0.167,
+    "p0_p2": 0.375,
+    "all": 0.562
+   },
+   "recall_strict_unconditioned": 0.542,
+   "condition_identified": 0.083,
+   "recall_condition_attributed": 0.312,
+   "conditioned_defects": 24,
+   "recall_lenient": 0.771,
+   "severity_agreement": 0.417,
+   "by": {
+    "category": {
+     "cognition": {
+      "k": 1,
+      "n": 3,
+      "rate": 0.333,
+      "ci95": [
+       0.061,
+       0.792
+      ]
+     },
+     "game": {
+      "k": 1,
+      "n": 2,
+      "rate": 0.5,
+      "ci95": [
+       0.095,
+       0.905
+      ]
+     },
+     "gaze": {
+      "k": 1,
+      "n": 4,
+      "rate": 0.25,
+      "ci95": [
+       0.046,
+       0.699
+      ]
+     },
+     "heuristic": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "layout": {
+      "k": 4,
+      "n": 6,
+      "rate": 0.667,
+      "ci95": [
+       0.3,
+       0.903
+      ]
+     },
+     "perception": {
+      "k": 7,
+      "n": 9,
+      "rate": 0.778,
+      "ci95": [
+       0.453,
+       0.937
+      ]
+     },
+     "pointing": {
+      "k": 4,
+      "n": 5,
+      "rate": 0.8,
+      "ci95": [
+       0.376,
+       0.964
+      ]
+     },
+     "reach": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "ci95": [
+       0.438,
+       1.0
+      ]
+     },
+     "semantics": {
+      "k": 6,
+      "n": 8,
+      "rate": 0.75,
+      "ci95": [
+       0.409,
+       0.929
+      ]
+     }
+    },
+    "detectable_by": {
+     "agent_judgment": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "measurement": {
+      "k": 13,
+      "n": 18,
+      "rate": 0.722,
+      "ci95": [
+       0.491,
+       0.875
+      ]
+     },
+     "model": {
+      "k": 14,
+      "n": 22,
+      "rate": 0.636,
+      "ci95": [
+       0.43,
+       0.803
+      ]
+     }
+    },
+    "audience_relevance": {
+     "edge": {
+      "k": 7,
+      "n": 10,
+      "rate": 0.7,
+      "ci95": [
+       0.397,
+       0.892
+      ]
+     },
+     "none": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "ci95": [
+       0.207,
+       1.0
+      ]
+     },
+     "primary": {
+      "k": 9,
+      "n": 24,
+      "rate": 0.375,
+      "ci95": [
+       0.212,
+       0.573
+      ]
+     },
+     "secondary": {
+      "k": 10,
+      "n": 13,
+      "rate": 0.769,
+      "ci95": [
+       0.497,
+       0.918
+      ]
+     }
+    }
+   },
+   "units": 68,
+   "matched_units": 30,
+   "validity_lb_units": 0.441,
+   "precision_labelled_subset_units": 0.556,
+   "clean_control_units": 23,
+   "clean_control_units_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 8,
+    "P3": 15
+   },
+   "clean_units_per_clean_scenario": {
+    "p0_p1": 0.0,
+    "p0_p2": 2.0,
+    "all": 5.75
+   },
+   "decoy_units": 1,
+   "decoys_flagged": 4,
+   "unlabeled_units": 14,
+   "hypotheses_excluded": 39,
+   "discrimination": {
+    "recall_discriminating": 0.479,
+    "non_discriminating": 4,
+    "youden_by_category": {
+     "cognition": {
+      "n": 3,
+      "tpr": 0.333,
+      "fpr_twin": 0.0,
+      "youden_j": 0.333
+     },
+     "game": {
+      "n": 2,
+      "tpr": 0.5,
+      "fpr_twin": 0.5,
+      "youden_j": 0.0
+     },
+     "gaze": {
+      "n": 4,
+      "tpr": 0.25,
+      "fpr_twin": 0.0,
+      "youden_j": 0.25
+     },
+     "heuristic": {
+      "n": 8,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "layout": {
+      "n": 6,
+      "tpr": 0.667,
+      "fpr_twin": 0.0,
+      "youden_j": 0.667
+     },
+     "perception": {
+      "n": 9,
+      "tpr": 0.778,
+      "fpr_twin": 0.333,
+      "youden_j": 0.444
+     },
+     "pointing": {
+      "n": 5,
+      "tpr": 0.8,
+      "fpr_twin": 0.0,
+      "youden_j": 0.8
+     },
+     "reach": {
+      "n": 3,
+      "tpr": 1.0,
+      "fpr_twin": 0.0,
+      "youden_j": 1.0
+     },
+     "semantics": {
+      "n": 8,
+      "tpr": 0.75,
+      "fpr_twin": 0.0,
+      "youden_j": 0.75
+     }
+    },
+    "youden_mean": 0.472
+   },
+   "clusters": {
+    "n_products": 4,
+    "per_product": {
+     "clinic": {
+      "k": 7,
+      "n": 12,
+      "rate": 0.583,
+      "ci95": [
+       0.32,
+       0.807
+      ]
+     },
+     "expense": {
+      "k": 8,
+      "n": 12,
+      "rate": 0.667,
+      "ci95": [
+       0.391,
+       0.862
+      ]
+     },
+     "kiosk": {
+      "k": 5,
+      "n": 12,
+      "rate": 0.417,
+      "ci95": [
+       0.193,
+       0.68
+      ]
+     },
+     "rhythm": {
+      "k": 7,
+      "n": 12,
+      "rate": 0.583,
+      "ci95": [
+       0.32,
+       0.807
+      ]
+     }
+    },
+    "recall_cluster_ci95": [
+     0.396,
+     0.708
+    ],
+    "recall_lopo_range": [
+     0.528,
+     0.611
+    ],
+    "note": "descriptive: fewer than 10 products"
+   },
+   "noise_gate": {
+    "table": {
+     "p0": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.167
+     },
+     "p0_p1": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.167
+     },
+     "p0_p2": {
+      "clean_units": 8,
+      "per_clean_scenario": 2.0,
+      "poisson_upper95_per_scenario": 3.941,
+      "recall_strict_at_threshold": 0.375
+     },
+     "all": {
+      "clean_units": 23,
+      "per_clean_scenario": 5.75,
+      "poisson_upper95_per_scenario": 8.628,
+      "recall_strict_at_threshold": 0.562
+     }
+    },
+    "verdict": "fail"
+   }
+  },
+  "C4-floors@10": {
+   "recall_strict": {
+    "k": 21,
+    "n": 48,
+    "rate": 0.438,
+    "ci95": [
+     0.307,
+     0.577
+    ]
+   },
+   "recall_strict_by_operating_point": {
+    "p0_p1": 0.146,
+    "p0_p2": 0.25,
+    "all": 0.438
+   },
+   "recall_strict_unconditioned": 0.542,
+   "condition_identified": 0.125,
+   "recall_condition_attributed": 0.333,
+   "conditioned_defects": 24,
+   "recall_lenient": 0.667,
+   "severity_agreement": 0.333,
+   "by": {
+    "category": {
+     "cognition": {
+      "k": 1,
+      "n": 3,
+      "rate": 0.333,
+      "ci95": [
+       0.061,
+       0.792
+      ]
+     },
+     "game": {
+      "k": 1,
+      "n": 2,
+      "rate": 0.5,
+      "ci95": [
+       0.095,
+       0.905
+      ]
+     },
+     "gaze": {
+      "k": 1,
+      "n": 4,
+      "rate": 0.25,
+      "ci95": [
+       0.046,
+       0.699
+      ]
+     },
+     "heuristic": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "layout": {
+      "k": 3,
+      "n": 6,
+      "rate": 0.5,
+      "ci95": [
+       0.188,
+       0.812
+      ]
+     },
+     "perception": {
+      "k": 7,
+      "n": 9,
+      "rate": 0.778,
+      "ci95": [
+       0.453,
+       0.937
+      ]
+     },
+     "pointing": {
+      "k": 1,
+      "n": 5,
+      "rate": 0.2,
+      "ci95": [
+       0.036,
+       0.624
+      ]
+     },
+     "reach": {
+      "k": 2,
+      "n": 3,
+      "rate": 0.667,
+      "ci95": [
+       0.208,
+       0.939
+      ]
+     },
+     "semantics": {
+      "k": 5,
+      "n": 8,
+      "rate": 0.625,
+      "ci95": [
+       0.306,
+       0.863
+      ]
+     }
+    },
+    "detectable_by": {
+     "agent_judgment": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "measurement": {
+      "k": 11,
+      "n": 18,
+      "rate": 0.611,
+      "ci95": [
+       0.386,
+       0.797
+      ]
+     },
+     "model": {
+      "k": 10,
+      "n": 22,
+      "rate": 0.455,
+      "ci95": [
+       0.269,
+       0.653
+      ]
+     }
+    },
+    "audience_relevance": {
+     "edge": {
+      "k": 5,
+      "n": 10,
+      "rate": 0.5,
+      "ci95": [
+       0.237,
+       0.763
+      ]
+     },
+     "none": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "ci95": [
+       0.207,
+       1.0
+      ]
+     },
+     "primary": {
+      "k": 7,
+      "n": 24,
+      "rate": 0.292,
+      "ci95": [
+       0.149,
+       0.492
+      ]
+     },
+     "secondary": {
+      "k": 8,
+      "n": 13,
+      "rate": 0.615,
+      "ci95": [
+       0.355,
+       0.823
+      ]
+     }
+    }
+   },
+   "units": 69,
+   "matched_units": 23,
+   "validity_lb_units": 0.333,
+   "precision_labelled_subset_units": 0.469,
+   "clean_control_units": 23,
+   "clean_control_units_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 7,
+    "P3": 16
+   },
+   "clean_units_per_clean_scenario": {
+    "p0_p1": 0.0,
+    "p0_p2": 1.75,
+    "all": 5.75
+   },
+   "decoy_units": 3,
+   "decoys_flagged": 4,
+   "unlabeled_units": 20,
+   "hypotheses_excluded": 39,
+   "discrimination": {
+    "recall_discriminating": 0.354,
+    "non_discriminating": 4,
+    "youden_by_category": {
+     "cognition": {
+      "n": 3,
+      "tpr": 0.333,
+      "fpr_twin": 0.0,
+      "youden_j": 0.333
+     },
+     "game": {
+      "n": 2,
+      "tpr": 0.5,
+      "fpr_twin": 0.5,
+      "youden_j": 0.0
+     },
+     "gaze": {
+      "n": 4,
+      "tpr": 0.25,
+      "fpr_twin": 0.0,
+      "youden_j": 0.25
+     },
+     "heuristic": {
+      "n": 8,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "layout": {
+      "n": 6,
+      "tpr": 0.5,
+      "fpr_twin": 0.0,
+      "youden_j": 0.5
+     },
+     "perception": {
+      "n": 9,
+      "tpr": 0.778,
+      "fpr_twin": 0.333,
+      "youden_j": 0.444
+     },
+     "pointing": {
+      "n": 5,
+      "tpr": 0.2,
+      "fpr_twin": 0.0,
+      "youden_j": 0.2
+     },
+     "reach": {
+      "n": 3,
+      "tpr": 0.667,
+      "fpr_twin": 0.0,
+      "youden_j": 0.667
+     },
+     "semantics": {
+      "n": 8,
+      "tpr": 0.625,
+      "fpr_twin": 0.0,
+      "youden_j": 0.625
+     }
+    },
+    "youden_mean": 0.335
+   },
+   "clusters": {
+    "n_products": 4,
+    "per_product": {
+     "clinic": {
+      "k": 5,
+      "n": 12,
+      "rate": 0.417,
+      "ci95": [
+       0.193,
+       0.68
+      ]
+     },
+     "expense": {
+      "k": 6,
+      "n": 12,
+      "rate": 0.5,
+      "ci95": [
+       0.254,
+       0.746
+      ]
+     },
+     "kiosk": {
+      "k": 4,
+      "n": 12,
+      "rate": 0.333,
+      "ci95": [
+       0.138,
+       0.609
+      ]
+     },
+     "rhythm": {
+      "k": 6,
+      "n": 12,
+      "rate": 0.5,
+      "ci95": [
+       0.254,
+       0.746
+      ]
+     }
+    },
+    "recall_cluster_ci95": [
+     0.271,
+     0.583
+    ],
+    "recall_lopo_range": [
+     0.417,
+     0.472
+    ],
+    "note": "descriptive: fewer than 10 products"
+   },
+   "noise_gate": {
+    "table": {
+     "p0": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p1": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p2": {
+      "clean_units": 7,
+      "per_clean_scenario": 1.75,
+      "poisson_upper95_per_scenario": 3.606,
+      "recall_strict_at_threshold": 0.25
+     },
+     "all": {
+      "clean_units": 23,
+      "per_clean_scenario": 5.75,
+      "poisson_upper95_per_scenario": 8.628,
+      "recall_strict_at_threshold": 0.438
+     }
+    },
+    "verdict": "fail"
+   }
+  },
+  "C4-floors@14": {
+   "recall_strict": {
+    "k": 21,
+    "n": 48,
+    "rate": 0.438,
+    "ci95": [
+     0.307,
+     0.577
+    ]
+   },
+   "recall_strict_by_operating_point": {
+    "p0_p1": 0.146,
+    "p0_p2": 0.25,
+    "all": 0.438
+   },
+   "recall_strict_unconditioned": 0.542,
+   "condition_identified": 0.125,
+   "recall_condition_attributed": 0.333,
+   "conditioned_defects": 24,
+   "recall_lenient": 0.667,
+   "severity_agreement": 0.333,
+   "by": {
+    "category": {
+     "cognition": {
+      "k": 1,
+      "n": 3,
+      "rate": 0.333,
+      "ci95": [
+       0.061,
+       0.792
+      ]
+     },
+     "game": {
+      "k": 1,
+      "n": 2,
+      "rate": 0.5,
+      "ci95": [
+       0.095,
+       0.905
+      ]
+     },
+     "gaze": {
+      "k": 1,
+      "n": 4,
+      "rate": 0.25,
+      "ci95": [
+       0.046,
+       0.699
+      ]
+     },
+     "heuristic": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "layout": {
+      "k": 3,
+      "n": 6,
+      "rate": 0.5,
+      "ci95": [
+       0.188,
+       0.812
+      ]
+     },
+     "perception": {
+      "k": 7,
+      "n": 9,
+      "rate": 0.778,
+      "ci95": [
+       0.453,
+       0.937
+      ]
+     },
+     "pointing": {
+      "k": 1,
+      "n": 5,
+      "rate": 0.2,
+      "ci95": [
+       0.036,
+       0.624
+      ]
+     },
+     "reach": {
+      "k": 2,
+      "n": 3,
+      "rate": 0.667,
+      "ci95": [
+       0.208,
+       0.939
+      ]
+     },
+     "semantics": {
+      "k": 5,
+      "n": 8,
+      "rate": 0.625,
+      "ci95": [
+       0.306,
+       0.863
+      ]
+     }
+    },
+    "detectable_by": {
+     "agent_judgment": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "measurement": {
+      "k": 11,
+      "n": 18,
+      "rate": 0.611,
+      "ci95": [
+       0.386,
+       0.797
+      ]
+     },
+     "model": {
+      "k": 10,
+      "n": 22,
+      "rate": 0.455,
+      "ci95": [
+       0.269,
+       0.653
+      ]
+     }
+    },
+    "audience_relevance": {
+     "edge": {
+      "k": 5,
+      "n": 10,
+      "rate": 0.5,
+      "ci95": [
+       0.237,
+       0.763
+      ]
+     },
+     "none": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "ci95": [
+       0.207,
+       1.0
+      ]
+     },
+     "primary": {
+      "k": 7,
+      "n": 24,
+      "rate": 0.292,
+      "ci95": [
+       0.149,
+       0.492
+      ]
+     },
+     "secondary": {
+      "k": 8,
+      "n": 13,
+      "rate": 0.615,
+      "ci95": [
+       0.355,
+       0.823
+      ]
+     }
+    }
+   },
+   "units": 69,
+   "matched_units": 23,
+   "validity_lb_units": 0.333,
+   "precision_labelled_subset_units": 0.469,
+   "clean_control_units": 23,
+   "clean_control_units_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 7,
+    "P3": 16
+   },
+   "clean_units_per_clean_scenario": {
+    "p0_p1": 0.0,
+    "p0_p2": 1.75,
+    "all": 5.75
+   },
+   "decoy_units": 3,
+   "decoys_flagged": 4,
+   "unlabeled_units": 20,
+   "hypotheses_excluded": 39,
+   "discrimination": {
+    "recall_discriminating": 0.354,
+    "non_discriminating": 4,
+    "youden_by_category": {
+     "cognition": {
+      "n": 3,
+      "tpr": 0.333,
+      "fpr_twin": 0.0,
+      "youden_j": 0.333
+     },
+     "game": {
+      "n": 2,
+      "tpr": 0.5,
+      "fpr_twin": 0.5,
+      "youden_j": 0.0
+     },
+     "gaze": {
+      "n": 4,
+      "tpr": 0.25,
+      "fpr_twin": 0.0,
+      "youden_j": 0.25
+     },
+     "heuristic": {
+      "n": 8,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "layout": {
+      "n": 6,
+      "tpr": 0.5,
+      "fpr_twin": 0.0,
+      "youden_j": 0.5
+     },
+     "perception": {
+      "n": 9,
+      "tpr": 0.778,
+      "fpr_twin": 0.333,
+      "youden_j": 0.444
+     },
+     "pointing": {
+      "n": 5,
+      "tpr": 0.2,
+      "fpr_twin": 0.0,
+      "youden_j": 0.2
+     },
+     "reach": {
+      "n": 3,
+      "tpr": 0.667,
+      "fpr_twin": 0.0,
+      "youden_j": 0.667
+     },
+     "semantics": {
+      "n": 8,
+      "tpr": 0.625,
+      "fpr_twin": 0.0,
+      "youden_j": 0.625
+     }
+    },
+    "youden_mean": 0.335
+   },
+   "clusters": {
+    "n_products": 4,
+    "per_product": {
+     "clinic": {
+      "k": 5,
+      "n": 12,
+      "rate": 0.417,
+      "ci95": [
+       0.193,
+       0.68
+      ]
+     },
+     "expense": {
+      "k": 6,
+      "n": 12,
+      "rate": 0.5,
+      "ci95": [
+       0.254,
+       0.746
+      ]
+     },
+     "kiosk": {
+      "k": 4,
+      "n": 12,
+      "rate": 0.333,
+      "ci95": [
+       0.138,
+       0.609
+      ]
+     },
+     "rhythm": {
+      "k": 6,
+      "n": 12,
+      "rate": 0.5,
+      "ci95": [
+       0.254,
+       0.746
+      ]
+     }
+    },
+    "recall_cluster_ci95": [
+     0.271,
+     0.583
+    ],
+    "recall_lopo_range": [
+     0.417,
+     0.472
+    ],
+    "note": "descriptive: fewer than 10 products"
+   },
+   "noise_gate": {
+    "table": {
+     "p0": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p1": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p2": {
+      "clean_units": 7,
+      "per_clean_scenario": 1.75,
+      "poisson_upper95_per_scenario": 3.606,
+      "recall_strict_at_threshold": 0.25
+     },
+     "all": {
+      "clean_units": 23,
+      "per_clean_scenario": 5.75,
+      "poisson_upper95_per_scenario": 8.628,
+      "recall_strict_at_threshold": 0.438
+     }
+    },
+    "verdict": "fail"
+   }
+  },
+  "C4-swap@10": {
+   "recall_strict": {
+    "k": 15,
+    "n": 48,
+    "rate": 0.312,
+    "ci95": [
+     0.199,
+     0.453
+    ]
+   },
+   "recall_strict_by_operating_point": {
+    "p0_p1": 0.125,
+    "p0_p2": 0.188,
+    "all": 0.312
+   },
+   "recall_strict_unconditioned": 0.333,
+   "condition_identified": 0.125,
+   "recall_condition_attributed": 0.229,
+   "conditioned_defects": 24,
+   "recall_lenient": 0.521,
+   "severity_agreement": 0.229,
+   "by": {
+    "category": {
+     "cognition": {
+      "k": 0,
+      "n": 3,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.562
+      ]
+     },
+     "game": {
+      "k": 2,
+      "n": 2,
+      "rate": 1.0,
+      "ci95": [
+       0.342,
+       1.0
+      ]
+     },
+     "gaze": {
+      "k": 0,
+      "n": 4,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.49
+      ]
+     },
+     "heuristic": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "layout": {
+      "k": 1,
+      "n": 6,
+      "rate": 0.167,
+      "ci95": [
+       0.03,
+       0.564
+      ]
+     },
+     "perception": {
+      "k": 5,
+      "n": 9,
+      "rate": 0.556,
+      "ci95": [
+       0.267,
+       0.811
+      ]
+     },
+     "pointing": {
+      "k": 2,
+      "n": 5,
+      "rate": 0.4,
+      "ci95": [
+       0.118,
+       0.769
+      ]
+     },
+     "reach": {
+      "k": 1,
+      "n": 3,
+      "rate": 0.333,
+      "ci95": [
+       0.061,
+       0.792
+      ]
+     },
+     "semantics": {
+      "k": 4,
+      "n": 8,
+      "rate": 0.5,
+      "ci95": [
+       0.215,
+       0.785
+      ]
+     }
+    },
+    "detectable_by": {
+     "agent_judgment": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "measurement": {
+      "k": 8,
+      "n": 18,
+      "rate": 0.444,
+      "ci95": [
+       0.246,
+       0.663
+      ]
+     },
+     "model": {
+      "k": 7,
+      "n": 22,
+      "rate": 0.318,
+      "ci95": [
+       0.164,
+       0.527
+      ]
+     }
+    },
+    "audience_relevance": {
+     "edge": {
+      "k": 4,
+      "n": 10,
+      "rate": 0.4,
+      "ci95": [
+       0.168,
+       0.687
+      ]
+     },
+     "none": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "ci95": [
+       0.207,
+       1.0
+      ]
+     },
+     "primary": {
+      "k": 5,
+      "n": 24,
+      "rate": 0.208,
+      "ci95": [
+       0.092,
+       0.405
+      ]
+     },
+     "secondary": {
+      "k": 5,
+      "n": 13,
+      "rate": 0.385,
+      "ci95": [
+       0.177,
+       0.645
+      ]
+     }
+    }
+   },
+   "units": 58,
+   "matched_units": 19,
+   "validity_lb_units": 0.328,
+   "precision_labelled_subset_units": 0.5,
+   "clean_control_units": 18,
+   "clean_control_units_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 7,
+    "P3": 11
+   },
+   "clean_units_per_clean_scenario": {
+    "p0_p1": 0.0,
+    "p0_p2": 1.75,
+    "all": 4.5
+   },
+   "decoy_units": 1,
+   "decoys_flagged": 3,
+   "unlabeled_units": 20,
+   "hypotheses_excluded": 24,
+   "discrimination": {
+    "recall_discriminating": 0.271,
+    "non_discriminating": 2,
+    "youden_by_category": {
+     "cognition": {
+      "n": 3,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "game": {
+      "n": 2,
+      "tpr": 1.0,
+      "fpr_twin": 0.5,
+      "youden_j": 0.5
+     },
+     "gaze": {
+      "n": 4,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "heuristic": {
+      "n": 8,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "layout": {
+      "n": 6,
+      "tpr": 0.167,
+      "fpr_twin": 0.0,
+      "youden_j": 0.167
+     },
+     "perception": {
+      "n": 9,
+      "tpr": 0.556,
+      "fpr_twin": 0.111,
+      "youden_j": 0.444
+     },
+     "pointing": {
+      "n": 5,
+      "tpr": 0.4,
+      "fpr_twin": 0.0,
+      "youden_j": 0.4
+     },
+     "reach": {
+      "n": 3,
+      "tpr": 0.333,
+      "fpr_twin": 0.0,
+      "youden_j": 0.333
+     },
+     "semantics": {
+      "n": 8,
+      "tpr": 0.5,
+      "fpr_twin": 0.0,
+      "youden_j": 0.5
+     }
+    },
+    "youden_mean": 0.26
+   },
+   "clusters": {
+    "n_products": 4,
+    "per_product": {
+     "clinic": {
+      "k": 3,
+      "n": 12,
+      "rate": 0.25,
+      "ci95": [
+       0.089,
+       0.532
+      ]
+     },
+     "expense": {
+      "k": 0,
+      "n": 12,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.243
+      ]
+     },
+     "kiosk": {
+      "k": 4,
+      "n": 12,
+      "rate": 0.333,
+      "ci95": [
+       0.138,
+       0.609
+      ]
+     },
+     "rhythm": {
+      "k": 8,
+      "n": 12,
+      "rate": 0.667,
+      "ci95": [
+       0.391,
+       0.862
+      ]
+     }
+    },
+    "recall_cluster_ci95": [
+     0.083,
+     0.583
+    ],
+    "recall_lopo_range": [
+     0.194,
+     0.417
+    ],
+    "note": "descriptive: fewer than 10 products"
+   },
+   "noise_gate": {
+    "table": {
+     "p0": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.125
+     },
+     "p0_p1": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.125
+     },
+     "p0_p2": {
+      "clean_units": 7,
+      "per_clean_scenario": 1.75,
+      "poisson_upper95_per_scenario": 3.606,
+      "recall_strict_at_threshold": 0.188
+     },
+     "all": {
+      "clean_units": 18,
+      "per_clean_scenario": 4.5,
+      "poisson_upper95_per_scenario": 7.112,
+      "recall_strict_at_threshold": 0.312
+     }
+    },
+    "verdict": "fail"
+   }
+  },
+  "C4-swap@14": {
+   "recall_strict": {
+    "k": 15,
+    "n": 48,
+    "rate": 0.312,
+    "ci95": [
+     0.199,
+     0.453
+    ]
+   },
+   "recall_strict_by_operating_point": {
+    "p0_p1": 0.125,
+    "p0_p2": 0.188,
+    "all": 0.312
+   },
+   "recall_strict_unconditioned": 0.333,
+   "condition_identified": 0.125,
+   "recall_condition_attributed": 0.229,
+   "conditioned_defects": 24,
+   "recall_lenient": 0.521,
+   "severity_agreement": 0.229,
+   "by": {
+    "category": {
+     "cognition": {
+      "k": 0,
+      "n": 3,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.562
+      ]
+     },
+     "game": {
+      "k": 2,
+      "n": 2,
+      "rate": 1.0,
+      "ci95": [
+       0.342,
+       1.0
+      ]
+     },
+     "gaze": {
+      "k": 0,
+      "n": 4,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.49
+      ]
+     },
+     "heuristic": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "layout": {
+      "k": 1,
+      "n": 6,
+      "rate": 0.167,
+      "ci95": [
+       0.03,
+       0.564
+      ]
+     },
+     "perception": {
+      "k": 5,
+      "n": 9,
+      "rate": 0.556,
+      "ci95": [
+       0.267,
+       0.811
+      ]
+     },
+     "pointing": {
+      "k": 2,
+      "n": 5,
+      "rate": 0.4,
+      "ci95": [
+       0.118,
+       0.769
+      ]
+     },
+     "reach": {
+      "k": 1,
+      "n": 3,
+      "rate": 0.333,
+      "ci95": [
+       0.061,
+       0.792
+      ]
+     },
+     "semantics": {
+      "k": 4,
+      "n": 8,
+      "rate": 0.5,
+      "ci95": [
+       0.215,
+       0.785
+      ]
+     }
+    },
+    "detectable_by": {
+     "agent_judgment": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "measurement": {
+      "k": 8,
+      "n": 18,
+      "rate": 0.444,
+      "ci95": [
+       0.246,
+       0.663
+      ]
+     },
+     "model": {
+      "k": 7,
+      "n": 22,
+      "rate": 0.318,
+      "ci95": [
+       0.164,
+       0.527
+      ]
+     }
+    },
+    "audience_relevance": {
+     "edge": {
+      "k": 4,
+      "n": 10,
+      "rate": 0.4,
+      "ci95": [
+       0.168,
+       0.687
+      ]
+     },
+     "none": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "ci95": [
+       0.207,
+       1.0
+      ]
+     },
+     "primary": {
+      "k": 5,
+      "n": 24,
+      "rate": 0.208,
+      "ci95": [
+       0.092,
+       0.405
+      ]
+     },
+     "secondary": {
+      "k": 5,
+      "n": 13,
+      "rate": 0.385,
+      "ci95": [
+       0.177,
+       0.645
+      ]
+     }
+    }
+   },
+   "units": 58,
+   "matched_units": 19,
+   "validity_lb_units": 0.328,
+   "precision_labelled_subset_units": 0.5,
+   "clean_control_units": 18,
+   "clean_control_units_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 7,
+    "P3": 11
+   },
+   "clean_units_per_clean_scenario": {
+    "p0_p1": 0.0,
+    "p0_p2": 1.75,
+    "all": 4.5
+   },
+   "decoy_units": 1,
+   "decoys_flagged": 3,
+   "unlabeled_units": 20,
+   "hypotheses_excluded": 24,
+   "discrimination": {
+    "recall_discriminating": 0.271,
+    "non_discriminating": 2,
+    "youden_by_category": {
+     "cognition": {
+      "n": 3,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "game": {
+      "n": 2,
+      "tpr": 1.0,
+      "fpr_twin": 0.5,
+      "youden_j": 0.5
+     },
+     "gaze": {
+      "n": 4,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "heuristic": {
+      "n": 8,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "layout": {
+      "n": 6,
+      "tpr": 0.167,
+      "fpr_twin": 0.0,
+      "youden_j": 0.167
+     },
+     "perception": {
+      "n": 9,
+      "tpr": 0.556,
+      "fpr_twin": 0.111,
+      "youden_j": 0.444
+     },
+     "pointing": {
+      "n": 5,
+      "tpr": 0.4,
+      "fpr_twin": 0.0,
+      "youden_j": 0.4
+     },
+     "reach": {
+      "n": 3,
+      "tpr": 0.333,
+      "fpr_twin": 0.0,
+      "youden_j": 0.333
+     },
+     "semantics": {
+      "n": 8,
+      "tpr": 0.5,
+      "fpr_twin": 0.0,
+      "youden_j": 0.5
+     }
+    },
+    "youden_mean": 0.26
+   },
+   "clusters": {
+    "n_products": 4,
+    "per_product": {
+     "clinic": {
+      "k": 3,
+      "n": 12,
+      "rate": 0.25,
+      "ci95": [
+       0.089,
+       0.532
+      ]
+     },
+     "expense": {
+      "k": 0,
+      "n": 12,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.243
+      ]
+     },
+     "kiosk": {
+      "k": 4,
+      "n": 12,
+      "rate": 0.333,
+      "ci95": [
+       0.138,
+       0.609
+      ]
+     },
+     "rhythm": {
+      "k": 8,
+      "n": 12,
+      "rate": 0.667,
+      "ci95": [
+       0.391,
+       0.862
+      ]
+     }
+    },
+    "recall_cluster_ci95": [
+     0.083,
+     0.583
+    ],
+    "recall_lopo_range": [
+     0.194,
+     0.417
+    ],
+    "note": "descriptive: fewer than 10 products"
+   },
+   "noise_gate": {
+    "table": {
+     "p0": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.125
+     },
+     "p0_p1": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.125
+     },
+     "p0_p2": {
+      "clean_units": 7,
+      "per_clean_scenario": 1.75,
+      "poisson_upper95_per_scenario": 3.606,
+      "recall_strict_at_threshold": 0.188
+     },
+     "all": {
+      "clean_units": 18,
+      "per_clean_scenario": 4.5,
+      "poisson_upper95_per_scenario": 7.112,
+      "recall_strict_at_threshold": 0.312
+     }
+    },
+    "verdict": "fail"
+   }
+  },
+  "C4@10": {
+   "recall_strict": {
+    "k": 24,
+    "n": 48,
+    "rate": 0.5,
+    "ci95": [
+     0.364,
+     0.636
+    ]
+   },
+   "recall_strict_by_operating_point": {
+    "p0_p1": 0.146,
+    "p0_p2": 0.333,
+    "all": 0.5
+   },
+   "recall_strict_unconditioned": 0.542,
+   "condition_identified": 0.125,
+   "recall_condition_attributed": 0.333,
+   "conditioned_defects": 24,
+   "recall_lenient": 0.708,
+   "severity_agreement": 0.375,
+   "by": {
+    "category": {
+     "cognition": {
+      "k": 1,
+      "n": 3,
+      "rate": 0.333,
+      "ci95": [
+       0.061,
+       0.792
+      ]
+     },
+     "game": {
+      "k": 2,
+      "n": 2,
+      "rate": 1.0,
+      "ci95": [
+       0.342,
+       1.0
+      ]
+     },
+     "gaze": {
+      "k": 1,
+      "n": 4,
+      "rate": 0.25,
+      "ci95": [
+       0.046,
+       0.699
+      ]
+     },
+     "heuristic": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "layout": {
+      "k": 4,
+      "n": 6,
+      "rate": 0.667,
+      "ci95": [
+       0.3,
+       0.903
+      ]
+     },
+     "perception": {
+      "k": 7,
+      "n": 9,
+      "rate": 0.778,
+      "ci95": [
+       0.453,
+       0.937
+      ]
+     },
+     "pointing": {
+      "k": 2,
+      "n": 5,
+      "rate": 0.4,
+      "ci95": [
+       0.118,
+       0.769
+      ]
+     },
+     "reach": {
+      "k": 2,
+      "n": 3,
+      "rate": 0.667,
+      "ci95": [
+       0.208,
+       0.939
+      ]
+     },
+     "semantics": {
+      "k": 5,
+      "n": 8,
+      "rate": 0.625,
+      "ci95": [
+       0.306,
+       0.863
+      ]
+     }
+    },
+    "detectable_by": {
+     "agent_judgment": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "measurement": {
+      "k": 12,
+      "n": 18,
+      "rate": 0.667,
+      "ci95": [
+       0.437,
+       0.837
+      ]
+     },
+     "model": {
+      "k": 12,
+      "n": 22,
+      "rate": 0.545,
+      "ci95": [
+       0.347,
+       0.731
+      ]
+     }
+    },
+    "audience_relevance": {
+     "edge": {
+      "k": 6,
+      "n": 10,
+      "rate": 0.6,
+      "ci95": [
+       0.313,
+       0.832
+      ]
+     },
+     "none": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "ci95": [
+       0.207,
+       1.0
+      ]
+     },
+     "primary": {
+      "k": 9,
+      "n": 24,
+      "rate": 0.375,
+      "ci95": [
+       0.212,
+       0.573
+      ]
+     },
+     "secondary": {
+      "k": 8,
+      "n": 13,
+      "rate": 0.615,
+      "ci95": [
+       0.355,
+       0.823
+      ]
+     }
+    }
+   },
+   "units": 73,
+   "matched_units": 27,
+   "validity_lb_units": 0.37,
+   "precision_labelled_subset_units": 0.509,
+   "clean_control_units": 24,
+   "clean_control_units_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 7,
+    "P3": 17
+   },
+   "clean_units_per_clean_scenario": {
+    "p0_p1": 0.0,
+    "p0_p2": 1.75,
+    "all": 6.0
+   },
+   "decoy_units": 2,
+   "decoys_flagged": 4,
+   "unlabeled_units": 20,
+   "hypotheses_excluded": 47,
+   "discrimination": {
+    "recall_discriminating": 0.417,
+    "non_discriminating": 4,
+    "youden_by_category": {
+     "cognition": {
+      "n": 3,
+      "tpr": 0.333,
+      "fpr_twin": 0.0,
+      "youden_j": 0.333
+     },
+     "game": {
+      "n": 2,
+      "tpr": 1.0,
+      "fpr_twin": 0.5,
+      "youden_j": 0.5
+     },
+     "gaze": {
+      "n": 4,
+      "tpr": 0.25,
+      "fpr_twin": 0.0,
+      "youden_j": 0.25
+     },
+     "heuristic": {
+      "n": 8,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "layout": {
+      "n": 6,
+      "tpr": 0.667,
+      "fpr_twin": 0.0,
+      "youden_j": 0.667
+     },
+     "perception": {
+      "n": 9,
+      "tpr": 0.778,
+      "fpr_twin": 0.333,
+      "youden_j": 0.444
+     },
+     "pointing": {
+      "n": 5,
+      "tpr": 0.4,
+      "fpr_twin": 0.0,
+      "youden_j": 0.4
+     },
+     "reach": {
+      "n": 3,
+      "tpr": 0.667,
+      "fpr_twin": 0.0,
+      "youden_j": 0.667
+     },
+     "semantics": {
+      "n": 8,
+      "tpr": 0.625,
+      "fpr_twin": 0.0,
+      "youden_j": 0.625
+     }
+    },
+    "youden_mean": 0.432
+   },
+   "clusters": {
+    "n_products": 4,
+    "per_product": {
+     "clinic": {
+      "k": 6,
+      "n": 12,
+      "rate": 0.5,
+      "ci95": [
+       0.254,
+       0.746
+      ]
+     },
+     "expense": {
+      "k": 7,
+      "n": 12,
+      "rate": 0.583,
+      "ci95": [
+       0.32,
+       0.807
+      ]
+     },
+     "kiosk": {
+      "k": 4,
+      "n": 12,
+      "rate": 0.333,
+      "ci95": [
+       0.138,
+       0.609
+      ]
+     },
+     "rhythm": {
+      "k": 7,
+      "n": 12,
+      "rate": 0.583,
+      "ci95": [
+       0.32,
+       0.807
+      ]
+     }
+    },
+    "recall_cluster_ci95": [
+     0.333,
+     0.667
+    ],
+    "recall_lopo_range": [
+     0.472,
+     0.556
+    ],
+    "note": "descriptive: fewer than 10 products"
+   },
+   "noise_gate": {
+    "table": {
+     "p0": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p1": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p2": {
+      "clean_units": 7,
+      "per_clean_scenario": 1.75,
+      "poisson_upper95_per_scenario": 3.606,
+      "recall_strict_at_threshold": 0.333
+     },
+     "all": {
+      "clean_units": 24,
+      "per_clean_scenario": 6.0,
+      "poisson_upper95_per_scenario": 8.928,
+      "recall_strict_at_threshold": 0.5
+     }
+    },
+    "verdict": "fail"
+   }
+  },
+  "C4@14": {
+   "recall_strict": {
+    "k": 26,
+    "n": 48,
+    "rate": 0.542,
+    "ci95": [
+     0.403,
+     0.674
+    ]
+   },
+   "recall_strict_by_operating_point": {
+    "p0_p1": 0.146,
+    "p0_p2": 0.333,
+    "all": 0.542
+   },
+   "recall_strict_unconditioned": 0.542,
+   "condition_identified": 0.125,
+   "recall_condition_attributed": 0.333,
+   "conditioned_defects": 24,
+   "recall_lenient": 0.729,
+   "severity_agreement": 0.396,
+   "by": {
+    "category": {
+     "cognition": {
+      "k": 1,
+      "n": 3,
+      "rate": 0.333,
+      "ci95": [
+       0.061,
+       0.792
+      ]
+     },
+     "game": {
+      "k": 2,
+      "n": 2,
+      "rate": 1.0,
+      "ci95": [
+       0.342,
+       1.0
+      ]
+     },
+     "gaze": {
+      "k": 1,
+      "n": 4,
+      "rate": 0.25,
+      "ci95": [
+       0.046,
+       0.699
+      ]
+     },
+     "heuristic": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "layout": {
+      "k": 4,
+      "n": 6,
+      "rate": 0.667,
+      "ci95": [
+       0.3,
+       0.903
+      ]
+     },
+     "perception": {
+      "k": 7,
+      "n": 9,
+      "rate": 0.778,
+      "ci95": [
+       0.453,
+       0.937
+      ]
+     },
+     "pointing": {
+      "k": 3,
+      "n": 5,
+      "rate": 0.6,
+      "ci95": [
+       0.231,
+       0.882
+      ]
+     },
+     "reach": {
+      "k": 3,
+      "n": 3,
+      "rate": 1.0,
+      "ci95": [
+       0.438,
+       1.0
+      ]
+     },
+     "semantics": {
+      "k": 5,
+      "n": 8,
+      "rate": 0.625,
+      "ci95": [
+       0.306,
+       0.863
+      ]
+     }
+    },
+    "detectable_by": {
+     "agent_judgment": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "measurement": {
+      "k": 12,
+      "n": 18,
+      "rate": 0.667,
+      "ci95": [
+       0.437,
+       0.837
+      ]
+     },
+     "model": {
+      "k": 14,
+      "n": 22,
+      "rate": 0.636,
+      "ci95": [
+       0.43,
+       0.803
+      ]
+     }
+    },
+    "audience_relevance": {
+     "edge": {
+      "k": 6,
+      "n": 10,
+      "rate": 0.6,
+      "ci95": [
+       0.313,
+       0.832
+      ]
+     },
+     "none": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "ci95": [
+       0.207,
+       1.0
+      ]
+     },
+     "primary": {
+      "k": 10,
+      "n": 24,
+      "rate": 0.417,
+      "ci95": [
+       0.245,
+       0.612
+      ]
+     },
+     "secondary": {
+      "k": 9,
+      "n": 13,
+      "rate": 0.692,
+      "ci95": [
+       0.424,
+       0.873
+      ]
+     }
+    }
+   },
+   "units": 72,
+   "matched_units": 28,
+   "validity_lb_units": 0.389,
+   "precision_labelled_subset_units": 0.519,
+   "clean_control_units": 24,
+   "clean_control_units_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 7,
+    "P3": 17
+   },
+   "clean_units_per_clean_scenario": {
+    "p0_p1": 0.0,
+    "p0_p2": 1.75,
+    "all": 6.0
+   },
+   "decoy_units": 2,
+   "decoys_flagged": 4,
+   "unlabeled_units": 18,
+   "hypotheses_excluded": 47,
+   "discrimination": {
+    "recall_discriminating": 0.458,
+    "non_discriminating": 4,
+    "youden_by_category": {
+     "cognition": {
+      "n": 3,
+      "tpr": 0.333,
+      "fpr_twin": 0.0,
+      "youden_j": 0.333
+     },
+     "game": {
+      "n": 2,
+      "tpr": 1.0,
+      "fpr_twin": 0.5,
+      "youden_j": 0.5
+     },
+     "gaze": {
+      "n": 4,
+      "tpr": 0.25,
+      "fpr_twin": 0.0,
+      "youden_j": 0.25
+     },
+     "heuristic": {
+      "n": 8,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "layout": {
+      "n": 6,
+      "tpr": 0.667,
+      "fpr_twin": 0.0,
+      "youden_j": 0.667
+     },
+     "perception": {
+      "n": 9,
+      "tpr": 0.778,
+      "fpr_twin": 0.333,
+      "youden_j": 0.444
+     },
+     "pointing": {
+      "n": 5,
+      "tpr": 0.6,
+      "fpr_twin": 0.0,
+      "youden_j": 0.6
+     },
+     "reach": {
+      "n": 3,
+      "tpr": 1.0,
+      "fpr_twin": 0.0,
+      "youden_j": 1.0
+     },
+     "semantics": {
+      "n": 8,
+      "tpr": 0.625,
+      "fpr_twin": 0.0,
+      "youden_j": 0.625
+     }
+    },
+    "youden_mean": 0.491
+   },
+   "clusters": {
+    "n_products": 4,
+    "per_product": {
+     "clinic": {
+      "k": 7,
+      "n": 12,
+      "rate": 0.583,
+      "ci95": [
+       0.32,
+       0.807
+      ]
+     },
+     "expense": {
+      "k": 7,
+      "n": 12,
+      "rate": 0.583,
+      "ci95": [
+       0.32,
+       0.807
+      ]
+     },
+     "kiosk": {
+      "k": 5,
+      "n": 12,
+      "rate": 0.417,
+      "ci95": [
+       0.193,
+       0.68
+      ]
+     },
+     "rhythm": {
+      "k": 7,
+      "n": 12,
+      "rate": 0.583,
+      "ci95": [
+       0.32,
+       0.807
+      ]
+     }
+    },
+    "recall_cluster_ci95": [
+     0.375,
+     0.688
+    ],
+    "recall_lopo_range": [
+     0.528,
+     0.583
+    ],
+    "note": "descriptive: fewer than 10 products"
+   },
+   "noise_gate": {
+    "table": {
+     "p0": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p1": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p2": {
+      "clean_units": 7,
+      "per_clean_scenario": 1.75,
+      "poisson_upper95_per_scenario": 3.606,
+      "recall_strict_at_threshold": 0.333
+     },
+     "all": {
+      "clean_units": 24,
+      "per_clean_scenario": 6.0,
+      "poisson_upper95_per_scenario": 8.928,
+      "recall_strict_at_threshold": 0.542
+     }
+    },
+    "verdict": "fail"
+   }
+  },
+  "C4@6": {
+   "recall_strict": {
+    "k": 20,
+    "n": 48,
+    "rate": 0.417,
+    "ci95": [
+     0.288,
+     0.557
+    ]
+   },
+   "recall_strict_by_operating_point": {
+    "p0_p1": 0.146,
+    "p0_p2": 0.292,
+    "all": 0.417
+   },
+   "recall_strict_unconditioned": 0.542,
+   "condition_identified": 0.042,
+   "recall_condition_attributed": 0.292,
+   "conditioned_defects": 24,
+   "recall_lenient": 0.625,
+   "severity_agreement": 0.333,
+   "by": {
+    "category": {
+     "cognition": {
+      "k": 1,
+      "n": 3,
+      "rate": 0.333,
+      "ci95": [
+       0.061,
+       0.792
+      ]
+     },
+     "game": {
+      "k": 2,
+      "n": 2,
+      "rate": 1.0,
+      "ci95": [
+       0.342,
+       1.0
+      ]
+     },
+     "gaze": {
+      "k": 1,
+      "n": 4,
+      "rate": 0.25,
+      "ci95": [
+       0.046,
+       0.699
+      ]
+     },
+     "heuristic": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "layout": {
+      "k": 4,
+      "n": 6,
+      "rate": 0.667,
+      "ci95": [
+       0.3,
+       0.903
+      ]
+     },
+     "perception": {
+      "k": 5,
+      "n": 9,
+      "rate": 0.556,
+      "ci95": [
+       0.267,
+       0.811
+      ]
+     },
+     "pointing": {
+      "k": 1,
+      "n": 5,
+      "rate": 0.2,
+      "ci95": [
+       0.036,
+       0.624
+      ]
+     },
+     "reach": {
+      "k": 1,
+      "n": 3,
+      "rate": 0.333,
+      "ci95": [
+       0.061,
+       0.792
+      ]
+     },
+     "semantics": {
+      "k": 5,
+      "n": 8,
+      "rate": 0.625,
+      "ci95": [
+       0.306,
+       0.863
+      ]
+     }
+    },
+    "detectable_by": {
+     "agent_judgment": {
+      "k": 0,
+      "n": 8,
+      "rate": 0.0,
+      "ci95": [
+       0.0,
+       0.324
+      ]
+     },
+     "measurement": {
+      "k": 12,
+      "n": 18,
+      "rate": 0.667,
+      "ci95": [
+       0.437,
+       0.837
+      ]
+     },
+     "model": {
+      "k": 8,
+      "n": 22,
+      "rate": 0.364,
+      "ci95": [
+       0.197,
+       0.57
+      ]
+     }
+    },
+    "audience_relevance": {
+     "edge": {
+      "k": 6,
+      "n": 10,
+      "rate": 0.6,
+      "ci95": [
+       0.313,
+       0.832
+      ]
+     },
+     "none": {
+      "k": 1,
+      "n": 1,
+      "rate": 1.0,
+      "ci95": [
+       0.207,
+       1.0
+      ]
+     },
+     "primary": {
+      "k": 8,
+      "n": 24,
+      "rate": 0.333,
+      "ci95": [
+       0.18,
+       0.533
+      ]
+     },
+     "secondary": {
+      "k": 5,
+      "n": 13,
+      "rate": 0.385,
+      "ci95": [
+       0.177,
+       0.645
+      ]
+     }
+    }
+   },
+   "units": 73,
+   "matched_units": 23,
+   "validity_lb_units": 0.315,
+   "precision_labelled_subset_units": 0.46,
+   "clean_control_units": 24,
+   "clean_control_units_by_severity": {
+    "P0": 0,
+    "P1": 0,
+    "P2": 7,
+    "P3": 17
+   },
+   "clean_units_per_clean_scenario": {
+    "p0_p1": 0.0,
+    "p0_p2": 1.75,
+    "all": 6.0
+   },
+   "decoy_units": 3,
+   "decoys_flagged": 4,
+   "unlabeled_units": 23,
+   "hypotheses_excluded": 47,
+   "discrimination": {
+    "recall_discriminating": 0.354,
+    "non_discriminating": 3,
+    "youden_by_category": {
+     "cognition": {
+      "n": 3,
+      "tpr": 0.333,
+      "fpr_twin": 0.0,
+      "youden_j": 0.333
+     },
+     "game": {
+      "n": 2,
+      "tpr": 1.0,
+      "fpr_twin": 0.5,
+      "youden_j": 0.5
+     },
+     "gaze": {
+      "n": 4,
+      "tpr": 0.25,
+      "fpr_twin": 0.0,
+      "youden_j": 0.25
+     },
+     "heuristic": {
+      "n": 8,
+      "tpr": 0.0,
+      "fpr_twin": 0.0,
+      "youden_j": 0.0
+     },
+     "layout": {
+      "n": 6,
+      "tpr": 0.667,
+      "fpr_twin": 0.0,
+      "youden_j": 0.667
+     },
+     "perception": {
+      "n": 9,
+      "tpr": 0.556,
+      "fpr_twin": 0.222,
+      "youden_j": 0.333
+     },
+     "pointing": {
+      "n": 5,
+      "tpr": 0.2,
+      "fpr_twin": 0.0,
+      "youden_j": 0.2
+     },
+     "reach": {
+      "n": 3,
+      "tpr": 0.333,
+      "fpr_twin": 0.0,
+      "youden_j": 0.333
+     },
+     "semantics": {
+      "n": 8,
+      "tpr": 0.625,
+      "fpr_twin": 0.0,
+      "youden_j": 0.625
+     }
+    },
+    "youden_mean": 0.36
+   },
+   "clusters": {
+    "n_products": 4,
+    "per_product": {
+     "clinic": {
+      "k": 4,
+      "n": 12,
+      "rate": 0.333,
+      "ci95": [
+       0.138,
+       0.609
+      ]
+     },
+     "expense": {
+      "k": 6,
+      "n": 12,
+      "rate": 0.5,
+      "ci95": [
+       0.254,
+       0.746
+      ]
+     },
+     "kiosk": {
+      "k": 4,
+      "n": 12,
+      "rate": 0.333,
+      "ci95": [
+       0.138,
+       0.609
+      ]
+     },
+     "rhythm": {
+      "k": 6,
+      "n": 12,
+      "rate": 0.5,
+      "ci95": [
+       0.254,
+       0.746
+      ]
+     }
+    },
+    "recall_cluster_ci95": [
+     0.25,
+     0.583
+    ],
+    "recall_lopo_range": [
+     0.389,
+     0.444
+    ],
+    "note": "descriptive: fewer than 10 products"
+   },
+   "noise_gate": {
+    "table": {
+     "p0": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p1": {
+      "clean_units": 0,
+      "per_clean_scenario": 0.0,
+      "poisson_upper95_per_scenario": 0.922,
+      "recall_strict_at_threshold": 0.146
+     },
+     "p0_p2": {
+      "clean_units": 7,
+      "per_clean_scenario": 1.75,
+      "poisson_upper95_per_scenario": 3.606,
+      "recall_strict_at_threshold": 0.292
+     },
+     "all": {
+      "clean_units": 24,
+      "per_clean_scenario": 6.0,
+      "poisson_upper95_per_scenario": 8.928,
+      "recall_strict_at_threshold": 0.417
+     }
+    },
+    "verdict": "fail"
+   }
+  },
+  "C5@6": {
+   "seeds": 20,
+   "recall_strict_mean": 0.373,
+   "recall_strict_p2_5_p97_5": [
+    0.333,
+    0.417
+   ],
+   "recall_strict_min_max": [
+    0.333,
+    0.417
+   ],
+   "clean_control_units_mean": 23.7
+  },
+  "C5@10": {
+   "seeds": 20,
+   "recall_strict_mean": 0.381,
+   "recall_strict_p2_5_p97_5": [
+    0.354,
+    0.438
+   ],
+   "recall_strict_min_max": [
+    0.354,
+    0.438
+   ],
+   "clean_control_units_mean": 23.05
+  },
+  "C5@14": {
+   "seeds": 20,
+   "recall_strict_mean": 0.392,
+   "recall_strict_p2_5_p97_5": [
+    0.354,
+    0.458
+   ],
+   "recall_strict_min_max": [
+    0.354,
+    0.458
+   ],
+   "clean_control_units_mean": 22.8
+  }
+ },
+ "hypotheses": {
+  "H1": {
+   "C3": {
+    "k": 10,
+    "n": 14,
+    "rate": 0.714,
+    "ci95": [
+     0.454,
+     0.883
+    ]
+   },
+   "C4@14": {
+    "k": 9,
+    "n": 14,
+    "rate": 0.643,
+    "ci95": [
+     0.388,
+     0.837
+    ]
+   },
+   "C3_lenient": {
+    "k": 10,
+    "n": 14,
+    "rate": 0.714,
+    "ci95": [
+     0.454,
+     0.883
+    ]
+   },
+   "C4@14_lenient": {
+    "k": 9,
+    "n": 14,
+    "rate": 0.643,
+    "ci95": [
+     0.388,
+     0.837
+    ]
+   },
+   "verdict": "reported"
+  },
+  "H2": {
+   "primary_minus_c5_mean": {
+    "diff": 0.083,
+    "ci95": [
+     0.0,
+     0.208
+    ],
+    "n": 24
+   },
+   "overall_minus_c5_mean": {
+    "diff": 0.119,
+    "ci95": [
+     0.036,
+     0.21
+    ],
+    "n": 48
+   },
+   "parts": [
+    "inconclusive",
+    "pass"
+   ],
+   "verdict": "inconclusive"
+  },
+  "H3": {
+   "c4_14_minus_c3": {
+    "diff": -0.021,
+    "ci95": [
+     -0.104,
+     0.042
+    ],
+    "n": 48
+   },
+   "verdict": "inconclusive"
+  },
+  "H4": {
+   "p0_p1_per_clean_scenario": 0.0,
+   "p0_p2_per_clean_scenario": 1.75,
+   "verdict": "pass"
+  },
+  "H5": {
+   "C3": {
+    "k": 2,
+    "n": 24,
+    "rate": 0.083,
+    "ci95": [
+     0.023,
+     0.258
+    ],
+    "verdict": "fail"
+   },
+   "C4@14": {
+    "k": 3,
+    "n": 24,
+    "rate": 0.125,
+    "ci95": [
+     0.043,
+     0.31
+    ],
+    "verdict": "fail"
+   },
+   "verdict": "fail"
+  },
+  "H7": {
+   "c3_minus_c2_unconditioned": {
+    "diff": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n": 24
+   },
+   "verdict": "pass"
+  },
+  "H6": {
+   "verdict": "scored separately (persona agents, C6)"
+  }
+ },
+ "baselines": {
+  "flag_all": {
+   "recall_strict": 0.896,
+   "recall_lenient": 0.896,
+   "unreachable_defects": 5,
+   "clean_control_units": 36
+  },
+  "chance_C3": {
+   "recall_chance_mean": 0.145,
+   "recall_chance_p95": 0.208,
+   "recall_above_chance": 0.417,
+   "kappa_recall": 0.488,
+   "reps": 1000
+  },
+  "chance_C4@14": {
+   "recall_chance_mean": 0.117,
+   "recall_chance_p95": 0.167,
+   "recall_above_chance": 0.425,
+   "kappa_recall": 0.481,
+   "reps": 1000
+  }
+ },
+ "confirmatory": {
+  "N": {
+   "table": {
+    "p0": {
+     "clean_units": 0,
+     "per_clean_scenario": 0.0,
+     "poisson_upper95_per_scenario": 0.922,
+     "recall_strict_at_threshold": 0.146
+    },
+    "p0_p1": {
+     "clean_units": 0,
+     "per_clean_scenario": 0.0,
+     "poisson_upper95_per_scenario": 0.922,
+     "recall_strict_at_threshold": 0.146
+    },
+    "p0_p2": {
+     "clean_units": 7,
+     "per_clean_scenario": 1.75,
+     "poisson_upper95_per_scenario": 3.606,
+     "recall_strict_at_threshold": 0.333
+    },
+    "all": {
+     "clean_units": 24,
+     "per_clean_scenario": 6.0,
+     "poisson_upper95_per_scenario": 8.928,
+     "recall_strict_at_threshold": 0.542
+    }
+   },
+   "verdict": "fail",
+   "confirmatory_status": "tested"
+  },
+  "H7'": {
+   "diff": 0.0,
+   "ci95": [
+    -0.077,
+    0.077
+   ],
+   "n": 24,
+   "discordant": [
+    0,
+    0
+   ],
+   "rule": "lower >= -0.15 (margin set by power: n~22, no discordance -> 99 %)",
+   "verdict": "pass",
+   "confirmatory_status": "descriptive (sequence stopped earlier)"
+  },
+  "HA": {
+   "k": 3,
+   "n": 13,
+   "rate": 0.231,
+   "ci95": [
+    0.082,
+    0.503
+   ],
+   "rule": "Wilson lower >= 0.30 (condition identified among detected conditioned defects)",
+   "verdict": "fail",
+   "confirmatory_status": "descriptive (sequence stopped earlier)"
+  },
+  "H3'": {
+   "diff": -0.021,
+   "ci95": [
+    -0.099,
+    0.058
+   ],
+   "n": 48,
+   "discordant": [
+    1,
+    2
+   ],
+   "rule": "lower >= -0.20 (margin set by power: n~45, 10 % discordance each way -> 84 %)",
+   "verdict": "pass",
+   "confirmatory_status": "descriptive (sequence stopped earlier)"
+  },
+  "H2'": {
+   "diff": 0.167,
+   "ci95": [
+    -0.005,
+    0.331
+   ],
+   "n": 24,
+   "discordant": [
+    4,
+    0
+   ],
+   "vs_floors": {
+    "diff": 0.083,
+    "ci95": [
+     -0.054,
+     0.218
+    ],
+    "n": 24,
+    "discordant": [
+     2,
+     0
+    ]
+   },
+   "rule": "C4@10 - C4-swap@10 on primary defects: lower > 0 and point >= +0.10",
+   "verdict": "fail",
+   "confirmatory_status": "descriptive (sequence stopped earlier)"
+  }
+ },
+ "sit04": {
+  "conditions": {
+   "context.mobility": [
+    "walking"
+   ],
+   "motor.tremor": [
+    "mild",
+    "moderate"
+   ],
+   "age_band": [
+    "60s",
+    "70s+"
+   ]
+  },
+  "configs": {
+   "C3": {
+    "conditioned_defects": 6,
+    "attributed_via_pt03_pt04": 0,
+    "clean_units_only_with_multipliers": 0,
+    "defects_lost_without_multipliers": 0,
+    "cut_rule_holds": false
+   },
+   "C4@14": {
+    "conditioned_defects": 6,
+    "attributed_via_pt03_pt04": 0,
+    "clean_units_only_with_multipliers": 0,
+    "defects_lost_without_multipliers": 0,
+    "cut_rule_holds": false
+   }
+  },
+  "verdict": "keep"
+ }
+}

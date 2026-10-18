@@ -1,0 +1,33 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-flash-h-feed-scroll",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/feed-scroll.html"
+  },
+  "task_goal_ko": "피드를 스크롤해 내려간다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {},
+  "steps": [
+    {
+      "action": "scroll",
+      "direction": "down",
+      "distance": 600
+    },
+    {
+      "action": "scroll",
+      "direction": "down",
+      "distance": 600
+    },
+    {
+      "action": "scroll",
+      "direction": "up",
+      "distance": 400
+    }
+  ],
+  "success": {
+    "url_contains": "feed-scroll.html"
+  }
+}

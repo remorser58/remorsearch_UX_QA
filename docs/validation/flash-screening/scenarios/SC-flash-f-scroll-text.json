@@ -1,0 +1,22 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-flash-f-scroll-text",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/scroll-text.html"
+  },
+  "task_goal_ko": "흐르는 글을 읽는다",
+  "device_ids": [
+    "galaxy-s24"
+  ],
+  "targets": {},
+  "steps": [
+    {
+      "action": "wait",
+      "ms": 3000
+    }
+  ],
+  "success": {
+    "url_contains": "scroll-text.html"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": "ergo-scenario.v1",
+  "scenario_id": "SC-admin-members-01-clean",
+  "surface": {
+    "kind": "web",
+    "url": "{BASE}/game-desktop/site/admin-clean.html"
+  },
+  "task_goal_ko": "멤버 목록에서 새 멤버(김서연)를 추가하고 저장한다. 처음에는 이메일을 빠뜨려 오류를 확인한 뒤 수정해서 저장한다",
+  "device_ids": [
+    "desktop-1920"
+  ],
+  "targets": {
+    "primary": [
+      "#save"
+    ],
+    "destructive": [
+      "#delete-all",
+      "#row-remove"
+    ],
+    "critical_message": [
+      "#notice"
+    ],
+    "error_message": [
+      "#form-errors"
+    ],
+    "status": [
+      "#toast"
+    ],
+    "ad_like": [
+      "#promo"
+    ],
+    "hud": [],
+    "game_control": [],
+    "timed": [
+      "#toast"
+    ]
+  },
+  "steps": [
+    {
+      "action": "click",
+      "target": "#tools-add"
+    },
+    {
+      "action": "wait",
+      "ms": 300
+    },
+    {
+      "action": "click",
+      "target": "#member-name"
+    },
+    {
+      "action": "type",
+      "target": "#member-name",
+      "text": "김서연"
+    },
+    {
+      "action": "click",
+      "target": "#save"
+    },
+    {
+      "action": "wait",
+      "ms": 400
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "click",
+      "target": "#member-email"
+    },
+    {
+      "action": "type",
+      "target": "#member-email",
+      "text": "seoyeon.kim@example.com"
+    },
+    {
+      "action": "click",
+      "target": "#save"
+    },
+    {
+      "action": "wait",
+      "ms": 200
+    },
+    {
+      "action": "snapshot"
+    },
+    {
+      "action": "wait",
+      "ms": 2000
+    },
+    {
+      "action": "snapshot"
+    }
+  ],
+  "timing_windows": [
+    {
+      "id": "save-toast",
+      "selector": "#toast",
+      "measure": "visible_duration"
+    }
+  ],
+  "success": {
+    "selector_visible": "#saved-row"
+  }
+}

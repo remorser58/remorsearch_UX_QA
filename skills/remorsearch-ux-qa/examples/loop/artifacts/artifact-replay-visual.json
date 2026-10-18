@@ -1,0 +1,166 @@
+{
+  "run_id": "replay-1",
+  "scenario_digest": "98be8e0de9238b0e9c437a233b000f82b632111b28dd4df5ab7371bd9a5efda2",
+  "code_revision": "92cacc11123c9b7d582f7eac7aefd09da29eb51fe1e1495d032c1f44d410bf3d",
+  "kind": "visual_report",
+  "comparison": {
+    "id": "visual-replay",
+    "run_id": "replay-1",
+    "figma_id": "figma-1",
+    "node_ids": [
+      "12:34"
+    ],
+    "file_key": "file-1",
+    "branch_key": "main",
+    "baseline_version": "version-1",
+    "readback_version": "version-1",
+    "route": "/product",
+    "viewport": {
+      "width": 390,
+      "height": 844,
+      "device_scale_factor": 1
+    },
+    "actual_artifact_id": "artifact-replay-capture",
+    "reference_artifact_id": "artifact-reference",
+    "comparison_artifact_id": "artifact-replay-visual",
+    "status": "passed",
+    "method": "review",
+    "reviewer": "fixture-author",
+    "checks": {
+      "layout": "passed",
+      "interaction_states": "passed",
+      "alignment": "passed",
+      "spacing": "passed",
+      "typography": "passed",
+      "text_clipping": "passed",
+      "component_occlusion": "passed",
+      "figma_fidelity": "passed",
+      "side_accents": "passed"
+    },
+    "reason": ""
+  },
+  "inspection": {
+    "viewed_artifact_ids": [
+      "artifact-replay-capture",
+      "artifact-reference"
+    ],
+    "image_tool": "authored-fixture-no-image-tool-executed",
+    "observations": [
+      {
+        "region": "synthetic-text",
+        "actual_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "reference_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "aspect": "alignment",
+        "status": "passed",
+        "observed": "The authored text anchor is x=20.",
+        "expected": "The synthetic reference text anchor is x=20."
+      },
+      {
+        "region": "synthetic-text",
+        "actual_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "reference_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "aspect": "spacing",
+        "status": "passed",
+        "observed": "The authored text baseline is y=40 with no adjacent element.",
+        "expected": "The synthetic reference baseline is y=40."
+      },
+      {
+        "region": "synthetic-text",
+        "actual_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "reference_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "aspect": "typography",
+        "status": "passed",
+        "observed": "The authored SVG uses the default font; no browser font was checked.",
+        "expected": "The synthetic reference uses the SVG default font."
+      },
+      {
+        "region": "synthetic-text",
+        "actual_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "reference_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "aspect": "text_clipping",
+        "status": "passed",
+        "observed": "The authored text region is inside the synthetic viewport.",
+        "expected": "The reference text region stays within 390x844 pixels."
+      },
+      {
+        "region": "synthetic-text",
+        "actual_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "reference_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "aspect": "component_occlusion",
+        "status": "passed",
+        "observed": "The authored SVG contains one visible text element.",
+        "expected": "No other visible element overlaps the synthetic reference text."
+      },
+      {
+        "region": "synthetic-text",
+        "actual_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "reference_box": [
+          20,
+          20,
+          350,
+          24
+        ],
+        "aspect": "figma_fidelity",
+        "status": "passed",
+        "observed": "The authored structure is one text node at (20,40); the label difference is recorded in interaction_states.",
+        "expected": "The synthetic reference structure is one text node at (20,40); this is not a live Figma comparison."
+      }
+    ]
+  },
+  "fixture_notice": "Authored synthetic inspection records; no live image tool, browser or Figma was used."
+}

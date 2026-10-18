@@ -1,0 +1,67 @@
+{
+  "schema_version": "ergo-run.v1",
+  "run_id": "R-sample-01",
+  "scenario_id": "SC-checkout-01",
+  "profile_id": "EP-01",
+  "driver": {
+    "name": "fixture",
+    "version": "0",
+    "browser": null
+  },
+  "device": {
+    "id": "galaxy-s24",
+    "viewport_css": [
+      360,
+      780
+    ],
+    "dpr": 3.0,
+    "orientation": "portrait"
+  },
+  "mode": "scripted",
+  "started_at": "2026-09-28T12:00:00Z",
+  "ended_at": "2026-09-28T12:00:02Z",
+  "status": "completed",
+  "success": true,
+  "steps": [
+    {
+      "step_index": 1,
+      "action": {
+        "action": "tap",
+        "target": "#add"
+      },
+      "target_element_id": "el-3",
+      "point": {
+        "x": 64,
+        "y": 160
+      },
+      "before": "S-R-sample-01-000",
+      "after": "S-R-sample-01-001",
+      "t_start_ms": 0,
+      "t_end_ms": 120,
+      "feedback_latency_ms": 80,
+      "result": "ok",
+      "error": null
+    }
+  ],
+  "timing_windows": [
+    {
+      "id": "qte-1",
+      "visible_ms": 400
+    }
+  ],
+  "flash_samples": [
+    {
+      "t_ms": 0,
+      "mean_luminance": 0.3
+    }
+  ],
+  "persona_notes": [
+    {
+      "step_index": 1,
+      "intent": "상품을 담는다",
+      "expected": "담김 확인",
+      "observed": "상단에 오류 문구",
+      "confusion": true
+    }
+  ]
+}
