@@ -99,4 +99,20 @@ is scored on the broken pages with the same matching rule.
 
 ## Changes after registration
 
-(none yet)
+All made before any agent run.
+
+1. 2026-10-19, during screening: how inclusion criterion 3 is applied. A
+   difference between the two states counts as a defect only when the broken
+   state shows a fault a reviewer could name without seeing the fix: content cut,
+   covered or overlapping, content outside the screen, a component that breaks
+   into the wrong rows, an element misaligned with the siblings or container it
+   belongs to, an element mis-sized against an attached element (a field shorter
+   than its button), or a glyph off the centre of its control. Spacing, shadow or
+   style refinements that leave the broken state looking intended are excluded.
+2. 2026-10-19, after screening the three registered sources: they gave 4
+   cases (AdminLTE 3: 3 of 60 screened; SB Admin 2: 1 of 5; Pico 1: 0 of 30),
+   too few to compare two arms. Added source: ColorlibHQ/AdminLTE version 4 line
+   (origin/master minus the version 3 line; built pages under dist/), with the
+   same candidate rule, inclusion rule and limits (8 accepted or 60 screened).
+   Pages that load fonts, icons or libraries from a CDN get those files vendored
+   locally; every case is re-checked on the vendored pages before it is used.
