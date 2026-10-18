@@ -116,3 +116,15 @@ All made before any agent run.
    same candidate rule, inclusion rule and limits (8 accepted or 60 screened).
    Pages that load fonts, icons or libraries from a CDN get those files vendored
    locally; every case is re-checked on the vendored pages before it is used.
+3. 2026-10-19, before the runs: screening closed with 12 cases (AdminLTE 4: 8 of
+   60 screened; AdminLTE 3: 3 of 60; SB Admin 2: 1 of 5; Pico 1: 0 of 30). The
+   header overflow that afa7215e fixed also shows, by 4 or 52 px, on four other
+   AdminLTE 4 states; it is keyed as a known defect wherever it shows. Agents
+   check every page at 360x780 and 1440x900, the two sizes where all 12 cases
+   show. Sealed SHA-256 before any run: answer key
+   915ad36c4dabf53a42e871b503ede552517edefe4135fe0a9c512bb05928435f, page
+   assignment 404d26af11b76ccd0b09b3635be439eb23926cc06007f4c378f07ed90215726f,
+   prompts 52c837ad508ff60a8db69799814aa411d5cbe43d1b505112b34ee81f9e83466f
+   (both arms) and 5dbb8f30f50c72cee709a684a54554e1afdd2f9765ebfd0fad5b43b3366c8cf1
+   (skill arm addition), run pages
+   85a44faca52d92e52c3df95ee65a0128cc80696fff2aba785990e76ab23335bd.
