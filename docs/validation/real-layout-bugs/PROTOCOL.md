@@ -128,3 +128,6 @@ All made before any agent run.
    (both arms) and 5dbb8f30f50c72cee709a684a54554e1afdd2f9765ebfd0fad5b43b3366c8cf1
    (skill arm addition), run pages
    85a44faca52d92e52c3df95ee65a0128cc80696fff2aba785990e76ab23335bd.
+4. 2026-10-19, before the runs: a re-measurement showed the header overflow on
+   the broken inbox state as well, so the key lists it there too. New answer key
+   SHA-256: 026a72595a3778af93729bd89d822fb59f48c00e9ec575405d1555cbdd42a2bf. Nothing else changed.
