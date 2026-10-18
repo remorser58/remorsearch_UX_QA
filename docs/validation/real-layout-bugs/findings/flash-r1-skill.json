@@ -1,0 +1,83 @@
+[
+  {
+    "page": "p01",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the document scrollWidth is 412px. The header nav spans x=60-412 and the user avatar (img.user-image) sits at x=364-396, entirely outside the 360px screen, so the page scrolls sideways 52px and the profile control is unreachable.",
+    "fix": "Let the right-side header nav shrink at phone widths (hide low-priority items below sm) and keep the user menu inside the container so document scrollWidth equals the viewport width."
+  },
+  {
+    "page": "p02",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780 the header nav's right edge is x=364, making document scrollWidth 364px and adding a 4px horizontal scroll.",
+    "fix": "Reduce the nav end padding or allow the items to shrink so the right edge stays at or below 360px."
+  },
+  {
+    "page": "p04",
+    "selector": "nav.navbar img.img-profile",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "At 360px the profile image spans x=336-368 (32px wide), so 8px of the avatar is cut by the right screen edge; the navbar list itself ends at x=380.",
+    "fix": "Tighten the right-side item padding or shrink the avatar so the image ends within 360px."
+  },
+  {
+    "page": "p06",
+    "selector": "input.form-control-navbar",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The navbar search input is only 53px wide (group 108px) at 360px, so the 'Search' placeholder renders as 'Sea' and is cut mid-word beside the search and clear icons.",
+    "fix": "Collapse the search to its icon toggle at phone widths or give the input enough width to show the full placeholder."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the document scrollWidth is 412px. The user avatar sits at x=364-396, outside the screen, and the header pushes the page 52px sideways.",
+    "fix": "Constrain the header nav at phone widths so the avatar and all controls stay within 360px and no horizontal scroll remains."
+  },
+  {
+    "page": "p09",
+    "selector": "table.dataTable",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The table is 521px wide inside a 319px .col-sm-12 with overflow-x visible. Document scrollWidth is 549px at a 360px viewport, so the right columns ('Platform(s)', site) are cut off and the page scrolls sideways 189px.",
+    "fix": "Wrap the table in .table-responsive (overflow-x:auto) or shrink column padding so it fits the 319px column."
+  },
+  {
+    "page": "p09",
+    "selector": ".dataTables_paginate .previous",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The Previous pagination button starts at x=-5, so its left border and padding are cut by the screen edge while the rest of the bar sits at x=28-332.",
+    "fix": "Add left padding or margin to the pagination wrapper (or let it wrap) so the Previous control starts at x>=0."
+  },
+  {
+    "page": "p11",
+    "selector": ".card-body > table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The documentation table is 810px wide inside a 318px .card-body with overflow visible. Document scrollWidth is 942px at a 360px viewport, cutting the Programmatic and Documentation columns and forcing sideways scroll.",
+    "fix": "Wrap the table in a .table-responsive container so it scrolls inside the card instead of widening the page."
+  },
+  {
+    "page": "p12",
+    "selector": ".list-group-item a.flex-grow-1",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360px the row link is 657-688px wide inside a 320px card, making the document 940px wide; at 1440px the same rows are 852-944px wide inside an 859px card, so subject text is cut at the viewport edge and the time labels (x=1469-1549) are invisible.",
+    "fix": "Give the row link min-width:0 with flex:1 1 auto and keep the time column flex-shrink:0 so rows stay within the card at both widths."
+  }
+]

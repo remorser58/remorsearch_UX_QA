@@ -19,9 +19,10 @@ In default-1 the skill arm's scan could not launch Chromium in its sandbox, beca
 
 ## What this shows
 
-- With a strong model at its default effort, an agent without the skill already finds nearly every measurable defect on these pages. The skill matched it (28 and 28 versus 28 and 27) and no longer costs extra time: the run with the working scan finished its report 21 seconds earlier than the plain run of the same round. Earlier versions of the skill took about twice as long as a plain agent in a pilot that is not part of this repository.
+- With a strong model at its default effort, an agent without the skill already finds nearly every measurable defect on these pages. The skill arm found 28 and 28 against 28 and 27, but its first 28 came from a round where the scan could not run, so only one round tested the scan. The one round with a working scan finished its report 21 seconds earlier than the plain run of the same round. Earlier versions of the skill took about twice as long as a plain agent in a pilot that is not part of this repository.
 - At low effort the skill raised detection from 22 to 24 of 28 and removed the one false finding, at the cost of about three minutes.
 - Six runs, one or two per condition, on one suite: differences of one or two defects are within run-to-run variation. These rows do not establish general superiority, other models or other kinds of defects.
+- The comparison favours the skill. The skill-arm runs of default-2 and low-1 used a build that reads `REMORSEARCH_CHROMIUM_ARGS`, which entered the repository in the same commit as the detector fixes made on its misses on these pages, so those rows measure a detector fitted to the pages. A fair test needs pages the detector was never tuned on. [`real-layout-bugs/`](../real-layout-bugs/README.md) is that test, and there the skill did not improve either model.
 
 ## Adjudication
 

@@ -1,0 +1,155 @@
+[
+  {
+    "page": "p01",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the header controls extend to x=412, 52 px beyond the screen. The profile image occupies x=364\u2013396 and is entirely outside the initial view; the rest of the page remains 360 px wide. Screenshot: p01-phone-0.png.",
+    "fix": "At the phone breakpoint, reduce navigation-link horizontal padding or move secondary actions into an overflow menu so the complete header fits within 360 px."
+  },
+  {
+    "page": "p02",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "The header control row ends at x=364 in a 360 px viewport, making the document 4 px wider than the screen. The last profile control extends x=300\u2013364, past the header edge. Screenshot: p02-phone-0.png.",
+    "fix": "Reduce phone header spacing by at least 4 px and constrain the control row to the available width."
+  },
+  {
+    "page": "p02",
+    "selector": ".card-body:has(.ribbon-wrapper.ribbon-lg) > p.mb-0.pe-4",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "In the Interactive ribbon card near the bottom, the diagonal LINKED band crosses the first paragraph line and obscures the end of \"inherits\". The 110x110 ribbon wrapper occupies x=229\u2013339, while paragraph text extends through the same area at document y\u22482412\u20132434. Screenshot: p02-360-overlap.png.",
+    "fix": "Reserve the ribbon corner in the paragraph layout: increase the top/right clearance or place the paragraph below the 110 px ribbon region on narrow screens."
+  },
+  {
+    "page": "p03",
+    "selector": ".card-body nav.navbar input.form-control",
+    "viewport": "laptop",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The Navbar demo search input collapses to 26x38 px at x\u22481303. Its 12 px padding on each side plus borders leaves essentially no text area, and its Search placeholder is invisible. The adjacent Search button is about 72 px wide. Screenshot: p03-final-check.png.",
+    "fix": "Collapse this embedded navbar according to its container width, or wrap its search form onto another row and give the input a usable minimum width, such as 120 px."
+  },
+  {
+    "page": "p04",
+    "selector": ".chart-pie + .mt-4.text-center.small > .mr-2:last-child",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "In the Revenue Sources legend, the Referral dot stays on the first row at x\u2248287, y\u22481277, but its label moves to x\u2248205, y\u22481293. The icon and label are separated into different rows inside the 166 px legend container. Screenshot: p04-360-target-1040.png.",
+    "fix": "Make each legend item an inline-flex or inline-block unit with white-space: nowrap, and allow wrapping between whole legend items."
+  },
+  {
+    "page": "p04",
+    "selector": "a.scroll-to-top",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P3",
+    "evidence": "At the page end, the fixed 44x44 px up-arrow control occupies x=300\u2013344, y=720\u2013764. The copyright text extends to x\u2248324 at y\u2248732\u2013750, so the button covers roughly the last 24 px, including the end of the year. Screenshot: p04-360-target-4000.png.",
+    "fix": "Reserve space for the floating control in the footer, or reposition the control above the footer so it cannot cover the copyright line."
+  },
+  {
+    "page": "p05",
+    "selector": "#navigation .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780, the header action row ends at x=364, producing a 364 px document width. The final profile control extends 4 px beyond its 360 px header. Screenshot: p05-phone-0.png.",
+    "fix": "Reduce phone navigation spacing by at least 4 px so the final profile control stays inside the viewport."
+  },
+  {
+    "page": "p06",
+    "selector": ".main-header .navbar-search-block",
+    "viewport": "both",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The search block drops beneath its search icon into a second header row at y=48\u201379, increasing the header to 88 px high while the other action icons remain at y=8\u201348. On phone its input is only about 53 px wide and visibly clips Search to \"Sea\"; on laptop the same block sits below the icon at x\u22481038. Screenshots: p06-phone-0.png and p06-laptop-0.png.",
+    "fix": "Keep the search form within a properly sized single-row header region or an explicitly positioned search overlay. Prevent its input from shrinking below a usable width."
+  },
+  {
+    "page": "p06",
+    "selector": ".tab-empty > h2.display-4",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "The two-line empty-state message begins flush against x=0 inside a 360 px-wide empty-state panel. The heading box is 360x134 px, but its short lines remain left aligned instead of centered in that panel; the laptop message is centered. Screenshot: p06-phone-0.png.",
+    "fix": "Apply text-align: center to the empty-state heading and add horizontal padding so wrapped lines remain centered and clear of the screen edge."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The phone header action row extends to x=412, 52 px past the 360 px screen. The profile image at x=364\u2013396 is outside the visible screen, while the content card ends at x=340. Screenshot: p08-phone-0.png.",
+    "fix": "Reduce phone header action spacing or move secondary actions into an overflow menu so all visible controls fit within 360 px."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-sidebar > .sidebar-wrapper",
+    "viewport": "laptop",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The 900 px-high sidebar has a 56 px brand area and a roughly 49 px filter area, but its scroll wrapper is still 843 px high and starts at y\u2248105, ending at y\u2248948. After the page scrolls 48 px to its end, the sidebar surface ends at y=852 while a Mailbox menu row remains visible below it near y=870. Screenshot: p08-1440-target-10000.png.",
+    "fix": "Size the sidebar scroll area from the remaining height after both brand and filter rows, for example with a column flex layout and flex: 1; min-height: 0. Keep its menu viewport inside the sidebar surface."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1, #example2",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "Both tables are approximately 521 px wide, starting at x=28 and ending at x\u2248549 inside 344 px-wide cards. The 360 px screen cuts off the right-hand columns, and the document becomes 549 px wide, adding about 189 px of sideways overflow. Screenshots: p09-phone-0.png and p09-phone-css-3.png.",
+    "fix": "Place each table inside a width-constrained overflow-x: auto wrapper or use responsive column layouts. Contain horizontal scrolling within the table region rather than the page."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1_paginate .pagination, #example2_paginate .pagination",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Both pagination rows start their Previous control at x\u2248-5, although their containers start at x=28. The control group is about 337 px wide inside a 304 px area, so its left border is clipped by the screen and it overhangs the card padding by about 33 px. Screenshot: p09-phone-css-3.png.",
+    "fix": "Use fewer numbered page buttons on phones, reduce pagination padding, or wrap the controls while keeping the full group within its 304 px container."
+  },
+  {
+    "page": "p10",
+    "selector": ".todo-list > li:nth-child(5) > .text",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The fifth task label drops beneath its checkbox and drag handle, beginning at x=52.5 instead of the sibling labels at x\u2248121.1. Its first line starts about 22 px below its own checkbox; the other task labels share a row with their controls. Screenshot: p10-phone-2.png.",
+    "fix": "Use a flex or grid row with fixed-width handle and checkbox columns and a min-width: 0 text column, allowing the label to wrap within its own column."
+  },
+  {
+    "page": "p11",
+    "selector": ".card-body table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "All three documentation tables extend beyond the 320 px card and 360 px screen. They start at x=45 and measure approximately 798, 880, and 760 px wide; the largest ends at x\u2248925, making the document 565 px wider than the screen. Most right-hand columns are outside the visible view. Screenshots: p11-phone-0.png, p11-phone-css-7.png, and p11-phone-css-9.png.",
+    "fix": "Wrap each table in a max-width: 100%; overflow-x: auto container, or provide a responsive stacked table layout. Keep the card and document width constrained to the viewport."
+  },
+  {
+    "page": "p12",
+    "selector": "#navigation .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "The header actions end at x=364 in a 360 px viewport, causing 4 px of document-level horizontal overflow. The final profile control extends beyond the header edge. Screenshot: p12-phone-full.png.",
+    "fix": "Reduce phone header spacing by at least 4 px and ensure the action row fits the available width."
+  },
+  {
+    "page": "p12",
+    "selector": ".card-header:has(.card-title) .input-group",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "In the Inbox card header, the fixed 256 px-wide search group wraps under the title but begins at x=75, y\u2248794.5. The title spans x=37\u201378.1 with a text line box at y\u2248777.8\u2013802.8, leaving about 3 px horizontal and 8 px vertical overlap where the search border touches the final title glyph. Screenshot: p12-final-check.png.",
+    "fix": "Use an explicit wrapping flex layout with a gap. At phone width, put the title and search group in separate full-width rows, remove the negative vertical offset on the search group, and let it fit the header content width."
+  }
+]

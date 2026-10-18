@@ -1,0 +1,92 @@
+[
+  {
+    "page": "p01",
+    "selector": ".app-header .navbar-nav.ms-auto > li.user-menu",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360px the header nav items run to x=412 (user menu 348-412, 64px wide). document.scrollWidth=412 vs clientWidth=360, so the page scrolls sideways and the avatar/user menu is entirely off the right edge; the header screenshot ends at the theme icon with no avatar visible.",
+    "fix": "Let the right-hand nav wrap or collapse: reduce item padding under 576px, hide non-essential icon items, and keep the user menu inside the 360px container (e.g. .navbar-nav.ms-auto{flex-wrap:wrap;max-width:100%} plus a mobile-only overflow menu)."
+  },
+  {
+    "page": "p01",
+    "selector": ".direct-chat .direct-chat-messages",
+    "viewport": "both",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "Phone: .direct-chat-messages is 250px tall (y=931-1181) but the fourth message block ends at y=1269, 88px past the container; the footer/input starts at y=1181 and covers it. The rendered tile shows the last bubble cut mid-line (\"Working with AdminLTE on a great new app! Wanna join?\"). Laptop shows the final reply row missing under the input the same way.",
+    "fix": "Give .direct-chat-messages a real scroll area (height:250px; overflow-y:auto) or let the card grow with its content; keep the footer outside the message scroll box."
+  },
+  {
+    "page": "p02",
+    "selector": ".card .ribbon.text-bg-info",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "In the 'Outside a card' / 'Interactive ribbon' card the LINKED ribbon (x=258-350, y=2398-2460) sits over the body paragraph; the first line renders as 'It inherit[s]' with the ribbon covering the end of the text. Text and ribbon overlap by 9-11px in both detected line boxes.",
+    "fix": "Add right padding to the card body equal to the ribbon's horizontal footprint (e.g. .ribbon-wrapper + .card-body{padding-right:4.5rem}) or place the ribbon outside the text column."
+  },
+  {
+    "page": "p02",
+    "selector": ".app-header .navbar-nav.ms-auto > li.user-menu",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "Header nav ends at x=364 on a 360px viewport (scrollWidth=364, clientWidth=360); the 64px user menu occupies 300-364, clipping 4px of the avatar at the right edge.",
+    "fix": "Trim the right-hand nav padding or allow it to wrap so the total width stays within 360px."
+  },
+  {
+    "page": "p04",
+    "selector": "#userDropdown",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The header's right nav runs from x=176 to x=380 while the 360px bar clips at 360, so the profile avatar (336-368) is cut by the right edge; the rendered header shows half an image at the far right.",
+    "fix": "Reduce nav item padding/gaps below 576px or hide the search icon on phones so the avatar fits inside the bar; keep the navbar's right group within 100% width."
+  },
+  {
+    "page": "p06",
+    "selector": ".navbar-search-block .form-control",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The search panel is inline in the nav item: the input is only 53.4px wide (x=54-107) and clips its placeholder to 'Sear' with the search and close buttons crowding it; the panel sits at y=48-79 inside an 88px navbar, and the tab toolbar starts immediately below at y=88.",
+    "fix": "Render the navbar search as a full-width overlay below the header (position:absolute; left:0; right:0) instead of inside the 48px icon item, and give the input flex:1."
+  },
+  {
+    "page": "p06",
+    "selector": ".main-header .navbar-nav > li:first-child .nav-link[data-widget=navbar-search]",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The search icon's centre sits 30px left of its 108px-wide nav link centre (16px icon inside a control stretched by the inline search panel), so it does not line up with the message/bell/fullscreen icons.",
+    "fix": "Keep the toggle link at its normal 48px width and move the search form out of the link's list item, or absolutely position the form so it does not stretch the trigger."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header .navbar-nav.ms-auto > li.user-menu",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Same header overflow as p01: nav items span 12-412 in a 360px viewport (scrollWidth=412 vs clientWidth=360); the user menu sits at 348-412 and the avatar is cut off at the right edge.",
+    "fix": "Wrap or condense the right-hand nav under 576px so the user menu stays within the viewport."
+  },
+  {
+    "page": "p09",
+    "selector": "#example2",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The DataTables table is 521px wide (x=28-549) inside a 360px viewport with no scroll wrapper; document.scrollWidth=549 vs clientWidth=360, so the whole page scrolls sideways and the Engine version and CSS grade columns are cut off in every phone screenshot.",
+    "fix": "Wrap the table in .table-responsive (overflow-x:auto) or make the table width:100% with a stacked mobile layout; prevent the page body from widening."
+  },
+  {
+    "page": "p11",
+    "selector": ".app-main table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The three documentation tables are 798px, 880px and 760px wide inside a 360px content column; document.scrollWidth=925 vs clientWidth=360, so the page scrolls sideways and the right-hand columns ('Data API', 'After', 'Meaning') are cut off in the phone screenshots.",
+    "fix": "Wrap each table in a horizontally scrollable container (.table-responsive) or switch to a stacked definition list below 576px."
+  }
+]

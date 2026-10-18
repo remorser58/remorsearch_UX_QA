@@ -1,0 +1,3 @@
+
+
+Use the Remorsearch UX QA skill installed at {SKILL}. Read its SKILL.md first and follow it for this UI QA request; its scan command is {SKILL}/scripts/ergo_qa.py (run it with python3, pass --node with the Node.js path above, and set REMORSEARCH_CHROMIUM_ARGS=--single-process if Chromium cannot launch). The scan accepts file:// URLs.

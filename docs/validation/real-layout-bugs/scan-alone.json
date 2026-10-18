@@ -1,0 +1,4600 @@
+{
+ "agents (file://, --single-process)": {
+  "states": {
+   "S1-broken": {
+    "candidates": 75,
+    "by_check": {
+     "LY-04": 1,
+     "PC-01": 44,
+     "PC-02": 1,
+     "SM-01": 9,
+     "SM-05": 11,
+     "UI-01": 9
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-04",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#content > div > div:nth-of-type(2)|EARNINGS (MONTHLY) $40,000 EARNINGS (ANN",
+      "summary_ko": "'EARNINGS (MONTHLY) $40,000 EAR' 블록이 같은 묶음 3개의 시작선에서 3px 어긋납니다."
+     }
+    ],
+    "blocked_requests": 5,
+    "url": "file://<STATES>/S1-broken/index.html"
+   },
+   "S1-fixed": {
+    "candidates": 75,
+    "by_check": {
+     "LY-04": 1,
+     "PC-01": 44,
+     "PC-02": 1,
+     "SM-01": 9,
+     "SM-05": 11,
+     "UI-01": 9
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-04",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#content > div > div:nth-of-type(2)|EARNINGS (MONTHLY) $40,000 EARNINGS (ANN",
+      "summary_ko": "'EARNINGS (MONTHLY) $40,000 EAR' 블록이 같은 묶음 3개의 시작선에서 3px 어긋납니다."
+     }
+    ],
+    "blocked_requests": 5,
+    "url": "file://<STATES>/S1-fixed/index.html"
+   },
+   "A1-broken": {
+    "candidates": 87,
+    "by_check": {
+     "LY-02": 9,
+     "LY-03": 1,
+     "PC-01": 38,
+     "PC-02": 2,
+     "PT-01": 3,
+     "SM-01": 12,
+     "SM-03": 9,
+     "SM-07": 1,
+     "UI-01": 12
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2)|23 Jan 2:00 pm",
+      "summary_ko": "'23 Jan 2:00 pm' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)|Alexander Pierce",
+      "summary_ko": "'Alexander Pierce' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a|User Avatar Count Dracula 2/28/2015 How ",
+      "summary_ko": "'Count Dracula 2/28/2015 How ha' 글자 줄 2/2개가 겹쳐 놓인 요소 section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > h3에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(2) > a|User Avatar Sarah Doe 2/23/2015 I will b",
+      "summary_ko": "'Sarah Doe 2/23/2015 I will be ' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(3) > a|User Avatar Nadia Jolie 2/20/2015 I'll c",
+      "summary_ko": "'Nadia Jolie 2/20/2015 I'll cal' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(4) > a|User Avatar Nora S. Vans 2/10/2015 Where",
+      "summary_ko": "'Nora S. Vans 2/10/2015 Where i' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(5) > a|User Avatar John K. 1/27/2015 Can I take",
+      "summary_ko": "'John K. 1/27/2015 Can I take a' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2015 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2015 Never mind' 글자 줄 2/2개가 겹쳐 놓인 요소 div:nth-of-type(2) > div:nth-of-type(3) > div > div:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)|Is this template really for free? That",
+      "summary_ko": "'Is this template really for fr' 글자가 section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > h3의 글자와 겹칩니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "file://<STATES>/A1-broken/index.html"
+   },
+   "A1-fixed": {
+    "candidates": 89,
+    "by_check": {
+     "LY-02": 11,
+     "LY-03": 1,
+     "PC-01": 38,
+     "PC-02": 2,
+     "PT-01": 3,
+     "SM-01": 12,
+     "SM-03": 9,
+     "SM-07": 1,
+     "UI-01": 12
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2)|23 Jan 2:00 pm",
+      "summary_ko": "'23 Jan 2:00 pm' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)|Alexander Pierce",
+      "summary_ko": "'Alexander Pierce' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a|User Avatar Count Dracula 2/28/2015 How ",
+      "summary_ko": "'Count Dracula 2/28/2015 How ha' 글자 줄 2/2개가 겹쳐 놓인 요소 section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > h3에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(2) > a|User Avatar Sarah Doe 2/23/2015 I will b",
+      "summary_ko": "'Sarah Doe 2/23/2015 I will be ' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(3) > a|User Avatar Nadia Jolie 2/20/2015 I'll c",
+      "summary_ko": "'Nadia Jolie 2/20/2015 I'll cal' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(4) > a|User Avatar Nora S. Vans 2/10/2015 Where",
+      "summary_ko": "'Nora S. Vans 2/10/2015 Where i' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(5) > a|User Avatar John K. 1/27/2015 Can I take",
+      "summary_ko": "'John K. 1/27/2015 Can I take a' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2015 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2015 Never mind' 글자 줄 2/2개가 겹쳐 놓인 요소 div:nth-of-type(2) > div:nth-of-type(3) > div > div:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "ul:nth-of-type(2) > li:nth-of-type(2) > a|3",
+      "summary_ko": "'3' 글자 줄 1/1개가 상단 고정 바(페이지 맨 위) body > div:nth-of-type(1) > div:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "ul:nth-of-type(2) > li:nth-of-type(3) > a|15",
+      "summary_ko": "'15' 글자 줄 1/1개가 상단 고정 바(페이지 맨 위) body > div:nth-of-type(1) > div:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)|Is this template really for free? That",
+      "summary_ko": "'Is this template really for fr' 글자가 section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > h3의 글자와 겹칩니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "file://<STATES>/A1-fixed/index.html"
+   },
+   "A2-broken": {
+    "candidates": 33,
+    "by_check": {
+     "PC-01": 9,
+     "PC-02": 2,
+     "SM-01": 10,
+     "SM-05": 2,
+     "UI-01": 10
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 0,
+    "url": "file://<STATES>/A2-broken/iframe.html"
+   },
+   "A2-fixed": {
+    "candidates": 33,
+    "by_check": {
+     "PC-01": 9,
+     "PC-02": 2,
+     "SM-01": 10,
+     "SM-05": 2,
+     "UI-01": 10
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 0,
+    "url": "file://<STATES>/A2-fixed/iframe.html"
+   },
+   "A3-broken": {
+    "candidates": 10,
+    "by_check": {
+     "PT-01": 8,
+     "SM-01": 1,
+     "UI-01": 1
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 16,
+    "url": "file://<STATES>/A3-broken/pages/tables/data.html"
+   },
+   "A3-fixed": {
+    "candidates": 10,
+    "by_check": {
+     "PT-01": 8,
+     "SM-01": 1,
+     "UI-01": 1
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 19,
+    "url": "file://<STATES>/A3-fixed/pages/tables/data.html"
+   },
+   "B1-broken": {
+    "candidates": 25,
+    "by_check": {
+     "PT-01": 24,
+     "UI-01": 1
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B1-broken/dist/layout/collapsed-sidebar.html"
+   },
+   "B1-fixed": {
+    "candidates": 25,
+    "by_check": {
+     "PT-01": 24,
+     "UI-01": 1
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B1-fixed/dist/layout/collapsed-sidebar.html"
+   },
+   "B2-broken": {
+    "candidates": 89,
+    "by_check": {
+     "PC-01": 54,
+     "PT-01": 34,
+     "UI-01": 1
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 14,
+    "url": "file://<STATES>/B2-broken/dist/docs/javascript/plugins-overview.html"
+   },
+   "B2-fixed": {
+    "candidates": 89,
+    "by_check": {
+     "PC-01": 54,
+     "PT-01": 34,
+     "UI-01": 1
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 14,
+    "url": "file://<STATES>/B2-fixed/dist/docs/javascript/plugins-overview.html"
+   },
+   "B3-broken": {
+    "candidates": 36,
+    "by_check": {
+     "LY-02": 13,
+     "PC-01": 7,
+     "PC-02": 3,
+     "PT-01": 3,
+     "SM-02": 1,
+     "UI-01": 9
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div > div > p|New Orders",
+      "summary_ko": "'New Orders' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > div > div > h3|150",
+      "summary_ko": "'150' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(2) > div > div > h3|53 %",
+      "summary_ko": "'53%' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div > p|Bounce Rate",
+      "summary_ko": "'Bounce Rate' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a|User Avatar Count Dracula 2/28/2023 How ",
+      "summary_ko": "'Count Dracula 2/28/2023 How ha' 글자 줄 2/2개가 겹쳐 놓인 요소 #world-map에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(2) > a|User Avatar Sarah Doe 2/23/2023 I will b",
+      "summary_ko": "'Sarah Doe 2/23/2023 I will be ' 글자 줄 2/2개가 겹쳐 놓인 요소 #world-map에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(3) > a|User Avatar Nadia Jolie 2/20/2023 I'll c",
+      "summary_ko": "'Nadia Jolie 2/20/2023 I'll cal' 글자 줄 1/2개가 겹쳐 놓인 요소 div:nth-of-type(3) > div > div:nth-of-type(1) > div:nth-of-type(2)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2023 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2023 Never mind' 글자 줄 1/2개가 겹쳐 놓인 요소 footer에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > h3|44",
+      "summary_ko": "'44' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > p|User Registrations",
+      "summary_ko": "'User Registrations' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > h3|65",
+      "summary_ko": "'65' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > p|Unique Visitors",
+      "summary_ko": "'Unique Visitors' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg > path:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     }
+    ],
+    "blocked_requests": 12,
+    "url": "file://<STATES>/B3-broken/dist/index.html"
+   },
+   "B3-fixed": {
+    "candidates": 43,
+    "by_check": {
+     "LY-02": 14,
+     "PC-01": 7,
+     "PC-02": 3,
+     "PT-01": 9,
+     "SM-02": 1,
+     "UI-01": 9
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "a[aria-label=\"Messages: 3 unread\"]|Messages: 3 unread",
+      "summary_ko": "'3' 글자 40%가 겹쳐 놓인 요소 li:nth-of-type(3) > a > span에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div > div > p|New Orders",
+      "summary_ko": "'New Orders' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > div > div > h3|150",
+      "summary_ko": "'150' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(2) > div > div > h3|53 %",
+      "summary_ko": "'53%' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div > p|Bounce Rate",
+      "summary_ko": "'Bounce Rate' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a|User Avatar Count Dracula 2/28/2023 How ",
+      "summary_ko": "'Count Dracula 2/28/2023 How ha' 글자 줄 2/2개가 겹쳐 놓인 요소 #world-map에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(2) > a|User Avatar Sarah Doe 2/23/2023 I will b",
+      "summary_ko": "'Sarah Doe 2/23/2023 I will be ' 글자 줄 2/2개가 겹쳐 놓인 요소 #world-map에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(3) > a|User Avatar Nadia Jolie 2/20/2023 I'll c",
+      "summary_ko": "'Nadia Jolie 2/20/2023 I'll cal' 글자 줄 1/2개가 겹쳐 놓인 요소 div:nth-of-type(3) > div > div:nth-of-type(1) > div:nth-of-type(2)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2023 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2023 Never mind' 글자 줄 1/2개가 겹쳐 놓인 요소 footer에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > h3|44",
+      "summary_ko": "'44' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > p|User Registrations",
+      "summary_ko": "'User Registrations' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > h3|65",
+      "summary_ko": "'65' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > p|Unique Visitors",
+      "summary_ko": "'Unique Visitors' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg > path:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     }
+    ],
+    "blocked_requests": 12,
+    "url": "file://<STATES>/B3-fixed/dist/index.html"
+   },
+   "B4-broken": {
+    "candidates": 25,
+    "by_check": {
+     "PT-01": 24,
+     "UI-01": 1
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B4-broken/dist/layout/fixed-sidebar.html"
+   },
+   "B4-fixed": {
+    "candidates": 25,
+    "by_check": {
+     "PT-01": 24,
+     "UI-01": 1
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B4-fixed/dist/layout/fixed-sidebar.html"
+   },
+   "B5-broken": {
+    "candidates": 23,
+    "by_check": {
+     "PT-01": 22,
+     "UI-01": 1
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B5-broken/dist/UI/ribbons.html"
+   },
+   "B5-fixed": {
+    "candidates": 23,
+    "by_check": {
+     "PT-01": 22,
+     "UI-01": 1
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B5-fixed/dist/UI/ribbons.html"
+   },
+   "B6-broken": {
+    "candidates": 50,
+    "by_check": {
+     "LY-02": 1,
+     "PT-01": 46,
+     "SM-01": 3
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(5) > ul > li:nth-of-type(1) > button|Light",
+      "summary_ko": "'Light' 글자 40%가 겹쳐 놓인 요소 li:nth-of-type(5) > ul > li:nth-of-type(2) > button에 가려지고, 스크롤해도 드러나지 않습니다."
+     }
+    ],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B6-broken/dist/mailbox/inbox.html"
+   },
+   "B6-fixed": {
+    "candidates": 50,
+    "by_check": {
+     "LY-02": 1,
+     "PT-01": 46,
+     "SM-01": 3
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(5) > ul > li:nth-of-type(1) > button|Light",
+      "summary_ko": "'Light' 글자 40%가 겹쳐 놓인 요소 li:nth-of-type(5) > ul > li:nth-of-type(2) > button에 가려지고, 스크롤해도 드러나지 않습니다."
+     }
+    ],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B6-fixed/dist/mailbox/inbox.html"
+   },
+   "B7-broken": {
+    "candidates": 17,
+    "by_check": {
+     "PT-01": 14,
+     "SM-01": 3
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B7-broken/dist/layout/fixed-header.html"
+   },
+   "B7-fixed": {
+    "candidates": 21,
+    "by_check": {
+     "LY-02": 1,
+     "PT-01": 17,
+     "SM-01": 3
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(1) > button|Light",
+      "summary_ko": "'Light' 글자 40%가 겹쳐 놓인 요소 li:nth-of-type(2) > button에 가려지고, 스크롤해도 드러나지 않습니다."
+     }
+    ],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B7-fixed/dist/layout/fixed-header.html"
+   },
+   "B8-broken": {
+    "candidates": 113,
+    "by_check": {
+     "LY-02": 3,
+     "LY-05": 1,
+     "PT-01": 96,
+     "SM-01": 3,
+     "UI-01": 10
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "button:nth-of-type(16)|Primary",
+      "summary_ko": "'Primary' 글자 60%가 겹쳐 놓인 요소 button:nth-of-type(20)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "button:nth-of-type(17)|Secondary",
+      "summary_ko": "'Secondary' 글자 60%가 겹쳐 놓인 요소 button:nth-of-type(21)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "button:nth-of-type(18)|Success",
+      "summary_ko": "'Success' 글자 60%가 겹쳐 놓인 요소 button:nth-of-type(23)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-05",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navbarSupportedContent > ul > li:nth-of-type(3) > ul > li:nth-of-type(2)|Another action",
+      "summary_ko": "'Another action' 앞 간격이 0px로, 같은 목록의 다른 간격 8px와 다릅니다."
+     }
+    ],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B8-broken/dist/UI/general.html"
+   },
+   "B8-fixed": {
+    "candidates": 110,
+    "by_check": {
+     "LY-05": 1,
+     "PT-01": 96,
+     "SM-01": 3,
+     "UI-01": 10
+    },
+    "failed_passes": [
+     "adaptation pass failed",
+     "focus walk (load) failed",
+     "reflow pass failed"
+    ],
+    "reflow_320": [],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-05",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navbarSupportedContent > ul > li:nth-of-type(3) > ul > li:nth-of-type(2)|Another action",
+      "summary_ko": "'Another action' 앞 간격이 0px로, 같은 목록의 다른 간격 8px와 다릅니다."
+     }
+    ],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B8-fixed/dist/UI/general.html"
+   }
+  },
+  "items_with_identical_candidates_in_both_states": "8 of 12",
+  "matched_on_broken_pages": {
+   "cases": [],
+   "header_overflow_H": [],
+   "note": "B8-broken had three LY-02 candidates on buttons covered by other buttons, absent from the fixed state; they do not name the sidebar and were not counted."
+  }
+ },
+ "file://, normal launch": {
+  "states": {
+   "S1-broken": {
+    "candidates": 75,
+    "by_check": {
+     "LY-04": 1,
+     "PC-01": 44,
+     "PC-02": 1,
+     "SM-01": 9,
+     "SM-05": 11,
+     "UI-01": 9
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 737,
+      "offenders": 0,
+      "exempt_right": 737
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-04",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#content > div > div:nth-of-type(2)|EARNINGS (MONTHLY) $40,000 EARNINGS (ANN",
+      "summary_ko": "'EARNINGS (MONTHLY) $40,000 EAR' 블록이 같은 묶음 3개의 시작선에서 3px 어긋납니다."
+     }
+    ],
+    "blocked_requests": 5,
+    "url": "file://<STATES>/S1-broken/index.html"
+   },
+   "S1-fixed": {
+    "candidates": 75,
+    "by_check": {
+     "LY-04": 1,
+     "PC-01": 44,
+     "PC-02": 1,
+     "SM-01": 9,
+     "SM-05": 11,
+     "UI-01": 9
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 737,
+      "offenders": 0,
+      "exempt_right": 737
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-04",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#content > div > div:nth-of-type(2)|EARNINGS (MONTHLY) $40,000 EARNINGS (ANN",
+      "summary_ko": "'EARNINGS (MONTHLY) $40,000 EAR' 블록이 같은 묶음 3개의 시작선에서 3px 어긋납니다."
+     }
+    ],
+    "blocked_requests": 5,
+    "url": "file://<STATES>/S1-fixed/index.html"
+   },
+   "A1-broken": {
+    "candidates": 87,
+    "by_check": {
+     "LY-02": 9,
+     "LY-03": 1,
+     "PC-01": 38,
+     "PC-02": 2,
+     "PT-01": 3,
+     "SM-01": 12,
+     "SM-03": 9,
+     "SM-07": 1,
+     "UI-01": 12
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 638,
+      "offenders": 0,
+      "exempt_right": 638
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2)|23 Jan 2:00 pm",
+      "summary_ko": "'23 Jan 2:00 pm' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)|Alexander Pierce",
+      "summary_ko": "'Alexander Pierce' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a|User Avatar Count Dracula 2/28/2015 How ",
+      "summary_ko": "'Count Dracula 2/28/2015 How ha' 글자 줄 2/2개가 겹쳐 놓인 요소 section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > h3에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(2) > a|User Avatar Sarah Doe 2/23/2015 I will b",
+      "summary_ko": "'Sarah Doe 2/23/2015 I will be ' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(3) > a|User Avatar Nadia Jolie 2/20/2015 I'll c",
+      "summary_ko": "'Nadia Jolie 2/20/2015 I'll cal' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(4) > a|User Avatar Nora S. Vans 2/10/2015 Where",
+      "summary_ko": "'Nora S. Vans 2/10/2015 Where i' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(5) > a|User Avatar John K. 1/27/2015 Can I take",
+      "summary_ko": "'John K. 1/27/2015 Can I take a' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2015 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2015 Never mind' 글자 줄 2/2개가 겹쳐 놓인 요소 div:nth-of-type(2) > div:nth-of-type(3) > div > div:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)|Is this template really for free? That",
+      "summary_ko": "'Is this template really for fr' 글자가 section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > h3의 글자와 겹칩니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "file://<STATES>/A1-broken/index.html"
+   },
+   "A1-fixed": {
+    "candidates": 87,
+    "by_check": {
+     "LY-02": 9,
+     "LY-03": 1,
+     "PC-01": 38,
+     "PC-02": 2,
+     "PT-01": 3,
+     "SM-01": 12,
+     "SM-03": 9,
+     "SM-07": 1,
+     "UI-01": 12
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 638,
+      "offenders": 0,
+      "exempt_right": 638
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2)|23 Jan 2:00 pm",
+      "summary_ko": "'23 Jan 2:00 pm' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)|Alexander Pierce",
+      "summary_ko": "'Alexander Pierce' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a|User Avatar Count Dracula 2/28/2015 How ",
+      "summary_ko": "'Count Dracula 2/28/2015 How ha' 글자 줄 2/2개가 겹쳐 놓인 요소 section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > h3에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(2) > a|User Avatar Sarah Doe 2/23/2015 I will b",
+      "summary_ko": "'Sarah Doe 2/23/2015 I will be ' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(3) > a|User Avatar Nadia Jolie 2/20/2015 I'll c",
+      "summary_ko": "'Nadia Jolie 2/20/2015 I'll cal' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(4) > a|User Avatar Nora S. Vans 2/10/2015 Where",
+      "summary_ko": "'Nora S. Vans 2/10/2015 Where i' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(5) > a|User Avatar John K. 1/27/2015 Can I take",
+      "summary_ko": "'John K. 1/27/2015 Can I take a' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2015 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2015 Never mind' 글자 줄 2/2개가 겹쳐 놓인 요소 div:nth-of-type(2) > div:nth-of-type(3) > div > div:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)|Is this template really for free? That",
+      "summary_ko": "'Is this template really for fr' 글자가 section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > h3의 글자와 겹칩니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "file://<STATES>/A1-fixed/index.html"
+   },
+   "A2-broken": {
+    "candidates": 33,
+    "by_check": {
+     "PC-01": 9,
+     "PC-02": 2,
+     "SM-01": 10,
+     "SM-05": 2,
+     "UI-01": 10
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 0,
+    "url": "file://<STATES>/A2-broken/iframe.html"
+   },
+   "A2-fixed": {
+    "candidates": 33,
+    "by_check": {
+     "PC-01": 9,
+     "PC-02": 2,
+     "SM-01": 10,
+     "SM-05": 2,
+     "UI-01": 10
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 0,
+    "url": "file://<STATES>/A2-fixed/iframe.html"
+   },
+   "A3-broken": {
+    "candidates": 10,
+    "by_check": {
+     "PT-01": 8,
+     "SM-01": 1,
+     "UI-01": 1
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 344,
+      "offenders": 0,
+      "exempt_right": 344
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 344,
+      "offenders": 0,
+      "exempt_right": 344
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 16,
+    "url": "file://<STATES>/A3-broken/pages/tables/data.html"
+   },
+   "A3-fixed": {
+    "candidates": 10,
+    "by_check": {
+     "PT-01": 8,
+     "SM-01": 1,
+     "UI-01": 1
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 344,
+      "offenders": 0,
+      "exempt_right": 344
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 344,
+      "offenders": 0,
+      "exempt_right": 344
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 19,
+    "url": "file://<STATES>/A3-fixed/pages/tables/data.html"
+   },
+   "B1-broken": {
+    "candidates": 25,
+    "by_check": {
+     "PT-01": 24,
+     "UI-01": 1
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B1-broken/dist/layout/collapsed-sidebar.html"
+   },
+   "B1-fixed": {
+    "candidates": 25,
+    "by_check": {
+     "PT-01": 24,
+     "UI-01": 1
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B1-fixed/dist/layout/collapsed-sidebar.html"
+   },
+   "B2-broken": {
+    "candidates": 90,
+    "by_check": {
+     "PC-01": 55,
+     "PT-01": 34,
+     "UI-01": 1
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 596,
+      "offenders": 0,
+      "exempt_right": 741
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 596,
+      "offenders": 0,
+      "exempt_right": 741
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 14,
+    "url": "file://<STATES>/B2-broken/dist/docs/javascript/plugins-overview.html"
+   },
+   "B2-fixed": {
+    "candidates": 89,
+    "by_check": {
+     "PC-01": 54,
+     "PT-01": 34,
+     "UI-01": 1
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 596,
+      "offenders": 0,
+      "exempt_right": 741
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 596,
+      "offenders": 0,
+      "exempt_right": 741
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 14,
+    "url": "file://<STATES>/B2-fixed/dist/docs/javascript/plugins-overview.html"
+   },
+   "B3-broken": {
+    "candidates": 36,
+    "by_check": {
+     "LY-02": 13,
+     "PC-01": 7,
+     "PC-02": 3,
+     "PT-01": 3,
+     "SM-02": 1,
+     "UI-01": 9
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div > div > p|New Orders",
+      "summary_ko": "'New Orders' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > div > div > h3|150",
+      "summary_ko": "'150' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(2) > div > div > h3|53 %",
+      "summary_ko": "'53%' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div > p|Bounce Rate",
+      "summary_ko": "'Bounce Rate' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a|User Avatar Count Dracula 2/28/2023 How ",
+      "summary_ko": "'Count Dracula 2/28/2023 How ha' 글자 줄 2/2개가 겹쳐 놓인 요소 #world-map에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(2) > a|User Avatar Sarah Doe 2/23/2023 I will b",
+      "summary_ko": "'Sarah Doe 2/23/2023 I will be ' 글자 줄 2/2개가 겹쳐 놓인 요소 #world-map에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(3) > a|User Avatar Nadia Jolie 2/20/2023 I'll c",
+      "summary_ko": "'Nadia Jolie 2/20/2023 I'll cal' 글자 줄 1/2개가 겹쳐 놓인 요소 div:nth-of-type(3) > div > div:nth-of-type(1) > div:nth-of-type(2)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2023 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2023 Never mind' 글자 줄 1/2개가 겹쳐 놓인 요소 footer에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > h3|44",
+      "summary_ko": "'44' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > p|User Registrations",
+      "summary_ko": "'User Registrations' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > h3|65",
+      "summary_ko": "'65' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > p|Unique Visitors",
+      "summary_ko": "'Unique Visitors' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg > path:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     }
+    ],
+    "blocked_requests": 12,
+    "url": "file://<STATES>/B3-broken/dist/index.html"
+   },
+   "B3-fixed": {
+    "candidates": 43,
+    "by_check": {
+     "LY-02": 14,
+     "PC-01": 7,
+     "PC-02": 3,
+     "PT-01": 9,
+     "SM-02": 1,
+     "UI-01": 9
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "a[aria-label=\"Messages: 3 unread\"]|Messages: 3 unread",
+      "summary_ko": "'3' 글자 40%가 겹쳐 놓인 요소 li:nth-of-type(3) > a > span에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div > div > p|New Orders",
+      "summary_ko": "'New Orders' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > div > div > h3|150",
+      "summary_ko": "'150' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(2) > div > div > h3|53 %",
+      "summary_ko": "'53%' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div > p|Bounce Rate",
+      "summary_ko": "'Bounce Rate' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a|User Avatar Count Dracula 2/28/2023 How ",
+      "summary_ko": "'Count Dracula 2/28/2023 How ha' 글자 줄 2/2개가 겹쳐 놓인 요소 #world-map에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(2) > a|User Avatar Sarah Doe 2/23/2023 I will b",
+      "summary_ko": "'Sarah Doe 2/23/2023 I will be ' 글자 줄 2/2개가 겹쳐 놓인 요소 #world-map에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(3) > a|User Avatar Nadia Jolie 2/20/2023 I'll c",
+      "summary_ko": "'Nadia Jolie 2/20/2023 I'll cal' 글자 줄 1/2개가 겹쳐 놓인 요소 div:nth-of-type(3) > div > div:nth-of-type(1) > div:nth-of-type(2)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2023 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2023 Never mind' 글자 줄 1/2개가 겹쳐 놓인 요소 footer에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > h3|44",
+      "summary_ko": "'44' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > p|User Registrations",
+      "summary_ko": "'User Registrations' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > h3|65",
+      "summary_ko": "'65' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > p|Unique Visitors",
+      "summary_ko": "'Unique Visitors' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg > path:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     }
+    ],
+    "blocked_requests": 12,
+    "url": "file://<STATES>/B3-fixed/dist/index.html"
+   },
+   "B4-broken": {
+    "candidates": 25,
+    "by_check": {
+     "PT-01": 24,
+     "UI-01": 1
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B4-broken/dist/layout/fixed-sidebar.html"
+   },
+   "B4-fixed": {
+    "candidates": 25,
+    "by_check": {
+     "PT-01": 24,
+     "UI-01": 1
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B4-fixed/dist/layout/fixed-sidebar.html"
+   },
+   "B5-broken": {
+    "candidates": 23,
+    "by_check": {
+     "PT-01": 22,
+     "UI-01": 1
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B5-broken/dist/UI/ribbons.html"
+   },
+   "B5-fixed": {
+    "candidates": 23,
+    "by_check": {
+     "PT-01": 22,
+     "UI-01": 1
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B5-fixed/dist/UI/ribbons.html"
+   },
+   "B6-broken": {
+    "candidates": 50,
+    "by_check": {
+     "LY-02": 1,
+     "PT-01": 46,
+     "SM-01": 3
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(5) > ul > li:nth-of-type(1) > button|Light",
+      "summary_ko": "'Light' 글자 40%가 겹쳐 놓인 요소 li:nth-of-type(5) > ul > li:nth-of-type(2) > button에 가려지고, 스크롤해도 드러나지 않습니다."
+     }
+    ],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B6-broken/dist/mailbox/inbox.html"
+   },
+   "B6-fixed": {
+    "candidates": 50,
+    "by_check": {
+     "LY-02": 1,
+     "PT-01": 46,
+     "SM-01": 3
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(5) > ul > li:nth-of-type(1) > button|Light",
+      "summary_ko": "'Light' 글자 40%가 겹쳐 놓인 요소 li:nth-of-type(5) > ul > li:nth-of-type(2) > button에 가려지고, 스크롤해도 드러나지 않습니다."
+     }
+    ],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B6-fixed/dist/mailbox/inbox.html"
+   },
+   "B7-broken": {
+    "candidates": 17,
+    "by_check": {
+     "PT-01": 14,
+     "SM-01": 3
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B7-broken/dist/layout/fixed-header.html"
+   },
+   "B7-fixed": {
+    "candidates": 21,
+    "by_check": {
+     "LY-02": 1,
+     "PT-01": 17,
+     "SM-01": 3
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(1) > button|Light",
+      "summary_ko": "'Light' 글자 40%가 겹쳐 놓인 요소 li:nth-of-type(2) > button에 가려지고, 스크롤해도 드러나지 않습니다."
+     }
+    ],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B7-fixed/dist/layout/fixed-header.html"
+   },
+   "B8-broken": {
+    "candidates": 110,
+    "by_check": {
+     "LY-05": 1,
+     "PT-01": 96,
+     "SM-01": 3,
+     "UI-01": 10
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-05",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navbarSupportedContent > ul > li:nth-of-type(3) > ul > li:nth-of-type(2)|Another action",
+      "summary_ko": "'Another action' 앞 간격이 0px로, 같은 목록의 다른 간격 8px와 다릅니다."
+     }
+    ],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B8-broken/dist/UI/general.html"
+   },
+   "B8-fixed": {
+    "candidates": 110,
+    "by_check": {
+     "LY-05": 1,
+     "PT-01": 96,
+     "SM-01": 3,
+     "UI-01": 10
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-05",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navbarSupportedContent > ul > li:nth-of-type(3) > ul > li:nth-of-type(2)|Another action",
+      "summary_ko": "'Another action' 앞 간격이 0px로, 같은 목록의 다른 간격 8px와 다릅니다."
+     }
+    ],
+    "blocked_requests": 13,
+    "url": "file://<STATES>/B8-fixed/dist/UI/general.html"
+   }
+  },
+  "items_with_identical_candidates_in_both_states": "8 of 12",
+  "matched_on_broken_pages": {
+   "cases": [],
+   "header_overflow_H": [],
+   "note": "The 320 px copies rendered without the page styles (adaptation copies kept 1 CSS rule), so RF-01 saw no overflow."
+  }
+ },
+ "http, normal launch": {
+  "states": {
+   "S1-broken": {
+    "candidates": 75,
+    "by_check": {
+     "LY-04": 1,
+     "PC-01": 44,
+     "PC-02": 1,
+     "SM-01": 9,
+     "SM-05": 11,
+     "UI-01": 9
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": 878
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-04",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#content > div > div:nth-of-type(2)|EARNINGS (MONTHLY) $40,000 EARNINGS (ANN",
+      "summary_ko": "'EARNINGS (MONTHLY) $40,000 EAR' 블록이 같은 묶음 3개의 시작선에서 3px 어긋납니다."
+     }
+    ],
+    "blocked_requests": 5,
+    "url": "http://127.0.0.1:8765/S1-broken/index.html"
+   },
+   "S1-fixed": {
+    "candidates": 75,
+    "by_check": {
+     "LY-04": 1,
+     "PC-01": 44,
+     "PC-02": 1,
+     "SM-01": 9,
+     "SM-05": 11,
+     "UI-01": 9
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": 878
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-04",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#content > div > div:nth-of-type(2)|EARNINGS (MONTHLY) $40,000 EARNINGS (ANN",
+      "summary_ko": "'EARNINGS (MONTHLY) $40,000 EAR' 블록이 같은 묶음 3개의 시작선에서 3px 어긋납니다."
+     }
+    ],
+    "blocked_requests": 5,
+    "url": "http://127.0.0.1:8765/S1-fixed/index.html"
+   },
+   "A1-broken": {
+    "candidates": 87,
+    "by_check": {
+     "LY-02": 9,
+     "LY-03": 1,
+     "PC-01": 38,
+     "PC-02": 2,
+     "PT-01": 3,
+     "SM-01": 12,
+     "SM-03": 9,
+     "SM-07": 1,
+     "UI-01": 12
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": 586
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": 666
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2)|23 Jan 2:00 pm",
+      "summary_ko": "'23 Jan 2:00 pm' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)|Alexander Pierce",
+      "summary_ko": "'Alexander Pierce' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a|User Avatar Count Dracula 2/28/2015 How ",
+      "summary_ko": "'Count Dracula 2/28/2015 How ha' 글자 줄 2/2개가 겹쳐 놓인 요소 section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > h3에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(2) > a|User Avatar Sarah Doe 2/23/2015 I will b",
+      "summary_ko": "'Sarah Doe 2/23/2015 I will be ' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(3) > a|User Avatar Nadia Jolie 2/20/2015 I'll c",
+      "summary_ko": "'Nadia Jolie 2/20/2015 I'll cal' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(4) > a|User Avatar Nora S. Vans 2/10/2015 Where",
+      "summary_ko": "'Nora S. Vans 2/10/2015 Where i' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(5) > a|User Avatar John K. 1/27/2015 Can I take",
+      "summary_ko": "'John K. 1/27/2015 Can I take a' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2015 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2015 Never mind' 글자 줄 2/2개가 겹쳐 놓인 요소 div:nth-of-type(2) > div:nth-of-type(3) > div > div:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)|Is this template really for free? That",
+      "summary_ko": "'Is this template really for fr' 글자가 section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > h3의 글자와 겹칩니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/A1-broken/index.html"
+   },
+   "A1-fixed": {
+    "candidates": 87,
+    "by_check": {
+     "LY-02": 9,
+     "LY-03": 1,
+     "PC-01": 38,
+     "PC-02": 2,
+     "PT-01": 3,
+     "SM-01": 12,
+     "SM-03": 9,
+     "SM-07": 1,
+     "UI-01": 12
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": 586
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": 666
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(2)|23 Jan 2:00 pm",
+      "summary_ko": "'23 Jan 2:00 pm' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(1) > span:nth-of-type(1)|Alexander Pierce",
+      "summary_ko": "'Alexander Pierce' 글자 줄 1/1개가 겹쳐 놓인 요소 #revenue-chart-canvas에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(1) > a|User Avatar Count Dracula 2/28/2015 How ",
+      "summary_ko": "'Count Dracula 2/28/2015 How ha' 글자 줄 2/2개가 겹쳐 놓인 요소 section:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(1) > h3에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(2) > a|User Avatar Sarah Doe 2/23/2015 I will b",
+      "summary_ko": "'Sarah Doe 2/23/2015 I will be ' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(3) > a|User Avatar Nadia Jolie 2/20/2015 I'll c",
+      "summary_ko": "'Nadia Jolie 2/20/2015 I'll cal' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(4) > a|User Avatar Nora S. Vans 2/10/2015 Where",
+      "summary_ko": "'Nora S. Vans 2/10/2015 Where i' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(5) > a|User Avatar John K. 1/27/2015 Can I take",
+      "summary_ko": "'John K. 1/27/2015 Can I take a' 글자 줄 2/2개가 겹쳐 놓인 요소 #line-chart에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2015 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2015 Never mind' 글자 줄 2/2개가 겹쳐 놓인 요소 div:nth-of-type(2) > div:nth-of-type(3) > div > div:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(2) > div:nth-of-type(1) > div:nth-of-type(1) > div:nth-of-type(2)|Is this template really for free? That",
+      "summary_ko": "'Is this template really for fr' 글자가 section:nth-of-type(1) > div:nth-of-type(2) > div:nth-of-type(1) > h3의 글자와 겹칩니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/A1-fixed/index.html"
+   },
+   "A2-broken": {
+    "candidates": 33,
+    "by_check": {
+     "PC-01": 9,
+     "PC-02": 2,
+     "SM-01": 10,
+     "SM-05": 2,
+     "UI-01": 10
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/A2-broken/iframe.html"
+   },
+   "A2-fixed": {
+    "candidates": 33,
+    "by_check": {
+     "PC-01": 9,
+     "PC-02": 2,
+     "SM-01": 10,
+     "SM-05": 2,
+     "UI-01": 10
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/A2-fixed/iframe.html"
+   },
+   "A3-broken": {
+    "candidates": 36,
+    "by_check": {
+     "PC-01": 27,
+     "PC-02": 2,
+     "SM-01": 3,
+     "SM-05": 1,
+     "UI-01": 3
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 549,
+      "offenders": 0,
+      "exempt_right": 549
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 549,
+      "offenders": 0,
+      "exempt_right": 549
+     }
+    ],
+    "layout_and_reflow_candidates": [],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/A3-broken/pages/tables/data.html"
+   },
+   "A3-fixed": {
+    "candidates": 38,
+    "by_check": {
+     "PC-01": 27,
+     "PC-02": 2,
+     "RF-02": 2,
+     "SM-01": 3,
+     "SM-05": 1,
+     "UI-01": 3
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 549,
+      "offenders": 0,
+      "exempt_right": 549
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "RF-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "#example1_previous > a|Previous",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#example1_previous > a'의 내용이 잘려 63.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "#example2_previous > a|Previous",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#example2_previous > a'의 내용이 잘려 63.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/A3-fixed/pages/tables/data.html"
+   },
+   "B1-broken": {
+    "candidates": 73,
+    "by_check": {
+     "PC-02": 1,
+     "PT-01": 1,
+     "RF-02": 1,
+     "SM-01": 31,
+     "UI-01": 39
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div:nth-of-type(2) > nav > div > a|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'div:nth-of-type(3) > div:nth-of-type(2) > nav > div > a'의 내용이 잘려 95.6%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B1-broken/dist/layout/collapsed-sidebar.html"
+   },
+   "B1-fixed": {
+    "candidates": 73,
+    "by_check": {
+     "PC-02": 1,
+     "PT-01": 1,
+     "RF-02": 1,
+     "SM-01": 31,
+     "UI-01": 39
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div:nth-of-type(2) > nav > div > a|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'div:nth-of-type(3) > div:nth-of-type(2) > nav > div > a'의 내용이 잘려 95.6%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B1-fixed/dist/layout/collapsed-sidebar.html"
+   },
+   "B2-broken": {
+    "candidates": 72,
+    "by_check": {
+     "PC-01": 55,
+     "PC-02": 2,
+     "PT-01": 1,
+     "RF-02": 7,
+     "UI-01": 7
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 942,
+      "offenders": 0,
+      "exempt_right": 942
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 942,
+      "offenders": 0,
+      "exempt_right": 942
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(12) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(12) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(19) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(19) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(23) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(23) > a > p'의 내용이 잘려 99.3%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(3) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(3) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(6) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(6) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(9) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(9) > a > p'의 내용이 잘려 99.5%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(14) > ul > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(14) > ul > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B2-broken/dist/docs/javascript/plugins-overview.html"
+   },
+   "B2-fixed": {
+    "candidates": 80,
+    "by_check": {
+     "PC-01": 55,
+     "PC-02": 2,
+     "PT-01": 9,
+     "RF-02": 7,
+     "UI-01": 7
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": 942
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": 942
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(12) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(12) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(19) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(19) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(23) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(23) > a > p'의 내용이 잘려 99.3%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(3) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(3) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(6) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(6) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#docs-navigation > li:nth-of-type(9) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#docs-navigation > li:nth-of-type(9) > a > p'의 내용이 잘려 99.5%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(14) > ul > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(14) > ul > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B2-fixed/dist/docs/javascript/plugins-overview.html"
+   },
+   "B3-broken": {
+    "candidates": 45,
+    "by_check": {
+     "CG-03": 1,
+     "LY-02": 12,
+     "PC-01": 7,
+     "PC-02": 3,
+     "PT-01": 1,
+     "RF-01": 2,
+     "RF-02": 8,
+     "SM-02": 1,
+     "UI-01": 10
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 412,
+      "offenders": 1,
+      "exempt_right": 570
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 664,
+      "offenders": 2,
+      "exempt_right": 664
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div > div > p|New Orders",
+      "summary_ko": "'New Orders' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > div > div > h3|150",
+      "summary_ko": "'150' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(2) > div > div > h3|53 %",
+      "summary_ko": "'53%' 글자 40%가 겹쳐 놓인 요소 #main > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div > p|Bounce Rate",
+      "summary_ko": "'Bounce Rate' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2023 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2023 Never mind' 글자 줄 2/2개가 겹쳐 놓인 요소 footer에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > h3|44",
+      "summary_ko": "'44' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > p|User Registrations",
+      "summary_ko": "'User Registrations' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > h3|65",
+      "summary_ko": "'65' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > p|Unique Visitors",
+      "summary_ko": "'Unique Visitors' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg > path:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(1) > span:nth-of-type(1)|Sarah Bullock",
+      "summary_ko": "'Sarah Bullock' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(1) > span:nth-of-type(2)|23 Jan 6:10 pm",
+      "summary_ko": "'23 Jan 6:10 pm' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "RF-01",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#apexchartsrevenue-chart|100 80 60 40 20 0 Jan '23 Feb '23 Mar '2",
+      "summary_ko": "320 CSS px 폭(400 % 확대)에서 '100 80 60 40 20 0 Jan '23 Feb '의 오른쪽 끝이 664px라 가로 스크롤이 생깁니다(WCAG 1.4.10)."
+     },
+     {
+      "check": "RF-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > nav > div > ul:nth-of-type(2)|3 15",
+      "summary_ko": "320 CSS px 폭(400 % 확대)에서 '3 15'의 오른쪽 끝이 412px라 가로 스크롤이 생깁니다(WCAG 1.4.10)."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(21) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(21) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(5) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(5) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(8) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(8) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(1) > ul > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(1) > ul > li:nth-of-type(1) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(1) > ul > li:nth-of-type(2) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(1) > ul > li:nth-of-type(2) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(1) > ul > li:nth-of-type(3) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(1) > ul > li:nth-of-type(3) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B3-broken/dist/index.html"
+   },
+   "B3-fixed": {
+    "candidates": 43,
+    "by_check": {
+     "LY-02": 12,
+     "PC-01": 7,
+     "PC-02": 3,
+     "PT-01": 1,
+     "RF-01": 1,
+     "RF-02": 8,
+     "SM-02": 1,
+     "UI-01": 10
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 323,
+      "offenders": 0,
+      "exempt_right": 570
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 664,
+      "offenders": 1,
+      "exempt_right": 664
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div > div > p|New Orders",
+      "summary_ko": "'New Orders' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(1) > div > div > h3|150",
+      "summary_ko": "'150' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(1) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(1) > div:nth-of-type(2) > div > div > h3|53 %",
+      "summary_ko": "'53%' 글자 40%가 겹쳐 놓인 요소 #main > div:nth-of-type(2) > div > div:nth-of-type(1) > div:nth-of-type(2) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div > p|Bounce Rate",
+      "summary_ko": "'Bounce Rate' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(2) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(6) > a|User Avatar Kenneth M. 1/4/2023 Never mi",
+      "summary_ko": "'Kenneth M. 1/4/2023 Never mind' 글자 줄 2/2개가 겹쳐 놓인 요소 footer에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > h3|44",
+      "summary_ko": "'44' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(3) > div > div > p|User Registrations",
+      "summary_ko": "'User Registrations' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(3) > div > svg > path에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > h3|65",
+      "summary_ko": "'65' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div > div > p|Unique Visitors",
+      "summary_ko": "'Unique Visitors' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div > svg > path:nth-of-type(1)에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(1) > span:nth-of-type(1)|Sarah Bullock",
+      "summary_ko": "'Sarah Bullock' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(1) > span:nth-of-type(2)|23 Jan 6:10 pm",
+      "summary_ko": "'23 Jan 6:10 pm' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2)|I would love to.",
+      "summary_ko": "'I would love to.' 글자 줄 1/1개가 겹쳐 놓인 요소 input[name=\"message\"]에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "RF-01",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#apexchartsrevenue-chart|100 80 60 40 20 0 Jan '23 Feb '23 Mar '2",
+      "summary_ko": "320 CSS px 폭(400 % 확대)에서 '100 80 60 40 20 0 Jan '23 Feb '의 오른쪽 끝이 664px라 가로 스크롤이 생깁니다(WCAG 1.4.10)."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(21) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(21) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(5) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(5) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(8) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(8) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(1) > ul > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(1) > ul > li:nth-of-type(1) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(1) > ul > li:nth-of-type(2) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(1) > ul > li:nth-of-type(2) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(1) > ul > li:nth-of-type(3) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(1) > ul > li:nth-of-type(3) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B3-fixed/dist/index.html"
+   },
+   "B4-broken": {
+    "candidates": 24,
+    "by_check": {
+     "LY-01": 1,
+     "PC-01": 3,
+     "PC-02": 2,
+     "PT-01": 1,
+     "RF-01": 1,
+     "RF-02": 9,
+     "UI-01": 7
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 412,
+      "offenders": 1,
+      "exempt_right": 396
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 412,
+      "offenders": 1,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "RF-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > nav > div > ul:nth-of-type(2)|3 15",
+      "summary_ko": "320 CSS px 폭(400 % 확대)에서 '3 15'의 오른쪽 끝이 412px라 가로 스크롤이 생깁니다(WCAG 1.4.10)."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(21) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(21) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(5) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(5) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(8) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(8) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(5) > ul > li:nth-of-type(5) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(5) > ul > li:nth-of-type(5) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(10) > a > p > small|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(10) > a > p > small'의 내용이 잘려 61.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(11) > a > p > small|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(11) > a > p > small'의 내용이 잘려 96.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(6) > a > p > small|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(6) > a > p > small'의 내용이 잘려 98.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(5) > ul > li:nth-of-type(9) > a|Sidebar Mini + Collapsed + No Hover",
+      "summary_ko": "'Sidebar Mini + Collapsed + No ' 글자가 바깥 상자(p)에 잘립니다 (말줄임표로 줄임)."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B4-broken/dist/layout/fixed-sidebar.html"
+   },
+   "B4-fixed": {
+    "candidates": 22,
+    "by_check": {
+     "LY-01": 1,
+     "PC-01": 1,
+     "PC-02": 2,
+     "PT-01": 1,
+     "RF-01": 1,
+     "RF-02": 9,
+     "UI-01": 7
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 412,
+      "offenders": 1,
+      "exempt_right": 396
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 412,
+      "offenders": 1,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "RF-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > nav > div > ul:nth-of-type(2)|3 15",
+      "summary_ko": "320 CSS px 폭(400 % 확대)에서 '3 15'의 오른쪽 끝이 412px라 가로 스크롤이 생깁니다(WCAG 1.4.10)."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(21) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(21) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(5) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(5) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(8) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(8) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(5) > ul > li:nth-of-type(5) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(5) > ul > li:nth-of-type(5) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(10) > a > p > small|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(10) > a > p > small'의 내용이 잘려 61.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(11) > a > p > small|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(11) > a > p > small'의 내용이 잘려 96.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(6) > a > p > small|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(6) > a > p > small'의 내용이 잘려 98.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(5) > ul > li:nth-of-type(9) > a|Sidebar Mini + Collapsed + No Hover",
+      "summary_ko": "'Sidebar Mini + Collapsed + No ' 글자가 바깥 상자(p)에 잘립니다 (말줄임표로 줄임)."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B4-fixed/dist/layout/fixed-sidebar.html"
+   },
+   "B5-broken": {
+    "candidates": 18,
+    "by_check": {
+     "LY-02": 1,
+     "PC-01": 1,
+     "PC-02": 2,
+     "RF-01": 1,
+     "RF-02": 7,
+     "UI-01": 6
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 364,
+      "offenders": 1,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 364,
+      "offenders": 1,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "div:nth-of-type(4) > div:nth-of-type(2) > div > div:nth-of-type(2) > h6|Interactive ribbon",
+      "summary_ko": "'Interactive ribbon' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(4) > div:nth-of-type(2) > div > div:nth-of-type(1) > div에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "RF-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > nav > div > ul:nth-of-type(2)|3 15",
+      "summary_ko": "320 CSS px 폭(400 % 확대)에서 '3 15'의 오른쪽 끝이 364px라 가로 스크롤이 생깁니다(WCAG 1.4.10)."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(21) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(21) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(5) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(5) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(8) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(8) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(6) > ul > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(6) > ul > li:nth-of-type(1) > a > p'의 내용이 잘려 99.6%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(6) > ul > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(6) > ul > li:nth-of-type(4) > a > p'의 내용이 잘려 99.5%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B5-broken/dist/UI/ribbons.html"
+   },
+   "B5-fixed": {
+    "candidates": 17,
+    "by_check": {
+     "PC-01": 1,
+     "PC-02": 2,
+     "RF-01": 1,
+     "RF-02": 7,
+     "UI-01": 6
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 364,
+      "offenders": 1,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 364,
+      "offenders": 1,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "RF-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > nav > div > ul:nth-of-type(2)|3 15",
+      "summary_ko": "320 CSS px 폭(400 % 확대)에서 '3 15'의 오른쪽 끝이 364px라 가로 스크롤이 생깁니다(WCAG 1.4.10)."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(21) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(21) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(5) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(5) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(8) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(8) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(6) > ul > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(6) > ul > li:nth-of-type(1) > a > p'의 내용이 잘려 99.6%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(6) > ul > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(6) > ul > li:nth-of-type(4) > a > p'의 내용이 잘려 99.5%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B5-fixed/dist/UI/ribbons.html"
+   },
+   "B6-broken": {
+    "candidates": 39,
+    "by_check": {
+     "LY-03": 8,
+     "PC-01": 1,
+     "PC-02": 10,
+     "RF-01": 1,
+     "RF-02": 10,
+     "RF-03": 1,
+     "SM-01": 3,
+     "UI-01": 5
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 940,
+      "offenders": 9,
+      "exempt_right": 940
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 940,
+      "offenders": 9,
+      "exempt_right": 940
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(1) > a|Olivia Bennett · Re: design system v2.4 ",
+      "summary_ko": "'Olivia Bennett · Re: design sy' 글자가 li:nth-of-type(1) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(2) > a|GitHub · [fullcalendar/fullcalendar] PR ",
+      "summary_ko": "'GitHub · [fullcalendar/fullcal' 글자가 li:nth-of-type(2) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(3) > a|Stripe · Your May invoice is ready — Inv",
+      "summary_ko": "'Stripe · Your May invoice is r' 글자가 li:nth-of-type(3) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(4) > a|Marcus Reyes · Lunch on Thursday? — Free",
+      "summary_ko": "'Marcus Reyes · Lunch on Thursd' 글자가 li:nth-of-type(4) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(5) > a|Linear · [ADM-441] Calendar drag-and-dro",
+      "summary_ko": "'Linear · [ADM-441] Calendar dr' 글자가 li:nth-of-type(5) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(6) > a|Vercel · Deployment succeeded — producti",
+      "summary_ko": "'Vercel · Deployment succeeded ' 글자가 li:nth-of-type(6) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(7) > a|Sara Khan · Customer interview notes — A",
+      "summary_ko": "'Sara Khan · Customer interview' 글자가 li:nth-of-type(7) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(8) > a|AWS · Your monthly bill summary — Total ",
+      "summary_ko": "'AWS · Your monthly bill summar' 글자가 li:nth-of-type(8) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "RF-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "html|/B6-broken/dist/mailbox/inbox.html|#navigation > div > ul:nth-of-type(2),div > div:nth-of-type(2) > ul > li:nth-of-",
+      "summary_ko": "320 CSS px 폭(400 % 확대)에서 이 화면이 재배치되지 않습니다: 요소 9개('3 15', 'Olivia Bennett ·', 'GitHub · [fullca' 등)가 오른쪽으로 넘쳐 가장 먼 끝이 940px이고 가로 스크롤이 생기거나 화면 밖으로 잘립니다(WCAG 1.4.10)."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(18) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(18) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(3) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(3) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(7) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(7) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(6) > ul > li:nth-of-type(2) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(6) > ul > li:nth-of-type(2) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(1) > a > span:nth-of-type(2) > span:nth-of-type(2)|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(1) > a > span:nth-of-type(2) > span:nth-of-type(2)'의 내용이 잘려 100.0%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(3) > a > span:nth-of-type(2) > span:nth-of-type(2)|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(3) > a > span:nth-of-type(2) > span:nth-of-type(2)'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(5) > a > span:nth-of-type(2) > span:nth-of-type(2)|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(5) > a > span:nth-of-type(2) > span:nth-of-type(2)'의 내용이 잘려 100.0%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(6) > a > span:nth-of-type(2) > span:nth-of-type(2)|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(6) > a > span:nth-of-type(2) > span:nth-of-type(2)'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-03",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#main|",
+      "summary_ko": "높이를 450 CSS px로 줄인 복제 화면에서 '#main'의 내용이 잘려 100.0%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B6-broken/dist/mailbox/inbox.html"
+   },
+   "B6-fixed": {
+    "candidates": 45,
+    "by_check": {
+     "LY-01": 8,
+     "LY-03": 8,
+     "PC-01": 1,
+     "PC-02": 10,
+     "RF-01": 2,
+     "RF-02": 7,
+     "RF-03": 1,
+     "SM-01": 3,
+     "UI-01": 5
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 364,
+      "offenders": 1,
+      "exempt_right": 940
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 364,
+      "offenders": 1,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(1) > a|Olivia Bennett · Re: design system v2.4 ",
+      "summary_ko": "'Olivia Bennett · Re: design sy' 글자가 li:nth-of-type(1) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(2) > a|GitHub · [fullcalendar/fullcalendar] PR ",
+      "summary_ko": "'GitHub · [fullcalendar/fullcal' 글자가 li:nth-of-type(2) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(3) > a|Stripe · Your May invoice is ready — Inv",
+      "summary_ko": "'Stripe · Your May invoice is r' 글자가 li:nth-of-type(3) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(4) > a|Marcus Reyes · Lunch on Thursday? — Free",
+      "summary_ko": "'Marcus Reyes · Lunch on Thursd' 글자가 li:nth-of-type(4) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(5) > a|Linear · [ADM-441] Calendar drag-and-dro",
+      "summary_ko": "'Linear · [ADM-441] Calendar dr' 글자가 li:nth-of-type(5) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(6) > a|Vercel · Deployment succeeded — producti",
+      "summary_ko": "'Vercel · Deployment succeeded ' 글자가 li:nth-of-type(6) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(7) > a|Sara Khan · Customer interview notes — A",
+      "summary_ko": "'Sara Khan · Customer interview' 글자가 li:nth-of-type(7) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(8) > a|AWS · Your monthly bill summary — Total ",
+      "summary_ko": "'AWS · Your monthly bill summar' 글자가 li:nth-of-type(8) > div > label의 글자와 겹칩니다."
+     },
+     {
+      "check": "RF-01",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#main span|— Free around 1pm at the usual place. Le",
+      "summary_ko": "'— Free around 1pm at the usual'이(가) 원래 폭에서는 보이지만 320 CSS px 폭(400 % 확대)에서는 상자에 잘려 6%만 보입니다(WCAG 1.4.10)."
+     },
+     {
+      "check": "RF-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#navigation > div > ul:nth-of-type(2)|3 15",
+      "summary_ko": "320 CSS px 폭(400 % 확대)에서 '3 15'의 오른쪽 끝이 364px라 가로 스크롤이 생깁니다(WCAG 1.4.10)."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(18) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(18) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(3) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(3) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(7) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(7) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(5) > a > span:nth-of-type(2)|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'div:nth-of-type(2) > ul > li:nth-of-type(5) > a > span:nth-of-type(2)'의 내용이 잘려 93.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(6) > ul > li:nth-of-type(2) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(6) > ul > li:nth-of-type(2) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-03",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#main|",
+      "summary_ko": "높이를 450 CSS px로 줄인 복제 화면에서 '#main'의 내용이 잘려 100.0%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(1) > a|Olivia Bennett · Re: design system v2.4 ",
+      "summary_ko": "'Olivia Bennett · Re: design sy' 글자가 상자에 잘립니다 (말줄임표로 줄임)."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(2) > a|GitHub · [fullcalendar/fullcalendar] PR ",
+      "summary_ko": "'GitHub · [fullcalendar/fullcal' 글자가 상자에 잘립니다 (말줄임표로 줄임)."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(3) > a|Stripe · Your May invoice is ready — Inv",
+      "summary_ko": "'Stripe · Your May invoice is r' 글자가 바깥 상자(span)에 잘립니다 (말줄임표로 줄임)."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(4) > a|Marcus Reyes · Lunch on Thursday? — Free",
+      "summary_ko": "'Marcus Reyes · Lunch on Thursd' 글자가 바깥 상자(span)에 잘립니다 (말줄임표로 줄임)."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(5) > a|Linear · [ADM-441] Calendar drag-and-dro",
+      "summary_ko": "'Linear · [ADM-441] Calendar dr' 글자가 상자에 잘립니다 (말줄임표로 줄임)."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(6) > a|Vercel · Deployment succeeded — producti",
+      "summary_ko": "'Vercel · Deployment succeeded ' 글자가 상자에 잘립니다 (말줄임표로 줄임)."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-of-type(7) > a|Sara Khan · Customer interview notes — A",
+      "summary_ko": "'Sara Khan · Customer interview' 글자가 상자에 잘립니다 (말줄임표로 줄임)."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "div:nth-of-type(2) > ul > li:nth-of-type(8) > a|AWS · Your monthly bill summary — Total ",
+      "summary_ko": "'AWS · Your monthly bill summar' 글자가 바깥 상자(span)에 잘립니다 (말줄임표로 줄임)."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B6-fixed/dist/mailbox/inbox.html"
+   },
+   "B7-broken": {
+    "candidates": 19,
+    "by_check": {
+     "LY-01": 1,
+     "PC-01": 1,
+     "RF-02": 10,
+     "SM-01": 3,
+     "UI-01": 4
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(16) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(16) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(19) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(19) > a > p'의 내용이 잘려 99.3%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(25) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(25) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(3) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(3) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(6) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(6) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(4) > ul > li:nth-of-type(5) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(4) > ul > li:nth-of-type(5) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(10) > a > p > small|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(10) > a > p > small'의 내용이 잘려 61.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(6) > a > p > small|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(6) > a > p > small'의 내용이 잘려 98.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(4) > ul > li:nth-of-type(9) > a|Sidebar Mini + Collapsed + No Hover",
+      "summary_ko": "'Sidebar Mini + Collapsed + No ' 글자가 바깥 상자(p)에 잘립니다 (말줄임표로 줄임)."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B7-broken/dist/layout/fixed-header.html"
+   },
+   "B7-fixed": {
+    "candidates": 22,
+    "by_check": {
+     "LY-01": 2,
+     "PC-01": 1,
+     "RF-01": 1,
+     "RF-02": 10,
+     "SM-01": 3,
+     "UI-01": 5
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 364,
+      "offenders": 1,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 364,
+      "offenders": 1,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "RF-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#navigation > div > ul:nth-of-type(2)|3 15",
+      "summary_ko": "320 CSS px 폭(400 % 확대)에서 '3 15'의 오른쪽 끝이 364px라 가로 스크롤이 생깁니다(WCAG 1.4.10)."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(20) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(20) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(23) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(23) > a > p'의 내용이 잘려 99.3%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(29) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(29) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(3) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(3) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(7) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(7) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(4) > ul > li:nth-of-type(5) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(4) > ul > li:nth-of-type(5) > a > p'의 내용이 잘려 99.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(10) > a > p > small|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(10) > a > p > small'의 내용이 잘려 61.9%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "ul > li:nth-of-type(6) > a > p > small|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'ul > li:nth-of-type(6) > a > p > small'의 내용이 잘려 98.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(17) > a|Recommended Integrations",
+      "summary_ko": "'Recommended Integrations' 글자가 상자에 잘립니다 (말줄임표로 줄임)."
+     },
+     {
+      "check": "LY-01",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(4) > ul > li:nth-of-type(9) > a|Sidebar Mini + Collapsed + No Hover",
+      "summary_ko": "'Sidebar Mini + Collapsed + No ' 글자가 바깥 상자(p)에 잘립니다 (말줄임표로 줄임)."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B7-fixed/dist/layout/fixed-header.html"
+   },
+   "B8-broken": {
+    "candidates": 36,
+    "by_check": {
+     "LY-02": 1,
+     "LY-03": 1,
+     "PC-01": 11,
+     "PC-02": 3,
+     "PT-01": 2,
+     "RF-02": 8,
+     "SM-01": 3,
+     "UI-01": 7
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "LY-02",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "nav > ul > li:nth-of-type(10)|DOCUMENTATIONS",
+      "summary_ko": "'DOCUMENTATIONS' 글자 40%가 겹쳐 놓인 요소 div:nth-of-type(1) > a > img에 가려지고, 스크롤해도 드러나지 않습니다."
+     },
+     {
+      "check": "LY-03",
+      "devices": [
+       "galaxy-s24"
+      ],
+      "element": "nav > ul > li:nth-of-type(10)|DOCUMENTATIONS",
+      "summary_ko": "'DOCUMENTATIONS' 글자가 aside > div:nth-of-type(1) > a의 글자와 겹칩니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(16) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(16) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(19) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(19) > a > p'의 내용이 잘려 99.3%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(25) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(25) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(3) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(3) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(6) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(6) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "galaxy-s24",
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(5) > ul > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(5) > ul > li:nth-of-type(1) > a > p'의 내용이 잘려 99.6%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B8-broken/dist/UI/general.html"
+   },
+   "B8-fixed": {
+    "candidates": 32,
+    "by_check": {
+     "PC-01": 11,
+     "PC-02": 3,
+     "RF-02": 8,
+     "SM-01": 3,
+     "UI-01": 7
+    },
+    "failed_passes": [],
+    "reflow_320": [
+     {
+      "device": "galaxy-s24",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     },
+     {
+      "device": "laptop-1440",
+      "width": 320,
+      "scroll_width": 320,
+      "offenders": 0,
+      "exempt_right": null
+     }
+    ],
+    "layout_and_reflow_candidates": [
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(1) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(16) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(16) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(19) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(19) > a > p'의 내용이 잘려 99.3%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(25) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(25) > a > p'의 내용이 잘려 99.8%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(3) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(3) > a > p'의 내용이 잘려 99.4%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(4) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(4) > a > p'의 내용이 잘려 99.7%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "#navigation > li:nth-of-type(6) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 '#navigation > li:nth-of-type(6) > a > p'의 내용이 잘려 99.1%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     },
+     {
+      "check": "RF-02",
+      "devices": [
+       "laptop-1440"
+      ],
+      "element": "li:nth-of-type(5) > ul > li:nth-of-type(1) > a > p|",
+      "summary_ko": "텍스트 간격을 늘린 복제 화면에서 'li:nth-of-type(5) > ul > li:nth-of-type(1) > a > p'의 내용이 잘려 99.6%에 접근할 수 있습니다. 원래 조건에서는 전체가 보였습니다."
+     }
+    ],
+    "blocked_requests": 0,
+    "url": "http://127.0.0.1:8765/B8-fixed/dist/UI/general.html"
+   }
+  },
+  "items_with_identical_candidates_in_both_states": "3 of 12",
+  "matched_on_broken_pages": {
+   "cases": [
+    "B3",
+    "B6"
+   ],
+   "header_overflow_H": [
+    "B4-broken",
+    "B5-broken",
+    "B6-broken"
+   ],
+   "also": "RF-01 also named the header overflow on all four fixed states where the key lists it (B4, B5, B6, B7) and not on B3-fixed.",
+   "note": "RF-01 measures at 320 CSS px (400 % zoom). A3 and B2 scroll sideways because of tables, which RF-01 exempts as WCAG 1.4.10 does. On B8-broken an LY-02 and an LY-03 candidate on sidebar text appear only in the broken state and their crop shows the open sidebar, but they describe an overlap inside the sidebar and were not counted."
+  }
+ },
+ "_how": "Frozen v1.0.0 scan (scripts/ergo_qa.py scan, default galaxy-s24 and laptop-1440) on each page state. The first configuration is the registered one, as the skill-arm agents ran it; the other two were added after the agent runs. On file:// pages the scan allows only files under the page folder, so parent-folder stylesheets are blocked (blocked_requests). Candidate lists keep layout (LY) and reflow (RF) candidates only; counts cover every check."
+}

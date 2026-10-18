@@ -1,0 +1,74 @@
+[
+  {
+    "page": "p02",
+    "selector": "nav.app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360px the header icon list is 304px wide starting at x=60 and ends at x=364, so document.scrollWidth is 364 vs the 360px viewport. The user menu <li> spans x=300-364; the page gains a 4px sideways scroll.",
+    "fix": "Let the header nav shrink at small widths (reduce item padding/gap below 400px or hide one utility icon) so the nav's right edge stays within the container."
+  },
+  {
+    "page": "p03",
+    "selector": "body.sidebar-open .app-sidebar",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "The page ships with body.sidebar-open, so at 360x780 the fixed 250px sidebar covers 69% of the screen while the content column keeps x=0 width 360. Body text behind it is cut mid-word at x=250 (e.g. 'omponents', 'on', 'until') and remains partly hidden while scrolling; no overlay element exists to dismiss it.",
+    "fix": "Remove the hardcoded sidebar-open class from the page body and let the responsive layout start collapsed on mobile, or add the sidebar-overlay element so the open drawer is dismissible and the content behind is dimmed."
+  },
+  {
+    "page": "p04",
+    "selector": ".topbar #userDropdown img.img-profile",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The top bar's right nav is 204px wide inside a 256px bar but its items extend to x=380 while the viewport ends at 360. The 32px profile image sits at x=336-368, so its right 8px is cut off by the screen edge; the parent #content-wrapper is 256px wide with scrollWidth 276 and clips the overflow.",
+    "fix": "At <=576px reduce the icon spacing/padding or hide the search toggle so the user menu fits inside #content-wrapper, and give the avatar a right margin within the container."
+  },
+  {
+    "page": "p05",
+    "selector": ".app-sidebar .sidebar-menu p",
+    "viewport": "laptop",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "In the 250px sidebar the nav label 'Sidebar Mini + Collapsed + No Hover' renders in a 178px-wide <p> with overflow:hidden and scrollWidth 229, so roughly 51px of the label is cut off with no ellipsis.",
+    "fix": "Allow the label to wrap to two lines (white-space:normal) or widen the label area/shorten the text so the full label is readable."
+  },
+  {
+    "page": "p06",
+    "selector": ".tab-content .tab-empty h2",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At 360px the 'No tab selected!' heading is 360px wide and left-aligned at x=0, so the glyphs start flush against the screen edge and wrap into two lines, while at 1440px the same heading is content-width and centred at x=662 inside a 1190px column. Every other block on the page has a gutter.",
+    "fix": "Center the empty-state text at mobile too (text-align:center or margin auto on the heading) or add the page's standard horizontal padding around .tab-empty."
+  },
+  {
+    "page": "p08",
+    "selector": "nav.app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360px the header icon list is 352px wide starting at x=60 and ends at x=412, so document.scrollWidth is 412 (52px sideways scroll). The user menu sits at x=348-412 and its 32px avatar at x=364-396 is completely outside the screen, leaving only the utility icons visible.",
+    "fix": "Make the mobile header nav shrink or wrap deliberately (reduce item padding, hide low-priority icons below 400px) so all items and the avatar stay inside the 360px viewport."
+  },
+  {
+    "page": "p12",
+    "selector": ".col-lg-9 .card",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360px the inbox card is 320px wide (x=20-340) but each message row's link is 657-845px wide, so the card body scrollWidth is 1175px and document.scrollWidth is 940px. The page scrolls sideways by 580px, and sender/subject/date text is cut at the card edge (e.g. 'Re: design system v2.4 sign-off' continues past the screen).",
+    "fix": "Keep the row anchor at 100% width with min-width:0 on the flex children, and let the subject span truncate inside the card (the existing text-truncate spans need a constrained flex parent) instead of sizing to max-content."
+  },
+  {
+    "page": "p12",
+    "selector": ".col-lg-9 .card-body",
+    "viewport": "laptop",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 1440x900 the inbox card is 857px wide (x=563-1419) but its card-body has scrollWidth 1175 and each row link is 772-1100px wide, ending as far as x=1737. Subject text and the right-hand date are cut at the card's right edge (e.g. '...success state for form', '9:08 AM' pushed off).",
+    "fix": "Add min-width:0 to the flex row anchor and its text spans, keep the date as a fixed-width trailing column, and let the subject truncate within the card instead of overflowing it."
+  }
+]

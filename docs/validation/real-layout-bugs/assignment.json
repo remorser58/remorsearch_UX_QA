@@ -1,0 +1,224 @@
+{
+ "names": {
+  "B3": "p01",
+  "B5": "p02",
+  "B8": "p03",
+  "S1": "p04",
+  "B7": "p05",
+  "A2": "p06",
+  "B1": "p07",
+  "B4": "p08",
+  "A3": "p09",
+  "A1": "p10",
+  "B2": "p11",
+  "B6": "p12"
+ },
+ "groups": {
+  "A": [
+   "A1",
+   "A3",
+   "B2",
+   "B3"
+  ],
+  "B": [
+   "A2",
+   "B6",
+   "B7",
+   "B8"
+  ],
+  "C": [
+   "B1",
+   "B4",
+   "B5",
+   "S1"
+  ]
+ },
+ "runs": {
+  "1": {
+   "p01": {
+    "item": "B3",
+    "state": "broken",
+    "page": "p01/dist/index.html"
+   },
+   "p02": {
+    "item": "B5",
+    "state": "fixed",
+    "page": "p02/dist/UI/ribbons.html"
+   },
+   "p03": {
+    "item": "B8",
+    "state": "broken",
+    "page": "p03/dist/UI/general.html"
+   },
+   "p04": {
+    "item": "S1",
+    "state": "fixed",
+    "page": "p04/index.html"
+   },
+   "p05": {
+    "item": "B7",
+    "state": "broken",
+    "page": "p05/dist/layout/fixed-header.html"
+   },
+   "p06": {
+    "item": "A2",
+    "state": "broken",
+    "page": "p06/iframe.html"
+   },
+   "p07": {
+    "item": "B1",
+    "state": "fixed",
+    "page": "p07/dist/layout/collapsed-sidebar.html"
+   },
+   "p08": {
+    "item": "B4",
+    "state": "fixed",
+    "page": "p08/dist/layout/fixed-sidebar.html"
+   },
+   "p09": {
+    "item": "A3",
+    "state": "broken",
+    "page": "p09/pages/tables/data.html"
+   },
+   "p10": {
+    "item": "A1",
+    "state": "broken",
+    "page": "p10/index.html"
+   },
+   "p11": {
+    "item": "B2",
+    "state": "broken",
+    "page": "p11/dist/docs/javascript/plugins-overview.html"
+   },
+   "p12": {
+    "item": "B6",
+    "state": "broken",
+    "page": "p12/dist/mailbox/inbox.html"
+   }
+  },
+  "2": {
+   "p01": {
+    "item": "B3",
+    "state": "broken",
+    "page": "p01/dist/index.html"
+   },
+   "p02": {
+    "item": "B5",
+    "state": "broken",
+    "page": "p02/dist/UI/ribbons.html"
+   },
+   "p03": {
+    "item": "B8",
+    "state": "fixed",
+    "page": "p03/dist/UI/general.html"
+   },
+   "p04": {
+    "item": "S1",
+    "state": "broken",
+    "page": "p04/index.html"
+   },
+   "p05": {
+    "item": "B7",
+    "state": "fixed",
+    "page": "p05/dist/layout/fixed-header.html"
+   },
+   "p06": {
+    "item": "A2",
+    "state": "fixed",
+    "page": "p06/iframe.html"
+   },
+   "p07": {
+    "item": "B1",
+    "state": "broken",
+    "page": "p07/dist/layout/collapsed-sidebar.html"
+   },
+   "p08": {
+    "item": "B4",
+    "state": "broken",
+    "page": "p08/dist/layout/fixed-sidebar.html"
+   },
+   "p09": {
+    "item": "A3",
+    "state": "broken",
+    "page": "p09/pages/tables/data.html"
+   },
+   "p10": {
+    "item": "A1",
+    "state": "broken",
+    "page": "p10/index.html"
+   },
+   "p11": {
+    "item": "B2",
+    "state": "broken",
+    "page": "p11/dist/docs/javascript/plugins-overview.html"
+   },
+   "p12": {
+    "item": "B6",
+    "state": "fixed",
+    "page": "p12/dist/mailbox/inbox.html"
+   }
+  },
+  "3": {
+   "p01": {
+    "item": "B3",
+    "state": "fixed",
+    "page": "p01/dist/index.html"
+   },
+   "p02": {
+    "item": "B5",
+    "state": "broken",
+    "page": "p02/dist/UI/ribbons.html"
+   },
+   "p03": {
+    "item": "B8",
+    "state": "broken",
+    "page": "p03/dist/UI/general.html"
+   },
+   "p04": {
+    "item": "S1",
+    "state": "broken",
+    "page": "p04/index.html"
+   },
+   "p05": {
+    "item": "B7",
+    "state": "broken",
+    "page": "p05/dist/layout/fixed-header.html"
+   },
+   "p06": {
+    "item": "A2",
+    "state": "broken",
+    "page": "p06/iframe.html"
+   },
+   "p07": {
+    "item": "B1",
+    "state": "broken",
+    "page": "p07/dist/layout/collapsed-sidebar.html"
+   },
+   "p08": {
+    "item": "B4",
+    "state": "broken",
+    "page": "p08/dist/layout/fixed-sidebar.html"
+   },
+   "p09": {
+    "item": "A3",
+    "state": "fixed",
+    "page": "p09/pages/tables/data.html"
+   },
+   "p10": {
+    "item": "A1",
+    "state": "fixed",
+    "page": "p10/index.html"
+   },
+   "p11": {
+    "item": "B2",
+    "state": "fixed",
+    "page": "p11/dist/docs/javascript/plugins-overview.html"
+   },
+   "p12": {
+    "item": "B6",
+    "state": "broken",
+    "page": "p12/dist/mailbox/inbox.html"
+   }
+  }
+ }
+}

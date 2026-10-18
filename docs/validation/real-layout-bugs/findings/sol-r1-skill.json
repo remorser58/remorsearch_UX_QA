@@ -1,0 +1,101 @@
+[
+  {
+    "page": "p01",
+    "selector": ".app-header > .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the header action group starts at x=60 and is 352px wide, ending at x=412: 52px beyond the screen. The user-menu control occupies x=348..412 and its 32px avatar x=364..396 is entirely outside the screen. The page has 412px horizontal scroll width. Confirmed in exact/p01/phone/00.png and mobile/p01/00.png.",
+    "fix": "At the phone breakpoint, reduce the horizontal padding of header actions or move secondary actions into an overflow menu so the complete action group fits inside the 360px header."
+  },
+  {
+    "page": "p04",
+    "selector": ".topbar > .navbar-nav > .nav-item:last-child",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "At 360x780, the topbar is x=104..360, but its action group ends at x=380. The final profile control occupies x=324..380, leaving its last 20px outside the visible container; its 32px avatar box extends to x=368 and loses 8px at the right edge. This is control clipping regardless of the image content. See exact/p04/phone/00.png and p04-header-detail.png.",
+    "fix": "Reduce phone topbar padding and action-item margins, or collapse the search action, to reserve the full width of the final profile control inside the topbar."
+  },
+  {
+    "page": "p06",
+    "selector": ".main-header .navbar-search-block",
+    "viewport": "both",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The search field renders on a separate row beneath the search icon at both sizes. At phone size its input is only 53.4px wide (x=54..107.4), visibly cutting the Search placeholder to roughly Sea; the header grows to 88px high. At laptop size the search form is still below the icon at y=48..79, while the other action icons remain on the upper row. See exact/p06/phone/00.png and exact/p06/laptop/00.png.",
+    "fix": "Restore the navbar search block as a positioned full-width search layer, hidden when inactive; when shown, give its input the available header width. Keep the ordinary action items aligned in one header row."
+  },
+  {
+    "page": "p06",
+    "selector": ".content-wrapper.iframe-mode > .nav.navbar",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "At 360x780, the tab toolbar breaks into two 40px rows (total height 81px). Close and the left-scroll arrow are at y=88..128, while the right-scroll arrow moves to x=0,y=128..168 and fullscreen to x=314,y=128..168. The empty tab-list element takes the full 360px width and forces the trailing controls onto the second row. At 1440px all controls occupy one 41px toolbar. See p06-bars.png and followup/p06-360/metrics.json.",
+    "fix": "Use flex-wrap:nowrap on the iframe toolbar and flex:1 1 0; min-width:0; width:auto on its tab list. Keep the Close, scroll and fullscreen controls flex-shrink:0."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header > .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the header action group is x=60..412, 52px wider than the available screen. The user-menu control is x=348..412 and the avatar is x=364..396, entirely off-screen. Document scroll width is 412px although its client width is 360px. See exact/p08/phone/00.png and mobile/p08/00.png.",
+    "fix": "Reduce header-action padding at the phone breakpoint or collapse secondary controls so the user menu and all header actions remain inside the viewport."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1, #example2",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Both tables are 521.2px wide starting at x=28 inside 304px content areas. Their right edge is x=549.2, 189.2px beyond the 360px screen and about 217px beyond the content area. Engine version and CSS grade columns extend outside the cards and screen; the document scroll width becomes 549px. See exact/p09/phone/00.png through 03.png.",
+    "fix": "Wrap each table in a width-constrained overflow-x:auto container, or enable a responsive column layout. Contain horizontal scrolling inside the table region rather than allowing the table to widen the page."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1_paginate .pagination, #example2_paginate .pagination",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "Both phone pagination rows are about 337px wide but right-aligned inside a 304px container at x=28..332. Their Previous control starts at x=-5.0, protruding 33px left of the table content and 5px outside the screen. The left border is cut at the viewport edge. See p09-pagination.png; both Previous controls have measured x=-5.0156.",
+    "fix": "At narrow widths, reduce the number of visible page buttons or their padding and center the pagination within the card; ensure its rendered width fits the available 304px."
+  },
+  {
+    "page": "p10",
+    "selector": ".todo-list > li:nth-child(5) > .text",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "At 360x780, the fifth task label drops entirely below its checkbox/drag-handle row. Sibling task labels begin at x=121.1 on the same row as their checkbox. This label begins at x=52.5, y=1639.6, 24px below its checkbox at y=1615.6, and wraps to two lines. Its first line also aligns beneath the drag handle rather than beneath the other task labels. See p10-todo-detail.png.",
+    "fix": "Lay out each todo item with fixed handle and checkbox columns plus a min-width:0 text column. Allow the label to wrap within that final column, keeping its first line beside the checkbox and continuation lines aligned with it."
+  },
+  {
+    "page": "p11",
+    "selector": ".app-main table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "All three documentation tables extend past the phone card. They start at x=45 inside a 270px text column, but measure 798.1px, 880.4px and 759.9px wide, ending at x=843.1, 925.4 and 804.9. At 360px, the Data API column is cut at the screen edge and later columns are off-screen; page scroll width reaches 925px. See exact/p11/phone/00.png, 07.png and 10.png, and p11-table.png. Code blocks have their own contained horizontal scrolling and are excluded.",
+    "fix": "Place each table inside a max-width:100%; overflow-x:auto wrapper and set the enclosing flex/grid item min-width:0, so wide reference tables scroll within the card without widening the document."
+  },
+  {
+    "page": "p12",
+    "selector": ".card-body > .list-group > .list-group-item > a",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Inbox message links exceed their rows at both sizes. On phone, a 318px row contains a link starting at x=95 with widths up to 844.5px, ending at x=939.5; subject text paints beyond the card and document width reaches 940px. On laptop, the card ends at x=1419 but the longest message link ends at x=1737; its date and trailing text are off-screen, and the main region has 1487px scroll width versus 1190px client width. See exact/p12/phone/01.png and 02.png, plus followup/p12-1440/left.png and right.png.",
+    "fix": "Set min-width:0 and flex:1 1 0 on the message link and the subject column. Preserve fixed sender/date widths on desktop, and constrain the stacked phone link to the remaining row width so text-overflow:ellipsis can take effect inside the card."
+  },
+  {
+    "page": "p12",
+    "selector": ".col-lg-9 .card-header .card-tools",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P3",
+    "evidence": "At 360x780, the Inbox title occupies x=37..78.1,y=779.8..800.9. The 256px search input group wraps to x=75..331,y=794.5..825.5, overlapping the title box by about 3.1px horizontally and 6.4px vertically. The search border visibly runs into the lower-right of Inbox. See p12-inbox.png and exact/p12/phone/01.png.",
+    "fix": "Use a flex header that stacks title and tools with an explicit vertical gap at the phone breakpoint. Clear the tools float and reset their negative top margin when stacked; constrain the input group to the header width."
+  }
+]

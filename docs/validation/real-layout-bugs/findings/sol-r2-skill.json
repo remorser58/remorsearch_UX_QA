@@ -1,0 +1,92 @@
+[
+  {
+    "page": "p01",
+    "selector": ".app-header .navbar-nav.ms-auto .user-menu",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the header action row extends to x=412, 52px beyond the viewport. The user-menu control occupies x=348..412 and its 32px avatar occupies x=364..396, entirely outside the screen; the screenshot shows the header ending after the theme control. Header scrollWidth=412 versus clientWidth=360. Evidence: p01-phone/00.png and p01-phone/dom.json.",
+    "fix": "At the phone breakpoint, reduce horizontal padding/widths of the header icon links or move secondary actions into a compact menu so the entire user-menu control fits within the 360px header."
+  },
+  {
+    "page": "p03",
+    "selector": "#navbarSupportedContent input.form-control.me-2",
+    "viewport": "laptop",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 1440x900, the Navbar example is only 529px wide but expands its full navigation and search row. The search input is squeezed to 26px total width, exactly its 24px horizontal padding plus 2px borders, leaving no visible text area; its Search placeholder disappears. The expanded content also reaches x=1408.7 beyond the navbar right edge x=1403. Evidence: p03-navbar-confirm.png, p03-navbar-detail.png and measurements.json.",
+    "fix": "Collapse the example navbar based on its own container width, or put the search form on a separate row. Give the input a usable minimum width and prevent flex shrink from reducing it to its padding."
+  },
+  {
+    "page": "p04",
+    "selector": "#userDropdown",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the topbar occupies x=104..360, but its right action list extends to x=380. The user control occupies x=324..380 and its 32px image slot x=336..368, so 8px of the image slot and 20px of the control are cut off by the right screen edge. Evidence: p04-phone/00.png, p04-header-detail.png and measurements.json. This finding concerns control geometry, not the missing image.",
+    "fix": "Reduce topbar and icon-link horizontal padding at this width, or place secondary header actions in a compact menu, reserving enough width for the complete user control."
+  },
+  {
+    "page": "p06",
+    "selector": ".main-header .navbar-search-block",
+    "viewport": "both",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The header search field is stranded on a second row beneath its search icon, while the adjacent message, notification and fullscreen icons remain on the upper row. The search block begins at y=48 and ends at y=79, making the header 88px high on both viewports. On the phone the field is only 53.4px wide and visibly cuts Search down to approximately Sea. Evidence: p06-phone/00.png, p06-laptop/00.png and measurements.json.",
+    "fix": "Keep the search block out of the normal icon-row flow and position it as a full-width header overlay when visible, or allocate a separate intentional full-width search row. Preserve enough input width to show its text."
+  },
+  {
+    "page": "p06",
+    "selector": ".tab-empty > h2.display-4",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At 360x780, No tab selected! wraps into two lines, both starting at x=0. Their text widths are 150.9px and 203.5px, placing their centers at x=75.4 and x=101.8 inside a container centered at x=180. The empty-state message visibly hugs the left screen edge, while its laptop counterpart is centered in the panel. Evidence: p06-phone/00.png and measurements.json.",
+    "fix": "Set text-align:center on the empty-state heading and add horizontal padding with border-box sizing so wrapped lines remain centered and inset from the screen edges."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header .navbar-nav.ms-auto .user-menu",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the header action row extends to x=412, 52px beyond the viewport. The user-menu control occupies x=348..412 and its 32px avatar occupies x=364..396, entirely outside the screen; the screenshot shows the header ending after the theme control. Header scrollWidth=412 versus clientWidth=360. Evidence: p08-phone/00.png and p08-phone/dom.json.",
+    "fix": "At the phone breakpoint, reduce horizontal padding/widths of the header icon links or move secondary actions into a compact menu so the entire user-menu control fits within the 360px header."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1, #example2",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, both five-column tables render 521.2px wide from x=28 to x=549.2 inside 304px-wide wrappers. The Platform(s) column is cut at the viewport edge and Engine version and CSS grade are off screen. Document scrollWidth=549, 189px beyond the viewport; the tables spill outside their cards rather than using a bounded table scroller. Evidence: p09-phone/00.png, p09-phone/02.png and measurements.json.",
+    "fix": "Wrap each table in a max-width:100% container with overflow-x:auto, keeping the surrounding card and DataTables controls within the viewport; alternatively use the table responsive column layout."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1_paginate .pagination, #example2_paginate .pagination",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780, each pagination row has a 304px container at x=28..332 but the nonwrapping right-aligned buttons total approximately 337px. The Previous button starts at x=-5.0, outside the screen and 33px left of the table alignment, visibly clipped at its left edge. Both table pagers reproduce it. Evidence: p09-pagination-confirm.png, p09-phone/01.png, p09-phone/03.png and dom.json.",
+    "fix": "Use fewer numbered buttons or compact previous/next controls at the phone breakpoint, or allow pagination to wrap within its container. Remove the overflowing right alignment at narrow widths."
+  },
+  {
+    "page": "p11",
+    "selector": ".card-body table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, all three documentation tables start at x=45 but measure 798.1px, 880.4px and 759.9px wide. Their right edges reach x=843.1, 925.4 and 804.9, outside the card right edge x=339 and the viewport x=360. Programmatic/Documentation, After/Fired for, and Where/Meaning columns are off screen. Document scrollWidth=925. Evidence: p11-phone/00.png, p11-phone/07.png, p11-phone/10.png and measurements.json.",
+    "fix": "Place each documentation table in a width-constrained horizontal scroll wrapper, or adapt its columns for narrow screens. Contain table overflow so the document and card remain 360px wide."
+  },
+  {
+    "page": "p12",
+    "selector": ".card-header:has(.card-tools) .card-tools .input-group",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P3",
+    "evidence": "At 360x780, the Inbox header search wraps below the title but retains a -6.4px top margin. The title box is x=37..78.1, y=779.8..800.9; the search box starts x=75, y=794.5. Their boxes overlap by 3.1px horizontally and 6.4px vertically (about 8.3px against the text range), and the search border visibly touches/crosses the bottom-right of Inbox. Evidence: p12-phone/01.png, p12-header-detail.png and measurements.json.",
+    "fix": "Use a flex header with a gap and a full-width search row at the phone breakpoint. Reset the input-group negative top margin and the floated tools alignment when the search moves below the title."
+  }
+]

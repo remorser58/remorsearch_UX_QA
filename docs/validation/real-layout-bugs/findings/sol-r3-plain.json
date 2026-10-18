@@ -1,0 +1,83 @@
+[
+  {
+    "page": "p02",
+    "selector": ".app-header > .container-fluid > .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360×780, the right header group runs from x=60 to x=364 inside a 360px header. The document scrollWidth is 364px versus clientWidth 360px, producing 4px of unnecessary horizontal page overflow. Screenshot: p02-phone-checked.png.",
+    "fix": "Reduce the mobile header group spacing or nav-link horizontal padding so both groups fit inside the header, including its 12px side padding."
+  },
+  {
+    "page": "p02",
+    "selector": ".card:has(.ribbon-wrapper a) .card-body p",
+    "viewport": "both",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "The LINKED diagonal ribbon crosses the paragraph in the Interactive ribbon card. On phone its 110×110px wrapper occupies x=229–339 and starts 43px above the paragraph; the end of the first text line is visibly obscured. On laptop the ribbon crosses the end of the first paragraph line near the word utility. Screenshots: p02-phone-interactive.png and p02-laptop-interactive.png.",
+    "fix": "Reserve the full ribbon footprint beside the paragraph, or start the paragraph below the ribbon. Replace the current 24px end padding with sufficient clearance for the 110px ribbon at both breakpoints."
+  },
+  {
+    "page": "p03",
+    "selector": ".card-body nav.navbar form[role=\"search\"] input",
+    "viewport": "laptop",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "In the Navbar example, the search input shrinks to 26×38px while its Search button remains about 72px wide. The input has essentially no text area and its Search placeholder is entirely clipped. Screenshot: p03-laptop-navbar.png.",
+    "fix": "Collapse this demo navbar according to its available container width, or wrap the search form onto a separate row. Give the input a usable minimum width instead of allowing flex shrink to reduce it to its padding."
+  },
+  {
+    "page": "p04",
+    "selector": ".mt-4.text-center.small > span:nth-child(3)",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "The Revenue Sources legend is 166px wide. The Referral marker stays on the first row at x=287–300, while Referral wraps alone onto the next row around x=205, approximately 19px lower. Its two sibling marker/label pairs stay together. Screenshot: p04-phone-legend.png.",
+    "fix": "Keep each marker and label together with inline-flex or white-space: nowrap, and allow whole legend items to wrap with a consistent gap."
+  },
+  {
+    "page": "p06",
+    "selector": ".main-header .navbar-search-block",
+    "viewport": "both",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The search form occupies a second row underneath its trigger instead of sharing the header row or spanning a defined search overlay. Its top is y=48 and bottom y=79, making the header 88px tall. On phone the input is only 53px wide and visibly clips Search to roughly Sea while the submit/close buttons occupy the rest. On laptop the form is 204px wide and remains on this separate row. Screenshots: p06-phone-checked.png and p06-laptop-checked.png.",
+    "fix": "Position and size the search block as a full-width header search region when shown, with the input flexing into the remaining space and the action buttons retaining their widths. Keep the regular header controls on one consistent row."
+  },
+  {
+    "page": "p06",
+    "selector": ".content-wrapper > .nav.navbar",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The iframe tab toolbar breaks into two 40px rows although its visible controls total only about 219px. Close appears at x=0,y=88 and the left-scroll arrow at x=314,y=88; the right-scroll arrow drops to x=0,y=128 and fullscreen to x=314,y=128. The empty tab-list takes a full 360px row between them. Screenshot: p06-phone-checked.png.",
+    "fix": "Keep the toolbar as a single nowrap flex row. Give the tab-list flex: 1 1 0 and min-width: 0, and prevent the Close, scroll, and fullscreen controls from shrinking or wrapping."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header > .container-fluid > .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At a 360px phone width, the right header group is 352px wide and starts at x=60, ending at x=412. The avatar control is entirely beyond the initial right edge, and document scrollWidth grows to 412px (52px horizontal overflow). Screenshot: p08-phone-checked.png; p08-phone-full.png shows the displaced avatar.",
+    "fix": "Reduce mobile header spacing or move secondary controls into an overflow menu so the right group fits in the width remaining after the sidebar toggle and container padding."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1_paginate .pagination, #example2_paginate .pagination",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Both pagination strips need approximately 337px inside a 304px-wide pagination container at x=28. Their right alignment puts the Previous button at x=-5.02, outside the viewport and about 13px beyond the card left edge. The left border is visibly cut off. Screenshots: p09-phone-checked-doc-1.png and p09-phone-checked-doc-3.png.",
+    "fix": "Use a compact mobile pagination range, smaller control padding, or a contained wrapping layout so the entire strip fits the 304px content width. Avoid right-aligning an unshrinkable wider strip."
+  },
+  {
+    "page": "p12",
+    "selector": ".list-group-item > a.flex-grow-1",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "Message text extends outside the inbox rows instead of truncating. On phone, the Linear row link starts at x=95 and is 844.55px wide, ending at x=939.55 beyond the card right edge x=340; document scrollWidth is 940px for a 360px viewport. On laptop its link ends at x=1737.05 beyond the card right edge x=1420, and the main area has scrollWidth 1487px versus clientWidth 1190px. Subjects/snippets and several timestamps run off the visible right side. Screenshots: p12-phone-full.png and p12-laptop-checked.png.",
+    "fix": "Set min-width: 0 on the outer message flex link and its flexible subject/snippet child, use flex: 1 1 0 for the subject region, and constrain it to the row width so text-overflow: ellipsis can take effect while keeping timestamps inside the row."
+  }
+]

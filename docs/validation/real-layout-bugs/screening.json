@@ -1,0 +1,2281 @@
+[
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "12b4b06ffe8fb1e5337a1022d7d4967c4d942a30",
+  "date": "2026-09-01",
+  "subject": "chore(deps): refresh dev dependencies, rebuild dist for #6114",
+  "fixed_state": "12b4b06ffe8fb1e5337a1022d7d4967c4d942a30",
+  "pages": [
+   "dist/UI/colors.html",
+   "dist/UI/general.html",
+   "dist/index2.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "build commit that carries accepted case B1"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "083d844f749607635d6f3ead145e58ce7feaf855",
+  "date": "2026-08-29",
+  "subject": "[scss/_app_sidebar]: Add margin 0 to brand logo on mini sidebar modo so it stays centered horizontally",
+  "fixed_state": "12b4b06ffe8fb1e5337a1022d7d4967c4d942a30",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/mailbox/inbox.html",
+   "dist/pages/search-results.html"
+  ],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "accepted",
+  "case": "B1"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "fe7cb0e8fe01f43da145911f2458f8c0b6ce1306",
+  "date": "2026-08-26",
+  "subject": "fix(print): drop the layout's trailing whitespace on paper (#6113)",
+  "fixed_state": "fe7cb0e8fe01f43da145911f2458f8c0b6ce1306",
+  "pages": [
+   "dist/UI/colors.html",
+   "dist/UI/general.html",
+   "dist/index2.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "print only"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "8b547ada0b9a94ff3cdbf3895698976c117b6480",
+  "date": "2026-08-26",
+  "subject": "fix(print): leave the app shell off the paper (#6113)",
+  "fixed_state": "8b547ada0b9a94ff3cdbf3895698976c117b6480",
+  "pages": [
+   "dist/UI/colors.html",
+   "dist/UI/general.html",
+   "dist/index2.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "print only"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "60fabdb3f1649201720e4e56e79db78d40849c3c",
+  "date": "2026-08-19",
+  "subject": "fix(docs): keep reference tables inside the page on a phone",
+  "fixed_state": "60fabdb3f1649201720e4e56e79db78d40849c3c",
+  "pages": [
+   "dist/UI/colors.html",
+   "dist/UI/general.html",
+   "dist/index2.html"
+  ],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "accepted",
+  "case": "B2"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "afa7215eb8010a11e2aa34b66372a1349f0ea078",
+  "date": "2026-08-19",
+  "subject": "fix(header): stop every page scrolling sideways on a phone",
+  "fixed_state": "afa7215eb8010a11e2aa34b66372a1349f0ea078",
+  "pages": [
+   "dist/UI/colors.html",
+   "dist/UI/general.html",
+   "dist/index2.html"
+  ],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "accepted",
+  "case": "B3"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "d88fa77eaa1b62e41b18ef4447511792f7a1490c",
+  "date": "2026-08-19",
+  "subject": "fix(colors): restore the pagination focus ring under data-lte-primary (#6109)",
+  "fixed_state": "b57f9b4cdec80c5593f85713dc233005a82db922",
+  "pages": [
+   "dist/UI/colors.html",
+   "dist/generate/theme.html",
+   "dist/UI/general.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "colour only"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "68873ff758bdc3a23ecb0613c270137f50c207e1",
+  "date": "2026-08-19",
+  "subject": "feat(colors): data-lte-contrast=\"aa\" — WCAG AA text on the v3 palette (#6110)",
+  "fixed_state": "29643c58e4f8f4c3ca6279c1a4d4a75fa3097f22",
+  "pages": [
+   "dist/UI/colors.html",
+   "dist/generate/theme.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "colour only"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "263991cd720b19621c81e42f8330a647a0ef1482",
+  "date": "2026-08-18",
+  "subject": "feat(colors): data-lte-primary — any palette colour as Bootstrap's primary (#6107)",
+  "fixed_state": "39bb5dac81b20e78357f1f6143ce82f5cad1415d",
+  "pages": [
+   "dist/UI/colors.html",
+   "dist/generate/theme.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "colour only"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "a64caaaa3218b840c9b39ba01caaf9d215f0038f",
+  "date": "2026-08-18",
+  "subject": "fix(print): let d-print-none win over the print layout rules (#6106)",
+  "fixed_state": "a64caaaa3218b840c9b39ba01caaf9d215f0038f",
+  "pages": [
+   "dist/UI/colors.html",
+   "dist/UI/general.html",
+   "dist/index2.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "print only"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "133b4b6da56f1438c4556efb901c83dd3ce8be67",
+  "date": "2026-08-18",
+  "subject": "feat(colors): ship the AdminLTE 3 palette as it was — adminlte-colors-v3.css (#6103)",
+  "fixed_state": "50a31afc113df4775a44511dd8e6bc99ed97d575",
+  "pages": [
+   "dist/UI/colors.html",
+   "dist/generate/theme.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "colour only"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "3f9716ada92f3428d95c1981454a4ef21f33ca69",
+  "date": "2026-08-18",
+  "subject": "fix(sidebar): let .sidebar-wrapper fill the sidebar instead of a hard-coded height (#6104)",
+  "fixed_state": "3f9716ada92f3428d95c1981454a4ef21f33ca69",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/UI/colors.html",
+   "dist/index2.html"
+  ],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "accepted",
+  "case": "B4"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "608940575ed529a66b1d9e4b2affe4a28cefd0c5",
+  "date": "2026-08-18",
+  "subject": "fix(header): restyle the navbar search and sidebar filter as quiet pills",
+  "fixed_state": "608940575ed529a66b1d9e4b2affe4a28cefd0c5",
+  "pages": [
+   "dist/UI/colors.html",
+   "dist/UI/general.html",
+   "dist/UI/icons.html",
+   "dist/UI/ribbons.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "excluded by commit and diff review"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "c65b50c120d3045f87da54863752fb842efc27ed",
+  "date": "2026-08-18",
+  "subject": "feat(colors): opt-in extended palette, Colors demo + docs, palette generator (#6103)",
+  "fixed_state": "608940575ed529a66b1d9e4b2affe4a28cefd0c5",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/UI/icons.html",
+   "dist/UI/ribbons.html",
+   "dist/UI/timeline.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "colour only"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "d635f9396035586a092ee25e6045d03567fa48ca",
+  "date": "2026-08-10",
+  "subject": "fix(ribbon): fill the corner instead of leaving it bare",
+  "fixed_state": "d635f9396035586a092ee25e6045d03567fa48ca",
+  "pages": [
+   "dist/UI/ribbons.html"
+  ],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "accepted",
+  "case": "B5"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "db45ccf8bf9d3f6514f4445020d783509784c35d",
+  "date": "2026-08-10",
+  "subject": "docs: add card, miscellaneous and SidebarSearch reference pages",
+  "fixed_state": "f3448ed2c9bf55b51a68bd5ea2f94e751ccd775e",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "19237640be276322e80e97eeb7c5df0d25aa9ac6",
+  "date": "2026-08-10",
+  "subject": "feat(header): add navbar search, sidebar search and a language menu",
+  "fixed_state": "f3448ed2c9bf55b51a68bd5ea2f94e751ccd775e",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "c3961939b96dcc00c69c3b4ed4d82082cbcf273d",
+  "date": "2026-08-10",
+  "subject": "feat(demo): add ribbons, social, gallery and search-results pages",
+  "fixed_state": "f3448ed2c9bf55b51a68bd5ea2f94e751ccd775e",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "435e592a5bee19bb9f8189e56e5014fdb9733f55",
+  "date": "2026-08-10",
+  "subject": "feat(js): add SidebarSearch plugin",
+  "fixed_state": "f3448ed2c9bf55b51a68bd5ea2f94e751ccd775e",
+  "pages": [
+   "dist/mailbox/inbox.html",
+   "dist/UI/general.html",
+   "dist/index2.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "adds a feature or page, no earlier broken state"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "32967961665b3e7eb1a9499fbcf5951b7c966479",
+  "date": "2026-08-10",
+  "subject": "feat(scss): add ribbon and social/post widget components",
+  "fixed_state": "f3448ed2c9bf55b51a68bd5ea2f94e751ccd775e",
+  "pages": [
+   "dist/widgets/cards.html",
+   "dist/UI/general.html",
+   "dist/index2.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "adds a feature or page, no earlier broken state"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "6dad5537bf9022b084e777c0fbdecaa6204be615",
+  "date": "2026-08-10",
+  "subject": "feat(select2): opt-in compat theme, plugin migration table, real remote-data demo (#6098)",
+  "fixed_state": "f3448ed2c9bf55b51a68bd5ea2f94e751ccd775e",
+  "pages": [
+   "dist/forms/advanced.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "adds a feature or page, no earlier broken state"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "e5ce38a07b33c82e2fb1be885e3b2e1598c9e601",
+  "date": "2026-08-05",
+  "subject": "fix(color-mode): respect page-declared themes, add an opt-out; refresh all dev deps (#6095)",
+  "fixed_state": "9923436af3140bb1efeffae6211a7ddff9293a3e",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "1b5a9c4e53269076ce4aaf5789737f6bbc0b8696",
+  "date": "2026-07-02",
+  "subject": "feat(html): advanced form demos, editors page, and a top-nav layout",
+  "fixed_state": "9923436af3140bb1efeffae6211a7ddff9293a3e",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "fa81f6164b179841fb681f0eacf6b9dde8cbc007",
+  "date": "2026-07-02",
+  "subject": "fix(a11y): first findings of the new axe gate, fixed at the source",
+  "fixed_state": "9fa52cc765e63e374276b83dd024bcd9a3b8d245",
+  "pages": [
+   "dist/pages/file-manager.html",
+   "dist/layout/layout-custom-area.html",
+   "dist/UI/general.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "accessibility semantics, no layout change"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "9b60fbdaf7213477b34541930d6d57ab260fa744",
+  "date": "2026-07-02",
+  "subject": "feat(html): starter, ApexCharts and Users demo pages",
+  "fixed_state": "9fa52cc765e63e374276b83dd024bcd9a3b8d245",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "4f4c800697f3b795d2ae05c2bbf32b8ff21ee2c8",
+  "date": "2026-07-02",
+  "subject": "fix(html): accessible names, heading structure and demo consistency",
+  "fixed_state": "3bc9249c345ea692e79d7a41d86a45956cccb636",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/index2.html",
+   "dist/pages/file-manager.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "accessibility semantics, no layout change"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "155e8698b03e019637891e4234e0876ecca6fc0e",
+  "date": "2026-06-05",
+  "subject": "fix(mailbox): truncate long subject/preview text in inbox list (#6044)",
+  "fixed_state": "deabfa49323d4766c443670911651ff26fa8c72f",
+  "pages": [
+   "dist/mailbox/inbox.html"
+  ],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "accepted",
+  "case": "B6"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "92ec9a5635a3eaf01b1b20683b4eea20559fb68d",
+  "date": "2026-05-28",
+  "subject": "fix(a11y): stop assigning role=navigation to <ul>/<ol> elements (#6038)",
+  "fixed_state": "deabfa49323d4766c443670911651ff26fa8c72f",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "55c7b248c80f88d0350cf676900810acf8e83b22",
+  "date": "2026-05-19",
+  "subject": "chore: rebuild dist with standardized docs wrappers",
+  "fixed_state": "3143252b0d53a2a679ed1cc87aa2781715e2d423",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "3b2c1151a7f47189c45661a54b0f78d69fa86e3a",
+  "date": "2026-05-19",
+  "subject": "fix(docs): standardize card wrapper across all docs pages",
+  "fixed_state": "3143252b0d53a2a679ed1cc87aa2781715e2d423",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "d9c942bb6f8635600431ba1d06787af423d39688",
+  "date": "2026-05-19",
+  "subject": "feat(docs): real FAQ accordion + redirect at /docs/index.html",
+  "fixed_state": "852ba1e4214e346a9c7860024010da0d816e91cc",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/widgets/cards.html",
+   "dist/pages/file-manager.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "documentation pages or text"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "d5b148aef3afa4049f5597cd8c254d0c6536a49c",
+  "date": "2026-05-19",
+  "subject": "style(docs): rewrite docs typography for readability",
+  "fixed_state": "f58012128d04bd6b668c0fdfa2f4f26928cbac73",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/pages/file-manager.html",
+   "dist/index2.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "documentation pages or text"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "274ffcd794ec13526a64d0a5f39525a2c01a571a",
+  "date": "2026-05-19",
+  "subject": "style(docs): add reading-friendly typography for .docs-page",
+  "fixed_state": "e66e8acb91a1b07a83ddd99a63d1f6c2c6349d32",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/pages/file-manager.html",
+   "dist/index2.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "documentation pages or text"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "a08a6c57e078d833c4709f1178bc245965e56002",
+  "date": "2026-05-19",
+  "subject": "refactor(nav): split docs and demo navigation into separate sidebars",
+  "fixed_state": "e66e8acb91a1b07a83ddd99a63d1f6c2c6349d32",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "8575cbc67348f4927e49fa9213567549016a9dee",
+  "date": "2026-05-19",
+  "subject": "chore: rebuild dist with new docs pages",
+  "fixed_state": "e66e8acb91a1b07a83ddd99a63d1f6c2c6349d32",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/UI/icons.html",
+   "dist/UI/timeline.html",
+   "dist/forms/elements.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "build, dependency or refactor commit"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "89f3023bdc5e5e22ef7452aab0f115f08c22b15d",
+  "date": "2026-05-19",
+  "subject": "docs: refresh integration versions and wire new docs into sidenav",
+  "fixed_state": "e66e8acb91a1b07a83ddd99a63d1f6c2c6349d32",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "389d017c428a2d87c74378607fd759935add2205",
+  "date": "2026-05-19",
+  "subject": "docs(plugins): add Overview page, document programmatic API for all 7 plugins",
+  "fixed_state": "e66e8acb91a1b07a83ddd99a63d1f6c2c6349d32",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "9460ccab34294c1e351d13a06054990038cc5455",
+  "date": "2026-05-19",
+  "subject": "docs: add Layout Blueprint, Recipes, and Deployment pages",
+  "fixed_state": "e66e8acb91a1b07a83ddd99a63d1f6c2c6349d32",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "7aa367203d09b610d3baa8813a7b7d9f9010ce89",
+  "date": "2026-05-19",
+  "subject": "docs: rewrite intro + FAQ, wire new docs into sidenav",
+  "fixed_state": "e66e8acb91a1b07a83ddd99a63d1f6c2c6349d32",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "44574109635fd5f49a76d561ba6fb7e17da3e535",
+  "date": "2026-05-19",
+  "subject": "docs: add Getting Started, Customization, RTL, and Migration pages",
+  "fixed_state": "e66e8acb91a1b07a83ddd99a63d1f6c2c6349d32",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "date": "2026-05-19",
+  "subject": "chore: rebuild dist for v4.0.0 stable",
+  "fixed_state": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/UI/icons.html",
+   "dist/UI/timeline.html",
+   "dist/examples/lockscreen.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "build commit that carries accepted case B7"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "67603ec898d44153573b15799ee8b06f0080f1fd",
+  "date": "2026-05-19",
+  "subject": "chore: update sidenav with new sections and entries",
+  "fixed_state": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "4c23a1873dbab5b85b51fe9961113f455881ac0d",
+  "date": "2026-05-19",
+  "subject": "docs: add Recommended Integrations page",
+  "fixed_state": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "3c3eb2c16d374b7a4bde57f42243bae41449c462",
+  "date": "2026-05-19",
+  "subject": "chore(scss): sync Bootstrap variables with 5.3.4 deprecations",
+  "fixed_state": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "pages": [
+   "dist/UI/general.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "accessibility semantics, no layout change"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "4954913e1922bedbd9b5a53b87a7c08c0cf9aade",
+  "date": "2026-05-19",
+  "subject": "refactor: split forms/general into elements, layout, validation; add wizard",
+  "fixed_state": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "d6db29605d6c45b71247388e0911654ada506517",
+  "date": "2026-05-19",
+  "subject": "fix: pin pie chart height to avoid resize feedback loop (#6019)",
+  "fixed_state": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "pages": [],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "e1892ef3cced64d019c0d14fc30655f1a11d6828",
+  "date": "2026-05-19",
+  "subject": "fix(scss): pin sidebar sticky when using fixed-header (#6020)",
+  "fixed_state": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "pages": [
+   "dist/generate/theme.html",
+   "dist/layout/fixed-complete.html",
+   "dist/layout/fixed-header.html"
+  ],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "accepted",
+  "case": "B7"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "dba190ae8f034a3e46f8ca9c131a696ccbf50e16",
+  "date": "2026-05-19",
+  "subject": "fix(js): toggle d-none for fullscreen icons instead of inline display (#6021)",
+  "fixed_state": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "99417332f0befe1831c470ff9be502d9b528af5e",
+  "date": "2026-05-19",
+  "subject": "fix(scss): respect dark mode in table-head-fixed (#6026)",
+  "fixed_state": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "pages": [
+   "dist/tables/simple.html",
+   "dist/UI/timeline.html",
+   "dist/index2.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "excluded by commit and diff review"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "f4c02eb822bcc3a017b4dda6a2dc89df78828ef2",
+  "date": "2026-03-13",
+  "subject": "fix: apply nav-indent left padding correctly",
+  "fixed_state": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/index2.html",
+   "dist/UI/icons.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "excluded by commit and diff review"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "078f137cece9f9252a682b8adc5e228a47f934af",
+  "date": "2026-03-10",
+  "subject": "docs: add documentation for all JavaScript components",
+  "fixed_state": "f0c024deadfdb672006e9b91f8a7b3d0d7d1f48e",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "ae0554cecdf9c361c96b3445a0c5da0489ff74c5",
+  "date": "2026-03-10",
+  "subject": "feat(css): add sidebar-without-hover class to disable hover expand on collapsed sidebar (#5837)",
+  "fixed_state": "f1e5956ae50fa04154a996693c9ac579b5e2cd95",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/index2.html",
+   "dist/layout/collapsed-sidebar.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "adds a feature or page, no earlier broken state"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "b4edb2707e6626a290dcff7e7506e3c8f7b48c3c",
+  "date": "2026-03-10",
+  "subject": "fix(css): fix sticky footer with layout-fixed and prevent sidebar scroll chaining (#5805, #5864)",
+  "fixed_state": "b4edb2707e6626a290dcff7e7506e3c8f7b48c3c",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/index2.html",
+   "dist/forms/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "7def9704be7b6b75c0511e6e6226578cc964d25c",
+  "date": "2026-03-10",
+  "subject": "Fixed several issues",
+  "fixed_state": "b4edb2707e6626a290dcff7e7506e3c8f7b48c3c",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/index2.html",
+   "dist/forms/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "9a6ef62a58855f39289f0f1ff58f8e5b102df117",
+  "date": "2026-03-10",
+  "subject": "fix(css): sync pagination-margin-start calc with Bootstrap 5.3 (#5951)",
+  "fixed_state": "9a6ef62a58855f39289f0f1ff58f8e5b102df117",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/index2.html",
+   "dist/forms/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "d4ee248b315358cedde211f07fef42fc7cb33416",
+  "date": "2026-03-10",
+  "subject": "fix(css): increase login/register box width to 400px (#5963)",
+  "fixed_state": "d4ee248b315358cedde211f07fef42fc7cb33416",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/index2.html",
+   "dist/forms/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "b649f2e02f8c23b8e4a9f4e32763ec0372ac9d48",
+  "date": "2026-03-10",
+  "subject": "fix(css): correct property order in print layout rules (#5997)",
+  "fixed_state": "b649f2e02f8c23b8e4a9f4e32763ec0372ac9d48",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/index2.html",
+   "dist/forms/general.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "print only"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "b0bbe0afebb6e0a3ae6103cdf7ecb6427595d837",
+  "date": "2026-03-10",
+  "subject": "fix(css): resolve blank main content in print preview (#5982)",
+  "fixed_state": "b0bbe0afebb6e0a3ae6103cdf7ecb6427595d837",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/index2.html",
+   "dist/forms/general.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "print only"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "888d79f1aba4d17870741ab62a06040b3d894487",
+  "date": "2025-12-08",
+  "subject": "Fixed some potential vulnerabilities with Astro",
+  "fixed_state": "888d79f1aba4d17870741ab62a06040b3d894487",
+  "pages": [
+   "dist/UI/general.html",
+   "dist/UI/icons.html",
+   "dist/UI/timeline.html",
+   "dist/forms/general.html"
+  ],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "build, dependency or refactor commit"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v4 line)",
+  "commit": "dc7d4bd403a0967e89d0be71e6af4def60c3c3a2",
+  "date": "2025-07-22",
+  "subject": "bug fix in default sidebar open mobile view",
+  "fixed_state": "aae8438e7a2af76bfd1df9e08ed6c486bc89d37c",
+  "pages": [],
+  "rendered": true,
+  "max_changed_px": null,
+  "verdict": "accepted",
+  "case": "B8"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "0927e68fa4e52e7f82f4ce076c1e9f3c043ae9ed",
+  "date": "2022-01-12",
+  "subject": "feat(css): add sidebar-hidden class to hide completely the sidebar",
+  "fixed_state": "bd4d9c72931f1dd28601b6bfb387554a381ad540",
+  "pages": [
+   "iframe-dark.html",
+   "iframe.html",
+   "index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 3680,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "9cc4ce3988f71fee42b26215676709b8763b3a81",
+  "date": "2021-11-24",
+  "subject": "fix(4042): miss aligned buttons on jqvmap",
+  "fixed_state": "bd4d9c72931f1dd28601b6bfb387554a381ad540",
+  "pages": [
+   "pages/tables/data.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 946,
+  "verdict": "accepted",
+  "case": "A1"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "3517de7586df3c374138c7947ac591462e0738b2",
+  "date": "2021-10-23",
+  "subject": "Fixed border color for active item on dark-mode",
+  "fixed_state": "bd4d9c72931f1dd28601b6bfb387554a381ad540",
+  "pages": [
+   "pages/UI/general.html",
+   "pages/UI/navbar.html",
+   "pages/tables/simple.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 946,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "96f291f7e25c2d87b6b5da0f71d179595fddb8fc",
+  "date": "2021-09-22",
+  "subject": "Fixed Typo (#3950)",
+  "fixed_state": "bd4d9c72931f1dd28601b6bfb387554a381ad540",
+  "pages": [
+   "pages/examples/project-add.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 1045,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "13bcd7b662b5602f284903a087547e9f1146bc61",
+  "date": "2021-09-17",
+  "subject": "fix iframe fullscreen mode with fixed navbar",
+  "fixed_state": "642c9c3779036969f67fce2b1ecbb2ff0d04edc5",
+  "pages": [
+   "pages/UI/navbar.html",
+   "pages/layout/fixed-topnav.html",
+   "iframe-dark.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 69020,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "ab0ebc9a88244cc10b3585a21d4ae7f1028a9919",
+  "date": "2021-09-17",
+  "subject": "fix click event if iframe mode is loaded on contentwrapper",
+  "fixed_state": "642c9c3779036969f67fce2b1ecbb2ff0d04edc5",
+  "pages": [
+   "pages/UI/buttons.html",
+   "pages/widgets.html",
+   "pages/UI/navbar.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 24406,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "5ed42b14dacd2d80593e28304a03c8f2b6540d48",
+  "date": "2021-07-12",
+  "subject": "add z-index on control-sidebar in layout-boxed",
+  "fixed_state": "642c9c3779036969f67fce2b1ecbb2ff0d04edc5",
+  "pages": [
+   "pages/UI/navbar.html",
+   "pages/widgets.html",
+   "pages/forms/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 24406,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "9d099b11ee556d5221b68057a43c58087a05b5ed",
+  "date": "2021-07-12",
+  "subject": "fix sidebar custom area placing on mobile devices",
+  "fixed_state": "642c9c3779036969f67fce2b1ecbb2ff0d04edc5",
+  "pages": [
+   "pages/layout/fixed-sidebar-custom.html",
+   "iframe-dark.html",
+   "iframe.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 2142,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "1b8435c09a337e20d75da4503ed091d5cb9920c4",
+  "date": "2021-06-11",
+  "subject": "[scss/info-box]: Fix overflow style on info-box-content class. (#3694)",
+  "fixed_state": "642c9c3779036969f67fce2b1ecbb2ff0d04edc5",
+  "pages": [
+   "pages/widgets.html",
+   "index2.html",
+   "pages/examples/project-detail.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 24406,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "fd2771d77857620232b10965acbbd4999939438e",
+  "date": "2021-05-06",
+  "subject": "Fixed Browser Usage card not Showing in dark mode",
+  "fixed_state": "642c9c3779036969f67fce2b1ecbb2ff0d04edc5",
+  "pages": [
+   "index2.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 45117,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "11c2a74e721e0b31f2ff2ff32c738d41c939fc9d",
+  "date": "2021-04-07",
+  "subject": "fix layout height with borderless navbar/brand-link",
+  "fixed_state": "642c9c3779036969f67fce2b1ecbb2ff0d04edc5",
+  "pages": [
+   "pages/UI/navbar.html",
+   "pages/examples/contacts.html",
+   "pages/examples/profile.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 904,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "92ccf7896d12f9bd460487d48b59d8c440c733fd",
+  "date": "2021-04-07",
+  "subject": "fix control-sidebar slide in layout-boxed",
+  "fixed_state": "642c9c3779036969f67fce2b1ecbb2ff0d04edc5",
+  "pages": [
+   "iframe.html",
+   "index.html",
+   "index2.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 45117,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "d998e4c167bbd1f5db624950fabb6d65716ec187",
+  "date": "2021-03-28",
+  "subject": "Fix: brand-link transparent in navtop fixed",
+  "fixed_state": "642c9c3779036969f67fce2b1ecbb2ff0d04edc5",
+  "pages": [
+   "pages/UI/navbar.html",
+   "pages/examples/contacts.html",
+   "pages/examples/profile.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 904,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "22e087afcfbe1f4aca0a14061749b330e7dcd8f5",
+  "date": "2021-03-20",
+  "subject": "fixed nav tabs border inside card header",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "pages/UI/navbar.html",
+   "pages/widgets.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 2228060,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "9540815f97a9fbfaf9a99eb65965d91ad1bcdb92",
+  "date": "2021-03-13",
+  "subject": "add overflow-hidden to iframe navbar",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "iframe.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 47901,
+  "verdict": "rejected",
+  "reason": "same fix chain as accepted case A2"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "6f396ae19bce80cd2c2400411cbe3ea410a67686",
+  "date": "2021-03-12",
+  "subject": "mobile view fix in iframe",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "iframe.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 47901,
+  "verdict": "accepted",
+  "case": "A2"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "378a39ea125c216004ac4127f64260f21d3a1932",
+  "date": "2021-02-17",
+  "subject": "fix nav-header alignment",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "pages/UI/navbar.html",
+   "pages/mailbox/compose.html",
+   "pages/mailbox/mailbox.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 1162722,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "e932382f1b677943fe7bf09c37c6037c911a48df",
+  "date": "2021-01-19",
+  "subject": "add width attribute to preloader image tag",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 708157,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "a4c05ef9c666a6a76f899f6e30384257526edfb6",
+  "date": "2021-01-18",
+  "subject": "Update _layout.scss",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "index.html",
+   "index2.html",
+   "pages/kanban.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 2503854,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "151eefc778a3a770ca6042f106a92d6f5c418590",
+  "date": "2021-01-13",
+  "subject": "Sidebar scroll fixed (#3304)",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "pages/UI/navbar.html",
+   "pages/mailbox/compose.html",
+   "pages/mailbox/mailbox.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 1040179,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "051a0f9bd0e5290a900bdc3e19621e6d9d8b7be6",
+  "date": "2021-01-03",
+  "subject": "Removed Unused Sass Variables",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "077599d1ccb9d7fe17ab42d3dd927a660eb1d474",
+  "date": "2020-12-22",
+  "subject": "Layout Height Fixed (#3214)",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "iframe.html",
+   "index.html",
+   "index2.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 2503854,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "d0cf068950905df9bb65112b08ccf54aa2ce0b84",
+  "date": "2020-12-04",
+  "subject": "fixed navbar color input styles",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "pages/UI/navbar.html",
+   "pages/widgets.html",
+   "pages/mailbox/mailbox.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 2228067,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "72f254320f7ae5fddf174c87ecb3abcf0a77b98a",
+  "date": "2020-12-03",
+  "subject": "fix layout-fixed main-/control-sidebar height",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "iframe.html",
+   "index.html",
+   "index2.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 2503854,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "acb1cdfebe3364ac3990910cca13760f101a5ce5",
+  "date": "2020-11-30",
+  "subject": "fix overlapping scroll content in kanban board",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/general.html",
+   "pages/UI/buttons.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 44336,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "87e5dab29cd5e1ff043480526c8ca2e36a5d9bf0",
+  "date": "2020-11-29",
+  "subject": "Fixed: Top Nav Page has sidebar with blank in v3.1.0-rc (#3164)",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "pages/layout/collapsed-sidebar.html",
+   "pages/layout/top-nav-sidebar.html",
+   "pages/layout/top-nav.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 12514,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "f23b9135e0d38776ea89de723544144dd89ddf11",
+  "date": "2020-11-27",
+  "subject": "rework sidebar & sidebar-mini",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "pages/UI/navbar.html",
+   "pages/widgets.html",
+   "pages/mailbox/compose.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 70459,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "fb6cb75e7c115f0b3a6b02d1f916648feefb4696",
+  "date": "2020-11-26",
+  "subject": "footer height bug fix",
+  "fixed_state": "229ec8e5c5169d07aeee570d4cd371d9d8bb5c3d",
+  "pages": [
+   "iframe.html",
+   "index.html",
+   "index2.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 2504034,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "a182ecfa696fda4cae0fc1ccc056b291d55ed1f1",
+  "date": "2020-11-25",
+  "subject": "Update _main-sidebar.scss (#3082)",
+  "fixed_state": "5993872f8b91ce0f014716ff6d9c455c7f019635",
+  "pages": [
+   "index.html",
+   "index2.html",
+   "index3.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 14926,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "0c3f82bc58faf33bb38902c3c9d2b11d82700124",
+  "date": "2020-09-30",
+  "subject": "Smileyzn close button patch 1 (#3049)",
+  "fixed_state": "5993872f8b91ce0f014716ff6d9c455c7f019635",
+  "pages": [
+   "pages/UI/general.html",
+   "pages/UI/buttons.html",
+   "pages/UI/modals.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 14926,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "0ec522caa2243e0c78cf4ccf96693c9a92aca366",
+  "date": "2020-09-24",
+  "subject": "fix tfoot padding in .card-body.p-0",
+  "fixed_state": "5993872f8b91ce0f014716ff6d9c455c7f019635",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/general.html",
+   "pages/UI/navbar.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 21187,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "6eab10b0ba2ee138d7a4e38567e93e5e8e3651c6",
+  "date": "2020-09-22",
+  "subject": "line-height with percentage seems to behave weirdly in IE",
+  "fixed_state": "6eab10b0ba2ee138d7a4e38567e93e5e8e3651c6",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 2034261,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "ba9cf441cbcfa3685235916be065077b9599ca72",
+  "date": "2020-09-22",
+  "subject": "Fix for Info Box when on IE11",
+  "fixed_state": "ba9cf441cbcfa3685235916be065077b9599ca72",
+  "pages": [
+   "pages/widgets.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 3021267,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "5bf7e0346b1d3e6b2808508f4fa98c70a3b300d1",
+  "date": "2020-09-19",
+  "subject": "fix iframe height setter",
+  "fixed_state": "81b9131269193b604898db61bfbf86b8de08ad08",
+  "pages": [
+   "iframe.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 15788,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "b810326bb854ddc3b1397c8fbfdff77cd05aeedb",
+  "date": "2020-09-18",
+  "subject": "further changes",
+  "fixed_state": "81b9131269193b604898db61bfbf86b8de08ad08",
+  "pages": [
+   "iframe.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 51078,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "fdf849bab97d39457a1bdda6ab69b7c362d88908",
+  "date": "2020-07-25",
+  "subject": "add new login, register & recover-password v2 page",
+  "fixed_state": "ba9cf441cbcfa3685235916be065077b9599ca72",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/general.html",
+   "pages/UI/buttons.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 3021267,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "bafc8e67b88799d301b05a32fa5aabeb738acb71",
+  "date": "2020-07-23",
+  "subject": "fix maximized-card card-body overflow (#2915)",
+  "fixed_state": "ba9cf441cbcfa3685235916be065077b9599ca72",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/general.html",
+   "pages/examples/contacts.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 3021267,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "e023103dcf871b9fcc377953eac05f4732ab93c4",
+  "date": "2020-05-31",
+  "subject": "docs: delete unused layouts.",
+  "fixed_state": "ba9cf441cbcfa3685235916be065077b9599ca72",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "8350264bd22272e0377c717c0472a5d0c19d4fe5",
+  "date": "2020-06-01",
+  "subject": "Update dependencies (#2748)",
+  "fixed_state": "47e653bfbfa1190c0095a0f0201ac390822591c0",
+  "pages": [
+   "pages/UI/buttons.html",
+   "pages/widgets.html",
+   "pages/UI/modals.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "c2e77427ba9c3d498e60cc2353a36c3f9d876259",
+  "date": "2020-05-27",
+  "subject": "fix layout-boxed sidebar with sidebar-mini",
+  "fixed_state": "c2e77427ba9c3d498e60cc2353a36c3f9d876259",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "229600ba4c7233e4ed2844ff567deada745b1ecc",
+  "date": "2020-05-19",
+  "subject": "add brand-image-xl margin fix without logo-switch",
+  "fixed_state": "229600ba4c7233e4ed2844ff567deada745b1ecc",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "fbe0340eb0aa2088951397acba894daac0b43f44",
+  "date": "2020-05-18",
+  "subject": "fix layout-boxed with default sidebar",
+  "fixed_state": "fbe0340eb0aa2088951397acba894daac0b43f44",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "161099e3bc03a0ea0c1fc9ba463e362eba4e9e9f",
+  "date": "2020-05-17",
+  "subject": "fix toastr full width position",
+  "fixed_state": "161099e3bc03a0ea0c1fc9ba463e362eba4e9e9f",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "a3604d0c621bb2c7b2ca1e6c3ade2d52331b6bd4",
+  "date": "2020-05-08",
+  "subject": "enhance info-box for text-truncate & text-wrap",
+  "fixed_state": "a3604d0c621bb2c7b2ca1e6c3ade2d52331b6bd4",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 2144516,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "ae470bec2e15621997e86b7bd64a8253dc242f8a",
+  "date": "2020-05-05",
+  "subject": "add margin-bottom to form-inline in sidebar",
+  "fixed_state": "ae470bec2e15621997e86b7bd64a8253dc242f8a",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "26ce58fe2825f511aaf836684d8cdbd926cce9b0",
+  "date": "2020-04-27",
+  "subject": "fix whitespace with fixed navbar & footer",
+  "fixed_state": "26ce58fe2825f511aaf836684d8cdbd926cce9b0",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "d67c3a081244703272abffbd9d0d9f0c60e3d6a4",
+  "date": "2020-04-01",
+  "subject": "fixed slow scrolling bug with ScrollAnywhere",
+  "fixed_state": "d67c3a081244703272abffbd9d0d9f0c60e3d6a4",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "a53971d122d4d7265c9141445bdede72564a4a00",
+  "date": "2020-04-01",
+  "subject": "fixed accent with pagination",
+  "fixed_state": "a53971d122d4d7265c9141445bdede72564a4a00",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "ae68ffc1343bf53b324770d9d575f5ae1cf0ff73",
+  "date": "2020-04-01",
+  "subject": "fixed docs generation for local docs",
+  "fixed_state": "87b8078d9b6b8556db5c04e0e6c9eb87966cb759",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "c6b1b4f586b5740968bd1878421fd016a1748351",
+  "date": "2020-04-01",
+  "subject": "fixed sidebar overlapping toolbar on mobile safari",
+  "fixed_state": "b9460ae8eac56a6b33c6c76a03eee3aa04331b56",
+  "pages": [
+   "pages/examples/contacts.html",
+   "pages/examples/profile.html",
+   "pages/examples/project-detail.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "67174b5c6b4af4737d019566777c3130145c80c0",
+  "date": "2020-04-01",
+  "subject": "fixed footer gap with .text-sm on .main-footer",
+  "fixed_state": "b9460ae8eac56a6b33c6c76a03eee3aa04331b56",
+  "pages": [
+   "index.html",
+   "index2.html",
+   "index3.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "129475db781f3a9f825402db74825c44a340c675",
+  "date": "2020-03-23",
+  "subject": "Overlay for tab-panels (#2612)",
+  "fixed_state": "b9460ae8eac56a6b33c6c76a03eee3aa04331b56",
+  "pages": [
+   "pages/UI/navbar.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 373092,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "b6e1529f3d2dace478e2579777d249ecaccb6ede",
+  "date": "2020-03-23",
+  "subject": "NavBar Example had duplicated ids (#2613)",
+  "fixed_state": "b9460ae8eac56a6b33c6c76a03eee3aa04331b56",
+  "pages": [
+   "pages/UI/navbar.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 373092,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "0643791d8d645e0eee3c7b6d8f85df4bd831588b",
+  "date": "2020-03-13",
+  "subject": "fixed card remove icon in pages/forms/advanced",
+  "fixed_state": "b9460ae8eac56a6b33c6c76a03eee3aa04331b56",
+  "pages": [
+   "pages/forms/advanced.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 390,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "bc3123cb08f9c85cf3926b79a89eec42b2246d84",
+  "date": "2020-03-13",
+  "subject": "fixed select2 single input focus without opened menu",
+  "fixed_state": "bc3123cb08f9c85cf3926b79a89eec42b2246d84",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "6934469b384a1e4859d78efb97abe735fe828cd6",
+  "date": "2020-03-04",
+  "subject": "enhanced DataTables demo with responsive plugin",
+  "fixed_state": "bc3123cb08f9c85cf3926b79a89eec42b2246d84",
+  "pages": [
+   "pages/tables/data.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 252485,
+  "verdict": "accepted",
+  "case": "A3"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "cafc66ae7d249370819d61e88ba05c7d07a61863",
+  "date": "2020-02-27",
+  "subject": "fixed child indent on hover with nav-compact",
+  "fixed_state": "cafc66ae7d249370819d61e88ba05c7d07a61863",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "662b51c9c032fd948a61bf8afff60d4ebcc95038",
+  "date": "2020-02-26",
+  "subject": "fixed brand-link transition with navbar fixed",
+  "fixed_state": "662b51c9c032fd948a61bf8afff60d4ebcc95038",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 1406557,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "533a5917f56d758e78cc045e15bc76a0e03c6a27",
+  "date": "2020-02-25",
+  "subject": "enhanced register & login page min-height",
+  "fixed_state": "533a5917f56d758e78cc045e15bc76a0e03c6a27",
+  "pages": [
+   "pages/widgets.html",
+   "pages/UI/buttons.html",
+   "pages/UI/general.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "ColorlibHQ/AdminLTE (v3 line)",
+  "commit": "3b69d63eb4269426f2f117a0582557c94f6bc7fa",
+  "date": "2020-02-21",
+  "subject": "fixed aria related role=\"button\" on pushmenu & control-sidebar links",
+  "fixed_state": "533a5917f56d758e78cc045e15bc76a0e03c6a27",
+  "pages": [
+   "index.html",
+   "index2.html",
+   "index3.html",
+   "pages/UI/buttons.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 610946,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "StartBootstrap/startbootstrap-sb-admin-2",
+  "commit": "8adb53f9859bb12ac4a4c395896ff30a7baa03c9",
+  "date": "2020-05-14",
+  "subject": "Fixed comment titles",
+  "fixed_state": "d65df79aae3de842d22ddc0654b1c8239a89545e",
+  "pages": [
+   "cards.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 1078,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "StartBootstrap/startbootstrap-sb-admin-2",
+  "commit": "60d24312ca1c3d75738d2b40e552a0495e53dda6",
+  "date": "2019-09-16",
+  "subject": "update dependencies, autoprefixer config, navbar search input height adjustment",
+  "fixed_state": "60d24312ca1c3d75738d2b40e552a0495e53dda6",
+  "pages": [
+   "index.html",
+   "buttons.html",
+   "cards.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 429,
+  "verdict": "accepted",
+  "case": "S1"
+ },
+ {
+  "source": "StartBootstrap/startbootstrap-sb-admin-2",
+  "commit": "7ef57a9999cc8fd3a6ed2f6075687902c0d644e3",
+  "date": "2019-01-29",
+  "subject": "version 4.0 udpate",
+  "fixed_state": "7ef57a9999cc8fd3a6ed2f6075687902c0d644e3",
+  "pages": [
+   "404.html",
+   "blank.html",
+   "charts.html",
+   "forgot-password.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 1180071,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "StartBootstrap/startbootstrap-sb-admin-2",
+  "commit": "8c064ad0a90a07fbd072578d697c7642d9252481",
+  "date": "2016-01-06",
+  "subject": "Fix invalid responsive data table example",
+  "fixed_state": "af58467db446b94123351d0b5b0e6a96aedd7109",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "StartBootstrap/startbootstrap-sb-admin-2",
+  "commit": "3c8901f637f53670c7a56fa37a8d739c03b98687",
+  "date": "2014-11-04",
+  "subject": "side scroll issue fixed",
+  "fixed_state": "3c8901f637f53670c7a56fa37a8d739c03b98687",
+  "pages": [
+   "blank.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 2983,
+  "verdict": "rejected",
+  "reason": "visible change, not a defect a reviewer could name without the fix (refinement, colour, interaction, unrelated rebuild or under 2 px)"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "d9f7cd6db6f338b1ef371600216de643f5b7a86c",
+  "date": "2023-03-19",
+  "subject": "Fix: updated dropdown margins when inside a label",
+  "fixed_state": "cac1551875eb8d7a318fdb85ad4c2a6146e29a08",
+  "pages": [
+   "docs/dropdowns.html",
+   "docs/forms.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "9e64d63edcacc16d76bb54b6769ce77536bd8aa6",
+  "date": "2023-02-03",
+  "subject": "docs: place comma (,) in the correct position",
+  "fixed_state": "118892abd64e5d9a1e41c86604b73496ecc1d890",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "f6aab47de2b9bb8ad2ed6eb3c52a29ef4b243157",
+  "date": "2022-12-07",
+  "subject": "docs: Fix bad path in customization",
+  "fixed_state": "bce1beeb3dbfeabbd9212b1d4f83709a3aedec65",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "6999d4246a8ec35a0cb1570dc81e89c399c4c237",
+  "date": "2022-10-22",
+  "subject": "fix(modal): prevent scrolling and interactions below a modal on mobile",
+  "fixed_state": "6999d4246a8ec35a0cb1570dc81e89c399c4c237",
+  "pages": [
+   "docs/modal.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "8f7e83db34f1716bf441241a020b4200e911dacd",
+  "date": "2022-06-12",
+  "subject": "fix(feedback): made paddings adhere to RTL standards",
+  "fixed_state": "a6bbdc6167adc3fb57c6a7bfa3fd1ea57747d628",
+  "pages": [
+   "docs/rtl.html",
+   "docs/forms.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "4a1599e1e5f579d58914d1a90995bb7114553178",
+  "date": "2022-06-03",
+  "subject": "Update _form.scss",
+  "fixed_state": "bbc319368d7e30efab433ce7f79a328744c87543",
+  "pages": [
+   "docs/forms.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 20057,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "4e5e9a2a60565ee33310db0debac75ac0ff38880",
+  "date": "2022-06-01",
+  "subject": "Update _form.scss",
+  "fixed_state": "bbc319368d7e30efab433ce7f79a328744c87543",
+  "pages": [
+   "docs/forms.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 20057,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "6cbc258a0d326ea38c4db66db669418955beda21",
+  "date": "2022-03-06",
+  "subject": "fix(accordion): marker height",
+  "fixed_state": "6cbc258a0d326ea38c4db66db669418955beda21",
+  "pages": [
+   "docs/accordions.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 329,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "37b6aaab390fc8436d6d9f3a3fa059dbe58c1200",
+  "date": "2022-02-27",
+  "subject": "style(accordion): Marker spacing",
+  "fixed_state": "e54d1ee4f7f50a449f2a21b9f4035e9404320d16",
+  "pages": [
+   "docs/accordions.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 329,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "18224bdc073b0201050239c7113b540d75a9805f",
+  "date": "2022-01-16",
+  "subject": "Fix: dialog max-height",
+  "fixed_state": "18224bdc073b0201050239c7113b540d75a9805f",
+  "pages": [
+   "docs/modal.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "07e9dc2587dddf8310378540e2938be3fe5ec174",
+  "date": "2022-01-04",
+  "subject": "Fix: Input type date icon position",
+  "fixed_state": "07e9dc2587dddf8310378540e2938be3fe5ec174",
+  "pages": [
+   "docs/forms.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "fe92c59e2d473396d8b2b541436badb458820e2d",
+  "date": "2021-12-31",
+  "subject": "fixed merge conflicts",
+  "fixed_state": "fe92c59e2d473396d8b2b541436badb458820e2d",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "924034a87cc3203163bb7f0c45643681433c8286",
+  "date": "2021-12-27",
+  "subject": "chore: fixed typo in docs",
+  "fixed_state": "002008996d0b87aad4bcd9d04b3205dd6921800a",
+  "pages": [],
+  "rendered": false,
+  "max_changed_px": null,
+  "verdict": "rejected",
+  "reason": "no shipped page uses the changed files or rules"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "87dd49973b8d71af37929adf5cde51c28a88a27f",
+  "date": "2021-12-20",
+  "subject": "Align kbd to baseline",
+  "fixed_state": "87dd49973b8d71af37929adf5cde51c28a88a27f",
+  "pages": [
+   "docs/typography.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 22673,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "5a832744b193391054f25db818270f6f6c9b8636",
+  "date": "2021-12-19",
+  "subject": "Align text to baseline in mark",
+  "fixed_state": "5a832744b193391054f25db818270f6f6c9b8636",
+  "pages": [
+   "docs/typography.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 1205,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "7a27d59d721d90fb60d588ea9ad44c91e727f6b4",
+  "date": "2021-11-02",
+  "subject": "Docs: Toggle navigation icon default height",
+  "fixed_state": "c719108d27c8838d45ccc1b644c20b51b2b58f3b",
+  "pages": [
+   "docs/buttons.html",
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "6363f84087a3b786c4b73f6ec93de303de09570e",
+  "date": "2021-10-23",
+  "subject": "Fix:  input[aria-invalid] text overlaps the icon #35",
+  "fixed_state": "6363f84087a3b786c4b73f6ec93de303de09570e",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "320275ff99d5ac9aeecaebcaaa7f1892143c412a",
+  "date": "2021-10-23",
+  "subject": "Form: Fix label and legend vertical-align",
+  "fixed_state": "320275ff99d5ac9aeecaebcaaa7f1892143c412a",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "08d6d34f44502f2691fd0c2c9c1839bd7b4bcd53",
+  "date": "2021-10-23",
+  "subject": "Fix: Input hidden #39",
+  "fixed_state": "08d6d34f44502f2691fd0c2c9c1839bd7b4bcd53",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 1532605,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "431f0e6f8f5b51266905b6020a46eb281e18d428",
+  "date": "2020-10-28",
+  "subject": "Input helper (<small>) margin adjustment",
+  "fixed_state": "431f0e6f8f5b51266905b6020a46eb281e18d428",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 848862,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "a9c851d5b35a549920260590fc93371db620e1b5",
+  "date": "2020-10-27",
+  "subject": "Docs: Changing the height of SVGs in px",
+  "fixed_state": "a9c851d5b35a549920260590fc93371db620e1b5",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "c89db4ec2dde0c5598c85b10df57dd45ac739a37",
+  "date": "2020-09-30",
+  "subject": "Small fixes",
+  "fixed_state": "c89db4ec2dde0c5598c85b10df57dd45ac739a37",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 3094,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "6f260e9b7446f2f2a7d99c726fda3e15dc00ddf8",
+  "date": "2020-09-25",
+  "subject": "Better spacing between form elements",
+  "fixed_state": "6f260e9b7446f2f2a7d99c726fda3e15dc00ddf8",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 1269036,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "07d19a86732990590cbb687ef1379f78fb11f578",
+  "date": "2020-09-25",
+  "subject": "Better alignement for checkboxes & radios",
+  "fixed_state": "07d19a86732990590cbb687ef1379f78fb11f578",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 763591,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "86a54ed191850e4961bebd62df0cae4c31e2ae84",
+  "date": "2020-09-24",
+  "subject": "Smaller list spacing",
+  "fixed_state": "86a54ed191850e4961bebd62df0cae4c31e2ae84",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 327557,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "49b736c3ed3c55b2eb77b553dbb9fb50d10fcb5e",
+  "date": "2020-09-23",
+  "subject": "Polish docs styles",
+  "fixed_state": "49b736c3ed3c55b2eb77b553dbb9fb50d10fcb5e",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 539,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "e66bcdbce94fa386c043e4bb15f581e22faafcee",
+  "date": "2020-09-12",
+  "subject": "Better heading spacings after a typography block",
+  "fixed_state": "e66bcdbce94fa386c043e4bb15f581e22faafcee",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "bf6edead86b65334a92448249af4b168622a0a82",
+  "date": "2020-09-12",
+  "subject": "Better heading spacings after <p>",
+  "fixed_state": "e66bcdbce94fa386c043e4bb15f581e22faafcee",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 0,
+  "verdict": "rejected",
+  "reason": "no visible difference"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "b319b6785a1330a5e4e148bdd5b34bf0b8a30fc2",
+  "date": "2020-09-12",
+  "subject": "Better heading spacings after <p>",
+  "fixed_state": "b319b6785a1330a5e4e148bdd5b34bf0b8a30fc2",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 1816701,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ },
+ {
+  "source": "picocss/pico (v1 line)",
+  "commit": "85e21d35de8c285ace43d87c1947aae5a969cc5d",
+  "date": "2019-12-01",
+  "subject": "Improvements",
+  "fixed_state": "85e21d35de8c285ace43d87c1947aae5a969cc5d",
+  "pages": [
+   "docs/index.html"
+  ],
+  "rendered": true,
+  "max_changed_px": 2161528,
+  "verdict": "rejected",
+  "reason": "shift under 2 px or style refinement"
+ }
+]
