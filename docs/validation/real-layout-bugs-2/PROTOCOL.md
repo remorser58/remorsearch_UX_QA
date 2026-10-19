@@ -74,3 +74,5 @@ The scan runs on every page state (24) as the agents would run it (`file://` URL
     12. Semantic-Org/Semantic-UI: `examples/`.
 
     If fewer than 12 cases are found, the seeded shuffle splits them into groups A, B and C as evenly as possible (sizes differ by at most one, with at most two items of one source in a group where the count allows). The run design, arms, scoring and decision rule stay as registered.
+2. AdminLTE replaced, 2026-10-19, before any of its candidates was screened. Round 1 used AdminLTE's version 3 and 4 lines, and this round asks about projects round 1 did not use, so AdminLTE is dropped. Tabler and Semantic UI move up to places 10 and 11, and a third source takes place 12:
+    12. Dogfalo/materialize, limited to its commits up to 2017-04-21, when the documentation pages at the root and their built stylesheet `css/ghpages-materialize.css` were committed.
