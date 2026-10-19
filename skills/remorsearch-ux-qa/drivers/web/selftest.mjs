@@ -1607,11 +1607,16 @@ async function localFilesTest(tmp) {
   fs.mkdirSync(path.join(site, 'css'), { recursive: true });
   fs.mkdirSync(path.join(site, 'pages', 'ui'), { recursive: true });
   fs.mkdirSync(path.join(tmp, 'local-private'), { recursive: true });
-  fs.writeFileSync(path.join(site, 'css', 'site.css'), 'body { margin: 0; font-family: sans-serif; }\n#wide-row { width: 600px; height: 40px; background: #dde; }\n');
+  fs.writeFileSync(path.join(site, 'css', 'site.css'), 'body { margin: 0; font-family: sans-serif; }\n#wide-row { width: 600px; height: 40px; background: #dde; }\n'
+    + '.clip { width: 220px; height: 18px; overflow: hidden; white-space: nowrap; font-size: 14px; line-height: 18px; }\n');
   fs.writeFileSync(path.join(tmp, 'local-private', 'note.html'), '<!doctype html><title>note</title><p>outside the page folder</p>');
+  // Three identical cards nest their clipped label six levels deep, so a five-level path
+  // cannot tell them apart.
+  const card = '<div class="card"><div><div><div><div><div class="clip"><span>Total Connections this week</span></div></div></div></div></div></div>';
   fs.writeFileSync(path.join(site, 'pages', 'ui', 'page.html'), '<!doctype html><html lang="en"><head><meta charset="utf-8">'
     + '<meta name="viewport" content="width=device-width, initial-scale=1"><title>Local page</title>'
     + '<link rel="stylesheet" href="../../css/site.css"></head><body><h1>Local page</h1><div id="wide-row">A row from the site stylesheet</div>'
+    + `<section>${card.repeat(3)}</section>`
     + '<iframe id="outside" title="outside" src="../../../local-private/note.html"></iframe></body></html>');
   writeJson(path.join(tmp, 'local.json'), {
     schema_version: 'ergo-scenario.v1', scenario_id: 'SC-driver-local-01',
@@ -1635,6 +1640,19 @@ async function localFilesTest(tmp) {
     check(`local files (${label}): the reflow, text-spacing and focus walk passes all ran`,
       !run.warnings.some((w) => /pass failed|walk \((?:load|end)\) failed|not measured/.test(w))
         && (run.adaptation || []).length === 2 && run.focus_walks.some((w) => w.phase === 'load'), run.warnings);
+  }
+  // The text-spacing pass measures on the laptop profile (on the phone profile its capture
+  // mapping is unverified), where the identical cards used to share one selector.
+  writeJson(path.join(tmp, 'local-laptop.json'), { ...JSON.parse(fs.readFileSync(path.join(tmp, 'local.json'), 'utf8')),
+    scenario_id: 'SC-driver-local-02', device_ids: ['laptop-1440'] });
+  const r = await runDriver(['run', '--scenario', path.join(tmp, 'local-laptop.json'), '--device', 'laptop-1440', '--out', path.join(tmp, 'runs'),
+    '--run-id', 'R-local-laptop']);
+  if (check('local files (laptop): exit 0', r.code === 0, `${r.code} ${r.err}`)) {
+    const { run } = loadRun(path.join(tmp, 'runs', 'R-local-laptop'));
+    const spacing = (run.adaptation || []).find((x) => x.kind === 'text_spacing');
+    const lost = (spacing?.lost || []).map((x) => x.selector);
+    check('local files (laptop): text spacing clips the three identical card labels and names each one apart',
+      spacing?.evaluable === true && lost.filter((s) => /span$/.test(s)).length >= 3 && new Set(lost).size === lost.length, spacing);
   }
 }
 

@@ -425,18 +425,23 @@ function reflowInfo(arg) {
     return false;
   };
   const box = (r) => ({ x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) });
+  // A selector that matches only this element: run.json requires lost targets to be unique,
+  // and repeated cards share every short path (six identical dashboard tiles did).
+  const unique = (s) => { try { return document.querySelectorAll(s).length === 1; } catch { return false; } };
   const sel = (n) => {
-    if (idOf(n)) return `#${CSS.escape(idOf(n))}`;
+    if (idOf(n) && unique(`#${CSS.escape(idOf(n))}`)) return `#${CSS.escape(idOf(n))}`;
     const parts = [];
-    for (let m = n; m && m.nodeType === 1 && m !== document.body && parts.length < 5; m = m.parentElement) {
-      if (idOf(m)) {
-        parts.unshift(`#${CSS.escape(idOf(m))}`);
-        break;
+    for (let m = n; m && m.nodeType === 1 && m !== document.body; m = m.parentElement) {
+      if (m !== n && idOf(m)) {
+        const anchored = [`#${CSS.escape(idOf(m))}`, ...parts].join(' > ');
+        if (unique(anchored)) return anchored;
       }
       const sib = m.parentElement ? [...m.parentElement.children].filter((c) => c.tagName === m.tagName) : [];
       parts.unshift(sib.length > 1 ? `${m.localName}:nth-of-type(${sib.indexOf(m) + 1})` : m.localName);
+      if (parts.length >= 5 && unique(parts.join(' > '))) break;
     }
-    return parts.join(' > ');
+    const path = parts.join(' > ');
+    return unique(path) || !document.body.contains(n) ? path : `body > ${path}`;
   };
   // Additional conditions use text Range rectangles (the element's own box can
   // remain unchanged while glyphs are clipped). Scroll ranges describe the best
@@ -553,6 +558,7 @@ function reflowInfo(arg) {
       // 0.25 CSS px² is numerical tolerance, independent of text length; a
       // percentage cutoff could overlook a clipped word in a long paragraph.
       if (!before || before.selector !== after.selector || before.area - before.visible_area > 0.25 || after.area - after.visible_area <= 0.25) continue;
+      if (lost.some((x) => x.selector === after.selector)) continue;
       if (lost.length < 20) lost.push({ selector: after.selector, dom_id: after.dom_id, ancestor_ids: after.ancestor_ids, tag: after.tag, kind: after.kind,
         reason: after.kind === 'text' ? 'text_clipped' : 'control_clipped', before, after });
       else { gaps.add('findings_capped'); break; }
