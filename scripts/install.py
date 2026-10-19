@@ -35,6 +35,7 @@ import build_insane_search_bundle as builder
 SKILL_NAME = builder.SKILL_NAME
 MANIFEST = builder.MANIFEST
 LAUNCHER = Path("scripts") / "remorsearch.py"
+SUBAGENTS = Path("scripts") / "subagents.py"
 DRIVER = Path("drivers") / "web"
 PLAYWRIGHT_CLI = Path("node_modules") / "playwright" / "cli.js"
 NODE_MAJOR = 22
@@ -383,6 +384,26 @@ def verify_staged(staging: Path, *, progress=emit) -> dict:
     return paths
 
 
+def choose_subagents(destination: Path, args: argparse.Namespace) -> dict:
+    """First run: the model and reasoning effort for the skill's subagents.
+
+    Flags save a choice without asking. In a terminal the skill's selection menu asks
+    once, unless a choice is already saved. Without a terminal nothing is asked; the
+    skill then asks at its first run.
+    """
+    script = destination / SUBAGENTS
+    host = "claude-code" if args.target == "claude" else ("codex" if args.target in (None, "codex") else "other")
+    command = [sys.executable, str(script), "--host", host]
+    if args.subagent_model or args.subagent_effort:
+        command += ["--model", args.subagent_model or "inherit", "--effort", args.subagent_effort or "inherit"]
+    elif args.no_prompt or not (sys.stdin.isatty() and sys.stdout.isatty()):
+        return {"asked": False, "change_with": f"python3 {script}"}
+    else:
+        command.append("--first-run")
+    result = subprocess.run(command)
+    return {"asked": True, "exit": result.returncode, "change_with": f"python3 {script}"}
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description="Install the complete Remorsearch UX QA skill, including the "
@@ -391,6 +412,12 @@ def main(argv: list[str] | None = None) -> int:
                         help="skills directory of the host agent (default: codex)")
     parser.add_argument("--destination", type=Path,
                         help="explicit destination folder, for test isolation")
+    parser.add_argument("--subagent-model",
+                        help="model for the skill's subagents, or 'inherit' (saved without asking)")
+    parser.add_argument("--subagent-effort",
+                        help="reasoning effort for the skill's subagents, or 'inherit'")
+    parser.add_argument("--no-prompt", action="store_true",
+                        help="do not ask for the subagent model and effort; the skill asks at its first run")
     args = parser.parse_args(argv)
     if args.target and args.destination:
         parser.error("--target and --destination are mutually exclusive")
@@ -442,6 +469,7 @@ def main(argv: list[str] | None = None) -> int:
                       "insane-search toolkit are all installed; no feature selection exists",
     }
     emit({"step": "installed", **summary})
+    emit({"step": "subagents", **choose_subagents(destination, args)})
     return 0
 
 

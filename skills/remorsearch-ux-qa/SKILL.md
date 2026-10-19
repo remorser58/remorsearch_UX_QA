@@ -22,7 +22,7 @@ For product improvement, read `references/loop/product-improvement.md`; discover
 2. A Korean report changes wording only. Korean research channels/users load `references/research/korea/overview.md`; Korean product QA loads `references/persona-qa/kwcag-card.md`. Standalone QA adds research only when requested.
 3. Reuse supplied context and grants. Inspect project decisions and intent before changes; code alone does not establish intent. State scope, assumptions and limits. Ask only for missing access or unresolved intent conflict; continue unaffected work.
 4. Record read_only, design_write, test_data_write and code_write with actor, scope and reason. UX improvement grants ordinary reversible in-scope fixes; record that authority in CLI grants. Research/review grants no writes; local fixes grant no deployment or posting.
-5. Detect tools before installing. Research reads `references/shared/access-card.md` and `references/shared/evidence-card.md` before its first search; other modes read the access card before the first page outside the product, even mid-run. Every reader, persona and verifier prompt carries its cards. Subagents are optional and inherit this session's model unless chosen (`references/agent-setup.md`).
+5. Detect tools before installing. Research reads `references/shared/access-card.md` and `references/shared/evidence-card.md` before its first search; other modes read the access card before the first page outside the product, even mid-run. Every reader, persona and verifier prompt carries its cards. Before the first subagent, run `scripts/subagents.py --show`; exit 3: ask the user once (`--options`) and save (`references/agent-setup.md`).
 
 ## Rules for every mode
 
@@ -47,9 +47,9 @@ For product improvement, read `references/loop/product-improvement.md`; discover
 
 ## Tools
 
-Python 3.10+ standard library on Linux, macOS or WSL; `python3 scripts/find_runtime.py` prints usable Python/Node paths and gaps. Browsers: the host's browser tool, an automation browser, then the bundled drivers (`scripts/ergo_qa.py scan` and `drivers/web/ergo_drive.mjs` for products, `drivers/web/read_page.mjs` for renders after a pre-read). Sandboxed hosts: `drivers/web/README.md`. A denied launch is a gap.
+Python 3.10+ standard library on Linux, macOS or WSL; `python3 scripts/find_runtime.py` lists Python/Node paths. Browsers: the host's browser tool, an automation browser, then the bundled drivers (`scripts/ergo_qa.py scan` and `drivers/web/ergo_drive.mjs` for products, `drivers/web/read_page.mjs` for renders after a pre-read). Sandboxed hosts: `drivers/web/README.md`. A denied launch is a gap.
 
-`python3 scripts/ref.py <file> [section-id]` prints one bounded section or lists the IDs; `ref.py platform naver-blog` prints one channel. Large references are lookup-only.
+`python3 scripts/ref.py <file> [section-id]` prints a section or lists its IDs; `ref.py platform naver-blog` prints one channel. Large references are lookup-only.
 
 ## Bundled search in research
 

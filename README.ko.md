@@ -29,6 +29,8 @@ python3 scripts/install.py --target codex
 
 `--target claude`는 `~/.claude/skills/remorsearch-ux-qa`에, 기본값 `codex`는 `~/.codex/skills/remorsearch-ux-qa`에 설치합니다. 원하는 폴더에 넣으려면 `--destination /path/to/folder`를 쓰세요.
 
+설치가 끝나면 설치 프로그램이 스킬의 하위 에이전트가 쓸 모델과 추론 강도를 한 번 묻습니다. 방향키로 고르는 메뉴이고, Codex에서는 사용자 계정에서 쓸 수 있는 모델을 보여 줍니다. `--subagent-model`과 `--subagent-effort`로 미리 답할 수 있고, `--no-prompt`를 주면 묻지 않습니다. 나중에 바꾸려면 스킬 폴더에서 `python3 scripts/subagents.py`를 실행하세요. 설치 프로그램이 묻지 않았다면 스킬을 처음 실행할 때 묻습니다.
+
 설치 스크립트는 macOS, Linux, WSL에서 Python 3.10 이상, Node.js 22(>=22 <23), npm이 있는지 먼저 확인하고 나서 파일을 씁니다. 고정 버전 Playwright 드라이버와 Chromium을 임시 복사본에서 준비하고 Chromium을 한 번 실행해 본 다음에야 설치 폴더로 옮깁니다. 내려받기가 실패하면 기존 설치는 그대로 남고, 갱신할 때는 이전 폴더를 `remorsearch-ux-qa.backup-<timestamp>.tar.gz`로 먼저 보관합니다. 고정 버전인 Playwright 1.56.1의 브라우저 내려받기가 Node.js 24.16 이상에서 멈추기 때문에 Node.js 22가 필요합니다([microsoft/playwright#40724](https://github.com/microsoft/playwright/issues/40724)). 기본 `python3`가 3.10보다 낮으면 스킬 폴더에서 `python3 scripts/find_runtime.py`를 실행하세요. 쓸 수 있는 Python과 Node.js 경로를 알려 주며 아무것도 설치하지 않습니다. Linux에서는 Chromium에 시스템 라이브러리가 더 필요합니다. 실행 확인이 실패하면 `npx -y playwright@1.56.1 install-deps chromium`을 한 번 실행하고(Debian, Ubuntu 기준이며 sudo 암호를 묻습니다) 설치 스크립트를 다시 실행하세요.
 
 Claude Code에서는 이 저장소를 플러그인 마켓플레이스로 추가해 설치할 수도 있습니다. `/plugin marketplace add remorser58/remorsearch_UX_QA` 다음 `/plugin install remorsearch-ux-qa@remorsearch`를 실행하세요. 플러그인으로 설치하면 설치 스크립트의 브라우저 준비 단계를 거치지 않아서, 첫 스캔이 멈추면서 한 번만 실행하면 되는 준비 명령(플러그인 안 `drivers/web`에서 `npm ci`와 `npx playwright install chromium`)을 알려 줍니다.
