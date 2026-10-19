@@ -1,0 +1,29 @@
+[
+  {
+    "page": "p01",
+    "selector": ".s-content",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 with touch, .s-content is 960 CSS px wide (x=0 to 960), 600 px wider than the screen; each section has a 780 px content area starting at x=90. The first paragraph extends to x=415.64 and is visibly cut at x=360. Code, cards, forms and later sections also extend beyond the right edge; in the final Tooltips section all four demo buttons lie outside the visible strip. The body uses overflow-x:hidden. Confirmed at the top, throughout the scroll, and at the end. Screenshots: evidence/p01-phone-y0.png, evidence/p01-phone-y1404.png and evidence/p01-phone-y23831.png. Laptop fits.",
+    "fix": "At the phone breakpoint set .s-content to width:100%; min-width:0; max-width:100%; reduce its 80px horizontal padding to a phone gutter, and let section containers and demo columns fit that available width. Keep any necessary code scrolling inside the code block."
+  },
+  {
+    "page": "p01",
+    "selector": "#sidebar .s-nav",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The fixed navigation occupies x=30..240, y=100..750 while main content starts at x=90, so 150 CSS px of their horizontal regions overlap. At scrollY=0, sidebar Autocomplete glyphs occupy x=58..148.08, y=295.56..312.56 and the main Element 2 glyphs occupy x=106..170.36, y=302..319: the text visibly collides over about 42x10.6 px. At scrollY=1404, sidebar links also intersect the autocomplete explanation. The sticky section heading additionally covers part of the sidebar branding/navigation. Screenshots: evidence/p01-phone-y0.png and evidence/p01-phone-y1404.png. Laptop navigation and content remain separated.",
+    "fix": "At phone widths put the navigation in normal flow above the content or collapse it into a closed drawer. Remove the fixed sidebar placement at this breakpoint and reserve independent space for branding and section headings."
+  },
+  {
+    "page": "p03",
+    "selector": ".profile_view > .bottom",
+    "viewport": "both",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "All nine contact cards have a footer pulled upward by margin-top:-20px. On phone the first footer begins at y=418.09 while the second Address line occupies y=408.98..428.09: about 10 CSS px of the line is covered, leaving only its top visible. This repeats down the full page. On laptop the address text fits, but the footer begins at y=375.78 while the portrait continues to y=385.78, covering the bottom 10px of the attached circular portrait. Screenshots: evidence/p03-phone-y0.png and evidence/p03-laptop-y0.png.",
+    "fix": "Remove margin-top:-20px from .profile_view .bottom and keep the footer after the full height of the preceding card body. Clear the floated body columns, or use a vertical flex layout, so neither text nor the portrait can extend beneath the footer."
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "page": "p02",
+    "selector": ".tile_stats_count",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360px the six stat tiles are 120px wide with 102px of inner text width. The last two labels truncate (\"Total Collect...\" and \"Total Conne...\"), and all six captions truncate to \"From last ...\" or \"From l...\" because the caption is a 104-122.7px nowrap line inside a 102px box.",
+    "fix": "Let the labels and captions wrap, or reduce the caption font and horizontal padding and use a 2-column layout at phone width so both the metric name and caption fit."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The \"Top Campaign Performance\" heading is 191px wide with 213px of nowrap text and renders as \"Top Campaign Perfor...\" at 360px.",
+    "fix": "Allow the heading to wrap on phone widths or reserve the full panel width for the title instead of the 191px column."
+  },
+  {
+    "page": "p03",
+    "selector": ".profile_view .left",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "In every contact card the bio column ends at y=438.1 while the gray rating/footer section begins at y=418.1. The second address row spans y=409-428.1, so its lower 10px is covered by the footer. The same collision repeats on all nine cards.",
+    "fix": "Let the profile content row size to its left column on phone widths (or shorten the address block) so the gray rating/footer section starts below both the bio and the photo."
+  }
+]

@@ -1,0 +1,338 @@
+{
+ "scan-v100": {
+  "spectre-4cb36cd7-broken": {
+   "scan": "ok",
+   "candidates": 419,
+   "layout": 77,
+   "by_check": {
+    "LY-01": 61,
+    "LY-02": 6,
+    "LY-03": 10,
+    "PC-01": 257,
+    "PC-02": 4,
+    "PT-01": 1,
+    "SM-01": 24,
+    "SM-03": 5,
+    "SM-05": 25,
+    "SM-07": 1,
+    "UI-01": 25
+   },
+   "defect_hits": 66,
+   "hit_examples": [
+    "LY-01 galaxy-s24 | #accordions > div:nth-of-type(1) > p|Accordions are used to toggle sec | 'Accordions are used to toggle ' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다.",
+    "LY-01 galaxy-s24 | #accordions > pre > code > span:nth-of-type(1)|<!-- standard Accordion | '<!-- standard Accordions examp' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다.",
+    "LY-01 galaxy-s24 | #accordions > pre > code > span:nth-of-type(18)|\"accordion-header\" | '\"accordion-header\"' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다."
+   ],
+   "pass_warnings": [
+    "adaptation pass failed: browser.newContext: Target page, context or browser has been closed",
+    "adaptation pass failed: browserContext.newPage: Target page, context or browser has been closed",
+    "focus walk (load) failed: browserContext.newPage: Target page, context or browser has been closed",
+    "reflow pass failed: browser.newContext: Target page, context or browser has been closed"
+   ]
+  },
+  "spectre-4cb36cd7-fixed": {
+   "scan": "ok",
+   "candidates": 363,
+   "layout": 19,
+   "by_check": {
+    "LY-01": 6,
+    "LY-02": 4,
+    "LY-03": 9,
+    "PC-01": 257,
+    "PC-02": 4,
+    "PT-01": 1,
+    "SM-01": 25,
+    "SM-03": 5,
+    "SM-05": 24,
+    "SM-07": 1,
+    "UI-01": 27
+   },
+   "defect_hits": 8,
+   "hit_examples": [
+    "LY-01 galaxy-s24 | #accordions > pre > code|<!-- standard Accordions examples --> <  | '<!-- standard Accordions examp' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다.",
+    "LY-01 galaxy-s24 | #autocomplete > pre > code|< div class = \"form-autocomplete\" > <!-- | '<div class=\"form-autocomplete\"' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다.",
+    "LY-01 galaxy-s24 | #avatars > pre > code|<!-- Basic avatar examples --> < figure  | '<!-- Basic avatar examples -->' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다."
+   ],
+   "pass_warnings": [
+    "adaptation pass failed: browser.newContext: Target page, context or browser has been closed",
+    "adaptation pass failed: browserContext.newPage: Target page, context or browser has been closed",
+    "focus walk (load) failed: browserContext.newPage: Target page, context or browser has been closed",
+    "reflow pass failed: browser.newContext: Target page, context or browser has been closed"
+   ]
+  },
+  "gentelella-c0602144-broken": {
+   "scan": "ok",
+   "candidates": 238,
+   "layout": 13,
+   "by_check": {
+    "LY-01": 11,
+    "LY-02": 2,
+    "PC-01": 139,
+    "PC-02": 4,
+    "PT-01": 21,
+    "SM-01": 22,
+    "SM-03": 9,
+    "SM-05": 23,
+    "UI-01": 7
+   },
+   "defect_hits": 7,
+   "hit_examples": [
+    "LY-01 galaxy-s24,laptop-1440 | div:nth-of-type(1) > div:nth-of-type(2) > span:nth-of-type(2)|4% From  | '4% From last Week' 글자가 바깥 상자(div)에 잘립니다 (말줄임표로 줄임).",
+    "LY-01 galaxy-s24,laptop-1440 | div:nth-of-type(2) > div:nth-of-type(2) > span:nth-of-type(2)|3% From  | '3% From last Week' 글자가 바깥 상자(div)에 잘립니다 (말줄임표로 줄임).",
+    "LY-01 galaxy-s24,laptop-1440 | div:nth-of-type(3) > div:nth-of-type(2) > span:nth-of-type(2)|34% From | '34% From last Week' 글자가 바깥 상자(div)에 잘립니다 (말줄임표로 줄임)."
+   ],
+   "pass_warnings": [
+    "adaptation pass failed: browser.newContext: Target page, context or browser has been closed",
+    "adaptation pass failed: browserContext.newPage: Target page, context or browser has been closed",
+    "focus walk (load) failed: browserContext.newPage: Target page, context or browser has been closed",
+    "reflow pass failed: browser.newContext: Target page, context or browser has been closed"
+   ]
+  },
+  "gentelella-c0602144-fixed": {
+   "scan": "ok",
+   "candidates": 230,
+   "layout": 5,
+   "by_check": {
+    "LY-01": 3,
+    "LY-02": 2,
+    "PC-01": 139,
+    "PC-02": 4,
+    "PT-01": 21,
+    "SM-01": 22,
+    "SM-03": 9,
+    "SM-05": 23,
+    "UI-01": 7
+   },
+   "defect_hits": 0,
+   "hit_examples": [],
+   "pass_warnings": [
+    "adaptation pass failed: browser.newContext: Target page, context or browser has been closed",
+    "adaptation pass failed: browserContext.newPage: Target page, context or browser has been closed",
+    "focus walk (load) failed: browserContext.newPage: Target page, context or browser has been closed",
+    "reflow pass failed: browser.newContext: Target page, context or browser has been closed"
+   ]
+  },
+  "gentelella-fc3c0364-broken": {
+   "scan": "ok",
+   "candidates": 174,
+   "layout": 2,
+   "by_check": {
+    "LY-02": 2,
+    "PC-01": 75,
+    "PC-02": 5,
+    "PT-01": 10,
+    "SM-01": 55,
+    "SM-05": 17,
+    "SM-07": 1,
+    "UI-01": 9
+   },
+   "defect_hits": 0,
+   "hit_examples": [],
+   "pass_warnings": [
+    "adaptation pass failed: browser.newContext: Target page, context or browser has been closed",
+    "adaptation pass failed: browserContext.newPage: Target page, context or browser has been closed",
+    "focus walk (load) failed: browserContext.newPage: Target page, context or browser has been closed",
+    "reflow pass failed: browser.newContext: Target page, context or browser has been closed"
+   ]
+  },
+  "gentelella-fc3c0364-fixed": {
+   "scan": "ok",
+   "candidates": 174,
+   "layout": 2,
+   "by_check": {
+    "LY-02": 2,
+    "PC-01": 75,
+    "PC-02": 5,
+    "PT-01": 10,
+    "SM-01": 55,
+    "SM-05": 17,
+    "SM-07": 1,
+    "UI-01": 9
+   },
+   "defect_hits": 0,
+   "hit_examples": [],
+   "pass_warnings": [
+    "adaptation pass failed: browser.newContext: Target page, context or browser has been closed",
+    "adaptation pass failed: browserContext.newPage: Target page, context or browser has been closed",
+    "focus walk (load) failed: browserContext.newPage: Target page, context or browser has been closed",
+    "reflow pass failed: browser.newContext: Target page, context or browser has been closed"
+   ]
+  },
+  "bootstrap-d255ba37-broken": {
+   "scan": "ok",
+   "candidates": 37,
+   "layout": 6,
+   "by_check": {
+    "LY-02": 1,
+    "LY-03": 5,
+    "PC-01": 12,
+    "PT-01": 17,
+    "SM-03": 1,
+    "SM-05": 1
+   },
+   "defect_hits": 0,
+   "hit_examples": [],
+   "pass_warnings": [
+    "adaptation pass failed: browser.newContext: Target page, context or browser has been closed",
+    "adaptation pass failed: browserContext.newPage: Target page, context or browser has been closed",
+    "focus walk (load) failed: browserContext.newPage: Target page, context or browser has been closed",
+    "reflow pass failed: browser.newContext: Target page, context or browser has been closed"
+   ]
+  },
+  "bootstrap-d255ba37-fixed": {
+   "scan": "ok",
+   "candidates": 37,
+   "layout": 6,
+   "by_check": {
+    "LY-02": 1,
+    "LY-03": 5,
+    "PC-01": 12,
+    "PT-01": 17,
+    "SM-03": 1,
+    "SM-05": 1
+   },
+   "defect_hits": 0,
+   "hit_examples": [],
+   "pass_warnings": [
+    "adaptation pass failed: browser.newContext: Target page, context or browser has been closed",
+    "adaptation pass failed: browserContext.newPage: Target page, context or browser has been closed",
+    "focus walk (load) failed: browserContext.newPage: Target page, context or browser has been closed",
+    "reflow pass failed: browser.newContext: Target page, context or browser has been closed"
+   ]
+  }
+ },
+ "scan-v101": {
+  "spectre-4cb36cd7-broken": {
+   "scan": "ok",
+   "candidates": 421,
+   "layout": 79,
+   "by_check": {
+    "LY-01": 62,
+    "LY-02": 6,
+    "LY-03": 10,
+    "PC-01": 257,
+    "PC-02": 4,
+    "PT-01": 1,
+    "RF-01": 1,
+    "SM-01": 24,
+    "SM-03": 5,
+    "SM-05": 25,
+    "SM-07": 1,
+    "UI-01": 25
+   },
+   "defect_hits": 67,
+   "hit_examples": [
+    "LY-01 galaxy-s24 | #accordions > div:nth-of-type(1) > p|Accordions are used to toggle sec | 'Accordions are used to toggle ' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다.",
+    "LY-01 galaxy-s24 | #accordions > pre > code > span:nth-of-type(1)|<!-- standard Accordion | '<!-- standard Accordions examp' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다.",
+    "LY-01 galaxy-s24 | #accordions > pre > code > span:nth-of-type(18)|\"accordion-header\" | '\"accordion-header\"' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다."
+   ],
+   "pass_warnings": []
+  },
+  "spectre-4cb36cd7-fixed": {
+   "scan": "ok",
+   "candidates": 363,
+   "layout": 19,
+   "by_check": {
+    "LY-01": 6,
+    "LY-02": 4,
+    "LY-03": 9,
+    "PC-01": 257,
+    "PC-02": 4,
+    "PT-01": 1,
+    "SM-01": 25,
+    "SM-03": 5,
+    "SM-05": 24,
+    "SM-07": 1,
+    "UI-01": 27
+   },
+   "defect_hits": 8,
+   "hit_examples": [
+    "LY-01 galaxy-s24 | #accordions > pre > code|<!-- standard Accordions examples --> <  | '<!-- standard Accordions examp' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다.",
+    "LY-01 galaxy-s24 | #autocomplete > pre > code|< div class = \"form-autocomplete\" > <!-- | '<div class=\"form-autocomplete\"' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다.",
+    "LY-01 galaxy-s24 | #avatars > pre > code|<!-- Basic avatar examples --> < figure  | '<!-- Basic avatar examples -->' 글자가 바깥 상자(viewport)에 잘립니다. 글자를 키우거나 번역되면 더 많이 잘립니다."
+   ],
+   "pass_warnings": []
+  },
+  "gentelella-c0602144-broken": {
+   "scan": "failed",
+   "error": "ERROR: /private/tmp/rs-rb2/scan-v101/gentelella-c0602144-broken/runs/SCAN-laptop-1440/run.json: $.adaptation[0].lost[10].selector: must be bounded and unique",
+   "pass_warnings": []
+  },
+  "gentelella-c0602144-fixed": {
+   "scan": "failed",
+   "error": "ERROR: /private/tmp/rs-rb2/scan-v101/gentelella-c0602144-fixed/runs/SCAN-laptop-1440/run.json: $.adaptation[0].lost[6].selector: must be bounded and unique",
+   "pass_warnings": []
+  },
+  "gentelella-fc3c0364-broken": {
+   "scan": "ok",
+   "candidates": 274,
+   "layout": 12,
+   "by_check": {
+    "LY-02": 10,
+    "LY-05": 1,
+    "PC-01": 75,
+    "PC-02": 1,
+    "PT-01": 54,
+    "RF-02": 1,
+    "SM-01": 59,
+    "SM-05": 18,
+    "SM-07": 1,
+    "UI-01": 54
+   },
+   "defect_hits": 9,
+   "hit_examples": [
+    "LY-02 galaxy-s24 | div:nth-of-type(10) > div > div:nth-of-type(1) > div:nth-of-type(1) >  | 'Address:' 글자 줄 1/1개가 겹쳐 놓인 요소 div:nth-of-type(10) > div > div:nth-of-type(2)에 가려지고, 스크롤해도",
+    "LY-02 galaxy-s24 | div:nth-of-type(11) > div > div:nth-of-type(1) > div:nth-of-type(1) >  | 'Address:' 글자 줄 1/1개가 겹쳐 놓인 요소 div:nth-of-type(11) > div > div:nth-of-type(2)에 가려지고, 스크롤해도",
+    "LY-02 galaxy-s24 | div:nth-of-type(3) > div > div:nth-of-type(1) > div:nth-of-type(1) > u | 'Address:' 글자 줄 1/1개가 겹쳐 놓인 요소 div > div > div > div:nth-of-type(3) > div > div:nth-of-typ"
+   ],
+   "pass_warnings": []
+  },
+  "gentelella-fc3c0364-fixed": {
+   "scan": "ok",
+   "candidates": 266,
+   "layout": 3,
+   "by_check": {
+    "LY-02": 1,
+    "LY-05": 1,
+    "PC-01": 75,
+    "PC-02": 1,
+    "PT-01": 54,
+    "RF-02": 1,
+    "SM-01": 59,
+    "SM-05": 19,
+    "SM-07": 1,
+    "UI-01": 54
+   },
+   "defect_hits": 0,
+   "hit_examples": [],
+   "pass_warnings": []
+  },
+  "bootstrap-d255ba37-broken": {
+   "scan": "ok",
+   "candidates": 6,
+   "layout": 0,
+   "by_check": {
+    "CG-03": 1,
+    "PC-01": 1,
+    "SM-03": 1,
+    "UI-01": 3
+   },
+   "defect_hits": 0,
+   "hit_examples": [],
+   "pass_warnings": []
+  },
+  "bootstrap-d255ba37-fixed": {
+   "scan": "ok",
+   "candidates": 5,
+   "layout": 0,
+   "by_check": {
+    "PC-01": 1,
+    "SM-03": 1,
+    "UI-01": 3
+   },
+   "defect_hits": 0,
+   "hit_examples": [],
+   "pass_warnings": []
+  }
+ }
+}

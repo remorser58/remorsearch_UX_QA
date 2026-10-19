@@ -1,0 +1,90 @@
+{
+ "seed": 2026101902,
+ "group_rule": "seeded shuffle, then dealt round-robin into A, B, C",
+ "names": {
+  "spectre-4cb36cd7": "p01",
+  "gentelella-c0602144": "p02",
+  "gentelella-fc3c0364": "p03",
+  "bootstrap-d255ba37": "p04"
+ },
+ "groups": {
+  "A": [
+   "bootstrap-d255ba37",
+   "gentelella-c0602144"
+  ],
+  "B": [
+   "gentelella-fc3c0364"
+  ],
+  "C": [
+   "spectre-4cb36cd7"
+  ]
+ },
+ "runs": {
+  "1": {
+   "p01": {
+    "item": "spectre-4cb36cd7",
+    "state": "fixed",
+    "page": "p01/docs/components.html"
+   },
+   "p02": {
+    "item": "gentelella-c0602144",
+    "state": "broken",
+    "page": "p02/production/index.html"
+   },
+   "p03": {
+    "item": "gentelella-fc3c0364",
+    "state": "broken",
+    "page": "p03/production/contacts.html"
+   },
+   "p04": {
+    "item": "bootstrap-d255ba37",
+    "state": "broken",
+    "page": "p04/docs/examples/carousel/index.html"
+   }
+  },
+  "2": {
+   "p01": {
+    "item": "spectre-4cb36cd7",
+    "state": "broken",
+    "page": "p01/docs/components.html"
+   },
+   "p02": {
+    "item": "gentelella-c0602144",
+    "state": "broken",
+    "page": "p02/production/index.html"
+   },
+   "p03": {
+    "item": "gentelella-fc3c0364",
+    "state": "fixed",
+    "page": "p03/production/contacts.html"
+   },
+   "p04": {
+    "item": "bootstrap-d255ba37",
+    "state": "broken",
+    "page": "p04/docs/examples/carousel/index.html"
+   }
+  },
+  "3": {
+   "p01": {
+    "item": "spectre-4cb36cd7",
+    "state": "broken",
+    "page": "p01/docs/components.html"
+   },
+   "p02": {
+    "item": "gentelella-c0602144",
+    "state": "fixed",
+    "page": "p02/production/index.html"
+   },
+   "p03": {
+    "item": "gentelella-fc3c0364",
+    "state": "broken",
+    "page": "p03/production/contacts.html"
+   },
+   "p04": {
+    "item": "bootstrap-d255ba37",
+    "state": "fixed",
+    "page": "p04/docs/examples/carousel/index.html"
+   }
+  }
+ }
+}

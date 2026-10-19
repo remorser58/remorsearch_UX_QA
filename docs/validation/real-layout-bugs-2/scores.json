@@ -1,0 +1,258 @@
+[
+ {
+  "run": "flash-r1-plain",
+  "model": "flash",
+  "k": 1,
+  "arm": "plain",
+  "shown": 3,
+  "found": 2,
+  "found_items": [
+   "p02:gentelella-c0602144",
+   "p03:gentelella-fc3c0364"
+  ],
+  "missed": [
+   "p04:bootstrap-d255ba37"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 3,
+  "minutes": 31.01,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "flash-r1-skill",
+  "model": "flash",
+  "k": 1,
+  "arm": "skill",
+  "shown": 3,
+  "found": 2,
+  "found_items": [
+   "p02:gentelella-c0602144",
+   "p03:gentelella-fc3c0364"
+  ],
+  "missed": [
+   "p04:bootstrap-d255ba37"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 2,
+  "findings": 4,
+  "minutes": 36.99,
+  "note": "stop message at 33.3 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r2-plain",
+  "model": "flash",
+  "k": 2,
+  "arm": "plain",
+  "shown": 3,
+  "found": 2,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p02:gentelella-c0602144"
+  ],
+  "missed": [
+   "p04:bootstrap-d255ba37"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 2,
+  "findings": 5,
+  "minutes": 32.13,
+  "note": "report written at 32.1 min; a stop message followed at 33.3 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r2-skill",
+  "model": "flash",
+  "k": 2,
+  "arm": "skill",
+  "shown": 3,
+  "found": 2,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p02:gentelella-c0602144"
+  ],
+  "missed": [
+   "p04:bootstrap-d255ba37"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 4,
+  "minutes": 33.93,
+  "note": "stop message at 33.2 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r3-plain",
+  "model": "flash",
+  "k": 3,
+  "arm": "plain",
+  "shown": 2,
+  "found": 2,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p03:gentelella-fc3c0364"
+  ],
+  "missed": [],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 5,
+  "minutes": 29.01,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "flash-r3-skill",
+  "model": "flash",
+  "k": 3,
+  "arm": "skill",
+  "shown": 2,
+  "found": 2,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p03:gentelella-fc3c0364"
+  ],
+  "missed": [],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 2,
+  "findings": 6,
+  "minutes": 34.14,
+  "note": "stop message at 33.3 min",
+  "missing": false
+ },
+ {
+  "run": "sol-r1-plain",
+  "model": "sol",
+  "k": 1,
+  "arm": "plain",
+  "shown": 3,
+  "found": 2,
+  "found_items": [
+   "p02:gentelella-c0602144",
+   "p03:gentelella-fc3c0364"
+  ],
+  "missed": [
+   "p04:bootstrap-d255ba37"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 3,
+  "minutes": 6.55,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r1-skill",
+  "model": "sol",
+  "k": 1,
+  "arm": "skill",
+  "shown": 3,
+  "found": 2,
+  "found_items": [
+   "p02:gentelella-c0602144",
+   "p03:gentelella-fc3c0364"
+  ],
+  "missed": [
+   "p04:bootstrap-d255ba37"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 3,
+  "minutes": 10.17,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-plain",
+  "model": "sol",
+  "k": 2,
+  "arm": "plain",
+  "shown": 3,
+  "found": 2,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p02:gentelella-c0602144"
+  ],
+  "missed": [
+   "p04:bootstrap-d255ba37"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 5,
+  "minutes": 8.16,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-skill",
+  "model": "sol",
+  "k": 2,
+  "arm": "skill",
+  "shown": 3,
+  "found": 2,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p02:gentelella-c0602144"
+  ],
+  "missed": [
+   "p04:bootstrap-d255ba37"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 5,
+  "minutes": 13.29,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-plain",
+  "model": "sol",
+  "k": 3,
+  "arm": "plain",
+  "shown": 2,
+  "found": 2,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p03:gentelella-fc3c0364"
+  ],
+  "missed": [],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 0,
+  "findings": 4,
+  "minutes": 6.27,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-skill",
+  "model": "sol",
+  "k": 3,
+  "arm": "skill",
+  "shown": 2,
+  "found": 2,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p03:gentelella-fc3c0364"
+  ],
+  "missed": [],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 0,
+  "findings": 3,
+  "minutes": 9.57,
+  "note": "",
+  "missing": false
+ }
+]

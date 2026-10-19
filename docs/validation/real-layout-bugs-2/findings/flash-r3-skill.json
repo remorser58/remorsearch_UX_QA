@@ -1,0 +1,56 @@
+[
+  {
+    "page": "p01",
+    "selector": ".s-content",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P0",
+    "evidence": "At 360x780 the 240px sidebar and the 960px .s-content share one flex row without wrapping. .s-content is laid out at x=0 with width 960, so the article renders under the sidebar and off the right edge: the intro paragraph 'Accordions are used to toggle sections of content.' occupies x=90..870, leaving only 150 of its 780 px (19%) inside the 360px visual viewport. body has overflow-x:hidden, so the hidden part cannot be scrolled to; elementFromPoint(100,175) hits the sidebar accordion instead of the paragraph text.",
+    "fix": "Below 600px stack the layout: .s-sidebar width:100%, static position; .s-nav collapsed or off-canvas; .s-content width:auto, max-width:none, padding:0 20px. That removes the 240px offset and lets the article use the full 360px."
+  },
+  {
+    "page": "p01",
+    "selector": ".s-nav",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P1",
+    "evidence": "The sidebar nav is position:fixed at x=30..240, top:100px, and its height grows to 1950px on phone because it is not constrained to the 780px viewport. It therefore covers the left 240px of every screenful while scrolling, over the article text and code samples. Measured rect [30,100,210,1950] against .s-content [0,0,960,24551].",
+    "fix": "On phone make the nav part of the document (position:static, height:auto) behind a toggle, or cap it with max-height:calc(100vh - 100px) and a close affordance so it does not blanket the content."
+  },
+  {
+    "page": "p01",
+    "selector": ".float-btn",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The GitHub button is position:fixed with right:90px inside the 960px column, so at 360px it sits at x=806.7..870 (rect [806.7,30,63.3,32]), entirely outside the visible width. elementFromPoint probes at (300,45), (320,45) and (350,45) all return .columns, confirming the button is invisible and not clickable on phone.",
+    "fix": "Anchor the button to the viewport (position:fixed; right:16px on the body/header) instead of inside the wide content column, or hide it below 600px."
+  },
+  {
+    "page": "p02",
+    "selector": ".col-md-3.col-sm-3.col-xs-12.bg-white .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The 'Top Campaign Performance' panel title is forced to width:62% (191px) with white-space:nowrap and overflow:hidden at 360px, while the text needs 213px. The rendered heading reads 'Top Campaign Perfor...' and the word Performance is cut off.",
+    "fix": "In the max-width:1200px rule, drop the 62% width or set white-space:normal so the panel heading can wrap to a second line instead of truncating."
+  },
+  {
+    "page": "p03",
+    "selector": ".well.profile_view .bottom",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P1",
+    "evidence": "All 9 profile cards clip their own address list under the grey footer strip. Card 1: the address list occupies y=390..428 while .bottom starts at y=418 and has margin-top:-20px with an opaque #F2F5F7 background, so the second 'Address:' row (y=409..428) is half hidden and stays hidden when scrolled. Card rect [33,270,294,218], .bottom [34,418,292,70].",
+    "fix": "Remove margin-top:-20px from .well.profile_view .bottom (or add 20px bottom padding to the .col-sm-12 block) so the strip begins below the last address line."
+  },
+  {
+    "page": "p03",
+    "selector": ".pagination.pagination-split",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The A-Z filter breaks into two unbalanced rows: A, B, C, D, E, '...' and W sit at y=175, then X, Y, Z drop to y=213. The list is 294px wide inside a 304px content box, so the last three letters wrap alone.",
+    "fix": "Make the alphabet a single scrollable row (white-space:nowrap; overflow-x:auto) or give the list items equal flexible widths so they wrap into balanced rows."
+  }
+]

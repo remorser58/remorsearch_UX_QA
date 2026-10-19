@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p01",
+    "selector": ".s-content",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 CSS px with touch enabled, .s-content is 960 px wide (600 px wider than the screen), with 80 px horizontal padding. Its section content spans x=90..870. The opening sentence is cut at the right screen edge; wide examples, modal actions, later tab items and tooltip buttons extend outside the visible screen. The tooltip buttons begin at x=425..438, entirely beyond x=360. The same overflow is visible throughout the complete scroll. Mobile emulation confirms a 360 px visual viewport at scale 1 while the layout expands to 960 px. Screenshots: screens/p01-phone/000-y0.png, screens/p01-phone/039-y23831.png; geometry: p01-measurements.json and p01-mobile-confirm.json.",
+    "fix": "At the phone breakpoint, give .s-content width:100%, min-width:0 and smaller horizontal padding instead of a 960 px used width. Make section and demo columns fit the available width; keep long code lines in their own horizontally scrollable pre blocks."
+  },
+  {
+    "page": "p01",
+    "selector": "#sidebar .s-nav",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The fixed navigation occupies x=30..240 from y=100 downward, while the documentation and examples start at x=90, creating a 150 px overlap region. At the top, sidebar labels Accordions and Autocomplete collide with Element 1 and Element 2 in the accordion demo. At scroll y=2600, sidebar text crosses the avatar examples and explanatory paragraphs. The collision persists down to the footer. Screenshots: p01-detail-y0.png, p01-detail-y2600.png, p01-detail-y23831.png. The laptop sidebar is separate from the content.",
+    "fix": "At the phone breakpoint, place .s-nav in normal flow above the documentation or in a collapsed navigation panel. Remove its fixed left positioning so that visible navigation and main content occupy separate areas."
+  },
+  {
+    "page": "p01",
+    "selector": ".s-title::before, .s-subtitle::before",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "On initial load, the white section-heading background starts at y=50 and paints over the fixed brand: the logo image spans y=30..62, so its bottom 12 px disappear; the Spectre.css text also loses its lower pixels. In the constrained 360 px view the GitHub control spans y=30..62 and is likewise cut at y=50. The heading pseudo-element extends 90 px beyond each side of the heading, covers x=0..960, and sits in the heading stacking context (z-index 200). As headings stick during scrolling, their white bands also cut across sidebar labels. Screenshots: p01-detail-y0.png and p01-top-detail.png; geometry and hit-stack confirmation: p01-measurements.json, p01-stack.json. The native mobile screenshot p01-mobile-top.png independently shows the cut logo.",
+    "fix": "Keep the phone header in a separate row with enough height for the complete logo and controls, and offset sticky headings below it. Restrict heading pseudo-element backgrounds to the main content region and keep them below the header/navigation stacking layer."
+  },
+  {
+    "page": "p02",
+    "selector": ".tile_count .tile_stats_count .right",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The phone metric grid keeps three 120 px columns per row. Each .right wrapper is 102 px wide with 10 px left padding, leaving only 92 px for text, and clips overflow. Total Collections needs about 101.2 px and Total Connections about 109.2 px, displaying as Total Collect... and Total Conne.... All six comparison lines lose the end of From last Week; their measured text widths are approximately 104.0..122.7 px. The metric identities and comparison period cannot be read in full. Screenshot: touch/p02-phone/000-y0.png and p02-top-detail.png; measurements: p02-measurements.json. Laptop text fits.",
+    "fix": "Use two metric columns per row at 360 px, or stack the label and comparison text with normal wrapping. Remove nowrap/ellipsis for these short identifying labels and allow each tile to grow vertically."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph .bg-white .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "Top Campaign Performance is visibly shortened to Top Campaign Perfor... even though its header row has free space to the right. The h2 is only 190.95 px wide; its text needs approximately 212.86 px (scrollWidth 213 versus clientWidth 191), so overflow:hidden and nowrap remove the final part of the title. Screenshot: p02-detail-y550.png, also touch/p02-phone/001-y624.png. Laptop displays the full heading.",
+    "fix": "Let this heading use the full available header width (width:auto or 100% with float removed) and allow wrapping with white-space:normal. Remove the proportional heading-width restriction from this row, which has no adjacent controls."
+  }
+]
