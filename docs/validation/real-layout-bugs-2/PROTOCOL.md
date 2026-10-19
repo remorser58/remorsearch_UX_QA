@@ -68,4 +68,9 @@ The scan runs on every page state (24) as the agents would run it (`file://` URL
 
 ## Changes after registration
 
-None yet.
+1. Sources added, 2026-10-19, before any agent run and before any candidate in the added sources was screened. The nine sources above, screened under the unchanged rules, gave 4 cases: 1 from spectre, 2 from gentelella and 1 from Bootstrap 3. Four cases are too few to separate the arms, so three sources are added. They were chosen for the same reason as the nine (HTML pages with the built CSS committed in their history) and are screened after them, in this order, under the same candidate rule, inclusion rule, per-source limits and stop rule:
+    10. ColorlibHQ/AdminLTE: pages at the root and in `pages/` (versions 2 and 3) and in `dist/` (version 4).
+    11. tabler/tabler, limited to its commits from 2018-02-14 to 2019-03-12, when the built demo pages in `dist/` were committed.
+    12. Semantic-Org/Semantic-UI: `examples/`.
+
+    If fewer than 12 cases are found, the seeded shuffle splits them into groups A, B and C as evenly as possible (sizes differ by at most one, with at most two items of one source in a group where the count allows). The run design, arms, scoring and decision rule stay as registered.
