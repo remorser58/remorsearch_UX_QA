@@ -9,7 +9,7 @@ import { spawn } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { openBrowser } from './browser_transport.mjs';
+import { chromiumArgs, openBrowser } from './browser_transport.mjs';
 import { resolveDevice } from './devices.mjs';
 import { inspectPage } from './inspect.mjs';
 import { STATE_KEY, TW_BINDING, armBinaryControl, controlOf, disposeBinaryControl, extractSnapshot, hitTest, idAtPoint, idForElement, pageInit, readBinaryControl } from './page_scripts.mjs';
@@ -75,6 +75,8 @@ const LOCATOR_FIELDS = new Set(['selector', 'selectors', 'target', 'to', 'anchor
 // and re-rendered after the run at 320 CSS px wide with scripts off (a static copy,
 // so the run itself is never resized). At most REFLOW_MAX_SCREENS per run.
 const REFLOW_WIDTH = 320;
+// Request types a file:// page may load from any local folder (see isAllowed).
+const LOCAL_SUBRESOURCES = new Set(['stylesheet', 'script', 'image', 'font', 'media', 'texttrack', 'manifest']);
 const REFLOW_MAX_SCREENS = 12;
 const REFLOW_BUDGET_MS = 40000;
 const TEXT_SPACING = Object.freeze({ line_height: 1.5, paragraph_after: 2, letter_spacing: 0.12, word_spacing: 0.16, preserve_larger: true });
@@ -125,7 +127,7 @@ function sampleTaskState({ selector, property, expected, key }) {
 function stripQuery(url) {
   try {
     const u = new URL(url);
-    return `${u.origin}${u.pathname}`;
+    return u.protocol === 'file:' ? `file://${u.pathname}` : `${u.origin}${u.pathname}`;
   } catch {
     return truncate(url, 200);
   }
@@ -257,11 +259,15 @@ function reflowCopy({ redactSelectors = [] } = {}) {
     parts.push(`!${n.localName}${idOf(n) ? `#${strip(idOf(n))}` : ''}`);
     alerts += 1;
   }
-  return { html: out.join(''), rules, inaccessibleStyles, key: parts.join('|'),
+  return { html: out.join(''), rules, inaccessibleStyles, sheets: document.styleSheets.length, key: parts.join('|'),
     viewport: { width: innerWidth, height: innerHeight, dpr: devicePixelRatio, scale: visualViewport?.scale ?? 1 } };
 }
 
-/** In-page, on a reflow copy: the accessible CSS rules (document and open shadow roots, nested too). */
+/**
+ * In-page, on a reflow copy: the accessible CSS rules (document and open shadow roots,
+ * nested too) and the stylesheets the document loaded. A sheet whose rules cannot be read
+ * (another origin, or any sheet of a file:// page) still counts as loaded.
+ */
 function reflowRuleCount() {
   let rules = 0;
   const count = (sheets) => {
@@ -282,7 +288,7 @@ function reflowRuleCount() {
     }
   };
   visit(document);
-  return rules;
+  return { rules, sheets: document.styleSheets.length };
 }
 
 /**
@@ -892,6 +898,7 @@ export class WebSession {
     this.flashGrid = null;
     this.flashPrev = null; // last flash frame (across bursts) for block motion
     this.focusWalks = [];
+    this.passBrowsers = new Set(); // per-pass browsers under --single-process (passContext)
     this.reflowScreens = [];
     this.reflowDropped = new Set();
     this.reflow = [];
@@ -1019,8 +1026,34 @@ export class WebSession {
   stopFinishBrowser(reason) {
     this.finishProbesStopped = true;
     this.warnOnce('finish-browser-budget', reason);
+    for (const browser of this.passBrowsers) browser.close().catch(() => {});
     this.finishBrowserClosing ??= this.browser?.close().catch(() => {}) ?? Promise.resolve();
     return this.finishBrowserClosing;
+  }
+
+  /**
+   * A browser context for a pass that needs its own settings (scripts off, another viewport,
+   * a fresh state). Chromium launched with --single-process dies when a second context
+   * opens, so there each pass gets a browser of its own and closes it afterwards.
+   */
+  async passContext(options) {
+    if (this.browserTransport?.connected || !chromiumArgs().includes('--single-process')) {
+      const context = await this.browser.newContext(options);
+      return { context, close: () => context.close().catch(() => {}) };
+    }
+    const transport = await openBrowser(this.pw, this.pwInfo, { headless: !this.opts.headed, timeout: 60000 });
+    this.passBrowsers.add(transport.browser);
+    const done = async () => {
+      await transport.close();
+      this.passBrowsers.delete(transport.browser);
+    };
+    try {
+      const context = await transport.browser.newContext(options);
+      return { context, close: done };
+    } catch (err) {
+      await done();
+      throw err;
+    }
   }
 
   // ------------------------------------------------------------------ lifecycle
@@ -1154,7 +1187,9 @@ export class WebSession {
     let target = null;
     try {
       const u = new URL(screen.url);
-      if (u.protocol === 'http:' || u.protocol === 'https:') {
+      // A file:// copy is served under the page's own URL too: from about:blank Chromium
+      // refuses to load local stylesheets, and the copy would render unstyled.
+      if (['http:', 'https:', 'file:'].includes(u.protocol)) {
         u.hash = '';
         target = u.href;
       }
@@ -1214,11 +1249,12 @@ export class WebSession {
 
   async adaptationPass() {
     if (!this.reflowScreens.length) return;
-    let context;
+    let pass = null;
     const deadline = Math.min(epochNow() + REFLOW_BUDGET_MS, this.finishBrowserDeadline ?? Infinity);
     try {
-      context = await this.browser.newContext({ ...this.dev.contextOptions, javaScriptEnabled: false,
+      pass = await this.passContext({ ...this.dev.contextOptions, javaScriptEnabled: false,
         locale: this.opts.locale, timezoneId: this.opts.timezoneId, colorScheme: 'light', serviceWorkers: 'block', acceptDownloads: false });
+      const { context } = pass;
       await this.installNetworkPolicy(context, false);
       const page = await context.newPage();
       for (const screen of this.reflowScreens) {
@@ -1235,8 +1271,9 @@ export class WebSession {
             if (screen.viewport.width !== this.vw || screen.viewport.height !== this.vh || screen.viewport.dpr !== rec.dpr || screen.viewport.scale !== 1) { rec.gaps.push('capture_mapping_unverified'); continue; }
             await page.setViewportSize({ width: this.vw, height: this.vh });
             await this.loadReflowCopy(page, screen);
-            const rules = await page.evaluate(reflowRuleCount);
-            rec.styles = { live_rules: screen.rules, copy_rules: rules, complete: !screen.inaccessibleStyles && rules >= screen.rules };
+            const { rules, sheets } = await page.evaluate(reflowRuleCount);
+            rec.styles = { live_rules: screen.rules, copy_rules: rules, live_sheets: screen.sheets, copy_sheets: sheets,
+              complete: rules >= screen.rules && sheets >= screen.sheets };
             if (!rec.styles.complete) { rec.gaps.push('styles_incomplete'); continue; }
             const before = await page.evaluate(reflowInfo, { probe: kind });
             rec.baseline_snapshot_id = await this.adaptationCapture(page, screen, 'baseline', null);
@@ -1262,7 +1299,7 @@ export class WebSession {
         }
       }
     } finally {
-      if (context) await context.close().catch(() => {});
+      if (pass) await pass.close();
     }
   }
 
@@ -1276,14 +1313,15 @@ export class WebSession {
       this.warnings.push(`reflow: ${this.reflowDropped.size} screen(s) after the first ${REFLOW_MAX_SCREENS} were not re-rendered at 320 px`);
     }
     if (!this.reflowScreens.length) return;
-    let context = null;
+    let pass = null;
     const deadline = Math.min(epochNow() + REFLOW_BUDGET_MS, this.finishBrowserDeadline ?? Infinity);
     try {
       const touch = this.dev.snapshotDevice.input === 'touch';
-      context = await this.browser.newContext({
+      pass = await this.passContext({
         viewport: { width: REFLOW_WIDTH, height: touch ? 568 : 256 }, deviceScaleFactor: 1, javaScriptEnabled: false,
         locale: this.opts.locale, timezoneId: this.opts.timezoneId, colorScheme: 'light', serviceWorkers: 'block', acceptDownloads: false,
       });
+      const { context } = pass;
       await this.installNetworkPolicy(context, false);
       const page = await context.newPage();
       for (const screen of this.reflowScreens) {
@@ -1299,10 +1337,10 @@ export class WebSession {
           // Sideways overflow is then measured at 320 px by the short zoomed height.
           await page.setViewportSize({ width: this.vw, height: this.vh });
           await this.loadReflowCopy(page, screen);
-          const rules = await page.evaluate(reflowRuleCount).catch(() => null);
-          if (screen.rules >= 20 && rules !== null && rules < 0.9 * screen.rules) {
-            this.reflow.push({ ...rec, styles_lost: { live_rules: screen.rules, copy_rules: rules } });
-            this.warnings.push(`reflow copy of ${screen.snapshot_id} kept ${rules} of ${screen.rules} CSS rules; not measured`);
+          const copy = await page.evaluate(reflowRuleCount).catch(() => null);
+          if (copy && ((screen.rules >= 20 && copy.rules < 0.9 * screen.rules) || copy.sheets < screen.sheets)) {
+            this.reflow.push({ ...rec, styles_lost: { live_rules: screen.rules, copy_rules: copy.rules, live_sheets: screen.sheets, copy_sheets: copy.sheets } });
+            this.warnings.push(`reflow copy of ${screen.snapshot_id} kept ${copy.rules} of ${screen.rules} CSS rules and ${copy.sheets} of ${screen.sheets} stylesheets; not measured`);
             continue;
           }
           const full = await page.evaluate(reflowInfo, { mode: 'scan' });
@@ -1320,7 +1358,7 @@ export class WebSession {
     } catch (err) {
       this.warnings.push(`reflow pass failed: ${firstLine(err.message)}`);
     } finally {
-      if (context) await context.close().catch(() => {});
+      if (pass) await pass.close();
       this.reflowScreens = [];
     }
   }
@@ -1389,7 +1427,7 @@ export class WebSession {
       await context.routeWebSocket(/.*/, (ws) => this.onWebSocket(ws));
       return;
     }
-    await context.route('**/*', (route) => (this.isAllowed(route.request().url()) ? route.continue() : route.abort('blockedbyclient')).catch(() => {}));
+    await context.route('**/*', (route) => (this.isAllowed(route.request().url(), route.request()) ? route.continue() : route.abort('blockedbyclient')).catch(() => {}));
     await context.routeWebSocket(/.*/, (ws) => {
       if (this.isAllowed(ws.url().replace(/^ws/, 'http'))) ws.connectToServer();
       else ws.close({ code: 1008, reason: 'blocked by ergoqa network policy' }).catch(() => {});
@@ -1398,12 +1436,13 @@ export class WebSession {
 
   /** Focus walk of the initial screen in a separate context, so the run's page keeps its state. */
   async focusWalkFresh() {
-    let context = null;
+    let pass = null;
     try {
-      context = await this.browser.newContext({
+      pass = await this.passContext({
         ...this.dev.contextOptions, locale: this.opts.locale, timezoneId: this.opts.timezoneId, colorScheme: 'light',
         reducedMotion: 'no-preference', serviceWorkers: 'block', acceptDownloads: false,
       });
+      const { context } = pass;
       await this.installNetworkPolicy(context, false);
       const page = await context.newPage();
       await page.goto(this.scenario.url, { waitUntil: 'load', timeout: 30000 });
@@ -1412,7 +1451,7 @@ export class WebSession {
     } catch (err) {
       this.warnings.push(`focus walk (load) failed: ${firstLine(err.message)}`);
     } finally {
-      if (context) await context.close().catch(() => {});
+      if (pass) await pass.close();
     }
   }
 
@@ -1858,7 +1897,14 @@ export class WebSession {
     if (this.consolePending.length < 100) this.consolePending.push(`[${type}] ${truncate(msg, 500)}`);
   }
 
-  isAllowed(url) {
+  /**
+   * Network policy. Other origins need --allow-origin. A file:// page loads local
+   * stylesheets, scripts, fonts, images and media from any folder, as a browser does
+   * (a page in dist/pages/ usually styles itself from dist/css/); frames, other documents
+   * and everything else load only from the page's folder and below, so a page cannot
+   * frame an unrelated local file into a capture.
+   */
+  isAllowed(url, request = null) {
     let u;
     try {
       u = new URL(url);
@@ -1869,6 +1915,7 @@ export class WebSession {
     if (u.protocol === 'file:') {
       const s = this.scenario.origin;
       if (s.protocol !== 'file:') return false;
+      if (request && LOCAL_SUBRESOURCES.has(request.resourceType())) return true;
       const dir = s.pathname.slice(0, s.pathname.lastIndexOf('/') + 1);
       return u.pathname.startsWith(dir);
     }
@@ -1878,7 +1925,7 @@ export class WebSession {
   onRoute(route) {
     const req = route.request();
     const url = req.url();
-    if (this.isAllowed(url)) return route.continue().catch(() => {});
+    if (this.isAllowed(url, req)) return route.continue().catch(() => {});
     this.blockedCount++;
     if (this.blocked.length < 50) this.blocked.push({ t_ms: this.rel(epochNow()), url: stripQuery(url), resource_type: req.resourceType() });
     return route.abort('blockedbyclient').catch(() => {});

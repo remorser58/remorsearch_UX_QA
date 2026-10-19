@@ -225,8 +225,12 @@ The driver itself never installs anything.
 ## Hosts that sandbox commands (Codex)
 
 A sandbox that blocks Chromium's helper processes but allows local files (Codex
-on macOS) can launch it in one process, which is enough for captures and the
-layout scan of a `file://` page:
+on macOS) can launch it in one process. Chromium in that mode cannot open a second
+browser context, so the driver gives each pass that needs one (the 320 px reflow
+copy, text spacing and short window, the fresh focus walk) a browser process of its
+own. A `file://` page loads its stylesheets, scripts, fonts, images and media from
+any local folder, as a browser does; frames and other documents load only from the
+page's folder and below:
 
 ```sh
 REMORSEARCH_CHROMIUM_ARGS=--single-process python3 scripts/ergo_qa.py scan --url file:///path/to/page.html --out work/scan

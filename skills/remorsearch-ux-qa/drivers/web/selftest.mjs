@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import http from 'node:http';
 import os from 'node:os';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { CATALOG } from './devices.mjs';
 import { openBrowser, validateBrowserWs } from './browser_transport.mjs';
@@ -1596,6 +1596,48 @@ async function reflowCopyTest(base, tmp) {
     !lost.includes('gnb-a1') && !lost.includes('foot-a1'), recs.map((x) => x.lost));
 }
 
+/**
+ * A built site opened from disk: the page sits two folders below the stylesheet that makes
+ * its row 600 px wide, and frames a file outside its own folder. Run plainly and with
+ * --single-process (the setting for command sandboxes that block Chromium's helpers),
+ * where every pass that needs its own browser context used to fail.
+ */
+async function localFilesTest(tmp) {
+  const site = path.join(tmp, 'local-site');
+  fs.mkdirSync(path.join(site, 'css'), { recursive: true });
+  fs.mkdirSync(path.join(site, 'pages', 'ui'), { recursive: true });
+  fs.mkdirSync(path.join(tmp, 'local-private'), { recursive: true });
+  fs.writeFileSync(path.join(site, 'css', 'site.css'), 'body { margin: 0; font-family: sans-serif; }\n#wide-row { width: 600px; height: 40px; background: #dde; }\n');
+  fs.writeFileSync(path.join(tmp, 'local-private', 'note.html'), '<!doctype html><title>note</title><p>outside the page folder</p>');
+  fs.writeFileSync(path.join(site, 'pages', 'ui', 'page.html'), '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+    + '<meta name="viewport" content="width=device-width, initial-scale=1"><title>Local page</title>'
+    + '<link rel="stylesheet" href="../../css/site.css"></head><body><h1>Local page</h1><div id="wide-row">A row from the site stylesheet</div>'
+    + '<iframe id="outside" title="outside" src="../../../local-private/note.html"></iframe></body></html>');
+  writeJson(path.join(tmp, 'local.json'), {
+    schema_version: 'ergo-scenario.v1', scenario_id: 'SC-driver-local-01',
+    surface: { kind: 'web', url: pathToFileURL(path.join(site, 'pages', 'ui', 'page.html')).href },
+    task_goal_ko: '페이지를 본다', device_ids: ['galaxy-s24'], targets: {}, steps: [{ action: 'wait', ms: 100 }],
+    success: { selector_visible: '#wide-row' },
+  });
+  const variants = [['plain', {}]];
+  if (process.env.REMORSEARCH_BROWSER_WS === undefined) variants.push(['single-process', { REMORSEARCH_CHROMIUM_ARGS: '--single-process' }]);
+  for (const [label, extra] of variants) {
+    const runId = `R-local-${label}`;
+    const r = await runDriver(['run', '--scenario', path.join(tmp, 'local.json'), '--device', 'galaxy-s24', '--out', path.join(tmp, 'runs'),
+      '--run-id', runId, '--focus-walk'], { env: { ...process.env, ...extra } });
+    if (!check(`local files (${label}): exit 0`, r.code === 0, `${r.code} ${r.err}`)) continue;
+    const { run } = loadRun(path.join(tmp, 'runs', runId));
+    const blocked = run.driver.network_policy.blocked_sample.map((b) => b.url);
+    check(`local files (${label}): a stylesheet two folders up loads; a frame outside the page's folder is blocked`,
+      !blocked.some((u) => u.endsWith('/css/site.css')) && blocked.some((u) => u.endsWith('/local-private/note.html')), blocked);
+    const offenders = (run.reflow || []).filter((x) => !x.error && !x.styles_lost).flatMap((x) => (x.offenders || []).map((o) => o.dom_id));
+    check(`local files (${label}): the 320 px copy keeps the page's stylesheet and finds the wide row`, offenders.includes('wide-row'), run.reflow);
+    check(`local files (${label}): the reflow, text-spacing and focus walk passes all ran`,
+      !run.warnings.some((w) => /pass failed|walk \((?:load|end)\) failed|not measured/.test(w))
+        && (run.adaptation || []).length === 2 && run.focus_walks.some((w) => w.phase === 'load'), run.warnings);
+  }
+}
+
 async function adaptationTest(base, tmp) {
   const { pw, info } = loadPlaywright();
   const { scenario } = normalizeScenario({ schema_version: 'ergo-scenario.v1', scenario_id: 'SC-adaptation',
@@ -2846,7 +2888,7 @@ async function typographyTest(base, tmp) {
 async function main() {
   const keep = process.argv.includes('--keep');
   // --only a,b: run just these groups (scripted, actions, layers, focus, focus2, feedback, native-feedback,
-  // read, reflow, reflow-copy, viewport, dialog, serve, tooling, exit, connect, analyze) while iterating on one part.
+  // read, reflow, reflow-copy, local, viewport, dialog, serve, tooling, exit, connect, analyze) while iterating on one part.
   const oi = process.argv.indexOf('--only');
   const only = oi > 0 && process.argv[oi + 1] ? new Set(process.argv[oi + 1].split(',')) : null;
   const want = (g) => !only || only.has(g);
@@ -2918,6 +2960,7 @@ async function main() {
     if (want('reflow')) await reflowTest(base, tmp);
     if (want('reflow-copy')) await reflowCopyTest(base, tmp);
     if (want('adaptation')) await adaptationTest(base, tmp);
+    if (want('local')) await localFilesTest(tmp);
     if (want('viewport')) await viewportTest(base, tmp);
     if (want('dialog')) await dialogTest(base, tmp);
     if (want('serve')) await serveTest(base, tmp);

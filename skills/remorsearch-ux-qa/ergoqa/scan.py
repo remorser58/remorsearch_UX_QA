@@ -10,6 +10,7 @@ dismisses what the pixels do not show.
 from __future__ import annotations
 
 import json
+import re
 import subprocess
 import time
 from pathlib import Path
@@ -25,6 +26,24 @@ DEFAULT_DEVICES = ("galaxy-s24", "laptop-1440")
 SEVERITY_RANK = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
 EMPTY_TARGETS = {k: [] for k in ("primary", "destructive", "irreversible", "critical_message", "error_message", "status",
                                  "navigation", "ad_like", "hud", "game_control", "timed")}
+# Driver warnings that mean a pass did not run, and the checks it would have fed. Their
+# candidates are missing from the scan, so the report names them as a gap.
+PASS_WARNINGS = (
+    (re.compile(r"^reflow (pass (failed|stopped|skipped)|copy of \S+ kept .* not measured|copy failed)|^reflow: \d+ screen"), "RF-01 reflow at 320 px"),
+    (re.compile(r"^adaptation (pass failed|pass skipped|copy failed)"), "RF-02 text spacing and RF-03 short window"),
+    (re.compile(r"^focus walk \((load|end)\) failed"), "focus walk"),
+)
+
+
+def checks_not_run(warnings: list[str]) -> list[str]:
+    """'<checks>: <driver warning>' for every warning that left checks out of the run."""
+    out = []
+    for warning in warnings:
+        for pattern, label in PASS_WARNINGS:
+            if isinstance(warning, str) and pattern.search(warning):
+                out.append(f"{label}: {warning[:200]}")
+                break
+    return out[:8]
 
 
 def default_profile(device_id: str) -> dict[str, Any]:
@@ -173,6 +192,7 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
                 if origin not in origins:
                     origins.append(origin)
         entry["blocked_origins"] = origins[:5]
+        entry["checks_not_run"] = checks_not_run(run_doc.get("warnings") or [])
         scrolls = []
         for snap_path in sorted(run_dir.glob("*.json")):
             if snap_path.name == "run.json":
@@ -242,9 +262,15 @@ def render_markdown(result: dict[str, Any]) -> str:
                 spans = ", ".join(f"{a}-{b}" for a, b in c["uncaptured_css"])
                 lines.append(f"  Not captured: {spans} CSS px from the top; rerun with a larger --tiles.")
             if c.get("blocked_requests"):
-                lines.append(f"  Blocked {c['blocked_requests']} requests to other origins ("
-                             f"{', '.join(c.get('blocked_origins') or []) or 'see run.json'}); fonts, styles or images may be missing. "
-                             "Pass --allow-origin for origins the page needs.")
+                if str(result.get("url", "")).startswith("file:"):
+                    lines.append(f"  Blocked {c['blocked_requests']} requests for frames or documents outside the page's folder "
+                                 "(see run.json); serve the folder over http if the page needs them.")
+                else:
+                    lines.append(f"  Blocked {c['blocked_requests']} requests to other origins ("
+                                 f"{', '.join(c.get('blocked_origins') or []) or 'see run.json'}); fonts, styles or images may be missing. "
+                                 "Pass --allow-origin for origins the page needs.")
+            for item in c.get("checks_not_run") or []:
+                lines.append(f"  Did not run: {item}. Its candidates are missing from this scan.")
     lines += ["", "| # | Severity | Check | Device | Element | What was measured | Crop |", "| --- | --- | --- | --- | --- | --- | --- |"]
     for c in result["candidates"]:
         element = c["element"].split("|", 1)
