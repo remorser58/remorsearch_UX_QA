@@ -317,6 +317,24 @@ LY05 = _register(CheckSpec(
     (), ("web", "desktop"), "visual",
     "반복 항목 사이 간격을 같은 값(gap 또는 같은 margin)으로 통일하세요.",
 ))
+LY06 = _register(CheckSpec(
+    "LY-06", "layout", "measured", "아이콘이 조작 요소 가운데에서 벗어남",
+    "An icon or glyph sits off the centre of its control",
+    (), ("web", "desktop"), "visual",
+    "아이콘을 담은 조작 요소를 display:flex, align-items:center, justify-content:center로 가운데 정렬하고, 글자 기호(+, −, ×)는 SVG 아이콘으로 바꾸거나 line-height를 상자 높이에 맞추세요.",
+))
+LY07 = _register(CheckSpec(
+    "LY-07", "layout", "measured", "입력칸과 붙은 버튼의 위아래 모서리가 다름",
+    "A field and the button or addon attached to it have different top or bottom edges",
+    (), ("web", "desktop"), "visual",
+    "입력 그룹의 입력칸과 버튼이 같은 높이(같은 padding, line-height, border)를 쓰게 하고, 그룹을 align-items: stretch로 묶으세요.",
+))
+LY08 = _register(CheckSpec(
+    "LY-08", "layout", "measured", "페이지가 화면보다 넓거나 몇 px 더 스크롤됨",
+    "The page is wider than the screen, or a full-height layout scrolls a few pixels",
+    (), ("web", "desktop"), "visual",
+    "화면 밖으로 나간 요소의 고정 폭을 max-width: 100%로 바꾸고 넓은 표는 overflow-x: auto 상자에 넣으세요. 화면 높이 레이아웃(100vh, min-height)에 더해진 margin, padding, border를 빼서 페이지 높이를 화면에 맞추세요.",
+))
 UI01 = _register(CheckSpec(
     "UI-01", "visual", "measured", "아이콘 전용 조작 요소에 시각적 설명이 없음",
     "Icon-only action has no visible tooltip or equivalent hover/focus explanation",
@@ -2339,8 +2357,65 @@ def check_semantics(ctx: Context) -> list[Observation]:
     return out
 
 
+_PLACEMENT_KINDS = ("icon_offset", "attached_mismatch", "page_overflow", "scroll_slack")
+_DIRECTION_KO = {("x", True): "오른쪽으로", ("x", False): "왼쪽으로", ("y", True): "아래로", ("y", False): "위로"}
+
+
+def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, base: tuple, context: dict[str, Any]) -> Observation:
+    """LY-06..08 from the driver's measured outliers: an off-centre icon, a field and its
+    attached button with different edges, and a page wider or a few px taller than the
+    screen. Offsets are CSS px on the screen that showed them."""
+    kind = o["kind"]
+    offset = o.get("offset_px")
+    size = abs(offset) if isinstance(offset, (int, float)) else 0
+    anchors = {"anchor_selectors": selectors, **context}
+    if kind == "icon_offset":
+        axis = o.get("axis")
+        where = _DIRECTION_KO.get((axis, size == offset), "")
+        name = label[:30] or selectors[0][-40:]
+        return Observation(
+            "LY-06", *base, [], f"{selectors[0]}|{label}",
+            {"name": "icon_offset", "value": offset, "unit": "css_px", "threshold": 2 if o.get("ink") else 3, "comparator": ">=",
+             "axis": axis, "free_px": o.get("free_px"), "box_px": o.get("size_px"), "content_px": o.get("content_px"), "ink": bool(o.get("ink"))},
+            False, "P2" if size >= 6 else "P3",
+            f"'{name}' 아이콘이 조작 요소 가운데에서 {where} {size:g}px 벗어납니다(상자 {o.get('size_px')}px, 한쪽 여백 {o.get('free_px')}px)"
+            + (", 글자 기호의 실제 잉크 기준입니다." if o.get("ink") else "."),
+            extra=anchors,
+        )
+    if kind == "attached_mismatch":
+        top, bottom = o.get("top_px") or 0, o.get("bottom_px") or 0
+        edge = "위" if abs(top) >= abs(bottom) else "아래"
+        other = selectors[1] if len(selectors) > 1 else "붙은 버튼"
+        return Observation(
+            "LY-07", *base, [], f"{selectors[0]}|{label}",
+            {"name": "attached_edge_offset", "value": offset, "unit": "css_px", "threshold": 2, "comparator": ">=",
+             "top_px": top, "bottom_px": bottom, "field_px": o.get("field_px"), "attached_px": o.get("other_px"), "attached": other},
+            False, "P2" if size >= 4 else "P3",
+            f"입력칸과 붙은 {other}의 {edge} 모서리가 {size:g}px 어긋납니다(높이 {o.get('field_px')}px와 {o.get('other_px')}px).",
+            extra=anchors,
+        )
+    if kind == "page_overflow":
+        return Observation(
+            "LY-08", *base, [], "page-width|",
+            {"name": "page_overflow", "value": offset, "unit": "css_px", "threshold": 1, "comparator": "<", "page_px": o.get("page_px"),
+             "screen_px": o.get("screen_px"), "root_hides": bool(o.get("hides")), "offenders": selectors[:3]},
+            False, "P2",
+            f"페이지가 화면보다 {size:g}px 넓습니다({o.get('page_px')}px, 화면 {o.get('screen_px')}px). 화면 밖으로 나간 요소: {', '.join(selectors[:3])}"
+            + (". 루트가 가로 넘침을 숨겨 그 부분이 잘려 보입니다." if o.get("hides") else ". 페이지가 옆으로 밀립니다."),
+            extra=anchors,
+        )
+    return Observation(
+        "LY-08", *base, [], "page-height|",
+        {"name": "scroll_slack", "value": offset, "unit": "css_px", "threshold": 1, "comparator": "<", "page_px": o.get("page_px"),
+         "screen_px": o.get("screen_px"), "full_height": selectors[0]},
+        False, "P3",
+        f"화면 높이를 채우는 레이아웃({selectors[0]})인데 페이지가 {size:g}px 더 스크롤됩니다. 화면 높이에 더해진 여백이나 테두리를 확인하세요.",
+        extra=anchors,
+    )
+
+
 def check_layout(ctx: Context) -> list[Observation]:
-    """Covered text, overlapping text, near-miss alignment and uneven spacing (LY-02..05).
+    """Covered text, overlapping text, near-miss alignment, uneven spacing and misplacement (LY-02..08).
 
     Measured from rendered geometry and profile-independent. Covered text counts only
     when no scroll position reveals it: a fixed or sticky bar at the top while the page
@@ -2416,7 +2491,7 @@ def check_layout(ctx: Context) -> list[Observation]:
                 extra={"context_selectors": [other]} if isinstance(other, str) and other.startswith("#") else {},
             ))
     for o in ctx.snapshot.get("layout_outliers") or []:
-        if not isinstance(o, dict) or o.get("kind") not in ("alignment", "spacing"):
+        if not isinstance(o, dict) or o.get("kind") not in ("alignment", "spacing", *_PLACEMENT_KINDS):
             continue
         selectors = [s for s in o.get("selectors") or [] if isinstance(s, str) and s]
         if not selectors:
@@ -2424,7 +2499,9 @@ def check_layout(ctx: Context) -> list[Observation]:
         label = (o.get("text") or "").strip()[:40]
         container = o.get("container")
         context = {"context_selectors": [container]} if isinstance(container, str) and container.startswith("#") else {}
-        if o["kind"] == "alignment":
+        if o["kind"] in _PLACEMENT_KINDS:
+            out.append(_placement_observation(o, selectors, label, base, context))
+        elif o["kind"] == "alignment":
             offset = o.get("offset_px")
             axis = "시작선" if o.get("axis") == "x" else "윗선"
             out.append(Observation(
@@ -2925,7 +3002,7 @@ HYPOTHESIS_CHECKS = frozenset({"GZ-01", "GZ-04", "PC-05", "PT-05", "GM-06"})
 # "profile-independent" instead of a k/n coverage (STF-08).
 PROFILE_INVARIANT_CHECKS = frozenset({"TI-01", "PT-01", "PT-05", "PT-06", "PC-01", "PC-02", "CG-01", "CG-03", "GZ-03", "GM-05", "GM-06",
                                       "SM-01", "SM-02", "SM-03", "SM-04", "SM-05", "SM-06", "SM-07", "SM-08", "LY-01", "LY-02", "LY-03",
-                                      "LY-04", "LY-05", "UI-01", "RF-01", "RF-02", "RF-03",
+                                      "LY-04", "LY-05", "LY-06", "LY-07", "LY-08", "UI-01", "RF-01", "RF-02", "RF-03",
                                       "FM-02"})
 
 

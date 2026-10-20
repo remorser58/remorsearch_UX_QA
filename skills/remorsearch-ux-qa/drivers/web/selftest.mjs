@@ -2724,6 +2724,69 @@ async function paintedStateTest(base, tmp) {
   }
 }
 
+async function placementTest(tmp) {
+  // LY-06..08 measurements: an off-centre icon (box and glyph ink), a field and its attached
+  // button with different bottoms, a page wider than the screen and a full-height page with a
+  // few px of extra scroll; each beside a clean twin that must stay silent.
+  const { pw, info } = loadPlaywright();
+  const transport = await openBrowser(pw, info, { endpoint: undefined });
+  const context = await transport.browser.newContext({ viewport: { width: 1100, height: 800 }, deviceScaleFactor: 1 });
+  try {
+    const page = await context.newPage();
+    await page.setContent(`<!doctype html><style>
+      body { margin:0; font:16px Arial, sans-serif }
+      .ib { box-sizing:border-box; width:40px; height:40px; border:1px solid #888; background:#eee; margin:20px; padding:0 }
+      .ib svg { display:block; width:16px; height:16px }
+      #icon-off { display:block; padding-left:8px }
+      #icon-ok { display:flex; align-items:center; justify-content:center }
+      .glyph { box-sizing:border-box; width:24px; height:24px; margin:20px; background:#ddd; cursor:pointer; text-align:center }
+      #glyph-off { line-height:24px; padding-top:6px }
+      #glyph-ok { display:flex; align-items:center; justify-content:center }
+      .group { display:flex; align-items:flex-start; margin:20px }
+      .group input { box-sizing:border-box; height:34px; border:1px solid #888; margin:0 }
+      .group button { box-sizing:border-box; border:1px solid #06c; background:#08f; margin:0 }
+      #wide { width:1300px; height:10px; background:#ccc }
+    </style>
+    <button id="icon-off" class="ib" aria-label="Off"><svg viewBox="0 0 16 16"><rect width="16" height="16"/></svg></button>
+    <button id="icon-ok" class="ib" aria-label="Ok"><svg viewBox="0 0 16 16"><rect width="16" height="16"/></svg></button>
+    <div id="glyph-off" class="glyph">+</div>
+    <div id="glyph-ok" class="glyph">+</div>
+    <div class="group"><input id="field" aria-label="Search"><button id="go" style="height:38px">Go</button></div>
+    <div class="group"><input id="field-ok" aria-label="Find"><button id="go-ok" style="height:34px">Go</button></div>
+    <div id="wide"></div>`);
+    const capture = () => page.evaluate(extractSnapshot, { key: STATE_KEY, cap: 400, knownRoles: [...KNOWN_ROLES] });
+    const first = await capture();
+    writeJson(path.join(tmp, 'placement-capture.json'), first.layout_outliers);
+    const of = (ex, kind, sel) => (ex.layout_outliers || []).filter((o) => o.kind === kind && (!sel || o.selectors.includes(sel)));
+    const iconOff = of(first, 'icon_offset', '#icon-off');
+    check('placement: an icon 3 px left of its button centre is measured on that axis only',
+      iconOff.length === 1 && iconOff[0].axis === 'x' && Math.abs(iconOff[0].offset_px + 3) < 0.6 && !of(first, 'icon_offset', '#icon-ok').length, iconOff);
+    const glyph = of(first, 'icon_offset', '#glyph-off');
+    check('placement: a glyph pushed down in its box is measured by its ink, and a centred one is not',
+      glyph.length === 1 && glyph[0].axis === 'y' && glyph[0].ink === true && glyph[0].offset_px > 3 && !of(first, 'icon_offset', '#glyph-ok').length,
+      of(first, 'icon_offset'));
+    const attached = of(first, 'attached_mismatch', '#field');
+    check('placement: a field whose attached button is 4 px taller differs at the bottom edge, a matching pair does not',
+      attached.length === 1 && attached[0].selectors.includes('#go') && Math.abs(attached[0].bottom_px - 4) < 0.6 && Math.abs(attached[0].top_px) < 0.6
+        && !of(first, 'attached_mismatch', '#field-ok').length, of(first, 'attached_mismatch'));
+    const wide = of(first, 'page_overflow');
+    check('placement: a 1300 px block on a 1100 px screen makes one page-width outlier naming it',
+      wide.length === 1 && wide[0].selectors.includes('#wide') && Math.abs(wide[0].offset_px - 200) < 1, wide);
+    await page.evaluate(() => {
+      document.body.innerHTML = '<div id="full" style="height:100vh;background:#eee"></div>';
+      document.body.style.margin = '8px';
+    });
+    const slack = of(await capture(), 'scroll_slack');
+    check('placement: a full-height block plus the body margin scrolls 16 px and is measured',
+      slack.length === 1 && slack[0].selectors.includes('#full') && Math.abs(slack[0].offset_px - 16) < 1 && !of(await capture(), 'page_overflow').length, slack);
+    await page.evaluate(() => { document.body.style.margin = '0'; });
+    check('placement: the same block without the margin fits the screen', !of(await capture(), 'scroll_slack').length);
+  } finally {
+    await context.close();
+    await transport.close();
+  }
+}
+
 async function gazeGeometryTest(tmp) {
   const { pw, info } = loadPlaywright();
   const transport = await openBrowser(pw, info, { endpoint: undefined });
@@ -2906,7 +2969,7 @@ async function typographyTest(base, tmp) {
 async function main() {
   const keep = process.argv.includes('--keep');
   // --only a,b: run just these groups (scripted, actions, layers, focus, focus2, feedback, native-feedback,
-  // read, reflow, reflow-copy, local, viewport, dialog, serve, tooling, exit, connect, analyze) while iterating on one part.
+  // read, reflow, reflow-copy, local, viewport, dialog, serve, tooling, exit, connect, analyze, placement) while iterating on one part.
   const oi = process.argv.indexOf('--only');
   const only = oi > 0 && process.argv[oi + 1] ? new Set(process.argv[oi + 1].split(',')) : null;
   const want = (g) => !only || only.has(g);
@@ -2924,6 +2987,7 @@ async function main() {
     if (want('integrity')) await taskIntegrityTest(base, tmp);
     if (want('painted')) await paintedStateTest(base, tmp);
     if (want('gaze')) await gazeGeometryTest(tmp);
+    if (want('placement')) await placementTest(tmp);
     if (want('typography')) await typographyTest(base, tmp);
 
     const outDir = path.join(tmp, 'runs');

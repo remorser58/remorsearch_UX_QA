@@ -5,10 +5,10 @@ Test completion, input preservation and rendered design. Scenarios define condit
 
 ## Fast path for UI QA
 
-For a page UI check that names no persona, audience or multi-condition matrix. It replaces the run path; numbered sections stay lookups.
+For a page UI check naming no persona, audience or condition matrix. It replaces the run path; numbered sections stay lookups.
 
-1. `python3 scripts/ergo_qa.py scan --url URL --out work/scan` records the page top to end on a phone and a laptop (`--device ID` for others) and writes `scan.md` with an outlined crop per measured candidate: cut text (LY-01), text a bar or box keeps covering (LY-02), overlapping text (LY-03), near-miss alignment (LY-04), uneven list spacing (LY-05), contrast, target size, reflow and names. A driver failure is a coverage gap.
-2. Open every crop, then each device's top, middle and end screenshots at readable scale. Confirm a candidate only when the pixels show it; list dismissals with reasons. Then check what measurement misses with `references/persona-qa/ui-quality.md` by section: hierarchy, wrong or broken content, inconsistent components, and reference differences when Figma or a spec exists.
+1. `python3 scripts/ergo_qa.py scan --url URL --out work/scan` records the page top to end on a phone and a laptop at once (`--device ID` for others). `scan.md` lists layout candidates (cut, covered or overlapping text, alignment, spacing, icon centring, field edges, page width) with outlined crops, then the other checks by cause; `scan.json` has all. A driver failure is a coverage gap.
+2. Open every layout crop and the top, middle and end screenshots in `runs/SCAN-*/*.css.png`. Confirm a candidate only when the pixels show it; list dismissals with reasons. Report LY-08 once for all text it cuts and each grouped cause once. Then check what measurement misses with `references/persona-qa/ui-quality.md` by section: hierarchy, wrong or broken content, inconsistent components, and differences from Figma or a spec.
 3. Exercise only named tasks, or the primary form: happy path, one required omission, validation and recovery.
 4. Report with the template's Decision and Findings sections: each finding cites its crop, measurement and fix. Name what stayed untested (Safari/WebKit, real devices, unreached states).
 

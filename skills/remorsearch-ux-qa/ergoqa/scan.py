@@ -24,6 +24,14 @@ ROOT = Path(__file__).resolve().parents[1]
 DRIVER = ROOT / "drivers" / "web" / "ergo_drive.mjs"
 DEFAULT_DEVICES = ("galaxy-s24", "laptop-1440")
 SEVERITY_RANK = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
+EXAMPLES_PER_GROUP = 3
+
+
+def is_layout(check_id: str) -> bool:
+    """What the scanned screens show (LY) and reflow at 320 px (RF-01). The spacing and
+    short-window experiments (RF-02, RF-03) change the page first and are listed with the
+    other checks."""
+    return check_id.startswith("LY-") or check_id == "RF-01"
 EMPTY_TARGETS = {k: [] for k in ("primary", "destructive", "irreversible", "critical_message", "error_message", "status",
                                  "navigation", "ad_like", "hud", "game_control", "timed")}
 # Driver warnings that mean a pass did not run, and the checks it would have fed. Their
@@ -115,24 +123,51 @@ def _box_for(observation: dict[str, Any], snapshot: dict[str, Any]) -> dict[str,
     return None
 
 
-def write_crop(run_dir: Path, observation: dict[str, Any], target: Path, margin: int = 24) -> str | None:
-    """Outline the element on the full-resolution screenshot and save the region around it."""
+def _cached(cache: dict[Path, Any] | None, key: Path, load: Any) -> Any:
+    if cache is None:
+        return load()
+    if key not in cache:
+        cache[key] = load()
+    return cache[key]
+
+
+def write_crop(run_dir: Path, observation: dict[str, Any], target: Path, margin: int = 24,
+               cache: dict[Path, Any] | None = None) -> str | None:
+    """Save the region around the element with the element outlined. The cache keeps decoded
+    screenshots and snapshots between crops of one scan (decoding is the slow part)."""
     snapshot_path = run_dir / f"{observation.get('snapshot_id')}.json"
     if not snapshot_path.is_file():
         return None
-    snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+    snapshot = _cached(cache, snapshot_path, lambda: json.loads(snapshot_path.read_text(encoding="utf-8")))
     box = _box_for(observation, snapshot)
     shot = snapshot.get("screenshot") or {}
     if not box or not shot.get("path"):
         return None
-    image = png.read_png(run_dir / shot["path"])
+    shot_path = run_dir / shot["path"]
+    image = _cached(cache, shot_path, lambda: png.read_png(shot_path))
     viewport = (snapshot.get("device") or {}).get("viewport_css") or [image.width, image.height]
     scale = image.width / max(1, viewport[0])
     x, y, w, h = (int(round(v * scale)) for v in (box["x"], box["y"], box["w"], box["h"]))
     pad = int(margin * scale)
-    outlined = png.draw_rect(image, x - 2, y - 2, w + 4, h + 4, (230, 30, 30), thickness=max(2, int(scale)))
-    png.write_png(target, _crop(outlined, x - pad, y - pad, w + 2 * pad, h + 2 * pad))
+    x0, y0 = max(0, x - pad), max(0, y - pad)
+    if x0 >= min(image.width, x + w + pad) or y0 >= min(image.height, y + h + pad):
+        return None  # the box lies outside the screenshot
+    region = _crop(image, x - pad, y - pad, w + 2 * pad, h + 2 * pad)
+    png.write_png(target, png.draw_rect(region, x - 2 - x0, y - 2 - y0, w + 4, h + 4, (230, 30, 30), thickness=max(2, int(scale))))
     return str(target)
+
+
+def group_key(candidate: dict[str, Any]) -> str:
+    """Candidates with one cause share a key: one contrast pair, one covering box. Other
+    layout candidates stand alone; other checks group by check."""
+    check, m = candidate["check_id"], candidate.get("measurement") or {}
+    if check == "PC-01":
+        return f"{check}|{m.get('fg')}|{m.get('bg')}"
+    if check == "LY-02" and m.get("covered_by"):
+        return f"{check}|{m['covered_by']}"
+    if is_layout(check):
+        return f"{check}|{candidate['element']}"
+    return check
 
 
 def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, tiles: int = 8, node: str = "node",
@@ -144,6 +179,10 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
     profiles: list[dict[str, Any]] = []
     coverage: list[dict[str, Any]] = []
     run_dirs: dict[str, Path] = {}
+    # The devices record at the same time, each in its own browser: the scan takes about
+    # as long as its slowest device.
+    started = time.time()
+    jobs = []
     for device_id in devices:
         profile = default_profile(device_id)
         scenario = scenario_for(url, device_id, tiles)
@@ -153,21 +192,35 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
             path.parent.mkdir(parents=True, exist_ok=True)
             path.write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
         run_id = f"SCAN-{device_id}"
-        started = time.time()
         command = [node, str(DRIVER), "run", "--scenario", str(scenario_path), "--profile", str(profile_path),
                    "--out", str(runs), "--run-id", run_id, "--continue-on-error"]
         for origin in allow_origins:
             command += ["--allow-origin", origin]
-        proc = subprocess.run(command, capture_output=True, text=True, timeout=timeout)
+        log = out / f"driver-{device_id}.log"
+        handle = log.open("w", encoding="utf-8")
+        jobs.append((device_id, profile, scenario, run_id, log, handle,
+                     subprocess.Popen(command, stdout=handle, stderr=subprocess.STDOUT, text=True)))
+    finished: dict[str, tuple[int, float]] = {}
+    for device_id, *_, handle, proc in jobs:
+        try:
+            code = proc.wait(timeout=max(1, timeout - (time.time() - started)))
+        except subprocess.TimeoutExpired:
+            proc.kill()
+            code = proc.wait()
+        handle.close()
+        finished[device_id] = (code, time.time() - started)
+    for device_id, profile, scenario, run_id, log, _, _ in jobs:
+        code, seconds = finished[device_id]
+        driver_output = log.read_text(encoding="utf-8", errors="replace")
         run_dir = runs / run_id
         run_doc = json.loads((run_dir / "run.json").read_text(encoding="utf-8")) if (run_dir / "run.json").is_file() else {}
-        entry = {"device": device_id, "seconds": round(time.time() - started, 1), "driver_exit": proc.returncode,
+        entry = {"device": device_id, "seconds": round(seconds, 1), "driver_exit": code,
                  "recorded": bool(run_doc) and run_doc.get("status") != "blocked"}
         if not entry["recorded"]:
             # A run that never reached the page (refused connection, blocked navigation)
             # is a coverage gap, never an empty result. The first line of the driver's error
             # names the cause; the stack below it does not.
-            stderr = proc.stderr or proc.stdout or ""
+            stderr = driver_output
             first = next((line.strip() for line in stderr.splitlines() if line.strip()), "")
             entry["error"] = "; ".join(run_doc.get("blocked_reasons") or []) or first[:300] or stderr[-600:]
             fix = driver_fix(stderr)
@@ -225,22 +278,38 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
         row["observation_ids"] = row["observation_ids"] + list(finding.get("observation_ids", []))
         if SEVERITY_RANK.get(finding.get("severity"), 4) < SEVERITY_RANK.get(row.get("severity"), 4):
             row["severity"] = finding.get("severity")
-    candidates = []
-    for n, finding in enumerate(sorted(merged.values(), key=lambda f: (SEVERITY_RANK.get(f.get("severity"), 4), f["check_id"], f["element_key"])), 1):
-        obs, run_dir = next((observations[i] for i in finding.get("observation_ids", []) if i in observations), (None, None))
-        crop = None
-        if obs and run_dir:
-            try:
-                crop = write_crop(run_dir, obs, crops / f"{n:02d}-{finding['check_id']}.png")
-            except (OSError, ValueError, png.PNGError):
-                crop = None
+    candidates, sources = [], {}
+    order = lambda f: (not is_layout(f["check_id"]), SEVERITY_RANK.get(f.get("severity"), 4), f["check_id"], f["element_key"])
+    for n, finding in enumerate(sorted(merged.values(), key=order), 1):
+        sources[n] = next((observations[i] for i in finding.get("observation_ids", []) if i in observations), (None, None))
+        obs = sources[n][0]
         candidates.append({
             "n": n, "check_id": finding["check_id"], "severity": finding.get("severity"), "title_ko": finding.get("title_ko"),
             "devices": sorted({run_id.removeprefix("SCAN-") for run_id in finding.get("run_ids", [])}),
             "element": finding["element_key"], "selectors": finding.get("selectors") or [],
             "summary_ko": finding.get("summary_ko"), "measurement": finding.get("measurement"),
-            "snapshot": obs.get("snapshot_id") if obs else None, "crop": crop,
+            "snapshot": obs.get("snapshot_id") if obs else None, "crop": None,
         })
+    # Text cut by the screen edge on a device whose page is wider than the screen is one
+    # defect, the page width (LY-08), whatever the number of cut texts.
+    wide = {d for c in candidates if (c.get("measurement") or {}).get("name") == "page_overflow" for d in c["devices"]}
+    for c in candidates:
+        if c["check_id"] == "LY-01" and (c.get("measurement") or {}).get("clipped_by") == "viewport" and set(c["devices"]) <= wide:
+            c["part_of"] = "LY-08 page_overflow"
+    groups: dict[str, list[dict[str, Any]]] = {}
+    for c in candidates:
+        if not c.get("part_of"):
+            c["group"] = group_key(c)
+            groups.setdefault(c["group"], []).append(c)
+    cache: dict[Path, Any] = {}
+    for members in groups.values():
+        for c in members[:EXAMPLES_PER_GROUP]:
+            obs, run_dir = sources[c["n"]]
+            if obs and run_dir:
+                try:
+                    c["crop"] = write_crop(run_dir, obs, crops / f"{c['n']:02d}-{c['check_id']}.png", cache=cache)
+                except (OSError, ValueError, png.PNGError):
+                    c["crop"] = None
     result = {"schema_version": "ergo-scan.v1", "url": url, "devices": list(devices), "coverage": coverage,
               "candidates": candidates, "status": "candidates_need_visual_confirmation"}
     (out / "scan.json").write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -271,14 +340,46 @@ def render_markdown(result: dict[str, Any]) -> str:
                                  "Pass --allow-origin for origins the page needs.")
             for item in c.get("checks_not_run") or []:
                 lines.append(f"  Did not run: {item}. Its candidates are missing from this scan.")
-    lines += ["", "| # | Severity | Check | Device | Element | What was measured | Crop |", "| --- | --- | --- | --- | --- | --- | --- |"]
-    for c in result["candidates"]:
+    rows = [c for c in result["candidates"] if not c.get("part_of")]
+    layout = [c for c in rows if is_layout(c["check_id"])]
+    other = [c for c in rows if not is_layout(c["check_id"])]
+    folded = sum(1 for c in result["candidates"] if c.get("part_of"))
+
+    def label(c: dict[str, Any]) -> str:
         element = c["element"].split("|", 1)
-        label = element[0] + (f" ({element[1]})" if len(element) > 1 and element[1] else "")
+        return (element[0] + (f" ({element[1]})" if len(element) > 1 and element[1] else "")).replace("|", "/")
+
+    def summary(c: dict[str, Any]) -> str:
+        return (c.get("summary_ko") or c.get("title_ko") or "").replace("|", "/").replace("\n", " ")
+
+    lines += ["", f"## Layout ({len(layout)})", "",
+              "Confirm each row on its crop and the screenshot around it."
+              + (f" {folded} texts cut by the screen edge are part of the page-width row (LY-08) and are not listed." if folded else ""),
+              "", "| # | Severity | Check | Device | Element | What was measured | Crop |", "| --- | --- | --- | --- | --- | --- | --- |"]
+    shown: set[Any] = set()
+    for c in layout:
+        if c.get("group") in shown:
+            continue
+        shown.add(c.get("group"))
+        same = [m for m in layout if m.get("group") == c.get("group")] if c.get("group") else [c]
+        more = f" ({len(same) - 1} more with the same cause: {', '.join(str(m['n']) for m in same[1:6])})" if len(same) > 1 else ""
         crop = Path(c["crop"]).name if c.get("crop") else "-"
-        summary = (c.get("summary_ko") or c.get("title_ko") or "").replace("|", "/").replace("\n", " ")
-        lines.append(f"| {c['n']} | {c['severity']} | {c['check_id']} | {', '.join(c['devices'])} | {label.replace('|', '/')} | {summary} | {crop} |")
-    if not result["candidates"]:
-        lines.append("| - | - | - | - | - | No measured candidate. The page still needs a visual pass. | - |")
+        lines.append(f"| {c['n']} | {c['severity']} | {c['check_id']} | {', '.join(c['devices'])} | {label(c)} | {summary(c)}{more} | {crop} |")
+    if not layout:
+        lines.append("| - | - | - | - | - | No measured layout candidate. The page still needs a visual pass. | - |")
+    if other:
+        lines += ["", f"## Other measured checks ({len(other)}, grouped by cause)", "",
+                  "One row per cause with up to three examples; scan.json lists every element.", "",
+                  "| Check | Severity | Count | Device | Examples | What was measured | Crops |", "| --- | --- | --- | --- | --- | --- | --- |"]
+        by_cause: dict[str, list[dict[str, Any]]] = {}
+        for c in other:
+            by_cause.setdefault(c.get("group") or c["check_id"], []).append(c)
+        for members in sorted(by_cause.values(), key=lambda ms: (min(SEVERITY_RANK.get(m.get("severity"), 4) for m in ms), ms[0]["check_id"], -len(ms))):
+            first = members[0]
+            worst = min((m.get("severity") for m in members), key=lambda v: SEVERITY_RANK.get(v, 4))
+            devices = sorted({d for m in members for d in m["devices"]})
+            examples = "; ".join(f"{m['n']} {label(m)[:60]}" for m in members[:EXAMPLES_PER_GROUP])
+            crops = ", ".join(Path(m["crop"]).name for m in members[:EXAMPLES_PER_GROUP] if m.get("crop")) or "-"
+            lines.append(f"| {first['check_id']} | {worst} | {len(members)} | {', '.join(devices)} | {examples} | {summary(first)} | {crops} |")
     return "\n".join(lines) + "\n"
 
