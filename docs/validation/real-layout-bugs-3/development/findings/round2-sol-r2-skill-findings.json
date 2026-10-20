@@ -1,0 +1,29 @@
+[
+  {
+    "page": "p01",
+    "selector": ".s-content",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, .s-content is 960 CSS px wide (x=0..960), exceeding the screen by 600 px. Its sections retain 800 px widths with text starting at x=90. Body overflow-x:hidden cuts paragraphs, examples, buttons and footer text at x=360 throughout the page. The 1440x900 rendering fits. Viewed: p01-scan-single/runs/SCAN-galaxy-s24/S-SCAN-galaxy-s24-000.css.png, -024.css.png and -101.css.png; geometry: focused-measurements.json.",
+    "fix": "At the phone breakpoint, make .s-content fluid (width:100%; min-width:0; box-sizing:border-box), reduce its 80 px horizontal padding, and let example columns use the available width. Keep any necessary horizontal scrolling inside individual code blocks."
+  },
+  {
+    "page": "p01",
+    "selector": "#sidebar .s-nav",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At initial scroll position on 360x780, the 210 px navigation remains fixed at x=30,y=100 while the main examples begin at x=90. The navigation label Autocomplete occupies x=58..148,y=295.6..312.6; the example Element 2 occupies x=106..170.4,y=302..319, producing about 42x10.6 px of intersecting text bounds and visibly colliding letters. Components also collides with the Elements example. The first sticky section heading covers part of the sidebar branding and navigation above. Viewed: p01-scan-single/runs/SCAN-galaxy-s24/S-SCAN-galaxy-s24-000.css.png and crops/165-LY-03.png, 168-LY-03.png; geometry: focused-measurements.json.",
+    "fix": "At the phone breakpoint, collapse the sidebar navigation or place it in a separate in-flow region before the examples; remove its desktop fixed positioning in that state. Reserve enough header height for the brand so the sticky content heading cannot paint over it."
+  },
+  {
+    "page": "p04",
+    "selector": "#myCarousel .carousel-control .glyphicon",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At 360x780, both carousel arrow glyph boxes are 20x20 CSS px at y=250..270, so their centres are y=260 while their 500 px high controls centre at y=250. The painted arrows visibly sit about 10 px too low. At 1440x900 the 30 px glyphs occupy y=235..265 and are centred correctly. Viewed: p04-scan/runs/SCAN-galaxy-s24/S-SCAN-galaxy-s24-000.css.png and crops/01-LY-06.png, 02-LY-06.png; geometry: focused-measurements.json.",
+    "fix": "Apply vertical centring below the desktop breakpoint as well: with top:50% and 20 px glyph height, add margin-top:-10px, or use translateY(-50%) with no competing vertical margin."
+  }
+]

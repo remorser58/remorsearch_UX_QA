@@ -1,0 +1,128 @@
+[
+  {
+    "page": "p01",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the header action list runs from x=60 to x=412 (352px wide), 52px past the screen. The user/avatar control is completely outside the initial view and the page can pan sideways. Viewed focus/p01-phone-top.png; DOM measurements in probe-phone.json.",
+    "fix": "At the phone breakpoint reduce nav-link horizontal padding or move secondary actions into an overflow menu so the action list plus the menu toggle fits within 360px."
+  },
+  {
+    "page": "p02",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780, the header action list ends at x=364 and creates 4px of horizontal overflow. A touch pan moves visualViewport.offsetLeft from 0 to 4, visibly shifting the header and content. Viewed focus/p02-phone-top.png and focus/p02-phone-pan-right.png.",
+    "fix": "Reduce mobile navbar item padding enough to keep the list inside the header content width, including both container gutters."
+  },
+  {
+    "page": "p03",
+    "selector": ".card-body nav.navbar input[placeholder=\"Search\"]",
+    "viewport": "laptop",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 1440x900, the Navbar example squeezes its search input to 26x38px while the adjacent Search button is 71.72px wide. The input has 12px padding on both sides and 1px borders, leaving 0px for its text; the Search placeholder is entirely invisible. Viewed focus/p03-laptop-navbar-detail.png; measured x=1302.98..1328.98.",
+    "fix": "Give the search input a usable minimum width and allow the example navbar to wrap or collapse based on its container width, before the form is compressed."
+  },
+  {
+    "page": "p04",
+    "selector": ".topbar .navbar-nav, #userDropdown",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the topbar occupies x=104..360 but its action list ends at x=380. The user control occupies x=324..380, so its rightmost 20px are cut off by the page edge. The avatar slot itself occupies x=336..368 and is also cut at the edge. Viewed visual/p04/phone/00.png; measurements in focus/geometry.json.",
+    "fix": "Reduce phone topbar action spacing or group secondary actions so the full user control fits inside the 256px content area beside the sidebar."
+  },
+  {
+    "page": "p04",
+    "selector": ".chart-pie + .mt-4.text-center.small > span:last-child",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "In the 166px-wide Revenue Sources legend, the third marker stays on the first line at x=287.33, y=1277.16, while its Referral label wraps to a separate line at x=205.11, y=1293.34. The marker is visually detached from its label. Viewed focus/p04-phone-legend.png.",
+    "fix": "Keep each legend marker and label together with inline-flex and white-space:nowrap; let the complete legend item wrap as a unit."
+  },
+  {
+    "page": "p06",
+    "selector": ".main-header .navbar-search-block",
+    "viewport": "both",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The navbar search form sits on a second row beneath its search icon while the other header icons stay on the first row, making the header 88px high. On phone it occupies x=54..162, y=48..79; its input is only 53.38px wide and visibly cuts the Search placeholder to its opening letters. On laptop the form is x=1038.38..1242, y=48..79. Viewed focus/p06-phone-top.png and focus/p06-laptop-top.png.",
+    "fix": "Restore the search block as a full-width positioned navbar overlay when shown, or place it in an explicitly sized flex row with a usable input width; keep it out of the individual icon item normal flow."
+  },
+  {
+    "page": "p06",
+    "selector": ".content-wrapper.iframe-mode > .nav.navbar",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the tab toolbar breaks into two 40px rows (81px total with border). Close and the left arrow are on the first row, while the right arrow jumps to the far left of the second row and fullscreen sits at its far right. The empty tab list takes a full 360px row width. Viewed focus/p06-phone-top.png and focus/p06-phone-touch-0.png. Laptop keeps the controls in one 41px row.",
+    "fix": "Keep this toolbar flex-wrap:nowrap at phone widths and give the tab list flex:1 with min-width:0; keep the close, arrow and fullscreen controls flex-shrink:0."
+  },
+  {
+    "page": "p06",
+    "selector": ".iframe-mode .tab-empty h2",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The empty-state heading is visibly pinned to the left screen edge. Its h2 fills all 360px, but its two painted lines are only 150.88px and 203.52px wide and both start at x=0, leaving 209px/156px of unused space on the right. The same empty state is horizontally centered on laptop. Viewed focus/p06-phone-top.png.",
+    "fix": "Apply text-align:center to the empty-state heading or its container so wrapped lines remain centered within the panel."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the header action list extends from x=60 to x=412, 52px beyond the screen. The avatar/user control is completely outside the initial view, while the header itself is only 360px wide. Viewed focus/p08-phone-top.png; measurements in probe-phone.json.",
+    "fix": "Reduce navbar item padding at the phone breakpoint or move secondary actions into an overflow menu so every retained control fits inside the header."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1, #example2",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Both tables are 521.23px wide inside 304px-wide DataTables wrappers. Starting at x=28, they end at x=549.23, 189.23px past the 360px screen, and extend beyond their card boundaries. Engine version and CSS grade are off screen; the document width grows to 549px. Viewed visual/p09/phone/00.png and visual/p09/phone/left-0.png.",
+    "fix": "Constrain each table inside a width:100%, min-width:0 wrapper with overflow-x:auto, or use responsive column rendering; keep the page and card width at the viewport width."
+  },
+  {
+    "page": "p10",
+    "selector": "#world-map .jqvmap-zoomin, #world-map .jqvmap-zoomout",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The map zoom glyphs sit low inside their 15x15px controls. At DPR 2 the painted plus centre is 2.38 CSS px below the phone control centre and 2.22px below on laptop; the minus is approximately 2.1px low. The plus nearly touches the lower edge. Viewed focus/p10-phone-zoom-controls.png, focus/p10-laptop-zoom-controls.png and focus/p10-zoom-ink.png.",
+    "fix": "Use flex or grid centering with padding:0 and a line-height matched to the 15px control; adjust the glyph baseline if needed so the painted plus/minus are vertically centered."
+  },
+  {
+    "page": "p11",
+    "selector": ".card-body table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The three documentation tables spill outside the 320px card and the 360px screen. At a glance is 798.14px wide and ends at x=843.14; Event name reference is 880.39px wide and ends at x=925.39; CSS classes is 759.89px wide. Right-hand columns disappear from the initial view and the page width grows to 925px. Viewed visual/p11/phone/left-0.png, left-1.png and left-2.png.",
+    "fix": "Put each table in a max-width:100% block wrapper with overflow-x:auto and min-width:0, or adapt columns for phone screens; prevent the table from increasing the document width."
+  },
+  {
+    "page": "p12",
+    "selector": ".col-lg-9 .list-group-item > a",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Message links do not shrink to their rows. On phone the first link runs x=95..751.67 inside a row ending at x=339; the longest reaches x=939.55, making the document 940px wide. On laptop the first link ends at x=1549.17 and the longest at x=1737.05 while the card ends at x=1420; subjects and timestamps spill beyond the card and the 1440px view. Scrolling main horizontally reveals timestamps outside the row backgrounds. Viewed focus/p12-phone-touch-0.png, focus/p12-laptop-top.png and focus/p12-laptop-scroll-right.png.",
+    "fix": "Set min-width:0 on each message link and its flexible subject span. Let the subject take only the remaining width and ellipsize there; keep sender/date columns sized within the row."
+  },
+  {
+    "page": "p12",
+    "selector": ".col-lg-9 .card-header .card-tools",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P3",
+    "evidence": "The 256px search control wraps beneath Inbox but remains shifted upward and right. The title box is x=37..78.09, y=779.75..800.86; the search group begins at x=75, y=794.47. Their boxes intersect by 3.09px horizontally and 6.39px vertically, and the search border visibly touches the lower-right of the title. Viewed focus/p12-phone-touch-0.png and focus/p12-header-detail.png.",
+    "fix": "Use a responsive flex/grid header with an explicit row gap. On phone place the search group on its own row with margin:0, width:100% and max-width:100%, removing the float/negative vertical offset."
+  }
+]

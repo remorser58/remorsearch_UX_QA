@@ -1,0 +1,83 @@
+[
+  {
+    "page": "p01",
+    "selector": "body > .navbar.fixed-top .navbar-toggler",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780, the top navigation toggle is completely outside the visible screen: its 56x40 CSS px box runs from x=365 to x=421. The fixed navbar measures 433 px wide while the visible viewport is 360 px. Only the Bootswatch brand is visible; the menu control is absent. Screenshot: p01-phone-top.png.",
+    "fix": "Constrain the fixed navbar to the actual viewport width (for example width:100vw with border-box sizing) and keep its inner container at width:100%, min-width:0. Also contain the overflowing pagination so it cannot enlarge the mobile layout viewport."
+  },
+  {
+    "page": "p01",
+    "selector": ".pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The large pagination row begins at x=12 and its children extend to x=431.70, exceeding the 360 px screen by 71.70 px and its 336 px container by 83.70 px. The page-5 cell is partially outside the screen (x=312.88..373.22), and the next-page cell is entirely outside it (x=373.22..431.70). The normal and small pagination rows fit. Screenshot: p01-detail-9000.png.",
+    "fix": "Use smaller horizontal padding for .pagination-lg .page-link at phone widths so all seven controls fit within the 336 px content area, or explicitly wrap the pagination with appropriate row spacing."
+  },
+  {
+    "page": "p03",
+    "selector": "body > .navbar.fixed-top .navbar-toggler",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780, the fixed top navbar is 480 CSS px wide. Its 52.25 px menu toggle occupies x=410.75..463, entirely beyond the visible right edge. The top bar shows the brand without the menu control throughout the normal vertical scroll. Screenshot: p03-phone-top.png.",
+    "fix": "Constrain the fixed navbar to the actual viewport width (for example width:100vw with border-box sizing) and keep its inner container within that width. Contain the overflowing table and pagination rather than allowing them to expand the mobile layout viewport."
+  },
+  {
+    "page": "p03",
+    "selector": "#typography",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The TYPOGRAPHY heading has a 330 px container at x=15..345, but its rendered text is 356.81 px wide and ends at x=371.81. The last letter is visibly cut by the 360 px right screen edge. Screenshot: p03-detail-2200.png.",
+    "fix": "Reduce this section-heading font size or letter spacing at phone widths so the text fits the 330 px content area, or allow the word to break with overflow-wrap:anywhere."
+  },
+  {
+    "page": "p03",
+    "selector": "table.table.table-hover",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The four-column table is 465.06 CSS px wide inside a 330 px component. It runs from x=15 to x=480.06, extending 120.06 px beyond the 360 px screen. The third column is partly outside the screen and the fourth column begins at x=369.08, completely outside it. Its parent has overflow:visible, so this expands the page width. Screenshot: p03-detail-4050.png.",
+    "fix": "Wrap the table in a width-constrained .table-responsive container with overflow-x:auto so the table scrolls locally and cannot expand the document. Alternatively reduce cell padding and allow cell text to break sufficiently to fit the phone content width."
+  },
+  {
+    "page": "p03",
+    "selector": ".pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The large pagination row has a 330 px container but 419 px of content. Its final edge is x=433.94, 73.94 px beyond the 360 px screen. The page-5 cell extends to x=376.22 and the next-page cell starts there, leaving the next-page control completely outside the screen. The other pagination sizes fit. Screenshot: p03-detail-8540.png.",
+    "fix": "Reduce the large page links horizontal padding at phone widths so all seven links fit inside 330 px, or allow the links to wrap with explicit spacing."
+  },
+  {
+    "page": "p03",
+    "selector": "label.custom-file-label[for=\"inputGroupFile02\"]",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "In the custom file input, the Browse segment covers the end of Choose file. The label is 214.20 CSS px wide; its 117.89 px ::after segment begins at screen x=111.31, while the label text extends from x=47 to x=128.16, producing about 16.84 px of coverage. The screenshot visibly reads Choose f before the covering segment. The laptop label is fully visible. Screenshot: p03-phone-file.png.",
+    "fix": "Reduce the phone horizontal padding on the Browse pseudo-element and Upload addon, and reserve enough inline space for the filename text. Use a flex layout with a distinct filename region rather than positioning Browse over the text."
+  },
+  {
+    "page": "p04",
+    "selector": "#chartHours .ct-label.ct-horizontal",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The Users Behavior time labels form an unreadable overlapping line. Eight labels are spaced only 25.625 CSS px apart in a 270 px chart; each text needs about 45 to 52 px. For example, 9:00AM starts at x=95 and needs about 45 px, while 12:00AM starts at x=120.625, causing roughly 19 px of overlap; the next pair overlaps by about 26 px. Laptop labels are separated. Screenshot: p04-detail-620.png.",
+    "fix": "At phone widths show fewer x-axis labels, such as every second or third tick, or rotate/stagger them and increase the reserved axis height so their rendered text does not intersect."
+  },
+  {
+    "page": "p04",
+    "selector": ".table-responsive.table-full-width > table.table",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The Tasks table is 898.42 CSS px wide inside a responsive wrapper with only 268 px of inner visible width (outer box x=30..300). Task cells use white-space:nowrap, so descriptions end abruptly at x=299 and every edit/delete control is outside the visible table region at x=863..914. The wrapper also ends 30 px before its 300 px card right edge at x=330. Screenshot: p04-detail-1260.png.",
+    "fix": "Make the task wrapper fill the card width and allow the description column to wrap (white-space:normal; overflow-wrap:anywhere). Use a constrained table layout with compact fixed widths for checkboxes and row actions so each task and its controls fit the phone card."
+  }
+]

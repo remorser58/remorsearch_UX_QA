@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p01",
+    "selector": "ul.pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 CSS px, the large pagination starts at x=12 but its last page item ends at x=431.7. The document scrollWidth is 432 px, so the page scrolls sideways and the final page controls are outside the viewport.",
+    "fix": "On narrow screens, reduce the pagination item padding and font size, or allow the control to wrap or scroll inside its own container."
+  },
+  {
+    "page": "p03",
+    "selector": "table.table.table-hover",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 CSS px, the table is 465.1 px wide from x=15 to x=480.1 inside a 330 px column. The document scrollWidth is 480 px, and the rightmost table column is off-screen.",
+    "fix": "Place the table in a horizontal overflow container or make its cells wrap and shrink so the table stays within the 330 px content column."
+  },
+  {
+    "page": "p03",
+    "selector": "ul.pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 CSS px, the large pagination extends from x=15 to x=433.9. Page 5 crosses the viewport edge at x=376.2, and the next-page control is entirely outside the 360 px viewport.",
+    "fix": "Reduce the large pagination sizing at phone width or wrap the items within the pagination container."
+  },
+  {
+    "page": "p04",
+    "selector": "#chartHours",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780 CSS px, the eight time labels on the Users Behavior chart are each about 26 px wide and are placed only about 25.6 px apart on the same baseline. The labels visibly overlap and become unreadable.",
+    "fix": "Show fewer x-axis labels at narrow widths, rotate them, or reduce the label font size and increase spacing."
+  },
+  {
+    "page": "p04",
+    "selector": ".table-responsive.table-full-width",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360x780 CSS px, the Tasks table viewport is 268 px wide while its content is 898 px wide. The task-text cell alone is 755 px wide because its text is nowrap, so every task title is visibly cut off at the card edge.",
+    "fix": "Allow the task text column to wrap and move the row actions below the text, or replace the wide table with a stacked mobile row layout."
+  }
+]

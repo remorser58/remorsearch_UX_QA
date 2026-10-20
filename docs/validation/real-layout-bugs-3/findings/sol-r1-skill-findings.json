@@ -1,0 +1,74 @@
+[
+  {
+    "page": "p01",
+    "selector": ".pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the large pagination starts at x=12 and its final control ends at x=431.7, 71.7px beyond the screen. The next chevron is entirely offscreen and the right side of the 5 cell is cut off; the document is 432px wide. Viewed capture: capture-final/p01-phone/014-y8736.png.",
+    "fix": "At phone widths, reduce page-link horizontal padding or allow the pagination to wrap so every control fits within its 336px container."
+  },
+  {
+    "page": "p01",
+    "selector": ".alert-warning .btn-close, .bs-component:has(.alert-warning) .source-button",
+    "viewport": "laptop",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "At 1440x900, hovering the warning example places its 52.7x49.6px source-code button at x=1315.3, y=403.6. It covers the close icon inside the 48x56px close control at x=1320, y=403.6; the X disappears. Viewed capture: p01-alert-hover.png.",
+    "fix": "Place the source-code button in reserved space outside the example, keeping it clear of the alert close control."
+  },
+  {
+    "page": "p02",
+    "selector": ".btn-circle > .fa-angle-double-down",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The double-chevron sits visibly low inside the circular control. At 360x780 the circle is 70x70px at (145,300), centred at y=335; the 40px icon box spans y=318..358, centred at y=338. The same 3px downward offset occurs at 1440x900. Viewed captures: capture-final/p02-phone/000-y0.png, capture-final/p02-laptop/000-y0.png; detail: p02-arrow.png.",
+    "fix": "Centre the icon with inline-flex, align-items:center and justify-content:center on .btn-circle, removing the baseline-dependent vertical positioning."
+  },
+  {
+    "page": "p03",
+    "selector": ".table, #typography, .pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the document is 480px wide. The table spans x=15..480.1, placing the fourth column entirely outside the screen. The TYPOGRAPHY text ends at x=371.8, cutting off its last letter, and the large pagination ends at x=433.9 with its next chevron offscreen. Grouped as one page-width defect. Viewed captures: capture-final/p03-phone/003-y1872.png, 006-y3744.png and 013-y8112.png.",
+    "fix": "Keep the phone table within its 330px container using compact, wrapping cells or stacked rows; scale the long heading to fit; reduce pagination padding or wrap its controls."
+  },
+  {
+    "page": "p03",
+    "selector": ".custom-file-label, .custom-file-label::after",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "The file picker visibly reads Choose f instead of Choose file. Its label is 214.2px wide; the Browse pseudo-element is 117.9px wide and begins at x=111.3, covering the final 16.8px of the label text, whose bounds are x=47..128.2. Viewed capture: capture-final/p03-phone/012-y7488.png; detail: p03-file-label.png.",
+    "fix": "Reduce the phone padding of the label and Browse segment, and reserve enough width for the full filename label; move Upload to a separate row if needed."
+  },
+  {
+    "page": "p03",
+    "selector": "#source-button, .alert-warning .close, .btn-outline-warning",
+    "viewport": "laptop",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "On hover at 1440x900, the 84.9x42.4px source-code button at (1190.1,399.9) covers the warning alert close glyph inside the control at (1221.4,400.9), sized 52.6x45px. The same overlay also covers most of the outlined WARNING button label in the Buttons example. Viewed captures: p03-alert-hover.png and scan-single/03-lux-index.html/crops/02-LY-02.png.",
+    "fix": "Reserve space for the source-code button outside each example so it cannot paint over labels or close controls."
+  },
+  {
+    "page": "p04",
+    "selector": "#chartHours .ct-label.ct-horizontal",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "In the Users Behavior chart, all eight time labels run into their neighbours and form an unreadable line. Label starts are only 25.625px apart, while the rendered strings need approximately 45..52px. Viewed capture after scrolling the main panel 624px: capture-panel/p04-phone/001-y624.png; detail: p04-axis.png.",
+    "fix": "At phone widths show fewer x-axis labels, or use a staggered layout with enough horizontal space for each visible time string."
+  },
+  {
+    "page": "p04",
+    "selector": ".table-responsive.table-full-width > .table",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The Tasks table is 898.4px wide inside a 268px visible scrolling area. Task descriptions are visibly cut off mid-sentence at the right edge, and the edit/delete columns lie outside the initial view. This affects all six rows; the containing page itself remains 360px wide. Viewed capture at main-panel scrollTop=1310: capture-panel/p04-phone/003-y1310.png; detail: p04-tasks.png.",
+    "fix": "Allow task descriptions to wrap at phone widths, constrain the table to width:100% with a fixed layout, and reserve compact columns for checkboxes and row actions."
+  }
+]

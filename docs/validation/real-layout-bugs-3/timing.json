@@ -1,0 +1,86 @@
+{
+ "flash-r1-plain": {
+  "minutes": 35.07,
+  "note": "stop message at 33.92 min",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:17:34.567Z"
+ },
+ "flash-r1-skill": {
+  "minutes": 35.92,
+  "note": "stop message at 33.87 min",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:17:37.173Z"
+ },
+ "flash-r2-plain": {
+  "minutes": 22.77,
+  "note": "",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:17:40.203Z"
+ },
+ "flash-r2-skill": {
+  "minutes": 34.71,
+  "note": "stop message at 33.78 min",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:17:42.972Z"
+ },
+ "flash-r3-plain": {
+  "minutes": 35.29,
+  "note": "stop message at 33.65 min",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:17:50.666Z"
+ },
+ "flash-r3-skill": {
+  "minutes": 35.09,
+  "note": "stop message at 33.45 min",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:18:02.471Z"
+ },
+ "sol-r1-plain": {
+  "minutes": 7.66,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:40:27.961Z"
+ },
+ "sol-r1-skill": {
+  "minutes": 15.24,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:48:08.940Z"
+ },
+ "sol-r2-plain": {
+  "minutes": 11.46,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:52:40.273Z"
+ },
+ "sol-r2-skill": {
+  "minutes": 16.42,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:52:44.083Z"
+ },
+ "sol-r3-plain": {
+  "minutes": 11.18,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:53:09.723Z"
+ },
+ "sol-r3-skill": {
+  "minutes": 11.84,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-20T12:53:11.857Z"
+ }
+}

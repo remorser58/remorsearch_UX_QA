@@ -1,0 +1,56 @@
+[
+  {
+    "page": "p01",
+    "selector": "ul.pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the large pagination row starts at x=12 and its last page link ends at x=431.7. The page scrollWidth is 432px, so the page scrolls 72px sideways; the '5' link is cut at the right edge and the '\u00bb' link is completely off screen.",
+    "fix": "Let the pagination wrap or put each pagination list in an overflow-x:auto container with max-width:100%; keep the row inside the 336px content column."
+  },
+  {
+    "page": "p02",
+    "selector": "#page-top a.btn-circle",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The 70x70 circular scroll control is at x=145..215, y=300..370 on phone. Its Font Awesome icon box is 25.7x40 at x=167.1..192.9, y=318..358; the icon center is y=338 versus the control center y=335, so the chevron sits about 3px low. The same 3px offset appears at 1440x900.",
+    "fix": "Center the icon with flex or grid on the anchor and remove the asymmetric 7px vertical padding from the 70px control."
+  },
+  {
+    "page": "p03",
+    "selector": "table.table.table-hover",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the table is 465px wide from x=15 to x=480, while its content column is only 330px wide. The fourth column starts at x=369 and is entirely beyond the screen; the document scrollWidth is 480px, so the page scrolls 120px sideways to reveal it.",
+    "fix": "Wrap the table in a responsive overflow-x:auto container with max-width:100%, or make the table width:100% with wrapping cells so it stays within 330px."
+  },
+  {
+    "page": "p03",
+    "selector": "ul.pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the large pagination row extends from x=12 to x=433.9. The last link ends 73.9px beyond the viewport, so the '5' link is cut and the '\u00bb' link is off screen.",
+    "fix": "Allow the pagination row to wrap or place it in an overflow-x:auto wrapper limited to the content width."
+  },
+  {
+    "page": "p03",
+    "selector": "#source-button",
+    "viewport": "laptop",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "At 1440x900 the hover code button is 84.9x48 at x=715.1..800, y=405.8..453.8. It overlaps the 'Warning' button (x=668.9..797.5) and covers 80% of its one text line; the same button also overlaps the 'EXAMPLE BODY TEXT' heading and the fourth table header 'COLUMN HEADING' (20% covered).",
+    "fix": "Reserve space for the code button in the component header or place it outside the content box so it does not sit over headings, table headers, or button labels."
+  },
+  {
+    "page": "p04",
+    "selector": ".main-panel",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P1",
+    "evidence": "At 360x780 the 260px sidebar leaves the main panel only 100px wide (x=260..360). Dashboard cards render 40px wide, 'Email Statistics' wraps into narrow vertical fragments, and the panel has scrollWidth 135px with 3259px of vertically stacked content. The dashboard is unusable at phone width.",
+    "fix": "At widths below 768px, collapse or hide the sidebar and set .main-panel to width:100% so cards use the available 360px viewport."
+  }
+]

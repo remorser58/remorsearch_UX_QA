@@ -1,0 +1,74 @@
+{
+ "flash-a1-skill": {
+  "minutes": 41.44,
+  "note": "stop message at 35.89 min",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high"
+ },
+ "flash-a2-skill": {
+  "minutes": 37.71,
+  "note": "stop message at 35.83 min",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high"
+ },
+ "flash-a3-skill": {
+  "minutes": 37.56,
+  "note": "stop message at 35.68 min",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high"
+ },
+ "flash-b1-skill": {
+  "minutes": 35.04,
+  "note": "",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high"
+ },
+ "flash-b2-skill": {
+  "minutes": 35.17,
+  "note": "",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high"
+ },
+ "flash-b3-skill": {
+  "minutes": 37.35,
+  "note": "stop message at 35.47 min",
+  "model": "inferhub/combo-deepseek-4-1-flash",
+  "reasoning_effort": "high"
+ },
+ "sol-a1-skill": {
+  "minutes": 17.22,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high"
+ },
+ "sol-a2-skill": {
+  "minutes": 20.47,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high"
+ },
+ "sol-a3-skill": {
+  "minutes": 20.73,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high"
+ },
+ "sol-b1-skill": {
+  "minutes": 10.93,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high"
+ },
+ "sol-b2-skill": {
+  "minutes": 13.38,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high"
+ },
+ "sol-b3-skill": {
+  "minutes": 11.17,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high"
+ }
+}

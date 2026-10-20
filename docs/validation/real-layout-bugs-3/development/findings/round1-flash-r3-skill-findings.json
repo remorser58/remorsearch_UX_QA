@@ -1,0 +1,74 @@
+[
+ {
+  "page": "p02",
+  "selector": "ul.navbar-nav.ms-auto",
+  "viewport": "phone",
+  "category": "off_screen",
+  "severity": "P3",
+  "evidence": "At 360x780 the document scrollWidth is 364 while the viewport is 360, so the page scrolls 4 px sideways. The header nav runs x=60..364; the user-menu item is x=300..364 and its 32 px avatar sits at x=316..348, flush against the clipped right edge.",
+  "fix": "Let the header nav shrink at <400 px: add min-width:0 to the header flex row and reduce item padding or hide the user avatar until 400 px so the nav ends at or before the viewport edge."
+ },
+ {
+  "page": "p03",
+  "selector": "aside.app-sidebar",
+  "viewport": "phone",
+  "category": "covered",
+  "severity": "P2",
+  "evidence": "At 360x780 the body ships with class sidebar-open, so the fixed 250x780 sidebar (z-index 1038) covers x=0..250 of the 360 px viewport for the whole page (screens 0-10). No backdrop is rendered and the content column keeps x=0, so headings and form text under x=250 are permanently hidden.",
+  "fix": "Do not apply sidebar-open on small screens; start with the drawer closed and add a backdrop when it is opened, so content is not covered at load."
+ },
+ {
+  "page": "p04",
+  "selector": "#userDropdown",
+  "viewport": "phone",
+  "category": "clipped",
+  "severity": "P2",
+  "evidence": "The navbar right cluster ends at x=380 inside a parent .d-flex.flex-column with overflow-x hidden ending at x=360. The user link is x=324..380 and its 32 px avatar is x=336..368, so the last 8 px of the avatar and the menu edge are cut; the notification/message icons are also pushed to the edge.",
+  "fix": "Allow the header actions to shrink or wrap at phone width (min-width:0, smaller gaps) and keep the avatar inside the 360 px edge."
+ },
+ {
+  "page": "p06",
+  "selector": ".navbar-nav .nav-item.d-none.d-sm-inline-block .nav-link",
+  "viewport": "laptop",
+  "category": "clipped",
+  "severity": "P2",
+  "evidence": "At 1440x900 the fixed 250 px sidebar ends at x=250 and the first top nav label renders as 'ome' with the H cut at the sidebar edge (Contact follows at x~314). The nav link box is not offset past the sidebar, so the label starts under it.",
+  "fix": "Give the header's inner container the sidebar offset (or remove the negative offset on the navbar) so nav labels start after x=250."
+ },
+ {
+  "page": "p06",
+  "selector": ".main-footer",
+  "viewport": "laptop",
+  "category": "clipped",
+  "severity": "P3",
+  "evidence": "The footer line starts under the sidebar: at 1440x900 only '.io. All rights reserved.' is visible from x=250, while 'Copyright (c) 2014-2026 AdminLTE' is hidden behind the 250 px sidebar.",
+  "fix": "Align the footer with the content wrapper (margin-left equal to the sidebar width) instead of letting its text start at the page edge."
+ },
+ {
+  "page": "p08",
+  "selector": "header .navbar-nav.ms-auto",
+  "viewport": "phone",
+  "category": "off_screen",
+  "severity": "P2",
+  "evidence": "At 360x780 document scrollWidth is 412, 52 px wider than the screen, so the page scrolls sideways. The header nav spans x=60..412; the user avatar img is x=364..396 and is completely outside the initial 360 px viewport.",
+  "fix": "Make the header row shrinkable at phone width (min-width:0, reduced gaps) or move the user menu into the collapsed navbar so nothing extends past 360 px."
+ },
+ {
+  "page": "p09",
+  "selector": ".dataTables_paginate .paginate_button.previous",
+  "viewport": "phone",
+  "category": "clipped",
+  "severity": "P2",
+  "evidence": "At 360x780 the pagination strip is 344 px wide (Previous 84 + six 34 px pages + Next 56) inside a 304 px wrapper at x=28..332. The Previous button lands at x=-5..79, so its left 33 px are clipped at the card edge; the screenshot shows the rounded edge missing and the label cut.",
+  "fix": "Let the pagination wrap (flex-wrap:wrap) or reduce/hide page numbers below 400 px so all controls stay inside the card."
+ },
+ {
+  "page": "p12",
+  "selector": "li.list-group-item a.flex-grow-1",
+  "viewport": "both",
+  "category": "off_screen",
+  "severity": "P1",
+  "evidence": "Phone 360x780: document scrollWidth is 940; the list row link is 657 px wide starting at x=95 while the card ends at x=340, so subjects and the time run far outside the card and the page scrolls 580 px sideways. Laptop 1440x900: the card is 857 px wide but the row link is 913 px, .app-main scrollWidth 1487 vs clientWidth 1190; the subject is cut at the viewport edge and the time column is pushed outside the card.",
+  "fix": "Give the row link min-width:0 so flex children can shrink, truncate the subject with the existing text-truncate, and on phone stack the row (flex-column) so sender, subject and time stay inside the card."
+ }
+]

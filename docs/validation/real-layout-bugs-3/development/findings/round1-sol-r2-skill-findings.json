@@ -1,0 +1,164 @@
+[
+  {
+    "page": "p01",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the right navbar group starts at x=60 and is 352px wide, ending at x=412. The account control occupies x=348–412 and its avatar is outside the initial screen. The document is 412px wide and can pan horizontally by 52px. Screenshots: targeted/01-p01-phone.png and targeted/01-p01-phone-horizontal-end.png.",
+    "fix": "Compact the navbar links at the phone breakpoint or move secondary controls into an overflow menu so the complete header, including its account control, fits within 360px."
+  },
+  {
+    "page": "p02",
+    "selector": ".app-content .row:last-child .col-lg-6:last-child .ribbon-wrapper.ribbon-lg",
+    "viewport": "both",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "The 110x110px LINKED corner ribbon paints over the first paragraph line in the Interactive ribbon card. On phone it obscures the end of “inherits”; on laptop it crosses the upper part of the final “y” in “utility”. The paragraph reserves only 24px of right padding while the ribbon extends 110px into the card. Screenshots: details/01-p02-phone.png, details/02-p02-laptop.png, p02-inherits.png and p02-utility.png.",
+    "fix": "Reserve the ribbon corner in the text layout: add enough right padding for its full 110px footprint, or move the paragraph below the ribbon before allowing it to use the full card width."
+  },
+  {
+    "page": "p02",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780, the header navigation ends at x=364 and makes the document 364px wide. Horizontal scrolling reaches x=4 and visibly shifts the whole page sideways; this is a small overflow rather than clipped avatar content. Screenshot: details/01-p02-phone-horizontal-end.png; measurement: details/01-p02-phone.json.",
+    "fix": "Reduce the combined mobile link padding by at least 4px and keep the header navigation inside its container width."
+  },
+  {
+    "page": "p03",
+    "selector": "#navbarSupportedContent input[type=\"search\"]",
+    "viewport": "laptop",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 1440x900, the Navbar demo search input at x=1302.98 is only 26px wide and 38px high. Its 24px client width is consumed by horizontal padding, leaving no usable text area; the Search placeholder is completely absent in the tiny field beside the Search button. Screenshot: details/03-p03-laptop.png.",
+    "fix": "Give the demo search field a usable minimum width, such as 8rem, and wrap its form onto a separate row or collapse this navbar based on the available card width."
+  },
+  {
+    "page": "p04",
+    "selector": "#userDropdown",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the topbar account control runs from x=324 to x=380, extending 20px past the screen. Its 32px avatar box runs from x=336 to x=368 and is visibly cropped at the right edge. The enclosing content area clips the overflow. This finding concerns the control geometry, not the missing image asset. Screenshot: targeted/04-p04-phone.png.",
+    "fix": "Reduce the mobile topbar item widths and gaps, or move secondary actions into an overflow menu, so the account control ends inside the available 256px main-content width."
+  },
+  {
+    "page": "p04",
+    "selector": ".topbar > form .input-group > input",
+    "viewport": "laptop",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "At 1440x900, the attached search input and button share y=16, but the input is 34.39px high and the button is 38px high. Their bottom edges differ by 3.61px, leaving a visible step where the two controls join. Screenshots: targeted/05-p04-laptop.png and p04-search-zoom.png.",
+    "fix": "Apply the same control height and font/line-height sizing to the input and attached button, for example a shared 38px height with border-box sizing."
+  },
+  {
+    "page": "p05",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780, the header navigation ends at x=364, making the document 4px wider than the screen. A horizontal pan reaches scrollX=4 and shifts the page sideways. The avatar itself remains visible. Screenshots: exact/p05/phone/00.png and targeted/06-p05-phone-horizontal-end.png; measurement: targeted/06-p05-phone.json.",
+    "fix": "Reduce the total mobile header link padding by at least 4px so the navigation fits within the screen width."
+  },
+  {
+    "page": "p06",
+    "selector": ".main-header .navbar-search-block",
+    "viewport": "both",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "On both sizes the search form occupies a second navbar row at y=48–79, while the right-hand icons occupy the upper row. This makes the header 88px high and places the hamburger/Home/Contact row 15.5px below the other icons. On phone the search input shrinks to 53.38px, visibly cutting its Search placeholder to “Sea”. Screenshots: targeted/07-p06-phone.png and targeted/08-p06-laptop.png.",
+    "fix": "Keep the search block out of the normal navbar item flow and size its displayed region across the available header width; align the navigation controls in one consistent row and prevent the input from shrinking below a readable width."
+  },
+  {
+    "page": "p06",
+    "selector": ".tab-empty > h2",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At 360x780, the empty-state heading wraps into “No tab” and “selected!” but both lines start at x=0. The longer line is 203.52px wide, with its centre at x=101.76 rather than the container centre x=180. The message appears pushed against the left screen edge while the laptop version is centred. Screenshot: details/04-p06-phone.png; geometry: measurements/p06-phone.json.",
+    "fix": "Set text-align:center on the empty-state heading and add horizontal padding so wrapped lines stay centred within the empty-state container."
+  },
+  {
+    "page": "p07",
+    "selector": ".sidebar-brand .brand-link .brand-image",
+    "viewport": "laptop",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "In the collapsed 73.59px sidebar, the 33px logo starts at x=16.30, placing its centre at x=32.80 instead of the rail centre x=36.80. The 41px brand link retains 8px of empty space after the image, visibly shifting the logo 4px left. Screenshots: targeted/09-p07-laptop.png and p07-logo-zoom.png.",
+    "fix": "Remove the brand-link gap/remaining text spacing when the sidebar is collapsed, and centre the resulting 33px logo within the rail."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the navbar group starts at x=60 and ends at x=412. The account control at x=348–412 is outside the initial visible area, and the page can scroll sideways by 52px. Screenshots: targeted/10-p08-phone.png and targeted/10-p08-phone-horizontal-end.png.",
+    "fix": "Compact mobile navbar link padding or move secondary controls into an overflow menu so the account control and the rest of the header fit within 360px."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1, #example2",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, each table is 521.23px wide inside a 304px wrapper starting at x=28. The right edge reaches x=549.23, making the document 549px wide, 189px beyond the screen. Engine version and CSS grade columns are off-screen, and Platform(s) is cut at the viewport edge. Screenshots: exact/p09/phone/00.png and exact/p09/phone/02.png; geometry: measurements/p09-phone.json.",
+    "fix": "Put each table in a width-constrained responsive scroll container with overflow-x:auto, or use a mobile column layout; prevent the table width from enlarging the entire page."
+  },
+  {
+    "page": "p09",
+    "selector": ".dataTables_paginate .pagination",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780, the pagination buttons need 337.02px inside a 304px pagination container. Right alignment pushes the Previous button to x=-5.02, clipping its left border and placing it 13px outside the card left edge at x=8. This occurs beneath both tables. Screenshot: exact/p09/phone/01.png and exact/p09/phone/03.png; geometry: targeted/11-p09-phone.json.",
+    "fix": "Allow the pagination buttons to wrap within the card or show fewer numbered pages at this breakpoint, keeping the Previous button inside the card padding."
+  },
+  {
+    "page": "p10",
+    "selector": ".todo-list > li:nth-child(5) .text",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, “Check your messages and notifications” drops below its checkbox and drag handle. Its text begins at x=52.5 instead of the sibling labels at x=121.11, a 68.61px horizontal shift; its first line begins about 22px below the checkbox top. The checkbox is left on a separate, mostly empty row. Screenshot: targeted/12-p10-phone.png; geometry: measurements/p10-phone.json.",
+    "fix": "Lay out each to-do row with fixed-width handle and checkbox columns plus a flexible text column with min-width:0, so long labels wrap beside the checkbox and keep the same left edge as sibling labels."
+  },
+  {
+    "page": "p10",
+    "selector": "#world-map .jqvmap-zoomin, #world-map .jqvmap-zoomout",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The map zoom glyphs sit low inside their small square controls on both sizes. The scan measures approximately 2.22px downward ink offset within the 13px inner control; the outer box is 15x15px and the text uses 16px type with a 10px line-height. The minus is visibly near the bottom edge. Screenshots: targeted/13-p10-phone.png, targeted/14-p10-laptop.png and p10-zoom-controls.png.",
+    "fix": "Centre the zoom glyphs with flex or grid alignment, remove baseline-dependent positioning, and use a line-height/font size that fits the square control."
+  },
+  {
+    "page": "p11",
+    "selector": ".card-body > table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the three documentation tables are 798.14px, 880.39px and 759.89px wide inside a 270px article content area beginning at x=45. The widest reaches x=925.39, enlarging the page to 925px and leaving later columns off-screen. The table backgrounds and rules visibly extend outside the article card. Screenshots: exact/p11/phone/00.png, exact/p11/phone/07.png and exact/p11/phone/10.png; geometry: measurements/p11-phone.json.",
+    "fix": "Wrap each documentation table in its own max-width:100% horizontal scroll region with min-width:0 on its ancestors, or provide a mobile table layout; keep the article and page width constrained to the screen."
+  },
+  {
+    "page": "p12",
+    "selector": ".col-lg-9 .card-header .card-tools",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P3",
+    "evidence": "At 360x780, the search tools wrap below the floated Inbox title and are pulled upward. The title text bounds are x=37–78.09, y=367.75–392.75; the search icon border starts at x=75, y=384.47. Their bounds intersect by approximately 3.09x8.28px and the border visibly touches the final “x”. Screenshots: details/05-p12-phone.png and p12-header-zoom.png.",
+    "fix": "Use a wrapping flex/grid header with an explicit row gap; on narrow screens place the search group on a full-width second row and remove its negative vertical offset."
+  },
+  {
+    "page": "p12",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780, the header navigation reaches x=364 and makes the document 364px wide. The horizontal scroll endpoint is x=4, allowing a visible sideways shift of the page. The avatar content is fully visible. Screenshot: details/05-p12-phone-horizontal-end.png; measurement: details/05-p12-phone.json.",
+    "fix": "Reduce the combined mobile header link padding by at least 4px and constrain the navigation to the available screen width."
+  }
+]

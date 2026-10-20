@@ -1,0 +1,38 @@
+[
+  {
+    "page": "p02",
+    "selector": ".tile_stats_count > .right",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "At 360x780, the six summary tiles occupy three 120px columns, leaving each .right content box only 102px wide. Their content requires up to 133px. All six comparison captions lose the end of \"From last Week\", and \"Total Collections\" and \"Total Connections\" appear as \"Total Collect...\" and \"Total Conne...\". The missing text cannot be revealed by page scrolling. See p02-phone-000.png and p02-phone-stable.png; geometry: p02-phone-measure.json.",
+    "fix": "Use two columns at this phone breakpoint (col-xs-6), and let .count_top and .count_bottom wrap with automatic height instead of clipping them with nowrap/ellipsis."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "At 360x780, \"Top Campaign Performance\" is visibly shortened to \"Top Campaign Perfor...\". The heading has a 190.95px-wide box but needs approximately 213px (scrollWidth); its surrounding title row has roughly 308px available and no adjacent controls. The same heading is complete on the laptop. See p02-phone-000.png, p02-phone-001.png and scan-p02/crops/23-LY-01.png.",
+    "fix": "Override the narrow-screen percentage width for this heading: give .dashboard_graph .x_title h2 the available row width and allow normal wrapping with automatic height."
+  },
+  {
+    "page": "p03",
+    "selector": ".profile_view > .bottom",
+    "viewport": "both",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "Every contact card footer is pulled 20px upward by margin-top:-20px. On the phone, the first card body ends at document y=438.09px but its footer begins at y=418.09px; the second Address line spans y=408.98-428.09px, so about 10px of that line is covered. On the laptop, the footer starts at y=375.78px while the circular avatar extends to y=385.78px, cutting off its bottom 10px. This repeats across all nine cards and persists while scrolling. See p03-phone-000.png, p03-laptop-000.png and p03-phone-card.png / p03-laptop-card.png; geometry: p03-phone-measure.json and p03-laptop-measure.json.",
+    "fix": "Remove margin-top:-20px from .profile_view .bottom and keep the footer below the complete card body in normal flow (clear the body floats if necessary)."
+  },
+  {
+    "page": "p04",
+    "selector": "#myCarousel .carousel-control .glyphicon",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At 360x780, both carousel chevrons are visibly below the vertical center of their controls. Each control spans y=0-500px, with center y=250px; each 20px glyph box spans y=250-270px, with center y=260px, a 10px downward offset. The laptop glyph boxes span y=235-265px and are centered correctly. See p04-phone-000.png, p04-phone-stable.png and scan-p04/crops/01-LY-06.png / 02-LY-06.png; geometry: p04-phone-measure.json.",
+    "fix": "At the phone breakpoint, add margin-top:-10px to the 20px chevrons, or center them using top:50% and translateY(-50%) with the existing vertical margin reset."
+  }
+]

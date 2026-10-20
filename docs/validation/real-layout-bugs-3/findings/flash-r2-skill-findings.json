@@ -1,0 +1,56 @@
+[
+  {
+    "page": "p01",
+    "selector": "nav.navbar.fixed-top",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 (touch emulation) the page's scroll width is 433px against a 360px viewport, so the page scrolls sideways by 73px. The fixed top bar is 433px wide and its hamburger button sits at x=365..421, entirely past the right edge of the screen; the brand and theme menu also run past the fold. The 433px width comes from the 'pagination pagination-lg' block on this page (scrollWidth 420px inside a 336px column, flex-wrap nowrap); hiding that block drops document scrollWidth from 433 to 360.",
+    "fix": "Let the large pagination wrap or shrink on narrow screens (e.g. .pagination-lg { flex-wrap: wrap } plus a smaller font/padding under 576px, or overflow-x:auto on its container), and constrain the fixed navbar to width:100% so the toggler stays on screen."
+  },
+  {
+    "page": "p01",
+    "selector": ".pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The large pagination row is 420px of content in a 336px-wide column at 360px viewport (flex-wrap: nowrap). Items 5 (x=311.9..373.2) and the next-page chevron (x=372.2..431.7) render beyond the 360px screen edge and are clipped by the viewport; the visible row stops after item 4.",
+    "fix": "Allow the pagination to wrap or scroll: add flex-wrap: wrap to .pagination-lg at small widths, or wrap it in a container with overflow-x: auto and reduced item padding so all seven items fit inside 336px."
+  },
+  {
+    "page": "p03",
+    "selector": "table.table.table-hover",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 the table is 465px wide starting at x=15, so its right edge lands at 480px and the page scroll width is 480px (120px of sideways scrolling). The third and fourth 'Column heading' / 'Column content' cells (x=258..369 and x=369..480) sit outside the visible screen; hiding only the table reduces scroll width from 480 to 434.",
+    "fix": "Wrap the table in a .table-responsive container with overflow-x: auto so the page keeps its 360px width and the table scrolls inside its own box."
+  },
+  {
+    "page": "p03",
+    "selector": ".pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The large pagination row needs 419px inside a 330px column (flex-wrap: nowrap). Item 5 ends at x=376.2 and the chevron at x=433.9, both past the 360px screen; the rendered row shows only 1-5 and cuts off the remaining controls.",
+    "fix": "Same treatment as the table: wrap the pagination or give it its own horizontal scroll area, and reduce .pagination-lg item padding below 576px."
+  },
+  {
+    "page": "p04",
+    "selector": ".main-panel",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P0",
+    "evidence": "At 360x780 the 260px sidebar stays in normal flow (position: absolute, no off-canvas transform) and .main-panel is sized calc(100% - 260px) = 100px wide at x=260..360. All dashboard content is squeezed into that 100px strip: .container-fluid is 70px wide, cards are 40px wide, headings break to one word per line, and the chart/task text is unreadable. Nothing wider than 100px is available, so the dashboard cannot be used at phone width.",
+    "fix": "Add the off-canvas sidebar behaviour at <=767px: translate .sidebar out of the viewport (or hide it), set .main-panel width:100% and margin-left:0, and let the navbar toggler reveal the sidebar as an overlay."
+  },
+  {
+    "page": "p04",
+    "selector": ".main-panel > .navbar .container-fluid",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "Because the main panel is only 100px wide, the top bar's contents (brand 'Dashboard', three icon links, 'Account', 'Dropdown', 'Log out') wrap into a tall stacked column instead of one row; the bar occupies roughly the first 160px of the 100px-wide column and the brand is clipped at the right edge.",
+    "fix": "Fixing the main-panel width restores the row; additionally collapse the right-hand menu items into the navbar dropdown below 768px instead of letting them wrap."
+  }
+]

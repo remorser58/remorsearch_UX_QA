@@ -1,0 +1,364 @@
+{
+ "how": "Each round 1 and 2 page state scanned alone as the agents run it (file:// URL, REMORSEARCH_CHROMIUM_ARGS=--single-process), three scans at a time on one machine. \"Matched\" means a layout row on the broken page that names the known defect and is absent from the fixed page.",
+ "versions": {
+  "1.0.1": "commit e1f8532",
+  "development": "commit 1fc4581 (same scan code as c5a7fbe apart from multi-page input and the exit code)"
+ },
+ "1.0.1": {
+  "matched": [
+   "B3",
+   "B6",
+   "spectre-4cb36cd7",
+   "gentelella-fc3c0364",
+   "gentelella-c0602144"
+  ],
+  "matched_count": "5 of 16",
+  "seconds_median": 117.0,
+  "seconds_mean": 156.1,
+  "seconds_max": 535,
+  "states": {
+   "B3-broken": {
+    "candidates": 44,
+    "crops": 22,
+    "seconds": 92
+   },
+   "B3-fixed": {
+    "candidates": 44,
+    "crops": 22,
+    "seconds": 93
+   },
+   "B5-broken": {
+    "candidates": 18,
+    "crops": 9,
+    "seconds": 70
+   },
+   "B5-fixed": {
+    "candidates": 17,
+    "crops": 8,
+    "seconds": 72
+   },
+   "B8-broken": {
+    "candidates": 36,
+    "crops": 2,
+    "seconds": 117
+   },
+   "B8-fixed": {
+    "candidates": 32,
+    "crops": 8,
+    "seconds": 115
+   },
+   "S1-broken": {
+    "candidates": 75,
+    "crops": 28,
+    "seconds": 115
+   },
+   "S1-fixed": {
+    "candidates": 75,
+    "crops": 28,
+    "seconds": 121
+   },
+   "B7-broken": {
+    "candidates": 19,
+    "crops": 9,
+    "seconds": 70
+   },
+   "B7-fixed": {
+    "candidates": 22,
+    "crops": 10,
+    "seconds": 75
+   },
+   "A2-broken": {
+    "candidates": 33,
+    "crops": 31,
+    "seconds": 117
+   },
+   "A2-fixed": {
+    "candidates": 33,
+    "crops": 31,
+    "seconds": 108
+   },
+   "B1-broken": {
+    "candidates": 73,
+    "crops": 9,
+    "seconds": 137
+   },
+   "B1-fixed": {
+    "candidates": 73,
+    "crops": 9,
+    "seconds": 123
+   },
+   "B4-broken": {
+    "candidates": 24,
+    "crops": 13,
+    "seconds": 74
+   },
+   "B4-fixed": {
+    "candidates": 22,
+    "crops": 11,
+    "seconds": 75
+   },
+   "A3-broken": {
+    "candidates": 36,
+    "crops": 14,
+    "seconds": 99
+   },
+   "A3-fixed": {
+    "candidates": 38,
+    "crops": 14,
+    "seconds": 105
+   },
+   "A1-broken": {
+    "candidates": 87,
+    "crops": 32,
+    "seconds": 134
+   },
+   "A1-fixed": {
+    "candidates": 87,
+    "crops": 32,
+    "seconds": 173
+   },
+   "B2-broken": {
+    "candidates": 72,
+    "crops": 26,
+    "seconds": 174
+   },
+   "B2-fixed": {
+    "candidates": 80,
+    "crops": 33,
+    "seconds": 205
+   },
+   "B6-broken": {
+    "candidates": 39,
+    "crops": 18,
+    "seconds": 159
+   },
+   "B6-fixed": {
+    "candidates": 45,
+    "crops": 18,
+    "seconds": 129
+   },
+   "spectre-4cb36cd7-broken": {
+    "candidates": 413,
+    "crops": 181,
+    "seconds": 535
+   },
+   "spectre-4cb36cd7-fixed": {
+    "candidates": 362,
+    "crops": 129,
+    "seconds": 466
+   },
+   "gentelella-fc3c0364-broken": {
+    "candidates": 275,
+    "crops": 82,
+    "seconds": 323
+   },
+   "gentelella-fc3c0364-fixed": {
+    "candidates": 267,
+    "crops": 71,
+    "seconds": 252
+   },
+   "gentelella-c0602144-broken": {
+    "candidates": 268,
+    "crops": 72,
+    "seconds": 275
+   },
+   "gentelella-c0602144-fixed": {
+    "candidates": 250,
+    "crops": 59,
+    "seconds": 285
+   },
+   "bootstrap-d255ba37-broken": {
+    "candidates": 6,
+    "crops": 5,
+    "seconds": 56
+   },
+   "bootstrap-d255ba37-fixed": {
+    "candidates": 5,
+    "crops": 5,
+    "seconds": 52
+   }
+  }
+ },
+ "development": {
+  "matched": [
+   "S1",
+   "A1",
+   "A3",
+   "B1",
+   "B2",
+   "B3",
+   "B4",
+   "B6",
+   "spectre-4cb36cd7",
+   "gentelella-fc3c0364",
+   "gentelella-c0602144",
+   "bootstrap-d255ba37"
+  ],
+  "matched_count": "12 of 16",
+  "seconds_median": 36.5,
+  "seconds_mean": 36.8,
+  "seconds_max": 46,
+  "states": {
+   "B3-broken": {
+    "candidates": 45,
+    "crops": 19,
+    "seconds": 38
+   },
+   "B3-fixed": {
+    "candidates": 43,
+    "crops": 18,
+    "seconds": 39
+   },
+   "B5-broken": {
+    "candidates": 19,
+    "crops": 7,
+    "seconds": 37
+   },
+   "B5-fixed": {
+    "candidates": 18,
+    "crops": 6,
+    "seconds": 33
+   },
+   "B8-broken": {
+    "candidates": 36,
+    "crops": 2,
+    "seconds": 43
+   },
+   "B8-fixed": {
+    "candidates": 32,
+    "crops": 4,
+    "seconds": 43
+   },
+   "S1-broken": {
+    "candidates": 76,
+    "crops": 18,
+    "seconds": 33
+   },
+   "S1-fixed": {
+    "candidates": 75,
+    "crops": 17,
+    "seconds": 33
+   },
+   "B7-broken": {
+    "candidates": 19,
+    "crops": 8,
+    "seconds": 34
+   },
+   "B7-fixed": {
+    "candidates": 24,
+    "crops": 10,
+    "seconds": 34
+   },
+   "A2-broken": {
+    "candidates": 34,
+    "crops": 16,
+    "seconds": 32
+   },
+   "A2-fixed": {
+    "candidates": 34,
+    "crops": 16,
+    "seconds": 34
+   },
+   "B1-broken": {
+    "candidates": 74,
+    "crops": 5,
+    "seconds": 33
+   },
+   "B1-fixed": {
+    "candidates": 73,
+    "crops": 4,
+    "seconds": 32
+   },
+   "B4-broken": {
+    "candidates": 26,
+    "crops": 11,
+    "seconds": 34
+   },
+   "B4-fixed": {
+    "candidates": 23,
+    "crops": 8,
+    "seconds": 33
+   },
+   "A3-broken": {
+    "candidates": 37,
+    "crops": 14,
+    "seconds": 36
+   },
+   "A3-fixed": {
+    "candidates": 38,
+    "crops": 13,
+    "seconds": 37
+   },
+   "A1-broken": {
+    "candidates": 89,
+    "crops": 26,
+    "seconds": 38
+   },
+   "A1-fixed": {
+    "candidates": 87,
+    "crops": 24,
+    "seconds": 37
+   },
+   "B2-broken": {
+    "candidates": 73,
+    "crops": 7,
+    "seconds": 41
+   },
+   "B2-fixed": {
+    "candidates": 80,
+    "crops": 8,
+    "seconds": 41
+   },
+   "B6-broken": {
+    "candidates": 40,
+    "crops": 17,
+    "seconds": 34
+   },
+   "B6-fixed": {
+    "candidates": 46,
+    "crops": 16,
+    "seconds": 41
+   },
+   "spectre-4cb36cd7-broken": {
+    "candidates": 422,
+    "crops": 25,
+    "seconds": 46
+   },
+   "spectre-4cb36cd7-fixed": {
+    "candidates": 363,
+    "crops": 25,
+    "seconds": 45
+   },
+   "gentelella-fc3c0364-broken": {
+    "candidates": 274,
+    "crops": 21,
+    "seconds": 38
+   },
+   "gentelella-fc3c0364-fixed": {
+    "candidates": 266,
+    "crops": 11,
+    "seconds": 34
+   },
+   "gentelella-c0602144-broken": {
+    "candidates": 272,
+    "crops": 29,
+    "seconds": 45
+   },
+   "gentelella-c0602144-fixed": {
+    "candidates": 251,
+    "crops": 21,
+    "seconds": 43
+   },
+   "bootstrap-d255ba37-broken": {
+    "candidates": 7,
+    "crops": 7,
+    "seconds": 26
+   },
+   "bootstrap-d255ba37-fixed": {
+    "candidates": 5,
+    "crops": 5,
+    "seconds": 29
+   }
+  }
+ }
+}

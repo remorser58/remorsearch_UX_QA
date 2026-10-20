@@ -1,0 +1,86 @@
+{
+ "round": 3,
+ "sealed": "2026-10-20, before any agent run",
+ "viewports": {
+  "phone": "360x780 and 393x852, touch, mobile emulation",
+  "laptop": "1440x900"
+ },
+ "cases": [
+  {
+   "item": "lbd-a5032470",
+   "source": "creativetimofficial/light-bootstrap-dashboard",
+   "fix_commit": "a5032470fddd607d9e13bc9622e20bfc54803d4c",
+   "fix_subject": "finished typo page + table + small changes responsive",
+   "page": "dashboard.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the sidebar stays open on load, 260 px wide, and squeezes the main panel into a 100 px column at 360 px (133 px at 393 px): cards are 40 px wide and their titles and text are cut at the right edge.",
+   "selectors": [
+    ".sidebar",
+    ".main-panel",
+    ".card",
+    ".navbar",
+    ".wrapper"
+   ]
+  },
+  {
+   "item": "bootswatch-0cbc74c6",
+   "source": "thomaspark/bootswatch",
+   "fix_commit": "0cbc74c628279ae206d12325e10d3f8bea71c34a",
+   "fix_subject": "lux: fix input and button height difference, closes #824",
+   "page": "docs/lux/index.html",
+   "visible_at": [
+    "laptop"
+   ],
+   "defect": "In the navbar search forms the field is 45 px tall next to a 42.4 px Search button, so the field sticks out about 1.3 px above and below the button.",
+   "selectors": [
+    ".navbar .form-control",
+    ".navbar .btn",
+    ".navbar form",
+    ".form-inline"
+   ]
+  },
+  {
+   "item": "bootswatch-f02c7f9f",
+   "source": "thomaspark/bootswatch",
+   "fix_commit": "f02c7f9fce2cb62989c71ee88946129cf01f976e",
+   "fix_subject": "materia: vertical alignment on switch, fixes #1143",
+   "page": "docs/materia/index.html",
+   "visible_at": [
+    "laptop",
+    "phone"
+   ],
+   "defect": "The switch toggles sit 4.6 px above the centre of their labels (1 px after the fix), so each switch looks raised against its text.",
+   "selectors": [
+    ".form-switch",
+    ".form-switch .form-check-input",
+    ".form-check-label",
+    ".form-check"
+   ]
+  },
+  {
+   "item": "grayscale-4eaba19f",
+   "source": "StartBootstrap/startbootstrap-grayscale",
+   "fix_commit": "4eaba19fd953e84ff9383a55c1817941511a2c20",
+   "fixed_state_commit": "a0b1aa9227bbd300af3c22d1378945b4120449d5",
+   "fix_subject": "Fixed .navbar-toggle position level",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the menu toggle in the top bar sits 3 px below the centre of the brand beside it and makes the bar 6 px taller than the brand (56 px against 50 px).",
+   "selectors": [
+    ".navbar-toggle",
+    ".navbar-header",
+    ".navbar-brand",
+    ".navbar",
+    ".navbar-custom"
+   ]
+  }
+ ],
+ "notes": [
+  "A known defect is each item's own defect on its broken page.",
+  "Fixed-state alarm: a finding on a fixed page that points at that item's defect element and calls it broken in the way the defect describes."
+ ]
+}
