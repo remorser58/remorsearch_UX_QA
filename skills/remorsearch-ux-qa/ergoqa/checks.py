@@ -335,6 +335,18 @@ LY08 = _register(CheckSpec(
     (), ("web", "desktop"), "visual",
     "화면 밖으로 나간 요소의 고정 폭을 max-width: 100%로 바꾸고 넓은 표는 overflow-x: auto 상자에 넣으세요. 화면 높이 레이아웃(100vh, min-height)에 더해진 margin, padding, border를 빼서 페이지 높이를 화면에 맞추세요.",
 ))
+LY09 = _register(CheckSpec(
+    "LY-09", "layout", "measured", "나란히 놓인 다른 종류의 요소끼리 줄이 어긋남",
+    "Side-by-side elements of different kinds do not line up",
+    (), ("web", "desktop"), "visual",
+    "체크박스·스위치는 라벨 첫 줄 가운데에 맞추고(align-items:center 또는 margin-top 보정), 같은 줄의 입력칸과 버튼은 같은 높이를 쓰며, 헤더 막대의 항목은 같은 세로 가운데에 놓으세요.",
+))
+LY10 = _register(CheckSpec(
+    "LY-10", "layout", "measured", "휴대폰 화면에서 본문 열이 지나치게 좁아짐",
+    "A content column is squeezed far below the phone screen width",
+    (), ("web", "desktop"), "visual",
+    "좁은 화면에서는 사이드바를 접거나 화면 밖 메뉴로 바꾸고, 본문 열이 화면 폭을 쓰게 하세요(min-width, flex-basis, 미디어 쿼리 확인).",
+))
 UI01 = _register(CheckSpec(
     "UI-01", "visual", "measured", "아이콘 전용 조작 요소에 시각적 설명이 없음",
     "Icon-only action has no visible tooltip or equivalent hover/focus explanation",
@@ -2357,7 +2369,7 @@ def check_semantics(ctx: Context) -> list[Observation]:
     return out
 
 
-_PLACEMENT_KINDS = ("icon_offset", "attached_mismatch", "page_overflow", "scroll_slack")
+_PLACEMENT_KINDS = ("icon_offset", "attached_mismatch", "page_overflow", "scroll_slack", "label_offset", "pair_mismatch", "bar_offset", "narrow_column")
 _DIRECTION_KO = {("x", True): "오른쪽으로", ("x", False): "왼쪽으로", ("y", True): "아래로", ("y", False): "위로"}
 
 
@@ -2394,6 +2406,44 @@ def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, 
             f"입력칸과 붙은 {other}의 {edge} 모서리가 {size:g}px 어긋납니다(높이 {o.get('field_px')}px와 {o.get('other_px')}px).",
             extra=anchors,
         )
+    if kind == "label_offset":
+        where = "위" if (offset or 0) < 0 else "아래"
+        return Observation(
+            "LY-09", *base, [], f"{selectors[0]}|{label}",
+            {"name": "label_offset", "value": offset, "unit": "css_px", "threshold": 3, "comparator": ">=", "line_px": o.get("line_px"),
+             "control_px": o.get("control_px"), "label": o.get("container")},
+            False, "P3",
+            f"선택 요소가 옆 라벨 '{label[:30]}' 첫 줄 가운데보다 {size:g}px {where}에 있습니다.",
+            extra=anchors,
+        )
+    if kind == "pair_mismatch":
+        other = selectors[1] if len(selectors) > 1 else "옆 버튼"
+        return Observation(
+            "LY-09", *base, [], f"{selectors[0]}|{label}",
+            {"name": "pair_height_difference", "value": offset, "unit": "css_px", "threshold": 2, "comparator": ">=", "gap_px": o.get("gap_px"),
+             "top_px": o.get("top_px"), "field_px": o.get("field_px"), "button_px": o.get("other_px"), "button": other},
+            False, "P3",
+            f"입력칸과 {o.get('gap_px')}px 옆 버튼 {other}의 높이가 {size:g}px 다릅니다({o.get('field_px')}px와 {o.get('other_px')}px).",
+            extra=anchors,
+        )
+    if kind == "bar_offset":
+        other = selectors[1] if len(selectors) > 1 else "다른 항목"
+        where = "위" if (offset or 0) < 0 else "아래"
+        return Observation(
+            "LY-09", *base, [], f"{selectors[0]}|{label}",
+            {"name": "bar_centre_offset", "value": offset, "unit": "css_px", "threshold": 3, "comparator": ">=", "items": o.get("items"), "bar": o.get("container")},
+            False, "P3",
+            f"같은 막대의 '{(label or selectors[0])[:30]}' 내용이 {other}보다 세로 가운데 기준 {size:g}px {where}에 있습니다.",
+            extra=anchors,
+        )
+    if kind == "narrow_column":
+        return Observation(
+            "LY-10", *base, [], f"{selectors[0]}|",
+            {"name": "column_width", "value": offset, "unit": "css_px", "screen_px": o.get("screen_px"), "squeezed_texts": o.get("count"), "comparator": "<"},
+            False, "P2",
+            f"{o.get('screen_px')}px 화면에서 본문 열 {selectors[0]}이 {size:g}px로 좁아져 글자 {o.get('count')}곳이 한두 단어씩 줄바꿈됩니다.",
+            extra=anchors,
+        )
     if kind == "page_overflow":
         return Observation(
             "LY-08", *base, [], "page-width|",
@@ -2415,7 +2465,7 @@ def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, 
 
 
 def check_layout(ctx: Context) -> list[Observation]:
-    """Covered text, overlapping text, near-miss alignment, uneven spacing and misplacement (LY-02..08).
+    """Covered text, overlapping text, near-miss alignment, uneven spacing and misplacement (LY-02..10).
 
     Measured from rendered geometry and profile-independent. Covered text counts only
     when no scroll position reveals it: a fixed or sticky bar at the top while the page
@@ -3002,7 +3052,7 @@ HYPOTHESIS_CHECKS = frozenset({"GZ-01", "GZ-04", "PC-05", "PT-05", "GM-06"})
 # "profile-independent" instead of a k/n coverage (STF-08).
 PROFILE_INVARIANT_CHECKS = frozenset({"TI-01", "PT-01", "PT-05", "PT-06", "PC-01", "PC-02", "CG-01", "CG-03", "GZ-03", "GM-05", "GM-06",
                                       "SM-01", "SM-02", "SM-03", "SM-04", "SM-05", "SM-06", "SM-07", "SM-08", "LY-01", "LY-02", "LY-03",
-                                      "LY-04", "LY-05", "LY-06", "LY-07", "LY-08", "UI-01", "RF-01", "RF-02", "RF-03",
+                                      "LY-04", "LY-05", "LY-06", "LY-07", "LY-08", "LY-09", "LY-10", "UI-01", "RF-01", "RF-02", "RF-03",
                                       "FM-02"})
 
 

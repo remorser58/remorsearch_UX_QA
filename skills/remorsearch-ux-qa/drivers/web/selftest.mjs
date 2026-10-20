@@ -2737,7 +2737,7 @@ async function placementTest(tmp) {
       body { margin:0; font:16px Arial, sans-serif }
       .ib { box-sizing:border-box; width:40px; height:40px; border:1px solid #888; background:#eee; margin:20px; padding:0 }
       .ib svg { display:block; width:16px; height:16px }
-      #icon-off { display:block; padding-left:8px }
+      #icon-off { display:block; padding-left:6px }
       #icon-ok { display:flex; align-items:center; justify-content:center }
       .glyph { box-sizing:border-box; width:24px; height:24px; margin:20px; background:#ddd; cursor:pointer; text-align:center }
       #glyph-off { line-height:24px; padding-top:6px }
@@ -2759,8 +2759,8 @@ async function placementTest(tmp) {
     writeJson(path.join(tmp, 'placement-capture.json'), first.layout_outliers);
     const of = (ex, kind, sel) => (ex.layout_outliers || []).filter((o) => o.kind === kind && (!sel || o.selectors.includes(sel)));
     const iconOff = of(first, 'icon_offset', '#icon-off');
-    check('placement: an icon 3 px left of its button centre is measured on that axis only',
-      iconOff.length === 1 && iconOff[0].axis === 'x' && Math.abs(iconOff[0].offset_px + 3) < 0.6 && !of(first, 'icon_offset', '#icon-ok').length, iconOff);
+    check('placement: an icon 5 px left of its button centre is measured on that axis only',
+      iconOff.length === 1 && iconOff[0].axis === 'x' && Math.abs(iconOff[0].offset_px + 5) < 0.6 && !of(first, 'icon_offset', '#icon-ok').length, iconOff);
     const glyph = of(first, 'icon_offset', '#glyph-off');
     check('placement: a glyph pushed down in its box is measured by its ink, and a centred one is not',
       glyph.length === 1 && glyph[0].axis === 'y' && glyph[0].ink === true && glyph[0].offset_px > 3 && !of(first, 'icon_offset', '#glyph-ok').length,
@@ -2781,6 +2781,45 @@ async function placementTest(tmp) {
       slack.length === 1 && slack[0].selectors.includes('#full') && Math.abs(slack[0].offset_px - 16) < 1 && !of(await capture(), 'page_overflow').length, slack);
     await page.evaluate(() => { document.body.style.margin = '0'; });
     check('placement: the same block without the margin fits the screen', !of(await capture(), 'scroll_slack').length);
+    // LY-09 and LY-10: a switch raised 5 px against its label, a field 4 px taller than the
+    // button 8 px beside it, a bar whose toggle content sits 4 px low, and on a phone a
+    // column squeezed to 60 px; each beside a twin that lines up.
+    await page.setContent(`<!doctype html><style>
+      body { margin:0; font:16px Arial, sans-serif } .row { display:flex; align-items:center; gap:8px; margin:16px }
+      .row input[type=checkbox] { margin:0; width:16px; height:16px }
+      #raised { position:relative; top:-5px }
+      form { display:flex; align-items:flex-start; gap:8px; margin:16px } form input { box-sizing:border-box; height:40px; border:1px solid #888 }
+      form button { box-sizing:border-box; border:1px solid #06c; background:#08f; color:#fff }
+      .bar { display:flex; justify-content:space-between; align-items:center; height:56px; width:100%; background:#222 }
+      .bar a { color:#fff; font-size:18px } .bar button { width:40px; height:40px; background:#333; border:1px solid #555; color:#fff; padding:0 }
+      #low { padding-top:8px }
+    </style>
+    <label class="row"><input id="raised" type="checkbox"> Raised option</label>
+    <label class="row"><input id="level" type="checkbox"> Level option</label>
+    <form id="f1"><input id="q1" aria-label="Search one"><button id="b1" style="height:36px">Search</button></form>
+    <form id="f2"><input id="q2" aria-label="Search two"><button id="b2" style="height:40px">Search</button></form>
+    <nav class="navbar bar" id="bar1"><a href="#" id="brand1">Brand</a><button id="low" aria-label="Menu">&#9776;</button></nav>
+    <nav class="navbar bar" id="bar2"><a href="#" id="brand2">Brand</a><button id="even" aria-label="Menu">&#9776;</button></nav>`);
+    const second = await capture();
+    const raised = of(second, 'label_offset', '#raised');
+    check('placement: a checkbox 5 px above its label line is measured, a level one is not',
+      raised.length === 1 && raised[0].offset_px < -3 && !of(second, 'label_offset', '#level').length, of(second, 'label_offset'));
+    const pair = of(second, 'pair_mismatch', '#q1');
+    check('placement: a field 4 px taller than the button 8 px beside it is measured, an equal pair is not',
+      pair.length === 1 && pair[0].selectors.includes('#b1') && Math.abs(pair[0].offset_px + 4) < 0.6 && !of(second, 'pair_mismatch', '#q2').length, of(second, 'pair_mismatch'));
+    const bar = of(second, 'bar_offset');
+    check('placement: in a bar, a toggle whose content sits 4 px low is measured once, a centred bar is silent',
+      bar.length === 1 && bar[0].container === '#bar1' && Math.abs(Math.abs(bar[0].offset_px) - 4) < 1.1, bar);
+    const phone = await transport.browser.newContext({ viewport: { width: 360, height: 780 }, deviceScaleFactor: 1 });
+    try {
+      const small = await phone.newPage();
+      await small.setContent(`<!doctype html><style>body { margin:0; font:16px Arial } .wrap { display:flex } .side { width:300px; flex:none } .main { width:60px }</style>
+        <div class="wrap"><div class="side">Menu</div><div class="main" id="main"><h2>Email statistics today</h2><p>Last campaign performance</p></div></div>`);
+      const narrow = (await small.evaluate(extractSnapshot, { key: STATE_KEY, cap: 400, knownRoles: [...KNOWN_ROLES] })).layout_outliers.filter((o) => o.kind === 'narrow_column');
+      check('placement: on a phone a 60 px content column with texts wrapping word by word is reported once', narrow.length === 1 && narrow[0].selectors.includes('#main'), narrow);
+    } finally {
+      await phone.close();
+    }
   } finally {
     await context.close();
     await transport.close();

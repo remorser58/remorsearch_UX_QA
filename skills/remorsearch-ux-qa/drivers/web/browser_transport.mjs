@@ -28,6 +28,27 @@ export function validateBrowserWs(raw) {
   return url.href;
 }
 
+// A command sandbox that blocks Chromium's helper processes fails the first launch while
+// the same browser runs in one process. The retry adds --single-process and records it in
+// the environment, so later contexts of this run take the one-process path too.
+async function launchLocal(pw, headless, timeout) {
+  const args = chromiumArgs();
+  try {
+    return await pw.chromium.launch({ headless, timeout, args });
+  } catch (err) {
+    if (args.includes('--single-process')) throw err;
+    const retry = [...args, '--single-process'];
+    let browser;
+    try {
+      browser = await pw.chromium.launch({ headless, timeout, args: retry });
+    } catch {
+      throw err;
+    }
+    process.env[ARGS_ENV] = retry.join(' ');
+    return browser;
+  }
+}
+
 export async function openBrowser(pw, pwInfo, { headless = true, timeout = 60000, endpoint = process.env[ENV] } = {}) {
   const connected = endpoint !== undefined;
   const wsEndpoint = connected ? validateBrowserWs(endpoint) : null;
@@ -35,8 +56,7 @@ export async function openBrowser(pw, pwInfo, { headless = true, timeout = 60000
   try {
     // connect performs Playwright's client/server version handshake. This is the
     // Playwright protocol, not connectOverCDP and not a reused browser context.
-    browser = connected ? await pw.chromium.connect(wsEndpoint, { timeout })
-      : await pw.chromium.launch({ headless, timeout, args: chromiumArgs() });
+    browser = connected ? await pw.chromium.connect(wsEndpoint, { timeout }) : await launchLocal(pw, headless, timeout);
   } catch (err) {
     const message = String(err.message);
     if (connected && /version mismatch/i.test(message)) {
