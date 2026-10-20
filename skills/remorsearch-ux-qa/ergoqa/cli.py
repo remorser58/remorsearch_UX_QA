@@ -293,13 +293,21 @@ def cmd_scan(args: argparse.Namespace) -> int:
     devices = tuple(args.device or scan.DEFAULT_DEVICES)
     for device_id in devices:
         get_device(device_id)
-    result = scan.run_scan(args.url, out, devices=devices, tiles=args.tiles, node=args.node,
-                           allow_origins=tuple(args.allow_origin or ()))
-    print((out / "scan.md").read_text(encoding="utf-8"))
-    print(f"scan: {len(result['candidates'])} candidates -> {out / 'scan.json'}")
-    if not all(c.get("recorded") for c in result["coverage"]):
-        return EXIT_DEGRADED
-    return EXIT_FINDINGS if result["candidates"] else EXIT_OK
+    urls = list(dict.fromkeys(args.url))
+    if len(urls) > 1:
+        pages = scan.run_many(urls, out, devices=devices, tiles=args.tiles, node=args.node,
+                              allow_origins=tuple(args.allow_origin or ()), jobs=args.jobs)
+        print((out / "scan.md").read_text(encoding="utf-8"))
+        print(f"scan: {len(pages)} pages -> {out / 'scan.md'}")
+        recorded = all(p["recorded"] for p in pages)
+    else:
+        result = scan.run_scan(urls[0], out, devices=devices, tiles=args.tiles, node=args.node,
+                               allow_origins=tuple(args.allow_origin or ()))
+        print((out / "scan.md").read_text(encoding="utf-8"))
+        print(f"scan: {len(result['candidates'])} candidates -> {out / 'scan.json'}")
+        recorded = all(c.get("recorded") for c in result["coverage"])
+    # Candidates are the scan's output, not a failure: exit 0 whenever every device recorded.
+    return EXIT_OK if recorded else EXIT_DEGRADED
 
 
 def cmd_catalog(args: argparse.Namespace) -> int:
@@ -494,8 +502,11 @@ def build_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("catalog", help="print the check catalog")
     p.set_defaults(func=cmd_catalog)
 
-    p = sub.add_parser("scan", help="rendered layout scan of one URL: phone and laptop, top to end, measured candidates with outlined crops")
-    p.add_argument("--url", required=True, help="http(s) URL of the page as users see it")
+    p = sub.add_parser("scan", help="rendered layout scan: phone and laptop, top to end, measured candidates with outlined crops; "
+                       "exit 0 when every device recorded, 3 when one did not")
+    p.add_argument("--url", required=True, action="append",
+                   help="http(s) or file:// URL of a page as users see it (repeat for several pages; they record in parallel)")
+    p.add_argument("--jobs", type=int, default=3, help="pages recorded at once when several --url are given (default 3)")
     p.add_argument("--device", action="append", help="device id (repeatable; default galaxy-s24 and laptop-1440)")
     p.add_argument("--tiles", type=int, default=8, help="scroll screens after the top one, before jumping to the end (default 8)")
     p.add_argument("--node", default="node", help="Node.js 22 executable for the web driver")

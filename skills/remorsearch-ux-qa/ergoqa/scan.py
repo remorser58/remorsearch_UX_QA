@@ -214,9 +214,10 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
         driver_output = log.read_text(encoding="utf-8", errors="replace")
         run_dir = runs / run_id
         run_doc = json.loads((run_dir / "run.json").read_text(encoding="utf-8")) if (run_dir / "run.json").is_file() else {}
-        entry = {"device": device_id, "seconds": round(seconds, 1), "driver_exit": code,
+        entry = {"device": device_id, "seconds": round(seconds, 1),
                  "recorded": bool(run_doc) and run_doc.get("status") != "blocked"}
         if not entry["recorded"]:
+            entry["driver_exit"] = code
             # A run that never reached the page (refused connection, blocked navigation)
             # is a coverage gap, never an empty result. The first line of the driver's error
             # names the cause; the stack below it does not.
@@ -317,7 +318,46 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
     return result
 
 
-def render_markdown(result: dict[str, Any]) -> str:
+def _slug(url: str) -> str:
+    path = re.sub(r"[?#].*$", "", url).rstrip("/")
+    parts = [p for p in path.split("/") if p and ":" not in p][-2:]
+    return re.sub(r"[^A-Za-z0-9._-]+", "-", "-".join(parts))[:48].strip("-.") or "page"
+
+
+def run_many(urls: list[str], out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, tiles: int = 8, node: str = "node",
+             timeout: int = 900, allow_origins: tuple[str, ...] = (), jobs: int = 3) -> list[dict[str, Any]]:
+    """Scan several pages, a few at a time, each into its own folder, and write one scan.md
+    that lists every page's layout rows. Each page keeps its full scan.md and scan.json."""
+    from concurrent.futures import ThreadPoolExecutor
+
+    out = Path(out)
+    out.mkdir(parents=True, exist_ok=True)
+    folders = [out / f"{n:02d}-{_slug(url)}" for n, url in enumerate(urls, 1)]
+    def one(pair: tuple[str, Path]) -> dict[str, Any]:
+        try:
+            return run_scan(pair[0], pair[1], devices=devices, tiles=tiles, node=node, timeout=timeout, allow_origins=allow_origins)
+        except Exception as exc:  # one broken page must not stop the others; it is a coverage gap
+            return {"url": pair[0], "candidates": [], "coverage": [{"device": ", ".join(devices), "recorded": False, "driver_exit": None,
+                                                                    "error": f"{type(exc).__name__}: {exc}"[:300]}]}
+
+    with ThreadPoolExecutor(max_workers=max(1, jobs)) as pool:
+        results = list(pool.map(one, zip(urls, folders)))
+    pages = []
+    lines = ["# Layout scan: " + str(len(urls)) + " pages", "",
+             "Each page's layout rows follow; its full scan.md (other checks by cause) and screenshots are in its folder.", ""]
+    for folder, result in zip(folders, results):
+        layout = [c for c in result["candidates"] if not c.get("part_of") and is_layout(c["check_id"])]
+        recorded = all(c.get("recorded") for c in result["coverage"])
+        pages.append({"url": result["url"], "folder": folder.name, "recorded": recorded, "candidates": len(result["candidates"]),
+                      "layout_rows": len({c.get("group") for c in layout})})
+        page_md = render_markdown(result, crop_prefix=folder.name + "/crops/", layout_only=True)
+        lines += ["## " + folder.name + ": " + result["url"], ""] + page_md.split("\n", 2)[2:] + [""]
+    (out / "scan.json").write_text(json.dumps({"schema_version": "ergo-scan-set.v1", "pages": pages}, ensure_ascii=False, indent=1), encoding="utf-8")
+    (out / "scan.md").write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+    return pages
+
+
+def render_markdown(result: dict[str, Any], crop_prefix: str = "", layout_only: bool = False) -> str:
     lines = [f"# Layout scan: {result['url']}", "",
              "Measured candidates. Open each crop and the full screenshot before reporting one; dismiss what the pixels do not show.", ""]
     for c in result["coverage"]:
@@ -363,11 +403,13 @@ def render_markdown(result: dict[str, Any]) -> str:
         shown.add(c.get("group"))
         same = [m for m in layout if m.get("group") == c.get("group")] if c.get("group") else [c]
         more = f" ({len(same) - 1} more with the same cause: {', '.join(str(m['n']) for m in same[1:6])})" if len(same) > 1 else ""
-        crop = Path(c["crop"]).name if c.get("crop") else "-"
+        crop = crop_prefix + Path(c["crop"]).name if c.get("crop") else "-"
         lines.append(f"| {c['n']} | {c['severity']} | {c['check_id']} | {', '.join(c['devices'])} | {label(c)} | {summary(c)}{more} | {crop} |")
     if not layout:
         lines.append("| - | - | - | - | - | No measured layout candidate. The page still needs a visual pass. | - |")
-    if other:
+    if other and layout_only:
+        lines += ["", f"Other measured checks: {len({c.get('group') or c['check_id'] for c in other})} causes in this page's scan.md."]
+    elif other:
         lines += ["", f"## Other measured checks ({len(other)}, grouped by cause)", "",
                   "One row per cause with up to three examples; scan.json lists every element.", "",
                   "| Check | Severity | Count | Device | Examples | What was measured | Crops |", "| --- | --- | --- | --- | --- | --- | --- |"]
