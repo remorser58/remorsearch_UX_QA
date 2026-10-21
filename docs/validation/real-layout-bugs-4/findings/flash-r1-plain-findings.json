@@ -1,0 +1,101 @@
+[
+  {
+    "page": "p02",
+    "selector": "table",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P1",
+    "evidence": "The table spans x=51.5 to 504.6 (453.6px wide) in a 360px viewport. The page clips the overflow at the right edge, cutting off the last two columns and the caption, with no table scroll container.",
+    "fix": "Wrap the table in a max-width:100% container with overflow-x:auto, or make the table width:100% with a layout that fits the narrow viewport."
+  },
+  {
+    "page": "p02",
+    "selector": "aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The aside is squeezed into a narrow column beside the main text. Its heading breaks into 'This is an asid e' and body words split mid-word into fragments such as 'Lore m' and 'ipsu m'.",
+    "fix": "Stack the aside below the main text at narrow widths and give it width:100%."
+  },
+  {
+    "page": "p03",
+    "selector": "nav.loading",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The fixed navigation is 366px wide in a 360px viewport. It extends 6px past the right edge and makes the document 366px wide, producing sideways page scroll.",
+    "fix": "Set the navigation to width:100%; max-width:100vw; box-sizing:border-box and let its items shrink or wrap."
+  },
+  {
+    "page": "p03",
+    "selector": "code.language-html",
+    "viewport": "both",
+    "category": "clipped",
+    "severity": "P1",
+    "evidence": "Code samples have no horizontal scroll container. On phone a sample spans x=45.4 to 451.0 (405.5px) and another reaches 481.4px in a 360px viewport; on laptop one spans x=267.4 to 1787.9 (1520.5px) in a 1440px viewport. The right side of the code is cut off.",
+    "fix": "Constrain each code block with max-width:100%, display:block and overflow-x:auto, and set min-width:0 on its flex/grid ancestors."
+  },
+  {
+    "page": "p04",
+    "selector": "table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The comparison table spans x=-28.6 to 388.6 (417.2px wide) in a 360px viewport. Its left and right edges are outside the screen and the document becomes 389px wide, so the page scrolls sideways.",
+    "fix": "Remove the negative table offset and constrain it with max-width:100%; if the columns cannot fit, provide an overflow-x:auto wrapper."
+  },
+  {
+    "page": "p05",
+    "selector": "#basic-progress-bar .col-sm-121",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The progress card's column is 2288.4px wide at both sizes, although its parent row is 352px wide on phone and 1178.7px on laptop. The document expands to 2292px on phone and 2534px on laptop, cutting off most of the card and creating large sideways scrolling.",
+    "fix": "Replace the invalid col-sm-121 class with a valid responsive column class, or constrain the column to width:100% and min-width:0."
+  },
+  {
+    "page": "p06",
+    "selector": "pre.npm",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The install snippet is 610px wide in a 360px viewport. It expands the document to 610px, stretches the fixed navigation to 610px and pushes the menu control off screen at x=523.8.",
+    "fix": "Give pre.npm max-width:100%, box-sizing:border-box and overflow-x:auto so the code scrolls inside its own block."
+  },
+  {
+    "page": "p07",
+    "selector": "nav",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The fixed navigation is 366px wide in a 360px viewport, extending 6px past the screen and making the document 366px wide.",
+    "fix": "Set the navigation to width:100%; max-width:100vw; box-sizing:border-box and allow its items to shrink."
+  },
+  {
+    "page": "p07",
+    "selector": "code.language-html",
+    "viewport": "both",
+    "category": "clipped",
+    "severity": "P1",
+    "evidence": "Code samples overflow their containers without a local scrollbar. On phone they reach x=481.4 in a 360px viewport; on laptop one block spans x=459.4 to 1979.9 (1520.5px) in a 1440px viewport, so the right side is visibly cut off.",
+    "fix": "Constrain each code block with max-width:100%, display:block and overflow-x:auto, and set min-width:0 on its flex/grid ancestors."
+  },
+  {
+    "page": "p08",
+    "selector": "table",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P1",
+    "evidence": "The table spans x=51.5 to 504.6 (453.6px wide) in a 360px viewport. The last columns and caption are clipped at the right edge, and the table has no horizontal scroll container.",
+    "fix": "Wrap the table in a max-width:100% container with overflow-x:auto, or make the table fit the narrow viewport with width:100%."
+  },
+  {
+    "page": "p08",
+    "selector": "aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The aside remains in a narrow side column on phone. Its heading and body text break into mid-word fragments, including 'This is an asid e', 'Lore m' and 'ipsu m'.",
+    "fix": "Stack the aside below the main text at narrow widths and give it width:100%."
+  }
+]

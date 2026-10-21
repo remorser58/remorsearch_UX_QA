@@ -1,0 +1,157 @@
+{
+ "seed": 2026102002,
+ "names": {
+  "mvp-66ec5a39": "p01",
+  "simple-css-c6af6463": "p02",
+  "picnic-ec6a3d0d": "p03",
+  "mvp-11722ccc": "p04",
+  "mini-css-0ed75ca8": "p05",
+  "picnic-8ae635b1": "p06",
+  "picnic-8bb0d652": "p07",
+  "simple-css-36144b34": "p08"
+ },
+ "groups": {
+  "A": [
+   "picnic-8ae635b1",
+   "picnic-8bb0d652",
+   "mvp-66ec5a39"
+  ],
+  "B": [
+   "mvp-11722ccc",
+   "mini-css-0ed75ca8",
+   "simple-css-c6af6463"
+  ],
+  "C": [
+   "picnic-ec6a3d0d",
+   "simple-css-36144b34"
+  ]
+ },
+ "runs": {
+  "1": {
+   "p01": {
+    "item": "mvp-66ec5a39",
+    "state": "broken",
+    "page": "p01/index.html"
+   },
+   "p02": {
+    "item": "simple-css-c6af6463",
+    "state": "broken",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "picnic-ec6a3d0d",
+    "state": "fixed",
+    "page": "p03/documentation.html"
+   },
+   "p04": {
+    "item": "mvp-11722ccc",
+    "state": "broken",
+    "page": "p04/index.html"
+   },
+   "p05": {
+    "item": "mini-css-0ed75ca8",
+    "state": "broken",
+    "page": "p05/docs/progress.html"
+   },
+   "p06": {
+    "item": "picnic-8ae635b1",
+    "state": "broken",
+    "page": "p06/index.html"
+   },
+   "p07": {
+    "item": "picnic-8bb0d652",
+    "state": "broken",
+    "page": "p07/documentation.html"
+   },
+   "p08": {
+    "item": "simple-css-36144b34",
+    "state": "fixed",
+    "page": "p08/index.html"
+   }
+  },
+  "2": {
+   "p01": {
+    "item": "mvp-66ec5a39",
+    "state": "broken",
+    "page": "p01/index.html"
+   },
+   "p02": {
+    "item": "simple-css-c6af6463",
+    "state": "fixed",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "picnic-ec6a3d0d",
+    "state": "broken",
+    "page": "p03/documentation.html"
+   },
+   "p04": {
+    "item": "mvp-11722ccc",
+    "state": "fixed",
+    "page": "p04/index.html"
+   },
+   "p05": {
+    "item": "mini-css-0ed75ca8",
+    "state": "fixed",
+    "page": "p05/docs/progress.html"
+   },
+   "p06": {
+    "item": "picnic-8ae635b1",
+    "state": "broken",
+    "page": "p06/index.html"
+   },
+   "p07": {
+    "item": "picnic-8bb0d652",
+    "state": "broken",
+    "page": "p07/documentation.html"
+   },
+   "p08": {
+    "item": "simple-css-36144b34",
+    "state": "broken",
+    "page": "p08/index.html"
+   }
+  },
+  "3": {
+   "p01": {
+    "item": "mvp-66ec5a39",
+    "state": "fixed",
+    "page": "p01/index.html"
+   },
+   "p02": {
+    "item": "simple-css-c6af6463",
+    "state": "broken",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "picnic-ec6a3d0d",
+    "state": "broken",
+    "page": "p03/documentation.html"
+   },
+   "p04": {
+    "item": "mvp-11722ccc",
+    "state": "broken",
+    "page": "p04/index.html"
+   },
+   "p05": {
+    "item": "mini-css-0ed75ca8",
+    "state": "broken",
+    "page": "p05/docs/progress.html"
+   },
+   "p06": {
+    "item": "picnic-8ae635b1",
+    "state": "fixed",
+    "page": "p06/index.html"
+   },
+   "p07": {
+    "item": "picnic-8bb0d652",
+    "state": "fixed",
+    "page": "p07/documentation.html"
+   },
+   "p08": {
+    "item": "simple-css-36144b34",
+    "state": "broken",
+    "page": "p08/index.html"
+   }
+  }
+ }
+}

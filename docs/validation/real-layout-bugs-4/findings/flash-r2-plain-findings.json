@@ -1,0 +1,83 @@
+[
+  {
+    "page": "p03",
+    "selector": "main.documentation > section > aside",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P1",
+    "evidence": "At 360px the sidebar is squeezed to 64.8px (x=18) while its 'Contents' heading is 114.4px wide and its links reach x=122.7; the article starts at x=82.8, so the sidebar text paints over the article. In the rendered page 'Contents' is printed on top of the 'Picnic CSS' h1 (h1 text spans x=93-279, y=107-146) and the link labels 'Buttons', 'Drop image', 'Radio button' run across the intro paragraph. Both headings are unreadable where they intersect.",
+    "fix": "At the phone breakpoint stack the section (display:block or flex-wrap:wrap) so the aside becomes a full-width block above the article, and remove the one-fifth width until there is room for it; keep a min-width on the aside so its labels never overflow into the article."
+  },
+  {
+    "page": "p03",
+    "selector": "main.documentation > section > article > blockquote > p > a",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Document scrollWidth is 413px at a 360px viewport, so the page scrolls 53px sideways. The long jsfiddle URL in the Tabs blockquote ends at x=413 and the code chips 'twelve'/'three-fourth' reach x=366/368 outside the 249px article column.",
+    "fix": "Allow long URLs and inline code to break: overflow-wrap:anywhere on article p/a/code, and max-width:100% on inline code, so nothing extends past the article column."
+  },
+  {
+    "page": "p04",
+    "selector": "body > main > section:nth-of-type(3) > table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The comparison table is 417.2px wide inside a 328px section, positioned at x=-28.6, so its first column is cut off at the left edge (row labels render as 'obile / endly', 'orks out') and the document becomes 389px wide at a 360px viewport, scrolling 29px sideways.",
+    "fix": "Wrap the table in a container with overflow-x:auto and max-width:100%, or at this breakpoint set the table to width:100% with a smaller cell padding and font-size so it fits the 328px column."
+  },
+  {
+    "page": "p06",
+    "selector": "main > header > div > pre.npm",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The hero install snippet is 610px wide at a 360px viewport and the document scrollWidth is 610px, so the page scrolls 250px sideways. The code line is cut mid-string at the right edge, at the unpkg.com URL, and the fixed nav is also 610px wide, leaving the 'menu' control at x=523 off-screen until the page is scrolled right.",
+    "fix": "Give the snippet container max-width:100%; overflow-x:auto and the pre white-space:pre-wrap or break-all at phone width; set the nav to width:100% with box-sizing:border-box so it cannot exceed the viewport."
+  },
+  {
+    "page": "p07",
+    "selector": "a.top",
+    "viewport": "both",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The fixed 'Up you go' control sits at the bottom centre with a transparent background and zero height, so its text is drawn over the page content: at 360px it covers the '.cool:hover' code lines around y=745-770, and at 1440px it covers code text at the bottom edge (y~880-900). Both the link text and the underlying code become hard to read.",
+    "fix": "Give the control a solid background, padding and a real height (e.g. position:fixed; bottom:16px; height:auto; background:#fff; box-shadow) and reserve space for it, or move it into the flow so it never paints over text."
+  },
+  {
+    "page": "p07",
+    "selector": "html > body > nav",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P3",
+    "evidence": "The nav box is 52.8px tall but its menu wraps onto a second row that ends at y=77.8, so the nav's bottom border runs through the middle of the 'GitHub' label (text y=43.8-63.8) and through the Documentation button (y=35.6-72.5).",
+    "fix": "Let the nav grow with its content (remove the fixed height / use min-height:52.8px) and apply the bottom border to the nav's outer box only after the wrapped row, or keep the menu on one row by shrinking padding at this breakpoint."
+  },
+  {
+    "page": "p07",
+    "selector": "div.flex.six > div:nth-of-type(12) > code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "The 'twelve' inline code is 68px wide inside a 43px grid cell and extends to x=366, producing a 366px document at a 360px viewport (6px sideways scroll). The same overflow widens the fixed nav to 366px.",
+    "fix": "Constrain the demo cells (min-width:0; overflow-wrap:anywhere) and let the inline code wrap inside its cell instead of extending past the grid."
+  },
+  {
+    "page": "p08",
+    "selector": "#text__asides > aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360px the aside stays floated beside the paragraph and is only 77.4px wide; its text column is 45.4px, so words break into one or two letters per line ('Lore / m / ipsu / m / dolor', heading 'This is an asid / e') and the aside grows to 1104.7px tall.",
+    "fix": "Clear the float and make the aside full width below the paragraph at this breakpoint (aside{float:none;width:auto;margin:1rem 0}), and add overflow-wrap:break-word so long words do not split per character."
+  },
+  {
+    "page": "p01",
+    "selector": "body > main > section:nth-of-type(3) > table",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The three-column comparison table is 326px wide with 474px of content; the 'Custom CSS' column is entirely outside the visible box and the 'No CSS' header is cut mid-word at the right edge (table x=16, client 326, scroll 474).",
+    "fix": "At phone width stack the comparison rows into labelled blocks or reduce cell padding/font so all three columns fit, instead of hiding the third column inside a scroll box."
+  }
+]

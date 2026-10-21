@@ -1,0 +1,74 @@
+[
+  {
+    "page": "p01",
+    "selector": "main table",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The feature-comparison table is 474px wide inside a 326px scroll box (scrollWidth 474, clientWidth 326) at 360px. Its last header cell 'Custom CSS' and the right-hand checkmark column are cut at the container edge, so the header reads 'No CS' and the last column of every row is half visible.",
+    "fix": "Let the table shrink to the container (max-width:100%; table-layout with wrapping cells) or make the overflow explicit with a visible scroll affordance and a fade at the right edge."
+  },
+  {
+    "page": "p02",
+    "selector": "article aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The floated aside keeps width:30% at 360px, so it is only 77px wide inside a 292px article. Its heading wraps as 'This is an / asid / e' and body words break mid-word ('Lore / m / ipsum / dolor / sit / amet / cons ectet ur'). Text is unreadable in three narrow columns.",
+    "fix": "At narrow widths drop the float and give the aside width:100% (e.g. a max-width media query), keeping the 30% float only on wide viewports."
+  },
+  {
+    "page": "p04",
+    "selector": "main table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The comparison table is 417px wide and centered in a 328px section, so it starts at x=-29 and ends at x=389 in a 360px viewport. The document scrollWidth is 401 (41px of sideways page scroll) and the first column's labels ('Mobile friendly', 'Works out of the box') are cut on the left.",
+    "fix": "Remove the fixed max-width:80% table sizing and give the table a scroll container (or allow cells to wrap) so it fits within 100% of the content column."
+  },
+  {
+    "page": "p04",
+    "selector": "form textarea",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The textarea uses content-box sizing: computed width 336px plus 12.8px padding and 1px borders, giving a 364px border box from x=38 to x=401, while its form card ends at x=348. The field hangs 53px outside the card and drives the page's 401px scroll width.",
+    "fix": "Apply box-sizing:border-box and width:100% to textarea/input so the padding stays inside the card."
+  },
+  {
+    "page": "p05",
+    "selector": ".col-sm-121",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The grid wrapper carries the class 'col-sm-121' (typo for col-sm-12), so no column rule matches and the card grows to 2288px wide inside a 352px row. At 360px the document scrollWidth is 2293; at 1440px it is 2534. The card's overflow:hidden clips its own headings and code samples ('To create a progress bar, use the <progress...' cut mid-line), and the page scrolls sideways by ~1900px.",
+    "fix": "Change the class to col-sm-12 (or add a width:100%/min-width:0 rule for .col-sm-121) so the card matches its parent column."
+  },
+  {
+    "page": "p06",
+    "selector": "pre.npm",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The install snippet is pinned to width:610px with margin-right:-250px inside a 360px hero. Its border box runs from x=0 to x=610, so the document scrollWidth is 610 and the page scrolls 250px sideways; the snippet's text is cut at the right edge with no visible scroll cue.",
+    "fix": "Replace the fixed 610px width with width:100% and max-width:610px, and let the pre scroll horizontally inside its own box."
+  },
+  {
+    "page": "p07",
+    "selector": "nav .menu",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The fixed nav is 53px tall, but its menu wraps to a second line: the GitHub and Documentation buttons sit at y=36-72, below the nav's bottom edge, and the nav's scrollHeight is 78px. They cover the nav's divider and the top of the page content, which starts at y=80 ('Contents' heading).",
+    "fix": "At narrow widths collapse the menu behind the existing burger toggle (as on the Plugins page) or give the nav auto height and enough top padding on main to clear it."
+  },
+  {
+    "page": "p08",
+    "selector": "article aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "Same rendered page as p02: the floated aside stays at width:30% and is 77px wide inside a 292px article. The heading breaks as 'This is an / asid / e' and paragraph words break mid-word across a 77px column.",
+    "fix": "Drop the float and use width:100% for the aside below the mobile breakpoint, keeping the 30% float on wider screens."
+  }
+]

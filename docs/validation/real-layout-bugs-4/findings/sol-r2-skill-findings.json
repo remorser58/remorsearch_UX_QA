@@ -1,0 +1,137 @@
+[
+  {
+    "page": "p02",
+    "selector": "#embedded__audio audio, #embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "At 360x780, embedded media protrude through the right borders of their cards. The card ends at x=326; audio spans x=51..351 (300 px wide), iframe x=51..355 (304 px), and embed/object x=51..351. They exceed the card border by 25-29 px and its content edge (x=309) by 42-46 px. The adjacent video fits x=51..309. Viewed evidence: evidence/p02-audio-phone.png and evidence/p02-iframe-phone.png; also the full scroll captures for Embed and Object. Laptop media remain inside their cards.",
+    "fix": "Constrain audio, iframe, embed and object to max-width:100% with box-sizing:border-box; use width:100% where appropriate so the outer width fits the 258 px card content area."
+  },
+  {
+    "page": "p02",
+    "selector": "#forms__html5",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At 360x780, the HTML5 inputs fieldset extends farther right than every sibling fieldset. All start at x=36, but this fieldset is 300.39 px wide and ends at x=336.39; sibling fieldsets are 288 px wide and end at x=324. It protrudes 10.39 px beyond the 292 px form ending at x=326. Viewed evidence: evidence/p02-fieldset-phone.png (the preceding fieldset border is also visible) and the form scroll captures. Laptop fieldsets align.",
+    "fix": "Set min-inline-size:0 on the fieldset, preserve the same available width and margins as sibling fieldsets, and allow native date/time inputs to shrink with min-width:0 and max-width:100%."
+  },
+  {
+    "page": "p03",
+    "selector": ".documentation > section > aside, #picnic-css",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the Contents heading visibly collides with Picnic CSS. The sidebar keeps only 64.80 px, while its heading text paints x=28.55..142.95. Picnic CSS starts at x=93.34; the painted text ranges overlap horizontally by 49.61 px and vertically by 30 px. Sidebar links also crowd the article below. Viewed evidence: evidence/p03-heading-phone.png. At 1440x900 the columns are separate.",
+    "fix": "Stack the contents and article at the narrow breakpoint: give both full width and apply the one-fifth/four-fifths columns only above a desktop breakpoint. Allow the contents heading its full text width."
+  },
+  {
+    "page": "p03",
+    "selector": "blockquote:last-of-type a, .documentation .flex.six code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the Original link in Tabs runs from x=112.69 to x=413.02, cutting its right end at the screen edge. The document is 413 px wide against a 360 px client/visual viewport (53 px horizontal overflow). This also expands the fixed header to 413 px: its menu control spans x=337.31..413, so most of its label is off screen. Inline code in narrow grid examples also exceeds its columns. Viewed evidence: evidence/p03-link-phone.png and evidence/p03-heading-phone.png. Laptop content fits.",
+    "fix": "Allow long article links to wrap with overflow-wrap:anywhere. Make the small inline-code grids use fewer columns at phone widths and constrain their contents to their cells so the document stays within 360 px."
+  },
+  {
+    "page": "p03",
+    "selector": ".third:has(input[placeholder=\"Repeat password\"])",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360x780, the stacked form remains one third of a 248.64 px article content area: its controls are only 82.88 px wide. Repeat password has about 59.88 px of usable text width for a 136.97 px label and visibly shows only Repeat. Password is cut to Passwo; Biography wraps into Biogra / phy, and the Send icon and label split into separate rows. Viewed evidence: evidence/p03-forms-phone.png and the Forms scroll captures. Laptop labels fit.",
+    "fix": "Make the stacked form containers full width at the phone breakpoint, applying the third-width layout only when enough room remains for the labels and button contents."
+  },
+  {
+    "page": "p03",
+    "selector": "nav.demo select",
+    "viewport": "laptop",
+    "category": "overlapping",
+    "severity": "P3",
+    "evidence": "At 1440x900, the custom down arrow paints over the final n in Choose an option. The select is 166.36 px wide; the label measures 137.97 px, with only 7.92 px right padding. The 10 px-wide background arrow sits about 15 px from the right edge and shares roughly 6 px of the label area. Viewed evidence: evidence/p03-select-laptop.png. This select is hidden in the initial phone navigation layout.",
+    "fix": "Reserve a dedicated arrow area with padding-right of at least 2em, and let the auto-sized select grow to fit the full label plus that padding."
+  },
+  {
+    "page": "p04",
+    "selector": "table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the comparison table is 417.20 px wide and centered at x=-28.59..388.61. About 29 px lie outside each screen edge: row labels lose their first letters on the left, and CSS Frameworks is cut on the right. The document scroll width becomes 389 px; the table itself has overflow:visible rather than its own scroll area. Viewed evidence: evidence/p04-table-phone.png. The full table fits at 1440x900.",
+    "fix": "Put the table in a max-width:100% horizontal scroll container and align the table to the start of that container, or make the table itself a bounded block with overflow-x:auto. Preserve access to its leftmost cells."
+  },
+  {
+    "page": "p06",
+    "selector": "pre.npm",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the installation snippet has a fixed 610 px width at x=0..610, so 250 px extend beyond the screen and the line is visibly cut. The document scroll width is 610 px. Its fixed navigation also becomes 610 px wide, placing the menu control at x=523.75..599.44, entirely outside the 360 px screen. Viewed evidence: evidence/p06-hero-phone.png and captures/p06/phone/000-y0.png. At 1440x900 both fit.",
+    "fix": "Keep the 610 px preferred width but add max-width:100% and box-sizing:border-box to pre.npm; retain internal overflow-x:auto for the code line so it cannot widen the document or fixed header."
+  },
+  {
+    "page": "p07",
+    "selector": "nav > .menu",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the main navigation links drop into a second row and protrude below the 52.80 px header. GitHub and Documentation occupy y=35.55..72.48, extending 19.68 px below the header and painting over article content while scrolling. In the embedded navigation examples, Search plugins and the select also drop below their 52.80 px nav containers; the search field extends about 18.5 px below its container. Viewed evidence: evidence/p07-header-phone.png and evidence/p07-demo-menu-phone.png. Laptop rows fit.",
+    "fix": "Use a contained mobile menu at narrow widths, or change the nav to an auto-height stacked layout and reserve that height in the page. Apply the same responsive containment to the demo nav menus so their controls stay inside their containers."
+  },
+  {
+    "page": "p07",
+    "selector": ".third:has(input[placeholder=\"Repeat password\"])",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360x780, the stacked form occupies only 104.47 px of a 313.45 px content area. Repeat password needs 136.97 px of text width but receives about 80.88 px after padding and borders, visibly cutting the placeholder to Repeat pa. The control group leaves over 200 px of unused width alongside it. Viewed evidence: evidence/p07-forms-phone.png. The label is complete at laptop size.",
+    "fix": "Give the stacked form full width on phones and apply width:33.333% only above a breakpoint where the full placeholders fit."
+  },
+  {
+    "page": "p07",
+    "selector": ".flex.six > div:nth-child(12) > code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780, the twelve code chip extends beyond its grid and the screen. Its cell ends at x=341.91, but the chip spans x=298.47..366.05 (67.58 px wide), exceeding the cell by 24.14 px and the screen by 6.05 px. Its background loses the right gutter, and document scrollWidth is 366 px versus clientWidth 360 px. Viewed evidence: evidence/p07-overflow-phone.png. Laptop chips fit their cells.",
+    "fix": "Reduce the six-column code-label grid to fewer columns on phones, or size columns to the padded chip widths; keep every chip within the grid and document width."
+  },
+  {
+    "page": "p07",
+    "selector": "nav.demo select",
+    "viewport": "both",
+    "category": "overlapping",
+    "severity": "P3",
+    "evidence": "At both 360x780 and 1440x900, the custom down arrow paints over the final n in Choose an option. The select remains 166.36 px wide; the label measures 137.97 px, with 7.92 px right padding. The 10 px-wide arrow positioned about 15 px from the right edge shares roughly 6 px of the label area. Viewed evidence: evidence/p07-select-phone.png and evidence/p07-select-laptop.png.",
+    "fix": "Reserve a separate arrow area using padding-right of at least 2em and allow the select width to include that padding, so the label and arrow never share painted space."
+  },
+  {
+    "page": "p08",
+    "selector": "#text__asides aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the aside stays floated at 30% width, producing a 77.39 px box with only about 45 px of text space after its 15 px side padding and borders. Its heading breaks as This / is an / asid / e, while body words split into fragments such as Lore / m and ipsu / m. The aside becomes 1104.69 px tall and forces the adjacent paragraphs into a narrow column. Viewed evidence: evidence/p08-aside-phone.png and the following scroll views. Laptop text fits normally.",
+    "fix": "At the phone breakpoint, clear the float, set the aside to width:100%, and remove its left margin so it forms a full-width block before the paragraphs."
+  },
+  {
+    "page": "p08",
+    "selector": "#embedded__audio audio, #embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "At 360x780, embedded media protrude through the right borders of their cards. The card ends at x=326; audio spans x=51..351 (300 px wide), iframe x=51..355 (304 px), and embed/object x=51..351. They exceed the card border by 25-29 px and its content edge (x=309) by 42-46 px. The adjacent video fits x=51..309. Viewed evidence: evidence/p08-audio-phone.png and evidence/p08-iframe-phone.png; also the full scroll captures for Embed and Object. Laptop media remain inside their cards.",
+    "fix": "Constrain audio, iframe, embed and object to max-width:100% with box-sizing:border-box; use width:100% where appropriate so the outer width fits the 258 px card content area."
+  },
+  {
+    "page": "p08",
+    "selector": "#forms__html5",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At 360x780, the HTML5 inputs fieldset extends farther right than every sibling fieldset. All start at x=36, but this fieldset is 300.39 px wide and ends at x=336.39; sibling fieldsets are 288 px wide and end at x=324. It protrudes 10.39 px beyond the 292 px form ending at x=326. Viewed evidence: evidence/p08-fieldset-phone.png (the preceding fieldset border is also visible) and the form scroll captures. Laptop fieldsets align.",
+    "fix": "Set min-inline-size:0 on the fieldset, preserve the same available width and margins as sibling fieldsets, and allow native date/time inputs to shrink with min-width:0 and max-width:100%."
+  }
+]

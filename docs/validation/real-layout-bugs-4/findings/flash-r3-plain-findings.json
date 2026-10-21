@@ -1,0 +1,56 @@
+[
+  {
+    "page": "p03",
+    "selector": "main.documentation > section.flex.five > aside",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P1",
+    "evidence": "At 360px the Contents sidebar is squeezed to 64.8px wide (its h2 scrollWidth 114px, clientWidth 54px) while the article starts at x=82.8. The Contents heading and links spill out of the aside and collide with the Picnic CSS heading and body text; the screenshot shows 'ContPicnic CSS' as one overlapping line.",
+    "fix": "Give the aside a full-width stacked block below 1000px (as the newer documentation page does with aside.full), or set flex-basis:100% and width:auto in the narrow breakpoint so the sidebar sits above the article."
+  },
+  {
+    "page": "p03",
+    "selector": "main.documentation article blockquote:nth-of-type(4) p a",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "Document scrollWidth is 413px against a 360px viewport (+53px). The long link 'http://jsfiddle.net/franciscop/wwfby2y8/' is one unbreakable inline run measuring 300px starting at x=112.7 and ending at x=413; the fixed nav also measures 413px wide. The page pans sideways past the right edge.",
+    "fix": "Allow long URLs to break (overflow-wrap:anywhere on article links) and cap the fixed nav at 100% of the viewport instead of the document width, so the page never exceeds the viewport."
+  },
+  {
+    "page": "p04",
+    "selector": "main > section:nth-of-type(3) > table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The comparison table renders 417.2px wide at x=-28.6 inside a 328px section (document scrollWidth 389-401 vs 360). The first column is clipped at the left edge, so labels read 'obile', 'orks out', 'asy to'; the last column is also cut at the right.",
+    "fix": "Make the table scrollable inside its section (display:block; overflow-x:auto) or shrink cell padding/font at narrow widths so the table fits the 328px content box."
+  },
+  {
+    "page": "p05",
+    "selector": "div.col-sm-121",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The first content wrapper uses the nonexistent class 'col-sm-121', so it takes its content width: 2288.4px at 1440px and about 2288px at 360px. Document scrollWidth is 2534px (laptop) and 2292px (phone); paragraphs and sample code are cut mid-sentence at the right edge, e.g. '...changing its value to any integer in'.",
+    "fix": "Change the wrapper class to col-sm-12 (the class used by the other sections) so the column takes 100% width and wraps, and add min-width:0 on the flex child if long pre blocks still expand it."
+  },
+  {
+    "page": "p07",
+    "selector": "nav",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "The fixed top nav measures 366px wide in a 360px viewport, giving the document a scrollWidth of 366px. The page can be panned 6px sideways.",
+    "fix": "Set the fixed nav width to 100% (or left:0;right:0 with box-sizing:border-box) so it matches the viewport."
+  },
+  {
+    "page": "p08",
+    "selector": "header > nav a",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "At 360px each nav link computes margin 0 0 16px, so there is no horizontal gap between siblings. The labels and their underlines run together: 'TextEmbedded contentForm elements' and 'Project homepageGitHub repo' render as continuous strings.",
+    "fix": "Restore a horizontal gap at mobile widths, e.g. header > nav a { margin: 0 .5rem 1rem; } while keeping the last-child right margin at 0."
+  }
+]

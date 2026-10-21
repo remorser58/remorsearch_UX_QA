@@ -1,0 +1,137 @@
+[
+  {
+    "page": "p02",
+    "selector": "#embedded__audio audio",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The audio player protrudes through the right border of its section. It is 300px wide at x=51..351; the section ends at x=326 and its content area ends at x=309. The player exceeds the section border by 25px and its content area by 42px. Screenshot: evidence-p02-media.png.",
+    "fix": "Give the audio element max-width:100% so its 300px intrinsic width shrinks to the 258px content area."
+  },
+  {
+    "page": "p02",
+    "selector": "#embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The embedded documents extend through their section borders. The iframe occupies x=51..355 (304px); embed and object occupy x=51..351 (300px), while each section ends at x=326 and its content area at x=309. The visible document panels overhang their section borders by 25–29px. Screenshot: evidence-p02-embed.png; the Embed and Object sections are also visible in sheet-p02-phone-05.png and sheet-p02-phone-06.png.",
+    "fix": "Constrain iframe, embed and object to max-width:100% with box-sizing:border-box, including the iframe border in the available 258px width."
+  },
+  {
+    "page": "p03",
+    "selector": "main.documentation > section.flex.five > aside",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The contents sidebar remains beside the article in a column only 64.8px wide. The Contents text occupies x=28.5..143.0, y=111..141; the Picnic CSS title occupies x=93.3..279.2, y=107.1..146.1. Their text rectangles overlap by 49.6px horizontally and 30px vertically, visibly superimposing the headings. Screenshot: evidence-p03-columns.png.",
+    "fix": "At the phone breakpoint, make the sidebar and article each take the full row and place the contents above the article; retain the sidebar/article split for larger screens."
+  },
+  {
+    "page": "p03",
+    "selector": "a[href=\"http://jsfiddle.net/franciscop/wwfby2y8/\"]",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The Original hyperlink in the Tabs section is an unbroken 300.3px line at x=112.7..413.0, extending 53px beyond the 360px screen. The document scrollWidth is 413px. This also stretches the fixed navigation to 413px: the menu label text is at x=353.1..397.2, leaving only its first few pixels visible. Screenshots: evidence-p03-link.png and evidence-p03-columns.png.",
+    "fix": "Allow the documentation link to wrap within its container using overflow-wrap:anywhere and min-width:0 on the article. Keep the mobile navigation within the screen after eliminating the overflowing text."
+  },
+  {
+    "page": "p03",
+    "selector": ".third input.stack, .third button.stack",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The stacked forms remain only 82.9px wide, leaving about 59.9px for input text. First name needs 83.1px, Password 77.3px and Repeat password 137.0px; their placeholders are visibly cut to fragments such as First na, Passwo and Repeat. The Send icon and text also split into two rows, making the button 63.3px tall beside 37px form controls. Screenshot: evidence-p03-forms.png.",
+    "fix": "Make the stacked-form example containers full width on phones, with enough inner width for the longest placeholder and an inline icon/Send label."
+  },
+  {
+    "page": "p03",
+    "selector": ".flex.six > div > code",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The column-name list keeps six columns of 43.2px. Three and seven have 59.1px code boxes, while eleven and twelve need 67.6px. The eleven box ends at x=333.7 but the following twelve box starts at x=309.3, producing a 24.4px overlap that covers characters. Twelve extends to x=376.9, beyond the screen. Screenshot: evidence-p03-class-grid.png.",
+    "fix": "Use fewer columns for the column-name list on phones, or let each label wrap within its cell. Reserve the six-column arrangement for a width that fits the labels and their padding."
+  },
+  {
+    "page": "p04",
+    "selector": "#features table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The comparison table is 417.2px wide in a 328px section. Centering places it at x=-28.6..388.6 on a 360px screen. The starts of the row labels are cut off at the left edge, and CSS Frameworks is cut off at the right. Document scrollWidth is 389px. Screenshot: evidence-p04-table.png.",
+    "fix": "Place the table in a section-width horizontal scroll container, keep the table left-aligned inside it, and remove centering that positions its first column at a negative x coordinate."
+  },
+  {
+    "page": "p06",
+    "selector": "header.hero pre.npm",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The installation snippet retains a fixed 610px width at x=0..610 in the 360px hero. Its line continues beyond the right edge, and document scrollWidth grows to 610px, an excess of 250px. The fixed navigation also spans 610px, placing its right-side menu outside the screen. Screenshot: evidence-p06-hero.png; p06-phone-full.png shows the complete overflowing snippet.",
+    "fix": "Set the hero pre to width:calc(100% - 32px), max-width:610px and margin-inline:auto, with overflow-x:auto so the code scrolls inside the snippet instead of widening the page."
+  },
+  {
+    "page": "p07",
+    "selector": "body > nav .menu, nav.demo .menu",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "Navigation items drop below their containing bars. The fixed header is 52.8px tall, but its menu reaches y=77.7 and its links reach y=72.5, visibly covering document text while scrolling. The first navigation demo has the same problem: its menu reaches 44.8px below the bar bottom. The search/select demos extend about 18.5px below their bars. Screenshots: evidence-p07-header.png, evidence-p07-forms.png, evidence-p07-nav-demo.png and sheet-p07-phone-08.png.",
+    "fix": "Restore a mobile layout that fits or collapses the menu within the header. For visible multirow demo menus, let the nav height include the menu row and remove the vertical-centering transform that places wrapped contents outside the bar."
+  },
+  {
+    "page": "p07",
+    "selector": ".third input[placeholder=\"Repeat password\"]",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The stacked Repeat password field is 104.5px wide, with only 80.9px available after padding and borders. Its 137.0px placeholder is visibly clipped to Repeat pa, leaving roughly 56px of label text undisplayed. Screenshot: evidence-p07-forms.png.",
+    "fix": "Expand the stacked-form example to full width on phones, or give the field a minimum width of at least 161px including its padding and borders."
+  },
+  {
+    "page": "p07",
+    "selector": ".flex.six > div > code",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P3",
+    "evidence": "The column-name list uses 54.0px cells, but eleven and twelve each have a 67.6px code box. Eleven spans x=244.5..312.1 and twelve starts at x=298.5, overlapping by 13.6px; the twelve background covers the end of eleven. The last code box also reaches x=366.0, 6px beyond the screen. Screenshot: evidence-p07-classes.png.",
+    "fix": "Reduce the number of columns for this label list on phones or allow labels to wrap inside their own cells; keep each code box within its cell width."
+  },
+  {
+    "page": "p08",
+    "selector": "body > header nav a",
+    "viewport": "phone",
+    "category": "other",
+    "severity": "P3",
+    "evidence": "Adjacent navigation labels have zero horizontal separation and read as joined text. Text ends at x=72.05 exactly where Embedded content starts; that link ends at x=210.33 exactly where Form elements starts. The second row similarly joins Project homepage and GitHub repo at x=202.19. Screenshot: evidence-p08-header.png.",
+    "fix": "Give the navigation list a wrapping flex layout with a nonzero column gap, for example 16px, or restore horizontal margins between the link items at the phone breakpoint."
+  },
+  {
+    "page": "p08",
+    "selector": "#text__asides aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The aside remains floated in a 77.4px-wide column. After its two 15px paddings and borders, only about 45.4px remain for text. Its heading splits aside into asid / e, and the body splits ordinary words into fragments such as Lore / m and ipsu / m. The aside becomes 1104.7px tall. Screenshot: evidence-p08-aside.png.",
+    "fix": "At the phone breakpoint, remove the float and use width:100% with margin-left:0 so the aside occupies its own row with a readable text width."
+  },
+  {
+    "page": "p08",
+    "selector": "#embedded__audio audio",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The audio player is 300px wide at x=51..351, while the section border ends at x=326 and its content area at x=309. It visibly protrudes 25px through the border and is 42px wider than the content area. Screenshot: evidence-p08-media.png.",
+    "fix": "Apply max-width:100% to audio so it shrinks to the section content width."
+  },
+  {
+    "page": "p08",
+    "selector": "#embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The iframe is 304px wide at x=51..355, and embed/object are 300px wide at x=51..351. Their containing sections end at x=326 and have 258px content areas ending at x=309. The embedded document panels visibly overhang their borders by 25–29px. Screenshots: sheet-p08-phone-05.png and sheet-p08-phone-06.png.",
+    "fix": "Use max-width:100% and box-sizing:border-box for iframe, embed and object, so their outer widths fit the 258px content area."
+  }
+]
