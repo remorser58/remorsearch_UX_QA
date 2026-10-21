@@ -1,0 +1,3403 @@
+{
+ "sources": [
+  {
+   "source": "edwardtufte/tufte-css",
+   "candidates": 40,
+   "screened": 33,
+   "accepted": 3
+  },
+  {
+   "source": "GumbyFramework/Gumby",
+   "candidates": 40,
+   "screened": 40,
+   "accepted": 0
+  },
+  {
+   "source": "topcoat/topcoat",
+   "candidates": 27,
+   "screened": 27,
+   "accepted": 0
+  },
+  {
+   "source": "ajusa/lit",
+   "candidates": 23,
+   "screened": 18,
+   "accepted": 3
+  },
+  {
+   "source": "rilwis/bamboo",
+   "candidates": 16,
+   "screened": 16,
+   "accepted": 0
+  },
+  {
+   "source": "programble/writ",
+   "candidates": 15,
+   "screened": 15,
+   "accepted": 1
+  },
+  {
+   "source": "alvaromontoro/almond.css",
+   "candidates": 11,
+   "screened": 11,
+   "accepted": 1
+  },
+  {
+   "source": "kristoferjoseph/flexboxgrid",
+   "candidates": 11,
+   "screened": 11,
+   "accepted": 1
+  },
+  {
+   "source": "stisla/stisla",
+   "candidates": 31,
+   "screened": 31,
+   "accepted": 0
+  },
+  {
+   "source": "emareg/classlesscss",
+   "candidates": 6,
+   "screened": 6,
+   "accepted": 0
+  },
+  {
+   "source": "Kimeiga/bahunya",
+   "candidates": 6,
+   "screened": 6,
+   "accepted": 1
+  },
+  {
+   "source": "bootflat/bootflat.github.io",
+   "candidates": 4,
+   "screened": 4,
+   "accepted": 0
+  },
+  {
+   "source": "vincentdoerig/latex-css",
+   "candidates": 3,
+   "screened": 3,
+   "accepted": 0
+  },
+  {
+   "source": "vladocar/Basic.css",
+   "candidates": 3,
+   "screened": 3,
+   "accepted": 0
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-stylish-portfolio",
+   "candidates": 3,
+   "screened": 3,
+   "accepted": 0
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-modern-business",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 0
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-simple-sidebar",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 0
+  },
+  {
+   "source": "creativetimofficial/material-kit",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 0
+  },
+  {
+   "source": "creativetimofficial/paper-kit-2",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 0
+  },
+  {
+   "source": "adminkit/adminkit",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 0
+  },
+  {
+   "source": "sindresorhus/github-markdown-css",
+   "candidates": 1,
+   "screened": 1,
+   "accepted": 0
+  }
+ ],
+ "candidates": [
+  {
+   "id": "tufte-css-3e1795f5",
+   "source": "edwardtufte/tufte-css",
+   "commit": "3e1795f5fe684e88aec56805090ffc8c99ba6c4f",
+   "date": "2026-06-24",
+   "subject": "fix superscripts breaking paragraph line height (#175)",
+   "fixed_state": "3e1795f5fe684e88aec56805090ffc8c99ba6c4f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-1098c386",
+   "source": "edwardtufte/tufte-css",
+   "commit": "1098c386c162f32a2edc1d6efa0b2d8486ff16c9",
+   "date": "2026-06-24",
+   "subject": "fix fullwidth images with srcset not filling container (fixes #181)",
+   "fixed_state": "1098c386c162f32a2edc1d6efa0b2d8486ff16c9",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-cccd3743",
+   "source": "edwardtufte/tufte-css",
+   "commit": "cccd3743347e9642a937394288fb1aaaf7506536",
+   "date": "2021-08-07",
+   "subject": "Fix label number display style and margin",
+   "fixed_state": "cccd3743347e9642a937394288fb1aaaf7506536",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "sidenote number style and line spacing refinement; differences of a pixel or two"
+  },
+  {
+   "id": "tufte-css-c6e436bb",
+   "source": "edwardtufte/tufte-css",
+   "commit": "c6e436bba2bf92f75c7eb7ae6415ed08bf69ac4d",
+   "date": "2020-07-09",
+   "subject": "Align baseline of sidenote/marginnote with main text",
+   "fixed_state": "c6e436bba2bf92f75c7eb7ae6415ed08bf69ac4d",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "laptop: margin notes sit about 4 px above the baseline of the main-text line they annotate; aligned after the fix"
+  },
+  {
+   "id": "tufte-css-076732e7",
+   "source": "edwardtufte/tufte-css",
+   "commit": "076732e747913e4c7e80ac1cfc656a4730c9568b",
+   "date": "2019-06-01",
+   "subject": "Remove apparently useless `relative` position from `article`",
+   "fixed_state": "076732e747913e4c7e80ac1cfc656a4730c9568b",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-0f3a49ac",
+   "source": "edwardtufte/tufte-css",
+   "commit": "0f3a49acaf027e5b46b3a11f5237d5f4cd6b55dd",
+   "date": "2018-05-17",
+   "subject": "Make horizontal rules responsive",
+   "fixed_state": "0f3a49acaf027e5b46b3a11f5237d5f4cd6b55dd",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-249fde79",
+   "source": "edwardtufte/tufte-css",
+   "commit": "249fde791b5947eb194ecf71dd966f4e02c1a221",
+   "date": "2017-11-15",
+   "subject": "Make 'h2'/'h3' margin consistent with 'p' margin",
+   "fixed_state": "249fde791b5947eb194ecf71dd966f4e02c1a221",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-81473371",
+   "source": "edwardtufte/tufte-css",
+   "commit": "814733714bc350827fa8061f6e978df66d82c18e",
+   "date": "2017-10-15",
+   "subject": "Use margin instead of padding for lists",
+   "fixed_state": "814733714bc350827fa8061f6e978df66d82c18e",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-52e8fd0a",
+   "source": "edwardtufte/tufte-css",
+   "commit": "52e8fd0aea1031aa0253af960fe5610761ef7dad",
+   "date": "2017-10-15",
+   "subject": "Only restrict width for top-level paragraphs",
+   "fixed_state": "52e8fd0aea1031aa0253af960fe5610761ef7dad",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-96311a0c",
+   "source": "edwardtufte/tufte-css",
+   "commit": "96311a0c28606b0dc3da4fed2ca8fc386e3c5ec9",
+   "date": "2017-10-15",
+   "subject": "Consistent line height in lists & paragraphs",
+   "fixed_state": "96311a0c28606b0dc3da4fed2ca8fc386e3c5ec9",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-a6a00e9c",
+   "source": "edwardtufte/tufte-css",
+   "commit": "a6a00e9c827bfbd77b5d282b18e274e1b885910f",
+   "date": "2017-08-21",
+   "subject": "Add class and example for responsive iframes",
+   "fixed_state": "a6a00e9c827bfbd77b5d282b18e274e1b885910f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (a class and example for responsive iframes)"
+  },
+  {
+   "id": "tufte-css-4fb9eefb",
+   "source": "edwardtufte/tufte-css",
+   "commit": "4fb9eefbe063c529b1c63dce31933259a22e1e78",
+   "date": "2017-08-20",
+   "subject": "Reset section > ul width on mobile",
+   "fixed_state": "4fb9eefbe063c529b1c63dce31933259a22e1e78",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-660410db",
+   "source": "edwardtufte/tufte-css",
+   "commit": "660410db5eb07b62d4b014fd9a7362b3ef4cae63",
+   "date": "2016-09-18",
+   "subject": "Only restrict width of top-level ul/ol lists.",
+   "fixed_state": "660410db5eb07b62d4b014fd9a7362b3ef4cae63",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-bb56bcd0",
+   "source": "edwardtufte/tufte-css",
+   "commit": "bb56bcd000a6dc2bdbb5cd5baa23fcd0664ffe9a",
+   "date": "2016-09-18",
+   "subject": "Remove line wrap on sidenote code sample",
+   "fixed_state": "bb56bcd000a6dc2bdbb5cd5baa23fcd0664ffe9a",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the code sample scrolls inside its own box; the fix rewrites the sample into shorter lines"
+  },
+  {
+   "id": "tufte-css-c15070ca",
+   "source": "edwardtufte/tufte-css",
+   "commit": "c15070ca84f19cfa994dd38bb92adccb1d4fbed7",
+   "date": "2016-09-17",
+   "subject": "add icons preceding wrapped code lines via `.with-wrapping` #90",
+   "fixed_state": "c15070ca84f19cfa994dd38bb92adccb1d4fbed7",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-446fcb01",
+   "source": "edwardtufte/tufte-css",
+   "commit": "446fcb017e1ad2f860b32bdb8a1de9a4ae11a742",
+   "date": "2016-06-18",
+   "subject": "Reduce font size and provide new fullwidth class for code.",
+   "fixed_state": "446fcb017e1ad2f860b32bdb8a1de9a4ae11a742",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (smaller code font, new full-width code class)"
+  },
+  {
+   "id": "tufte-css-dacde209",
+   "source": "edwardtufte/tufte-css",
+   "commit": "dacde209c3f68e2fd89c5d21a85c3eea8e4c728f",
+   "date": "2015-12-10",
+   "subject": "Remove unnecessary wrapping of `pre` tags with `p` tags",
+   "fixed_state": "dacde209c3f68e2fd89c5d21a85c3eea8e4c728f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "tufte-css-55c41d78",
+   "source": "edwardtufte/tufte-css",
+   "commit": "55c41d78b4f689358c1e39034651984d7df94515",
+   "date": "2015-10-11",
+   "subject": "LaTeX span no longer messes up the line height",
+   "fixed_state": "55c41d78b4f689358c1e39034651984d7df94515",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "line spacing differs by about 2 px around the LaTeX logo; not nameable without the fix"
+  },
+  {
+   "id": "tufte-css-adda322a",
+   "source": "edwardtufte/tufte-css",
+   "commit": "adda322a32c57ba498688ad11f9d4ef4f6b98505",
+   "date": "2015-09-26",
+   "subject": "Fixed default margin/padding from browser",
+   "fixed_state": "adda322a32c57ba498688ad11f9d4ef4f6b98505",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "tufte-css-6c2f3e8e",
+   "source": "edwardtufte/tufte-css",
+   "commit": "6c2f3e8e7c4e3d009d62a80bbb5c54de2a9601dd",
+   "date": "2015-09-25",
+   "subject": "adding a clear to full-width figures",
+   "fixed_state": "6c2f3e8e7c4e3d009d62a80bbb5c54de2a9601dd",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "laptop: a margin note overlaps the top of the full-width Napoleon figure; it sits above the figure after the fix"
+  },
+  {
+   "id": "tufte-css-ce53b96e",
+   "source": "edwardtufte/tufte-css",
+   "commit": "ce53b96e0651708bc2650c7477e74fccfeeb1bc2",
+   "date": "2015-08-31",
+   "subject": "Fixes table-caption/table layout issue in Firefox",
+   "fixed_state": "ce53b96e0651708bc2650c7477e74fccfeeb1bc2",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "Firefox-only table caption fix; no difference in Chromium"
+  },
+  {
+   "id": "tufte-css-908f91aa",
+   "source": "edwardtufte/tufte-css",
+   "commit": "908f91aabae5b0606e4ecdadc0d8251881d68416",
+   "date": "2015-08-19",
+   "subject": "Improve pre.code block widths on small screens",
+   "fixed_state": "908f91aabae5b0606e4ecdadc0d8251881d68416",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page is 466 px wide on a phone in both states"
+  },
+  {
+   "id": "tufte-css-29d1e3c5",
+   "source": "edwardtufte/tufte-css",
+   "commit": "29d1e3c5a820835a8ddf029352c6a6f1090139eb",
+   "date": "2015-08-14",
+   "subject": "Don't wrap figures in paragraphs",
+   "fixed_state": "29d1e3c5a820835a8ddf029352c6a6f1090139eb",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the change makes the page wider on a phone; no fault in the earlier state"
+  },
+  {
+   "id": "tufte-css-5e0052f7",
+   "source": "edwardtufte/tufte-css",
+   "commit": "5e0052f7f49b29023fb7827d7dbdb4f77e36c4d6",
+   "date": "2015-08-13",
+   "subject": "Semantic rather than numbered side/marginnote ids",
+   "fixed_state": "5e0052f7f49b29023fb7827d7dbdb4f77e36c4d6",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "demo content changes (note ids and wording)"
+  },
+  {
+   "id": "tufte-css-a72b8c31",
+   "source": "edwardtufte/tufte-css",
+   "commit": "a72b8c31e5b917cd14692bc7bdd3e812b37160d3",
+   "date": "2015-08-13",
+   "subject": "Explain side/margin notes better. More examples.",
+   "fixed_state": "a72b8c31e5b917cd14692bc7bdd3e812b37160d3",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content added (more side and margin note examples)"
+  },
+  {
+   "id": "tufte-css-0a8b54cd",
+   "source": "edwardtufte/tufte-css",
+   "commit": "0a8b54cd07d7d95f7ecac1d03ab89fc453cc082b",
+   "date": "2015-08-09",
+   "subject": "Adjust styling/demo of sidenote #s on small screens",
+   "fixed_state": "0a8b54cd07d7d95f7ecac1d03ab89fc453cc082b",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "sidenote number spacing refinement"
+  },
+  {
+   "id": "tufte-css-03ead10d",
+   "source": "edwardtufte/tufte-css",
+   "commit": "03ead10d14a1aa72d18d4bb7f95032fefbd934f9",
+   "date": "2015-08-09",
+   "subject": "nvm - actually fixing the img tag on small screens",
+   "fixed_state": "03ead10d14a1aa72d18d4bb7f95032fefbd934f9",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "image position refinement at 393 px; no fault"
+  },
+  {
+   "id": "tufte-css-28674c5d",
+   "source": "edwardtufte/tufte-css",
+   "commit": "28674c5d1ae2dc7582dae6b545cfc235e769f6b2",
+   "date": "2015-08-09",
+   "subject": "fix table captions and sidenote number positions",
+   "fixed_state": "28674c5d1ae2dc7582dae6b545cfc235e769f6b2",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "sidenote number spacing and caption refinement"
+  },
+  {
+   "id": "tufte-css-4afc5b39",
+   "source": "edwardtufte/tufte-css",
+   "commit": "4afc5b392387615f9ff32d69a3f78f40f7640918",
+   "date": "2015-08-08",
+   "subject": "toggle margin content at next line break - working",
+   "fixed_state": "4afc5b392387615f9ff32d69a3f78f40f7640918",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page scrolls 2 px sideways on a 360 px phone; not visible"
+  },
+  {
+   "id": "tufte-css-9ce07188",
+   "source": "edwardtufte/tufte-css",
+   "commit": "9ce07188c4b534a67b30b50d18ceeae99d11190a",
+   "date": "2015-08-08",
+   "subject": "working demo of expandable margin content",
+   "fixed_state": "9ce07188c4b534a67b30b50d18ceeae99d11190a",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (expandable margin content)"
+  },
+  {
+   "id": "tufte-css-31191496",
+   "source": "edwardtufte/tufte-css",
+   "commit": "31191496d6f2623c3feb9a390bda3fdc6248e2fb",
+   "date": "2015-08-07",
+   "subject": "Revise booktabs wording. Fix code class in margin.",
+   "fixed_state": "31191496d6f2623c3feb9a390bda3fdc6248e2fb",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording and table demo layout revised; no fault in the earlier state"
+  },
+  {
+   "id": "tufte-css-b39f28c4",
+   "source": "edwardtufte/tufte-css",
+   "commit": "b39f28c4dcb4cf53ff644cc0f802ecf18b4df5f7",
+   "date": "2015-08-07",
+   "subject": "Tweak tables, code, sidenote margins on small screens",
+   "fixed_state": "b39f28c4dcb4cf53ff644cc0f802ecf18b4df5f7",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "sidenote and table margin refinement on phones; the 2 px sideways scroll is not visible"
+  },
+  {
+   "id": "tufte-css-69255155",
+   "source": "edwardtufte/tufte-css",
+   "commit": "69255155c916b4025e40460fd4b507c00be36dff",
+   "date": "2015-08-07",
+   "subject": "Fix typo @ Bembo sidenote. Fix code overflow.",
+   "fixed_state": "69255155c916b4025e40460fd4b507c00be36dff",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: a code block runs past the screen and makes the page 455 px wide on a 360 px phone (459 px on 393 px); 362 px and 393 px after the fix"
+  },
+  {
+   "id": "tufte-css-5091713d",
+   "source": "edwardtufte/tufte-css",
+   "commit": "5091713df358bf318a5d94f74a3cd39bf8003351",
+   "date": "2015-08-07",
+   "subject": "Use visibility:hidden for sidenote numbers.",
+   "fixed_state": "5091713df358bf318a5d94f74a3cd39bf8003351",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "tufte-css-e0893c9e",
+   "source": "edwardtufte/tufte-css",
+   "commit": "e0893c9e8ff7d5d12fba39cdd287057280935941",
+   "date": "2015-08-07",
+   "subject": "Fix figure label position. Change first side note.",
+   "fixed_state": "e0893c9e8ff7d5d12fba39cdd287057280935941",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "tufte-css-609d6986",
+   "source": "edwardtufte/tufte-css",
+   "commit": "609d6986d64ac7c723e6a9b37fa94fc559f3b56a",
+   "date": "2015-08-07",
+   "subject": "Improved handling of sidenotes on small screens.",
+   "fixed_state": "609d6986d64ac7c723e6a9b37fa94fc559f3b56a",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "tufte-css-ce0e1535",
+   "source": "edwardtufte/tufte-css",
+   "commit": "ce0e15355ecb559ba1631d9f71e57e34792ae61f",
+   "date": "2015-08-06",
+   "subject": "Increase x-height of inline code",
+   "fixed_state": "ce0e15355ecb559ba1631d9f71e57e34792ae61f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "tufte-css-6f897d11",
+   "source": "edwardtufte/tufte-css",
+   "commit": "6f897d119d25296d65c6053d3254e28801c2ab74",
+   "date": "2015-08-07",
+   "subject": "Revise sidenotes on small screens",
+   "fixed_state": "6f897d119d25296d65c6053d3254e28801c2ab74",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "tufte-css-6aca33a6",
+   "source": "edwardtufte/tufte-css",
+   "commit": "6aca33a664100669372e7bab0fbff8ad9c42160a",
+   "date": "2015-08-07",
+   "subject": "Lessen line height. Addresses #29",
+   "fixed_state": "6aca33a664100669372e7bab0fbff8ad9c42160a",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "tufte-css-b7327499",
+   "source": "edwardtufte/tufte-css",
+   "commit": "b7327499f70ca7a7f8b6356607953e000c773976",
+   "date": "2015-08-05",
+   "subject": "Whoops! da325d4 fixed the wrong margin.",
+   "fixed_state": "b7327499f70ca7a7f8b6356607953e000c773976",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "gumby-cadbd4cd",
+   "source": "GumbyFramework/Gumby",
+   "commit": "cadbd4cd7492fedbe3a68ca462e244da9031c774",
+   "date": "2015-02-15",
+   "subject": "Remove duplicate %zero-margin-left",
+   "fixed_state": "cadbd4cd7492fedbe3a68ca462e244da9031c774",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-728af5b6",
+   "source": "GumbyFramework/Gumby",
+   "commit": "728af5b61de3e2bd2954737d09ee42f2c4aee6e1",
+   "date": "2014-05-07",
+   "subject": "- adjust references to $ratio to use $ms-ratio and golden() to $golden. - use px value for $base-line-height as ms(1) no longer defaults to 26px like modular-scale v1 did - resolves GumbyFramework/Gum",
+   "fixed_state": "7582fe72b3d821fc8e3ff29c151e25cc5c4a3ac7",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-69deece8",
+   "source": "GumbyFramework/Gumby",
+   "commit": "69deece85ff738d78637d572871f214139c0fe8f",
+   "date": "2013-11-11",
+   "subject": "changed valign to use pseudo element technique instead of display table.",
+   "fixed_state": "69deece85ff738d78637d572871f214139c0fe8f",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-aefbd7c9",
+   "source": "GumbyFramework/Gumby",
+   "commit": "aefbd7c9a98f327012ec4f5a52a57c835656eecd",
+   "date": "2013-10-15",
+   "subject": "Fancytiles mobile columns arg now defaults to 0px. Width set outside of media query as IE8 fallback",
+   "fixed_state": "aefbd7c9a98f327012ec4f5a52a57c835656eecd",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-b7cc4218",
+   "source": "GumbyFramework/Gumby",
+   "commit": "b7cc4218c55d54b8e8a2710c2f6d50d79032baf7",
+   "date": "2013-09-27",
+   "subject": "fixed tooltip bugs with transition",
+   "fixed_state": "b7cc4218c55d54b8e8a2710c2f6d50d79032baf7",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-ab3adaeb",
+   "source": "GumbyFramework/Gumby",
+   "commit": "ab3adaeb938d503d0a2be84e0bd08f08e7f0da34",
+   "date": "2013-09-27",
+   "subject": "Fixed that damn charset on CSS",
+   "fixed_state": "ab3adaeb938d503d0a2be84e0bd08f08e7f0da34",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-b0270683",
+   "source": "GumbyFramework/Gumby",
+   "commit": "b0270683b4f2eba8d92b80455c9c3de5d8ebe085",
+   "date": "2013-09-27",
+   "subject": "Fixed issue #150",
+   "fixed_state": "b0270683b4f2eba8d92b80455c9c3de5d8ebe085",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-a2f5b7aa",
+   "source": "GumbyFramework/Gumby",
+   "commit": "a2f5b7aaea0fe65230f27c0ba1c1a3fbed4f7541",
+   "date": "2013-09-25",
+   "subject": "Reduce navbar active z-index to 999998 so modal always appears above active navbar",
+   "fixed_state": "a2f5b7aaea0fe65230f27c0ba1c1a3fbed4f7541",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-1b24824a",
+   "source": "GumbyFramework/Gumby",
+   "commit": "1b24824a1d8de404f10a60c9e643c4239f69fdbe",
+   "date": "2013-09-20",
+   "subject": "updated ui.html tooltips to match other sections and fixed tooltip mixin to not inherit size/style/weight",
+   "fixed_state": "1b24824a1d8de404f10a60c9e643c4239f69fdbe",
+   "pages_rendered": [
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content (tooltip section and an image example changed)"
+  },
+  {
+   "id": "gumby-8a750e3d",
+   "source": "GumbyFramework/Gumby",
+   "commit": "8a750e3d29427cf362929f851f2d5eecbd0f1e42",
+   "date": "2013-09-20",
+   "subject": "made tooltip caret slightly bigger to overlap better",
+   "fixed_state": "8a750e3d29427cf362929f851f2d5eecbd0f1e42",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-16522d67",
+   "source": "GumbyFramework/Gumby",
+   "commit": "16522d67e9d6873628a1a12336492e4d59e49afd",
+   "date": "2013-09-15",
+   "subject": "Overwrite navbar pos rel when fixed/pinned",
+   "fixed_state": "16522d67e9d6873628a1a12336492e4d59e49afd",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-87091b3f",
+   "source": "GumbyFramework/Gumby",
+   "commit": "87091b3f0994e6285b05c374343b058f789da124",
+   "date": "2013-09-13",
+   "subject": "Remove position relative from .row and add to .navbar",
+   "fixed_state": "87091b3f0994e6285b05c374343b058f789da124",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-1f4660d7",
+   "source": "GumbyFramework/Gumby",
+   "commit": "1f4660d76ee3da6b5272f13968e1e81f722fdbf7",
+   "date": "2013-09-06",
+   "subject": "Fixed modal transitions",
+   "fixed_state": "1f4660d76ee3da6b5272f13968e1e81f722fdbf7",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-b39a5593",
+   "source": "GumbyFramework/Gumby",
+   "commit": "b39a5593d39cb3e3b05ee672a6bc2128be7ff5f4",
+   "date": "2013-09-05",
+   "subject": "fancytiles are based off of padding now.",
+   "fixed_state": "1f4660d76ee3da6b5272f13968e1e81f722fdbf7",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "gumby-83503613",
+   "source": "GumbyFramework/Gumby",
+   "commit": "8350361346831484b8c7ea4db79170b8fe861a34",
+   "date": "2013-09-03",
+   "subject": "Remove min height on dropdown li, also remove unnecessary duplicated code",
+   "fixed_state": "8350361346831484b8c7ea4db79170b8fe861a34",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-2690ed9f",
+   "source": "GumbyFramework/Gumby",
+   "commit": "2690ed9f5114a4385b8ef558645de946012650aa",
+   "date": "2013-09-02",
+   "subject": "Touch events now optional, path to jQuery mobile specified in gumby-touch (with fallback support for gumby-path), touch events can be turned off with gumby-touch=false",
+   "fixed_state": "2690ed9f5114a4385b8ef558645de946012650aa",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "gumby-7fa6a6cd",
+   "source": "GumbyFramework/Gumby",
+   "commit": "7fa6a6cd99de6743bf313bd6a8103ad5b5ac4db3",
+   "date": "2013-08-16",
+   "subject": "Remove position relative from navbar, overriding fixed without reason",
+   "fixed_state": "7fa6a6cd99de6743bf313bd6a8103ad5b5ac4db3",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "gumby-d1fd520b",
+   "source": "GumbyFramework/Gumby",
+   "commit": "d1fd520b4ca7268f99172cf677d4c9ea98e5f101",
+   "date": "2013-08-15",
+   "subject": "Added pull classes for the grid and hybrid grid.  This allows for complex layouts where source order doesn't determine visual order.",
+   "fixed_state": "d1fd520b4ca7268f99172cf677d4c9ea98e5f101",
+   "pages_rendered": [
+    "demo.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (pull classes for the grid)"
+  },
+  {
+   "id": "gumby-199cccba",
+   "source": "GumbyFramework/Gumby",
+   "commit": "199cccbad2af2ecf84beb60f79d590b55b20fa31",
+   "date": "2013-08-14",
+   "subject": "fixed missing em function",
+   "fixed_state": "2ea07c434e35d3541e9b151b5397625dc1c5d8cc",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "gumby-55a8cb87",
+   "source": "GumbyFramework/Gumby",
+   "commit": "55a8cb871a44ec0b2d112dac492bb960165e8348",
+   "date": "2013-07-31",
+   "subject": "Remove position relative from navbar portrait tablet as it conflicts with global .fixed positions",
+   "fixed_state": "55a8cb871a44ec0b2d112dac492bb960165e8348",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "phone: the change moves the navbar menu buttons out of their bars; no fault in the earlier state"
+  },
+  {
+   "id": "gumby-a1ff05af",
+   "source": "GumbyFramework/Gumby",
+   "commit": "a1ff05af2dd765ceacc5102d49a31a6925daa610",
+   "date": "2013-07-31",
+   "subject": "Fixed mixin accepts arg for breakpoint at which to remove fixed position. Can be set to false for permanent fixed elements",
+   "fixed_state": "55a8cb871a44ec0b2d112dac492bb960165e8348",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "phone: the change moves the navbar menu buttons out of their bars; no fault in the earlier state"
+  },
+  {
+   "id": "gumby-908701b6",
+   "source": "GumbyFramework/Gumby",
+   "commit": "908701b646119d76831462abfc4837ec17dc10d5",
+   "date": "2013-07-31",
+   "subject": "tooltips can now be right aligned WITH caret instead of just text",
+   "fixed_state": "908701b646119d76831462abfc4837ec17dc10d5",
+   "pages_rendered": [
+    "demo.html",
+    "nav-issue.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the parent commit's built CSS is a Sass error message, so the page renders unstyled"
+  },
+  {
+   "id": "gumby-ee775f1e",
+   "source": "GumbyFramework/Gumby",
+   "commit": "ee775f1ee0f71d54c85dbf3c0cde2dceb3f79aae",
+   "date": "2013-07-31",
+   "subject": "alignments",
+   "fixed_state": "5230d1a768f00465b4a8726be7dce76d8e2e05cc",
+   "pages_rendered": [
+    "demo.html",
+    "nav-issue.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-6760ad66",
+   "source": "GumbyFramework/Gumby",
+   "commit": "6760ad66efe1fedaca2d623de09e90cc77bb5487",
+   "date": "2013-07-31",
+   "subject": "positioning fixed, adding right alignment conditionals",
+   "fixed_state": "6760ad66efe1fedaca2d623de09e90cc77bb5487",
+   "pages_rendered": [
+    "demo.html",
+    "nav-issue.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-ab10a3dc",
+   "source": "GumbyFramework/Gumby",
+   "commit": "ab10a3dc97df2c587139378b36603172a6798c05",
+   "date": "2013-07-31",
+   "subject": "Wrap radio/checkbox styles in .js and ensure .no-js displays browser default",
+   "fixed_state": "ab10a3dc97df2c587139378b36603172a6798c05",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-79bf8ffd",
+   "source": "GumbyFramework/Gumby",
+   "commit": "79bf8ffd554369fba6c3d62e22fa2f1f82da9cbe",
+   "date": "2013-07-29",
+   "subject": "caret alignment fix",
+   "fixed_state": "79bf8ffd554369fba6c3d62e22fa2f1f82da9cbe",
+   "pages_rendered": [
+    "demo.html",
+    "nav-issue.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-38f3eb4e",
+   "source": "GumbyFramework/Gumby",
+   "commit": "38f3eb4ebb4357e6edc9b11b3b0a2062ce6d160d",
+   "date": "2013-07-29",
+   "subject": "added .navcontain to wrap fixed nav to fix jumpiness",
+   "fixed_state": "38f3eb4ebb4357e6edc9b11b3b0a2062ce6d160d",
+   "pages_rendered": [
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-c9773753",
+   "source": "GumbyFramework/Gumby",
+   "commit": "c9773753b0891445781289b44b26a115f1c602ff",
+   "date": "2013-07-26",
+   "subject": "simple retina logo fix: .logo img max height 95%",
+   "fixed_state": "c9773753b0891445781289b44b26a115f1c602ff",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-5cbda941",
+   "source": "GumbyFramework/Gumby",
+   "commit": "5cbda941ef2181b0d8a5841d970ab29bd95f73d7",
+   "date": "2013-07-25",
+   "subject": "fix for weird row padding document width breakpoint shift",
+   "fixed_state": "5cbda941ef2181b0d8a5841d970ab29bd95f73d7",
+   "pages_rendered": [
+    "cleancode.html",
+    "demo.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-acca791f",
+   "source": "GumbyFramework/Gumby",
+   "commit": "acca791f02e81a7ae429e3b01efcbc51d1a1b609",
+   "date": "2013-07-24",
+   "subject": "fix for semantic grid centering issue where a semantically centered column would not accept top or bottom margin overrides",
+   "fixed_state": "acca791f02e81a7ae429e3b01efcbc51d1a1b609",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the change rearranges the grid demo; no fault in the earlier state"
+  },
+  {
+   "id": "gumby-82ebbb5b",
+   "source": "GumbyFramework/Gumby",
+   "commit": "82ebbb5b20e5871fb02a207cc1efe514c087349f",
+   "date": "2013-07-22",
+   "subject": "adding overflow:hidden to .field to hopefully fix the orientation change bug on mobile",
+   "fixed_state": "82ebbb5b20e5871fb02a207cc1efe514c087349f",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "gumby-3753cfe8",
+   "source": "GumbyFramework/Gumby",
+   "commit": "3753cfe8d7a7fefaca433ead8d4b44432a1c2e7f",
+   "date": "2013-07-09",
+   "subject": "Removed testing fixed.html",
+   "fixed_state": "3753cfe8d7a7fefaca433ead8d4b44432a1c2e7f",
+   "pages_rendered": [
+    "fixed.html"
+   ],
+   "verdict": "rejected",
+   "reason": "test page removed; the fixed state renders at 980 px without a viewport tag"
+  },
+  {
+   "id": "gumby-d9dcca10",
+   "source": "GumbyFramework/Gumby",
+   "commit": "d9dcca10971319b5e4e3009443d9c821df3c8b25",
+   "date": "2013-07-09",
+   "subject": "Fixed indentation in ui.html",
+   "fixed_state": "d9dcca10971319b5e4e3009443d9c821df3c8b25",
+   "pages_rendered": [
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-3fb6395e",
+   "source": "GumbyFramework/Gumby",
+   "commit": "3fb6395e50fec536b397eba87e3799f52b170317",
+   "date": "2013-07-09",
+   "subject": "Fixed scope bug in fixed module setup method",
+   "fixed_state": "3fb6395e50fec536b397eba87e3799f52b170317",
+   "pages_rendered": [
+    "fixed.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-63c92ea2",
+   "source": "GumbyFramework/Gumby",
+   "commit": "63c92ea26b635ad1674f7c71d42525abc2bdd48f",
+   "date": "2013-07-08",
+   "subject": "Position absolute popup icon in mobile nav, update gumby.breakpoint default to 1024px",
+   "fixed_state": "63c92ea26b635ad1674f7c71d42525abc2bdd48f",
+   "pages_rendered": [
+    "demo.html",
+    "fixed.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-c1fb5707",
+   "source": "GumbyFramework/Gumby",
+   "commit": "c1fb57079b17ac56ad71ae4b524e0a7120f6a417",
+   "date": "2013-07-07",
+   "subject": "Fixed script includes in temp fixed.html",
+   "fixed_state": "c1fb57079b17ac56ad71ae4b524e0a7120f6a417",
+   "pages_rendered": [
+    "fixed.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gumby-ac9e29b5",
+   "source": "GumbyFramework/Gumby",
+   "commit": "ac9e29b52681906438cd235bc49cc30897d1a1b6",
+   "date": "2013-07-07",
+   "subject": "Removed old fixed module in favour of new and improved version. Updated gumby.min and ui/fixed html files",
+   "fixed_state": "ac9e29b52681906438cd235bc49cc30897d1a1b6",
+   "pages_rendered": [
+    "fixed.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "gumby-a6a2866f",
+   "source": "GumbyFramework/Gumby",
+   "commit": "a6a2866fdbd3a93f1cba97933bb03006a2ffd4ff",
+   "date": "2013-07-07",
+   "subject": "Pinned class overrides position,top and left props.",
+   "fixed_state": "a6a2866fdbd3a93f1cba97933bb03006a2ffd4ff",
+   "pages_rendered": [
+    "demo.html",
+    "fixed.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "gumby-ea9fbe98",
+   "source": "GumbyFramework/Gumby",
+   "commit": "ea9fbe98dadfa1eb0e30ad20ace6a780baa19ea2",
+   "date": "2013-07-05",
+   "subject": "Upgraded to jQuery 1.10.1 and fixed indentation in ui.html",
+   "fixed_state": "ea9fbe98dadfa1eb0e30ad20ace6a780baa19ea2",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "gumby-ff1e8733",
+   "source": "GumbyFramework/Gumby",
+   "commit": "ff1e87331db8798029f079e8b4802e6c1c2fec9d",
+   "date": "2013-07-05",
+   "subject": "Wrap no-touch and touch navbar styles (hover/.active) in new gumby- prefixed classes. gumby-no-touch is added to non touch devices or devices at > 768, gumby-touch is the opposite.",
+   "fixed_state": "ff1e87331db8798029f079e8b4802e6c1c2fec9d",
+   "pages_rendered": [
+    "demo.html",
+    "ui.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "topcoat-5050d386",
+   "source": "topcoat/topcoat",
+   "commit": "5050d386786b461694e8829c41d6ef366db4decf",
+   "date": "2013-10-18",
+   "subject": "fixed search var",
+   "fixed_state": "5050d386786b461694e8829c41d6ef366db4decf",
+   "pages_rendered": [
+    "demo/index.html",
+    "demo/topcoat-desktop-light.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the search icon overlaps the placeholder in both states"
+  },
+  {
+   "id": "topcoat-dc4f6018",
+   "source": "topcoat/topcoat",
+   "commit": "dc4f60186093528fcddb30e76eaec17b1f702ebd",
+   "date": "2013-09-23",
+   "subject": "fixed switch transition",
+   "fixed_state": "dc4f60186093528fcddb30e76eaec17b1f702ebd",
+   "pages_rendered": [
+    "demo/index.html",
+    "demo/topcoat-desktop-light.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-81fd1836",
+   "source": "topcoat/topcoat",
+   "commit": "81fd183659c44973cf6bece98af9535aaae29ea4",
+   "date": "2013-08-30",
+   "subject": "fixed search input base",
+   "fixed_state": "81fd183659c44973cf6bece98af9535aaae29ea4",
+   "pages_rendered": [
+    "demo/index.html",
+    "demo/topcoat-desktop-light.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording (section title)"
+  },
+  {
+   "id": "topcoat-724b41d3",
+   "source": "topcoat/topcoat",
+   "commit": "724b41d3fae17e469941260e6fd2475ebd2edd8f",
+   "date": "2013-08-14",
+   "subject": "fixed radio button topdoc",
+   "fixed_state": "724b41d3fae17e469941260e6fd2475ebd2edd8f",
+   "pages_rendered": [
+    "index.html",
+    "topcoat-desktop-light.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation text in the demo page changed"
+  },
+  {
+   "id": "topcoat-e87ad3ce",
+   "source": "topcoat/topcoat",
+   "commit": "e87ad3ce914b552f35c805ab822ec33cf3505e76",
+   "date": "2013-08-12",
+   "subject": "fixed the build error and updated the topdoc theme being used",
+   "fixed_state": "e87ad3ce914b552f35c805ab822ec33cf3505e76",
+   "pages_rendered": [
+    "index.html",
+    "topcoat-desktop-light.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-e608c5b7",
+   "source": "topcoat/topcoat",
+   "commit": "e608c5b73034a1057e9c55ddebeb6b8c28b1fd39",
+   "date": "2013-08-12",
+   "subject": "fixed a bunch of stuff",
+   "fixed_state": "e608c5b73034a1057e9c55ddebeb6b8c28b1fd39",
+   "pages_rendered": [
+    "index.html",
+    "topcoat-desktop-light.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-2835f2c6",
+   "source": "topcoat/topcoat",
+   "commit": "2835f2c67c0392f4b3f6bc2fd476346627a99f66",
+   "date": "2013-08-09",
+   "subject": "Update topcoat-mobile-light.html",
+   "fixed_state": "2835f2c67c0392f4b3f6bc2fd476346627a99f66",
+   "pages_rendered": [
+    "topcoat-mobile-light.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-abe5bed5",
+   "source": "topcoat/topcoat",
+   "commit": "abe5bed534eceb54f4e608c6f878cd640fced8e7",
+   "date": "2013-08-09",
+   "subject": "Update topcoat-mobile-light.html",
+   "fixed_state": "abe5bed534eceb54f4e608c6f878cd640fced8e7",
+   "pages_rendered": [
+    "topcoat-mobile-light.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording (section titles)"
+  },
+  {
+   "id": "topcoat-392b7529",
+   "source": "topcoat/topcoat",
+   "commit": "392b7529ce2bbedd2a16fd35dd527cc8c30fe2fa",
+   "date": "2013-03-25",
+   "subject": "Adding mobile css to release. Updating name of mobile css file in doc directory",
+   "fixed_state": "392b7529ce2bbedd2a16fd35dd527cc8c30fe2fa",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "topcoat-b2550817",
+   "source": "topcoat/topcoat",
+   "commit": "b255081754d13c635898fe56de43b635f17b1139",
+   "date": "2013-02-25",
+   "subject": "removed shadows on triangles and tweaked line height for large buttons",
+   "fixed_state": "8851616f87591dfebd5f0f17346df307c70227b4",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-6ae02bd3",
+   "source": "topcoat/topcoat",
+   "commit": "6ae02bd3f747d6b8b664e74b67b4014391e06ce4",
+   "date": "2013-02-24",
+   "subject": "Fixed slider colors",
+   "fixed_state": "8851616f87591dfebd5f0f17346df307c70227b4",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-c5225492",
+   "source": "topcoat/topcoat",
+   "commit": "c5225492c2d4eb8496d06472425968085d3fb16f",
+   "date": "2013-02-24",
+   "subject": "Fixed font for select",
+   "fixed_state": "8851616f87591dfebd5f0f17346df307c70227b4",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-e12e0edf",
+   "source": "topcoat/topcoat",
+   "commit": "e12e0edfe0ddfaab23959bea9cbc52b037149e87",
+   "date": "2013-02-14",
+   "subject": "non-janky mobile slideswitch",
+   "fixed_state": "11b96f09375c90cb192d2bffd721074596f42d80",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-f0afd27c",
+   "source": "topcoat/topcoat",
+   "commit": "f0afd27cb191f80274fab634a377f9acad26171f",
+   "date": "2013-02-11",
+   "subject": "fixed topcoat stylesheet url",
+   "fixed_state": "11b96f09375c90cb192d2bffd721074596f42d80",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-e3912544",
+   "source": "topcoat/topcoat",
+   "commit": "e391254438045dc836d48c789b2a581e46755c40",
+   "date": "2013-02-06",
+   "subject": "adding mobile switch element and radio button fixes",
+   "fixed_state": "57a3896d7f8e6a1dd55936e8915da01f0a4d2185",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-a3f7ce05",
+   "source": "topcoat/topcoat",
+   "commit": "a3f7ce0505b0b3dedc94682dcfaa4fe69d2d5f65",
+   "date": "2013-01-29",
+   "subject": "Refactoring css Fixing top margin",
+   "fixed_state": "f545e6c8cad826e2a20b9b01f2995d3963397229",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (heading spacing and a device icon added)"
+  },
+  {
+   "id": "topcoat-45a1bb6a",
+   "source": "topcoat/topcoat",
+   "commit": "45a1bb6a362e7be25a12de5bf80b5f287e4b0288",
+   "date": "2013-01-25",
+   "subject": "fixed copyright according to Apache 2.0 license",
+   "fixed_state": "bd2a0c14a41eadafbc0643843af180516392cd70",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content (license text)"
+  },
+  {
+   "id": "topcoat-ef57e9ab",
+   "source": "topcoat/topcoat",
+   "commit": "ef57e9ab6bf3b0ef7b7eec12c8c2c7898f707f1a",
+   "date": "2013-01-23",
+   "subject": "adding mobile index page",
+   "fixed_state": "bd2a0c14a41eadafbc0643843af180516392cd70",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content (a mobile index page added)"
+  },
+  {
+   "id": "topcoat-1243bf67",
+   "source": "topcoat/topcoat",
+   "commit": "1243bf67dfc3229e30c7082a50583a440c724924",
+   "date": "2013-01-23",
+   "subject": "adding mobile index page",
+   "fixed_state": "bd2a0c14a41eadafbc0643843af180516392cd70",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content (a mobile index page added)"
+  },
+  {
+   "id": "topcoat-affbc148",
+   "source": "topcoat/topcoat",
+   "commit": "affbc148d42dca45c6f7047494abf9f5eaeaa24a",
+   "date": "2013-01-15",
+   "subject": "Renamed so that topcoat mobile will have a separate .less file.",
+   "fixed_state": "f4aa86db7e526db6d9e7f963dd197e285f19cd28",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-97a9f98e",
+   "source": "topcoat/topcoat",
+   "commit": "97a9f98e7528b4ed9e29c8be0ce3bcf30266379f",
+   "date": "2013-01-10",
+   "subject": "fixed path for phonegap build",
+   "fixed_state": "7a54da0b45c18cfa63cf7687152cc3c5a2a791c1",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-6c3cf0fa",
+   "source": "topcoat/topcoat",
+   "commit": "6c3cf0fa7af80266537e707c295b789122b30e9f",
+   "date": "2013-01-09",
+   "subject": "fixed test/effects/slidemenu position",
+   "fixed_state": "7a54da0b45c18cfa63cf7687152cc3c5a2a791c1",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-54baff47",
+   "source": "topcoat/topcoat",
+   "commit": "54baff471391ae04bba83c974076bfbe8eb2b433",
+   "date": "2012-12-22",
+   "subject": "fixed link to project in CLA thank you page",
+   "fixed_state": "2af7696be52c6c7e8096611319052efd0244543f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-3eda11ce",
+   "source": "topcoat/topcoat",
+   "commit": "3eda11cee1ba287c70a2a89d304d49df6b31f80f",
+   "date": "2012-12-21",
+   "subject": "fixed wrong reference to Filter Lab",
+   "fixed_state": "2af7696be52c6c7e8096611319052efd0244543f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-07e3bcc8",
+   "source": "topcoat/topcoat",
+   "commit": "07e3bcc871af67e14a26630194dce9487d31efe3",
+   "date": "2012-12-05",
+   "subject": "fixed font name issue",
+   "fixed_state": "07e3bcc871af67e14a26630194dce9487d31efe3",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-476d46b0",
+   "source": "topcoat/topcoat",
+   "commit": "476d46b045c2517b21fa7e8bb1cc2d8dd0e3e582",
+   "date": "2012-11-05",
+   "subject": "Fixed component test html",
+   "fixed_state": "21306d2bb5f714dcfbca41fa1854c36bcf49825d",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "topcoat-33cf3e88",
+   "source": "topcoat/topcoat",
+   "commit": "33cf3e8805fda65c06d6498e9c2b22370e3f9f56",
+   "date": "2012-10-31",
+   "subject": "updated tests to work on mobile",
+   "fixed_state": "535c982b2d572f729875d95801ee4dd2fb0aa3ce",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "lit-css-481f5cc3",
+   "source": "ajusa/lit",
+   "commit": "481f5cc3375a7363eca12924401c15f8466f7b00",
+   "date": "2020-05-23",
+   "subject": "fixed an old overflow bug, tried to make css a bit smaller",
+   "fixed_state": "a2756f216baf665e987083756031c78f6cfbef33",
+   "pages_rendered": [
+    "docs/lit.html",
+    "docs/util.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the form text field and textarea (.card.w-100) are 361 px wide from x=16, so they run 17 px past a 360 px screen and the docs page scrolls sideways (377 px; 410 px on 393 px); they fit after the fix"
+  },
+  {
+   "id": "lit-css-6336fc15",
+   "source": "ajusa/lit",
+   "commit": "6336fc15762e1ca644d0cb3126c1f94d371e7756",
+   "date": "2020-05-21",
+   "subject": "fixed issue with 6 col, and updated dependencies",
+   "fixed_state": "6336fc15762e1ca644d0cb3126c1f94d371e7756",
+   "pages_rendered": [
+    "docs/lit.html",
+    "docs/util.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "lit-css-7c389935",
+   "source": "ajusa/lit",
+   "commit": "7c389935c956697bb478f9c5c937cb03264a6b1f",
+   "date": "2020-05-04",
+   "subject": "(docs): fixed small error",
+   "fixed_state": "7c389935c956697bb478f9c5c937cb03264a6b1f",
+   "pages_rendered": [
+    "docs/lit.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording"
+  },
+  {
+   "id": "lit-css-f6a4c04f",
+   "source": "ajusa/lit",
+   "commit": "f6a4c04f13909b0745f9148a8a96f9ff736dc726",
+   "date": "2018-05-23",
+   "subject": "fixed docs issue with w-100",
+   "fixed_state": "f6a4c04f13909b0745f9148a8a96f9ff736dc726",
+   "pages_rendered": [
+    "docs/lit.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation code sample text"
+  },
+  {
+   "id": "lit-css-fce9ac96",
+   "source": "ajusa/lit",
+   "commit": "fce9ac96f5d313e9af797466a783e912ffd9cc2e",
+   "date": "2018-02-11",
+   "subject": "fixed button overlapping on home page",
+   "fixed_state": "fce9ac96f5d313e9af797466a783e912ffd9cc2e",
+   "pages_rendered": [
+    "utility.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: in the utility page hero the COMPONENTS button covers the bottom of the UTILITIES button above it; separate after the fix"
+  },
+  {
+   "id": "lit-css-01ebe38d",
+   "source": "ajusa/lit",
+   "commit": "01ebe38d78582526c3f83ee2dac5000830c54079",
+   "date": "2018-02-11",
+   "subject": "added spacing documentation",
+   "fixed_state": "01ebe38d78582526c3f83ee2dac5000830c54079",
+   "pages_rendered": [
+    "utility.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content added (spacing documentation)"
+  },
+  {
+   "id": "lit-css-f8181dee",
+   "source": "ajusa/lit",
+   "commit": "f8181dee14691357d5fa76aab2d42cf94f69d348",
+   "date": "2018-01-07",
+   "subject": "fixed some spacing issues in the docs",
+   "fixed_state": "f8181dee14691357d5fa76aab2d42cf94f69d348",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "spacing refinement in the docs"
+  },
+  {
+   "id": "lit-css-b876540f",
+   "source": "ajusa/lit",
+   "commit": "b876540fd3c35dd2308bcffc58209bc018e6e073",
+   "date": "2018-01-07",
+   "subject": "added default margin to every element",
+   "fixed_state": "b876540fd3c35dd2308bcffc58209bc018e6e073",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (a default margin on every element)"
+  },
+  {
+   "id": "lit-css-3399774e",
+   "source": "ajusa/lit",
+   "commit": "3399774e006cea208c968fa17bd32df54cf00d6b",
+   "date": "2018-01-07",
+   "subject": "made column width values more accurate",
+   "fixed_state": "3399774e006cea208c968fa17bd32df54cf00d6b",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording (byte count)"
+  },
+  {
+   "id": "lit-css-07f33993",
+   "source": "ajusa/lit",
+   "commit": "07f33993f0f89f4ddc8cc097a818fb8c98161c7b",
+   "date": "2018-01-07",
+   "subject": "Fixed two typos on index.html",
+   "fixed_state": "07f33993f0f89f4ddc8cc097a818fb8c98161c7b",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording (typos)"
+  },
+  {
+   "id": "lit-css-8ea85cb2",
+   "source": "ajusa/lit",
+   "commit": "8ea85cb2a6cef56e14563a7eaf6be27b26d36221",
+   "date": "2018-01-06",
+   "subject": "fixed problematic buttons on ios",
+   "fixed_state": "8ea85cb2a6cef56e14563a7eaf6be27b26d36221",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content (the input button example removed)"
+  },
+  {
+   "id": "lit-css-156ba3a0",
+   "source": "ajusa/lit",
+   "commit": "156ba3a0cd882c4bd0619b71ccd6aafa124b60b8",
+   "date": "2018-01-06",
+   "subject": "fixed card bug in docs",
+   "fixed_state": "156ba3a0cd882c4bd0619b71ccd6aafa124b60b8",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wrapped demo buttons touch the row above in both states"
+  },
+  {
+   "id": "lit-css-ec85b2a1",
+   "source": "ajusa/lit",
+   "commit": "ec85b2a1be0f5d9dfd03dfb297c17d3fdc1fb4a7",
+   "date": "2018-01-05",
+   "subject": "removed extra width percent for containers",
+   "fixed_state": "ec85b2a1be0f5d9dfd03dfb297c17d3fdc1fb4a7",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "lit-css-5ed62833",
+   "source": "ajusa/lit",
+   "commit": "5ed6283375c72f3ff254ecbbd3a64cb61b596b5a",
+   "date": "2018-01-05",
+   "subject": "remove unneeded col width",
+   "fixed_state": "5ed6283375c72f3ff254ecbbd3a64cb61b596b5a",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording (byte count)"
+  },
+  {
+   "id": "lit-css-470403f0",
+   "source": "ajusa/lit",
+   "commit": "470403f069b7bce325d23f465b68776c9ce6001d",
+   "date": "2018-01-05",
+   "subject": "fixed grid spacing issues",
+   "fixed_state": "470403f069b7bce325d23f465b68776c9ce6001d",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (grid demo spacing tightened)"
+  },
+  {
+   "id": "lit-css-da928806",
+   "source": "ajusa/lit",
+   "commit": "da92880674094c3bf3b9c41f1ace12c723e7ff26",
+   "date": "2018-01-04",
+   "subject": "added the responsive bit in",
+   "fixed_state": "da92880674094c3bf3b9c41f1ace12c723e7ff26",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording"
+  },
+  {
+   "id": "lit-css-cd64d34a",
+   "source": "ajusa/lit",
+   "commit": "cd64d34a8b408e1995d9c45b9adc5a42ca799289",
+   "date": "2018-01-04",
+   "subject": "fixed the font weight stuff",
+   "fixed_state": "cd64d34a8b408e1995d9c45b9adc5a42ca799289",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "lit-css-ce470806",
+   "source": "ajusa/lit",
+   "commit": "ce470806f81fdfb21d9e308cb0b88b77cfad2632",
+   "date": "2018-01-04",
+   "subject": "added back the vertical margin",
+   "fixed_state": "ce470806f81fdfb21d9e308cb0b88b77cfad2632",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "laptop: the grid demo rows have no vertical gap, so the cells of six rows run together into one grey block; 20 px gaps after the fix"
+  },
+  {
+   "id": "lit-css-66096fef",
+   "source": "ajusa/lit",
+   "commit": "66096fef3e898903a594ef1327060aa6ef3a079e",
+   "date": "2018-01-04",
+   "subject": "added back in the spacing",
+   "fixed_state": "66096fef3e898903a594ef1327060aa6ef3a079e",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "lit-css-006863dd",
+   "source": "ajusa/lit",
+   "commit": "006863dda19d8e4e5bc8b0add125f74efb7dfd4f",
+   "date": "2018-01-04",
+   "subject": "margin is more noticable",
+   "fixed_state": "006863dda19d8e4e5bc8b0add125f74efb7dfd4f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "lit-css-dabd918f",
+   "source": "ajusa/lit",
+   "commit": "dabd918fddbc383ae017bb10004e6dc2dcf7fdd9",
+   "date": "2018-01-03",
+   "subject": "negative margin is a thing",
+   "fixed_state": "dabd918fddbc383ae017bb10004e6dc2dcf7fdd9",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "lit-css-f0c71152",
+   "source": "ajusa/lit",
+   "commit": "f0c71152dcd37f528be5070c234bc6e9004beee1",
+   "date": "2018-01-02",
+   "subject": "fixed another mobile issue",
+   "fixed_state": "f0c71152dcd37f528be5070c234bc6e9004beee1",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "lit-css-10ffe14e",
+   "source": "ajusa/lit",
+   "commit": "10ffe14e082a68f95d329a3e4a33cba3c60e0224",
+   "date": "2018-01-02",
+   "subject": "fixed some stuff on mobile",
+   "fixed_state": "8f8d29e2148caf91e035986e7c2a35cfcde09f58",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "not judged",
+   "reason": "source closed after three accepted cases"
+  },
+  {
+   "id": "bamboo-d5e46f95",
+   "source": "rilwis/bamboo",
+   "commit": "d5e46f95abbcab597f5e6783f1ffe5cdb1c74ef8",
+   "date": "2023-09-27",
+   "subject": "Use text-wrap balance for headings",
+   "fixed_state": "1aa94c4c763a5a52c8b31031faa35fad295a6b27",
+   "pages_rendered": [
+    "demo/dark.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bamboo-4b56348f",
+   "source": "rilwis/bamboo",
+   "commit": "4b56348fe2c122a326aff62e27d7ee7923bb3fdb",
+   "date": "2023-09-27",
+   "subject": "Use margin-trim",
+   "fixed_state": "1aa94c4c763a5a52c8b31031faa35fad295a6b27",
+   "pages_rendered": [
+    "demo/dark.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bamboo-e13cd746",
+   "source": "rilwis/bamboo",
+   "commit": "e13cd7463055f14bbb58c30febe72002a5aad0e4",
+   "date": "2023-09-27",
+   "subject": "Set width 100% for inputs explicitly. Closes #2.",
+   "fixed_state": "1aa94c4c763a5a52c8b31031faa35fad295a6b27",
+   "pages_rendered": [
+    "demo/dark.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bamboo-85e1ef47",
+   "source": "rilwis/bamboo",
+   "commit": "85e1ef47b59ee6591d30559d6632c1edb97ab3d1",
+   "date": "2022-12-08",
+   "subject": "Fix no padding for table cells",
+   "fixed_state": "f952db8194a66d9f6261a34f780059481f9897c0",
+   "pages_rendered": [
+    "demo/dark.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "table cell padding refinement"
+  },
+  {
+   "id": "bamboo-bca6bc71",
+   "source": "rilwis/bamboo",
+   "commit": "bca6bc7125934aae24281f9c0524c3657ecdff43",
+   "date": "2022-02-04",
+   "subject": "Make label block with margin bottom",
+   "fixed_state": "bca6bc7125934aae24281f9c0524c3657ecdff43",
+   "pages_rendered": [
+    "demo/dark.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "label spacing refinement"
+  },
+  {
+   "id": "bamboo-d94f34ea",
+   "source": "rilwis/bamboo",
+   "commit": "d94f34ea11cc2b5008fec0aed7ff6a70fe864236",
+   "date": "2021-03-12",
+   "subject": "Update padding for pre",
+   "fixed_state": "08f54f62b672d16ffda887d4978abfecdad75a40",
+   "pages_rendered": [
+    "demo/dark.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "code block padding refinement"
+  },
+  {
+   "id": "bamboo-80812107",
+   "source": "rilwis/bamboo",
+   "commit": "808121077b53c6d853ecaf7b8f8957ec488be1d8",
+   "date": "2021-03-11",
+   "subject": "Improve spacing",
+   "fixed_state": "a986aef3a0d0de8a1c4c15d213ab0515af913628",
+   "pages_rendered": [
+    "demo/dark.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (spacing)"
+  },
+  {
+   "id": "bamboo-1987f958",
+   "source": "rilwis/bamboo",
+   "commit": "1987f958930a45ce876a98c05fbd71a18c3419d4",
+   "date": "2021-03-08",
+   "subject": "Remove wrap for pre",
+   "fixed_state": "1987f958930a45ce876a98c05fbd71a18c3419d4",
+   "pages_rendered": [
+    "demo/dark.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (code blocks scroll instead of wrapping)"
+  },
+  {
+   "id": "bamboo-e49b2459",
+   "source": "rilwis/bamboo",
+   "commit": "e49b245957ea7f35abd2d6a1226d09bb054292a8",
+   "date": "2021-02-14",
+   "subject": "Remove margin bottom for last child",
+   "fixed_state": "e49b245957ea7f35abd2d6a1226d09bb054292a8",
+   "pages_rendered": [
+    "demo.html"
+   ],
+   "verdict": "rejected",
+   "reason": "spacing refinement"
+  },
+  {
+   "id": "bamboo-810f3000",
+   "source": "rilwis/bamboo",
+   "commit": "810f30005119f134ffe847d9c281d768ac52d868",
+   "date": "2021-02-12",
+   "subject": "Make input 100% width",
+   "fixed_state": "810f30005119f134ffe847d9c281d768ac52d868",
+   "pages_rendered": [
+    "demo.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (text fields made full width; all fields share one width before)"
+  },
+  {
+   "id": "bamboo-19c8d49b",
+   "source": "rilwis/bamboo",
+   "commit": "19c8d49b57631f7099ec74266a2bdc6539099446",
+   "date": "2021-02-10",
+   "subject": "Fix margin",
+   "fixed_state": "19c8d49b57631f7099ec74266a2bdc6539099446",
+   "pages_rendered": [
+    "demo.html"
+   ],
+   "verdict": "rejected",
+   "reason": "margin refinement"
+  },
+  {
+   "id": "bamboo-442adc2a",
+   "source": "rilwis/bamboo",
+   "commit": "442adc2a29e8f8669eecb9bb05ef5b3e7847e238",
+   "date": "2021-02-10",
+   "subject": "Do not reset global margin",
+   "fixed_state": "442adc2a29e8f8669eecb9bb05ef5b3e7847e238",
+   "pages_rendered": [
+    "demo.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (page margins)"
+  },
+  {
+   "id": "bamboo-e97f553a",
+   "source": "rilwis/bamboo",
+   "commit": "e97f553a370533597404a7580323b15dbb65a9a2",
+   "date": "2021-02-10",
+   "subject": "Add right padding to select for icon",
+   "fixed_state": "e97f553a370533597404a7580323b15dbb65a9a2",
+   "pages_rendered": [
+    "demo.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the demo select text is short; no text runs under the arrow in either state"
+  },
+  {
+   "id": "bamboo-c798441d",
+   "source": "rilwis/bamboo",
+   "commit": "c798441d272a659fbe0c53465944d620c9ded55b",
+   "date": "2021-02-09",
+   "subject": "Increase padding for lists to fix issue with large index number",
+   "fixed_state": "c798441d272a659fbe0c53465944d620c9ded55b",
+   "pages_rendered": [
+    "demo.html"
+   ],
+   "verdict": "rejected",
+   "reason": "list markers sit at the page edge in both states, and the change hides the bullets"
+  },
+  {
+   "id": "bamboo-b7da2bc1",
+   "source": "rilwis/bamboo",
+   "commit": "b7da2bc1da46f2505dd9c9f695616dca11ea7a5c",
+   "date": "2021-02-08",
+   "subject": "Minor tweak for responsiveness",
+   "fixed_state": "b7da2bc1da46f2505dd9c9f695616dca11ea7a5c",
+   "pages_rendered": [
+    "demo.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bamboo-d190d4e7",
+   "source": "rilwis/bamboo",
+   "commit": "d190d4e70beb33d47c5ee3bf73bf97e1f847b297",
+   "date": "2020-05-19",
+   "subject": ":pencil2: fixed lite file",
+   "fixed_state": "67e76ebc47a5cfe5e8c3510f36a4b5ecf1fc8f58",
+   "pages_rendered": [
+    "demo.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content (a different demo page)"
+  },
+  {
+   "id": "writ-8eb2eb5d",
+   "source": "programble/writ",
+   "commit": "8eb2eb5dabfad03f4340d7322f517636faafdcf5",
+   "date": "2015-09-06",
+   "subject": "Nowrap nav ul li",
+   "fixed_state": "8eb2eb5dabfad03f4340d7322f517636faafdcf5",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "writ-1330ce0f",
+   "source": "programble/writ",
+   "commit": "1330ce0fa87e8215b96e79a9c43b0dee6a5a6570",
+   "date": "2015-09-06",
+   "subject": "Use calc for table line-height",
+   "fixed_state": "1330ce0fa87e8215b96e79a9c43b0dee6a5a6570",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "writ-4e7ea54b",
+   "source": "programble/writ",
+   "commit": "4e7ea54bcac5fa4cf733ce751ab99e41861293d5",
+   "date": "2015-09-03",
+   "subject": "Remove padding from first li in nav ul",
+   "fixed_state": "4e7ea54bcac5fa4cf733ce751ab99e41861293d5",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the navigation row shifts by a few px; not nameable without the fix"
+  },
+  {
+   "id": "writ-07f2f85e",
+   "source": "programble/writ",
+   "commit": "07f2f85e1fc9462e1e782340b5b23dc620b510af",
+   "date": "2015-09-03",
+   "subject": "Apply main width to body>footer",
+   "fixed_state": "07f2f85e1fc9462e1e782340b5b23dc620b510af",
+   "pages_rendered": [
+    "reference.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "writ-c9eb643e",
+   "source": "programble/writ",
+   "commit": "c9eb643e2323ca5f2cfa8b4a0e30040cfcc84d75",
+   "date": "2015-09-01",
+   "subject": "Vertically align figure and aside",
+   "fixed_state": "c9eb643e2323ca5f2cfa8b4a0e30040cfcc84d75",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "writ-e26a8ed1",
+   "source": "programble/writ",
+   "commit": "e26a8ed1767374052b5a78aaebc132bc58e6c664",
+   "date": "2015-09-01",
+   "subject": "Remove weird table line-height",
+   "fixed_state": "e26a8ed1767374052b5a78aaebc132bc58e6c664",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "writ-49c02fbf",
+   "source": "programble/writ",
+   "commit": "49c02fbfb73435c014ba613c3030dc1d8704029a",
+   "date": "2015-08-28",
+   "subject": "Apply max-width to main, margin to body and header",
+   "fixed_state": "49c02fbfb73435c014ba613c3030dc1d8704029a",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (page margins and a maximum width); content close to the screen edge is not one of the registered fault kinds"
+  },
+  {
+   "id": "writ-9acae424",
+   "source": "programble/writ",
+   "commit": "9acae4243be0c0a3cd1ab4b02bb3fa7152aeaf9f",
+   "date": "2015-08-23",
+   "subject": "Move line-height to *",
+   "fixed_state": "9acae4243be0c0a3cd1ab4b02bb3fa7152aeaf9f",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "writ-e0b84596",
+   "source": "programble/writ",
+   "commit": "e0b84596b92c538b046b8273790d685045a199b3",
+   "date": "2015-08-22",
+   "subject": "Add img width constraint",
+   "fixed_state": "e0b84596b92c538b046b8273790d685045a199b3",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: an image wider than the screen makes the page 586 px wide on 360 px and 393 px phones; the image fits after the fix"
+  },
+  {
+   "id": "writ-9dd1fb5c",
+   "source": "programble/writ",
+   "commit": "9dd1fb5ceb3486c29c545b2add04726a2607e29d",
+   "date": "2015-08-22",
+   "subject": "Fix wrapped headings",
+   "fixed_state": "9dd1fb5ceb3486c29c545b2add04726a2607e29d",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "heading line-height refinement; no overlapping lines at the screening viewports"
+  },
+  {
+   "id": "writ-4375f46c",
+   "source": "programble/writ",
+   "commit": "4375f46ca6ff6d201a5e7bd4bb1f80113445c4e5",
+   "date": "2015-08-22",
+   "subject": "overflow-x: auto",
+   "fixed_state": "4375f46ca6ff6d201a5e7bd4bb1f80113445c4e5",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "writ-6e81c531",
+   "source": "programble/writ",
+   "commit": "6e81c5311d7a9a766d60666b7fc28d29f20f5981",
+   "date": "2015-08-22",
+   "subject": "Apply top margin to table as well",
+   "fixed_state": "6e81c5311d7a9a766d60666b7fc28d29f20f5981",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "writ-2ff0b584",
+   "source": "programble/writ",
+   "commit": "2ff0b58420cbb895d77a24e6cc350780797b1c3a",
+   "date": "2015-08-22",
+   "subject": "Fix heading line-height",
+   "fixed_state": "2ff0b58420cbb895d77a24e6cc350780797b1c3a",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "heading line-height refinement"
+  },
+  {
+   "id": "writ-12929de9",
+   "source": "programble/writ",
+   "commit": "12929de95c5c8fdc9e91ef37232daf6e6798910e",
+   "date": "2015-08-22",
+   "subject": "Fix <aside> vertical alignment",
+   "fixed_state": "12929de95c5c8fdc9e91ef37232daf6e6798910e",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "writ-f6bae28c",
+   "source": "programble/writ",
+   "commit": "f6bae28c2cc20d8087381fbc115f687d9144bfc9",
+   "date": "2015-08-22",
+   "subject": "Add padding to bottom of <article>",
+   "fixed_state": "f6bae28c2cc20d8087381fbc115f687d9144bfc9",
+   "pages_rendered": [
+    "index.head.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "almond-css-dbac77ae",
+   "source": "alvaromontoro/almond.css",
+   "commit": "dbac77ae86ea450ec0ed1283db2e52f999ca20ec",
+   "date": "2022-02-28",
+   "subject": "Fixed typo",
+   "fixed_state": "dbac77ae86ea450ec0ed1283db2e52f999ca20ec",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording (typo)"
+  },
+  {
+   "id": "almond-css-ff6a6d90",
+   "source": "alvaromontoro/almond.css",
+   "commit": "ff6a6d90a454acafb5207fbfb24ab7cb1b620615",
+   "date": "2022-01-09",
+   "subject": "Fix bug in pre/code width",
+   "fixed_state": "ff6a6d90a454acafb5207fbfb24ab7cb1b620615",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "demo content added (a long code line); no fault in the earlier state"
+  },
+  {
+   "id": "almond-css-f62e4378",
+   "source": "alvaromontoro/almond.css",
+   "commit": "f62e4378a49ecf3ab66fe7023962bd93ead08e25",
+   "date": "2021-12-31",
+   "subject": "Button margin fix (Safari)",
+   "fixed_state": "f62e4378a49ecf3ab66fe7023962bd93ead08e25",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "Safari-only button margin fix; differences under 2 px in Chromium"
+  },
+  {
+   "id": "almond-css-44f880c2",
+   "source": "alvaromontoro/almond.css",
+   "commit": "44f880c203a0e61dcf4b0a327fe86a7c2d88f9de",
+   "date": "2021-02-26",
+   "subject": "update radio and checkbox vertical alignment",
+   "fixed_state": "44f880c203a0e61dcf4b0a327fe86a7c2d88f9de",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone and laptop: in the demo form the radio buttons and checkboxes sit about 5 px below the middle of their labels; centred on the label line after the fix"
+  },
+  {
+   "id": "almond-css-99414cad",
+   "source": "alvaromontoro/almond.css",
+   "commit": "99414cade8bbbdb1e7c9a08d6f7b52bf2394f9b8",
+   "date": "2021-02-26",
+   "subject": "fix alignment of radio and checkboxes",
+   "fixed_state": "44f880c203a0e61dcf4b0a327fe86a7c2d88f9de",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "same broken and fixed pages as almond-css-44f880c2 (this commit changed only the source; 44f880c2 built it)"
+  },
+  {
+   "id": "almond-css-bcbb95ba",
+   "source": "alvaromontoro/almond.css",
+   "commit": "bcbb95ba0fd47dd90f718b93090fcc95bb88a750",
+   "date": "2020-05-06",
+   "subject": "Vertically align form controls",
+   "fixed_state": "bcbb95ba0fd47dd90f718b93090fcc95bb88a750",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "form spacing refinement"
+  },
+  {
+   "id": "almond-css-74ba2260",
+   "source": "alvaromontoro/almond.css",
+   "commit": "74ba2260057f55b0eadf5d195b78e03bb1d87200",
+   "date": "2020-03-14",
+   "subject": "Adjust heading margins",
+   "fixed_state": "74ba2260057f55b0eadf5d195b78e03bb1d87200",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "heading margin refinement"
+  },
+  {
+   "id": "almond-css-b15c4638",
+   "source": "alvaromontoro/almond.css",
+   "commit": "b15c4638d17b261ee175b568bd3e900ac2be7782",
+   "date": "2020-03-14",
+   "subject": "add line-height variable",
+   "fixed_state": "b15c4638d17b261ee175b568bd3e900ac2be7782",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "almond-css-4f44d8ef",
+   "source": "alvaromontoro/almond.css",
+   "commit": "4f44d8efea23a46e106a784efa9c10ab72d2cf63",
+   "date": "2020-03-14",
+   "subject": "Update line-height",
+   "fixed_state": "4f44d8efea23a46e106a784efa9c10ab72d2cf63",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (line height)"
+  },
+  {
+   "id": "almond-css-50762613",
+   "source": "alvaromontoro/almond.css",
+   "commit": "5076261370d5231a4ba674ae5ef252b102576167",
+   "date": "2020-03-01",
+   "subject": "Fix hr margins",
+   "fixed_state": "5076261370d5231a4ba674ae5ef252b102576167",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "rule margin refinement"
+  },
+  {
+   "id": "almond-css-73587afc",
+   "source": "alvaromontoro/almond.css",
+   "commit": "73587afce6aa3c3198f8d2ab6777a6c828b30200",
+   "date": "2020-02-29",
+   "subject": "Normalize hidden elements",
+   "fixed_state": "50b528aabd01d04133a74dcb9cad394af75bed56",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page is 376 px wide on a 360 px phone in both states"
+  },
+  {
+   "id": "flexboxgrid-7304dad7",
+   "source": "kristoferjoseph/flexboxgrid",
+   "commit": "7304dad7d163f08da0589f262b5c0fd4d41e2000",
+   "date": "2015-07-15",
+   "subject": "Replace uses of 16.667% with 16.666 to prevent width > 100%",
+   "fixed_state": "87c15f94de0e75bfd452b0a895521e4f3e0f63b3",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "flexboxgrid-774cc727",
+   "source": "kristoferjoseph/flexboxgrid",
+   "commit": "774cc727ee06919cb2e8e379096d0511479b7f46",
+   "date": "2015-06-17",
+   "subject": "Add margins to .container class to match bootstrap behavior",
+   "fixed_state": "42c0dfd0ff0990b0d52d90dd8515db1753d0fda1",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "flexboxgrid-660ad975",
+   "source": "kristoferjoseph/flexboxgrid",
+   "commit": "660ad97501994e254ba7c9abcf9459258430211f",
+   "date": "2015-01-01",
+   "subject": "Removing unneeded flex wrap properties",
+   "fixed_state": "41e0cfc19a6764ede3426f30a46873b77ed76f4d",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "flexboxgrid-c5ff10ae",
+   "source": "kristoferjoseph/flexboxgrid",
+   "commit": "c5ff10ae615f868544e35c7e26a1fd6d353c7608",
+   "date": "2014-04-14",
+   "subject": "Updating to add reponsive modifiers to alignment, distribution, and reordering.",
+   "fixed_state": "c5ff10ae615f868544e35c7e26a1fd6d353c7608",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (responsive modifiers for alignment and ordering)"
+  },
+  {
+   "id": "flexboxgrid-7b71b69e",
+   "source": "kristoferjoseph/flexboxgrid",
+   "commit": "7b71b69eb41764b87352d399d3c7826eb8a9b155",
+   "date": "2014-01-15",
+   "subject": "Aligning hero copy center",
+   "fixed_state": "7b71b69eb41764b87352d399d3c7826eb8a9b155",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the hero description is left-aligned under the centred title, so its second line starts at the left; centred like the title after the fix"
+  },
+  {
+   "id": "flexboxgrid-05d1b6ea",
+   "source": "kristoferjoseph/flexboxgrid",
+   "commit": "05d1b6eaa469f5c9824c5eb1097b2395f73de480",
+   "date": "2014-01-15",
+   "subject": "Updating alignment classes api",
+   "fixed_state": "05d1b6eaa469f5c9824c5eb1097b2395f73de480",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (alignment class names changed)"
+  },
+  {
+   "id": "flexboxgrid-f887cf1e",
+   "source": "kristoferjoseph/flexboxgrid",
+   "commit": "f887cf1e6edede7a7217f1c50f20e15adb7c9381",
+   "date": "2014-01-13",
+   "subject": "Fixing section margins",
+   "fixed_state": "f887cf1e6edede7a7217f1c50f20e15adb7c9381",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "section margin refinement"
+  },
+  {
+   "id": "flexboxgrid-ae279ef5",
+   "source": "kristoferjoseph/flexboxgrid",
+   "commit": "ae279ef5e8b8963f1ea6ede4aa42fffaaaab3633",
+   "date": "2013-12-28",
+   "subject": "Adding padding for container boxes",
+   "fixed_state": "ae279ef5e8b8963f1ea6ede4aa42fffaaaab3633",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (padding in the demo boxes)"
+  },
+  {
+   "id": "flexboxgrid-6ddf3ece",
+   "source": "kristoferjoseph/flexboxgrid",
+   "commit": "6ddf3ece07eb078a32435aebf081a790c6b6d344",
+   "date": "2013-12-26",
+   "subject": "Responsive tweaks",
+   "fixed_state": "6ddf3ece07eb078a32435aebf081a790c6b6d344",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "responsive demo redesign; no fault in the earlier state"
+  },
+  {
+   "id": "flexboxgrid-1538c004",
+   "source": "kristoferjoseph/flexboxgrid",
+   "commit": "1538c004b4924948a4d35b65bba2cb5dabbe76b2",
+   "date": "2013-12-26",
+   "subject": "Adding Responsive modifiers",
+   "fixed_state": "1538c004b4924948a4d35b65bba2cb5dabbe76b2",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the change makes the page wider on a phone; no fault in the earlier state"
+  },
+  {
+   "id": "flexboxgrid-5a85c23a",
+   "source": "kristoferjoseph/flexboxgrid",
+   "commit": "5a85c23a9a04d913a71589e1bb60391d620e541b",
+   "date": "2013-12-24",
+   "subject": "Adding media query for mobile first",
+   "fixed_state": "5a85c23a9a04d913a71589e1bb60391d620e541b",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (demo boxes rearranged for mobile first)"
+  },
+  {
+   "id": "stisla-0a0eecb8",
+   "source": "stisla/stisla",
+   "commit": "0a0eecb802d8d38cfd52366d4ecf57ed36d5e72b",
+   "date": "2026-07-06",
+   "subject": "chore(docs): layout",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-58349fbb",
+   "source": "stisla/stisla",
+   "commit": "58349fbbdd16af031d76a2afd84306fbecb55400",
+   "date": "2026-07-05",
+   "subject": "docs: remove completed scratch docs (DEMO-GAP-AUDIT, PORTING, V3)",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-6426484c",
+   "source": "stisla/stisla",
+   "commit": "6426484c14a87497356b4c04e05a56c59c091f35",
+   "date": "2026-06-30",
+   "subject": "feat(v3): docs restructure (composition/styling/theming/utilities/illustrations), css single-source bundle, vanilla individual-component split",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-0ff2500b",
+   "source": "stisla/stisla",
+   "commit": "0ff2500ba2c2347d69a6f7df95081b5d74f9f667",
+   "date": "2026-06-27",
+   "subject": "feat(v3): vanilla sweep — port all components CSS+docs, new site pages+layouts",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-950c06f8",
+   "source": "stisla/stisla",
+   "commit": "950c06f89178eb1a2662f75511ea4a4ff369bdeb",
+   "date": "2026-06-17",
+   "subject": "fix(v3): halve chip-height growth rate to keep visible aspect ratio",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-7192142c",
+   "source": "stisla/stisla",
+   "commit": "7192142c7a0af94d491aa8157f401d2e1769a9b8",
+   "date": "2026-06-17",
+   "subject": "refactor(v3): density-aware --*-height with proportional growth",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-4d411a22",
+   "source": "stisla/stisla",
+   "commit": "4d411a22ebcac722509c9dc9f4f85719d925b041",
+   "date": "2026-06-16",
+   "subject": "docs(v3): restructure sidebar, rename prose tokens, unwrap customization tables",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-e7872060",
+   "source": "stisla/stisla",
+   "commit": "e787206073f404abb7dfa14967025defbf9ef090",
+   "date": "2026-06-16",
+   "subject": "docs(v3): brutalist preset goes maximalist; fix form-field border-width",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-b222f353",
+   "source": "stisla/stisla",
+   "commit": "b222f3537efaa6fff1fb21202078401de255c921",
+   "date": "2026-06-16",
+   "subject": "feat(v3): promote --st-border-width to a global token",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-f3211753",
+   "source": "stisla/stisla",
+   "commit": "f32117533968237c573ecb50a1a3f902e8d05606",
+   "date": "2026-06-13",
+   "subject": "docs(v3): site fleshout — intro/install/optimization/spec/contributing pages, landing layout, partners partial, examples/ consumer smokes",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-d54a051a",
+   "source": "stisla/stisla",
+   "commit": "d54a051ae19c70791194b26b3ed0921056dc818a",
+   "date": "2026-06-12",
+   "subject": "chore(v3): polish — sidebar Integrations split, input file-button alignment, utilities margin/padding selector fix",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-ffd46840",
+   "source": "stisla/stisla",
+   "commit": "ffd4684004076e45f617adadd6af627b07b4afdb",
+   "date": "2026-06-11",
+   "subject": "fix(v3): collapsible / accordion — close path, double-bind, body padding",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-963fbfaf",
+   "source": "stisla/stisla",
+   "commit": "963fbfaf7f844d4a792b9d830b97cffba2862812",
+   "date": "2026-06-10",
+   "subject": "feat(v3): Step 3.6c — accordion + radius-lg hierarchy + card gap refactor",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-dcbde2fe",
+   "source": "stisla/stisla",
+   "commit": "dcbde2fe67243668576843efe01cb101c1883360",
+   "date": "2026-06-10",
+   "subject": "fix(v3): toggle-group--vertical row height 32 px",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-6dd42703",
+   "source": "stisla/stisla",
+   "commit": "6dd427035456cbc3c3cf0417b5a9bc6242939606",
+   "date": "2026-06-10",
+   "subject": "fix(v3): toggle-group--vertical block-level + sized demo wrapper",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-bc86911a",
+   "source": "stisla/stisla",
+   "commit": "bc86911a2d8b5d99f7c2a16ca222ac54b0f758cc",
+   "date": "2026-06-10",
+   "subject": "fix(v3): toggle-group vertical members left-align as menu list",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-2784a7a8",
+   "source": "stisla/stisla",
+   "commit": "2784a7a81e48ef3de30573c2cb60d34cf2132f43",
+   "date": "2026-06-10",
+   "subject": "fix(v3): toggle-group inner fit + 2px padding default",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-19d5e929",
+   "source": "stisla/stisla",
+   "commit": "19d5e92969b0e5331d307bf0e28baa9b922f1853",
+   "date": "2026-06-10",
+   "subject": "fix(v3): site sidebar--sm group-gap override",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-204ad1f5",
+   "source": "stisla/stisla",
+   "commit": "204ad1f5efbf15e5a48947c5ec02ddb708c6cd60",
+   "date": "2026-06-09",
+   "subject": "refactor(v3): navbar brand padding + demo polish",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-2b6dd25f",
+   "source": "stisla/stisla",
+   "commit": "2b6dd25f69bbba24991f420d05e20a7b2c0149aa",
+   "date": "2026-06-08",
+   "subject": "chore(v3): demo polish — v3 BEM toggle, shiki padding, source dedent",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-c8869757",
+   "source": "stisla/stisla",
+   "commit": "c8869757f7f14727aeb0934376cf732f9b84ace7",
+   "date": "2026-06-08",
+   "subject": "feat(v3): height amendment — controls use hard height × density",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-16a7248d",
+   "source": "stisla/stisla",
+   "commit": "16a7248def68fc30c3444015259823aa81614c12",
+   "date": "2026-06-08",
+   "subject": "fix(v3): form-control polish — chip file button, picker icons, widths",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-4d42f326",
+   "source": "stisla/stisla",
+   "commit": "4d42f3267d4d852060d6fdad0ddd01cc254b6338",
+   "date": "2026-06-08",
+   "subject": "feat(v3): Step 3.3a — form-control covers <input>/<select>/<textarea>",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-b3ccb843",
+   "source": "stisla/stisla",
+   "commit": "b3ccb843d53c86c6479063e43de09ef03c631efe",
+   "date": "2026-06-08",
+   "subject": "fix(v3): card gets a default border, footer y-padding to 12px",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-4b690ad1",
+   "source": "stisla/stisla",
+   "commit": "4b690ad1eb1adbb5d9e85c2c05c239ea735bf9ac",
+   "date": "2026-06-06",
+   "subject": "chore(v3): sidebar — .sidebar-sm modifier, gap tweaks, site nav reorg",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-bab173bf",
+   "source": "stisla/stisla",
+   "commit": "bab173bf8f8fd02dcc591e850068c21b669a13db",
+   "date": "2026-06-03",
+   "subject": "fix(v3): card-header — flex layout, min-height, action slot",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "stisla-1f0c6534",
+   "source": "stisla/stisla",
+   "commit": "1f0c6534049e3951e7bf84bb162a239ce50a80a1",
+   "date": "2020-04-02",
+   "subject": "Fix the issue where select2 elements did not resize when the browser width was changed.",
+   "fixed_state": "a6ace1ecfee9038aebd59cb9f4c4a75bad85415f",
+   "pages_rendered": [
+    "pages/auth-forgot-password.html",
+    "pages/auth-login-2.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "stisla-14f20203",
+   "source": "stisla/stisla",
+   "commit": "14f20203df2cd8c2e18a4542b7dbe1744436fe75",
+   "date": "2019-06-02",
+   "subject": "removed textarea height important and remove modal after dismiss",
+   "fixed_state": "14f20203df2cd8c2e18a4542b7dbe1744436fe75",
+   "pages_rendered": [
+    "pages/auth-forgot-password.html",
+    "pages/auth-login-2.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "stisla-25527dc5",
+   "source": "stisla/stisla",
+   "commit": "25527dc5008cc04e6e0f88369ca7b118cea367fb",
+   "date": "2019-02-27",
+   "subject": "fixed responsive issue & nunjucks block",
+   "fixed_state": "25527dc5008cc04e6e0f88369ca7b118cea367fb",
+   "pages_rendered": [
+    "pages/auth-forgot-password.html",
+    "pages/auth-login.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the earlier page is missing its logo and login card (a template block); not a layout fault"
+  },
+  {
+   "id": "stisla-ab37837a",
+   "source": "stisla/stisla",
+   "commit": "ab37837ae1eb2cb2fb96ab2302cfe6cf4428c4ff",
+   "date": "2019-02-24",
+   "subject": "convert all image paths to base64 code in CSS file, fixed gulpfile",
+   "fixed_state": "ab37837ae1eb2cb2fb96ab2302cfe6cf4428c4ff",
+   "pages_rendered": [
+    "pages/components-empty-state.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the pages are wider than the screen in both states"
+  },
+  {
+   "id": "stisla-28516def",
+   "source": "stisla/stisla",
+   "commit": "28516deffb1851bc9dab83902b6b82721f50c16f",
+   "date": "2019-02-24",
+   "subject": "fixed gulp watch",
+   "fixed_state": "28516deffb1851bc9dab83902b6b82721f50c16f",
+   "pages_rendered": [
+    "pages/auth-forgot-password.html",
+    "pages/auth-login.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "classlesscss-ba43f3b0",
+   "source": "emareg/classlesscss",
+   "commit": "ba43f3b0f17da372e17956518eb45af04c54c3d4",
+   "date": "2022-03-09",
+   "subject": "add semi-transparent emph color, reset margin+padding",
+   "fixed_state": "ba43f3b0f17da372e17956518eb45af04c54c3d4",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (emphasis colour, margins and padding)"
+  },
+  {
+   "id": "classlesscss-34cffa8b",
+   "source": "emareg/classlesscss",
+   "commit": "34cffa8bd0fb76278f584ba4adb5081c06c51b88",
+   "date": "2022-03-05",
+   "subject": "change cards, print-mode, smaller par-margin",
+   "fixed_state": "34cffa8bd0fb76278f584ba4adb5081c06c51b88",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (cards, print mode, paragraph margin)"
+  },
+  {
+   "id": "classlesscss-05717570",
+   "source": "emareg/classlesscss",
+   "commit": "057175700971aa04a629ae254f432fecda0d2bb8",
+   "date": "2021-06-03",
+   "subject": "major changes: tooltips, addons (tabbox), navbar sticky, separate themes",
+   "fixed_state": "057175700971aa04a629ae254f432fecda0d2bb8",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "features (tooltips, tab box, sticky navbar, themes)"
+  },
+  {
+   "id": "classlesscss-3a165c5e",
+   "source": "emareg/classlesscss",
+   "commit": "3a165c5e46195eb1e90c5257e2127fa4f17f78aa",
+   "date": "2021-05-23",
+   "subject": "default max-width for img, fix #7",
+   "fixed_state": "3a165c5e46195eb1e90c5257e2127fa4f17f78aa",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "demo content changed; no image runs past its container at the screening viewports"
+  },
+  {
+   "id": "classlesscss-1aa5247d",
+   "source": "emareg/classlesscss",
+   "commit": "1aa5247d5ec061aa9b0a0a28ac6337d3c236797f",
+   "date": "2021-05-17",
+   "subject": "fix list spacing",
+   "fixed_state": "1aa5247d5ec061aa9b0a0a28ac6337d3c236797f",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "list spacing refinement"
+  },
+  {
+   "id": "classlesscss-7761cd45",
+   "source": "emareg/classlesscss",
+   "commit": "7761cd45889e6a7a2bdb085770f061b23269e8be",
+   "date": "2019-08-27",
+   "subject": "fix footer margin",
+   "fixed_state": "7761cd45889e6a7a2bdb085770f061b23269e8be",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bahunya-4c92348f",
+   "source": "Kimeiga/bahunya",
+   "commit": "4c92348f5648b8ad9d7d884681fe4745b6457432",
+   "date": "2026-10-02",
+   "subject": "Separate desktop hover dropdowns from mobile tap menus (#21)",
+   "fixed_state": "4c92348f5648b8ad9d7d884681fe4745b6457432",
+   "pages_rendered": [
+    "demo.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "a progress bar fill differs; the change is about tap menus"
+  },
+  {
+   "id": "bahunya-0aa2c063",
+   "source": "Kimeiga/bahunya",
+   "commit": "0aa2c063999ff9a21f7669a14b94edb75fb0f063",
+   "date": "2026-10-01",
+   "subject": "Fix mobile dropdowns, navbar alignment, and type scale (#20)",
+   "fixed_state": "0aa2c063999ff9a21f7669a14b94edb75fb0f063",
+   "pages_rendered": [
+    "demo.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: in the top navigation bar the brand Bahunya sits about 4 px higher than the links beside it; on one line after the fix"
+  },
+  {
+   "id": "bahunya-8c50802f",
+   "source": "Kimeiga/bahunya",
+   "commit": "8c50802f387d4511aa7d2df941df9995d5b8a3e7",
+   "date": "2021-01-10",
+   "subject": "Remove tiny gap",
+   "fixed_state": "4e8a632d946a752d7b0f89db7d01fb84fda7f3eb",
+   "pages_rendered": [
+    "customization.html",
+    "docs/customization.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the fixed state renders at 980 px without a viewport tag"
+  },
+  {
+   "id": "bahunya-bc7a2d6c",
+   "source": "Kimeiga/bahunya",
+   "commit": "bc7a2d6ca73ec3456361707d39a2d722198a62ad",
+   "date": "2019-03-06",
+   "subject": "fixed header and removed dist folder",
+   "fixed_state": "bc7a2d6ca73ec3456361707d39a2d722198a62ad",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page is 728 px wide on a phone in both states"
+  },
+  {
+   "id": "bahunya-271eeaa4",
+   "source": "Kimeiga/bahunya",
+   "commit": "271eeaa4efe15d8f42e8548d2394595a72ed04ca",
+   "date": "2018-09-15",
+   "subject": "fixed title link bug",
+   "fixed_state": "271eeaa4efe15d8f42e8548d2394595a72ed04ca",
+   "pages_rendered": [
+    "customization.html",
+    "docs/customization.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bahunya-a07ed91b",
+   "source": "Kimeiga/bahunya",
+   "commit": "a07ed91bce2893699dadcd6dbb573fe6d862ad31",
+   "date": "2018-09-09",
+   "subject": "fixed parcel build",
+   "fixed_state": "a07ed91bce2893699dadcd6dbb573fe6d862ad31",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the earlier page loads no stylesheet (a broken build); an unstyled page is outside the registered layout kinds"
+  },
+  {
+   "id": "bootflat-222d7c0f",
+   "source": "bootflat/bootflat.github.io",
+   "commit": "222d7c0fc1a33d102ecd833c890f8fa13c85fa98",
+   "date": "2015-06-08",
+   "subject": "OCD pricing alignment",
+   "fixed_state": "222d7c0fc1a33d102ecd833c890f8fa13c85fa98",
+   "pages_rendered": [
+    "documentation.html"
+   ],
+   "verdict": "rejected",
+   "reason": "demo content (prices reordered)"
+  },
+  {
+   "id": "bootflat-2662958b",
+   "source": "bootflat/bootflat.github.io",
+   "commit": "2662958bd0f999143dff125f1d476139f3b7e17c",
+   "date": "2015-04-29",
+   "subject": "fixed bug",
+   "fixed_state": "2662958bd0f999143dff125f1d476139f3b7e17c",
+   "pages_rendered": [
+    "color-picker-blue.html",
+    "color-picker-gray.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px around a missing share image"
+  },
+  {
+   "id": "bootflat-e13f2fc2",
+   "source": "bootflat/bootflat.github.io",
+   "commit": "e13f2fc2f77b97048911baf30c27c135602a7810",
+   "date": "2014-08-11",
+   "subject": "fixed #50",
+   "fixed_state": "ce5a12b9fe0ef3ce7f7a6a03d57d2cd287f4a086",
+   "pages_rendered": [
+    "documentation.html",
+    "free-psd.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bootflat-48001679",
+   "source": "bootflat/bootflat.github.io",
+   "commit": "48001679a182545048302c796c8fec971c1be691",
+   "date": "2014-06-30",
+   "subject": "fixed #45 #46",
+   "fixed_state": "48001679a182545048302c796c8fec971c1be691",
+   "pages_rendered": [
+    "documentation.html",
+    "free-psd.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "latex-css-b2975d2b",
+   "source": "vincentdoerig/latex-css",
+   "commit": "b2975d2b091a4227a63b6de69c861aaeb9e626de",
+   "date": "2023-09-22",
+   "subject": "feat: add custom table borders and column alignment (#60)",
+   "fixed_state": "b2975d2b091a4227a63b6de69c861aaeb9e626de",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (table borders and column alignment); the change makes the page wider"
+  },
+  {
+   "id": "latex-css-5a5fe707",
+   "source": "vincentdoerig/latex-css",
+   "commit": "5a5fe7079f21baaf574f6c444ec1b494dccc1011",
+   "date": "2020-06-02",
+   "subject": "Fix abstract header - change abstract h5 to h2 - remove some horizontal margins",
+   "fixed_state": "5a5fe7079f21baaf574f6c444ec1b494dccc1011",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page runs 12 px past a 360 px screen in both states"
+  },
+  {
+   "id": "latex-css-5f9a2ea6",
+   "source": "vincentdoerig/latex-css",
+   "commit": "5f9a2ea6ebd490576c445d5e11a42d35701e86bc",
+   "date": "2020-05-21",
+   "subject": "Improve styles - remove css variable - add horizontal padding on the body - add table styling - add heading typography",
+   "fixed_state": "5f9a2ea6ebd490576c445d5e11a42d35701e86bc",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style overhaul; at 360 px the page runs past the screen in both states, only the 393 px width differs"
+  },
+  {
+   "id": "basic-css-0df5895f",
+   "source": "vladocar/Basic.css",
+   "commit": "0df5895fd742072d4471602020b2aa64487d497d",
+   "date": "2020-07-21",
+   "subject": "Remove right margin of last child in a grid row",
+   "fixed_state": "0df5895fd742072d4471602020b2aa64487d497d",
+   "pages_rendered": [
+    "Looking-Glass.html",
+    "cards.html"
+   ],
+   "verdict": "rejected",
+   "reason": "every grid row ends about 10 px short of the container edge; nothing on the page shows that edge, so it is not nameable"
+  },
+  {
+   "id": "basic-css-14704c5b",
+   "source": "vladocar/Basic.css",
+   "commit": "14704c5bd984c57ff7196cc13cd43ad3f8db57a1",
+   "date": "2020-06-05",
+   "subject": "button margin fix",
+   "fixed_state": "14704c5bd984c57ff7196cc13cd43ad3f8db57a1",
+   "pages_rendered": [
+    "Looking-Glass.html",
+    "cards.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "basic-css-814d8170",
+   "source": "vladocar/Basic.css",
+   "commit": "814d8170797b79ff4ad634f9294ef0b687d8d90c",
+   "date": "2020-05-30",
+   "subject": "pre overflow fix",
+   "fixed_state": "814d8170797b79ff4ad634f9294ef0b687d8d90c",
+   "pages_rendered": [
+    "Looking-Glass.html",
+    "cards.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sb-stylish-portfolio-18fd79cf",
+   "source": "StartBootstrap/startbootstrap-stylish-portfolio",
+   "commit": "18fd79cf2b396686360f67f4cc0e51ca88a3cbc8",
+   "date": "2016-06-30",
+   "subject": "fixed scroll hijaking on Google map",
+   "fixed_state": "18fd79cf2b396686360f67f4cc0e51ca88a3cbc8",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sb-stylish-portfolio-1d309ff0",
+   "source": "StartBootstrap/startbootstrap-stylish-portfolio",
+   "commit": "1d309ff0259dae801dfde929dfcf597ac1beddcc",
+   "date": "2016-03-30",
+   "subject": "Changed margin-right to transform",
+   "fixed_state": "1d309ff0259dae801dfde929dfcf597ac1beddcc",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sb-stylish-portfolio-5d6d5313",
+   "source": "StartBootstrap/startbootstrap-stylish-portfolio",
+   "commit": "5d6d53135442a9dbfb3ded522d905248cc3fc096",
+   "date": "2015-06-22",
+   "subject": "fixed quoting in onclick event",
+   "fixed_state": "5d6d53135442a9dbfb3ded522d905248cc3fc096",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sb-modern-business-d6b22c2b",
+   "source": "StartBootstrap/startbootstrap-modern-business",
+   "commit": "d6b22c2bfb6ff9a94bbcfe4be45088d92b89b703",
+   "date": "2017-08-19",
+   "subject": "Wrapped nav items in a container element",
+   "fixed_state": "d6b22c2bfb6ff9a94bbcfe4be45088d92b89b703",
+   "pages_rendered": [
+    "404.html",
+    "about.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (the navigation is put in the page container); a full-width bar is a common design"
+  },
+  {
+   "id": "sb-modern-business-b4b86882",
+   "source": "StartBootstrap/startbootstrap-modern-business",
+   "commit": "b4b86882e9f8e3e8ca3458427c298434f4960e2c",
+   "date": "2017-04-03",
+   "subject": "added utility classes for spacing",
+   "fixed_state": "b4b86882e9f8e3e8ca3458427c298434f4960e2c",
+   "pages_rendered": [
+    "404.html",
+    "about.html"
+   ],
+   "verdict": "rejected",
+   "reason": "spacing refinement with utility classes"
+  },
+  {
+   "id": "sb-simple-sidebar-0ad63706",
+   "source": "StartBootstrap/startbootstrap-simple-sidebar",
+   "commit": "0ad6370634eb7de087194e2457251354556e4ee0",
+   "date": "2020-05-03",
+   "subject": "fix: set overflow on wrapper instead of body element",
+   "fixed_state": "0ad6370634eb7de087194e2457251354556e4ee0",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px (the page is 1 px wider than a 360 px screen)"
+  },
+  {
+   "id": "sb-simple-sidebar-e8069742",
+   "source": "StartBootstrap/startbootstrap-simple-sidebar",
+   "commit": "e80697429a957d5bcac2deedcfdef9474407ff4e",
+   "date": "2019-01-31",
+   "subject": "change layout structure to flexbox, update dependencies, update copyright dates, update to gulp 4",
+   "fixed_state": "e80697429a957d5bcac2deedcfdef9474407ff4e",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "layout restructured to flexbox with a framework update; no fault in the earlier state"
+  },
+  {
+   "id": "material-kit-5961777b",
+   "source": "creativetimofficial/material-kit",
+   "commit": "5961777b947a57b808b95561940fb03c4013f786",
+   "date": "2021-10-08",
+   "subject": "refactor: fix multilevel dropdown position",
+   "fixed_state": "5961777b947a57b808b95561940fb03c4013f786",
+   "pages_rendered": [
+    "index.html",
+    "pages/about-us.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "material-kit-06913f87",
+   "source": "creativetimofficial/material-kit",
+   "commit": "06913f87308f90badda813d95f371a8c2e1503d7",
+   "date": "2016-07-13",
+   "subject": "Fixed name input type to text instead of email on landing page example",
+   "fixed_state": "06913f87308f90badda813d95f371a8c2e1503d7",
+   "pages_rendered": [
+    "examples/landing-page.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "paper-kit-2-5fdb5bed",
+   "source": "creativetimofficial/paper-kit-2",
+   "commit": "5fdb5bed1fd3a1eef538c0f3b89a1885230c5588",
+   "date": "2017-08-04",
+   "subject": "small responsive changes",
+   "fixed_state": "5fdb5bed1fd3a1eef538c0f3b89a1885230c5588",
+   "pages_rendered": [
+    "examples/profile.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the avatars grow to the screen width on a phone, but the fixed state has its own fault (the footer covers the last list item), so the fix is not clean"
+  },
+  {
+   "id": "paper-kit-2-5d5f31c1",
+   "source": "creativetimofficial/paper-kit-2",
+   "commit": "5d5f31c1540f24ff373107c3b915922b4c7be2cb",
+   "date": "2017-05-24",
+   "subject": "responsive, carousel, dropdowns, navbar",
+   "fixed_state": "5d5f31c1540f24ff373107c3b915922b4c7be2cb",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "responsive redesign of the demo (buttons, carousel, dropdowns, navbar); no clear fault in the earlier state"
+  },
+  {
+   "id": "adminkit-9a18b611",
+   "source": "adminkit/adminkit",
+   "commit": "9a18b611c546cc025a621013fdae62deef871a4c",
+   "date": "2021-02-25",
+   "subject": "sr-only to visually-hidden",
+   "fixed_state": "9a18b611c546cc025a621013fdae62deef871a4c",
+   "pages_rendered": [
+    "static/forms-layouts.html",
+    "static/ui-general.html"
+   ],
+   "verdict": "rejected",
+   "reason": "screen-reader labels become visible in the inline form; the fields still line up"
+  },
+  {
+   "id": "adminkit-adb446a9",
+   "source": "adminkit/adminkit",
+   "commit": "adb446a99a62cb46060b8b17170efdd524f0b35b",
+   "date": "2020-07-26",
+   "subject": "Fix overflow bug with dropdowns",
+   "fixed_state": "aed40e529c3c56afdb37b58fdc2e414b8273f2ae",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "github-markdown-css-2120fb44",
+   "source": "sindresorhus/github-markdown-css",
+   "commit": "2120fb447ba6b27373b925136f494fff3e9e92ee",
+   "date": "2015-12-06",
+   "subject": "update to new GitHub readme width",
+   "fixed_state": "2120fb447ba6b27373b925136f494fff3e9e92ee",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (content width)"
+  }
+ ]
+}
