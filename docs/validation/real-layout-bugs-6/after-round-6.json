@@ -1,0 +1,238 @@
+{
+ "skill": "1de6620 (codex/v1.0.1), built after round 6 from its pages: development numbers",
+ "changes": [
+  "LY-16: three or more texts within 1.5 px of the left or right screen edge (code blocks and boxes that scroll sideways left out)",
+  "LY-17: a touch screen at most 520 px wide whose page is laid out at least 30 % wider than the screen without a device-width viewport",
+  "LY-10: also texts of six or more words in boxes under 40 % of the screen that break every one or two words (tables and nested lists left out)",
+  "scan scrolling: a wheel step that moves the page less than half its distance (the wheel landed on a frame or an inner box) moves the page the rest of the way; a step that moves neither the page nor the boxes under the screen centre ends the scroll steps"
+ ],
+ "scan_round6_states": {
+  "how": "scan16.sh, --tiles 40, idle machine",
+  "seconds": {
+   "1de6620": {
+    "real": 58.32,
+    "user": 141.11,
+    "sys": 21.43
+   },
+   "e72a71c": {
+    "real": 93.6,
+    "user": 196.53,
+    "sys": 23.86
+   },
+   "ac1a187": {
+    "real": 122.07,
+    "user": 211.28,
+    "sys": 24.74
+   }
+  },
+  "matched_known_defects_on_broken_pages": 6,
+  "states": {
+   "sb-one-page-wonder-ec94d15b-broken/index.html": {
+    "rows": [
+     "LY-10 div:nth-of-type(2) > h2|",
+     "LY-10 div:nth-of-type(2) > p|",
+     "LY-10 section:nth-of-type(1) > div > div > div:nth-of-type(1) > h2|",
+     "LY-10 section:nth-of-type(1) > div > div > div:nth-of-type(1) > p|",
+     "LY-10 section:nth-of-type(3) > div > div > div:nth-of-type(1) > h2|"
+    ],
+    "screens": [
+     7,
+     2
+    ]
+   },
+   "sb-one-page-wonder-ec94d15b-fixed/index.html": {
+    "rows": [],
+    "screens": [
+     4,
+     2
+    ]
+   },
+   "sb-coming-soon-f2f16308-broken/dist/index.html": {
+    "rows": [],
+    "screens": [
+     2,
+     3
+    ]
+   },
+   "sb-coming-soon-f2f16308-fixed/dist/index.html": {
+    "rows": [],
+    "screens": [
+     2,
+     2
+    ]
+   },
+   "holiday-css-1eba36ad-broken/src/index.html": {
+    "rows": [
+     "LY-10 table:nth-of-type(2) > tbody > tr:nth-of-type(1) > td:nth-of-type(1)|",
+     "LY-10 tr:nth-of-type(3) > td:nth-of-type(1)|"
+    ],
+    "screens": [
+     28,
+     24
+    ]
+   },
+   "holiday-css-1eba36ad-fixed/src/index.html": {
+    "rows": [
+     "LY-10 table:nth-of-type(2) > tbody > tr:nth-of-type(1) > td:nth-of-type(1)|",
+     "LY-10 tfoot > tr:nth-of-type(2) > td:nth-of-type(1)|",
+     "LY-10 tr:nth-of-type(3) > td:nth-of-type(1)|"
+    ],
+    "screens": [
+     29,
+     25
+    ]
+   },
+   "holiday-css-e27aca20-broken/src/index.html": {
+    "rows": [
+     "LY-10 tbody > tr:nth-of-type(1) > th|",
+     "LY-10 tr:nth-of-type(2) > th|",
+     "LY-16 edge-text|left"
+    ],
+    "screens": [
+     25,
+     21
+    ]
+   },
+   "holiday-css-e27aca20-fixed/src/index.html": {
+    "rows": [
+     "LY-10 tbody > tr:nth-of-type(1) > th|",
+     "LY-10 tr:nth-of-type(2) > th|"
+    ],
+    "screens": [
+     25,
+     21
+    ]
+   },
+   "wtf-forms-5dcd2aa1-broken/index.html": {
+    "rows": [
+     "LY-17 viewport|"
+    ],
+    "screens": [
+     2,
+     2
+    ]
+   },
+   "wtf-forms-5dcd2aa1-fixed/index.html": {
+    "rows": [],
+    "screens": [
+     2,
+     2
+    ]
+   },
+   "spcss-93b12537-broken/index.html": {
+    "rows": [
+     "LY-16 edge-text|left"
+    ],
+    "screens": [
+     4,
+     3
+    ]
+   },
+   "spcss-93b12537-fixed/index.html": {
+    "rows": [],
+    "screens": [
+     4,
+     3
+    ]
+   },
+   "css98-68d7366d-broken/docs/index.html": {
+    "rows": [
+     "LY-08 page-width|"
+    ],
+    "screens": [
+     12,
+     9
+    ]
+   },
+   "css98-68d7366d-fixed/docs/index.html": {
+    "rows": [],
+    "screens": [
+     12,
+     9
+    ]
+   },
+   "css98-ecfc9758-broken/docs/index.html": {
+    "rows": [
+     "LY-08 page-width|"
+    ],
+    "screens": [
+     4,
+     4
+    ]
+   },
+   "css98-ecfc9758-fixed/docs/index.html": {
+    "rows": [],
+    "screens": [
+     5,
+     4
+    ]
+   }
+  }
+ },
+ "scan_round1to5_states": {
+  "how": "scandev6.sh on the 76 states of rounds 1 to 5, --tiles 40, idle machine, one version after the other",
+  "seconds": {
+   "1de6620": {
+    "real": 384.83,
+    "user": 1063.9,
+    "sys": 124.11
+   },
+   "e72a71c": {
+    "real": 483.6,
+    "user": 1219.54,
+    "sys": 133.31
+   }
+  },
+  "layout_rows": "identical to e72a71c after the LY-10 and LY-16 exclusions (rechecked on the 22 round 1 to 5 states whose rows had differed), except covered-text rows (LY-02, LY-03) on the round 1 AdminLTE pages A1 and B3, which come and go between runs in both states"
+ },
+ "rerun": {
+  "how": "the six round 6 sessions again (GPT-6.1 Sol, effort high, 30 s apart) on the same pages and prompts with the skill path pointing at an install of 1de6620; scored by the round conventions, not blind",
+  "minutes_to_report": {
+   "sol-r1-plain": 6.94,
+   "sol-r1-skill": 6.45,
+   "sol-r2-plain": 6.43,
+   "sol-r2-skill": 8.64,
+   "sol-r3-plain": 7.6,
+   "sol-r3-skill": 5.87
+  },
+  "minutes_to_completion": {
+   "sol-r1-plain": 7.39,
+   "sol-r1-skill": 6.87,
+   "sol-r2-plain": 6.61,
+   "sol-r2-skill": 9.02,
+   "sol-r3-plain": 7.8,
+   "sol-r3-skill": 6.04
+  },
+  "median_minutes": {
+   "plain": 6.94,
+   "skill": 6.45
+  },
+  "known_found": {
+   "plain": [
+    3,
+    3,
+    2
+   ],
+   "skill": [
+    3,
+    3,
+    2
+   ]
+  },
+  "alarms_and_unsupported": {
+   "plain": 0,
+   "skill": 0
+  },
+  "valid_extras": {
+   "plain": 0,
+   "skill": 3,
+   "which": "the holiday.css checkbox label that wraps beside the colour inputs, in every skill run"
+  },
+  "new_rows_left_out": [
+   "run 1: \"Flush left text on p02/p06 is consistent with its container. The p07 whole-page scaling candidate does not establish one of the requested cutoff, overlap, row, alignment, attached-size or icon-centering defects, so it is excluded.\"",
+   "run 2: \"p07's small text after automatic viewport scaling [was] excluded from this layout-only report.\"",
+   "run 3: \"Edge-to-edge text ... [was] not [reported].\""
+  ],
+  "scan_seconds_in_session": "about 45 s for the eight pages (about 70 s in round 6)"
+ }
+}

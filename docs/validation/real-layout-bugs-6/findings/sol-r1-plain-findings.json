@@ -1,0 +1,29 @@
+[
+  {
+    "page": "p04",
+    "selector": "main",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 CSS px, the fixed sidebar occupies the left 216 px and main starts at x=240 with a fixed width of 780 px, ending at x=1020. Only 120 px of the main column is visible. The title, paragraphs and example dialog run off the right edge; component examples begin entirely outside the screen. Document scrollWidth is 1020 px, 660 px wider than the viewport. Screenshot: p04-finding.png.",
+    "fix": "Add a narrow-screen breakpoint: move the sidebar into normal flow or a compact navigation area, remove main's 240 px left margin, and give main an automatic width constrained to the viewport. Stack component headings and examples, and constrain fixed-width paragraphs and demos to 100% of their container."
+  },
+  {
+    "page": "p05",
+    "selector": "section .d-flex > .w-50.align-self-center",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780 CSS px, all three content sections retain two 165 px columns with 48 px padding on both sides, leaving only 69 px for each heading and paragraph. Paragraphs become 27 lines tall (648 px), often one word per line, and headings break into three to five lines. The second heading starts at x=228 and its text extends to x=366, cutting off the end of 'salute' at the right edge and causing 6 px of page-level horizontal overflow. Screenshot: p05-finding.png; section sequence: p05-phone-sheet0.png and p05-phone-sheet1.png.",
+    "fix": "At the phone breakpoint, stack each section's flex children vertically, override the w-50 utility with width:100% !important, and reduce the p-5 horizontal padding to about 24 px. This gives the text a full-width column and contains the headings."
+  },
+  {
+    "page": "p08",
+    "selector": "main > pre",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 CSS px, both installation code boxes are 391 px wide (375 px content plus 16 px horizontal padding) and start at x=16, ending at x=407. Their right borders extend 47 px beyond the screen and 63 px beyond the main content's right edge at x=344. They increase document scrollWidth to 407 px while neighboring paragraphs and callouts fit. Screenshot: p08-finding.png.",
+    "fix": "Constrain the installation pre elements to their container with box-sizing:border-box; width:100%; max-width:100%; overflow-x:auto. Keep any long code scrolling inside the box."
+  }
+]

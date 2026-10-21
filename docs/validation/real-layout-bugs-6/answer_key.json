@@ -1,0 +1,173 @@
+{
+ "round": 6,
+ "sealed": "2026-10-22, before any agent run",
+ "viewports": {
+  "phone": "360x780 and 393x852, touch, mobile emulation",
+  "laptop": "1440x900"
+ },
+ "cases": [
+  {
+   "item": "sb-one-page-wonder-ec94d15b",
+   "source": "StartBootstrap/startbootstrap-one-page-wonder",
+   "fix_commit": "ec94d15b7399fb41799ef0fb05d7889151ac2fd6",
+   "fix_subject": "responsiveness updates",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the three content sections ('For those about to rock...', 'We salute you!', 'Let there be rock!') keep their two half-width columns: the text column is 165 px wide (182 px at 393 px) and, after its 48 px padding, its paragraph is 69 px wide (86 px), so headings and body text break one or two words per line; at 360 px the page is also 6 px wider than the screen (366 px). The text column is full width (330 px, paragraph 234 px) after the fix.",
+   "selectors": [
+    ".w-50",
+    ".w-50.p-5",
+    "section .w-50",
+    "h2.display-4",
+    "section p"
+   ]
+  },
+  {
+   "item": "sb-coming-soon-f2f16308",
+   "source": "StartBootstrap/startbootstrap-coming-soon",
+   "fix_commit": "f2f16308ad576351d57146d3c99f35365e87fd9b",
+   "fix_subject": "update positioning for social icons",
+   "page": "dist/index.html",
+   "visible_at": [
+    "phone",
+    "laptop"
+   ],
+   "defect": "The social icon bar (.social-icons, three icon links) falls out of place. On the laptop it drops below the full-height hero to the top left of an otherwise empty second screen (y = 900, page 1800 px tall) as 42 x 38 px icons at x = 0; on a phone the icons sit as small 42 x 38 px squares at the left edge below the sign-up form (page 1265 px tall). After the fix they form a column of 64 px round icons beside the hero on the laptop (x = 1320) and a centred row on the phone, and the page is one screen tall (900 px and 780 px).",
+   "selectors": [
+    ".social-icons",
+    ".social-icons a",
+    ".social-icons li",
+    ".social-icons .btn"
+   ]
+  },
+  {
+   "item": "holiday-css-1eba36ad",
+   "source": "EvgenyOrekhov/holiday.css",
+   "fix_commit": "1eba36ad6178bf284e16a8a896d0ad0a531b18f6",
+   "fix_subject": "Fix #5 - Add spacing between links in nav",
+   "page": "src/index.html",
+   "visible_at": [
+    "phone",
+    "laptop"
+   ],
+   "defect": "The table-of-contents links at the top of the page (Content sectioning, <address>, <article>, <aside> ...) are 18 px tall and stacked 18 px apart with no space between them (0 px gaps), under the 24 px minimum target size, so on a phone a tap easily lands on the neighbouring link. The same spacing shows on the laptop. 26 px apart with 8 px gaps after the fix.",
+   "selectors": [
+    "nav a",
+    "nav li",
+    "nav ul",
+    "nav ul ul a"
+   ]
+  },
+  {
+   "item": "holiday-css-e27aca20",
+   "source": "EvgenyOrekhov/holiday.css",
+   "fix_commit": "e27aca20b00e221f647cf489e95efebbf57abfc4",
+   "fix_subject": "Add margins to <body>",
+   "page": "src/index.html",
+   "visible_at": [
+    "phone",
+    "laptop"
+   ],
+   "defect": "The page has no side margin (body margin 0): the title 'CSS framework - a class-free CSS framework', the section headings and the text start at the left edge of the screen (x = 0), on a phone and on the laptop. 8 px from the edge after the fix.",
+   "selectors": [
+    "body",
+    "h1",
+    "h2",
+    "p",
+    "main",
+    "header"
+   ],
+   "also_present": [
+    "On the laptop the text runs the full width of the window in both states (lines of well over 100 characters); a report of that is a valid extra."
+   ]
+  },
+  {
+   "item": "wtf-forms-5dcd2aa1",
+   "source": "mdo/wtf-forms",
+   "fix_commit": "5dcd2aa1d5912e907618e0967951b5593a52e9b7",
+   "fix_subject": "responsive",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "The page has no viewport meta tag, so a phone lays it out 980 px wide and shrinks it to fit the screen (scale 0.37 at 360 px, 0.40 at 393 px): the 'Custom form inputs' title, the custom checkboxes, radios, selects and file input and the text all render at about a third of their size, with body text a few pixels tall. Laid out at the screen width at full size after the fix.",
+   "selectors": [
+    "html",
+    "body",
+    "h1",
+    "p",
+    "label",
+    ".control",
+    ".select",
+    ".file"
+   ]
+  },
+  {
+   "item": "spcss-93b12537",
+   "source": "susam/spcss",
+   "fix_commit": "93b12537984b603c6f023df411eada721f1a694d",
+   "fix_subject": "Add left and right padding for body",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the page has no side padding: the 'SPCSS Demo' title, the headings and the paragraphs start at the left edge of the screen (x = 0) and the text runs to the right edge (360 px; 393 px). 16 px padding on both sides after the fix. On the laptop the text column is centred in both states.",
+   "selectors": [
+    "body",
+    "h1",
+    "h2",
+    "p",
+    "ul",
+    "pre"
+   ]
+  },
+  {
+   "item": "css98-68d7366d",
+   "source": "jdan/98.css",
+   "fix_commit": "68d7366ddfc8593f4f5aba227dda1441d2587257",
+   "fix_subject": "fix code width on mobile",
+   "page": "docs/index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the two code blocks of the introduction (the <link rel=\"stylesheet\" href=\"https://unpkg.com/98.css\"> sample and 'npm install 98.css') are 391 px wide from x = 16 and end at 407 px, past the right edge of 360 px and 393 px screens, so the page is 407 px wide and the phone zooms out or scrolls sideways. They end at 344 px (377 px) after the fix.",
+   "selectors": [
+    "pre",
+    "code",
+    "pre code"
+   ],
+   "fixed_state_commit": "6fdbfd2bab955f5bc12ee76cd709c467206e7de5"
+  },
+  {
+   "item": "css98-ecfc9758",
+   "source": "jdan/98.css",
+   "fix_commit": "ecfc9758a86cfccf64a38435a803b9c31016b589",
+   "fix_subject": "some mobile styles",
+   "page": "docs/index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the documentation keeps its desktop layout: a 216 px tree of links (Intro, Components, Button, Checkbox, OptionButton ...) on the left and fixed-width text from x = 240 to 840 beside it, so the page is 1068 px wide and the phone shrinks it to about a third (text a few pixels tall) or scrolls it sideways. After the fix the tree is hidden on phones and the text is one column at the screen width.",
+   "selectors": [
+    "html",
+    "body",
+    "aside",
+    "ul.tree-view",
+    ".tree-view",
+    "main",
+    "h1",
+    "p"
+   ],
+   "fixed_state_commit": "d21a9cdd176f280c741f82bbc14fb4b1de719886"
+  }
+ ],
+ "notes": [
+  "A known defect is each item's own defect on its broken page.",
+  "Fixed-state alarm: a finding on a fixed page that points at that item's defect element and calls it broken in the way the defect describes.",
+  "Defects listed under also_present are real in both states; reports of them are valid extras unless the entry says otherwise.",
+  "A table, code block or list that scrolls inside its own box (overflow: auto) is not a defect; a report of it is unsupported.",
+  "The saved pages load nothing from other sites, so pictures, embedded maps, audio and video from other sites are missing in both states; a report that only says such media is missing is outside the asked defect kinds and is unsupported."
+ ]
+}

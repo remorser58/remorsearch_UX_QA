@@ -1,0 +1,56 @@
+{
+ "sol-r1-plain": {
+  "minutes": 6.23,
+  "minutes_to_completion": 6.41,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-21T19:14:29.255Z",
+  "report_written": "2026-10-21T19:20:43Z"
+ },
+ "sol-r1-skill": {
+  "minutes": 6.79,
+  "minutes_to_completion": 7.35,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-21T19:14:59.779Z",
+  "report_written": "2026-10-21T19:21:47Z"
+ },
+ "sol-r2-plain": {
+  "minutes": 6.23,
+  "minutes_to_completion": 6.45,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-21T19:15:30.211Z",
+  "report_written": "2026-10-21T19:21:44Z"
+ },
+ "sol-r2-skill": {
+  "minutes": 7.19,
+  "minutes_to_completion": 7.44,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-21T19:16:00.674Z",
+  "report_written": "2026-10-21T19:23:12Z"
+ },
+ "sol-r3-plain": {
+  "minutes": 6.35,
+  "minutes_to_completion": 6.51,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-21T19:16:31.914Z",
+  "report_written": "2026-10-21T19:22:53Z"
+ },
+ "sol-r3-skill": {
+  "minutes": 7.15,
+  "minutes_to_completion": 7.42,
+  "note": "",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "high",
+  "spawned": "2026-10-21T19:17:02.972Z",
+  "report_written": "2026-10-21T19:24:12Z"
+ }
+}

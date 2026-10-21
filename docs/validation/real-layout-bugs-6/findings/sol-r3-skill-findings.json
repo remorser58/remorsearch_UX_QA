@@ -1,0 +1,20 @@
+[
+  {
+    "page": "p03",
+    "selector": ".social-icons",
+    "viewport": "laptop",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "At 1440x900, the three social buttons are stacked at document x=0, y=900/938/976, below the 900px-high hero. Their container is 1440x900 at y=900, creating an otherwise empty second screen and placing the group against the far-left edge. The computed right:40px has no effect because position is static. Confirmed at scrollY=900 in captures/p03-laptop-end-verified.png; geometry is in inspection.json and measure-p03-social/measure.json.",
+    "fix": "In the laptop breakpoint, position .social-icons absolutely within the existing relative body: top:0; right:2.5rem; width:auto; height:100%; align-items:center. This places the button column along the right side of the hero and removes its extra viewport from normal flow."
+  },
+  {
+    "page": "p08",
+    "selector": "main > pre",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At the 360x780 phone viewport, both introductory code panels start at x=16 and are 391px wide (375px content plus 16px horizontal padding), ending at x=407. Their right edges extend 47px beyond the screen and 63px beyond the main content edge at x=344. The page width grows to 407px while visualViewport.width remains 360px. Both right panel borders are visibly outside the screen in captures/p08-phone-code.png; dimensions are in inspection.json and measure-p08-pre/measure.json.",
+    "fix": "Make main > pre responsive with width:100%; max-width:391px; box-sizing:border-box; overflow-x:auto. At 360px, the panels should fit the 328px content area inside the existing 16px page padding; long code can scroll inside the panels."
+  }
+]

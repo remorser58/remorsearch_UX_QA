@@ -1,0 +1,148 @@
+[
+ {
+  "run": "sol-r1-plain",
+  "model": "sol",
+  "k": 1,
+  "arm": "plain",
+  "shown": 6,
+  "found": 3,
+  "found_items": [
+   "p04:css98-ecfc9758",
+   "p05:sb-one-page-wonder-ec94d15b",
+   "p08:css98-68d7366d"
+  ],
+  "missed": [
+   "p02:spcss-93b12537",
+   "p06:holiday-css-e27aca20",
+   "p07:wtf-forms-5dcd2aa1"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 0,
+  "findings": 3,
+  "minutes": 6.23,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r1-skill",
+  "model": "sol",
+  "k": 1,
+  "arm": "skill",
+  "shown": 6,
+  "found": 3,
+  "found_items": [
+   "p04:css98-ecfc9758",
+   "p05:sb-one-page-wonder-ec94d15b",
+   "p08:css98-68d7366d"
+  ],
+  "missed": [
+   "p02:spcss-93b12537",
+   "p06:holiday-css-e27aca20",
+   "p07:wtf-forms-5dcd2aa1"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 0,
+  "findings": 3,
+  "minutes": 6.79,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-plain",
+  "model": "sol",
+  "k": 2,
+  "arm": "plain",
+  "shown": 5,
+  "found": 3,
+  "found_items": [
+   "p03:sb-coming-soon-f2f16308",
+   "p04:css98-ecfc9758",
+   "p05:sb-one-page-wonder-ec94d15b"
+  ],
+  "missed": [
+   "p01:holiday-css-1eba36ad",
+   "p07:wtf-forms-5dcd2aa1"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 0,
+  "findings": 3,
+  "minutes": 6.23,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-skill",
+  "model": "sol",
+  "k": 2,
+  "arm": "skill",
+  "shown": 5,
+  "found": 3,
+  "found_items": [
+   "p03:sb-coming-soon-f2f16308",
+   "p04:css98-ecfc9758",
+   "p05:sb-one-page-wonder-ec94d15b"
+  ],
+  "missed": [
+   "p01:holiday-css-1eba36ad",
+   "p07:wtf-forms-5dcd2aa1"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 4,
+  "minutes": 7.19,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-plain",
+  "model": "sol",
+  "k": 3,
+  "arm": "plain",
+  "shown": 5,
+  "found": 2,
+  "found_items": [
+   "p03:sb-coming-soon-f2f16308",
+   "p08:css98-68d7366d"
+  ],
+  "missed": [
+   "p01:holiday-css-1eba36ad",
+   "p02:spcss-93b12537",
+   "p06:holiday-css-e27aca20"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 0,
+  "findings": 2,
+  "minutes": 6.35,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-skill",
+  "model": "sol",
+  "k": 3,
+  "arm": "skill",
+  "shown": 5,
+  "found": 2,
+  "found_items": [
+   "p03:sb-coming-soon-f2f16308",
+   "p08:css98-68d7366d"
+  ],
+  "missed": [
+   "p01:holiday-css-1eba36ad",
+   "p02:spcss-93b12537",
+   "p06:holiday-css-e27aca20"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 0,
+  "findings": 2,
+  "minutes": 7.15,
+  "note": "",
+  "missing": false
+ }
+]

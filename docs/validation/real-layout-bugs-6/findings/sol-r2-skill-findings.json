@@ -1,0 +1,38 @@
+[
+  {
+    "page": "p01",
+    "selector": "label[for=\"label-after-disabled-checkbox-example\"]",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "At 360x780, the disabled checkbox is on the row beginning around document y=12763, but its label splits across two rows: 'Label after disabled' starts at x=198.2; the final word 'checkbox' restarts at x=8 on the following row (text y=12802.1), immediately beside the unrelated color inputs starting at x=82.1. The checkbox and its label no longer form one visual group. See p01-phone-confirm.png and measure-p01-phone/measure.json. No glyph is actually covered.",
+    "fix": "Wrap each standalone checkbox and its label in an inline-flex group; allow the whole group to wrap onto the next row. Keep the following color inputs in their own group so a label cannot continue beside them."
+  },
+  {
+    "page": "p03",
+    "selector": ".social-icons",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "The social controls are detached from the hero composition and flush against the left screen edge. On laptop the masthead ends at document y=900, while .social-icons occupies a separate 1440x900 block at y=900; its three 42x38 buttons sit at x=0, y=900/938/976 on an otherwise empty second screen. On phone the same container is 360x780 at y=485.2, although its button stack is only 114px tall, leaving 666px below the controls. See p03-laptop-confirm.png, p03-phone-confirm.png and inspection.json.",
+    "fix": "At laptop widths, position .social-icons within the hero beside the masthead, using an absolute right-side container with vertical centering. At phone widths, use an auto-height, centered social row with explicit spacing instead of a separate viewport-height block."
+  },
+  {
+    "page": "p04",
+    "selector": "main",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At a 360x780 phone screen, the fixed sidebar occupies x=0..216 and main begins at x=240 with a fixed 780px width, ending at x=1020. Only 120px of the main column is initially on screen: the '98.css' title, paragraphs and examples are visibly cut at the right edge throughout the scroll. Document scrollWidth is 1068px, 708px wider than the screen. See p04-phone-y0.png, scan/04-docs-index.html/sheets/galaxy-s24-1.png and measure-p04-phone/measure.json.",
+    "fix": "Add a phone breakpoint that moves or collapses the fixed sidebar, removes main's 240px left margin and fixed 780px width, and stacks the section heading/content columns. Use a fluid main width with border-box sizing and constrain example windows to the available width."
+  },
+  {
+    "page": "p05",
+    "selector": "section > .container > .d-flex > .w-50",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, all three sections retain two 165px columns with 48px padding on each side, leaving only 69px for headings and body text. 'For those about to rock...' breaks into five lines and each paragraph becomes 27 lines. In the second section, 'We salute you!' begins at x=228 and its 'salute' line extends to about x=366, visibly cutting the final letter at the 360px screen edge; the document is 366px wide. See p05-phone-confirm.png, p05-phone-y1900.png and measure-p05-phone/measure.json.",
+    "fix": "At phone widths, stack the flex children vertically, change the .w-50 children to width:100%, and reduce their 48px padding to about 16\u201324px. Keep the two-column layout only above a suitable tablet breakpoint."
+  }
+]

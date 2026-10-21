@@ -1,0 +1,172 @@
+[
+ {
+  "code": 45844,
+  "run": "sol-r1-plain",
+  "page": "p04",
+  "state": "css98-ecfc9758-broken",
+  "viewport": "phone",
+  "selector": "main",
+  "verdict": "KNOWN:css98-ecfc9758",
+  "evidence": "At 360x780 CSS px, the fixed sidebar occupies the left 216 px and main starts at x=240 with a fixed width of 780 px, ending at x=1020. Only 120 px of the main column is visible. The title, paragraphs and example dialog run off the right edge; component examples begin entirely outside the screen. Document scrollWidth is 1020 px, 660 px wider than the viewport. Screenshot: p04-finding.png."
+ },
+ {
+  "code": 89903,
+  "run": "sol-r1-plain",
+  "page": "p05",
+  "state": "sb-one-page-wonder-ec94d15b-broken",
+  "viewport": "phone",
+  "selector": "section .d-flex > .w-50.align-self-center",
+  "verdict": "KNOWN:sb-one-page-wonder-ec94d15b",
+  "evidence": "At 360x780 CSS px, all three content sections retain two 165 px columns with 48 px padding on both sides, leaving only 69 px for each heading and paragraph. Paragraphs become 27 lines tall (648 px), often one word per line, and headings break into three to five lines. The second heading starts at x=228 and its text extends to x=366, cutting off the end of 'salute' at the right edge and causing 6 p"
+ },
+ {
+  "code": 82213,
+  "run": "sol-r1-plain",
+  "page": "p08",
+  "state": "css98-68d7366d-broken",
+  "viewport": "phone",
+  "selector": "main > pre",
+  "verdict": "KNOWN:css98-68d7366d",
+  "evidence": "At 360x780 CSS px, both installation code boxes are 391 px wide (375 px content plus 16 px horizontal padding) and start at x=16, ending at x=407. Their right borders extend 47 px beyond the screen and 63 px beyond the main content's right edge at x=344. They increase document scrollWidth to 407 px while neighboring paragraphs and callouts fit. Screenshot: p08-finding.png."
+ },
+ {
+  "code": 76509,
+  "run": "sol-r1-skill",
+  "page": "p04",
+  "state": "css98-ecfc9758-broken",
+  "viewport": "phone",
+  "selector": "body > main",
+  "verdict": "KNOWN:css98-ecfc9758",
+  "evidence": "At 360x780, the fixed navigation occupies x=0..216 and main starts at x=240 with a 780px width, ending at x=1020. Only 120px of main is initially visible; the title, paragraphs and examples continue off the right edge throughout the page. Document scrollWidth is 1068px, 708px wider than the screen. Viewed: scan/04-docs-index.html/sheets/galaxy-s24-1.png and measure-p04/measure.png."
+ },
+ {
+  "code": 94141,
+  "run": "sol-r1-skill",
+  "page": "p05",
+  "state": "sb-one-page-wonder-ec94d15b-broken",
+  "viewport": "phone",
+  "selector": "section .d-flex > .w-50.p-5",
+  "verdict": "KNOWN:sb-one-page-wonder-ec94d15b",
+  "evidence": "At 360x780, all three sections retain two 165px columns inside a 330px row. Each text column has 48px padding on both sides, leaving only 69px for its heading and paragraph. The first heading wraps into five lines and each paragraph into 27 lines (648px tall); most lines contain a single word. The middle heading also spills rightward, producing a 366px document width. Viewed: scan/05-p05-index.htm"
+ },
+ {
+  "code": 21543,
+  "run": "sol-r1-skill",
+  "page": "p08",
+  "state": "css98-68d7366d-broken",
+  "viewport": "phone",
+  "selector": "main > pre",
+  "verdict": "KNOWN:css98-68d7366d",
+  "evidence": "At 360x780, both introductory installation code panels are 391px wide and start at x=16, ending at x=407. Their right borders extend 47px beyond the screen and 63px beyond the main content edge at x=344. The entire document becomes 407px wide, allowing page-level sideways scrolling. Viewed: scan/08-docs-index.html/sheets/galaxy-s24-1.png and measure-p08/measure.png."
+ },
+ {
+  "code": 69015,
+  "run": "sol-r2-plain",
+  "page": "p03",
+  "state": "sb-coming-soon-f2f16308-broken",
+  "viewport": "both",
+  "selector": ".social-icons",
+  "verdict": "KNOWN:sb-coming-soon-f2f16308",
+  "evidence": "The social-button stack is detached from the hero and sits flush against the left screen edge in a separate full-height block. At 1440x900, the hero ends at y=900 and all three 42x38px buttons occupy x=0..42, y=900..1014, completely below the initial screen. Their wrapper extends to y=1800, leaving 786px of unused height below the buttons. At 360x780, the buttons occupy x=0..42, y=485.19..599.19, "
+ },
+ {
+  "code": 33321,
+  "run": "sol-r2-plain",
+  "page": "p04",
+  "state": "css98-ecfc9758-broken",
+  "viewport": "phone",
+  "selector": "main",
+  "verdict": "KNOWN:css98-ecfc9758",
+  "evidence": "The phone screen shows only the left fragment of the documentation. The fixed sidebar occupies x=0..216; main starts at x=240 and remains 780px wide, ending at x=1020, which is 660px beyond the 360px visual viewport. Component descriptions and examples start at x=420, entirely outside the initial screen. Document scrollWidth is 1068px versus a 360px client/visual viewport, producing 708px of horiz"
+ },
+ {
+  "code": 59108,
+  "run": "sol-r2-plain",
+  "page": "p05",
+  "state": "sb-one-page-wonder-ec94d15b-broken",
+  "viewport": "phone",
+  "selector": "section .d-flex > .w-50.p-5",
+  "verdict": "KNOWN:sb-one-page-wonder-ec94d15b",
+  "evidence": "All three content sections retain two 165px-wide columns inside a 330px row. Each column has 48px padding on both sides, leaving only 69px for its heading and paragraph. Headings break into 3-5 lines and the paragraphs into 27 lines (648px tall), while words spill into the adjacent column/padding. The second heading starts at x=228 and has a 138px scroll width, reaching x=366, so the end of \"salut"
+ },
+ {
+  "code": 10227,
+  "run": "sol-r2-skill",
+  "page": "p01",
+  "state": "holiday-css-1eba36ad-broken",
+  "viewport": "phone",
+  "selector": "label[for=\"label-after-disabled-checkbox-example\"]",
+  "verdict": "VALID:holiday-label-wrap",
+  "evidence": "At 360x780, the disabled checkbox is on the row beginning around document y=12763, but its label splits across two rows: 'Label after disabled' starts at x=198.2; the final word 'checkbox' restarts at x=8 on the following row (text y=12802.1), immediately beside the unrelated color inputs starting at x=82.1. The checkbox and its label no longer form one visual group. See p01-phone-confirm.png and "
+ },
+ {
+  "code": 13698,
+  "run": "sol-r2-skill",
+  "page": "p03",
+  "state": "sb-coming-soon-f2f16308-broken",
+  "viewport": "both",
+  "selector": ".social-icons",
+  "verdict": "KNOWN:sb-coming-soon-f2f16308",
+  "evidence": "The social controls are detached from the hero composition and flush against the left screen edge. On laptop the masthead ends at document y=900, while .social-icons occupies a separate 1440x900 block at y=900; its three 42x38 buttons sit at x=0, y=900/938/976 on an otherwise empty second screen. On phone the same container is 360x780 at y=485.2, although its button stack is only 114px tall, leavi"
+ },
+ {
+  "code": 44103,
+  "run": "sol-r2-skill",
+  "page": "p04",
+  "state": "css98-ecfc9758-broken",
+  "viewport": "phone",
+  "selector": "main",
+  "verdict": "KNOWN:css98-ecfc9758",
+  "evidence": "At a 360x780 phone screen, the fixed sidebar occupies x=0..216 and main begins at x=240 with a fixed 780px width, ending at x=1020. Only 120px of the main column is initially on screen: the '98.css' title, paragraphs and examples are visibly cut at the right edge throughout the scroll. Document scrollWidth is 1068px, 708px wider than the screen. See p04-phone-y0.png, scan/04-docs-index.html/sheets"
+ },
+ {
+  "code": 29804,
+  "run": "sol-r2-skill",
+  "page": "p05",
+  "state": "sb-one-page-wonder-ec94d15b-broken",
+  "viewport": "phone",
+  "selector": "section > .container > .d-flex > .w-50",
+  "verdict": "KNOWN:sb-one-page-wonder-ec94d15b",
+  "evidence": "At 360x780, all three sections retain two 165px columns with 48px padding on each side, leaving only 69px for headings and body text. 'For those about to rock...' breaks into five lines and each paragraph becomes 27 lines. In the second section, 'We salute you!' begins at x=228 and its 'salute' line extends to about x=366, visibly cutting the final letter at the 360px screen edge; the document is "
+ },
+ {
+  "code": 15009,
+  "run": "sol-r3-plain",
+  "page": "p03",
+  "state": "sb-coming-soon-f2f16308-broken",
+  "viewport": "both",
+  "selector": ".social-icons",
+  "verdict": "KNOWN:sb-coming-soon-f2f16308",
+  "evidence": "The social-link group is displaced into a separate row below the hero, flush against the left edge. At 1440x900, the hero occupies y=0–900, while the three 42x38px buttons occupy x=0–42, y=900–1014. Their wrapper is another 900px tall, making the document 1800px tall and leaving the links entirely below the initial screen. At 360x780, the buttons similarly start at x=0, y=485.19 and their 780px wr"
+ },
+ {
+  "code": 52396,
+  "run": "sol-r3-plain",
+  "page": "p08",
+  "state": "css98-68d7366d-broken",
+  "viewport": "phone",
+  "selector": "main > pre[style*=\"width: 375px\"]",
+  "verdict": "KNOWN:css98-68d7366d",
+  "evidence": "Both installation code blocks extend beyond the phone screen. Their rendered border boxes start at x=16 and are 391px wide (375px content plus 16px horizontal padding), ending at x=407. The screen is 360px wide and the main content column ends at x=344, so the blocks exceed the column by 63px and the screen by 47px. The right edges are cut off at the initial horizontal position, and document scrol"
+ },
+ {
+  "code": 17834,
+  "run": "sol-r3-skill",
+  "page": "p03",
+  "state": "sb-coming-soon-f2f16308-broken",
+  "viewport": "laptop",
+  "selector": ".social-icons",
+  "verdict": "KNOWN:sb-coming-soon-f2f16308",
+  "evidence": "At 1440x900, the three social buttons are stacked at document x=0, y=900/938/976, below the 900px-high hero. Their container is 1440x900 at y=900, creating an otherwise empty second screen and placing the group against the far-left edge. The computed right:40px has no effect because position is static. Confirmed at scrollY=900 in captures/p03-laptop-end-verified.png; geometry is in inspection.json"
+ },
+ {
+  "code": 20945,
+  "run": "sol-r3-skill",
+  "page": "p08",
+  "state": "css98-68d7366d-broken",
+  "viewport": "phone",
+  "selector": "main > pre",
+  "verdict": "KNOWN:css98-68d7366d",
+  "evidence": "At the 360x780 phone viewport, both introductory code panels start at x=16 and are 391px wide (375px content plus 16px horizontal padding), ending at x=407. Their right edges extend 47px beyond the screen and 63px beyond the main content edge at x=344. The page width grows to 407px while visualViewport.width remains 360px. Both right panel borders are visibly outside the screen in captures/p08-pho"
+ }
+]
