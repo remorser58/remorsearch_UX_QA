@@ -458,9 +458,9 @@ Playwright touchscreen/mouse/keyboard), never as synthetic DOM events or `el.cli
 | `long_press` | `target`, `ms?` (800) | touch held `ms` | button held `ms` |
 | `swipe` | `target?` (start, default centre), `to` or `dx/dy` or `direction`+`distance`, `duration_ms?` (200) | finger path (fling allowed) | drag path |
 | `drag` | `target`, `to`/`dx/dy`/`direction`, `hold_ms?` (250), `duration_ms?` (600) | hold, move, hold 100 ms | same with mouse |
-| `scroll` | `dx/dy` or `direction`+`distance` (content direction), `target?` | slow finger strokes, slop-compensated, corrected | mouse wheel |
+| `scroll` | `dx/dy` or `direction`+`distance` (content direction), `target?`, `wheel?`, `until_end?` | slow finger strokes, slop-compensated, corrected; mouse wheel with `wheel: true` | mouse wheel |
 | `type` | `text`, `target?` (tapped/clicked first), `clear?`, `delay_ms?` | keyboard | keyboard |
-| `press` | `key`, `hold_ms?`, `repeat?` | keyboard | keyboard |
+| `press` | `key`, `hold_ms?`, `repeat?`, `until_end?` | keyboard | keyboard |
 | `gamepad` | `key` or `keys` (the keyboard mapping), `button?` (label), `hold_ms?` | keyboard | keyboard |
 | `wait` | `ms` | | |
 | `snapshot` | | | |
@@ -470,6 +470,9 @@ wait, default 5000), `auto_scroll`, and metadata (`note`, `label`, `comment`,
 `description`, `id`, `intent`, `expected`). A remote (TV) device has no pointer:
 pointer actions fall back to mouse events and a warning is recorded
 (`input: "mouse(fallback)"`). The Switch-style handheld has a touchscreen and uses touch.
+In a scripted run, a `scroll` or `press` step with `until_end: true` is skipped once the
+document has scrolled to its end (the layout scan's screens); a page that scrolls
+inside a box keeps every step.
 
 Targets: a Playwright selector (`#pay`, `text=결제하기`, `role=button[name="..."]`),
 `hotspot:<id>` (from `scenario.hotspots` or the page's

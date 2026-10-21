@@ -2083,6 +2083,18 @@ export class WebSession {
     }
   }
 
+  /** True when the document itself scrolls vertically and is scrolled to its end. */
+  async atPageEnd() {
+    try {
+      return await this.page.evaluate(() => {
+        const s = document.scrollingElement || document.documentElement;
+        return s.scrollHeight > s.clientHeight + 1 && s.scrollTop + s.clientHeight >= s.scrollHeight - 2;
+      });
+    } catch {
+      return false;
+    }
+  }
+
   async captureFrame() {
     return this.visualFrame(this.cdp, FRAME_WIDTH);
   }
@@ -2558,7 +2570,9 @@ export class WebSession {
     }
     const anchor = anchorIn || { x: this.vw / 2, y: this.vh / 2 };
     const mode = this.pointerMode();
-    if (mode === 'touch') {
+    // wheel: true scrolls a touch device with the mouse wheel too, about four times faster
+    // than finger strokes; a layout scan only needs the page moved.
+    if (mode === 'touch' && !action.wheel) {
       // Finger moves opposite to the content; slow strokes with a final hold avoid
       // fling. Each stroke loses the touch slop (~10-15 CSS px in Chromium), so
       // strokes are lengthened by SLOP and, when the window is the scroller, up to
@@ -2600,7 +2614,7 @@ export class WebSession {
     await this.page.mouse.move(anchor.x, anchor.y);
     await this.page.mouse.wheel(dx, dy);
     await sleep(150);
-    return mode;
+    return mode === 'touch' ? 'wheel' : mode;
   }
 
   async dispatchInput(action, resolved) {

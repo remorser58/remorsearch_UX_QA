@@ -347,6 +347,24 @@ LY10 = _register(CheckSpec(
     (), ("web", "desktop"), "visual",
     "좁은 화면에서는 사이드바를 접거나 화면 밖 메뉴로 바꾸고, 본문 열이 화면 폭을 쓰게 하세요(min-width, flex-basis, 미디어 쿼리 확인).",
 ))
+LY11 = _register(CheckSpec(
+    "LY-11", "layout", "measured", "한 열에 쌓인 입력칸끼리 폭이 다름",
+    "Text fields stacked in one form column have different widths",
+    (), ("web", "desktop"), "visual",
+    "같은 열의 입력칸과 textarea가 같은 폭 규칙(width: 100% 등)을 쓰게 하세요. 선택자 목록에서 빠진 요소나 쉼표가 없는지 확인하세요.",
+))
+LY12 = _register(CheckSpec(
+    "LY-12", "layout", "measured", "나란한 링크·버튼의 글자가 붙어 한 덩어리로 읽힘",
+    "Labels of adjacent links or buttons touch and read as one phrase",
+    (), ("web", "desktop"), "visual",
+    "나란한 링크와 버튼 사이에 gap이나 margin을 주세요. :last-child 같은 선택자가 모든 항목에 적용되어 간격이 사라지지 않았는지 확인하세요.",
+))
+LY13 = _register(CheckSpec(
+    "LY-13", "layout", "measured", "상단 바 항목이 바 아래로 처짐",
+    "An item of a header bar hangs past the bar's edge",
+    (), ("web", "desktop"), "visual",
+    "좁은 화면에서 바 항목을 메뉴로 접거나 줄바꿈을 막고, 바 높이를 고정했다면 내용이 넘치지 않는지 확인하세요.",
+))
 UI01 = _register(CheckSpec(
     "UI-01", "visual", "measured", "아이콘 전용 조작 요소에 시각적 설명이 없음",
     "Icon-only action has no visible tooltip or equivalent hover/focus explanation",
@@ -2369,14 +2387,17 @@ def check_semantics(ctx: Context) -> list[Observation]:
     return out
 
 
-_PLACEMENT_KINDS = ("icon_offset", "attached_mismatch", "page_overflow", "scroll_slack", "label_offset", "pair_mismatch", "bar_offset", "narrow_column")
+_PLACEMENT_KINDS = ("icon_offset", "attached_mismatch", "page_overflow", "scroll_slack", "label_offset", "pair_mismatch", "bar_offset", "narrow_column",
+                    "field_width", "run_together", "hanging_item")
 _DIRECTION_KO = {("x", True): "오른쪽으로", ("x", False): "왼쪽으로", ("y", True): "아래로", ("y", False): "위로"}
 
 
 def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, base: tuple, context: dict[str, Any]) -> Observation:
-    """LY-06..08 from the driver's measured outliers: an off-centre icon, a field and its
-    attached button with different edges, and a page wider or a few px taller than the
-    screen. Offsets are CSS px on the screen that showed them."""
+    """LY-06..13 from the driver's measured outliers: an off-centre icon, a field and its
+    attached button with different edges, a page wider or a few px taller than the
+    screen, side-by-side elements out of line, a squeezed column, stacked fields of
+    different widths, touching labels and a bar item hanging past the bar. Offsets are
+    CSS px on the screen that showed them."""
     kind = o["kind"]
     offset = o.get("offset_px")
     size = abs(offset) if isinstance(offset, (int, float)) else 0
@@ -2444,6 +2465,41 @@ def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, 
             f"{o.get('screen_px')}px 화면에서 본문 열 {selectors[0]}이 {size:g}px로 좁아져 글자 {o.get('count')}곳이 한두 단어씩 줄바꿈됩니다.",
             extra=anchors,
         )
+    if kind == "field_width":
+        other = selectors[1] if len(selectors) > 1 else "위아래 입력칸"
+        return Observation(
+            "LY-11", *base, [], f"{selectors[0]}|{label}",
+            {"name": "field_width_difference", "value": offset, "unit": "css_px", "threshold": 4, "comparator": ">=",
+             "field_px": o.get("field_px"), "other_px": o.get("other_px"), "other": other},
+            False, "P2" if size >= 12 else "P3",
+            f"같은 열에 쌓인 입력칸 {selectors[0]}의 폭이 {other}보다 {size:g}px {'넓어' if (offset or 0) > 0 else '좁아'} 오른쪽 끝이 어긋납니다"
+            f"({o.get('field_px')}px와 {o.get('other_px')}px, 왼쪽 끝은 같음).",
+            extra=anchors,
+        )
+    if kind == "run_together":
+        other = selectors[1] if len(selectors) > 1 else "앞 항목"
+        pairs = o.get("pairs") or 1
+        return Observation(
+            "LY-12", *base, [], f"{selectors[0]}|{label}",
+            {"name": "label_gap", "value": offset, "unit": "css_px", "threshold": "0.1em", "comparator": "<", "pairs": pairs, "previous": other,
+             "container": o.get("container")},
+            False, "P2",
+            f"나란한 링크·버튼 '{label[:40]}'의 글자 사이가 {size:g}px라 두 라벨이 한 덩어리로 읽힙니다"
+            + (f"(같은 묶음에서 붙은 쌍 {pairs}개)." if pairs > 1 else "."),
+            extra=anchors,
+        )
+    if kind == "hanging_item":
+        edge = "위" if o.get("edge") == "top" else "아래"
+        bar = o.get("container") or "상단 바"
+        return Observation(
+            "LY-13", *base, [], f"{selectors[0]}|{label}",
+            {"name": "hang_px", "value": offset, "unit": "css_px", "threshold": 4, "comparator": ">=", "bar": bar, "bar_px": o.get("bar_px"),
+             "items": o.get("items"), "pinned": bool(o.get("pinned"))},
+            False, "P2",
+            f"{'고정 ' if o.get('pinned') else ''}바 {bar}(높이 {o.get('bar_px')}px)의 '{(label or selectors[0])[:30]}' 항목이 바 {edge} 가장자리 밖으로 {size:g}px 처집니다"
+            + (f"(처진 항목 {o.get('items')}개)." if (o.get("items") or 1) > 1 else "."),
+            extra=anchors,
+        )
     if kind == "page_overflow":
         return Observation(
             "LY-08", *base, [], "page-width|",
@@ -2465,7 +2521,7 @@ def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, 
 
 
 def check_layout(ctx: Context) -> list[Observation]:
-    """Covered text, overlapping text, near-miss alignment, uneven spacing and misplacement (LY-02..10).
+    """Covered text, overlapping text, near-miss alignment, uneven spacing and misplacement (LY-02..13).
 
     Measured from rendered geometry and profile-independent. Covered text counts only
     when no scroll position reveals it: a fixed or sticky bar at the top while the page
@@ -3052,7 +3108,7 @@ HYPOTHESIS_CHECKS = frozenset({"GZ-01", "GZ-04", "PC-05", "PT-05", "GM-06"})
 # "profile-independent" instead of a k/n coverage (STF-08).
 PROFILE_INVARIANT_CHECKS = frozenset({"TI-01", "PT-01", "PT-05", "PT-06", "PC-01", "PC-02", "CG-01", "CG-03", "GZ-03", "GM-05", "GM-06",
                                       "SM-01", "SM-02", "SM-03", "SM-04", "SM-05", "SM-06", "SM-07", "SM-08", "LY-01", "LY-02", "LY-03",
-                                      "LY-04", "LY-05", "LY-06", "LY-07", "LY-08", "LY-09", "LY-10", "UI-01", "RF-01", "RF-02", "RF-03",
+                                      "LY-04", "LY-05", "LY-06", "LY-07", "LY-08", "LY-09", "LY-10", "LY-11", "LY-12", "LY-13", "UI-01", "RF-01", "RF-02", "RF-03",
                                       "FM-02"})
 
 

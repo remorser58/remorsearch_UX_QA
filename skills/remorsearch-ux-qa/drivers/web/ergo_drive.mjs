@@ -339,6 +339,9 @@ async function main(argv) {
           failure = `run timeout (${timeoutS}s) before step ${session.steps.length + 1}`;
           break;
         }
+        // A scroll or key step marked until_end is skipped once the page has scrolled to its
+        // end (a layout scan's screens); a page that scrolls inside a box keeps every step.
+        if (action.until_end && await session.atPageEnd()) continue;
         try {
           const { step } = await session.act(action);
           if (step.result !== 'ok' && !f['continue-on-error']) break;

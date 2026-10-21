@@ -2820,6 +2820,36 @@ async function placementTest(tmp) {
     } finally {
       await phone.close();
     }
+    // LY-11..13: a textarea 30 px narrower than the two fields above it, links whose labels
+    // touch, and a fixed bar whose second link wraps below its edge; each beside a twin
+    // that is correct (an even form with an addon field, spaced links, a bar that fits).
+    await page.setContent(`<!doctype html><style>
+      body { margin:0; font:16px Arial, sans-serif } main { margin-top:60px }
+      form { width:320px; margin:16px } form input, form textarea { display:block; box-sizing:border-box; width:300px; margin:0 0 12px; border:1px solid #888 }
+      #msg1 { width:270px } .ig { display:flex; width:300px; margin:0 0 12px } .ig input { flex:1; width:auto; margin:0 } .ig span { width:40px; background:#ddd }
+      .links { display:flex; margin:16px } .links a { margin:0 } #spaced a { margin-right:12px }
+      #bar { position:fixed; top:0; left:0; right:0; height:36px; background:#fff; box-shadow:0 0 4px #888 }
+      #bar .menu { display:flex; flex-wrap:wrap; width:200px } #bar .menu a { display:block; width:120px; line-height:24px }
+      #bar-ok { display:flex; align-items:center; height:40px; background:#eee } #bar-ok a { margin-right:16px }
+    </style>
+    <nav id="bar"><div class="menu"><a href="#" id="m1">Home page</a><a href="#" id="m2">Documentation</a></div></nav>
+    <main>
+    <form id="ff1"><input id="name1" aria-label="Name"><input id="mail1" aria-label="Mail"><textarea id="msg1" aria-label="Message"></textarea></form>
+    <form id="ff2"><input id="name2" aria-label="Name"><div class="ig"><input id="amount" aria-label="Amount"><span>.00</span></div><textarea id="msg2" aria-label="Message"></textarea></form>
+    <div class="links" id="touch"><a href="#">Text</a><a href="#">Embedded content</a><a href="#">Forms</a></div>
+    <div class="links" id="spaced"><a href="#">Text</a><a href="#">Embedded content</a><a href="#">Forms</a></div>
+    <header id="bar-ok"><a href="#">Home</a><a href="#">Docs</a></header>
+    </main>`);
+    const third = await capture();
+    const width = of(third, 'field_width');
+    check('placement: a textarea 30 px narrower than the two fields above it is measured once; an even form with an addon field is not',
+      width.length === 1 && width[0].selectors[0] === '#msg1' && Math.abs(width[0].offset_px + 30) < 0.6, width);
+    const together = of(third, 'run_together');
+    check('placement: links whose labels touch make one row with two touching pairs, spaced links are silent',
+      together.length === 1 && together[0].container === '#touch' && together[0].pairs === 2, together);
+    const hang = of(third, 'hanging_item');
+    check('placement: a fixed bar whose second link wraps below its edge is measured once, a bar that fits is silent',
+      hang.length === 1 && hang[0].container === '#bar' && hang[0].selectors.includes('#m2') && hang[0].offset_px >= 4, hang);
   } finally {
     await context.close();
     await transport.close();
@@ -2954,7 +2984,9 @@ async function typographyTest(base, tmp) {
     check('typography: session redaction applies before font measurement including private echoes', ['#opted', '#echo']
       .every((selector) => protectedCapture.elements.find((e) => e.selector === selector)?.font_metrics?.status === 'unavailable')
       && !JSON.stringify(protectedCapture).includes(secret));
-    await page.evaluate(() => { Object.defineProperty(document.fonts, 'check', { value: () => false }); });
+    // A face of the element's family that has not loaded (FontFaceSet.check() then answers
+    // false); a family whose faces have all loaded skips that call.
+    await page.evaluate(() => { document.fonts.add(new FontFace('Arial', 'url(missing-font.woff2)')); });
     const unloaded = await capture();
     writeJson(path.join(tmp, 'typography-font-unavailable.json'), unloaded);
     check('typography: unavailable font produces no body metric', unloaded.elements.find((e) => e.selector === '#arial')?.font_metrics?.limitations.includes('font_not_loaded'));

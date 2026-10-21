@@ -296,13 +296,13 @@ def cmd_scan(args: argparse.Namespace) -> int:
     urls = list(dict.fromkeys(args.url))
     if len(urls) > 1:
         pages = scan.run_many(urls, out, devices=devices, tiles=args.tiles, node=args.node,
-                              allow_origins=tuple(args.allow_origin or ()), jobs=args.jobs)
+                              allow_origins=tuple(args.allow_origin or ()), jobs=args.jobs, focus_walk=args.focus_walk)
         print((out / "scan.md").read_text(encoding="utf-8"))
         print(f"scan: {len(pages)} pages -> {out / 'scan.md'}")
         recorded = all(p["recorded"] for p in pages)
     else:
         result = scan.run_scan(urls[0], out, devices=devices, tiles=args.tiles, node=args.node,
-                               allow_origins=tuple(args.allow_origin or ()))
+                               allow_origins=tuple(args.allow_origin or ()), focus_walk=args.focus_walk)
         print((out / "scan.md").read_text(encoding="utf-8"))
         print(f"scan: {len(result['candidates'])} candidates -> {out / 'scan.json'}")
         recorded = all(c.get("recorded") for c in result["coverage"])
@@ -511,6 +511,8 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--tiles", type=int, default=8, help="scroll screens after the top one, before jumping to the end (default 8)")
     p.add_argument("--node", default="node", help="Node.js 22 executable for the web driver")
     p.add_argument("--allow-origin", action="append", help="another origin the page loads assets from, such as a font or image CDN (repeatable)")
+    p.add_argument("--focus-walk", action="store_true",
+                   help="also Tab through the page on mouse and keyboard devices for the focus checks (adds about 20 s per page)")
     p.add_argument("--out", required=True, help="new or empty directory")
     p.set_defaults(func=cmd_scan)
 

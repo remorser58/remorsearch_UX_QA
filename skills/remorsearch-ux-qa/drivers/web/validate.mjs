@@ -20,8 +20,8 @@ const SPEC = {
   swipe: { req: [], opt: ['target', 'offset', 'to', 'dx', 'dy', 'direction', 'distance', 'duration_ms'] },
   drag: { req: ['target'], opt: ['offset', 'to', 'dx', 'dy', 'direction', 'distance', 'duration_ms', 'hold_ms'] },
   type: { req: ['text'], opt: ['target', 'offset', 'delay_ms', 'clear', 'redact'] },
-  press: { req: ['key'], opt: ['hold_ms', 'repeat'] },
-  scroll: { req: [], opt: ['target', 'offset', 'dx', 'dy', 'direction', 'distance', 'duration_ms'] },
+  press: { req: ['key'], opt: ['hold_ms', 'repeat', 'until_end'] },
+  scroll: { req: [], opt: ['target', 'offset', 'dx', 'dy', 'direction', 'distance', 'duration_ms', 'until_end', 'wheel'] },
   wait: { req: ['ms'], opt: [] },
   snapshot: { req: [], opt: [] },
   gamepad: { req: [], opt: ['button', 'key', 'keys', 'hold_ms'] },
@@ -121,7 +121,7 @@ export function normalizeAction(raw, { strict, where = 'action' } = {}) {
     } else if (key === 'repeat') {
       if (!Number.isInteger(v) || v < 1 || v > 50) fail(`${at} must be an integer within 1..50`);
       out[key] = v;
-    } else if (key === 'clear' || key === 'auto_scroll' || key === 'redact') {
+    } else if (key === 'clear' || key === 'auto_scroll' || key === 'redact' || key === 'until_end' || key === 'wheel') {
       if (typeof v !== 'boolean') fail(`${at} must be a boolean`);
       out[key] = v;
     }

@@ -7,8 +7,8 @@ Test completion, input preservation and rendered design. Scenarios define condit
 
 For a page UI check naming no persona, audience or condition matrix. It replaces the run path; numbered sections stay lookups.
 
-1. `python3 scripts/ergo_qa.py scan --url URL --out work/scan` (one `--url` per page) records each page top to end on a phone and a laptop. `scan.md` lists layout candidates (cut, covered or overlapping text, alignment, spacing, icon centring, field edges, page width) with outlined crops, then the other checks by cause; `scan.json` has all. A driver failure is a coverage gap.
-2. Open every layout crop and the top, middle and end screenshots in `runs/SCAN-*/*.css.png`. Confirm a candidate only when the pixels show it; list dismissals with reasons. Report LY-08 once for all text it cuts and each grouped cause once. Then check what measurement misses with `references/persona-qa/ui-quality.md` by section: hierarchy, wrong or broken content, inconsistent components, and differences from Figma or a spec.
+1. Start `python3 scripts/ergo_qa.py scan --url URL --out work/scan` (one `--url` per page) first: it records each page top to end on a phone and a laptop. `scan.md` lists layout candidates (cut, covered or overlapping text, alignment, spacing, icon centring, field sizes, touching labels, bar overflow, page width) with outlined crops, then the other checks by cause, and fills in as pages finish. A driver failure is a coverage gap.
+2. Open every layout crop and the top, middle and end screenshots in `runs/SCAN-*/*.css.png`; capture more only for what they miss. Confirm a candidate only when the pixels show it; list dismissals with reasons. Report LY-08 once for all text it cuts and each grouped cause once. Then check what measurement misses with `references/persona-qa/ui-quality.md` by section: hierarchy, wrong or broken content, inconsistent components, and differences from Figma or a spec.
 3. Exercise only named tasks, or the primary form: happy path, one required omission, validation and recovery.
 4. Report with the template's Decision and Findings sections: each finding cites its crop, measurement and fix. Name what stayed untested (Safari/WebKit, real devices, unreached states).
 
@@ -69,11 +69,11 @@ Optional dataset: record source/revision/schema, bounded sample/seed/config, IDs
 
 Exercise actual product/input/start state; capture decisions/recovery, console/network/runtime errors, keyboard/focus/semantics and feedback. Screenshots support the trace; available interactions require flow evidence.
 
-Blind touch uses screenshots before DOM/source/run data. A separate a11y or screenshot+a11y auditor reproduces transitions with provenance; `drive_client.mjs --port 9477 inspect` after each step/failed submit records values, choices, invalid/error association, focus and reading order. Link receipts to screen/step. Screenshot-only sessions refuse inspect; never leak DOM knowledge into the blind pass. Programmatic evidence cannot stand for assistive-tech speech. Scripted replay uses `ergo_drive.mjs run` with the same scenario/profile/build and authored steps/integrity criteria. Driver success cannot override data loss.
+Blind touch uses screenshots before DOM/source/run data. A separate a11y or screenshot+a11y auditor reproduces transitions with provenance; `drive_client.mjs --port 9477 inspect` after each step/failed submit records values, choices, invalid/error association, focus and reading order. Screenshot-only sessions refuse inspect; never leak DOM knowledge into the blind pass. Programmatic evidence cannot stand for assistive-tech speech. Scripted replay uses `ergo_drive.mjs run` with the same scenario/profile/build and authored steps/integrity criteria. Driver success cannot override data loss.
 
-Budget a bounded task matrix (driver run/idle default 900 s). Stop at missing access or unsafe actions; posting, purchase, signup, account and data changes need separate authorization. Production identity/SMS/CAPTCHA/security-keypad/certificate/payment gates stop; only approved staging mocks or test payment complete. No real government/contact/payment/account inputs. Team-approved origins govern widgets; unavailable iframe/popup/app-switch evidence is untested. Lookup `drivers/web/README.md` options/sandbox by section; no installation to pass blocks.
+Budget a bounded task matrix. Stop at missing access or unsafe actions; posting, purchase, signup, account and data changes need separate authorization. Production identity/SMS/CAPTCHA/security-keypad/certificate/payment gates stop; only approved staging mocks or test payment complete. No real government/contact/payment/account inputs. Team-approved origins govern widgets; unavailable iframe/popup/app-switch evidence is untested. Lookup `drivers/web/README.md` options/sandbox by section; no installation to pass blocks.
 
-Write a receipt beside **each capture during the run**:
+Write a receipt beside each capture during the run:
 
 ```text
 {artifact_path, sha256, captured_at, surface_url, build_id, device, quoted_ui_text}
@@ -85,7 +85,7 @@ Build ID: commit/version/deploy ID/page-source hash via `--build-id` or `scenari
 
 Task-linked research during improvement, or separately requested research, enters `references/research/workflow.md` with access/evidence cards. Use `references/persona-qa/community-to-test.md` by section; supported_high/medium may motivate P0/P1, single_voice/lead_only stay exploratory. Missing gate leaves community motivation unverified; reproduced product harm keeps impact-based severity. Personas receive scrubbed summaries only.
 
-Inspect Figma/spec entry/journey/hierarchy/content/units/variants/tokens/critical states/responsive/input. Bind file/branch/version/nodes/readback to the actual build; view both images using the UI card's procedure. Figma can contain defects. Separate implementation_defect/design_defect/spec_conflict/approved_deviation; unresolved conflict blocks code acceptance, missing source limits fidelity. Differences need task or verified design-rule impact. Proposals follow the project's own design rules.
+Inspect Figma/spec entry/journey/hierarchy/content/units/variants/tokens/critical states/responsive/input. Bind file/branch/version/nodes/readback to the actual build; view both images using the UI card's procedure. Separate implementation_defect/design_defect/spec_conflict/approved_deviation; unresolved conflict blocks code acceptance, missing source limits fidelity. Differences need task or verified design-rule impact. Proposals follow the project's own design rules.
 
 ## 4. Grade, trace and second-pass
 

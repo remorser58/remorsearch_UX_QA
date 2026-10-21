@@ -897,6 +897,26 @@ export function extractSnapshot(args) {
   // or line layout. Keep actual displayed text separate from fixed font probes.
   let fontContext = null;
   const fontProbeCache = new Map();
+  // FontFaceSet.check() costs about a millisecond a call, once per text element. It can only
+  // answer false when a face of one of the font's families is not loaded, so a family list
+  // whose faces are all loaded (or that has none, a system font) needs no call.
+  const familiesReady = new Map();
+  const fontLoadedFor = (cs, font, textValue) => {
+    let ready = familiesReady.get(cs.fontFamily);
+    if (ready === undefined) {
+      const unquote = (s) => s.trim().replace(/^['"]|['"]$/g, '').toLowerCase();
+      const names = new Set(cs.fontFamily.split(',').map(unquote));
+      ready = true;
+      for (const face of document.fonts) {
+        if (face.status !== 'loaded' && names.has(unquote(face.family))) {
+          ready = false;
+          break;
+        }
+      }
+      familiesReady.set(cs.fontFamily, ready);
+    }
+    return ready || document.fonts.check(font, textValue);
+  };
   const privateFontNodes = new Set();
   const fontProperties = ['fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'fontStretch',
     'fontVariant', 'fontFeatureSettings', 'fontVariationSettings', 'fontOpticalSizing',
@@ -965,7 +985,7 @@ export function extractSnapshot(args) {
     if (!measuredText || measuredText !== displayedText) gaps.add('text_mismatch');
     if (gaps.size > 2) return finish();
     try {
-      if (!document.fonts || document.fonts.status !== 'loaded' || !document.fonts.check(font, measuredText)) {
+      if (!document.fonts || document.fonts.status !== 'loaded' || !fontLoadedFor(cs, font, measuredText)) {
         gaps.add('font_not_loaded'); return finish();
       }
       if (!fontContext) fontContext = document.createElement('canvas').getContext('2d');
@@ -994,7 +1014,18 @@ export function extractSnapshot(args) {
 
   // ---------- selectors
   const cssStr = (v) => String(v).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+  // Each selector test queries the whole document, and one capture asks for most elements'
+  // selectors twice; the DOM does not change during a capture, so each is computed once.
+  const selectorCache = new Map();
   const uniqueSelector = (el) => {
+    let s = selectorCache.get(el);
+    if (s === undefined) {
+      s = selectorOf(el);
+      selectorCache.set(el, s);
+    }
+    return s;
+  };
+  const selectorOf = (el) => {
     const root = el.getRootNode();
     const q = (s) => {
       try {
@@ -2197,6 +2228,177 @@ export function extractSnapshot(args) {
         }
         layoutOutliers.push({ kind: 'narrow_column', axis: 'x', selectors: [uniqueSelector(col)], container: null, offset_px: round2(geo(col).r.width),
           screen_px: round2(vw), count: squeezed.length, text: textOf(squeezed[0]), box: boxOf(col) });
+      }
+    }
+    // Uneven fields and crowded neighbours (LY-11..13). Two text fields stacked in one form
+    // column (same left edge, nothing beside their right edge) whose widths differ by 4 px
+    // or more and by less than a quarter; a deliberately short field differs by more
+    // (field_width). Two links or buttons next to each other on one line, at one size and
+    // baseline, whose labels touch: under 0.1 em from the end of one label's text to the
+    // start of the next, so they read as one phrase (run_together). A link or button of a
+    // painted header bar (fixed, sticky, or a header or navigation bar 24 to 160 px tall)
+    // whose text starts inside the bar and hangs past its bottom edge by 4 px and 30 % of
+    // its line or more; a bar at the bottom of the screen is checked upwards (hanging_item).
+    const trimmedRects = (t) => {
+      const v = t.nodeValue;
+      const i0 = v.search(/\S/);
+      if (i0 < 0) return [];
+      const range = document.createRange();
+      range.setStart(t, i0);
+      range.setEnd(t, v.replace(/\s+$/, '').length);
+      return [...range.getClientRects()].filter((q) => q.width > 0 && q.height > 0);
+    };
+    const TEXT_FIELD = 'textarea, input:not([type]), input[type=text], input[type=email], input[type=password], input[type=search], input[type=tel], input[type=url]';
+    const textFields = [];
+    for (const f of all) {
+      try {
+        if (!f.matches(TEXT_FIELD)) continue;
+      } catch (e) {
+        continue;
+      }
+      const g = geo(f);
+      if (g.vis && g.r.width >= 40 && g.r.height >= 12 && !helperText(f)) textFields.push(f);
+    }
+    const fieldScopes = new Map();
+    for (const f of textFields) {
+      let scope = f.closest('form, fieldset');
+      for (let a = parentOf(f), i = 0; !scope && a && a.nodeType === 1 && a !== document.body && i < 4; a = parentOf(a), i++) {
+        if (textFields.some((o) => o !== f && a.contains(o))) scope = a;
+      }
+      if (!scope) continue;
+      if (!fieldScopes.has(scope)) fieldScopes.set(scope, []);
+      fieldScopes.get(scope).push(f);
+    }
+    for (const [scope, list] of fieldScopes) {
+      if (list.length < 2) continue;
+      const near = [...scope.querySelectorAll('*')].slice(0, 800).filter((e) => !list.includes(e) && geo(e).vis);
+      // Something beside a field's right edge (an addon, a button, another field, a hint)
+      // takes part of its row: that field is narrower on purpose.
+      const free = list.filter((f) => {
+        const r = geo(f).r;
+        return !near.some((e) => {
+          if (e.contains(f) || f.contains(e)) return false;
+          const q = geo(e).r;
+          const ov = Math.min(r.bottom, q.bottom) - Math.max(r.top, q.top);
+          return q.width >= 4 && ov > 0.5 * Math.min(r.height, q.height) && q.left >= r.right - 1.5 && q.left < r.right + 48;
+        });
+      }).sort((a, b) => geo(a).r.top - geo(b).r.top);
+      const shares = (f, skip) => free.some((o) => !skip.includes(o) && Math.abs(geo(o).r.left - geo(f).r.left) <= 1.5 && Math.abs(geo(o).r.width - geo(f).r.width) <= 1);
+      const reported = new Set();
+      for (let i = 1; i < free.length; i++) {
+        const a = geo(free[i - 1]).r;
+        const b = geo(free[i]).r;
+        const gap = b.top - a.bottom;
+        if (Math.abs(a.left - b.left) > 1.5 || gap < 0 || gap > 120) continue;
+        const ratio = b.width / a.width;
+        if (Math.abs(b.width - a.width) < 4 || ratio < 0.75 || ratio > 1.34) continue;
+        // The odd field is the one whose width no other field of the column shares.
+        const pair = [free[i - 1], free[i]];
+        const odd = shares(pair[0], pair) && !shares(pair[1], pair) ? pair[1] : (shares(pair[1], pair) && !shares(pair[0], pair) ? pair[0] : pair[1]);
+        const other = odd === pair[0] ? pair[1] : pair[0];
+        if (reported.has(odd) || !inView(geo(odd).r)) continue;
+        reported.add(odd);
+        layoutOutliers.push({ kind: 'field_width', axis: 'x', selectors: [uniqueSelector(odd), uniqueSelector(other)], container: uniqueSelector(scope),
+          offset_px: round2(geo(odd).r.width - geo(other).r.width), field_px: round2(geo(odd).r.width), other_px: round2(geo(other).r.width),
+          text: (accName(odd) || odd.getAttribute('placeholder') || '').replace(/\s+/g, ' ').trim().slice(0, 60), box: boxOf(odd) });
+      }
+    }
+    const ITEM = 'a[href], button, [role=button], [role=link], [role=tab], [role=menuitem]';
+    const labelEnds = (el) => {
+      let first = null;
+      let last = null;
+      let letters = false;
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        const host = t.parentElement;
+        if (!t.nodeValue.trim() || !host || !geo(host).vis || helperText(host) || placedOut(host, el)) continue;
+        const qs = trimmedRects(t);
+        if (!qs.length) continue;
+        const fs = parseFloat(style(host).fontSize) || 16;
+        if (!first) first = { q: qs[0], fs };
+        last = { q: qs[qs.length - 1], fs };
+        letters = letters || LETTER.test(t.nodeValue);
+      }
+      return first ? { first, last, letters } : null;
+    };
+    const runs = new Map();
+    let prevItem = null;
+    for (const e of all) {
+      try {
+        if (!e.matches(ITEM)) continue;
+      } catch (err) {
+        continue;
+      }
+      if (prevItem && prevItem.e.contains(e)) continue;
+      const g = geo(e);
+      if (!g.vis || !inView(g.r) || helperText(e)) continue;
+      const ends = labelEnds(e);
+      if (!ends) continue;
+      if (!ends.letters) {
+        prevItem = null; // a caret or symbol between two labels separates them
+        continue;
+      }
+      const item = { e, ...ends };
+      if (prevItem) {
+        const a = prevItem.last.q;
+        const b = item.first.q;
+        const fs = Math.min(prevItem.last.fs, item.first.fs);
+        const ov = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+        const gap = b.left - a.right;
+        if (ov > 0.5 * Math.min(a.height, b.height) && b.left > a.left + 1 && gap < 0.1 * fs && gap > -0.3 * fs
+          && Math.max(prevItem.last.fs, item.first.fs) <= 1.25 * fs && Math.abs(a.bottom - b.bottom) <= 0.25 * fs) {
+          let common = parentOf(prevItem.e);
+          while (common && common.nodeType === 1 && !common.contains(e)) common = parentOf(common);
+          const key = common && common.nodeType === 1 ? common : document.body;
+          if (!runs.has(key)) runs.set(key, []);
+          runs.get(key).push({ a: prevItem.e, b: e, gap });
+        }
+      }
+      prevItem = item;
+    }
+    for (const [box, pairs] of runs) {
+      const p = pairs[0];
+      layoutOutliers.push({ kind: 'run_together', axis: 'x', selectors: [uniqueSelector(p.b), uniqueSelector(p.a)], container: uniqueSelector(box),
+        offset_px: round2(p.gap), pairs: pairs.length, text: (textOf(p.a) + ' | ' + textOf(p.b)).slice(0, 80), box: boxOf(p.b) });
+    }
+    const BAR_NAME = /(^|[-_ ])(navbar|topbar|toolbar|appbar|header|nav)([-_ ]|$)/i;
+    const hangBars = all.filter((b) => {
+      const g = geo(b);
+      if (!g.vis || !inView(g.r) || g.r.height < 24 || g.r.height > 160 || g.r.width < 0.6 * vw) return false;
+      const cs = style(b);
+      const pinned = cs.position === 'fixed' || cs.position === 'sticky';
+      const named = ['nav', 'header'].includes(b.localName) || ['navigation', 'banner', 'toolbar'].includes(b.getAttribute('role'))
+        || BAR_NAME.test(typeof b.className === 'string' ? b.className : '');
+      return (pinned || named) && paintedBox(b) && cs.overflowY === 'visible';
+    });
+    for (const bar of hangBars.filter((b) => !hangBars.some((o) => o !== b && o.contains(b)))) {
+      const br = geo(bar).r;
+      const atBottom = br.bottom >= VY1 - 1 && br.top > VY0 + (VY1 - VY0) / 2;
+      let worst = null;
+      let count = 0;
+      for (const it of bar.querySelectorAll(ITEM)) {
+        const g = geo(it);
+        if (!g.vis || g.r.right <= VX0 + 1 || g.r.left >= VX1 - 1 || helperText(it) || placedOut(it, bar)) continue;
+        const rects = [];
+        const walker = document.createTreeWalker(it, NodeFilter.SHOW_TEXT);
+        for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+          const host = t.parentElement;
+          if (t.nodeValue.trim() && host && geo(host).vis && !helperText(host)) rects.push(...trimmedRects(t));
+        }
+        if (!rects.length) continue;
+        const line = Math.min(...rects.map((q) => q.height));
+        if (paintedBox(it)) rects.push(g.r);
+        const u = unionOf(rects);
+        const hang = atBottom ? br.top - u.t : u.b - br.bottom;
+        const starts = atBottom ? u.b <= br.bottom + 1 && u.b > br.top + 2 : u.t >= br.top - 1 && u.t < br.bottom - 2;
+        if (!starts || hang < 4 || hang < 0.3 * line) continue;
+        count++;
+        if (!worst || hang > worst.hang) worst = { it, hang };
+      }
+      if (worst) {
+        layoutOutliers.push({ kind: 'hanging_item', axis: 'y', selectors: [uniqueSelector(worst.it)], container: uniqueSelector(bar), offset_px: round2(worst.hang),
+          items: count, bar_px: round2(br.height), pinned: ['fixed', 'sticky'].includes(style(bar).position), edge: atBottom ? 'top' : 'bottom',
+          text: textOf(worst.it), box: boxOf(worst.it) });
       }
     }
     const scroller = document.scrollingElement || document.documentElement;

@@ -22,6 +22,7 @@ from .profiles import _finalise
 
 ROOT = Path(__file__).resolve().parents[1]
 DRIVER = ROOT / "drivers" / "web" / "ergo_drive.mjs"
+CROPPER = ROOT / "drivers" / "web" / "crop.mjs"
 DEFAULT_DEVICES = ("galaxy-s24", "laptop-1440")
 SEVERITY_RANK = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
 EXAMPLES_PER_GROUP = 3
@@ -95,11 +96,14 @@ def scenario_for(url: str, device_id: str, tiles: int) -> dict[str, Any]:
     """Top of the page, overlapping screens of 80 % height, then the very end (End key).
 
     The driver captures the screen before the first action and after every scroll or key
-    press, so the steps need no separate snapshot actions.
+    press, so the steps need no separate snapshot actions. A scroll is not a control that
+    should answer, so no step waits for feedback: the End key gets 700 ms for a smooth
+    scroll to land, and a phone scrolls with the mouse wheel, about four times faster than
+    finger strokes. Steps stop once the page has scrolled to its end.
     """
     height = get_device(device_id).viewport_css[1]
-    steps: list[dict[str, Any]] = [{"action": "scroll", "dy": round(height * 0.8)} for _ in range(tiles)]
-    steps.append({"action": "press", "key": "End"})
+    steps: list[dict[str, Any]] = [{"action": "scroll", "dy": round(height * 0.8), "wheel": True, "until_end": True} for _ in range(tiles)]
+    steps.append({"action": "press", "key": "End", "feedback_timeout_ms": 0, "settle_ms": 700, "until_end": True})
     return {"schema_version": "ergo-scenario.v1", "scenario_id": f"SCAN-{device_id}", "surface": {"kind": "web", "url": url},
             "task_goal_ko": "화면을 위에서 끝까지 읽는다", "device_ids": [device_id], "targets": dict(EMPTY_TARGETS), "steps": steps}
 
@@ -131,10 +135,10 @@ def _cached(cache: dict[Path, Any] | None, key: Path, load: Any) -> Any:
     return cache[key]
 
 
-def write_crop(run_dir: Path, observation: dict[str, Any], target: Path, margin: int = 24,
-               cache: dict[Path, Any] | None = None) -> str | None:
-    """Save the region around the element with the element outlined. The cache keeps decoded
-    screenshots and snapshots between crops of one scan (decoding is the slow part)."""
+def crop_job(run_dir: Path, observation: dict[str, Any], target: Path, margin: int = 24,
+             cache: dict[Path, Any] | None = None) -> dict[str, Any] | None:
+    """The region around the element, in screenshot pixels, and the outline inside it; None
+    when the element has no box on a recorded screenshot."""
     snapshot_path = run_dir / f"{observation.get('snapshot_id')}.json"
     if not snapshot_path.is_file():
         return None
@@ -144,17 +148,54 @@ def write_crop(run_dir: Path, observation: dict[str, Any], target: Path, margin:
     if not box or not shot.get("path"):
         return None
     shot_path = run_dir / shot["path"]
-    image = _cached(cache, shot_path, lambda: png.read_png(shot_path))
-    viewport = (snapshot.get("device") or {}).get("viewport_css") or [image.width, image.height]
-    scale = image.width / max(1, viewport[0])
+    width, height = shot.get("width_px"), shot.get("height_px")
+    if not (isinstance(width, int) and isinstance(height, int)):
+        header = png.read_header(shot_path)
+        width, height = header.width, header.height
+    viewport = (snapshot.get("device") or {}).get("viewport_css") or [width, height]
+    scale = width / max(1, viewport[0])
     x, y, w, h = (int(round(v * scale)) for v in (box["x"], box["y"], box["w"], box["h"]))
     pad = int(margin * scale)
     x0, y0 = max(0, x - pad), max(0, y - pad)
-    if x0 >= min(image.width, x + w + pad) or y0 >= min(image.height, y + h + pad):
+    if x0 >= min(width, x + w + pad) or y0 >= min(height, y + h + pad):
         return None  # the box lies outside the screenshot
-    region = _crop(image, x - pad, y - pad, w + 2 * pad, h + 2 * pad)
-    png.write_png(target, png.draw_rect(region, x - 2 - x0, y - 2 - y0, w + 4, h + 4, (230, 30, 30), thickness=max(2, int(scale))))
-    return str(target)
+    return {"src": str(shot_path), "out": str(target), "x": x - pad, "y": y - pad, "w": w + 2 * pad, "h": h + 2 * pad,
+            "outline": [x - 2 - x0, y - 2 - y0, w + 4, h + 4], "thickness": max(2, int(scale))}
+
+
+def _draw_job(job: dict[str, Any], cache: dict[Path, Any] | None = None) -> str:
+    image = _cached(cache, Path(job["src"]), lambda: png.read_png(job["src"]))
+    region = _crop(image, job["x"], job["y"], job["w"], job["h"])
+    png.write_png(job["out"], png.draw_rect(region, *job["outline"], (230, 30, 30), thickness=job["thickness"]))
+    return job["out"]
+
+
+def write_crop(run_dir: Path, observation: dict[str, Any], target: Path, margin: int = 24,
+               cache: dict[Path, Any] | None = None) -> str | None:
+    """Save the region around the element with the element outlined (pure Python). The cache
+    keeps decoded screenshots and snapshots between crops of one scan."""
+    job = crop_job(run_dir, observation, target, margin, cache)
+    return _draw_job(job, cache) if job else None
+
+
+def write_crops(jobs: list[dict[str, Any]], node: str, work: Path, cache: dict[Path, Any] | None = None) -> None:
+    """Write every crop with the Node cropper in one process, then draw in Python any it
+    could not write (no Node, or a screenshot it could not read)."""
+    if jobs:
+        path = work / "crop-jobs.json"
+        try:
+            path.write_text(json.dumps(jobs), encoding="utf-8")
+            subprocess.run([node, str(CROPPER), str(path)], capture_output=True, text=True, timeout=180)
+        except (OSError, subprocess.SubprocessError):
+            pass
+        finally:
+            path.unlink(missing_ok=True)
+    for job in jobs:
+        if not Path(job["out"]).is_file():
+            try:
+                _draw_job(job, cache)
+            except (OSError, ValueError, png.PNGError):
+                pass
 
 
 def group_key(candidate: dict[str, Any]) -> str:
@@ -171,7 +212,7 @@ def group_key(candidate: dict[str, Any]) -> str:
 
 
 def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, tiles: int = 8, node: str = "node",
-             timeout: int = 900, allow_origins: tuple[str, ...] = ()) -> dict[str, Any]:
+             timeout: int = 900, allow_origins: tuple[str, ...] = (), focus_walk: bool = False) -> dict[str, Any]:
     out = Path(out)
     runs, crops = out / "runs", out / "crops"
     crops.mkdir(parents=True, exist_ok=True)
@@ -194,6 +235,8 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
         run_id = f"SCAN-{device_id}"
         command = [node, str(DRIVER), "run", "--scenario", str(scenario_path), "--profile", str(profile_path),
                    "--out", str(runs), "--run-id", run_id, "--continue-on-error"]
+        # The keyboard focus walk takes about half of a laptop run and measures no layout.
+        command.append("--focus-walk" if focus_walk else "--no-focus-walk")
         for origin in allow_origins:
             command += ["--allow-origin", origin]
         log = out / f"driver-{device_id}.log"
@@ -303,16 +346,22 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
             c["group"] = group_key(c)
             groups.setdefault(c["group"], []).append(c)
     cache: dict[Path, Any] = {}
+    planned: list[tuple[dict[str, Any], dict[str, Any]]] = []
     for members in groups.values():
         for c in members[:EXAMPLES_PER_GROUP]:
             obs, run_dir = sources[c["n"]]
             if obs and run_dir:
                 try:
-                    c["crop"] = write_crop(run_dir, obs, crops / f"{c['n']:02d}-{c['check_id']}.png", cache=cache)
+                    job = crop_job(run_dir, obs, crops / f"{c['n']:02d}-{c['check_id']}.png", cache=cache)
                 except (OSError, ValueError, png.PNGError):
-                    c["crop"] = None
+                    job = None
+                if job:
+                    planned.append((c, job))
+    write_crops([job for _, job in planned], node, out, cache)
+    for c, job in planned:
+        c["crop"] = job["out"] if Path(job["out"]).is_file() else None
     result = {"schema_version": "ergo-scan.v1", "url": url, "devices": list(devices), "coverage": coverage,
-              "candidates": candidates, "status": "candidates_need_visual_confirmation"}
+              "candidates": candidates, "status": "candidates_need_visual_confirmation", "focus_walk": focus_walk}
     (out / "scan.json").write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
     (out / "scan.md").write_text(render_markdown(result), encoding="utf-8")
     return result
@@ -325,35 +374,57 @@ def _slug(url: str) -> str:
 
 
 def run_many(urls: list[str], out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, tiles: int = 8, node: str = "node",
-             timeout: int = 900, allow_origins: tuple[str, ...] = (), jobs: int = 3) -> list[dict[str, Any]]:
+             timeout: int = 900, allow_origins: tuple[str, ...] = (), jobs: int = 3, focus_walk: bool = False) -> list[dict[str, Any]]:
     """Scan several pages, a few at a time, each into its own folder, and write one scan.md
-    that lists every page's layout rows. Each page keeps its full scan.md and scan.json."""
-    from concurrent.futures import ThreadPoolExecutor
+    that lists every page's layout rows. Each page keeps its full scan.md and scan.json. The
+    combined scan.md is rewritten as each page finishes, so a reader can start on the
+    finished pages while the rest record."""
+    import sys
+    from concurrent.futures import ThreadPoolExecutor, as_completed
 
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
     folders = [out / f"{n:02d}-{_slug(url)}" for n, url in enumerate(urls, 1)]
     def one(pair: tuple[str, Path]) -> dict[str, Any]:
         try:
-            return run_scan(pair[0], pair[1], devices=devices, tiles=tiles, node=node, timeout=timeout, allow_origins=allow_origins)
+            return run_scan(pair[0], pair[1], devices=devices, tiles=tiles, node=node, timeout=timeout, allow_origins=allow_origins,
+                            focus_walk=focus_walk)
         except Exception as exc:  # one broken page must not stop the others; it is a coverage gap
             return {"url": pair[0], "candidates": [], "coverage": [{"device": ", ".join(devices), "recorded": False, "driver_exit": None,
                                                                     "error": f"{type(exc).__name__}: {exc}"[:300]}]}
 
+    results: list[dict[str, Any] | None] = [None] * len(urls)
+
+    def write_index() -> list[dict[str, Any]]:
+        pages, pending = [], []
+        done = sum(r is not None for r in results)
+        lines = ["# Layout scan: " + str(len(urls)) + " pages", "",
+                 "Each page's layout rows follow; its full scan.md (other checks by cause) and screenshots are in its folder."
+                 + ("" if done == len(urls) else f" {done} of {len(urls)} pages are recorded so far; this file is rewritten as each page finishes."), ""]
+        for folder, url, result in zip(folders, urls, results):
+            if result is None:
+                pending.append(url)
+                lines += ["## " + folder.name + ": " + url, "", "Still recording.", ""]
+                continue
+            layout = [c for c in result["candidates"] if not c.get("part_of") and is_layout(c["check_id"])]
+            recorded = all(c.get("recorded") for c in result["coverage"])
+            pages.append({"url": result["url"], "folder": folder.name, "recorded": recorded, "candidates": len(result["candidates"]),
+                          "layout_rows": len({c.get("group") for c in layout})})
+            page_md = render_markdown(result, crop_prefix=folder.name + "/crops/", layout_only=True)
+            lines += ["## " + folder.name + ": " + result["url"], ""] + page_md.split("\n", 2)[2:] + [""]
+        doc = {"schema_version": "ergo-scan-set.v1", "pages": pages, **({"pending": pending} if pending else {})}
+        (out / "scan.json").write_text(json.dumps(doc, ensure_ascii=False, indent=1), encoding="utf-8")
+        (out / "scan.md").write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+        return pages
+
+    pages = write_index()
     with ThreadPoolExecutor(max_workers=max(1, jobs)) as pool:
-        results = list(pool.map(one, zip(urls, folders)))
-    pages = []
-    lines = ["# Layout scan: " + str(len(urls)) + " pages", "",
-             "Each page's layout rows follow; its full scan.md (other checks by cause) and screenshots are in its folder.", ""]
-    for folder, result in zip(folders, results):
-        layout = [c for c in result["candidates"] if not c.get("part_of") and is_layout(c["check_id"])]
-        recorded = all(c.get("recorded") for c in result["coverage"])
-        pages.append({"url": result["url"], "folder": folder.name, "recorded": recorded, "candidates": len(result["candidates"]),
-                      "layout_rows": len({c.get("group") for c in layout})})
-        page_md = render_markdown(result, crop_prefix=folder.name + "/crops/", layout_only=True)
-        lines += ["## " + folder.name + ": " + result["url"], ""] + page_md.split("\n", 2)[2:] + [""]
-    (out / "scan.json").write_text(json.dumps({"schema_version": "ergo-scan-set.v1", "pages": pages}, ensure_ascii=False, indent=1), encoding="utf-8")
-    (out / "scan.md").write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
+        futures = {pool.submit(one, pair): n for n, pair in enumerate(zip(urls, folders))}
+        for future in as_completed(futures):
+            n = futures[future]
+            results[n] = future.result()
+            pages = write_index()
+            print(f"scan: page {sum(r is not None for r in results)} of {len(urls)} recorded: {folders[n].name}", file=sys.stderr, flush=True)
     return pages
 
 
@@ -380,6 +451,8 @@ def render_markdown(result: dict[str, Any], crop_prefix: str = "", layout_only: 
                                  "Pass --allow-origin for origins the page needs.")
             for item in c.get("checks_not_run") or []:
                 lines.append(f"  Did not run: {item}. Its candidates are missing from this scan.")
+    if result.get("focus_walk") is False:
+        lines.append("- Keyboard focus walk not run (rerun with --focus-walk for the focus checks).")
     rows = [c for c in result["candidates"] if not c.get("part_of")]
     layout = [c for c in rows if is_layout(c["check_id"])]
     other = [c for c in rows if not is_layout(c["check_id"])]
