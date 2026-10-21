@@ -1,0 +1,38 @@
+[
+  {
+    "page": "p01",
+    "selector": "article p img",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "Both screenshots are rendered at their intrinsic widths. The first image starts at x=14 and is 572px wide (right edge 586px); the second is 516px wide (right edge 530px). The 360px page therefore expands to a 586px scroll width and requires horizontal scrolling.",
+    "fix": "Constrain images inside the article, for example `article img { max-width: 100%; height: auto; }`, and keep the article's horizontal padding inside its width."
+  },
+  {
+    "page": "p04",
+    "selector": "article > section:nth-of-type(5) > p:nth-of-type(3) > span.marginnote",
+    "viewport": "laptop",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The rhinoceros margin note spans y=6593-6984 at x=942-1289. The following full-width Napoleon figure begins at y=6935 and x=180-1314, so the note's final caption lines overlap the top-right of the figure by 49px.",
+    "fix": "Clear the preceding margin-note float before the full-width figure, or reserve the note's full vertical extent in normal flow (for example, add `clear: both` to `.fullwidth` or contain the float with a block formatting context)."
+  },
+  {
+    "page": "p08",
+    "selector": "input.card.w-100, textarea.card.w-100",
+    "viewport": "both",
+    "category": "size_mismatch",
+    "severity": "P1",
+    "evidence": "On phone, the 328px form column contains a 360.7px email input starting at x=16 (right edge 376.7px), pushing the document to 377px wide. On laptop, the email input is 472.7px inside a 440px column and overlaps the next column by 16.7px; the textarea reaches 1200.7px while the form row ends at 1184px.",
+    "fix": "Use border-box sizing for these controls (`box-sizing: border-box` on `.card.w-100`) or reduce the declared width by the horizontal padding and borders."
+  },
+  {
+    "page": "p09",
+    "selector": "body > article > section:nth-of-type(7) > pre.code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The final code block's `pre` occupies x=45-362.3px, but unbroken code lines extend to x=455px. There is no horizontal scroll container, so the 360px document reports a 455px scroll width and the right side of the code is cut off.",
+    "fix": "Give the code block its own horizontal scroll area (`pre.code { max-width: 100%; overflow-x: auto; }`) or allow long lines to wrap within the 360px viewport."
+  }
+]

@@ -1,0 +1,92 @@
+[
+  {
+    "page": "p01",
+    "selector": "article > p:nth-of-type(2) > img, article > p:nth-of-type(4) > img",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360px viewport the document scrollWidth is 586px, so the page scrolls sideways. img[src=\"screenshot/default.png\"] renders 572x316 at x=14 (right edge 586) and img[src=\"screenshot/writ.png\"] renders 516x336 (right edge 530); neither has max-width. The full-page phone capture is 586px wide.",
+    "fix": "Add `article img { max-width: 100%; height: auto; }` so both screenshots scale to the text column instead of forcing a 226px horizontal scroll."
+  },
+  {
+    "page": "p04",
+    "selector": "#newspaper-tone",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The table is 337.9px wide but its .table-wrapper is only 268px wide inside a 315px text column (table right edge 385.5, wrapper right edge 313.75). The third column, 'Percent of articles with negative criticism...', is cut mid-word at the wrapper edge at rest; the content is only reachable by scrolling the inner box, which is 46px narrower than the column it sits in.",
+    "fix": "Let the wrapper span the column (`width:100%`) and give the table `min-width:100%` with reduced cell padding, or stack the row label above the figures at phone width so the third column fits."
+  },
+  {
+    "page": "p05",
+    "selector": "#checkbox-1, #checkbox-2, #checkbox-3, #radio-1, #radio-2, #radio-3, #radio-4",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "All seven controls sit 6.0px below the vertical centre of their label line at both 360x780 and 1440x900 (e.g. #checkbox-1 box y=5952 h=16 centre 5960 vs label line y=5945 h=18 centre 5954; the same 6px delta repeats for every radio and checkbox). The 16x16 box reads low against 18px label text.",
+    "fix": "Align the control with its label line, e.g. `input[type=checkbox], input[type=radio] { vertical-align: middle; margin-top: 0; }` or wrap each pair in a flex row with `align-items:center`."
+  },
+  {
+    "page": "p06",
+    "selector": "nav > ul",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The nav list is 374px wide in a 336px client box (nav is 360px), so the last item is cut: li:nth-of-type(4) 'Form elements' spans x=277.5 to 386.5 and renders as 'Form elem' at the screen edge. The list scrolls horizontally but no affordance shows, so the label reads as truncated.",
+    "fix": "Let the nav items wrap (`flex-wrap: wrap` or `white-space: normal`) or reduce item padding/font at phone width so all four labels fit in 336px."
+  },
+  {
+    "page": "p06",
+    "selector": "nav > ul > li:nth-of-type(1) > a",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The 'Bahunya' item sits 4px higher than its three siblings: its li starts at y=4 while 'Text', 'Embedded content' and 'Form elements' start at y=8, and its text top is 16.6 vs 20.6 for the others at 1440px. The highlighted first item visibly rides above the nav baseline.",
+    "fix": "Give all nav items the same vertical padding/height and remove the extra margin that lifts the first item (e.g. set a shared `padding: 12px` on the links and drop the first-child offset)."
+  },
+  {
+    "page": "p06",
+    "selector": "#text__tables > table:nth-of-type(1)",
+    "viewport": "both",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The table is 768px wide inside a 328px box at phone and a 688px column at laptop. At rest the fifth heading renders as 'Tabl' with the column cut at the container edge; the remaining columns are only reachable by scrolling the table box.",
+    "fix": "Set the table to `width:100%` with smaller cell padding at narrow widths, or add a visible scroll container with `overflow-x:auto` that spans the full article column."
+  },
+  {
+    "page": "p07",
+    "selector": "body > div:nth-of-type(1) > div > a:nth-of-type(2)",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The two hero buttons overlap at 360px: 'UTILITIES' spans y=407.4-450.8 and 'COMPONENTS' spans y=433.0-476.4, a 17.4px overlap. The white COMPONENTS pill paints over the lower half of the UTILITIES outline, so the first button looks broken rather than stacked.",
+    "fix": "Stack them with a gap (`display:block` with `margin-top` on the second, or a flex column with `gap: 0.75rem`); the two buttons are inline and wrap onto each other."
+  },
+  {
+    "page": "p08",
+    "selector": "div:nth-of-type(7) > div:nth-of-type(1) > input, div:nth-of-type(8) > textarea",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The email input and message textarea render 360.66px wide starting at x=16, so their right edge is 376.66 in a 360px viewport; document scrollWidth is 377 and the page scrolls sideways. Both use class 'card w-100' with computed width 328px and `box-sizing: content-box`, so padding is added outside the 328px.",
+    "fix": "Use `box-sizing: border-box` for `.card`/`.w-100` form controls, or set `max-width:100%` so the 16px padding stays inside the column."
+  },
+  {
+    "page": "p09",
+    "selector": "section:nth-of-type(7) > table",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "At 360px the numeric columns collapse onto each other: cells have 1px padding and right-aligned figures, so 'disp' (right 244.2) and 'hp' (left 245.2) have a 1px gap and the row reads '1601103.902.62'. The header reads 'mpgcyl disp hp drat wt' with headings touching.",
+    "fix": "Add horizontal padding (e.g. `td, th { padding: 0.25em 0.5em; }`) or give numeric cells a min-width, and allow the table to scroll at narrow widths instead of compressing the gaps."
+  },
+  {
+    "page": "p10",
+    "selector": "label.menu-button",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The 32x32 menu button contains the text 'listview' (scrollWidth 63) rendered in the body font rather than the icomatic glyph font, so the label is cut off at the right edge of the button and only a few letters show at top right of the screen.",
+    "fix": "Load the icon font from the page's own copy (the @font-face currently points at a protocol-relative CDN URL) or replace the label with an inline SVG hamburger sized to the 32x32 control and centred."
+  }
+]

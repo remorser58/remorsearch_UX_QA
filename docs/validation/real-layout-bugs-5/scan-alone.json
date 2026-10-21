@@ -1,0 +1,816 @@
+{
+ "skill": "ac1a187 (frozen for round 5)",
+ "how": "one scan command with twenty --url (both states of each case), file:// URLs, REMORSEARCH_CHROMIUM_ARGS=--single-process, as the agents ran it. \"Matched\" means a layout row on the broken page that names the known defect and is absent from the fixed page or measures it there at its fixed size.",
+ "matched_known_defects_on_broken_pages": 6,
+ "matched": {
+  "writ-e0b84596": "LY-08: the page is 226 px wider than the screen because of the article image; no layout row on the fixed page",
+  "lit-css-481f5cc3": "LY-08: the docs page is 17 px wider than the screen and the row names the textarea and the text field; no layout row on the fixed page",
+  "lit-css-fce9ac96": "LY-02: on the 360 px phone the Components button covers 40 % of the 'UTILITIES' button label; no layout row on the fixed page",
+  "almond-css-44f880c2": "LY-09: each checkbox and radio sits 6 px below the middle of its label on the laptop; no layout row on the fixed page",
+  "bahunya-0aa2c063": "LY-09 and LY-04: the brand link 'Bahunya' sits 4 px above the centre of the links beside it on both devices; neither row on the fixed page",
+  "tufte-css-69255155": "LY-08: the page is 455 px wide on a 360 px phone because of the code blocks; on the fixed page the same row says 362 px (the 2 px listed under also_present)"
+ },
+ "missed": {
+  "tufte-css-c6e436bb": "no row compares a side note's baseline with the line it annotates; the one LY-02 row appears on both states",
+  "tufte-css-6c2f3e8e": "no row names the margin caption running over the figure below it; the one LY-05 row appears on both states",
+  "lit-css-ce470806": "no row names grid rows that touch",
+  "flexboxgrid-7b71b69e": "no row compares the hero copy's alignment with the centred title; the eleven LY-02 rows on the closed menu appear on both states"
+ },
+ "states": {
+  "tufte-css-c6e436bb-broken/index.html": {
+   "candidates": 1,
+   "layout_rows": 1,
+   "layout": [
+    "LY-02 a:nth-of-type(3)|R Markdown’s Tufte Handout format"
+   ],
+   "seconds": [
+    25.9,
+    47.2
+   ]
+  },
+  "tufte-css-c6e436bb-fixed/index.html": {
+   "candidates": 1,
+   "layout_rows": 1,
+   "layout": [
+    "LY-02 a:nth-of-type(3)|R Markdown’s Tufte Handout format"
+   ],
+   "seconds": [
+    43.5,
+    63.0
+   ]
+  },
+  "tufte-css-6c2f3e8e-broken/index.html": {
+   "candidates": 1,
+   "layout_rows": 1,
+   "layout": [
+    "LY-05 p:nth-of-type(4) > span:nth-of-type(5)|h2"
+   ],
+   "seconds": [
+    47.6,
+    47.6
+   ]
+  },
+  "tufte-css-6c2f3e8e-fixed/index.html": {
+   "candidates": 1,
+   "layout_rows": 1,
+   "layout": [
+    "LY-05 p:nth-of-type(4) > span:nth-of-type(5)|h2"
+   ],
+   "seconds": [
+    22.3,
+    22.3
+   ]
+  },
+  "tufte-css-69255155-broken/index.html": {
+   "candidates": 3,
+   "layout_rows": 3,
+   "layout": [
+    "LY-05 span:nth-of-type(5)|h2",
+    "LY-08 page-width| offenders section:nth-of-type(7) > pre,section:nth-of-type(2) > pre",
+    "RF-01 html|/private/tmp/rs-rb5/states/tufte-css-69255155-broken/in"
+   ],
+   "seconds": [
+    34.8,
+    34.8
+   ]
+  },
+  "tufte-css-69255155-fixed/index.html": {
+   "candidates": 2,
+   "layout_rows": 2,
+   "layout": [
+    "LY-05 span:nth-of-type(5)|h2",
+    "LY-08 page-width| offenders section:nth-of-type(7) > pre,section:nth-of-type(2) > pre"
+   ],
+   "seconds": [
+    20.2,
+    20.2
+   ]
+  },
+  "lit-css-481f5cc3-broken/docs/lit.html": {
+   "candidates": 35,
+   "layout_rows": 3,
+   "layout": [
+    "LY-08 page-width| offenders textarea,div:nth-of-type(1) > input",
+    "RF-01 div:nth-of-type(7) > div:nth-of-type(1) > input|",
+    "RF-01 div:nth-of-type(8) > textarea|"
+   ],
+   "seconds": [
+    13.2,
+    31.8
+   ]
+  },
+  "lit-css-481f5cc3-fixed/docs/lit.html": {
+   "candidates": 32,
+   "layout_rows": 0,
+   "layout": [],
+   "seconds": [
+    18.7,
+    19.0
+   ]
+  },
+  "lit-css-fce9ac96-broken/utility.html": {
+   "candidates": 41,
+   "layout_rows": 1,
+   "layout": [
+    "LY-02 body > div:nth-of-type(1) > div > a:nth-of-type(1)|Utilities"
+   ],
+   "seconds": [
+    18.2,
+    18.2
+   ]
+  },
+  "lit-css-fce9ac96-fixed/utility.html": {
+   "candidates": 40,
+   "layout_rows": 0,
+   "layout": [],
+   "seconds": [
+    11.2,
+    11.2
+   ]
+  },
+  "lit-css-ce470806-broken/index.html": {
+   "candidates": 20,
+   "layout_rows": 0,
+   "layout": [],
+   "seconds": [
+    11.0,
+    11.0
+   ]
+  },
+  "lit-css-ce470806-fixed/index.html": {
+   "candidates": 20,
+   "layout_rows": 0,
+   "layout": [],
+   "seconds": [
+    11.0,
+    11.0
+   ]
+  },
+  "writ-e0b84596-broken/index.html": {
+   "candidates": 3,
+   "layout_rows": 3,
+   "layout": [
+    "LY-08 page-width| offenders p:nth-of-type(2) > img",
+    "RF-01 article > p:nth-of-type(2) > img|",
+    "RF-01 article > p:nth-of-type(4) > img|"
+   ],
+   "seconds": [
+    7.4,
+    7.4
+   ]
+  },
+  "writ-e0b84596-fixed/index.html": {
+   "candidates": 0,
+   "layout_rows": 0,
+   "layout": [],
+   "seconds": [
+    4.2,
+    4.2
+   ]
+  },
+  "almond-css-44f880c2-broken/demo/index.html": {
+   "candidates": 20,
+   "layout_rows": 7,
+   "layout": [
+    "LY-09 #checkbox-1|Checkbox",
+    "LY-09 #checkbox-2|Checked Checkbox",
+    "LY-09 #checkbox-3|Disabled Checkbox",
+    "LY-09 #radio-1|Radio 1",
+    "LY-09 #radio-2|Radio 2",
+    "LY-09 #radio-3|Radio 3",
+    "LY-09 #radio-4|Radio 4 (disabled)"
+   ],
+   "seconds": [
+    12.2,
+    12.2
+   ]
+  },
+  "almond-css-44f880c2-fixed/demo/index.html": {
+   "candidates": 13,
+   "layout_rows": 0,
+   "layout": [],
+   "seconds": [
+    10.6,
+    12.8
+   ]
+  },
+  "flexboxgrid-7b71b69e-broken/index.html": {
+   "candidates": 31,
+   "layout_rows": 10,
+   "layout": [
+    "LY-02 body > section > h2|Features",
+    "LY-02 li:nth-of-type(1) > a|Responsive",
+    "LY-02 li:nth-of-type(10) > a|Reversing",
+    "LY-02 li:nth-of-type(2) > a|Fluid",
+    "LY-02 li:nth-of-type(3) > a|Simple syntax",
+    "LY-02 li:nth-of-type(4) > a|Offsets",
+    "LY-02 li:nth-of-type(5) > a|Auto width",
+    "LY-02 li:nth-of-type(6) > a|Nested grids",
+    "LY-02 li:nth-of-type(7) > a|Alignment",
+    "LY-02 li:nth-of-type(8) > a|Distribution",
+    "LY-02 li:nth-of-type(9) > a|Reordering"
+   ],
+   "seconds": [
+    11.5,
+    11.5
+   ]
+  },
+  "flexboxgrid-7b71b69e-fixed/index.html": {
+   "candidates": 31,
+   "layout_rows": 10,
+   "layout": [
+    "LY-02 body > section > h2|Features",
+    "LY-02 li:nth-of-type(1) > a|Responsive",
+    "LY-02 li:nth-of-type(10) > a|Reversing",
+    "LY-02 li:nth-of-type(2) > a|Fluid",
+    "LY-02 li:nth-of-type(3) > a|Simple syntax",
+    "LY-02 li:nth-of-type(4) > a|Offsets",
+    "LY-02 li:nth-of-type(5) > a|Auto width",
+    "LY-02 li:nth-of-type(6) > a|Nested grids",
+    "LY-02 li:nth-of-type(7) > a|Alignment",
+    "LY-02 li:nth-of-type(8) > a|Distribution",
+    "LY-02 li:nth-of-type(9) > a|Reordering"
+   ],
+   "seconds": [
+    9.7,
+    10.7
+   ]
+  },
+  "bahunya-0aa2c063-broken/demo.html": {
+   "candidates": 24,
+   "layout_rows": 4,
+   "layout": [
+    "LY-02 #text__aside > div > p:nth-of-type(2)|Several species of sal",
+    "LY-04 nav > ul > li:nth-of-type(1)|Bahunya",
+    "LY-04 p:nth-of-type(13)|This text is a short inline quotation.",
+    "LY-09 nav > ul > li:nth-of-type(1) > a|Bahunya"
+   ],
+   "seconds": [
+    10.1,
+    11.5
+   ]
+  },
+  "bahunya-0aa2c063-fixed/demo.html": {
+   "candidates": 21,
+   "layout_rows": 2,
+   "layout": [
+    "LY-02 #text__aside > div > p:nth-of-type(2)|Several species of sal",
+    "LY-04 p:nth-of-type(13)|This text is a short inline quotation."
+   ],
+   "seconds": [
+    10.9,
+    11.3
+   ]
+  }
+ },
+ "previous_version": {
+  "skill": "51240ed (frozen for round 4)",
+  "matched_known_defects_on_broken_pages": 6,
+  "matched": [
+   "almond-css-44f880c2",
+   "bahunya-0aa2c063",
+   "lit-css-481f5cc3",
+   "lit-css-fce9ac96",
+   "tufte-css-69255155",
+   "writ-e0b84596"
+  ],
+  "same_layout_rows_as_ac1a187": true,
+  "states": {
+   "tufte-css-c6e436bb-broken/index.html": {
+    "candidates": 2,
+    "layout_rows": 1,
+    "layout": [
+     "LY-02 a:nth-of-type(3)|R Markdown’s Tufte Handout format"
+    ],
+    "seconds": [
+     32.2,
+     32.2
+    ]
+   },
+   "tufte-css-c6e436bb-fixed/index.html": {
+    "candidates": 2,
+    "layout_rows": 1,
+    "layout": [
+     "LY-02 a:nth-of-type(3)|R Markdown’s Tufte Handout format"
+    ],
+    "seconds": [
+     32.9,
+     33.0
+    ]
+   },
+   "tufte-css-6c2f3e8e-broken/index.html": {
+    "candidates": 1,
+    "layout_rows": 1,
+    "layout": [
+     "LY-05 p:nth-of-type(4) > span:nth-of-type(5)|h2"
+    ],
+    "seconds": [
+     33.1,
+     36.7
+    ]
+   },
+   "tufte-css-6c2f3e8e-fixed/index.html": {
+    "candidates": 1,
+    "layout_rows": 1,
+    "layout": [
+     "LY-05 p:nth-of-type(4) > span:nth-of-type(5)|h2"
+    ],
+    "seconds": [
+     32.1,
+     33.7
+    ]
+   },
+   "tufte-css-69255155-broken/index.html": {
+    "candidates": 3,
+    "layout_rows": 3,
+    "layout": [
+     "LY-05 span:nth-of-type(5)|h2",
+     "LY-08 page-width| offenders section:nth-of-type(7) > pre,section:nth-of-type(2) > pre",
+     "RF-01 html|/private/tmp/rs-rb5/states/tufte-css-69255155-broken/in"
+    ],
+    "seconds": [
+     33.0,
+     33.0
+    ]
+   },
+   "tufte-css-69255155-fixed/index.html": {
+    "candidates": 2,
+    "layout_rows": 2,
+    "layout": [
+     "LY-05 span:nth-of-type(5)|h2",
+     "LY-08 page-width| offenders section:nth-of-type(7) > pre,section:nth-of-type(2) > pre"
+    ],
+    "seconds": [
+     30.8,
+     30.8
+    ]
+   },
+   "lit-css-481f5cc3-broken/docs/lit.html": {
+    "candidates": 35,
+    "layout_rows": 3,
+    "layout": [
+     "LY-08 page-width| offenders textarea,div:nth-of-type(1) > input",
+     "RF-01 div:nth-of-type(7) > div:nth-of-type(1) > input|",
+     "RF-01 div:nth-of-type(8) > textarea|"
+    ],
+    "seconds": [
+     27.5,
+     31.0
+    ]
+   },
+   "lit-css-481f5cc3-fixed/docs/lit.html": {
+    "candidates": 32,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     28.5,
+     31.6
+    ]
+   },
+   "lit-css-fce9ac96-broken/utility.html": {
+    "candidates": 41,
+    "layout_rows": 1,
+    "layout": [
+     "LY-02 body > div:nth-of-type(1) > div > a:nth-of-type(1)|Utilities"
+    ],
+    "seconds": [
+     26.1,
+     29.9
+    ]
+   },
+   "lit-css-fce9ac96-fixed/utility.html": {
+    "candidates": 40,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     28.3,
+     31.3
+    ]
+   },
+   "lit-css-ce470806-broken/index.html": {
+    "candidates": 20,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     28.9,
+     28.9
+    ]
+   },
+   "lit-css-ce470806-fixed/index.html": {
+    "candidates": 20,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     26.9,
+     26.9
+    ]
+   },
+   "writ-e0b84596-broken/index.html": {
+    "candidates": 3,
+    "layout_rows": 3,
+    "layout": [
+     "LY-08 page-width| offenders p:nth-of-type(2) > img",
+     "RF-01 article > p:nth-of-type(2) > img|",
+     "RF-01 article > p:nth-of-type(4) > img|"
+    ],
+    "seconds": [
+     25.0,
+     25.0
+    ]
+   },
+   "writ-e0b84596-fixed/index.html": {
+    "candidates": 0,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     25.6,
+     25.6
+    ]
+   },
+   "almond-css-44f880c2-broken/demo/index.html": {
+    "candidates": 20,
+    "layout_rows": 7,
+    "layout": [
+     "LY-09 #checkbox-1|Checkbox",
+     "LY-09 #checkbox-2|Checked Checkbox",
+     "LY-09 #checkbox-3|Disabled Checkbox",
+     "LY-09 #radio-1|Radio 1",
+     "LY-09 #radio-2|Radio 2",
+     "LY-09 #radio-3|Radio 3",
+     "LY-09 #radio-4|Radio 4 (disabled)"
+    ],
+    "seconds": [
+     27.8,
+     27.8
+    ]
+   },
+   "almond-css-44f880c2-fixed/demo/index.html": {
+    "candidates": 13,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     28.4,
+     28.4
+    ]
+   },
+   "flexboxgrid-7b71b69e-broken/index.html": {
+    "candidates": 33,
+    "layout_rows": 10,
+    "layout": [
+     "LY-02 body > section > h2|Features",
+     "LY-02 li:nth-of-type(1) > a|Responsive",
+     "LY-02 li:nth-of-type(10) > a|Reversing",
+     "LY-02 li:nth-of-type(2) > a|Fluid",
+     "LY-02 li:nth-of-type(3) > a|Simple syntax",
+     "LY-02 li:nth-of-type(4) > a|Offsets",
+     "LY-02 li:nth-of-type(5) > a|Auto width",
+     "LY-02 li:nth-of-type(6) > a|Nested grids",
+     "LY-02 li:nth-of-type(7) > a|Alignment",
+     "LY-02 li:nth-of-type(8) > a|Distribution",
+     "LY-02 li:nth-of-type(9) > a|Reordering"
+    ],
+    "seconds": [
+     25.2,
+     25.2
+    ]
+   },
+   "flexboxgrid-7b71b69e-fixed/index.html": {
+    "candidates": 33,
+    "layout_rows": 10,
+    "layout": [
+     "LY-02 body > section > h2|Features",
+     "LY-02 li:nth-of-type(1) > a|Responsive",
+     "LY-02 li:nth-of-type(10) > a|Reversing",
+     "LY-02 li:nth-of-type(2) > a|Fluid",
+     "LY-02 li:nth-of-type(3) > a|Simple syntax",
+     "LY-02 li:nth-of-type(4) > a|Offsets",
+     "LY-02 li:nth-of-type(5) > a|Auto width",
+     "LY-02 li:nth-of-type(6) > a|Nested grids",
+     "LY-02 li:nth-of-type(7) > a|Alignment",
+     "LY-02 li:nth-of-type(8) > a|Distribution",
+     "LY-02 li:nth-of-type(9) > a|Reordering"
+    ],
+    "seconds": [
+     25.8,
+     25.8
+    ]
+   },
+   "bahunya-0aa2c063-broken/demo.html": {
+    "candidates": 23,
+    "layout_rows": 4,
+    "layout": [
+     "LY-02 #text__aside > div > p:nth-of-type(2)|Several species of sal",
+     "LY-04 nav > ul > li:nth-of-type(1)|Bahunya",
+     "LY-04 p:nth-of-type(13)|This text is a short inline quotation.",
+     "LY-09 nav > ul > li:nth-of-type(1) > a|Bahunya"
+    ],
+    "seconds": [
+     35.2,
+     35.2
+    ]
+   },
+   "bahunya-0aa2c063-fixed/demo.html": {
+    "candidates": 21,
+    "layout_rows": 2,
+    "layout": [
+     "LY-02 #text__aside > div > p:nth-of-type(2)|Several species of sal",
+     "LY-04 p:nth-of-type(13)|This text is a short inline quotation."
+    ],
+    "seconds": [
+     34.2,
+     34.3
+    ]
+   }
+  }
+ },
+ "timing_note": "The first two scans ran while six agent sessions were running; both versions were run again on the same twenty states on an otherwise idle machine, one after the other.",
+ "timing": {
+  "ac1a187_busy": {
+   "real_s": 145.02,
+   "user_s": 172.36,
+   "sys_s": 30.24
+  },
+  "51240ed_busy": {
+   "real_s": 231.85,
+   "user_s": 302.51,
+   "sys_s": 46.09
+  },
+  "ac1a187_idle": {
+   "real_s": 81.56,
+   "user_s": 188.65,
+   "sys_s": 30.96
+  },
+  "51240ed_idle": {
+   "real_s": 222.01,
+   "user_s": 310.2,
+   "sys_s": 43.86
+  },
+  "seconds_per_page": {
+   "ac1a187_busy": {
+    "median": 12.5,
+    "max": 63.0
+   },
+   "51240ed_busy": {
+    "median": 30.9,
+    "max": 36.7
+   },
+   "ac1a187_idle": {
+    "median": 11.2,
+    "max": 18.3
+   },
+   "51240ed_idle": {
+    "median": 29.25,
+    "max": 34.9
+   }
+  }
+ },
+ "idle_rerun": {
+  "states": {
+   "tufte-css-c6e436bb-broken/index.html": {
+    "candidates": 1,
+    "layout_rows": 1,
+    "layout": [
+     "LY-02 a:nth-of-type(3)|R Markdown’s Tufte Handout format"
+    ],
+    "seconds": [
+     15.6,
+     18.3
+    ]
+   },
+   "tufte-css-c6e436bb-fixed/index.html": {
+    "candidates": 1,
+    "layout_rows": 1,
+    "layout": [
+     "LY-02 a:nth-of-type(3)|R Markdown’s Tufte Handout format"
+    ],
+    "seconds": [
+     16.0,
+     18.1
+    ]
+   },
+   "tufte-css-6c2f3e8e-broken/index.html": {
+    "candidates": 1,
+    "layout_rows": 1,
+    "layout": [
+     "LY-05 p:nth-of-type(4) > span:nth-of-type(5)|h2"
+    ],
+    "seconds": [
+     10.7,
+     11.6
+    ]
+   },
+   "tufte-css-6c2f3e8e-fixed/index.html": {
+    "candidates": 1,
+    "layout_rows": 1,
+    "layout": [
+     "LY-05 p:nth-of-type(4) > span:nth-of-type(5)|h2"
+    ],
+    "seconds": [
+     10.9,
+     12.4
+    ]
+   },
+   "tufte-css-69255155-broken/index.html": {
+    "candidates": 3,
+    "layout_rows": 3,
+    "layout": [
+     "LY-05 span:nth-of-type(5)|h2",
+     "LY-08 page-width| offenders section:nth-of-type(7) > pre,section:nth-of-type(2) > pre",
+     "RF-01 html|/private/tmp/rs-rb5/states/tufte-css-69255155-broken/in"
+    ],
+    "seconds": [
+     8.8,
+     9.9
+    ]
+   },
+   "tufte-css-69255155-fixed/index.html": {
+    "candidates": 2,
+    "layout_rows": 2,
+    "layout": [
+     "LY-05 span:nth-of-type(5)|h2",
+     "LY-08 page-width| offenders section:nth-of-type(7) > pre,section:nth-of-type(2) > pre"
+    ],
+    "seconds": [
+     8.7,
+     9.8
+    ]
+   },
+   "lit-css-481f5cc3-broken/docs/lit.html": {
+    "candidates": 35,
+    "layout_rows": 3,
+    "layout": [
+     "LY-08 page-width| offenders textarea,div:nth-of-type(1) > input",
+     "RF-01 div:nth-of-type(7) > div:nth-of-type(1) > input|",
+     "RF-01 div:nth-of-type(8) > textarea|"
+    ],
+    "seconds": [
+     9.5,
+     15.3
+    ]
+   },
+   "lit-css-481f5cc3-fixed/docs/lit.html": {
+    "candidates": 32,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     12.6,
+     13.1
+    ]
+   },
+   "lit-css-fce9ac96-broken/utility.html": {
+    "candidates": 41,
+    "layout_rows": 1,
+    "layout": [
+     "LY-02 body > div:nth-of-type(1) > div > a:nth-of-type(1)|Utilities"
+    ],
+    "seconds": [
+     11.4,
+     11.4
+    ]
+   },
+   "lit-css-fce9ac96-fixed/utility.html": {
+    "candidates": 40,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     8.8,
+     8.8
+    ]
+   },
+   "lit-css-ce470806-broken/index.html": {
+    "candidates": 20,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     11.0,
+     11.0
+    ]
+   },
+   "lit-css-ce470806-fixed/index.html": {
+    "candidates": 20,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     12.6,
+     12.6
+    ]
+   },
+   "writ-e0b84596-broken/index.html": {
+    "candidates": 3,
+    "layout_rows": 3,
+    "layout": [
+     "LY-08 page-width| offenders p:nth-of-type(2) > img",
+     "RF-01 article > p:nth-of-type(2) > img|",
+     "RF-01 article > p:nth-of-type(4) > img|"
+    ],
+    "seconds": [
+     8.1,
+     8.1
+    ]
+   },
+   "writ-e0b84596-fixed/index.html": {
+    "candidates": 0,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     4.1,
+     4.1
+    ]
+   },
+   "almond-css-44f880c2-broken/demo/index.html": {
+    "candidates": 20,
+    "layout_rows": 7,
+    "layout": [
+     "LY-09 #checkbox-1|Checkbox",
+     "LY-09 #checkbox-2|Checked Checkbox",
+     "LY-09 #checkbox-3|Disabled Checkbox",
+     "LY-09 #radio-1|Radio 1",
+     "LY-09 #radio-2|Radio 2",
+     "LY-09 #radio-3|Radio 3",
+     "LY-09 #radio-4|Radio 4 (disabled)"
+    ],
+    "seconds": [
+     9.2,
+     10.5
+    ]
+   },
+   "almond-css-44f880c2-fixed/demo/index.html": {
+    "candidates": 13,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     10.3,
+     10.4
+    ]
+   },
+   "flexboxgrid-7b71b69e-broken/index.html": {
+    "candidates": 31,
+    "layout_rows": 10,
+    "layout": [
+     "LY-02 body > section > h2|Features",
+     "LY-02 li:nth-of-type(1) > a|Responsive",
+     "LY-02 li:nth-of-type(10) > a|Reversing",
+     "LY-02 li:nth-of-type(2) > a|Fluid",
+     "LY-02 li:nth-of-type(3) > a|Simple syntax",
+     "LY-02 li:nth-of-type(4) > a|Offsets",
+     "LY-02 li:nth-of-type(5) > a|Auto width",
+     "LY-02 li:nth-of-type(6) > a|Nested grids",
+     "LY-02 li:nth-of-type(7) > a|Alignment",
+     "LY-02 li:nth-of-type(8) > a|Distribution",
+     "LY-02 li:nth-of-type(9) > a|Reordering"
+    ],
+    "seconds": [
+     11.4,
+     11.6
+    ]
+   },
+   "flexboxgrid-7b71b69e-fixed/index.html": {
+    "candidates": 31,
+    "layout_rows": 10,
+    "layout": [
+     "LY-02 body > section > h2|Features",
+     "LY-02 li:nth-of-type(1) > a|Responsive",
+     "LY-02 li:nth-of-type(10) > a|Reversing",
+     "LY-02 li:nth-of-type(2) > a|Fluid",
+     "LY-02 li:nth-of-type(3) > a|Simple syntax",
+     "LY-02 li:nth-of-type(4) > a|Offsets",
+     "LY-02 li:nth-of-type(5) > a|Auto width",
+     "LY-02 li:nth-of-type(6) > a|Nested grids",
+     "LY-02 li:nth-of-type(7) > a|Alignment",
+     "LY-02 li:nth-of-type(8) > a|Distribution",
+     "LY-02 li:nth-of-type(9) > a|Reordering"
+    ],
+    "seconds": [
+     10.0,
+     10.4
+    ]
+   },
+   "bahunya-0aa2c063-broken/demo.html": {
+    "candidates": 24,
+    "layout_rows": 4,
+    "layout": [
+     "LY-02 #text__aside > div > p:nth-of-type(2)|Several species of sal",
+     "LY-04 nav > ul > li:nth-of-type(1)|Bahunya",
+     "LY-04 p:nth-of-type(13)|This text is a short inline quotation.",
+     "LY-09 nav > ul > li:nth-of-type(1) > a|Bahunya"
+    ],
+    "seconds": [
+     10.7,
+     11.7
+    ]
+   },
+   "bahunya-0aa2c063-fixed/demo.html": {
+    "candidates": 21,
+    "layout_rows": 2,
+    "layout": [
+     "LY-02 #text__aside > div > p:nth-of-type(2)|Several species of sal",
+     "LY-04 p:nth-of-type(13)|This text is a short inline quotation."
+    ],
+    "seconds": [
+     10.2,
+     10.9
+    ]
+   }
+  }
+ }
+}

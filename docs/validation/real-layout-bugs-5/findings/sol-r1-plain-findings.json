@@ -1,0 +1,65 @@
+[
+  {
+    "page": "p01",
+    "selector": "article img",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The two example screenshots retain widths of 572 px and 516 px inside a 332 px content column. At x=14 their right edges are x=586 and x=530, exceeding the 360 px viewport by 226 px and 170 px. Their right-hand content is outside the screen and the document grows to 586 px wide. See p01-phone-00.png and focus-p01-phone-0.png.",
+    "fix": "Apply max-width: 100%; height: auto to article images so both examples shrink to their containing column."
+  },
+  {
+    "page": "p06",
+    "selector": "#forms__checkbox input, #forms__radio input",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "All checkbox and radio marks sit visibly above their associated label text. For the first checkbox on phone, the input box spans y=11441.70–11485.70 (44 px tall, centre 11463.70), while the label text spans y=11468.80–11486.80 (centre 11477.80): a 14.10 px vertical offset. Laptop and radio rows have the same offset. See focus-p06-phone-0.png and focus-p06-laptop-0.png.",
+    "fix": "Lay out these labels with inline-flex and align-items: center; remove the input bottom margin and shared 44 px minimum height from checkbox/radio inputs. Keep any desired 44 px touch target on the label."
+  },
+  {
+    "page": "p07",
+    "selector": "body > .tc.vh-100 .btn",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The Utilities and Components pill buttons wrap onto consecutive lines, but their padded borders overlap. The first button spans y=407.39–450.77 and the second y=432.99–476.36, producing 17.78 px of vertical overlap. The Components surface covers the lower portion of the Utilities pill. See focus-p07-phone-0.png.",
+    "fix": "Make the pill anchors inline-block so their full padded heights participate in line layout, or place them in a wrapping flex container with an explicit gap."
+  },
+  {
+    "page": "p07",
+    "selector": "a[href=\"#full\"]",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "In the Components navigation, Full Page Landing splits across two rows: Full Page starts at x=215.92 on the first row, while Landing restarts at x=27 on the next row under the other navigation items. The text fragments are 25.59 px apart vertically. See focus-p07-phone-2.png.",
+    "fix": "Keep each navigation link as an indivisible inline-block with white-space: nowrap, and let the entire link wrap to the next row using a flex container with flex-wrap and gap."
+  },
+  {
+    "page": "p07",
+    "selector": "#alerts .col.large",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "The alert close glyph drops below the message at the lower left of the alert. Its text starts at x=32, y=4339.25, about 87 px below the message column top (4252.27), inside an alert spanning x=16–344 and y=4244.27–4394.64. On laptop it sits beside the message at the right. See focus-p07-phone-1.png.",
+    "fix": "Use a non-stacking flex or grid layout for this alert, with the message taking the remaining width and the close control aligned at the top right; do not apply the generic mobile column stacking rule to the close control."
+  },
+  {
+    "page": "p08",
+    "selector": "input.card.w-100, textarea.card.w-100",
+    "viewport": "both",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The Email input and Message textarea include padding and borders outside their declared full width. On phone both are 360.66 px wide inside a 328 px column and reach x=376.66, 16.66 px beyond the screen; the adjacent select ends correctly at x=344. On laptop the email input ends at x=744.66 while the select begins at x=728, creating 16.66 px of overlap, and the textarea ends at x=1200.66 beyond its row edge x=1184. See focus-p08-phone-0.png and focus-p08-laptop-0.png.",
+    "fix": "Set box-sizing: border-box on the full-width form controls so padding and borders are included in width: 100%."
+  },
+  {
+    "page": "p10",
+    "selector": "label.menu-button",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The menu control is 32×32 px at x=316–348, y=12–44, but its rendered listview text spans x=325–380 and y=21–42. It extends 32 px past the control and 20 px beyond the 360 px screen, visibly cutting off its ending. See focus-p10-phone-0.png.",
+    "fix": "Render a menu glyph or inline SVG sized to the control content area, and centre it with display: flex; align-items: center; justify-content: center. If retaining a text label, give it enough width and keep the whole control inside the viewport."
+  }
+]

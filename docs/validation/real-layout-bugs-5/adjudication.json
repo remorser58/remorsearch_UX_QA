@@ -1,0 +1,892 @@
+[
+ {
+  "code": 82053,
+  "run": "flash-r1-plain",
+  "page": "p01",
+  "state": "writ-e0b84596-broken",
+  "viewport": "phone",
+  "selector": "body > article > p:nth-of-type(2) > img",
+  "verdict": "KNOWN:writ-e0b84596",
+  "evidence": "At 360 CSS px the screenshot image renders at 572x316 px starting at x=14, so its right edge is 586 px. The document scrollWidth becomes 586 px against a 360 px viewport, forcing sideways scrolling; the second image also extends to 530 px."
+ },
+ {
+  "code": 48841,
+  "run": "flash-r1-plain",
+  "page": "p03",
+  "state": "lit-css-ce470806-fixed",
+  "viewport": "phone",
+  "selector": "body.c > pre:nth-of-type(3)",
+  "verdict": "UNSUPPORTED:lit-code-scroll",
+  "evidence": "The HTML example `pre` is 328 px wide with 322 px of client width, but its contents are 876 px wide and its inline `code` renders 850.3 px wide. The block has `overflow-x: auto` and no visible scrollbar in the touch capture, so most of the example is hidden. Other code examples on the page show the same horizontal clipping (scrollWidth 354 vs clientWidth 322, and 361 vs 322)."
+ },
+ {
+  "code": 59243,
+  "run": "flash-r1-plain",
+  "page": "p04",
+  "state": "tufte-css-6c2f3e8e-fixed",
+  "viewport": "phone",
+  "selector": "div.table-wrapper:nth-of-type(1)",
+  "verdict": "UNSUPPORTED:tufte-table-scroll",
+  "evidence": "The first table wrapper is 268.8 px wide with `overflow-x: scroll`, but its table is 337.9 px wide and extends to x=385.5, 25.5 px past the 360 px viewport. The table's third column is cut mid-label and the wrapper gives no visible scroll cue; the page also reports a 343 px scrollWidth inside a 268 px box."
+ },
+ {
+  "code": 66713,
+  "run": "flash-r1-plain",
+  "page": "p04",
+  "state": "tufte-css-6c2f3e8e-fixed",
+  "viewport": "phone",
+  "selector": "html > body > article > section:nth-of-type(4) > pre.code",
+  "verdict": "UNSUPPORTED:tufte-code-scroll",
+  "evidence": "The code blocks are 283.5 px wide with `overflow-x: scroll`, but their content is 681 px and 731 px wide. Only the left portion of each HTML example is visible, and the rest is hidden without a visible scrollbar on the touch viewport."
+ },
+ {
+  "code": 63825,
+  "run": "flash-r1-plain",
+  "page": "p05",
+  "state": "almond-css-44f880c2-broken",
+  "viewport": "both",
+  "selector": "#selectmultiple",
+  "verdict": "UNSUPPORTED:almond-select-scroll",
+  "evidence": "The multiselect is 258x160 px with clientHeight 158 and scrollHeight 348, so options 7 and 8 are below the visible list area on both phone and laptop. This is a native scrolling select; the list is usable by scrolling, but the last options are not visible at rest."
+ },
+ {
+  "code": 34157,
+  "run": "flash-r1-plain",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-broken",
+  "viewport": "phone",
+  "selector": "body > nav > ul",
+  "verdict": "UNSUPPORTED:bahunya-nav-scroll",
+  "evidence": "The fixed navigation list is 336 px wide but its scrollWidth is 374 px. The fourth item, “Form elements”, runs from x=277.5 to x=386.5, 26.5 px beyond the 360 px viewport, and is cut off at the right edge. The list is horizontally scrollable but has no visible scrollbar."
+ },
+ {
+  "code": 81269,
+  "run": "flash-r1-plain",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-broken",
+  "viewport": "both",
+  "selector": "main > section:nth-of-type(1) > article:nth-of-type(7) > table:nth-of-type(1)",
+  "verdict": "UNSUPPORTED:bahunya-table-scroll",
+  "evidence": "On phone the table is 328 px wide with `overflow-x: auto` but its contents are 768 px wide; the caption and headings 3–5 are cut off. On laptop the same table is 688 px wide with 798 px of content, so its last columns are also clipped. The table has no visible scrollbar."
+ },
+ {
+  "code": 67996,
+  "run": "flash-r1-plain",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "body > div.tc.vh-100 > div.vc.c > a.btn.bg-accent",
+  "verdict": "KNOWN:lit-css-fce9ac96",
+  "evidence": "The two hero buttons are inline elements on one line. The first button occupies x=102.3–257.6 and the second x=87.8–272.1; their vertical ranges overlap (407.4–450.8 and 433.0–476.4), so the white “Components” button sits on top of the lower half of the “Utilities” button."
+ },
+ {
+  "code": 93621,
+  "run": "flash-r1-plain",
+  "page": "p08",
+  "state": "lit-css-481f5cc3-broken",
+  "viewport": "phone",
+  "selector": "body.c > div.row:nth-of-type(7) > div.6.col > input.card.w-100",
+  "verdict": "KNOWN:lit-css-481f5cc3",
+  "evidence": "The email input is 360.7 px wide starting at x=16, so it reaches x=376.7, 16.7 px past the 360 px viewport. The textarea below is also 360.7 px wide. The page's document scrollWidth is 377 px, producing sideways scrolling."
+ },
+ {
+  "code": 79280,
+  "run": "flash-r1-plain",
+  "page": "p09",
+  "state": "tufte-css-69255155-fixed",
+  "viewport": "phone",
+  "selector": "body > article > section:nth-of-type(6) > table",
+  "verdict": "VALID:tufte-table-columns",
+  "evidence": "The table is 304 px wide but its 7 columns need more room; the header reads “mpgcylldisp” with no separation and the numeric columns collide (“1101103.90”). The table overflows its 283 px paragraph column and the final values are squeezed beyond the readable area."
+ },
+ {
+  "code": 53240,
+  "run": "flash-r1-plain",
+  "page": "p10",
+  "state": "flexboxgrid-7b71b69e-broken",
+  "viewport": "phone",
+  "selector": ".hero__headline",
+  "verdict": "UNSUPPORTED:fbg-title-cut",
+  "evidence": "The headline is 48 px text with `white-space: nowrap`, a 288.8 px box and 22.4 px line height, while its content needs 39 px of height. “Flexbox Grid” is cut at the right edge and the line is vertically clipped; the fixed menu button's “listview” label also runs off the right edge."
+ },
+ {
+  "code": 38684,
+  "run": "flash-r1-skill",
+  "page": "p01",
+  "state": "writ-e0b84596-broken",
+  "viewport": "phone",
+  "selector": "article > p:nth-of-type(2) > img, article > p:nth-of-type(4) > img",
+  "verdict": "KNOWN:writ-e0b84596",
+  "evidence": "At 360px viewport the document scrollWidth is 586px, so the page scrolls sideways. img[src=\"screenshot/default.png\"] renders 572x316 at x=14 (right edge 586) and img[src=\"screenshot/writ.png\"] renders 516x336 (right edge 530); neither has max-width. The full-page phone capture is 586px wide."
+ },
+ {
+  "code": 66238,
+  "run": "flash-r1-skill",
+  "page": "p04",
+  "state": "tufte-css-6c2f3e8e-fixed",
+  "viewport": "phone",
+  "selector": "#newspaper-tone",
+  "verdict": "UNSUPPORTED:tufte-table-scroll",
+  "evidence": "The table is 337.9px wide but its .table-wrapper is only 268px wide inside a 315px text column (table right edge 385.5, wrapper right edge 313.75). The third column, 'Percent of articles with negative criticism...', is cut mid-word at the wrapper edge at rest; the content is only reachable by scrolling the inner box, which is 46px narrower than the column it sits in."
+ },
+ {
+  "code": 36198,
+  "run": "flash-r1-skill",
+  "page": "p05",
+  "state": "almond-css-44f880c2-broken",
+  "viewport": "both",
+  "selector": "#checkbox-1, #checkbox-2, #checkbox-3, #radio-1, #radio-2, #radio-3, #radio-4",
+  "verdict": "KNOWN:almond-css-44f880c2",
+  "evidence": "All seven controls sit 6.0px below the vertical centre of their label line at both 360x780 and 1440x900 (e.g. #checkbox-1 box y=5952 h=16 centre 5960 vs label line y=5945 h=18 centre 5954; the same 6px delta repeats for every radio and checkbox). The 16x16 box reads low against 18px label text."
+ },
+ {
+  "code": 71714,
+  "run": "flash-r1-skill",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-broken",
+  "viewport": "phone",
+  "selector": "nav > ul",
+  "verdict": "UNSUPPORTED:bahunya-nav-scroll",
+  "evidence": "The nav list is 374px wide in a 336px client box (nav is 360px), so the last item is cut: li:nth-of-type(4) 'Form elements' spans x=277.5 to 386.5 and renders as 'Form elem' at the screen edge. The list scrolls horizontally but no affordance shows, so the label reads as truncated."
+ },
+ {
+  "code": 33123,
+  "run": "flash-r1-skill",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-broken",
+  "viewport": "both",
+  "selector": "nav > ul > li:nth-of-type(1) > a",
+  "verdict": "KNOWN:bahunya-0aa2c063",
+  "evidence": "The 'Bahunya' item sits 4px higher than its three siblings: its li starts at y=4 while 'Text', 'Embedded content' and 'Form elements' start at y=8, and its text top is 16.6 vs 20.6 for the others at 1440px. The highlighted first item visibly rides above the nav baseline."
+ },
+ {
+  "code": 15565,
+  "run": "flash-r1-skill",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-broken",
+  "viewport": "both",
+  "selector": "#text__tables > table:nth-of-type(1)",
+  "verdict": "UNSUPPORTED:bahunya-table-scroll",
+  "evidence": "The table is 768px wide inside a 328px box at phone and a 688px column at laptop. At rest the fifth heading renders as 'Tabl' with the column cut at the container edge; the remaining columns are only reachable by scrolling the table box."
+ },
+ {
+  "code": 14396,
+  "run": "flash-r1-skill",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "body > div:nth-of-type(1) > div > a:nth-of-type(2)",
+  "verdict": "KNOWN:lit-css-fce9ac96",
+  "evidence": "The two hero buttons overlap at 360px: 'UTILITIES' spans y=407.4-450.8 and 'COMPONENTS' spans y=433.0-476.4, a 17.4px overlap. The white COMPONENTS pill paints over the lower half of the UTILITIES outline, so the first button looks broken rather than stacked."
+ },
+ {
+  "code": 76341,
+  "run": "flash-r1-skill",
+  "page": "p08",
+  "state": "lit-css-481f5cc3-broken",
+  "viewport": "phone",
+  "selector": "div:nth-of-type(7) > div:nth-of-type(1) > input, div:nth-of-type(8) > textarea",
+  "verdict": "KNOWN:lit-css-481f5cc3",
+  "evidence": "The email input and message textarea render 360.66px wide starting at x=16, so their right edge is 376.66 in a 360px viewport; document scrollWidth is 377 and the page scrolls sideways. Both use class 'card w-100' with computed width 328px and `box-sizing: content-box`, so padding is added outside the 328px."
+ },
+ {
+  "code": 83919,
+  "run": "flash-r1-skill",
+  "page": "p09",
+  "state": "tufte-css-69255155-fixed",
+  "viewport": "phone",
+  "selector": "section:nth-of-type(7) > table",
+  "verdict": "VALID:tufte-table-columns",
+  "evidence": "At 360px the numeric columns collapse onto each other: cells have 1px padding and right-aligned figures, so 'disp' (right 244.2) and 'hp' (left 245.2) have a 1px gap and the row reads '1601103.902.62'. The header reads 'mpgcyl disp hp drat wt' with headings touching."
+ },
+ {
+  "code": 76281,
+  "run": "flash-r1-skill",
+  "page": "p10",
+  "state": "flexboxgrid-7b71b69e-broken",
+  "viewport": "phone",
+  "selector": "label.menu-button",
+  "verdict": "VALID:fbg-menu-text",
+  "evidence": "The 32x32 menu button contains the text 'listview' (scrollWidth 63) rendered in the body font rather than the icomatic glyph font, so the label is cut off at the right edge of the button and only a few letters show at top right of the screen."
+ },
+ {
+  "code": 66088,
+  "run": "flash-r2-plain",
+  "page": "p01",
+  "state": "writ-e0b84596-broken",
+  "viewport": "phone",
+  "selector": "article p img",
+  "verdict": "KNOWN:writ-e0b84596",
+  "evidence": "Both screenshots are rendered at their intrinsic widths. The first image starts at x=14 and is 572px wide (right edge 586px); the second is 516px wide (right edge 530px). The 360px page therefore expands to a 586px scroll width and requires horizontal scrolling."
+ },
+ {
+  "code": 92347,
+  "run": "flash-r2-plain",
+  "page": "p04",
+  "state": "tufte-css-6c2f3e8e-broken",
+  "viewport": "laptop",
+  "selector": "article > section:nth-of-type(5) > p:nth-of-type(3) > span.marginnote",
+  "verdict": "KNOWN:tufte-css-6c2f3e8e",
+  "evidence": "The rhinoceros margin note spans y=6593-6984 at x=942-1289. The following full-width Napoleon figure begins at y=6935 and x=180-1314, so the note's final caption lines overlap the top-right of the figure by 49px."
+ },
+ {
+  "code": 61320,
+  "run": "flash-r2-plain",
+  "page": "p08",
+  "state": "lit-css-481f5cc3-broken",
+  "viewport": "both",
+  "selector": "input.card.w-100, textarea.card.w-100",
+  "verdict": "KNOWN:lit-css-481f5cc3",
+  "evidence": "On phone, the 328px form column contains a 360.7px email input starting at x=16 (right edge 376.7px), pushing the document to 377px wide. On laptop, the email input is 472.7px inside a 440px column and overlaps the next column by 16.7px; the textarea reaches 1200.7px while the form row ends at 1184px."
+ },
+ {
+  "code": 75525,
+  "run": "flash-r2-plain",
+  "page": "p09",
+  "state": "tufte-css-69255155-broken",
+  "viewport": "phone",
+  "selector": "body > article > section:nth-of-type(7) > pre.code",
+  "verdict": "KNOWN:tufte-css-69255155",
+  "evidence": "The final code block's `pre` occupies x=45-362.3px, but unbroken code lines extend to x=455px. There is no horizontal scroll container, so the 360px document reports a 455px scroll width and the right side of the code is cut off."
+ },
+ {
+  "code": 90126,
+  "run": "flash-r2-skill",
+  "page": "p01",
+  "state": "writ-e0b84596-broken",
+  "viewport": "phone",
+  "selector": "article img",
+  "verdict": "KNOWN:writ-e0b84596",
+  "evidence": "At 360 CSS px the document scrollWidth is 586 px. The two article images are 572x316 px and 516x336 px, ending at x=586 and x=530 while the viewport ends at x=360. The page scrolls sideways."
+ },
+ {
+  "code": 12555,
+  "run": "flash-r2-skill",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-fixed",
+  "viewport": "phone",
+  "selector": "nav > ul",
+  "verdict": "UNSUPPORTED:bahunya-nav-scroll",
+  "evidence": "The fixed nav list is 336 px wide but its content is 377 px. The last item, 'Form elements', spans x=279 to x=389 and is cut at the 360 px viewport edge; its final characters are not visible without horizontal scrolling."
+ },
+ {
+  "code": 14945,
+  "run": "flash-r2-skill",
+  "page": "p08",
+  "state": "lit-css-481f5cc3-broken",
+  "viewport": "phone",
+  "selector": "input.card.w-100",
+  "verdict": "KNOWN:lit-css-481f5cc3",
+  "evidence": "The input is content-box with width:100%, 13.33 px side padding and 3 px borders. Its grid column is 328 px wide, but the input renders 360.7 px wide from x=16 to x=376.7. The document scrollWidth is 377 px against a 360 px viewport, so the page scrolls sideways. The textarea has the same oversize."
+ },
+ {
+  "code": 61580,
+  "run": "flash-r2-skill",
+  "page": "p09",
+  "state": "tufte-css-69255155-broken",
+  "viewport": "phone",
+  "selector": "article pre.code",
+  "verdict": "KNOWN:tufte-css-69255155",
+  "evidence": "At 360 CSS px the document scrollWidth is 455 px. The code blocks have overflow-x: visible; their 317 px boxes extend to x=362.3, and the second block's content reaches x=455. The page scrolls sideways and code is cut at the screen edge."
+ },
+ {
+  "code": 64434,
+  "run": "flash-r2-skill",
+  "page": "p10",
+  "state": "flexboxgrid-7b71b69e-broken",
+  "viewport": "phone",
+  "selector": "label.menu-button",
+  "verdict": "VALID:fbg-menu-text",
+  "evidence": "The menu label is a 32x32 px control at x=316, but its fallback text 'listview' renders 55x21 px from x=325 to x=380, spilling 20 px past the viewport edge. The visible glyph is not centered in its control."
+ },
+ {
+  "code": 39024,
+  "run": "flash-r3-plain",
+  "page": "p09",
+  "state": "tufte-css-69255155-broken",
+  "viewport": "phone",
+  "selector": "pre.code",
+  "verdict": "KNOWN:tufte-css-69255155",
+  "evidence": "At 360px the document scrollWidth is 455px against a 360px viewport, so the page scrolls sideways by 95px. The code blocks start at x=45 with a 2em left padding and content-box sizing, so the block box ends at x=362 and its unwrapped 'white-space: pre' lines reach x=455 (scrollWidth 410 vs clientWidth 317). In the Code section the lines '(map tufte-style all-the-thi' and 'all_the_things[i].useTuft"
+ },
+ {
+  "code": 15577,
+  "run": "flash-r3-plain",
+  "page": "p09",
+  "state": "tufte-css-69255155-broken",
+  "viewport": "phone",
+  "selector": "table",
+  "verdict": "VALID:tufte-table-columns",
+  "evidence": "The data table is squeezed into 304px with 1px cell padding, so numeric columns collapse onto each other. Header cells read 'mpgcyl disp' (2px between text edges), and row 1 renders as '1601103.902.62' - only 2px between '160' and '110' and between '3.90' and '2.62'. Columns are no longer distinguishable at 360px."
+ },
+ {
+  "code": 68145,
+  "run": "flash-r3-plain",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": ".vc > a.btn",
+  "verdict": "KNOWN:lit-css-fce9ac96",
+  "evidence": "The hero's two pill links are inline anchors, so at 360px they wrap and their padding boxes overlap: 'Utilities' occupies y=407-451 and 'Components' y=433-476, a 18px overlap. In the screenshot the Components pill covers the bottom of the Utilities pill."
+ },
+ {
+  "code": 54133,
+  "run": "flash-r3-plain",
+  "page": "p10",
+  "state": "flexboxgrid-7b71b69e-fixed",
+  "viewport": "phone",
+  "selector": "label.menu-button",
+  "verdict": "VALID:fbg-menu-text",
+  "evidence": "The fixed 32x32 menu control contains the text label 'listview' at 18px (scrollWidth 63 vs clientWidth 30). It starts at x=316 and runs past the 360px viewport, so only 'listvi' is visible and the label spills out of its button box at the top-right corner."
+ },
+ {
+  "code": 81835,
+  "run": "flash-r3-plain",
+  "page": "p03",
+  "state": "lit-css-ce470806-broken",
+  "viewport": "phone",
+  "selector": "h4 + div a.btn",
+  "verdict": "VALID:lit-btn-height",
+  "evidence": "In the Buttons demo the link button is taller than the button and input siblings: the <a class='btn'> is 49.6px tall (y=3592.9-3642.5) while <button> and <input> are 46.6px (y=3593.9-3640.5). The anchor's padding box sits about 1px higher and 3px lower than the row, breaking the baseline of the three controls."
+ },
+ {
+  "code": 21124,
+  "run": "flash-r3-skill",
+  "page": "p04",
+  "state": "tufte-css-6c2f3e8e-broken",
+  "viewport": "phone",
+  "selector": "section:nth-of-type(6) > .table-wrapper",
+  "verdict": "UNSUPPORTED:tufte-table-scroll",
+  "evidence": "The table wrapper is 268.75px wide (55% of the 315px article, right edge at x=313.75) while the table inside is 337.9px wide and ends at x=385.5. The third column is painted cut mid-word at the wrapper edge ('Perc', 'arti', 'spec', 'pers', 'poli' fragments visible in the 360px screenshot)."
+ },
+ {
+  "code": 61503,
+  "run": "flash-r3-skill",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "div.vc.c > a.btn.bg-accent",
+  "verdict": "KNOWN:lit-css-fce9ac96",
+  "evidence": "The two hero pills are inline anchors and overlap vertically: UTILITIES occupies y=407.4-450.8 (43.4px tall) and COMPONENTS starts at y=433.0, so 17.8px of the orange button is covered by the white one, hiding its bottom border and crowding its label. Visible in the 360x780 screenshot."
+ },
+ {
+  "code": 71400,
+  "run": "flash-r3-skill",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "div.card.p1.b-accent > a.ph2:nth-of-type(3)",
+  "verdict": "VALID:lit-fullpage-split",
+  "evidence": "In the 'view source' card the link row breaks unevenly: 'Buttons' and 'Alerts' sit on the first line, while 'Full Page Landing' wraps so that 'Landing' drops alone to a second line at x=27 under the first item instead of staying with its own phrase."
+ },
+ {
+  "code": 54058,
+  "run": "flash-r3-skill",
+  "page": "p09",
+  "state": "tufte-css-69255155-broken",
+  "viewport": "phone",
+  "selector": "article > section:nth-of-type(7) > pre.code",
+  "verdict": "KNOWN:tufte-css-69255155",
+  "evidence": "At a 360px viewport the document is 455px wide and the layout viewport itself expands to 455px, so the page scrolls sideways by 95px. The overflow comes from pre.code blocks with white-space:pre: the code block is 317px wide but its content is 410px (section 7) and 317/317 in section 2 sits at x=45-362.3, past the 360px screen edge."
+ },
+ {
+  "code": 53195,
+  "run": "flash-r3-skill",
+  "page": "p10",
+  "state": "flexboxgrid-7b71b69e-fixed",
+  "viewport": "phone",
+  "selector": "label.menu-button",
+  "verdict": "VALID:fbg-menu-text",
+  "evidence": "The 32x32 menu control at x=316-348, y=12-44 renders its label text 'listview' at 18px: the text starts at the control's left edge and runs past x=360, so only 'listvi' is visible at the top-right corner and the glyph is nowhere near the centre of its box."
+ },
+ {
+  "code": 32620,
+  "run": "sol-r1-plain",
+  "page": "p01",
+  "state": "writ-e0b84596-broken",
+  "viewport": "phone",
+  "selector": "article img",
+  "verdict": "KNOWN:writ-e0b84596",
+  "evidence": "The two example screenshots retain widths of 572 px and 516 px inside a 332 px content column. At x=14 their right edges are x=586 and x=530, exceeding the 360 px viewport by 226 px and 170 px. Their right-hand content is outside the screen and the document grows to 586 px wide. See p01-phone-00.png and focus-p01-phone-0.png."
+ },
+ {
+  "code": 14066,
+  "run": "sol-r1-plain",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-broken",
+  "viewport": "both",
+  "selector": "#forms__checkbox input, #forms__radio input",
+  "verdict": "VALID:bahunya-checks",
+  "evidence": "All checkbox and radio marks sit visibly above their associated label text. For the first checkbox on phone, the input box spans y=11441.70–11485.70 (44 px tall, centre 11463.70), while the label text spans y=11468.80–11486.80 (centre 11477.80): a 14.10 px vertical offset. Laptop and radio rows have the same offset. See focus-p06-phone-0.png and focus-p06-laptop-0.png."
+ },
+ {
+  "code": 22294,
+  "run": "sol-r1-plain",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "body > .tc.vh-100 .btn",
+  "verdict": "KNOWN:lit-css-fce9ac96",
+  "evidence": "The Utilities and Components pill buttons wrap onto consecutive lines, but their padded borders overlap. The first button spans y=407.39–450.77 and the second y=432.99–476.36, producing 17.78 px of vertical overlap. The Components surface covers the lower portion of the Utilities pill. See focus-p07-phone-0.png."
+ },
+ {
+  "code": 13010,
+  "run": "sol-r1-plain",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "a[href=\"#full\"]",
+  "verdict": "VALID:lit-fullpage-split",
+  "evidence": "In the Components navigation, Full Page Landing splits across two rows: Full Page starts at x=215.92 on the first row, while Landing restarts at x=27 on the next row under the other navigation items. The text fragments are 25.59 px apart vertically. See focus-p07-phone-2.png."
+ },
+ {
+  "code": 27776,
+  "run": "sol-r1-plain",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "#alerts .col.large",
+  "verdict": "VALID:lit-alert-close",
+  "evidence": "The alert close glyph drops below the message at the lower left of the alert. Its text starts at x=32, y=4339.25, about 87 px below the message column top (4252.27), inside an alert spanning x=16–344 and y=4244.27–4394.64. On laptop it sits beside the message at the right. See focus-p07-phone-1.png."
+ },
+ {
+  "code": 87186,
+  "run": "sol-r1-plain",
+  "page": "p08",
+  "state": "lit-css-481f5cc3-broken",
+  "viewport": "both",
+  "selector": "input.card.w-100, textarea.card.w-100",
+  "verdict": "KNOWN:lit-css-481f5cc3",
+  "evidence": "The Email input and Message textarea include padding and borders outside their declared full width. On phone both are 360.66 px wide inside a 328 px column and reach x=376.66, 16.66 px beyond the screen; the adjacent select ends correctly at x=344. On laptop the email input ends at x=744.66 while the select begins at x=728, creating 16.66 px of overlap, and the textarea ends at x=1200.66 beyond it"
+ },
+ {
+  "code": 82120,
+  "run": "sol-r1-plain",
+  "page": "p10",
+  "state": "flexboxgrid-7b71b69e-broken",
+  "viewport": "phone",
+  "selector": "label.menu-button",
+  "verdict": "VALID:fbg-menu-text",
+  "evidence": "The menu control is 32×32 px at x=316–348, y=12–44, but its rendered listview text spans x=325–380 and y=21–42. It extends 32 px past the control and 20 px beyond the 360 px screen, visibly cutting off its ending. See focus-p10-phone-0.png."
+ },
+ {
+  "code": 53404,
+  "run": "sol-r1-skill",
+  "page": "p01",
+  "state": "writ-e0b84596-broken",
+  "viewport": "phone",
+  "selector": "article > p:nth-of-type(2) > img, article > p:nth-of-type(4) > img",
+  "verdict": "KNOWN:writ-e0b84596",
+  "evidence": "At 360x780, both comparison images keep their intrinsic widths (572px and 516px) inside a 332px article content area. Starting at x=14px, they end at x=586px and x=530px, respectively: 226px and 170px beyond the screen. The right portions of the examples are visibly cut off and the document width becomes 586px. Viewed: scan/01-p01-index.html/runs/SCAN-galaxy-s24/S-SCAN-galaxy-s24-000.css.png and -"
+ },
+ {
+  "code": 89577,
+  "run": "sol-r1-skill",
+  "page": "p05",
+  "state": "almond-css-44f880c2-broken",
+  "viewport": "both",
+  "selector": "input[type=\"radio\"], input[type=\"checkbox\"]",
+  "verdict": "KNOWN:almond-css-44f880c2",
+  "evidence": "The four radio controls and three checkboxes sit visibly below their adjacent labels at both sizes. On the phone at scrollY=5600, Radio 1 has a 16px control at y=224..240 (center 232), while its text box is y=217..235 (center 226): a 6px offset. Checkbox has the same 6px offset. The laptop repeats this alignment. Viewed: p05-phone-controls.png and p05-laptop-controls.png; matching JSON measurement"
+ },
+ {
+  "code": 90674,
+  "run": "sol-r1-skill",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-broken",
+  "viewport": "both",
+  "selector": "#checkbox1, #checkbox2, #checkbox3, #radio1, #radio2, #radio3",
+  "verdict": "VALID:bahunya-checks",
+  "evidence": "All six selection controls are raised above their label text. The painted checkbox/radio centers are approximately 14px above the corresponding Choice/Option text centers on both phone and laptop. Each input receives a 44px-tall box plus 12px bottom margin, producing a 56px label row; the native glyph is centered in the tall input while the text sits near the row bottom. Viewed: p06-laptop-control"
+ },
+ {
+  "code": 23211,
+  "run": "sol-r1-skill",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "body > div:first-of-type > div > a.btn",
+  "verdict": "KNOWN:lit-css-fce9ac96",
+  "evidence": "The Utilities and Components hero links wrap onto separate lines but their padded pill shapes overlap. Utilities occupies y=407.39..450.77 and Components y=432.99..476.36: 17.78px of vertical overlap. The filled lower pill visibly paints over the lower part of the upper pill. Viewed: p07-phone-layout.png and scan/07-p07-utility.html/runs/SCAN-galaxy-s24/S-SCAN-galaxy-s24-000.css.png; measurements:"
+ },
+ {
+  "code": 70808,
+  "run": "sol-r1-skill",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "a[href=\"#full\"]",
+  "verdict": "VALID:lit-fullpage-split",
+  "evidence": "In the Components navigation box, the single Full Page Landing link splits across two rows: Full Page follows Alerts on the first row, while Landing restarts at the left edge on the next row. Its rendered bounds are 47.59px tall with a 25.59px line advance, separating parts of one navigation item. Viewed: p07-phone-nav.png; measurements: p07-phone-nav.json."
+ },
+ {
+  "code": 93952,
+  "run": "sol-r1-skill",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "#alerts > .row > .col.large",
+  "verdict": "VALID:lit-alert-close",
+  "evidence": "The alert x glyph drops into a separate full-width row beneath the message on the phone. Its column is 296px wide at x=32, y=4336.25, which is 83.98px below the message column top. On the laptop the same glyph occupies a 40.81px right-hand column aligned with the message top. The phone alert visibly places x at the lower left instead of alongside its message. Viewed: p07-phone-alert.png and p07-la"
+ },
+ {
+  "code": 21692,
+  "run": "sol-r1-skill",
+  "page": "p08",
+  "state": "lit-css-481f5cc3-broken",
+  "viewport": "both",
+  "selector": "input.card.w-100[type=\"email\"], textarea.card.w-100",
+  "verdict": "KNOWN:lit-css-481f5cc3",
+  "evidence": "The Email input and Message textarea exceed their assigned widths because padding/borders are added outside width:100%. On the phone each is 360.66px wide in a 328px content area, starting at x=16 and ending at x=376.66, so the right border is off screen and the page is 377px wide. On the laptop Email is 472.66px wide in a 440px column and extends to x=744.66, overlapping the adjacent select begin"
+ },
+ {
+  "code": 26255,
+  "run": "sol-r1-skill",
+  "page": "p09",
+  "state": "tufte-css-69255155-fixed",
+  "viewport": "phone",
+  "selector": "pre.code",
+  "verdict": "VALID:tufte-code-2px",
+  "evidence": "Both code-block boxes themselves extend outside the phone viewport. Their content width is 283.5px and left padding is 33.75px, giving a 317.25px outer width. At x=45 their right edge is x=362.25, beyond the 360px screen, and the document gains 2px of horizontal overflow. The code region visibly loses the surrounding right margin and runs into the screen edge. This is overflow of the outer box, se"
+ },
+ {
+  "code": 35539,
+  "run": "sol-r1-skill",
+  "page": "p10",
+  "state": "flexboxgrid-7b71b69e-broken",
+  "viewport": "phone",
+  "selector": "label.menu-button",
+  "verdict": "VALID:fbg-menu-text",
+  "evidence": "The fixed menu control displays listview text extending out of its square and beyond the right screen edge. The control is 32x32px at x=316..348, but its scrollWidth is 63px versus a 30px client width. The label is visibly truncated at x=360 throughout scrolling. Viewed: p10-phone-menu.png and the phone scan screenshots; measurements: p10-phone-menu.json."
+ },
+ {
+  "code": 52635,
+  "run": "sol-r2-plain",
+  "page": "p01",
+  "state": "writ-e0b84596-broken",
+  "viewport": "phone",
+  "selector": "article img",
+  "verdict": "KNOWN:writ-e0b84596",
+  "evidence": "Both style-example images extend beyond the right edge. Their rendered widths are 572px and 516px inside 332px-wide paragraphs starting at x=14; their right edges are x=586 and x=530 on the 360px viewport. The page scrollWidth is 586px, and the example text is visibly cut off at the screen edge. Screenshots: p01-phone-00.png and p01-phone-01.png."
+ },
+ {
+  "code": 19622,
+  "run": "sol-r2-plain",
+  "page": "p04",
+  "state": "tufte-css-6c2f3e8e-broken",
+  "viewport": "laptop",
+  "selector": "#mn-figure-1 + .marginnote",
+  "verdict": "KNOWN:tufte-css-6c2f3e8e",
+  "evidence": "The rhinoceros margin-note caption overlaps the top of the following Napoleon figure. The margin note occupies x=942.3..1288.8 and ends at document y=6984.1; the full-width figure begins at y=6934.8, creating a 49.3px vertical intersection. The final caption lines visibly run across the map's border and heading. Screenshot: p04-laptop-caption.png."
+ },
+ {
+  "code": 53918,
+  "run": "sol-r2-plain",
+  "page": "p05",
+  "state": "almond-css-44f880c2-broken",
+  "viewport": "both",
+  "selector": "input[type='radio'], input[type='checkbox']",
+  "verdict": "KNOWN:almond-css-44f880c2",
+  "evidence": "The radio circles and checkbox squares sit visibly below their labels throughout the Radios & Checkboxes section. Each control is 16px high and its centre is 6px below the label text centre. For example, on phone the first radio spans document y=5824..5840 (centre 5832), while its label text spans y=5817..5835 (centre 5826); the laptop has the same 6px offset. Screenshots: p05-phone-radios.png and"
+ },
+ {
+  "code": 47614,
+  "run": "sol-r2-plain",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-fixed",
+  "viewport": "both",
+  "selector": "#checkbox1, #checkbox2, #checkbox3, #radio1, #radio2, #radio3",
+  "verdict": "VALID:bahunya-checks",
+  "evidence": "All checkbox and radio marks sit about 14.1px above the centre of their associated label text. The inputs inherit a 44px height and 12px bottom margin. On phone, #checkbox1 has its box centre at document y=10851.3 and its text centre at y=10865.4; the same offset occurs on laptop. The marks visibly float above Choice A/B/C and Option 1/2/3. Screenshots: p06-phone-controls.png and p06-laptop-contro"
+ },
+ {
+  "code": 73976,
+  "run": "sol-r2-plain",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-fixed",
+  "viewport": "phone",
+  "selector": "#alerts .row > .col.large",
+  "verdict": "VALID:lit-alert-close",
+  "evidence": "The alert's x moves into a separate full-width row at the lower left, instead of remaining beside the alert message at the right. Its column is 296px wide at x=32 and starts at document y=4411.3, 84px below the message column's top (y=4327.3). This produces a 150.4px-tall alert with the x isolated beneath the text. Screenshot: p07-phone-alert.png."
+ },
+ {
+  "code": 44687,
+  "run": "sol-r2-plain",
+  "page": "p08",
+  "state": "lit-css-481f5cc3-broken",
+  "viewport": "both",
+  "selector": "input.card.w-100, textarea.card.w-100",
+  "verdict": "KNOWN:lit-css-481f5cc3",
+  "evidence": "The email input and message textarea are 32.7px wider than their intended content widths. On phone both render 360.7px wide at x=16 inside 328px-wide content, extending to x=376.7 and producing a 377px page scrollWidth. On laptop the email input extends to x=744.7 while the adjacent select begins at x=728, overlapping it by 16.7px; the textarea extends to x=1200.7 while the other form content ends"
+ },
+ {
+  "code": 13926,
+  "run": "sol-r2-plain",
+  "page": "p09",
+  "state": "tufte-css-69255155-broken",
+  "viewport": "phone",
+  "selector": "pre.code",
+  "verdict": "KNOWN:tufte-css-69255155",
+  "evidence": "The programming example spills beyond the right side of the phone, cutting off the map expression and imperative-code lines. The pre starts at x=45, has a 317.3px outer width and a 410px scrollWidth with overflow-x:visible; its overflowing contents reach x=455. The document is consequently 455px wide on the 360px viewport, requiring 95px of sideways page scrolling. Screenshot: p09-check.png."
+ },
+ {
+  "code": 61898,
+  "run": "sol-r2-plain",
+  "page": "p10",
+  "state": "flexboxgrid-7b71b69e-broken",
+  "viewport": "phone",
+  "selector": "label.menu-button",
+  "verdict": "VALID:fbg-menu-text",
+  "evidence": "The fixed menu control displays the text listview spilling out of its 32x32px box and being cut off by the screen's right edge. The control occupies x=316..348, but its 30px inner width contains 63px of rendered content, extending to approximately x=380. Only the beginning of the label is visible. Screenshot: p10-check.png."
+ },
+ {
+  "code": 68208,
+  "run": "sol-r2-skill",
+  "page": "p01",
+  "state": "writ-e0b84596-broken",
+  "viewport": "phone",
+  "selector": "article > p:nth-of-type(2) > img, article > p:nth-of-type(4) > img",
+  "verdict": "KNOWN:writ-e0b84596",
+  "evidence": "At 360x780, the two example images remain 572x316 and 516x336 CSS px at x=14. Their right edges are x=586 and x=530, extending 226 px and 170 px beyond the screen. The example text is visibly cut at the right edge and document scrollWidth is 586 px. Screenshot: confirm/p01-phone-0.png."
+ },
+ {
+  "code": 30272,
+  "run": "sol-r2-skill",
+  "page": "p04",
+  "state": "tufte-css-6c2f3e8e-broken",
+  "viewport": "laptop",
+  "selector": ".marginnote:has(img), figure.fullwidth",
+  "verdict": "KNOWN:tufte-css-6c2f3e8e",
+  "evidence": "At 1440x900, the margin figure and its caption occupy document y=6592.8-6984.1, while the following full-width figure starts at y=6934.8. The bottom caption lines visibly overlay the top of the following figure across x=942.3-1288.8, an approximately 49.3 px vertical overlap. Screenshot: confirm/p04-laptop-1.png, scrollY=6500."
+ },
+ {
+  "code": 11273,
+  "run": "sol-r2-skill",
+  "page": "p05",
+  "state": "almond-css-44f880c2-broken",
+  "viewport": "both",
+  "selector": "input[type=radio], input[type=checkbox]",
+  "verdict": "KNOWN:almond-css-44f880c2",
+  "evidence": "The four radio controls and three checkboxes sit visibly below their adjacent label text at both viewports. In the confirmation captures, Radio 1's 16 px control spans y=120-136 (center 128), but its label spans y=113-131 (center 122): a 6 px downward offset. Checkbox has the same 6 px offset. Screenshots: confirm/p05-phone-2.png and confirm/p05-laptop-3.png."
+ },
+ {
+  "code": 17681,
+  "run": "sol-r2-skill",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-fixed",
+  "viewport": "both",
+  "selector": "#forms__checkbox input[type=checkbox], #forms__radio input[type=radio]",
+  "verdict": "VALID:bahunya-checks",
+  "evidence": "All three checkboxes and three radios are visibly raised above their labels. Each input box is about 18.4x44 CSS px; its native mark is centered about 14.1 px above the adjacent label text center. For Choice A in the phone capture, the input center is y=142.3 while the text center is y=156.4. The same offset occurs on laptop. Screenshots: confirm/p06-phone-5.png and confirm/p06-laptop-6.png."
+ },
+ {
+  "code": 74221,
+  "run": "sol-r2-skill",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-fixed",
+  "viewport": "phone",
+  "selector": "#alerts > .row > .col.large",
+  "verdict": "VALID:lit-alert-close",
+  "evidence": "At 360x780, the alert's close 'x' breaks into its own full-width row at the lower left. Its block is x=32, document y=4411.3, width=296 px; the alert headline begins at y=4327.3, so the close control starts about 84 px below it. On laptop the same control occupies a narrow column beside the headline. Screenshot: confirm/p07-phone-7.png."
+ },
+ {
+  "code": 64294,
+  "run": "sol-r2-skill",
+  "page": "p08",
+  "state": "lit-css-481f5cc3-broken",
+  "viewport": "both",
+  "selector": "input.card.w-100[type=email], textarea.card.w-100",
+  "verdict": "KNOWN:lit-css-481f5cc3",
+  "evidence": "On phone, Email and Message are each 360.7 px wide inside 328 px containers at x=16, putting their right edges at x=376.7, 16.7 px off screen; their right borders are cut. On laptop, Email ends at x=744.7 while the adjacent select starts at x=728, producing 16.7 px overlap. Message ends at x=1200.7, 32.7 px beyond the aligned form controls' right edge x=1168. The fields use content-box sizing with"
+ },
+ {
+  "code": 30255,
+  "run": "sol-r2-skill",
+  "page": "p09",
+  "state": "tufte-css-69255155-broken",
+  "viewport": "phone",
+  "selector": "pre.code",
+  "verdict": "KNOWN:tufte-css-69255155",
+  "evidence": "At 360x780, the Code section's preformatted lines extend past the right screen edge. The longest line reaches x=454.5 and document scrollWidth becomes 455 px, about 95 px wider than the viewport. The pre box itself ends at x=362.3 and has overflow-x:visible, so overflow expands the page rather than staying inside the code block. Screenshot: confirm/p09-phone-10.png."
+ },
+ {
+  "code": 55803,
+  "run": "sol-r2-skill",
+  "page": "p10",
+  "state": "flexboxgrid-7b71b69e-broken",
+  "viewport": "phone",
+  "selector": "label.menu-button",
+  "verdict": "VALID:fbg-menu-text",
+  "evidence": "At 360x780, the fixed menu control is a 32x32 px box spanning x=316-348, but its rendered 'listview' text spans x=325-380. The text extends 32 px past its control and 20 px past the viewport; the ending characters are visibly cut off. Screenshot: confirm/p10-phone-11.png."
+ },
+ {
+  "code": 51413,
+  "run": "sol-r3-plain",
+  "page": "p04",
+  "state": "tufte-css-6c2f3e8e-broken",
+  "viewport": "laptop",
+  "selector": "span.marginnote:has(img[src$=\"rhino.png\"])",
+  "verdict": "KNOWN:tufte-css-6c2f3e8e",
+  "evidence": "The rhinoceros margin caption runs over the top of the following full-width figure. Its box is x=942.30–1288.80, document y=6592.80–6984.11; figure.fullwidth starts at y=6934.80, producing 49.31 px of vertical overlap. The final caption lines visibly cross the map heading. Screenshot: p04-laptop-detail6530.png."
+ },
+ {
+  "code": 59236,
+  "run": "sol-r3-plain",
+  "page": "p04",
+  "state": "tufte-css-6c2f3e8e-broken",
+  "viewport": "laptop",
+  "selector": ".table-wrapper > .table-caption",
+  "verdict": "UNSUPPORTED:tufte-table-scroll",
+  "evidence": "The booktabs table caption is completely clipped in the initial view. Its box is x=942.30–1288.80, document y=9054.56–9081.56, entirely beyond its table wrapper ending at x=873. The wrapper has overflow-x: scroll and clientWidth=693, although the table itself fits easily; its scrollWidth becomes 1109 because of the caption. Scrolling that wrapper to reveal the caption hides most of the table. Scre"
+ },
+ {
+  "code": 17248,
+  "run": "sol-r3-plain",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-broken",
+  "viewport": "both",
+  "selector": "#checkbox1, #checkbox2, #checkbox3, #radio1, #radio2, #radio3",
+  "verdict": "VALID:bahunya-checks",
+  "evidence": "Every checkbox and radio glyph sits visibly above its adjacent label. The inputs inherit height=44 px and a 12 px bottom margin. On phone, checkbox1 has center y=11463.70 while the label text center is y=11477.80, a 14.09 px offset; radio1 has the same offset. Laptop reproduces the 14.09 px offset. Screenshots: p06-phone-detail11320.png and p06-laptop-sheet3.png."
+ },
+ {
+  "code": 48038,
+  "run": "sol-r3-plain",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-broken",
+  "viewport": "both",
+  "selector": "nav[aria-label=\"Primary\"] > ul > li + li",
+  "verdict": "KNOWN:bahunya-0aa2c063",
+  "evidence": "The navigation links sit 4 px below the brand link. At both sizes, the brand link occupies y=4–48 while the other links occupy y=8–52. The latter inherit margin-top: 8px from the general list styling, so their text baselines do not line up with the brand. Screenshots: p06-phone-nav.png and p06-laptop-nav.png."
+ },
+ {
+  "code": 79625,
+  "run": "sol-r3-plain",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": ".vc > a.btn[href=\"#utilities\"], .vc > a.btn[href=\"#components\"]",
+  "verdict": "KNOWN:lit-css-fce9ac96",
+  "evidence": "The two hero buttons overlap after wrapping onto separate lines. Utilities occupies x=102.33–257.67, y=407.39–450.77; Components occupies x=87.84–272.16, y=432.99–476.36. Their painted boxes overlap vertically by 17.78 px, and the lower button covers the bottom border of the upper button. Screenshot: p07-phone-detail0.png."
+ },
+ {
+  "code": 48905,
+  "run": "sol-r3-plain",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "#alerts .row > .col.large",
+  "verdict": "VALID:lit-alert-close",
+  "evidence": "The alert close glyph drops into a full-width row below the message at the left edge. Its column is x=32, document y=4336.25, width=296 and height=38.39 within an alert only 328 px wide. The glyph appears at y=4339.25 near the lower-left of the 150.38 px-tall alert, instead of beside its heading as on laptop. Screenshot: p07-phone-detail4080.png."
+ },
+ {
+  "code": 64491,
+  "run": "sol-r3-plain",
+  "page": "p09",
+  "state": "tufte-css-69255155-broken",
+  "viewport": "phone",
+  "selector": "pre.code",
+  "verdict": "KNOWN:tufte-css-69255155",
+  "evidence": "The code example in the Code section runs beyond the phone screen and creates page-level horizontal overflow. Text extends from x=78.75 to x=454.55, 94.55 px beyond the 360 px screen. documentElement.scrollWidth=455 versus clientWidth=360. The pre has overflow: visible and no local horizontal scrolling; its right-hand code is visibly cut off. Screenshot: p09-phone-detail9660.png."
+ },
+ {
+  "code": 94205,
+  "run": "sol-r3-plain",
+  "page": "p10",
+  "state": "flexboxgrid-7b71b69e-fixed",
+  "viewport": "phone",
+  "selector": "label.menu-button",
+  "verdict": "VALID:fbg-menu-text",
+  "evidence": "The fixed menu control content spills out of its box and is clipped by the right screen edge throughout scrolling. The control occupies x=316–348, y=12–44 (32 by 32 px), but its rendered glyph/text occupies x=325–380: 32 px beyond the control and 20 px beyond the 360 px viewport. Screenshot: p10-phone-detail0.png."
+ },
+ {
+  "code": 75923,
+  "run": "sol-r3-skill",
+  "page": "p04",
+  "state": "tufte-css-6c2f3e8e-broken",
+  "viewport": "laptop",
+  "selector": ".marginnote:has(img)",
+  "verdict": "KNOWN:tufte-css-6c2f3e8e",
+  "evidence": "At 1440x900, the margin illustration's caption overlaps the following full-width figure. In p04-laptop-rhino.png, the margin note occupies x=942.3..1288.8 and ends at y=491.1, while the next image starts at y=441.8: 49.3 px of vertical overlap. The caption's final lines are painted across the map's upper text."
+ },
+ {
+  "code": 25091,
+  "run": "sol-r3-skill",
+  "page": "p05",
+  "state": "almond-css-44f880c2-fixed",
+  "viewport": "phone",
+  "selector": "main > section:nth-child(3) > section:nth-child(6) > p",
+  "verdict": "VALID:almond-inline-wrap",
+  "evidence": "At 360x780, the 'Elements in-line' examples break their attached fields and buttons onto separate rows. The first group is 328 px wide; its field is 240 px and button 86.4 px, leaving only 1.6 px for the intervening whitespace. In p05-phone-inline.png, the field is at y=146..186 and its button at y=186..226, touching directly below it. The select/button pair has the same break, and the three-contr"
+ },
+ {
+  "code": 58439,
+  "run": "sol-r3-skill",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-broken",
+  "viewport": "both",
+  "selector": "#forms__checkbox input, #forms__radio input",
+  "verdict": "VALID:bahunya-checks",
+  "evidence": "At both 360x780 and 1440x900, all three checkbox glyphs and all three radio glyphs sit visibly above their labels. For 'Choice A', the input box is 44 px high and its centre is 14.1 px above the label text centre. The same offset appears for 'Option 1'. See p06-phone-checks.png and p06-laptop-checks.png."
+ },
+ {
+  "code": 25648,
+  "run": "sol-r3-skill",
+  "page": "p06",
+  "state": "bahunya-0aa2c063-broken",
+  "viewport": "both",
+  "selector": "nav > ul > li:first-child",
+  "verdict": "KNOWN:bahunya-0aa2c063",
+  "evidence": "The 'Bahunya' navigation item is 4 px above the sibling links at both viewport sizes. All link controls are 44 px high, but the brand begins at y=4 and the other links at y=8. On phone their text tops are y=17.2 versus 21.2; on laptop, y=16.6 versus 20.6. See p06-phone-nav.png and p06-laptop-nav.png."
+ },
+ {
+  "code": 23660,
+  "run": "sol-r3-skill",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "body > div:first-of-type > div > a",
+  "verdict": "KNOWN:lit-css-fce9ac96",
+  "evidence": "At 360x780 the hero's 'UTILITIES' and 'COMPONENTS' pill buttons overlap. Their boxes are y=407.4..450.8 and y=433.0..476.4, giving 17.8 px of overlap. The second pill covers the bottom of the first pill and part of its label. See p07-phone-hero.png."
+ },
+ {
+  "code": 55520,
+  "run": "sol-r3-skill",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "a[href=\"#full\"]",
+  "verdict": "VALID:lit-fullpage-split",
+  "evidence": "At 360x780, the single 'Full Page Landing' navigation item splits across two rows and loses its alignment with the other items. In p07-phone-components.png, 'Full Page' starts at x=215.9, y=112.0, but 'Landing' resumes at x=27.0, y=137.5 underneath 'Buttons'. The link's two fragments span 47.6 px vertically."
+ },
+ {
+  "code": 80401,
+  "run": "sol-r3-skill",
+  "page": "p07",
+  "state": "lit-css-fce9ac96-broken",
+  "viewport": "phone",
+  "selector": "#alerts .row > .col:last-child",
+  "verdict": "VALID:lit-alert-close",
+  "evidence": "At 360x780 the alert's close 'x' drops into a full-width row at the lower left instead of staying beside the alert heading as it does on laptop. In p07-phone-alert.png, its column is x=32, y=192.3, width=296, height=38.4; the heading starts at y=108.3. The close glyph is about 84 px below the heading, leaving a separate bottom row in the 150.4 px-high alert."
+ },
+ {
+  "code": 87777,
+  "run": "sol-r3-skill",
+  "page": "p09",
+  "state": "tufte-css-69255155-broken",
+  "viewport": "phone",
+  "selector": "pre.code",
+  "verdict": "KNOWN:tufte-css-69255155",
+  "evidence": "At the 360 px phone width, the document scrollWidth is 455 px, producing 95 px of page-level horizontal overflow. The final code block's text reaches x=454.5 while its own box ends at x=362.3; overflow-x is visible. Lines including '(map tufte-style all-the-things)' and 'all_the_things[i].useTufteStyle();' run past the screen edge. See p09-phone-code.png."
+ },
+ {
+  "code": 40127,
+  "run": "sol-r3-skill",
+  "page": "p10",
+  "state": "flexboxgrid-7b71b69e-fixed",
+  "viewport": "phone",
+  "selector": ".menu-button",
+  "verdict": "VALID:fbg-menu-text",
+  "evidence": "At 360x780, the fixed top-right menu control's rendered label protrudes beyond the control and is cut off by the screen edge. The control is x=316..348, width=32 px, while its text occupies x=325..380, width=55 px: 32 px outside the control and 20 px outside the viewport. p10-phone-menu.png shows only the beginning of 'listview'."
+ }
+]

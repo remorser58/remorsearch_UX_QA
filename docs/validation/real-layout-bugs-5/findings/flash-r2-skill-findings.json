@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p01",
+    "selector": "article img",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360 CSS px the document scrollWidth is 586 px. The two article images are 572x316 px and 516x336 px, ending at x=586 and x=530 while the viewport ends at x=360. The page scrolls sideways.",
+    "fix": "Constrain content images with max-width: 100% and height: auto, or remove their fixed intrinsic width inside the article."
+  },
+  {
+    "page": "p06",
+    "selector": "nav > ul",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The fixed nav list is 336 px wide but its content is 377 px. The last item, 'Form elements', spans x=279 to x=389 and is cut at the 360 px viewport edge; its final characters are not visible without horizontal scrolling.",
+    "fix": "Let the nav items wrap on narrow screens, or reduce their horizontal padding and expose the overflow with a visible scroll affordance."
+  },
+  {
+    "page": "p08",
+    "selector": "input.card.w-100",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The input is content-box with width:100%, 13.33 px side padding and 3 px borders. Its grid column is 328 px wide, but the input renders 360.7 px wide from x=16 to x=376.7. The document scrollWidth is 377 px against a 360 px viewport, so the page scrolls sideways. The textarea has the same oversize.",
+    "fix": "Use box-sizing: border-box for form controls, or set width: calc(100% - padding - borders) so the field fits its column."
+  },
+  {
+    "page": "p09",
+    "selector": "article pre.code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360 CSS px the document scrollWidth is 455 px. The code blocks have overflow-x: visible; their 317 px boxes extend to x=362.3, and the second block's content reaches x=455. The page scrolls sideways and code is cut at the screen edge.",
+    "fix": "Give pre blocks overflow-x: auto and max-width: 100% with border-box sizing, or wrap the code lines."
+  },
+  {
+    "page": "p10",
+    "selector": "label.menu-button",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "The menu label is a 32x32 px control at x=316, but its fallback text 'listview' renders 55x21 px from x=325 to x=380, spilling 20 px past the viewport edge. The visible glyph is not centered in its control.",
+    "fix": "Set the label to a fixed 32x32 box with centered content and hide or clip fallback text, or provide the intended icon at a size that fits."
+  }
+]

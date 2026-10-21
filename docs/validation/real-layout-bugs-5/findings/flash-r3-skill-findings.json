@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p04",
+    "selector": "section:nth-of-type(6) > .table-wrapper",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The table wrapper is 268.75px wide (55% of the 315px article, right edge at x=313.75) while the table inside is 337.9px wide and ends at x=385.5. The third column is painted cut mid-word at the wrapper edge ('Perc', 'arti', 'spec', 'pers', 'poli' fragments visible in the 360px screenshot).",
+    "fix": "Give .table-wrapper width:100% (or 85% like the base tufte.css rule) on narrow viewports and keep overflow-x:auto so the whole table, including its last column, stays inside the content column."
+  },
+  {
+    "page": "p07",
+    "selector": "div.vc.c > a.btn.bg-accent",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The two hero pills are inline anchors and overlap vertically: UTILITIES occupies y=407.4-450.8 (43.4px tall) and COMPONENTS starts at y=433.0, so 17.8px of the orange button is covered by the white one, hiding its bottom border and crowding its label. Visible in the 360x780 screenshot.",
+    "fix": "Render the hero actions as block or inline-block elements in a vertical stack (display:block with margin, or a flex column with a gap) so the two pills cannot share vertical space."
+  },
+  {
+    "page": "p07",
+    "selector": "div.card.p1.b-accent > a.ph2:nth-of-type(3)",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "In the 'view source' card the link row breaks unevenly: 'Buttons' and 'Alerts' sit on the first line, while 'Full Page Landing' wraps so that 'Landing' drops alone to a second line at x=27 under the first item instead of staying with its own phrase.",
+    "fix": "Let the link row wrap as whole items (display:inline-block or flex-wrap with a gap on each link) so each label stays on one line and items break between links."
+  },
+  {
+    "page": "p09",
+    "selector": "article > section:nth-of-type(7) > pre.code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At a 360px viewport the document is 455px wide and the layout viewport itself expands to 455px, so the page scrolls sideways by 95px. The overflow comes from pre.code blocks with white-space:pre: the code block is 317px wide but its content is 410px (section 7) and 317/317 in section 2 sits at x=45-362.3, past the 360px screen edge.",
+    "fix": "Constrain pre.code inside the article (max-width:100%; overflow-x:auto; box-sizing:border-box) and add overflow-wrap/white-space handling so a long code line cannot widen the layout viewport."
+  },
+  {
+    "page": "p10",
+    "selector": "label.menu-button",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The 32x32 menu control at x=316-348, y=12-44 renders its label text 'listview' at 18px: the text starts at the control's left edge and runs past x=360, so only 'listvi' is visible at the top-right corner and the glyph is nowhere near the centre of its box.",
+    "fix": "Constrain the label to the 2rem box (overflow:hidden, line-height equal to the box height, text-align:center) and load the icon font before the control paints so the ligature, not the word, fills the button."
+  }
+]

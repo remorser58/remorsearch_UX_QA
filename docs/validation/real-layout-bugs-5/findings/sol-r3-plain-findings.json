@@ -1,0 +1,74 @@
+[
+  {
+    "page": "p04",
+    "selector": "span.marginnote:has(img[src$=\"rhino.png\"])",
+    "viewport": "laptop",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The rhinoceros margin caption runs over the top of the following full-width figure. Its box is x=942.30–1288.80, document y=6592.80–6984.11; figure.fullwidth starts at y=6934.80, producing 49.31 px of vertical overlap. The final caption lines visibly cross the map heading. Screenshot: p04-laptop-detail6530.png.",
+    "fix": "Clear the preceding floated margin note before the full-width figure, for example with clear: both on figure.fullwidth, so the image starts below the complete note."
+  },
+  {
+    "page": "p04",
+    "selector": ".table-wrapper > .table-caption",
+    "viewport": "laptop",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The booktabs table caption is completely clipped in the initial view. Its box is x=942.30–1288.80, document y=9054.56–9081.56, entirely beyond its table wrapper ending at x=873. The wrapper has overflow-x: scroll and clientWidth=693, although the table itself fits easily; its scrollWidth becomes 1109 because of the caption. Scrolling that wrapper to reveal the caption hides most of the table. Screenshots: p04-laptop-detail8920.png and p04-laptop-table-scrolled.png.",
+    "fix": "Place the margin caption outside the element that scrolls horizontally. Keep the caption and table in a common non-clipping container, with horizontal overflow confined to a nested wrapper around the table."
+  },
+  {
+    "page": "p06",
+    "selector": "#checkbox1, #checkbox2, #checkbox3, #radio1, #radio2, #radio3",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "Every checkbox and radio glyph sits visibly above its adjacent label. The inputs inherit height=44 px and a 12 px bottom margin. On phone, checkbox1 has center y=11463.70 while the label text center is y=11477.80, a 14.09 px offset; radio1 has the same offset. Laptop reproduces the 14.09 px offset. Screenshots: p06-phone-detail11320.png and p06-laptop-sheet3.png.",
+    "fix": "Override the generic text-input height and bottom margin for checkbox and radio inputs. Align each label and control with inline-flex and align-items: center, using a small gap and margin: 0 on the control."
+  },
+  {
+    "page": "p06",
+    "selector": "nav[aria-label=\"Primary\"] > ul > li + li",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The navigation links sit 4 px below the brand link. At both sizes, the brand link occupies y=4–48 while the other links occupy y=8–52. The latter inherit margin-top: 8px from the general list styling, so their text baselines do not line up with the brand. Screenshots: p06-phone-nav.png and p06-laptop-nav.png.",
+    "fix": "Reset margin-top to 0 on the direct navigation list items and vertically center all direct items in the navigation row."
+  },
+  {
+    "page": "p07",
+    "selector": ".vc > a.btn[href=\"#utilities\"], .vc > a.btn[href=\"#components\"]",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The two hero buttons overlap after wrapping onto separate lines. Utilities occupies x=102.33–257.67, y=407.39–450.77; Components occupies x=87.84–272.16, y=432.99–476.36. Their painted boxes overlap vertically by 17.78 px, and the lower button covers the bottom border of the upper button. Screenshot: p07-phone-detail0.png.",
+    "fix": "Make the button anchors inline-block so their padded height contributes to line layout, or place them in a flex container with flex-wrap and an explicit gap."
+  },
+  {
+    "page": "p07",
+    "selector": "#alerts .row > .col.large",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The alert close glyph drops into a full-width row below the message at the left edge. Its column is x=32, document y=4336.25, width=296 and height=38.39 within an alert only 328 px wide. The glyph appears at y=4339.25 near the lower-left of the 150.38 px-tall alert, instead of beside its heading as on laptop. Screenshot: p07-phone-detail4080.png.",
+    "fix": "Keep the alert as a flex row on phone, let the message column flex, and give the close column flex: 0 0 auto, width: auto and margin: 0 so it stays at the upper right."
+  },
+  {
+    "page": "p09",
+    "selector": "pre.code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The code example in the Code section runs beyond the phone screen and creates page-level horizontal overflow. Text extends from x=78.75 to x=454.55, 94.55 px beyond the 360 px screen. documentElement.scrollWidth=455 versus clientWidth=360. The pre has overflow: visible and no local horizontal scrolling; its right-hand code is visibly cut off. Screenshot: p09-phone-detail9660.png.",
+    "fix": "Constrain pre.code to its container with box-sizing: border-box and max-width: 100%, and use overflow-x: auto so long code lines scroll inside the code block."
+  },
+  {
+    "page": "p10",
+    "selector": "label.menu-button",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The fixed menu control content spills out of its box and is clipped by the right screen edge throughout scrolling. The control occupies x=316–348, y=12–44 (32 by 32 px), but its rendered glyph/text occupies x=325–380: 32 px beyond the control and 20 px beyond the 360 px viewport. Screenshot: p10-phone-detail0.png.",
+    "fix": "Render a bounded local icon, such as a 16 by 16 px inline SVG, and center it within the 32 by 32 px control using flex alignment and no offsetting padding."
+  }
+]

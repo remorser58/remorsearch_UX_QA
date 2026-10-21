@@ -1,0 +1,74 @@
+[
+  {
+    "page": "p01",
+    "selector": "article img",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Both style-example images extend beyond the right edge. Their rendered widths are 572px and 516px inside 332px-wide paragraphs starting at x=14; their right edges are x=586 and x=530 on the 360px viewport. The page scrollWidth is 586px, and the example text is visibly cut off at the screen edge. Screenshots: p01-phone-00.png and p01-phone-01.png.",
+    "fix": "Constrain the article images with max-width:100% and height:auto so each image fits its paragraph."
+  },
+  {
+    "page": "p04",
+    "selector": "#mn-figure-1 + .marginnote",
+    "viewport": "laptop",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The rhinoceros margin-note caption overlaps the top of the following Napoleon figure. The margin note occupies x=942.3..1288.8 and ends at document y=6984.1; the full-width figure begins at y=6934.8, creating a 49.3px vertical intersection. The final caption lines visibly run across the map's border and heading. Screenshot: p04-laptop-caption.png.",
+    "fix": "Reserve space for the entire margin note before starting the full-width figure, for example by placing the text and note in a shared grid row whose height includes the note. Start the full-width figure after that row."
+  },
+  {
+    "page": "p05",
+    "selector": "input[type='radio'], input[type='checkbox']",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The radio circles and checkbox squares sit visibly below their labels throughout the Radios & Checkboxes section. Each control is 16px high and its centre is 6px below the label text centre. For example, on phone the first radio spans document y=5824..5840 (centre 5832), while its label text spans y=5817..5835 (centre 5826); the laptop has the same 6px offset. Screenshots: p05-phone-radios.png and p05-laptop-radios.png.",
+    "fix": "Replace vertical-align:bottom on these controls with centre alignment to the label, preferably by using an inline-flex wrapper with align-items:center for each control-label pair."
+  },
+  {
+    "page": "p06",
+    "selector": "#checkbox1, #checkbox2, #checkbox3, #radio1, #radio2, #radio3",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "All checkbox and radio marks sit about 14.1px above the centre of their associated label text. The inputs inherit a 44px height and 12px bottom margin. On phone, #checkbox1 has its box centre at document y=10851.3 and its text centre at y=10865.4; the same offset occurs on laptop. The marks visibly float above Choice A/B/C and Option 1/2/3. Screenshots: p06-phone-controls.png and p06-laptop-controls.png.",
+    "fix": "Lay out each label as inline-flex with align-items:center, remove the checkbox/radio bottom margin, and give these inputs their own square height instead of the shared 44px field height. Preserve any desired touch height on the label."
+  },
+  {
+    "page": "p07",
+    "selector": "#alerts .row > .col.large",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "The alert's x moves into a separate full-width row at the lower left, instead of remaining beside the alert message at the right. Its column is 296px wide at x=32 and starts at document y=4411.3, 84px below the message column's top (y=4327.3). This produces a 150.4px-tall alert with the x isolated beneath the text. Screenshot: p07-phone-alert.png.",
+    "fix": "Keep the alert's x out of the mobile stacking rule: position it at the alert's top right and reserve right padding for it, or use a non-wrapping flex row with an auto-width final child."
+  },
+  {
+    "page": "p08",
+    "selector": "input.card.w-100, textarea.card.w-100",
+    "viewport": "both",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The email input and message textarea are 32.7px wider than their intended content widths. On phone both render 360.7px wide at x=16 inside 328px-wide content, extending to x=376.7 and producing a 377px page scrollWidth. On laptop the email input extends to x=744.7 while the adjacent select begins at x=728, overlapping it by 16.7px; the textarea extends to x=1200.7 while the other form content ends at x=1168. Screenshots: p08-phone-07.png and p08-laptop-form.png.",
+    "fix": "Apply box-sizing:border-box to the full-width input and textarea so width:100% includes their padding and borders."
+  },
+  {
+    "page": "p09",
+    "selector": "pre.code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The programming example spills beyond the right side of the phone, cutting off the map expression and imperative-code lines. The pre starts at x=45, has a 317.3px outer width and a 410px scrollWidth with overflow-x:visible; its overflowing contents reach x=455. The document is consequently 455px wide on the 360px viewport, requiring 95px of sideways page scrolling. Screenshot: p09-check.png.",
+    "fix": "Keep the pre within the content column using box-sizing:border-box and max-width:100%, and contain long lines with overflow-x:auto or wrap them with white-space:pre-wrap and overflow-wrap:anywhere."
+  },
+  {
+    "page": "p10",
+    "selector": "label.menu-button",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The fixed menu control displays the text listview spilling out of its 32x32px box and being cut off by the screen's right edge. The control occupies x=316..348, but its 30px inner width contains 63px of rendered content, extending to approximately x=380. Only the beginning of the label is visible. Screenshot: p10-check.png.",
+    "fix": "Render a bounded menu icon, such as a 24px inline SVG, and centre it in the 32px control with display:grid and place-items:center. Ensure any visible text fallback also fits within the viewport."
+  }
+]

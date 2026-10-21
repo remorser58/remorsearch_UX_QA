@@ -1,0 +1,310 @@
+[
+ {
+  "run": "flash-r1-plain",
+  "model": "flash",
+  "k": 1,
+  "arm": "plain",
+  "shown": 7,
+  "found": 3,
+  "found_items": [
+   "p01:writ-e0b84596",
+   "p07:lit-css-fce9ac96",
+   "p08:lit-css-481f5cc3"
+  ],
+  "missed": [
+   "p02:tufte-css-c6e436bb",
+   "p05:almond-css-44f880c2",
+   "p06:bahunya-0aa2c063",
+   "p10:flexboxgrid-7b71b69e"
+  ],
+  "alarms": 0,
+  "unsupported": 7,
+  "valid_extra": 1,
+  "findings": 11,
+  "minutes": 34.57,
+  "note": "stop message at 33.2 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r1-skill",
+  "model": "flash",
+  "k": 1,
+  "arm": "skill",
+  "shown": 7,
+  "found": 5,
+  "found_items": [
+   "p01:writ-e0b84596",
+   "p05:almond-css-44f880c2",
+   "p06:bahunya-0aa2c063",
+   "p07:lit-css-fce9ac96",
+   "p08:lit-css-481f5cc3"
+  ],
+  "missed": [
+   "p02:tufte-css-c6e436bb",
+   "p10:flexboxgrid-7b71b69e"
+  ],
+  "alarms": 0,
+  "unsupported": 3,
+  "valid_extra": 2,
+  "findings": 10,
+  "minutes": 34.19,
+  "note": "stop message at 33.18 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r2-plain",
+  "model": "flash",
+  "k": 2,
+  "arm": "plain",
+  "shown": 7,
+  "found": 4,
+  "found_items": [
+   "p01:writ-e0b84596",
+   "p04:tufte-css-6c2f3e8e",
+   "p08:lit-css-481f5cc3",
+   "p09:tufte-css-69255155"
+  ],
+  "missed": [
+   "p03:lit-css-ce470806",
+   "p05:almond-css-44f880c2",
+   "p10:flexboxgrid-7b71b69e"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 0,
+  "findings": 4,
+  "minutes": 33.98,
+  "note": "stop message at 33.13 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r2-skill",
+  "model": "flash",
+  "k": 2,
+  "arm": "skill",
+  "shown": 7,
+  "found": 3,
+  "found_items": [
+   "p01:writ-e0b84596",
+   "p08:lit-css-481f5cc3",
+   "p09:tufte-css-69255155"
+  ],
+  "missed": [
+   "p03:lit-css-ce470806",
+   "p04:tufte-css-6c2f3e8e",
+   "p05:almond-css-44f880c2",
+   "p10:flexboxgrid-7b71b69e"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 1,
+  "findings": 5,
+  "minutes": 34.37,
+  "note": "stop message at 33.1 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r3-plain",
+  "model": "flash",
+  "k": 3,
+  "arm": "plain",
+  "shown": 6,
+  "found": 2,
+  "found_items": [
+   "p07:lit-css-fce9ac96",
+   "p09:tufte-css-69255155"
+  ],
+  "missed": [
+   "p02:tufte-css-c6e436bb",
+   "p03:lit-css-ce470806",
+   "p04:tufte-css-6c2f3e8e",
+   "p06:bahunya-0aa2c063"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 3,
+  "findings": 5,
+  "minutes": 34.19,
+  "note": "stop message at 33.06 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r3-skill",
+  "model": "flash",
+  "k": 3,
+  "arm": "skill",
+  "shown": 6,
+  "found": 2,
+  "found_items": [
+   "p07:lit-css-fce9ac96",
+   "p09:tufte-css-69255155"
+  ],
+  "missed": [
+   "p02:tufte-css-c6e436bb",
+   "p03:lit-css-ce470806",
+   "p04:tufte-css-6c2f3e8e",
+   "p06:bahunya-0aa2c063"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 2,
+  "findings": 5,
+  "minutes": 34.1,
+  "note": "stop message at 33.03 min",
+  "missing": false
+ },
+ {
+  "run": "sol-r1-plain",
+  "model": "sol",
+  "k": 1,
+  "arm": "plain",
+  "shown": 7,
+  "found": 3,
+  "found_items": [
+   "p01:writ-e0b84596",
+   "p07:lit-css-fce9ac96",
+   "p08:lit-css-481f5cc3"
+  ],
+  "missed": [
+   "p02:tufte-css-c6e436bb",
+   "p05:almond-css-44f880c2",
+   "p06:bahunya-0aa2c063",
+   "p10:flexboxgrid-7b71b69e"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 4,
+  "findings": 7,
+  "minutes": 12.23,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r1-skill",
+  "model": "sol",
+  "k": 1,
+  "arm": "skill",
+  "shown": 7,
+  "found": 4,
+  "found_items": [
+   "p01:writ-e0b84596",
+   "p05:almond-css-44f880c2",
+   "p07:lit-css-fce9ac96",
+   "p08:lit-css-481f5cc3"
+  ],
+  "missed": [
+   "p02:tufte-css-c6e436bb",
+   "p06:bahunya-0aa2c063",
+   "p10:flexboxgrid-7b71b69e"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 5,
+  "findings": 9,
+  "minutes": 14.85,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-plain",
+  "model": "sol",
+  "k": 2,
+  "arm": "plain",
+  "shown": 7,
+  "found": 5,
+  "found_items": [
+   "p01:writ-e0b84596",
+   "p04:tufte-css-6c2f3e8e",
+   "p05:almond-css-44f880c2",
+   "p08:lit-css-481f5cc3",
+   "p09:tufte-css-69255155"
+  ],
+  "missed": [
+   "p03:lit-css-ce470806",
+   "p10:flexboxgrid-7b71b69e"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 3,
+  "findings": 8,
+  "minutes": 13.03,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-skill",
+  "model": "sol",
+  "k": 2,
+  "arm": "skill",
+  "shown": 7,
+  "found": 5,
+  "found_items": [
+   "p01:writ-e0b84596",
+   "p04:tufte-css-6c2f3e8e",
+   "p05:almond-css-44f880c2",
+   "p08:lit-css-481f5cc3",
+   "p09:tufte-css-69255155"
+  ],
+  "missed": [
+   "p03:lit-css-ce470806",
+   "p10:flexboxgrid-7b71b69e"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 3,
+  "findings": 8,
+  "minutes": 16.95,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-plain",
+  "model": "sol",
+  "k": 3,
+  "arm": "plain",
+  "shown": 6,
+  "found": 4,
+  "found_items": [
+   "p04:tufte-css-6c2f3e8e",
+   "p06:bahunya-0aa2c063",
+   "p07:lit-css-fce9ac96",
+   "p09:tufte-css-69255155"
+  ],
+  "missed": [
+   "p02:tufte-css-c6e436bb",
+   "p03:lit-css-ce470806"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 3,
+  "findings": 8,
+  "minutes": 13.23,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-skill",
+  "model": "sol",
+  "k": 3,
+  "arm": "skill",
+  "shown": 6,
+  "found": 4,
+  "found_items": [
+   "p04:tufte-css-6c2f3e8e",
+   "p06:bahunya-0aa2c063",
+   "p07:lit-css-fce9ac96",
+   "p09:tufte-css-69255155"
+  ],
+  "missed": [
+   "p02:tufte-css-c6e436bb",
+   "p03:lit-css-ce470806"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 5,
+  "findings": 9,
+  "minutes": 18.78,
+  "note": "",
+  "missing": false
+ }
+]
