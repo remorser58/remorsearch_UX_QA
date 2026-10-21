@@ -310,6 +310,29 @@ def cmd_scan(args: argparse.Namespace) -> int:
     return EXIT_OK if recorded else EXIT_DEGRADED
 
 
+def cmd_measure(args: argparse.Namespace) -> int:
+    import subprocess
+
+    get_device(args.device)
+    url = args.url
+    if "://" not in url and Path(url).exists():
+        url = Path(url).resolve().as_uri()
+    command = [args.node, str(Path(__file__).resolve().parents[1] / "drivers" / "web" / "measure.mjs"),
+               "--url", url, "--device", args.device, "--out", str(args.out), "--max", str(args.max)]
+    for selector in args.selector:
+        command += ["--selector", selector]
+    for origin in args.allow_origin or ():
+        command += ["--allow-origin", origin]
+    try:
+        proc = subprocess.run(command, text=True, capture_output=True, timeout=180)
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        print(f"measure: {exc}; pass --node with a Node.js 22 executable", file=sys.stderr)
+        return 4
+    sys.stdout.write(proc.stdout)
+    sys.stderr.write(proc.stderr)
+    return proc.returncode
+
+
 def cmd_catalog(args: argparse.Namespace) -> int:
     print(report.catalog_markdown())
     return EXIT_OK
@@ -515,6 +538,17 @@ def build_parser() -> argparse.ArgumentParser:
                    help="also Tab through the page on mouse and keyboard devices for the focus checks (adds about 20 s per page)")
     p.add_argument("--out", required=True, help="new or empty directory")
     p.set_defaults(func=cmd_scan)
+
+    p = sub.add_parser("measure", help="measure elements on one page as the scan renders it: boxes, text lines, layout styles, "
+                       "gaps, offsets and overlaps between neighbours, and an outlined screenshot")
+    p.add_argument("--url", required=True, help="http(s) or file:// URL, or a local HTML file")
+    p.add_argument("--selector", required=True, action="append", help="CSS selector (repeatable; matches are numbered in page order)")
+    p.add_argument("--device", default="galaxy-s24", help="device id (default galaxy-s24; laptop-1440 for the laptop)")
+    p.add_argument("--max", type=int, default=12, help="matches kept per selector (default 12)")
+    p.add_argument("--node", default="node", help="Node.js 22 executable for the web driver")
+    p.add_argument("--allow-origin", action="append", help="another origin the page loads assets from (repeatable)")
+    p.add_argument("--out", required=True, help="directory for measure.json and measure.png")
+    p.set_defaults(func=cmd_measure)
 
     p = sub.add_parser("android-snapshot", help="build a snapshot from a uiautomator dump and screenshot")
     p.add_argument("--xml", required=True)

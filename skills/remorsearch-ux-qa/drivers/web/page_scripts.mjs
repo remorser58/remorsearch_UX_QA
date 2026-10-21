@@ -2401,6 +2401,145 @@ export function extractSnapshot(args) {
           text: textOf(worst.it), box: boxOf(worst.it) });
       }
     }
+    // Text over an image (LY-14): the glyphs of a text overlap an image it does not belong to
+    // by 8 px across and 4 px down or more while its block runs past the image's edge, as when
+    // a float or a negative margin carries a caption into the next figure. Deliberate overlays
+    // stay out: a text block wholly inside the image, anything placed out of flow (absolute,
+    // fixed, sticky) or transformed between either one and their common ancestor, both in one
+    // grid, and text on a painted panel of its own. A transparent image drawn over the text
+    // counts too: the text shows through it (text_over_image).
+    const pictures = [];
+    for (const e of all) {
+      if (!['img', 'svg', 'video', 'canvas', 'object', 'embed'].includes(e.localName) || (e.localName === 'svg' && parentOf(e) && parentOf(e).closest && parentOf(e).closest('svg'))) continue;
+      const g = geo(e);
+      if (g.vis && inView(g.r) && g.r.width >= 40 && g.r.height >= 24 && parseFloat(style(e).opacity) >= 0.5) pictures.push(e);
+      if (pictures.length >= 80) break;
+    }
+    const offFlow = (from, top) => {
+      for (let a = from; a && a !== top; a = parentOf(a)) {
+        if (a.nodeType !== 1) continue;
+        const cs = style(a);
+        if (['absolute', 'fixed', 'sticky'].includes(cs.position) || (cs.transform && cs.transform !== 'none')) return true;
+      }
+      return false;
+    };
+    const panelAt = (from, top, x, y) => {
+      for (let a = from; a && a !== top; a = parentOf(a)) {
+        if (a.nodeType !== 1) continue;
+        const cs = style(a);
+        const bg = parseColor(cs.backgroundColor);
+        const r = geo(a).r;
+        if (((bg && bg.a >= 0.5) || (cs.backgroundImage && cs.backgroundImage !== 'none')) && x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return true;
+      }
+      return false;
+    };
+    if (pictures.length) {
+      const over = new Map();
+      const walker = document.createTreeWalker(document.body || document.documentElement, NodeFilter.SHOW_TEXT);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        const host = t.parentElement;
+        if (!host || !LETTER.test(t.nodeValue)) continue;
+        const hg = geo(host);
+        if (!hg.vis || !inView(hg.r) || helperText(host)) continue;
+        const near = pictures.filter((p) => {
+          const q = geo(p).r;
+          return !p.contains(host) && hg.r.left < q.right && hg.r.right > q.left && hg.r.top < q.bottom && hg.r.bottom > q.top;
+        });
+        if (!near.length) continue;
+        let block = host;
+        while (block && block.nodeType === 1 && ['inline', 'contents'].includes(style(block).display) && parentOf(block)) block = parentOf(block);
+        const bb = geo(block).r;
+        for (const q of trimmedRects(t)) {
+          for (const p of near) {
+            const r = geo(p).r;
+            if (bb.left >= r.left - 1 && bb.right <= r.right + 1 && bb.top >= r.top - 1 && bb.bottom <= r.bottom + 1) continue;
+            const ox = Math.min(q.right, r.right) - Math.max(q.left, r.left);
+            const oy = Math.min(q.bottom, r.bottom) - Math.max(q.top, r.top);
+            if (ox < 8 || oy < 4 || oy < 0.3 * q.height) continue;
+            const x = (Math.max(q.left, r.left) + Math.min(q.right, r.right)) / 2;
+            const y = (Math.max(q.top, r.top) + Math.min(q.bottom, r.bottom)) / 2;
+            if (x < VX0 || x > VX1 || y < VY0 || y > VY1) continue;
+            let common = parentOf(host);
+            while (common && common.nodeType === 1 && !common.contains(p)) common = parentOf(common);
+            if (!common || common.nodeType !== 1 || ['grid', 'inline-grid'].includes(style(common).display)) continue;
+            if (offFlow(host, common) || offFlow(p, common) || panelAt(host, common, x, y)) continue;
+            const hit = document.elementFromPoint(x, y);
+            const under = !!hit && (hit === p || p.contains(hit));
+            const seen = over.get(p);
+            if (!seen) over.set(p, { p, host, oy, ox, under, lines: 1 });
+            else {
+              seen.lines++;
+              if (oy > seen.oy) Object.assign(seen, { host, oy, ox, under });
+            }
+          }
+        }
+      }
+      for (const { p, host, oy, ox, under, lines } of over.values()) {
+        layoutOutliers.push({ kind: 'text_over_image', axis: 'y', selectors: [uniqueSelector(host), uniqueSelector(p)], offset_px: round2(oy),
+          overlap_w: round2(ox), image_on_top: under, lines, text: textOf(host), box: boxOf(host) });
+      }
+    }
+    // Rows that touch while columns keep a gap (LY-15): painted cells in rows and columns
+    // whose neighbour on the same row keeps 4 to 64 px from them while the cell below touches
+    // them (within 1 px), so the rows run together into one block. Tables, controls and inline
+    // boxes (a wrapped row of buttons or tabs), the items of one card beside another card's,
+    // and stacks side by side (the cell below in the same parent, the neighbour in another)
+    // stay out (touching_rows).
+    const cellBoxes = [];
+    const CONTROL = 'a, button, input, select, textarea, label, summary, [role=button], [role=tab], [role=link], [role=menuitem]';
+    for (const e of all) {
+      const g = geo(e);
+      if (!g.vis || !inView(g.r) || g.r.width < 16 || g.r.height < 12 || g.r.width > 0.95 * vw) continue;
+      const cs = style(e);
+      if (cs.display.startsWith('inline') || cs.display.startsWith('table') || ['absolute', 'fixed'].includes(cs.position)) continue;
+      try {
+        if (e.matches(CONTROL)) continue;
+      } catch (err) {
+        continue;
+      }
+      const bg = parseColor(cs.backgroundColor);
+      const ring = ['Top', 'Right', 'Bottom', 'Left'].every((s) => (parseFloat(cs['border' + s + 'Width']) || 0) > 0);
+      if ((bg && bg.a > 0.05) || (cs.backgroundImage && cs.backgroundImage !== 'none') || ring) cellBoxes.push({ c: e, r: g.r });
+      if (cellBoxes.length >= 400) break;
+    }
+    const apart = (a, b) => a !== b && !a.c.contains(b.c) && !b.c.contains(a.c);
+    const sameRow = (a, b) => Math.abs(a.r.top - b.r.top) <= 1 && Math.abs(a.r.bottom - b.r.bottom) <= 2;
+    const gapRight = (a, b) => b.r.left - a.r.right;
+    for (const a of cellBoxes) {
+      a.right = null;
+      a.spaced = false;
+      for (const o of cellBoxes) {
+        if (!apart(a, o) || !sameRow(a, o)) continue;
+        const g1 = gapRight(a, o);
+        const g2 = gapRight(o, a);
+        if ((g1 >= 4 && g1 <= 64) || (g2 >= 4 && g2 <= 64)) a.spaced = true;
+        if (g1 >= 4 && g1 <= 64 && (!a.right || o.r.left < a.right.r.left)) a.right = o;
+      }
+    }
+    const touching = new Map();
+    for (const a of cellBoxes) {
+      if (!a.right) continue;
+      const c = a.right;
+      for (const b of cellBoxes) {
+        if (b === c || !b.spaced || !apart(a, b) || !apart(b, c)) continue;
+        const gy = b.r.top - a.r.bottom;
+        const ox = Math.min(a.r.right, b.r.right) - Math.max(a.r.left, b.r.left);
+        if (gy < -1 || gy > 1 || ox < 0.5 * Math.min(a.r.width, b.r.width)) continue;
+        if (parentOf(a.c) === parentOf(b.c) && parentOf(c.c) !== parentOf(a.c)) continue;
+        let panel = parentOf(a.c);
+        while (panel && panel.nodeType === 1 && !paintedBox(panel)) panel = parentOf(panel);
+        if (panel && panel.nodeType === 1 && !panel.contains(c.c)) continue;
+        let common = parentOf(a.c);
+        while (common && common.nodeType === 1 && !(common.contains(b.c) && common.contains(c.c))) common = parentOf(common);
+        const key = common && common.nodeType === 1 ? common : document.body;
+        if (!touching.has(key)) touching.set(key, { a, b, gy, gx: gapRight(a, c), pairs: 0 });
+        touching.get(key).pairs++;
+      }
+    }
+    for (const [box, t] of touching) {
+      layoutOutliers.push({ kind: 'touching_rows', axis: 'y', selectors: [uniqueSelector(t.b.c), uniqueSelector(t.a.c)], container: uniqueSelector(box),
+        offset_px: round2(t.gy), gap_px: round2(t.gx), pairs: t.pairs, text: (textOf(t.a.c) + ' / ' + textOf(t.b.c)).slice(0, 80), box: boxOf(t.b.c) });
+    }
     const scroller = document.scrollingElement || document.documentElement;
     if (scroller) {
       const sx = window.scrollX || 0;

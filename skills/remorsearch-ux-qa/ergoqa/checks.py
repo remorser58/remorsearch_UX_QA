@@ -365,6 +365,18 @@ LY13 = _register(CheckSpec(
     (), ("web", "desktop"), "visual",
     "좁은 화면에서 바 항목을 메뉴로 접거나 줄바꿈을 막고, 바 높이를 고정했다면 내용이 넘치지 않는지 확인하세요.",
 ))
+LY14 = _register(CheckSpec(
+    "LY-14", "layout", "measured", "글자가 자기 것이 아닌 이미지와 겹침",
+    "Text overlaps an image it does not belong to",
+    (), ("web", "desktop"), "visual",
+    "float나 음수 margin이 다음 그림까지 내려오지 않게 하세요. 전폭 그림에 clear: both를 주거나, 캡션을 그림 블록 안에 두고 그림 앞 여백을 확보하세요.",
+))
+LY15 = _register(CheckSpec(
+    "LY-15", "layout", "measured", "열 사이는 띄웠는데 행끼리 맞붙음",
+    "Grid rows touch while its columns keep a gap",
+    (), ("web", "desktop"), "visual",
+    "행 사이에도 열과 같은 간격(row-gap, margin-bottom)을 주세요. 행 간격을 지우는 margin 재정의가 없는지 확인하세요.",
+))
 UI01 = _register(CheckSpec(
     "UI-01", "visual", "measured", "아이콘 전용 조작 요소에 시각적 설명이 없음",
     "Icon-only action has no visible tooltip or equivalent hover/focus explanation",
@@ -2388,16 +2400,16 @@ def check_semantics(ctx: Context) -> list[Observation]:
 
 
 _PLACEMENT_KINDS = ("icon_offset", "attached_mismatch", "page_overflow", "scroll_slack", "label_offset", "pair_mismatch", "bar_offset", "narrow_column",
-                    "field_width", "run_together", "hanging_item")
+                    "field_width", "run_together", "hanging_item", "text_over_image", "touching_rows")
 _DIRECTION_KO = {("x", True): "오른쪽으로", ("x", False): "왼쪽으로", ("y", True): "아래로", ("y", False): "위로"}
 
 
 def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, base: tuple, context: dict[str, Any]) -> Observation:
-    """LY-06..13 from the driver's measured outliers: an off-centre icon, a field and its
+    """LY-06..15 from the driver's measured outliers: an off-centre icon, a field and its
     attached button with different edges, a page wider or a few px taller than the
     screen, side-by-side elements out of line, a squeezed column, stacked fields of
-    different widths, touching labels and a bar item hanging past the bar. Offsets are
-    CSS px on the screen that showed them."""
+    different widths, touching labels, a bar item hanging past the bar, text drawn over
+    an image and grid rows that touch. Offsets are CSS px on the screen that showed them."""
     kind = o["kind"]
     offset = o.get("offset_px")
     size = abs(offset) if isinstance(offset, (int, float)) else 0
@@ -2500,6 +2512,28 @@ def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, 
             + (f"(처진 항목 {o.get('items')}개)." if (o.get("items") or 1) > 1 else "."),
             extra=anchors,
         )
+    if kind == "text_over_image":
+        image = selectors[1] if len(selectors) > 1 else "이미지"
+        return Observation(
+            "LY-14", *base, [], f"{selectors[0]}|{label}",
+            {"name": "text_over_image_px", "value": offset, "unit": "css_px", "threshold": 4, "comparator": ">=", "overlap_w": o.get("overlap_w"),
+             "image": image, "lines": o.get("lines")},
+            False, "P2",
+            f"'{(label or selectors[0])[:40]}' 글자가 자기 것이 아닌 이미지 {image}와 세로 {size:g}px, 가로 {o.get('overlap_w')}px 겹칩니다"
+            + ("(이미지가 글자 위에 그려짐)." if o.get("image_on_top") else "."),
+            extra=anchors,
+        )
+    if kind == "touching_rows":
+        grid = o.get("container") or "그리드"
+        return Observation(
+            "LY-15", *base, [], f"{selectors[0]}|{label}",
+            {"name": "row_gap", "value": offset, "unit": "css_px", "threshold": 1, "comparator": "<=", "column_gap": o.get("gap_px"),
+             "pairs": o.get("pairs"), "container": grid},
+            False, "P3",
+            f"{grid}의 칸이 옆 칸과는 {o.get('gap_px')}px 떨어져 있는데 위아래 행끼리는 {size:g}px로 맞붙어 한 덩어리로 보입니다"
+            + (f"(맞붙은 쌍 {o.get('pairs')}개)." if (o.get("pairs") or 1) > 1 else "."),
+            extra=anchors,
+        )
     if kind == "page_overflow":
         return Observation(
             "LY-08", *base, [], "page-width|",
@@ -2521,7 +2555,7 @@ def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, 
 
 
 def check_layout(ctx: Context) -> list[Observation]:
-    """Covered text, overlapping text, near-miss alignment, uneven spacing and misplacement (LY-02..13).
+    """Covered text, overlapping text, near-miss alignment, uneven spacing and misplacement (LY-02..15).
 
     Measured from rendered geometry and profile-independent. Covered text counts only
     when no scroll position reveals it: a fixed or sticky bar at the top while the page
@@ -3108,7 +3142,8 @@ HYPOTHESIS_CHECKS = frozenset({"GZ-01", "GZ-04", "PC-05", "PT-05", "GM-06"})
 # "profile-independent" instead of a k/n coverage (STF-08).
 PROFILE_INVARIANT_CHECKS = frozenset({"TI-01", "PT-01", "PT-05", "PT-06", "PC-01", "PC-02", "CG-01", "CG-03", "GZ-03", "GM-05", "GM-06",
                                       "SM-01", "SM-02", "SM-03", "SM-04", "SM-05", "SM-06", "SM-07", "SM-08", "LY-01", "LY-02", "LY-03",
-                                      "LY-04", "LY-05", "LY-06", "LY-07", "LY-08", "LY-09", "LY-10", "LY-11", "LY-12", "LY-13", "UI-01", "RF-01", "RF-02", "RF-03",
+                                      "LY-04", "LY-05", "LY-06", "LY-07", "LY-08", "LY-09", "LY-10", "LY-11", "LY-12", "LY-13", "LY-14", "LY-15", "UI-01",
+                                      "RF-01", "RF-02", "RF-03",
                                       "FM-02"})
 
 

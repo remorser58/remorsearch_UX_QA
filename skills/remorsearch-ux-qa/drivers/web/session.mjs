@@ -19,7 +19,7 @@ import {
 } from './png.mjs';
 import { KNOWN_ROLES } from './validate.mjs';
 import {
-  DriverFailure, epochNow, isoNow, pngSize, round1, sha256, sleep, truncate, writeFileAtomic, writeJsonAtomic,
+  DriverFailure, allowedUrl, epochNow, isoNow, pngSize, round1, sha256, sleep, truncate, writeFileAtomic, writeJsonAtomic,
 } from './util.mjs';
 
 export const ELEMENT_CAP = 400;
@@ -75,8 +75,6 @@ const LOCATOR_FIELDS = new Set(['selector', 'selectors', 'target', 'to', 'anchor
 // and re-rendered after the run at 320 CSS px wide with scripts off (a static copy,
 // so the run itself is never resized). At most REFLOW_MAX_SCREENS per run.
 const REFLOW_WIDTH = 320;
-// Request types a file:// page may load from any local folder (see isAllowed).
-const LOCAL_SUBRESOURCES = new Set(['stylesheet', 'script', 'image', 'font', 'media', 'texttrack', 'manifest']);
 const REFLOW_MAX_SCREENS = 12;
 const REFLOW_BUDGET_MS = 40000;
 const TEXT_SPACING = Object.freeze({ line_height: 1.5, paragraph_after: 2, letter_spacing: 0.12, word_spacing: 0.16, preserve_larger: true });
@@ -1911,21 +1909,7 @@ export class WebSession {
    * frame an unrelated local file into a capture.
    */
   isAllowed(url, request = null) {
-    let u;
-    try {
-      u = new URL(url);
-    } catch {
-      return false;
-    }
-    if (['data:', 'blob:', 'about:'].includes(u.protocol)) return true;
-    if (u.protocol === 'file:') {
-      const s = this.scenario.origin;
-      if (s.protocol !== 'file:') return false;
-      if (request && LOCAL_SUBRESOURCES.has(request.resourceType())) return true;
-      const dir = s.pathname.slice(0, s.pathname.lastIndexOf('/') + 1);
-      return u.pathname.startsWith(dir);
-    }
-    return this.allowedOrigins.has(u.origin);
+    return allowedUrl(this.scenario.origin, this.allowedOrigins, url, request ? request.resourceType() : null);
   }
 
   onRoute(route) {

@@ -55,7 +55,7 @@ A UI check starts with one measured scan. You can run it yourself too:
 python3 ~/.codex/skills/remorsearch-ux-qa/scripts/ergo_qa.py scan --url https://app.example.test --out scan-out
 ```
 
-It records the page on `galaxy-s24` (360×780) and `laptop-1440` (1440×900) by default (`--device ID` changes them) and writes `scan-out/scan.md` with one row per candidate, `scan.json` and `crops/` with each suspected region outlined. Candidates are measurements. The agent opens every crop and the full screenshots before reporting one, and lists what it dismissed. A page that never loaded is a coverage gap, never a clean result.
+It records the page on `galaxy-s24` (360×780) and `laptop-1440` (1440×900) by default (`--device ID` changes them) and writes `scan-out/scan.md` with one row per candidate, `scan.json`, `crops/` with each suspected region outlined and `sheets/` with every screen of each device side by side. Candidates are measurements. The agent checks every crop and the sheets before reporting one, and lists what it dismissed. For a suspect no row measures, `ergo_qa.py measure --url URL --selector CSS --out DIR` gives the elements' boxes, styles, gaps and overlaps with an outlined screenshot. A page that never loaded is a coverage gap, never a clean result.
 
 The agent then exercises the tasks you name (happy path, a required omission, validation, recovery, keyboard), adds research only when you ask, and reports a verdict with at most three actions, findings with evidence and fixes, and what stayed untested.
 

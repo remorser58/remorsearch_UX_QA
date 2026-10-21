@@ -2850,6 +2850,36 @@ async function placementTest(tmp) {
     const hang = of(third, 'hanging_item');
     check('placement: a fixed bar whose second link wraps below its edge is measured once, a bar that fits is silent',
       hang.length === 1 && hang[0].container === '#bar' && hang[0].selectors.includes('#m2') && hang[0].offset_px >= 4, hang);
+    // LY-14 and LY-15: a caption pulled 12 px up over the picture above it by a negative
+    // margin, beside a caption on its own white panel, a label placed absolutely over a
+    // picture and a heading set wholly inside one; two rows of cells 16 px apart side by side
+    // but touching each other, beside a grid spaced both ways, two lists side by side and a
+    // row of buttons that wraps onto a second line.
+    const svg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23999'/%3E%3C/svg%3E";
+    await page.setContent(`<!doctype html><style>
+      body { margin:0; font:16px Arial, sans-serif } .pic { display:block; width:400px; height:100px; margin:20px 20px 0 }
+      .cap { width:380px; margin:-12px 20px 20px; line-height:20px } #cap2 { background:#fff } #hero { width:300px; margin:-70px 40px 60px; line-height:20px }
+      .card { position:relative; width:400px; margin:20px } .card .pic { margin:0 } .tag { position:absolute; top:8px; left:8px }
+      .rows, .grid2 { width:600px; margin:20px } .row { display:flex; gap:16px } .row > div, .grid2 > div { flex:1; height:30px; background:#ddd }
+      .grid2 { display:flex; flex-wrap:wrap; gap:16px } .grid2 > div { flex:0 0 292px }
+      .lists { display:flex; gap:16px; margin:20px } .lists ul { list-style:none; margin:0; padding:0; width:200px } .lists li { height:24px; background:#eee }
+      .btns { width:250px; margin:20px } .btns button { width:110px; height:32px; margin:0 8px 0 0; border:1px solid #888; background:#eee }
+    </style>
+    <img class="pic" id="pic1" alt="" src="${svg}"><p class="cap" id="cap1">Caption pulled up over the picture above it</p>
+    <img class="pic" id="pic2" alt="" src="${svg}"><p class="cap" id="cap2">Caption on a white panel of its own</p>
+    <div class="card"><img class="pic" alt="" src="${svg}"><span class="tag" id="tag1">New</span></div>
+    <img class="pic" id="pic3" alt="" src="${svg}"><h2 id="hero">Heading set inside the picture</h2>
+    <div class="rows" id="rows"><div class="row"><div>1</div><div>2</div></div><div class="row"><div>3</div><div>4</div></div></div>
+    <div class="grid2" id="grid2"><div>1</div><div>2</div><div>3</div><div>4</div></div>
+    <div class="lists" id="lists"><ul><li>a</li><li>b</li></ul><ul><li>c</li><li>d</li></ul></div>
+    <div class="btns" id="btns"><button>One</button><button>Two</button><button>Three</button><button>Four</button></div>`);
+    const fourth = await capture();
+    const over = of(fourth, 'text_over_image');
+    check('placement: a caption pulled over the picture above it is measured once; a caption on its own panel and a placed label are not',
+      over.length === 1 && over[0].selectors[0] === '#cap1' && over[0].selectors[1] === '#pic1' && over[0].offset_px >= 4, over);
+    const rows = of(fourth, 'touching_rows');
+    check('placement: rows of cells 16 px apart that touch each other are measured once; a grid spaced both ways and lists side by side are not',
+      rows.length === 1 && rows[0].container === '#rows' && Math.abs(rows[0].offset_px) <= 1 && Math.abs(rows[0].gap_px - 16) < 0.6, rows);
   } finally {
     await context.close();
     await transport.close();

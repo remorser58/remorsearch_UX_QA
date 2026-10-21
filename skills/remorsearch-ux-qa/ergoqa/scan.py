@@ -26,6 +26,9 @@ CROPPER = ROOT / "drivers" / "web" / "crop.mjs"
 DEFAULT_DEVICES = ("galaxy-s24", "laptop-1440")
 SEVERITY_RANK = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
 EXAMPLES_PER_GROUP = 3
+# Contact sheets: four phone screens across at CSS size, wider screens at half size, two
+# rows a sheet. About as wide as the sheets reviewers made for themselves.
+SHEET_WIDTH, SHEET_GAP = 1464, 8
 
 
 def is_layout(check_id: str) -> bool:
@@ -179,8 +182,8 @@ def write_crop(run_dir: Path, observation: dict[str, Any], target: Path, margin:
 
 
 def write_crops(jobs: list[dict[str, Any]], node: str, work: Path, cache: dict[Path, Any] | None = None) -> None:
-    """Write every crop with the Node cropper in one process, then draw in Python any it
-    could not write (no Node, or a screenshot it could not read)."""
+    """Write every crop and sheet with the Node cropper in one process, then draw in Python
+    any crop it could not write (no Node, or a screenshot it could not read)."""
     if jobs:
         path = work / "crop-jobs.json"
         try:
@@ -191,11 +194,21 @@ def write_crops(jobs: list[dict[str, Any]], node: str, work: Path, cache: dict[P
         finally:
             path.unlink(missing_ok=True)
     for job in jobs:
-        if not Path(job["out"]).is_file():
+        if "sheet" not in job and not Path(job["out"]).is_file():
             try:
                 _draw_job(job, cache)
             except (OSError, ValueError, png.PNGError):
                 pass
+
+
+def sheet_jobs(device_id: str, shots: list[Path], folder: Path) -> list[dict[str, Any]]:
+    """A device's screens in scroll order on contact sheets, left to right, two rows each."""
+    width = get_device(device_id).viewport_css[0]
+    scale = 1 if width <= 480 else 0.5
+    cols = max(1, int((SHEET_WIDTH + SHEET_GAP) // (width * scale + SHEET_GAP)))
+    per = cols * 2
+    return [{"sheet": [str(p) for p in shots[k:k + per]], "out": str(folder / f"{device_id}-{k // per + 1}.png"), "cols": cols,
+             "scale": scale, "gap": SHEET_GAP, "screens": [k + 1, min(k + per, len(shots))]} for k in range(0, len(shots), per)]
 
 
 def group_key(candidate: dict[str, Any]) -> str:
@@ -220,6 +233,7 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
     profiles: list[dict[str, Any]] = []
     coverage: list[dict[str, Any]] = []
     run_dirs: dict[str, Path] = {}
+    shots: dict[str, list[Path]] = {}
     # The devices record at the same time, each in its own browser: the scan takes about
     # as long as its slowest device.
     started = time.time()
@@ -291,6 +305,7 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
         entry["blocked_origins"] = origins[:5]
         entry["checks_not_run"] = checks_not_run(run_doc.get("warnings") or [])
         scrolls = []
+        shots[device_id] = []
         for snap_path in sorted(run_dir.glob("*.json")):
             if snap_path.name == "run.json":
                 continue
@@ -298,6 +313,9 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
             sc = (doc.get("surface") or {}).get("scroll") or {}
             if doc.get("device", {}).get("probe") != "adaptation" and isinstance(sc.get("y"), (int, float)):
                 scrolls.append((sc["y"], sc.get("height")))
+                css = ((doc.get("screenshot") or {}).get("css") or {}).get("path")
+                if css and (run_dir / css).is_file():
+                    shots[device_id].append(run_dir / css)
         if scrolls:
             height = max((h for _, h in scrolls if isinstance(h, (int, float))), default=None)
             screen = get_device(device_id).viewport_css[1]
@@ -357,9 +375,16 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
                     job = None
                 if job:
                     planned.append((c, job))
-    write_crops([job for _, job in planned], node, out, cache)
+    sheets = [(device_id, job) for device_id, paths in shots.items() for job in sheet_jobs(device_id, paths, out / "sheets")]
+    if sheets:
+        (out / "sheets").mkdir(exist_ok=True)
+    write_crops([job for _, job in planned] + [job for _, job in sheets], node, out, cache)
     for c, job in planned:
         c["crop"] = job["out"] if Path(job["out"]).is_file() else None
+    for entry in coverage:
+        made = [job for device_id, job in sheets if device_id == entry["device"] and Path(job["out"]).is_file()]
+        if made:
+            entry["sheets"] = [{"path": f"sheets/{Path(job['out']).name}", "screens": job["screens"], "scale": job["scale"]} for job in made]
     result = {"schema_version": "ergo-scan.v1", "url": url, "devices": list(devices), "coverage": coverage,
               "candidates": candidates, "status": "candidates_need_visual_confirmation", "focus_walk": focus_walk}
     (out / "scan.json").write_text(json.dumps(result, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -429,8 +454,10 @@ def run_many(urls: list[str], out: Path, devices: tuple[str, ...] = DEFAULT_DEVI
 
 
 def render_markdown(result: dict[str, Any], crop_prefix: str = "", layout_only: bool = False) -> str:
+    folder = crop_prefix[:-len("crops/")] if crop_prefix.endswith("crops/") else crop_prefix
     lines = [f"# Layout scan: {result['url']}", "",
-             "Measured candidates. Open each crop and the full screenshot before reporting one; dismiss what the pixels do not show.", ""]
+             "Measured candidates. Check each row on its crop and the sheets; dismiss a row only when the pixels contradict it "
+             "or show a deliberate state, such as a closed menu or a box that scrolls.", ""]
     for c in result["coverage"]:
         if not c.get("recorded"):
             lines.append(f"- {c['device']}: not recorded (driver exit {c['driver_exit']}): {c.get('error', '')[:300]}"
@@ -441,6 +468,10 @@ def render_markdown(result: dict[str, Any], crop_prefix: str = "", layout_only: 
             if c.get("uncaptured_css"):
                 spans = ", ".join(f"{a}-{b}" for a, b in c["uncaptured_css"])
                 lines.append(f"  Not captured: {spans} CSS px from the top; rerun with a larger --tiles.")
+            if c.get("sheets"):
+                half = " at half size" if c["sheets"][0].get("scale", 1) < 1 else ""
+                lines.append(f"  Sheets{half}, every screen top to end, left to right: "
+                             + ", ".join(f"{folder}{s['path']} ({s['screens'][0]}-{s['screens'][1]})" for s in c["sheets"]) + ".")
             if c.get("blocked_requests"):
                 if str(result.get("url", "")).startswith("file:"):
                     lines.append(f"  Blocked {c['blocked_requests']} requests for frames or documents outside the page's folder "

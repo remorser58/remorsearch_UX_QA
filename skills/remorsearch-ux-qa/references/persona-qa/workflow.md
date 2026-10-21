@@ -5,20 +5,17 @@ Test completion, input preservation and rendered design. Scenarios define condit
 
 ## Fast path for UI QA
 
-For a page UI check naming no persona, audience or condition matrix. It replaces the run path; numbered sections stay lookups.
+For a page UI check naming no persona, audience or condition matrix. It replaces the run path and section 2's receipts; numbered sections stay lookups.
 
-1. Start `python3 scripts/ergo_qa.py scan --url URL --out work/scan` (one `--url` per page) first: it records each page top to end on a phone and a laptop. `scan.md` lists layout candidates (cut, covered or overlapping text, alignment, spacing, icon centring, field sizes, touching labels, bar overflow, page width) with outlined crops, then the other checks by cause, and fills in as pages finish. A driver failure is a coverage gap.
-2. Open every layout crop and the top, middle and end screenshots in `runs/SCAN-*/*.css.png`; capture more only for what they miss. Confirm a candidate only when the pixels show it; list dismissals with reasons. Report LY-08 once for all text it cuts and each grouped cause once. Then check what measurement misses with `references/persona-qa/ui-quality.md` by section: hierarchy, wrong or broken content, inconsistent components, and differences from Figma or a spec.
-3. Exercise only named tasks, or the primary form: happy path, one required omission, validation and recovery.
-4. Report with the template's Decision and Findings sections: each finding cites its crop, measurement and fix. Name what stayed untested (Safari/WebKit, real devices, unreached states).
+1. Start the scan before reading on: `python3 scripts/ergo_qa.py scan --url URL --tiles 40 --out work/scan` (one `--url` a page; `--node` for Node.js 22). It records every page top to end on a phone and a laptop; `scan.md` fills in as pages finish with layout candidates (cut, covered or overlapping text, text over images, alignment, spacing, touching rows or labels, icons, field sizes, bars, page width), their crops, sheets of every screen and other checks by cause. A driver failure is a coverage gap.
+2. As each page finishes, view its sheets and layout crops; they are the captures. Keep a row its crop shows; dismiss one only when the pixels contradict it or show a deliberate state (a closed menu, a scrolling box), with the reason. Report LY-08 once for all text it cuts and each grouped cause once. On the sheets, check what measurement misses with `references/persona-qa/ui-quality.md` by section: hierarchy, wrong or broken content, inconsistent components, differences from Figma or a spec.
+3. Measure a suspect with `python3 scripts/ergo_qa.py measure --url URL --device ID --selector CSS --out work/m1` (boxes, styles, gaps, overlaps, a screenshot) instead of writing a browser script.
+4. Exercise only named tasks, or the primary form: happy path, one required omission, validation and recovery.
+5. Write the report once with the template's Decision and Findings sections: each finding cites its crop or measurement and its fix; `scan.md` is the coverage record. Name what stayed untested.
 
 ## Phase 0 recap
 
-Use `SKILL.md` Phase 0. Every product UI QA uses `references/persona-qa/ui-quality.md` by section; pure research skips it.
-
-Chromium emulation leaves Safari/WebKit, real devices, safe areas and screen readers untested. Korean product: `references/persona-qa/kwcag-card.md`; report language changes wording only. Outside-product pages: `references/shared/access-card.md` in operator/verifier prompts. Host browser first; preserve user state.
-
-Follow the UI card's host visual procedure and `references/persona-qa/generated-ui-preflight.md` sections 1–4 before verdict and after fixes. Capturing is not viewing; record inspected regions.
+Use `SKILL.md` Phase 0. Chromium emulation leaves Safari/WebKit, real devices, safe areas and screen readers untested. Follow the UI card's host visual procedure and `references/persona-qa/generated-ui-preflight.md` sections 1–4 before verdict and after fixes. Capturing is not viewing; record inspected regions.
 
 ## Run path
 

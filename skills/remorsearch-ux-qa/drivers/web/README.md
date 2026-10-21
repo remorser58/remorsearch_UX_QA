@@ -291,9 +291,22 @@ node drivers/web/ergo_drive.mjs serve --scenario sc.json --profile p.json --agen
 node drivers/web/drive_client.mjs --port 9477 act '{"action":"tap","target":"#submit"}'
 node drivers/web/drive_client.mjs --port 9477 inspect
 
+# Measure elements on one page as the layout scan renders it (read-only)
+python3 scripts/ergo_qa.py measure --url URL --device galaxy-s24 --selector '.caption' --selector 'figure img' --out work/m1
+
 # Self-test (local fixture server, a few minutes; --only focus2,reflow-copy runs groups)
 node drivers/web/selftest.mjs [--keep] [--only GROUPS]
 ```
+
+The layout scan writes, beside each page's crops, contact sheets of every screen in
+scroll order (`sheets/<device>-<n>.png`): four phone screens across at CSS size, wider
+screens at half size, two rows a sheet; `scan.md` lists them per device with their screen
+numbers. `measure` opens the page with the scan's device emulation and network policy and
+writes `measure.json` and `measure.png`: per selector the matched elements (box in page
+CSS px, text lines, the styles that decide layout, parent box), and for neighbouring
+matches in page order their gaps, edge and centre offsets, size differences, first-line
+offset and any overlap. The screenshot is the screen around the first overlap (or
+`--at N`, or the first shown match) with every match outlined and numbered.
 
 | Option | Meaning |
 | --- | --- |
