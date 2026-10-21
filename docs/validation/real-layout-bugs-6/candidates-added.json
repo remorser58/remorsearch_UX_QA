@@ -1,0 +1,949 @@
+[
+ {
+  "source": "holiday-css",
+  "candidates": [
+   {
+    "id": "holiday-css-3b68d22d",
+    "commit": "3b68d22d2a950c03511f88360c5b251809ec2e83",
+    "date": "2026-05-15",
+    "subject": "Fix #18 Add spacing between buttons",
+    "fixed_state": "3b68d22d2a950c03511f88360c5b251809ec2e83",
+    "pages": [
+     "src/code.html",
+     "src/highlightjs.html"
+    ]
+   },
+   {
+    "id": "holiday-css-6fb21f5e",
+    "commit": "6fb21f5e5f3ed654902586f04e0c18355bbb5aa1",
+    "date": "2026-05-14",
+    "subject": "Fix #317 Extra padding at the top of `<fieldset>`",
+    "fixed_state": "6fb21f5e5f3ed654902586f04e0c18355bbb5aa1",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-b54d7c59",
+    "commit": "b54d7c5949c836c792ee41fc2923bb2a6d2fde5d",
+    "date": "2026-05-12",
+    "subject": "Layout mappings",
+    "fixed_state": "b54d7c5949c836c792ee41fc2923bb2a6d2fde5d",
+    "pages": [
+     "src/code.html",
+     "src/highlightjs.html"
+    ]
+   },
+   {
+    "id": "holiday-css-d3c123d1",
+    "commit": "d3c123d1f3370695474fb5a3ea348b1553e9180d",
+    "date": "2023-06-29",
+    "subject": "Fix #264 Label as flex causes weird spacing",
+    "fixed_state": "d3c123d1f3370695474fb5a3ea348b1553e9180d",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-90e15fa7",
+    "commit": "90e15fa771d33c755295edf904178f473299f308",
+    "date": "2021-06-22",
+    "subject": "Revert \"Better align label after checkbox and radio\"",
+    "fixed_state": "90e15fa771d33c755295edf904178f473299f308",
+    "pages": [
+     "src/code.html",
+     "src/highlightjs.html"
+    ]
+   },
+   {
+    "id": "holiday-css-fde9012a",
+    "commit": "fde9012afeeb6344f1564742c224d73720e4eef0",
+    "date": "2021-06-22",
+    "subject": "Better align label after checkbox and radio",
+    "fixed_state": "fde9012afeeb6344f1564742c224d73720e4eef0",
+    "pages": [
+     "src/code.html",
+     "src/highlightjs.html"
+    ]
+   },
+   {
+    "id": "holiday-css-e482b9ed",
+    "commit": "e482b9ed22da5a635bd9f124f029c980f4bfb162",
+    "date": "2021-06-20",
+    "subject": "Set max-height for <picture>",
+    "fixed_state": "e482b9ed22da5a635bd9f124f029c980f4bfb162",
+    "pages": [
+     "src/code.html",
+     "src/highlightjs.html"
+    ]
+   },
+   {
+    "id": "holiday-css-2707dc5e",
+    "commit": "2707dc5e0cfafeb3ace2cc514f5d575de2d828c6",
+    "date": "2020-06-24",
+    "subject": "Fix up <kbd> max-width",
+    "fixed_state": "2707dc5e0cfafeb3ace2cc514f5d575de2d828c6",
+    "pages": [
+     "src/code.html",
+     "src/highlightjs.html"
+    ]
+   },
+   {
+    "id": "holiday-css-aabf4b08",
+    "commit": "aabf4b08a65c4da223f33e91716d6d1bb61e4c5c",
+    "date": "2020-06-13",
+    "subject": "Refactor :not() selectors in src/css/mobile.css",
+    "fixed_state": "aabf4b08a65c4da223f33e91716d6d1bb61e4c5c",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-139e5bf0",
+    "commit": "139e5bf0596d2216b743ba21fbd2d0ce54979135",
+    "date": "2020-06-10",
+    "subject": "Align summary text with details text",
+    "fixed_state": "139e5bf0596d2216b743ba21fbd2d0ce54979135",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-aca66dcd",
+    "commit": "aca66dcd798b77a977dcad19104e79f5f8911c95",
+    "date": "2020-05-31",
+    "subject": "Change line-height to 1.4",
+    "fixed_state": "aca66dcd798b77a977dcad19104e79f5f8911c95",
+    "pages": [
+     "index.html",
+     "src/acknowledgements.html"
+    ]
+   },
+   {
+    "id": "holiday-css-4c3ef14a",
+    "commit": "4c3ef14a2984bdaa3ecc8f054ba8c8f5b10831b9",
+    "date": "2020-05-22",
+    "subject": "Move body max-width to mobile.css",
+    "fixed_state": "4c3ef14a2984bdaa3ecc8f054ba8c8f5b10831b9",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-467b8b98",
+    "commit": "467b8b980501b29fdc6ff9dd3b895707aee5692a",
+    "date": "2020-05-21",
+    "subject": "Ignore body margins for <video>",
+    "fixed_state": "467b8b980501b29fdc6ff9dd3b895707aee5692a",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-ae77a8ee",
+    "commit": "ae77a8ee4883d2ddfaa1190128219163a012caf0",
+    "date": "2020-05-21",
+    "subject": "Ignore body margins for <code> inside <pre>",
+    "fixed_state": "ae77a8ee4883d2ddfaa1190128219163a012caf0",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-b2c89229",
+    "commit": "b2c892297e432d221c390b964e270d51bdfbc3b0",
+    "date": "2020-05-21",
+    "subject": "Ignore body margins for <table>",
+    "fixed_state": "b2c892297e432d221c390b964e270d51bdfbc3b0",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-39bab553",
+    "commit": "39bab553c5c458dfd7f78ef11e6b54a0de0d49b9",
+    "date": "2020-05-21",
+    "subject": "Ignore body margins for <picture>",
+    "fixed_state": "39bab553c5c458dfd7f78ef11e6b54a0de0d49b9",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-67c86d1a",
+    "commit": "67c86d1ac46eaf8867830e275088e087430245dd",
+    "date": "2020-05-21",
+    "subject": "Use rem instead of px for --max-body-width",
+    "fixed_state": "67c86d1ac46eaf8867830e275088e087430245dd",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-ae906ce3",
+    "commit": "ae906ce346ff0956d42445618a938e049c8c3a25",
+    "date": "2020-05-18",
+    "subject": "Add --border-width",
+    "fixed_state": "ae906ce346ff0956d42445618a938e049c8c3a25",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-3daa45b0",
+    "commit": "3daa45b06d31714c82cdf30a5145710c1c8cd18f",
+    "date": "2020-05-18",
+    "subject": "Use hamburger menu on mobile",
+    "fixed_state": "3daa45b06d31714c82cdf30a5145710c1c8cd18f",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-8f27335a",
+    "commit": "8f27335a0ab3ed71b41e06fa5ebcb9026fddb33d",
+    "date": "2019-10-06",
+    "subject": "Prevent text overflow",
+    "fixed_state": "8f27335a0ab3ed71b41e06fa5ebcb9026fddb33d",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-e050edb7",
+    "commit": "e050edb7a1d1d76db918e5e39146faaed22067c7",
+    "date": "2019-10-06",
+    "subject": "Add spacing to <details> and <summary>",
+    "fixed_state": "e050edb7a1d1d76db918e5e39146faaed22067c7",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-ec304f67",
+    "commit": "ec304f670fb6885166349bb049f0d1ccae5776d3",
+    "date": "2019-09-29",
+    "subject": "Move some styles between mobile.css and bulma.css",
+    "fixed_state": "ec304f670fb6885166349bb049f0d1ccae5776d3",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-d4caedc5",
+    "commit": "d4caedc5cb6b849951121e53bff66859a323f27e",
+    "date": "2019-09-29",
+    "subject": "Fix #4 - Add spacing between inputs",
+    "fixed_state": "d4caedc5cb6b849951121e53bff66859a323f27e",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-8e99fae5",
+    "commit": "8e99fae54728189e026751afa8089635a2e951e0",
+    "date": "2019-09-29",
+    "subject": "Align file input",
+    "fixed_state": "8e99fae54728189e026751afa8089635a2e951e0",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-35822f82",
+    "commit": "35822f82b52a310207781f9e778a1a1916750dcf",
+    "date": "2019-09-29",
+    "subject": "Extract footer margin from bulma.css to mobile.css",
+    "fixed_state": "35822f82b52a310207781f9e778a1a1916750dcf",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-3455e1c6",
+    "commit": "3455e1c62ca2564553c5b608c3b6f13db9ee1577",
+    "date": "2019-09-29",
+    "subject": "Fix #17 - Add paddings inside inputs",
+    "fixed_state": "3455e1c62ca2564553c5b608c3b6f13db9ee1577",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-1eba36ad",
+    "commit": "1eba36ad6178bf284e16a8a896d0ad0a531b18f6",
+    "date": "2019-09-29",
+    "subject": "Fix #5 - Add spacing between links in nav",
+    "fixed_state": "1eba36ad6178bf284e16a8a896d0ad0a531b18f6",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-2e23b517",
+    "commit": "2e23b517648608fcdf5cac3a62cf2fa75e88f2b9",
+    "date": "2019-09-29",
+    "subject": "Remove left and right margins from <figure>",
+    "fixed_state": "2e23b517648608fcdf5cac3a62cf2fa75e88f2b9",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-1dd449b5",
+    "commit": "1dd449b51d282d1f3c6a577127542f877280f66d",
+    "date": "2019-09-29",
+    "subject": "Extract some styles from bulma.css to mobile.css",
+    "fixed_state": "1dd449b51d282d1f3c6a577127542f877280f66d",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-ad9a1f81",
+    "commit": "ad9a1f81d301f28aeaef5d3f6aae03ae3b29dd13",
+    "date": "2019-09-28",
+    "subject": "Fix #3 - Align file input",
+    "fixed_state": "ad9a1f81d301f28aeaef5d3f6aae03ae3b29dd13",
+    "pages": [
+     "index.html",
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-2b3a89ef",
+    "commit": "2b3a89ef667f3b539a8a618605dc82e61f62cda8",
+    "date": "2019-09-22",
+    "subject": "Move spacing nd alignment to mobile.css",
+    "fixed_state": "2b3a89ef667f3b539a8a618605dc82e61f62cda8",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-826f13b4",
+    "commit": "826f13b4e5182bd4af2b586b1a76c4a194795bd8",
+    "date": "2019-09-22",
+    "subject": "Move height-related CSS to mobile.css",
+    "fixed_state": "826f13b4e5182bd4af2b586b1a76c4a194795bd8",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-59b6a141",
+    "commit": "59b6a141cd9883d1339b0253d0d2da5923f8f574",
+    "date": "2019-09-22",
+    "subject": "Move width-related CSS to mobile.css",
+    "fixed_state": "59b6a141cd9883d1339b0253d0d2da5923f8f574",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-1aefcb4c",
+    "commit": "1aefcb4c4c7540659cf674822c7b7f6f7032dd1b",
+    "date": "2019-09-22",
+    "subject": "Add padding to <code>",
+    "fixed_state": "1aefcb4c4c7540659cf674822c7b7f6f7032dd1b",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-d8c27348",
+    "commit": "d8c27348b80283e41fe1936f9b08458de0b68a30",
+    "date": "2019-09-21",
+    "subject": "Use \"width\" instead of \"max-width\" for <video> (for small videos)",
+    "fixed_state": "d8c27348b80283e41fe1936f9b08458de0b68a30",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-9c3d7920",
+    "commit": "9c3d792071954d9b96024f26895e20dbd957adb5",
+    "date": "2019-09-15",
+    "subject": "Refactor body width and margins",
+    "fixed_state": "9c3d792071954d9b96024f26895e20dbd957adb5",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-74a91abb",
+    "commit": "74a91abb9a79e00c97cf8fe9d033ad77673b4ac8",
+    "date": "2019-09-15",
+    "subject": "Add max-width to body and center it",
+    "fixed_state": "74a91abb9a79e00c97cf8fe9d033ad77673b4ac8",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-618417a3",
+    "commit": "618417a384889c157f179d33df39595721560d44",
+    "date": "2019-09-15",
+    "subject": "Set height for meter and progress",
+    "fixed_state": "618417a384889c157f179d33df39595721560d44",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-e27aca20",
+    "commit": "e27aca20b00e221f647cf489e95efebbf57abfc4",
+    "date": "2019-09-15",
+    "subject": "Add margins to <body>",
+    "fixed_state": "e27aca20b00e221f647cf489e95efebbf57abfc4",
+    "pages": [
+     "src/index.html"
+    ]
+   },
+   {
+    "id": "holiday-css-d45fd095",
+    "commit": "d45fd0956d58347ae90ce635af25b3e8ac8c71e8",
+    "date": "2019-08-25",
+    "subject": "Don't change height of multiple select",
+    "fixed_state": "d45fd0956d58347ae90ce635af25b3e8ac8c71e8",
+    "pages": [
+     "src/index.html"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "mui",
+  "candidates": [
+   {
+    "id": "mui-584b0c1e",
+    "commit": "584b0c1e28c46b68ddd7fc61c3eba19cc5380334",
+    "date": "2020-06-02",
+    "subject": "fixed tabs event listeners in examples, added example",
+    "fixed_state": "584b0c1e28c46b68ddd7fc61c3eba19cc5380334",
+    "pages": [
+     "examples/css-js/tabs.html"
+    ]
+   },
+   {
+    "id": "mui-9a3d5b88",
+    "commit": "9a3d5b88fcc6bfdcfd8464cb0a6053d90b7f6c7b",
+    "date": "2018-09-02",
+    "subject": "fixed firefox floating label bug (https://github.com/muicss/mui/commit/b2bb69da17fcf21f248c18cff7652e53e28de331#commitcomment-30368521)",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-b2bb69da",
+    "commit": "b2bb69da17fcf21f248c18cff7652e53e28de331",
+    "date": "2018-08-24",
+    "subject": "fixed autofill bug causing issues with floating labels on autofill (#148)",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-640dc57d",
+    "commit": "640dc57d45e31816f2f467afc47ea72c6c80d82d",
+    "date": "2018-04-16",
+    "subject": "fixed error in example CSS (rule used  instead of )",
+    "fixed_state": "640dc57d45e31816f2f467afc47ea72c6c80d82d",
+    "pages": [
+     "examples/layouts/blog.html",
+     "examples/layouts/sidedrawer.html"
+    ]
+   },
+   {
+    "id": "mui-55c5c4d0",
+    "commit": "55c5c4d0ad172b0168d67cd65eba63b514409a8e",
+    "date": "2018-04-03",
+    "subject": "fixed mui-rem() issue with email css, set default to 'px', added 'rem' to extras",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-4cdf3cdb",
+    "commit": "4cdf3cdbe817765ec66d7705ce007b6e8c720576",
+    "date": "2018-03-16",
+    "subject": "fixed double underline issue with abbr",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-3ed3f0f7",
+    "commit": "3ed3f0f78198c6c329ff23d75744b59b9c8638f4",
+    "date": "2018-02-02",
+    "subject": "fixed typo in React Select disabled bugfix",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-63c9ecbe",
+    "commit": "63c9ecbec5652d9dbbefa5b42d6085120f2eb67b",
+    "date": "2017-10-22",
+    "subject": "fixed W3C validation errors in landing page example (https://github.com/muicss/mui/issues/238)",
+    "fixed_state": "63c9ecbec5652d9dbbefa5b42d6085120f2eb67b",
+    "pages": [
+     "examples/layouts/landing-page.html"
+    ]
+   },
+   {
+    "id": "mui-8cc670a1",
+    "commit": "8cc670a1eb9fe61dcdf04bab794691f6a446afcd",
+    "date": "2017-01-18",
+    "subject": "updated example layouts",
+    "fixed_state": "8cc670a1eb9fe61dcdf04bab794691f6a446afcd",
+    "pages": [
+     "examples/layouts/landing-page.html",
+     "examples/layouts/sidedrawer.html"
+    ]
+   },
+   {
+    "id": "mui-f836e28a",
+    "commit": "f836e28a39265619b814df6f9303ac432990e33a",
+    "date": "2016-11-27",
+    "subject": "improved ripple code, fixed bug in opera",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-31f66cc5",
+    "commit": "31f66cc5fc99730f1d85f0124919c3d8984561e4",
+    "date": "2016-11-22",
+    "subject": "fixed appbar height issue with sidedrawer example",
+    "fixed_state": "31f66cc5fc99730f1d85f0124919c3d8984561e4",
+    "pages": [
+     "examples/layouts/sidedrawer.html"
+    ]
+   },
+   {
+    "id": "mui-63a0a515",
+    "commit": "63a0a51571d90f5cb676a387d4090ad0dc2d4099",
+    "date": "2016-08-28",
+    "subject": "Correct position selected.",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-12b7c78e",
+    "commit": "12b7c78ed3243af477f16aafb553d977628df82f",
+    "date": "2016-05-17",
+    "subject": "Fixes overlap issue between select dialog box and floating action button",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-e57125e6",
+    "commit": "e57125e65d2a12e16d2fd6ddaec892bf5af6d95a",
+    "date": "2016-05-05",
+    "subject": "fixed angular minification bug in tabs, bumped version number",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-b280a3ea",
+    "commit": "b280a3ead6e0d7e407bdddffb3b29538b835e5d9",
+    "date": "2016-04-28",
+    "subject": "Fixed sass build errors due to invalid references",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-86e4e58f",
+    "commit": "86e4e58f719fed7204a8fb55d441d8aa255e8957",
+    "date": "2016-04-16",
+    "subject": "fixed bugs in angular tabs, select directives",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-f27a526c",
+    "commit": "f27a526c5c79b075fc3ccca9b7a72dc5165d270d",
+    "date": "2016-03-20",
+    "subject": "fixed angular button attrs",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-395a90a2",
+    "commit": "395a90a2d3273d9354fc268f7ece417bbebc5849",
+    "date": "2016-04-06",
+    "subject": "fixed bug in react dropdown that was firing onClick events twice",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-47b6af28",
+    "commit": "47b6af28094fb18986f112b8bc3a6181eb2d7db0",
+    "date": "2016-03-01",
+    "subject": "fixed bug in textfield sass",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-c22757f9",
+    "commit": "c22757f934bbebde2f08dc7803e2451c3f7138ea",
+    "date": "2016-01-23",
+    "subject": "changed container width defaults",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-fe77a94c",
+    "commit": "fe77a94c64dd8a72425277b99201e582d02b4a2a",
+    "date": "2015-11-20",
+    "subject": "* Improved IE10+ CSS borders for buttons, panels and select menu * Improved positioning of select menu * Improved logic of select menu initial scroll position",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-cc6eb023",
+    "commit": "cc6eb023efc9502ac45aa902198b41f17c57bc72",
+    "date": "2015-10-10",
+    "subject": "modified helpers, added layout examples",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-900c06e0",
+    "commit": "900c06e05cc9d3d64c442b2b428db5526e50b309",
+    "date": "2015-08-05",
+    "subject": "set width of mui-container-sm to 750px, bugfix to react library",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-4f07cf52",
+    "commit": "4f07cf52edb95ee424a4dc2df759ab0105c3e979",
+    "date": "2015-08-04",
+    "subject": "added scrollbar width compensation to mui-container-sm",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-9431712b",
+    "commit": "9431712b3139457f2cabdc6bcd23b7a1eaecfc99",
+    "date": "2015-07-02",
+    "subject": "set select element top positioning",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-f064f42d",
+    "commit": "f064f42d0a61c81ef88a863cb14b3f6f280b4a94",
+    "date": "2015-07-05",
+    "subject": "added text-font-smoothing to body by default, removed custom letter-spacing, set button font-weight to 500, 600 for white text",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-51503163",
+    "commit": "5150316328d94c418d798373f132ae3a20a4c0e0",
+    "date": "2015-07-05",
+    "subject": "removed top/bottom margin from form-inline buttons",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-8a9b5124",
+    "commit": "8a9b51249ed84206123b1f81ee2e43592e47686e",
+    "date": "2015-06-27",
+    "subject": "added support for label wrap to form-group, bumped version number",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-6b39073d",
+    "commit": "6b39073db26a595c87688afb031297807298df95",
+    "date": "2015-06-10",
+    "subject": "fixed bug in min.css bumped version number",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-b4092645",
+    "commit": "b4092645745a64f5f603c2cd14eef4503a2ec668",
+    "date": "2015-03-23",
+    "subject": "added important to mui-align helpers, updated changelog",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-3949a790",
+    "commit": "3949a79061b8651ca8d8901588de7f205d2490bc",
+    "date": "2015-03-23",
+    "subject": "removed vertical alignment from mui-table",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-b7843f75",
+    "commit": "b7843f750cb356c5e0dbee667d84f1eba3ad534c",
+    "date": "2015-03-08",
+    "subject": "added z-index to dropdown-menu",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-60517a9c",
+    "commit": "60517a9c7c794fabea948fd47e6194d400844315",
+    "date": "2015-03-07",
+    "subject": "improved handling of dropdowns, mui-align classes, bumped version number",
+    "fixed_state": null,
+    "pages": []
+   },
+   {
+    "id": "mui-158afb6b",
+    "commit": "158afb6b5ffe6ddbdc9b32d6e10171591ef0b9bf",
+    "date": "2015-03-07",
+    "subject": "fixed bugs in webcomponents",
+    "fixed_state": null,
+    "pages": []
+   }
+  ]
+ },
+ {
+  "source": "concrete-css",
+  "candidates": [
+   {
+    "id": "concrete-css-66217620",
+    "commit": "662176205a4ec025572c8492507be2f6b155f7c1",
+    "date": "2025-03-13",
+    "subject": "Add main-width variable",
+    "fixed_state": "662176205a4ec025572c8492507be2f6b155f7c1",
+    "pages": [
+     "index.html"
+    ]
+   },
+   {
+    "id": "concrete-css-cd2c363c",
+    "commit": "cd2c363cae9d2e389c6c9900de054ec77281c8f4",
+    "date": "2024-04-11",
+    "subject": "Adjust bottom padding of figcaption",
+    "fixed_state": "cd2c363cae9d2e389c6c9900de054ec77281c8f4",
+    "pages": [
+     "index.html"
+    ]
+   },
+   {
+    "id": "concrete-css-75e5865a",
+    "commit": "75e5865a5293c9b6ab2d86fc780705fb40be4f23",
+    "date": "2024-02-13",
+    "subject": "Revamp sizing, add new padding method, remove normalize",
+    "fixed_state": "75e5865a5293c9b6ab2d86fc780705fb40be4f23",
+    "pages": [
+     "index.html"
+    ]
+   },
+   {
+    "id": "concrete-css-721d3591",
+    "commit": "721d3591be9d9953dda7bd2e2603f0e7172df422",
+    "date": "2019-10-30",
+    "subject": "Fix input button margin bug",
+    "fixed_state": "721d3591be9d9953dda7bd2e2603f0e7172df422",
+    "pages": [
+     "index.html"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "classless-dt",
+  "candidates": [
+   {
+    "id": "classless-dt-bbf76ee3",
+    "commit": "bbf76ee35fcac591efbfae380180e11ede4a9fce",
+    "date": "2025-03-26",
+    "subject": "added --input-padding-factor for more control on input sizing",
+    "fixed_state": "bbf76ee35fcac591efbfae380180e11ede4a9fce",
+    "pages": [
+     "index.html",
+     "latex.html"
+    ]
+   },
+   {
+    "id": "classless-dt-dc1eb11c",
+    "commit": "dc1eb11ca43e080bea24c706fa2b31942f8fab85",
+    "date": "2025-03-19",
+    "subject": "fixed button script",
+    "fixed_state": "dc1eb11ca43e080bea24c706fa2b31942f8fab85",
+    "pages": [
+     "index.html"
+    ]
+   },
+   {
+    "id": "classless-dt-b1bc769b",
+    "commit": "b1bc769b5d1793b9888d144a6a94699cce51813c",
+    "date": "2025-03-19",
+    "subject": "fixed `pre code` display, renamed primary color vars (needs more thought..)",
+    "fixed_state": "b1bc769b5d1793b9888d144a6a94699cce51813c",
+    "pages": [
+     "index.html"
+    ]
+   },
+   {
+    "id": "classless-dt-1273b65e",
+    "commit": "1273b65e842ca21977a01808c180a09782c58e81",
+    "date": "2025-03-17",
+    "subject": "fixed favicon",
+    "fixed_state": "1273b65e842ca21977a01808c180a09782c58e81",
+    "pages": [
+     "index.html"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "bemskel",
+  "candidates": [
+   {
+    "id": "bemskel-3d38a495",
+    "commit": "3d38a4959c5aad6665df46449c8801fe2d4643d5",
+    "date": "2016-09-21",
+    "subject": "image cover update",
+    "fixed_state": "a898282708d97a838b1bba6846aba97b226a4133",
+    "pages": [
+     "docs/examples/landing/index.html",
+     "docs/index.html"
+    ]
+   },
+   {
+    "id": "bemskel-eac872b4",
+    "commit": "eac872b48870aa8dea79a41284f0ba8afc027586",
+    "date": "2016-09-21",
+    "subject": "updade landing sample cover image",
+    "fixed_state": "a898282708d97a838b1bba6846aba97b226a4133",
+    "pages": [
+     "docs/examples/landing/index.html",
+     "docs/index.html"
+    ]
+   },
+   {
+    "id": "bemskel-2ad0d2f0",
+    "commit": "2ad0d2f0b43dcfecac61f5e2382537b874603168",
+    "date": "2016-09-21",
+    "subject": "remove background-attachment: fixed prop",
+    "fixed_state": "a898282708d97a838b1bba6846aba97b226a4133",
+    "pages": [
+     "docs/examples/landing/index.html",
+     "docs/index.html"
+    ]
+   },
+   {
+    "id": "bemskel-f7c04ea4",
+    "commit": "f7c04ea4b2a90842db87bd6bee6715452b734ab8",
+    "date": "2016-09-21",
+    "subject": "add backround-size:cover for mobile devices to fix bg images from appearing zoomed",
+    "fixed_state": "a898282708d97a838b1bba6846aba97b226a4133",
+    "pages": [
+     "docs/examples/landing/index.html",
+     "docs/index.html"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "ion",
+  "candidates": [
+   {
+    "id": "ion-57ce99d5",
+    "commit": "57ce99d5a3a4a883318a884e69fea912ab1201ca",
+    "date": "2017-09-22",
+    "subject": "Fixed arrow at end of path",
+    "fixed_state": "dea76cd63f056560bcbda50fcf0c04aeb205e1a4",
+    "pages": [
+     "index.html"
+    ]
+   },
+   {
+    "id": "ion-0bac26ab",
+    "commit": "0bac26ab5d5032f1f8e51d156174f9ba89dd010b",
+    "date": "2017-08-24",
+    "subject": "Fixed bug on Firefox",
+    "fixed_state": "dea76cd63f056560bcbda50fcf0c04aeb205e1a4",
+    "pages": [
+     "index.html"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "latexcss-dr",
+  "candidates": [
+   {
+    "id": "latexcss-dr-192a51f0",
+    "commit": "192a51f0ce0e1c7cf627b2b99ec35c53ce5fd2d1",
+    "date": "2017-09-06",
+    "subject": "fixed h1 tag",
+    "fixed_state": "192a51f0ce0e1c7cf627b2b99ec35c53ce5fd2d1",
+    "pages": [
+     "docs/example.html",
+     "docs/index.html"
+    ]
+   },
+   {
+    "id": "latexcss-dr-00c91910",
+    "commit": "00c91910216dc179d5dfb98a638822c14d60083c",
+    "date": "2017-05-30",
+    "subject": "fixed definition counter bug",
+    "fixed_state": "00c91910216dc179d5dfb98a638822c14d60083c",
+    "pages": [
+     "docs/math_example.html"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "dropin",
+  "candidates": [
+   {
+    "id": "dropin-2e00e7a6",
+    "commit": "2e00e7a6c1114d483d33d2bd074dc46fd16338fd",
+    "date": "2020-06-01",
+    "subject": "Adapt background in sticky switcher to selected theme",
+    "fixed_state": "2e00e7a6c1114d483d33d2bd074dc46fd16338fd",
+    "pages": [
+     "index.html"
+    ]
+   },
+   {
+    "id": "dropin-29959d2e",
+    "commit": "29959d2e8c5037d554afce03fc141495394bf484",
+    "date": "2020-05-20",
+    "subject": "Make the switcher sticky at the top of the page",
+    "fixed_state": "29959d2e8c5037d554afce03fc141495394bf484",
+    "pages": [
+     "index.html"
+    ]
+   }
+  ]
+ },
+ {
+  "source": "barecss",
+  "candidates": [
+   {
+    "id": "barecss-988963c3",
+    "commit": "988963c30efc20e7ef0d230474f30bb325316c55",
+    "date": "2016-01-19",
+    "subject": "Fixed issue with image in the nav",
+    "fixed_state": "988963c30efc20e7ef0d230474f30bb325316c55",
+    "pages": []
+   }
+  ]
+ }
+]
