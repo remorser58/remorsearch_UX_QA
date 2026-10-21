@@ -1,0 +1,31 @@
+# Real layout bugs, round 6: preregistered protocol
+
+Written 2026-10-22, after the candidate lists of the sources below were generated and before any candidate page was rendered or judged, and before any agent ran on these sources. Changes after this point are listed at the end with their reason.
+
+## Question
+
+In round 5 GPT-6.1 Sol found 13 of 20 known defects with the skill against 12 without and took 1.30 times as long. Its session logs showed where the extra time went: about a minute reading the skill and the scan's options before starting the scan, its own script to combine the scan's screenshots into sheets, four to seven scripts of its own to measure elements it had seen, and in some runs receipts, coverage files and a second check of the finished report. The scan now writes sheets of every screen per device, `ergo_qa.py measure` measures named elements with the scan's device emulation, and the fast path starts the scan with full coverage, treats its sheets and crops as the captures, keeps a measured row unless the pixels contradict it and asks for the report once. LY-14 (text overlapping an image it does not belong to) and LY-15 (grid rows that touch while their columns keep a gap) were added for two round 5 misses. All of this was built after seeing rounds 1 to 5, which are now development pages. On new real layout bugs from projects no round used, does GPT-6.1 Sol with the skill find more of them than without it, without more false alarms and in less time?
+
+## Skill under test
+
+Commit e72a71cb872b2aa93340773f256d098c48893758 of branch `codex/v1.0.1`, installed once with `scripts/install.py --no-prompt` into an isolated folder (payload SHA-256 `440eeea4acefb37c3babefa3c1fd00f535260649eb9106d3e59ba1fb7acf6db1`). No skill or detector file changes until every round 6 run is scored.
+
+Before registration, commit 8ddadd6 (the same skill without e72a71c's fix for the end of wide phone pages) ran once per arm and run index on the round 5 pages as a development check, with the round 5 prompts. With the skill Sol took 10.7, 10.8 and 11.7 minutes and found 5, 5 and 4 known defects; without it 13.3, 11.2 and 10.5 minutes and 3, 4 and 4. Three of those six sessions stopped on the provider's rate limit in their first minute and were started again after the other three finished, so each batch ran three sessions at a time. These are development numbers on pages the changes were built from, scored without blinding, and are reported apart from this round.
+
+## Sources
+
+Twenty-six repositories cloned on 2026-10-22 for this round, none used in rounds 1 to 5. Twenty have HTML pages next to built CSS in their history and are screened in this order: Semantic-Org/Semantic-UI (the pages in `examples/` with `dist/`), Dogfalo/materialize (the documentation pages and templates with their built CSS), DesignRevision/shards-ui, halfmoonui/halfmoon, ConciseCSS/concise.css, mobi-css/mobi.css, necolas/normalize.css (`test.html`), BootstrapDash/StarAdmin-Free-Bootstrap-Admin-Template, puikinsh/sufee-admin-dashboard, the StartBootstrap templates business-casual, coming-soon, heroic-features, one-page-wonder, scrolling-nav, shop-homepage and small-business, and markdowncss/air, modest, retro and splendor. Their candidate lists, newest first and cut at 40 per source, hold 40 candidates each from Semantic-UI, materialize, concise.css and normalize.css, 17 from mobi.css, 4 from shards-ui, 3 from the markdowncss themes (none from air or modest), 2 from halfmoon, 1 each from StarAdmin and sufee, and 10 from the StartBootstrap templates.
+
+Six more were dropped before screening: themesberg/neumorphism-ui-bootstrap and themesberg/pixel-bootstrap-ui-kit commit no built CSS next to their pages, BootstrapDash/MajesticAdmin-Free-Bootstrap-Admin-Template and BootstrapDash/skydash-free-bootstrap-admin-template have no commit matching the candidate rule, the pages of puikinsh/concept link no committed stylesheet, and zachacole/Simple-Grid has no HTML page in its history. tylergaw/cutestrap could not be found.
+
+## Rules
+
+Candidate rule, inclusion rule (with the 2 px floor for geometry faults), per-source limits (3 accepted or 40 screened), stop rule (12 cases), page items, the seeded split and three-run rotation, the round 1 prompt templates byte for byte, the 30-minute budget, scoring blind to arm, and the decision rule are as registered for rounds 2 to 5. Each accepted defect is measured again on the saved pages over `file://` with the network blocked, present when broken and gone when fixed, before the round is sealed.
+
+One change from rounds 2 to 5: only GPT-6.1 Sol runs, at reasoning effort `high`, each arm once per run index in fresh sessions. Sol is the model that has not yet gained from the skill; DeepSeek 4.1 Flash reached the time budget in both arms of rounds 4 and 5 and is left out to keep the round to six sessions. The six sessions start about half a minute apart, because six sessions started together hit the provider's rate limit on 2026-10-22.
+
+Two targets are registered for Sol: the registered rule (more known defects in all three paired runs, no more alarms plus unsupported findings, and at most 1.5 times the median time), and the skill arm's median time to the written report below the plain arm's.
+
+The scan alone runs on every state as the agents would run it (`--tiles 40`), with the frozen skill and with the skill frozen for round 5 (commit ac1a187), on an otherwise idle machine.
+
+## Changes after registration
