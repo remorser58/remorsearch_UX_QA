@@ -2206,8 +2206,9 @@ export function extractSnapshot(args) {
         offset_px: round2(worst.d), items: row.length, text: (accName(worst.it.e) || textOf(worst.it.e)).slice(0, 60), box: boxOf(worst.it.e) });
     }
     // A squeezed column (LY-10): on a phone-width screen, two or more texts of two or more
-    // words in boxes narrower than four em that wrap to three or more lines. Reported once,
-    // through the outermost ancestor still narrower than 40 % of the screen.
+    // words in boxes narrower than four em that wrap to three or more lines, or of six or
+    // more words that break every one or two words. Reported once, through the outermost
+    // ancestor still narrower than 40 % of the screen.
     if (vw <= 520) {
       const squeezed = [];
       for (const e of all) {
@@ -2219,7 +2220,11 @@ export function extractSnapshot(args) {
         const cs = style(e);
         const fs = parseFloat(cs.fontSize) || 16;
         const lh = parseFloat(cs.lineHeight) || fs * 1.2;
-        if ((g.r.width < 4 * fs && g.r.height >= 2.5 * lh) || (g.r.width < 3 * fs && g.r.height >= 1.6 * lh)) squeezed.push(e);
+        // Or a longer text in a box under 40 % of the screen that breaks every one or two words
+        // (table cells and nested list items wrap by design and are left out).
+        const lines = Math.round(g.r.height / lh);
+        if ((g.r.width < 4 * fs && g.r.height >= 2.5 * lh) || (g.r.width < 3 * fs && g.r.height >= 1.6 * lh)
+          || (words.length >= 6 && lines >= 3 && lines >= words.length / 2 && g.r.width < 0.4 * vw && !e.closest('table, li li'))) squeezed.push(e);
       }
       if (squeezed.length >= 2) {
         let col = squeezed[0];
@@ -2539,6 +2544,60 @@ export function extractSnapshot(args) {
     for (const [box, t] of touching) {
       layoutOutliers.push({ kind: 'touching_rows', axis: 'y', selectors: [uniqueSelector(t.b.c), uniqueSelector(t.a.c)], container: uniqueSelector(box),
         offset_px: round2(t.gy), gap_px: round2(t.gx), pairs: t.pairs, text: (textOf(t.a.c) + ' / ' + textOf(t.b.c)).slice(0, 80), box: boxOf(t.b.c) });
+    }
+    // Text against the screen edge (LY-16): three or more texts whose glyphs start or end
+    // within 1.5 px of the left or right edge of the screen leave the page no side margin.
+    // Text in a code block or in a box whose content runs past it sideways (a scroller, a
+    // carousel) is cut by that box and is left out. Reported once per side, through the first three texts.
+    {
+      const sides = { left: [], right: [] };
+      const inSideBox = (e) => {
+        for (let a = e; a && a.nodeType === 1 && a !== document.body && a !== document.documentElement; a = parentOf(a)) {
+          if (a.tagName === 'PRE' || (style(a).overflowX !== 'visible' && a.scrollWidth > a.clientWidth + 1)) return true;
+        }
+        return false;
+      };
+      for (const e of all) {
+        if (sides.left.length > 8 && sides.right.length > 8) break;
+        if (!e.childNodes || ![...e.childNodes].some((n) => n.nodeType === 3 && n.nodeValue.trim())) continue;
+        const g = geo(e);
+        if (!g.vis || !inView(g.r) || inSideBox(e)) continue;
+        let left = Infinity;
+        let right = -Infinity;
+        for (const n of e.childNodes) {
+          if (n.nodeType !== 3 || !n.nodeValue.trim()) continue;
+          const range = document.createRange();
+          range.selectNodeContents(n);
+          for (const q of range.getClientRects()) {
+            if (q.width < 1 || q.height < 1 || q.bottom <= VY0 || q.top >= VY1) continue;
+            left = Math.min(left, q.left);
+            right = Math.max(right, q.right);
+          }
+        }
+        if (left !== Infinity && left >= VX0 - 0.5 && left - VX0 <= 1.5) sides.left.push({ e, d: Math.max(0, left - VX0) });
+        if (right !== -Infinity && right <= VX1 + 0.5 && VX1 - right <= 1.5) sides.right.push({ e, d: Math.max(0, VX1 - right) });
+      }
+      for (const side of ['left', 'right']) {
+        const hits = sides[side];
+        if (hits.length < 3) continue;
+        layoutOutliers.push({ kind: 'edge_text', axis: 'x', side, selectors: hits.slice(0, 3).map((h) => uniqueSelector(h.e)), container: null,
+          offset_px: round2(Math.max(...hits.map((h) => h.d))), count: hits.length, screen_px: round2(vw), text: textOf(hits[0].e), box: boxOf(hits[0].e) });
+      }
+    }
+    // A desktop layout on a phone (LY-17): a touch screen of phone width whose page is laid
+    // out at least 30 % wider than the screen without a device-width viewport, so the
+    // browser shrinks the whole page to fit and its text renders a few pixels tall.
+    {
+      const sw = (window.screen && window.screen.width) || 0;
+      const meta = document.querySelector('meta[name="viewport" i]');
+      const deviceWidth = !!meta && /width\s*=\s*device-width/i.test(meta.getAttribute('content') || '');
+      if (navigator.maxTouchPoints > 0 && sw > 0 && sw <= 520 && window.innerWidth >= 1.3 * sw && !deviceWidth) {
+        const scale = vvp && vvp.scale > 0 ? vvp.scale : sw / window.innerWidth;
+        const fs = document.body ? parseFloat(style(document.body).fontSize) || 16 : 16;
+        layoutOutliers.push({ kind: 'desktop_layout', axis: 'x', selectors: ['html'], container: null, offset_px: round2(window.innerWidth),
+          screen_px: sw, scale: round2(scale), text_px: round2(fs * scale), meta: meta ? (meta.getAttribute('content') || '') : null,
+          text: '', box: { x: 0, y: 0, w: round2(Math.min(vw, 600)), h: 160 } });
+      }
     }
     const scroller = document.scrollingElement || document.documentElement;
     if (scroller) {

@@ -377,6 +377,18 @@ LY15 = _register(CheckSpec(
     (), ("web", "desktop"), "visual",
     "행 사이에도 열과 같은 간격(row-gap, margin-bottom)을 주세요. 행 간격을 지우는 margin 재정의가 없는지 확인하세요.",
 ))
+LY16 = _register(CheckSpec(
+    "LY-16", "layout", "measured", "글자가 화면 가장자리에 붙어 좌우 여백이 없음",
+    "Text touches the left or right edge of the screen",
+    (), ("web", "desktop"), "visual",
+    "본문 컨테이너에 좌우 padding(휴대폰 16px 안팎)이나 body margin을 주세요. 배경을 화면 끝까지 칠할 구역은 배경만 넓히고 글자는 안쪽 컨테이너에 두세요.",
+))
+LY17 = _register(CheckSpec(
+    "LY-17", "layout", "measured", "휴대폰에서 데스크톱 폭으로 배치된 뒤 통째로 축소됨",
+    "A phone lays the page out at desktop width and shrinks it to fit",
+    (), ("web", "desktop"), "visual",
+    "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">를 넣고, 고정 폭 레이아웃은 미디어 쿼리로 한 열로 바꾸세요.",
+))
 UI01 = _register(CheckSpec(
     "UI-01", "visual", "measured", "아이콘 전용 조작 요소에 시각적 설명이 없음",
     "Icon-only action has no visible tooltip or equivalent hover/focus explanation",
@@ -2400,16 +2412,17 @@ def check_semantics(ctx: Context) -> list[Observation]:
 
 
 _PLACEMENT_KINDS = ("icon_offset", "attached_mismatch", "page_overflow", "scroll_slack", "label_offset", "pair_mismatch", "bar_offset", "narrow_column",
-                    "field_width", "run_together", "hanging_item", "text_over_image", "touching_rows")
+                    "field_width", "run_together", "hanging_item", "text_over_image", "touching_rows", "edge_text", "desktop_layout")
 _DIRECTION_KO = {("x", True): "오른쪽으로", ("x", False): "왼쪽으로", ("y", True): "아래로", ("y", False): "위로"}
 
 
 def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, base: tuple, context: dict[str, Any]) -> Observation:
-    """LY-06..15 from the driver's measured outliers: an off-centre icon, a field and its
+    """LY-06..17 from the driver's measured outliers: an off-centre icon, a field and its
     attached button with different edges, a page wider or a few px taller than the
     screen, side-by-side elements out of line, a squeezed column, stacked fields of
     different widths, touching labels, a bar item hanging past the bar, text drawn over
-    an image and grid rows that touch. Offsets are CSS px on the screen that showed them."""
+    an image, grid rows that touch, text against the screen edge and a desktop layout
+    shrunk onto a phone. Offsets are CSS px on the screen that showed them."""
     kind = o["kind"]
     offset = o.get("offset_px")
     size = abs(offset) if isinstance(offset, (int, float)) else 0
@@ -2534,6 +2547,28 @@ def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, 
             + (f"(맞붙은 쌍 {o.get('pairs')}개)." if (o.get("pairs") or 1) > 1 else "."),
             extra=anchors,
         )
+    if kind == "edge_text":
+        side = o.get("side") or "left"
+        return Observation(
+            "LY-16", *base, [], f"edge-text|{side}",
+            {"name": "edge_gap", "value": offset, "unit": "css_px", "threshold": 1.5, "comparator": "<=", "side": side,
+             "texts": o.get("count"), "screen_px": o.get("screen_px"), "examples": selectors[:3]},
+            False, "P2",
+            f"글자 {o.get('count')}곳이 화면 {'왼쪽' if side == 'left' else '오른쪽'} 가장자리에서 {size:g}px 안에 붙어 좌우 여백이 없습니다"
+            f"(예: {', '.join(selectors[:2])}).",
+            extra=anchors,
+        )
+    if kind == "desktop_layout":
+        meta = o.get("meta")
+        return Observation(
+            "LY-17", *base, [], "viewport|",
+            {"name": "layout_width", "value": offset, "unit": "css_px", "threshold": 1.3, "comparator": ">=", "screen_px": o.get("screen_px"),
+             "scale": o.get("scale"), "text_px": o.get("text_px"), "viewport_meta": meta},
+            False, "P1",
+            f"휴대폰 화면 {o.get('screen_px')}px에서 페이지가 {size:g}px 폭으로 배치된 뒤 {o.get('scale')}배로 줄어 본문 글자가 약 {o.get('text_px')}px로 보입니다"
+            + ("(viewport meta 없음)." if meta is None else f"(viewport meta '{meta[:60]}'에 width=device-width 없음)."),
+            extra=anchors,
+        )
     if kind == "page_overflow":
         return Observation(
             "LY-08", *base, [], "page-width|",
@@ -2555,7 +2590,7 @@ def _placement_observation(o: dict[str, Any], selectors: list[str], label: str, 
 
 
 def check_layout(ctx: Context) -> list[Observation]:
-    """Covered text, overlapping text, near-miss alignment, uneven spacing and misplacement (LY-02..15).
+    """Covered text, overlapping text, near-miss alignment, uneven spacing and misplacement (LY-02..17).
 
     Measured from rendered geometry and profile-independent. Covered text counts only
     when no scroll position reveals it: a fixed or sticky bar at the top while the page
@@ -3142,7 +3177,7 @@ HYPOTHESIS_CHECKS = frozenset({"GZ-01", "GZ-04", "PC-05", "PT-05", "GM-06"})
 # "profile-independent" instead of a k/n coverage (STF-08).
 PROFILE_INVARIANT_CHECKS = frozenset({"TI-01", "PT-01", "PT-05", "PT-06", "PC-01", "PC-02", "CG-01", "CG-03", "GZ-03", "GM-05", "GM-06",
                                       "SM-01", "SM-02", "SM-03", "SM-04", "SM-05", "SM-06", "SM-07", "SM-08", "LY-01", "LY-02", "LY-03",
-                                      "LY-04", "LY-05", "LY-06", "LY-07", "LY-08", "LY-09", "LY-10", "LY-11", "LY-12", "LY-13", "LY-14", "LY-15", "UI-01",
+                                      "LY-04", "LY-05", "LY-06", "LY-07", "LY-08", "LY-09", "LY-10", "LY-11", "LY-12", "LY-13", "LY-14", "LY-15", "LY-16", "LY-17", "UI-01",
                                       "RF-01", "RF-02", "RF-03",
                                       "FM-02"})
 

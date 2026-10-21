@@ -333,6 +333,7 @@ async function main(argv) {
     }, timeoutS * 1000 + 30000);
     watchdog.unref();
     let failure = null;
+    let stalled = false;
     if (!session.blockReasons.length) {
       for (const action of scenario.steps) {
         if (Date.now() > deadline) {
@@ -340,8 +341,10 @@ async function main(argv) {
           break;
         }
         // A scroll or key step marked until_end is skipped once the page has scrolled to its
-        // end (a layout scan's screens); a page that scrolls inside a box keeps every step.
-        if (action.until_end && await session.atPageEnd()) continue;
+        // end (a layout scan's screens); a page that scrolls inside a box keeps its steps
+        // until one of them moves neither the page nor the box under the screen's centre.
+        if (action.until_end && (stalled || await session.atPageEnd())) continue;
+        const before = action.until_end ? await session.scrollFingerprint() : null;
         try {
           const { step } = await session.act(action);
           if (step.result !== 'ok' && !f['continue-on-error']) break;
@@ -349,6 +352,7 @@ async function main(argv) {
           failure = err.message;
           break;
         }
+        if (before !== null && before === await session.scrollFingerprint()) stalled = true;
         if (session.crashed) break;
       }
     }

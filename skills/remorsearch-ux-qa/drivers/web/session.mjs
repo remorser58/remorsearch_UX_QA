@@ -2067,6 +2067,30 @@ export class WebSession {
     }
   }
 
+  /** Top of the screen in page coordinates (the visual viewport on a phone). */
+  async pageTop() {
+    try {
+      return await this.page.evaluate(() => (window.visualViewport ? window.visualViewport.pageTop : window.scrollY));
+    } catch {
+      return null;
+    }
+  }
+
+  /** Scroll offsets of the page and of the boxes under the screen's centre: a step that
+   * leaves them all unchanged moved nothing. */
+  async scrollFingerprint() {
+    try {
+      return await this.page.evaluate(({ x, y }) => {
+        const vv = window.visualViewport;
+        const parts = [Math.round(vv ? vv.pageTop : window.scrollY), Math.round(vv ? vv.pageLeft : window.scrollX)];
+        for (let e = document.elementFromPoint(x, y); e; e = e.parentElement) parts.push(Math.round(e.scrollTop), Math.round(e.scrollLeft));
+        return parts.join(',');
+      }, { x: this.vw / 2, y: this.vh / 2 });
+    } catch {
+      return null;
+    }
+  }
+
   /** True when the document itself scrolls vertically and is scrolled to its end. */
   async atPageEnd() {
     try {
@@ -2600,9 +2624,19 @@ export class WebSession {
       }
       return 'touch';
     }
+    const top0 = action.until_end && dy > 0 ? await this.pageTop() : null;
     await this.page.mouse.move(anchor.x, anchor.y);
     await this.page.mouse.wheel(dx, dy);
     await sleep(150);
+    if (top0 !== null) {
+      // The wheel can land on a frame or a box that scrolls itself and leave the page where
+      // it was; a layout scan only needs the page moved, so the page takes the rest.
+      const top1 = await this.pageTop();
+      if (top1 !== null && top1 - top0 < dy / 2 && !(await this.atPageEnd())) {
+        await this.page.evaluate((rest) => window.scrollBy(0, rest), dy - (top1 - top0)).catch(() => {});
+        await sleep(60);
+      }
+    }
     return mode === 'touch' ? 'wheel' : mode;
   }
 

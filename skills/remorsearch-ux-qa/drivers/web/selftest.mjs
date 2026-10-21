@@ -2817,8 +2817,39 @@ async function placementTest(tmp) {
         <div class="wrap"><div class="side">Menu</div><div class="main" id="main"><h2>Email statistics today</h2><p>Last campaign performance</p></div></div>`);
       const narrow = (await small.evaluate(extractSnapshot, { key: STATE_KEY, cap: 400, knownRoles: [...KNOWN_ROLES] })).layout_outliers.filter((o) => o.kind === 'narrow_column');
       check('placement: on a phone a 60 px content column with texts wrapping word by word is reported once', narrow.length === 1 && narrow[0].selectors.includes('#main'), narrow);
+      // LY-10 by words per line and LY-16: half-width columns whose 48 px padding leaves
+      // their texts 69 px, and a page with no side margin, beside a padded twin of each.
+      const snap = async () => (await small.evaluate(extractSnapshot, { key: STATE_KEY, cap: 400, knownRoles: [...KNOWN_ROLES] })).layout_outliers;
+      const words = 'one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen';
+      await small.setContent(`<!doctype html><style>body { margin:0; font:16px Arial } .two { display:flex; width:330px; margin:0 15px } .two > div { width:50%; padding:48px; box-sizing:border-box }
+        main { padding:0 16px }</style><div class="two" id="two"><div id="txt"><p>${words}</p><p>${words}</p></div><div>Picture</div></div>
+        <main><p>${words}</p><p>${words}</p><p>${words}</p></main>`);
+      const padded = await snap();
+      await small.setContent(`<!doctype html><style>body { margin:0; font:16px Arial }</style><h1>Title flush left</h1><p>${words}</p><p>${words}</p><p>${words}</p>`);
+      const flush = await snap();
+      const squeezedPad = padded.filter((o) => o.kind === 'narrow_column');
+      check('placement: texts that padding squeezes to break every one or two words make one LY-10 row, full-width texts none',
+        squeezedPad.length === 1 && !flush.some((o) => o.kind === 'narrow_column'), squeezedPad);
+      const edge = flush.filter((o) => o.kind === 'edge_text');
+      check('placement: four texts against the left edge make one edge_text row, a page with side padding none',
+        edge.length === 1 && edge[0].side === 'left' && edge[0].count === 4 && !padded.some((o) => o.kind === 'edge_text'), edge);
     } finally {
       await phone.close();
+    }
+    // LY-17: on a touch phone a page without a device-width viewport is laid out at 980 px
+    // and shrunk; the same page with the tag is not.
+    const touch = await transport.browser.newContext({ viewport: { width: 360, height: 780 }, isMobile: true, hasTouch: true, deviceScaleFactor: 1 });
+    try {
+      const tp = await touch.newPage();
+      const body = '<style>body { margin:0 16px; font:16px Arial }</style><h1>Desktop page</h1><p>Some text</p>';
+      await tp.goto('data:text/html,' + encodeURIComponent('<!doctype html>' + body));
+      const bare = (await tp.evaluate(extractSnapshot, { key: STATE_KEY, cap: 400, knownRoles: [...KNOWN_ROLES] })).layout_outliers.filter((o) => o.kind === 'desktop_layout');
+      await tp.goto('data:text/html,' + encodeURIComponent('<!doctype html><meta name="viewport" content="width=device-width, initial-scale=1">' + body));
+      const tagged = (await tp.evaluate(extractSnapshot, { key: STATE_KEY, cap: 400, knownRoles: [...KNOWN_ROLES] })).layout_outliers.filter((o) => o.kind === 'desktop_layout');
+      check('placement: a phone page without a device-width viewport is measured as a 980 px layout shrunk to fit, the tagged page is not',
+        bare.length === 1 && bare[0].offset_px >= 900 && bare[0].scale < 0.5 && bare[0].meta === null && !tagged.length, { bare, tagged });
+    } finally {
+      await touch.close();
     }
     // LY-11..13: a textarea 30 px narrower than the two fields above it, links whose labels
     // touch, and a fixed bar whose second link wraps below its edge; each beside a twin
