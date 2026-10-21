@@ -1,0 +1,3692 @@
+[
+ {
+  "id": "sb-bare-7c189b1e",
+  "repo": "sb-bare",
+  "commit": "7c189b1e9f38bfab3604cb56ee4b3f7df50724c5",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "7c189b1e9f38bfab3604cb56ee4b3f7df50724c5",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-bare-d444b8d0",
+  "repo": "sb-bare",
+  "commit": "d444b8d0e02254b1815b9d87d24e3cfbb1198d09",
+  "date": "2017-03-03",
+  "subject": "body padding fix for responsive nav",
+  "fixed_state": "d444b8d0e02254b1815b9d87d24e3cfbb1198d09",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-bare-ba7db667",
+  "repo": "sb-bare",
+  "commit": "ba7db667f980e71290f31847d91659e88b072f19",
+  "date": "2017-01-13",
+  "subject": "added top margin to the h1",
+  "fixed_state": "ba7db667f980e71290f31847d91659e88b072f19",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-bare-eb7289c5",
+  "repo": "sb-bare",
+  "commit": "eb7289c542d410dd157d936d24609ade05df419c",
+  "date": "2017-01-13",
+  "subject": "nabber within container responsive fix and update jQuery and add tether",
+  "fixed_state": "eb7289c542d410dd157d936d24609ade05df419c",
+  "changed": [
+   "index.html",
+   "js/jquery.js",
+   "js/tether.min.js"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-blog-home-3cd17f7c",
+  "repo": "sb-blog-home",
+  "commit": "3cd17f7c72fe0158b26f015ed6f520c82cb86748",
+  "date": "2021-05-05",
+  "subject": "layout changes and placeholder image update",
+  "fixed_state": "3cd17f7c72fe0158b26f015ed6f520c82cb86748",
+  "changed": [
+   "dist/css/styles.css",
+   "dist/index.html",
+   "dist/js/scripts.js",
+   "package-lock.json",
+   "package.json",
+   "src/pug/index.pug"
+  ],
+  "pages": [
+   "dist/index.html"
+  ]
+ },
+ {
+  "id": "sb-blog-home-8828e436",
+  "repo": "sb-blog-home",
+  "commit": "8828e436089fad0ad7d51196c57126f9d4cc189e",
+  "date": "2019-01-31",
+  "subject": "update dependencies, udpate gulpfile for gulp 4, adjust body padding, update copyright dates",
+  "fixed_state": "8828e436089fad0ad7d51196c57126f9d4cc189e",
+  "changed": [
+   "LICENSE",
+   "README.md",
+   "css/blog-home.css",
+   "gulpfile.js",
+   "index.html",
+   "package-lock.json",
+   "package.json",
+   "vendor/bootstrap/css/bootstrap-grid.css",
+   "vendor/bootstrap/css/bootstrap-grid.min.css",
+   "vendor/bootstrap/css/bootstrap-reboot.css",
+   "vendor/bootstrap/css/bootstrap-reboot.min.css",
+   "vendor/bootstrap/css/bootstrap.css",
+   "vendor/bootstrap/css/bootstrap.css.map",
+   "vendor/bootstrap/css/bootstrap.min.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-blog-home-e98e4147",
+  "repo": "sb-blog-home",
+  "commit": "e98e41475b8549bde67c8de4a3b858206db7aa31",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "e98e41475b8549bde67c8de4a3b858206db7aa31",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-blog-home-f68d6c4b",
+  "repo": "sb-blog-home",
+  "commit": "f68d6c4b927047c3bd3178d9186019649377e542",
+  "date": "2017-03-03",
+  "subject": "body padding fix for responsive nav",
+  "fixed_state": "f68d6c4b927047c3bd3178d9186019649377e542",
+  "changed": [
+   "css/blog-home.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-blog-post-8dbd5429",
+  "repo": "sb-blog-post",
+  "commit": "8dbd5429d82c71641283bc4e4497670c72400117",
+  "date": "2019-01-31",
+  "subject": "update dependencies, copyright date, body padding, and gulpfile for gulp 4",
+  "fixed_state": "8dbd5429d82c71641283bc4e4497670c72400117",
+  "changed": [
+   "LICENSE",
+   "README.md",
+   "css/blog-post.css",
+   "gulpfile.js",
+   "index.html",
+   "package-lock.json",
+   "package.json",
+   "vendor/bootstrap/css/bootstrap-grid.css",
+   "vendor/bootstrap/css/bootstrap-grid.min.css",
+   "vendor/bootstrap/css/bootstrap-reboot.css",
+   "vendor/bootstrap/css/bootstrap-reboot.min.css",
+   "vendor/bootstrap/css/bootstrap.css",
+   "vendor/bootstrap/css/bootstrap.css.map",
+   "vendor/bootstrap/css/bootstrap.min.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-blog-post-ab18bfc1",
+  "repo": "sb-blog-post",
+  "commit": "ab18bfc119c6d328b58fad51f1fc382b066188fa",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "ab18bfc119c6d328b58fad51f1fc382b066188fa",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-blog-post-bf6f116a",
+  "repo": "sb-blog-post",
+  "commit": "bf6f116aeb6595052223324b1d4fd7e0b50dd146",
+  "date": "2017-03-03",
+  "subject": "body padding fix for responsive nav",
+  "fixed_state": "bf6f116aeb6595052223324b1d4fd7e0b50dd146",
+  "changed": [
+   "css/blog-post.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-business-frontpage-bd943225",
+  "repo": "sb-business-frontpage",
+  "commit": "bd94322587d8d9c2dcf4c1908fc9c63df2a9c141",
+  "date": "2019-01-31",
+  "subject": "update dependencies, change template header layout, replace custom CSS with utilities, update gulpfile for gulp 4, update copyright dates",
+  "fixed_state": "bd94322587d8d9c2dcf4c1908fc9c63df2a9c141",
+  "changed": [
+   "LICENSE",
+   "README.md",
+   "css/business-frontpage.css",
+   "gulpfile.js",
+   "index.html",
+   "package-lock.json",
+   "package.json",
+   "vendor/bootstrap/css/bootstrap-grid.css",
+   "vendor/bootstrap/css/bootstrap-grid.min.css",
+   "vendor/bootstrap/css/bootstrap-reboot.css",
+   "vendor/bootstrap/css/bootstrap-reboot.min.css",
+   "vendor/bootstrap/css/bootstrap.css",
+   "vendor/bootstrap/css/bootstrap.css.map",
+   "vendor/bootstrap/css/bootstrap.min.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-business-frontpage-513524aa",
+  "repo": "sb-business-frontpage",
+  "commit": "513524aa03939a02d56c1374f4eae9bfba1ffd03",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "513524aa03939a02d56c1374f4eae9bfba1ffd03",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-business-frontpage-6bbcdb0b",
+  "repo": "sb-business-frontpage",
+  "commit": "6bbcdb0b4b8ee5bd217b94571a729ab9e51c9dd8",
+  "date": "2017-03-01",
+  "subject": "css fix for body padding",
+  "fixed_state": "6bbcdb0b4b8ee5bd217b94571a729ab9e51c9dd8",
+  "changed": [
+   "css/business-frontpage.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-full-width-pics-135b5337",
+  "repo": "sb-full-width-pics",
+  "commit": "135b53372757f729bbc10b27b5ed22cc43e2ccfd",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "135b53372757f729bbc10b27b5ed22cc43e2ccfd",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-personal-d195c37f",
+  "repo": "sb-personal",
+  "commit": "d195c37ffa2de5bebfe3787f70aab9e4cb35f57b",
+  "date": "2022-06-14",
+  "subject": "responsive breakpoints for profile section items",
+  "fixed_state": "d195c37ffa2de5bebfe3787f70aab9e4cb35f57b",
+  "changed": [
+   "dist/css/styles.css",
+   "src/scss/components/_profile.scss"
+  ],
+  "pages": [
+   "dist/contact.html",
+   "dist/index.html"
+  ]
+ },
+ {
+  "id": "sb-portfolio-item-7ba17b66",
+  "repo": "sb-portfolio-item",
+  "commit": "7ba17b66dfd4035d6e23733474e9b9d8c9ab4f9b",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "7ba17b66dfd4035d6e23733474e9b9d8c9ab4f9b",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-shop-item-b6bf31cc",
+  "repo": "sb-shop-item",
+  "commit": "b6bf31ccb46d56cb78c019d7e7568f576bbe848a",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "b6bf31ccb46d56cb78c019d7e7568f576bbe848a",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-the-big-picture-eb09a932",
+  "repo": "sb-the-big-picture",
+  "commit": "eb09a932da2ba1c5359eba4e3db318b29ab57df9",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "eb09a932da2ba1c5359eba4e3db318b29ab57df9",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-logo-nav-25329175",
+  "repo": "sb-logo-nav",
+  "commit": "253291756f6624a1124d4dd7d14e5a709b463370",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "253291756f6624a1124d4dd7d14e5a709b463370",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-half-slider-ff295a7c",
+  "repo": "sb-half-slider",
+  "commit": "ff295a7cd4a4d22909fbe768dd48ff58e5008d6f",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "ff295a7cd4a4d22909fbe768dd48ff58e5008d6f",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-round-about-2a17a787",
+  "repo": "sb-round-about",
+  "commit": "2a17a7870b8ca59160f64a1038903bd12b010382",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "2a17a7870b8ca59160f64a1038903bd12b010382",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-thumbnail-gallery-0bb950d5",
+  "repo": "sb-thumbnail-gallery",
+  "commit": "0bb950d5c01da92c4de812a2bb9d58824f0bd066",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "0bb950d5c01da92c4de812a2bb9d58824f0bd066",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-1-col-portfolio-4169bd10",
+  "repo": "sb-1-col-portfolio",
+  "commit": "4169bd106562531e9e780641715255a8ee0f53cc",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "4169bd106562531e9e780641715255a8ee0f53cc",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-1-col-portfolio-c053ff48",
+  "repo": "sb-1-col-portfolio",
+  "commit": "c053ff48d6ed15dcade95484b1942f7ee8bdd82d",
+  "date": "2017-03-03",
+  "subject": "body padding fix for responsive nav",
+  "fixed_state": "c053ff48d6ed15dcade95484b1942f7ee8bdd82d",
+  "changed": [
+   "css/1-col-portfolio.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-1-col-portfolio-a566d4ab",
+  "repo": "sb-1-col-portfolio",
+  "commit": "a566d4ab8346dd25416a5c5ebc9b939a7ac2f90e",
+  "date": "2017-02-28",
+  "subject": "footer and spacing update",
+  "fixed_state": "a566d4ab8346dd25416a5c5ebc9b939a7ac2f90e",
+  "changed": [
+   "css/1-col-portfolio.css",
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-2-col-portfolio-85909d3b",
+  "repo": "sb-2-col-portfolio",
+  "commit": "85909d3b751667fe9c6a986c7796e888070504b4",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "85909d3b751667fe9c6a986c7796e888070504b4",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-2-col-portfolio-ab675b1a",
+  "repo": "sb-2-col-portfolio",
+  "commit": "ab675b1ad488aa7050f53c544b728262bd4c07db",
+  "date": "2017-03-03",
+  "subject": "body padding fix for responsive nav",
+  "fixed_state": "ab675b1ad488aa7050f53c544b728262bd4c07db",
+  "changed": [
+   "css/2-col-portfolio.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-2-col-portfolio-061f77ca",
+  "repo": "sb-2-col-portfolio",
+  "commit": "061f77ca2805a426b249ae7fc3b57c02e7d5a1bb",
+  "date": "2017-02-28",
+  "subject": "footer and spacing update",
+  "fixed_state": "061f77ca2805a426b249ae7fc3b57c02e7d5a1bb",
+  "changed": [
+   "css/2-col-portfolio.css",
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-3-col-portfolio-ef0ebb28",
+  "repo": "sb-3-col-portfolio",
+  "commit": "ef0ebb28cab056e2120be17b1a8444faf1547374",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "ef0ebb28cab056e2120be17b1a8444faf1547374",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-3-col-portfolio-215cce63",
+  "repo": "sb-3-col-portfolio",
+  "commit": "215cce63e25b8030e01efc91aacf38a6d8fadc72",
+  "date": "2017-03-03",
+  "subject": "body padding fix for responsive nav",
+  "fixed_state": "215cce63e25b8030e01efc91aacf38a6d8fadc72",
+  "changed": [
+   "css/3-col-portfolio.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-3-col-portfolio-039138d5",
+  "repo": "sb-3-col-portfolio",
+  "commit": "039138d55f99c30643ca44e8dee718f846b3f522",
+  "date": "2017-03-01",
+  "subject": "layout change for better responsiveness",
+  "fixed_state": "039138d55f99c30643ca44e8dee718f846b3f522",
+  "changed": [
+   "css/3-col-portfolio.css",
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-4-col-portfolio-9b7192bf",
+  "repo": "sb-4-col-portfolio",
+  "commit": "9b7192bfe5a25950b6defcc2cbe376750c1e345c",
+  "date": "2017-08-19",
+  "subject": "Wrapped nav items in a container element",
+  "fixed_state": "9b7192bfe5a25950b6defcc2cbe376750c1e345c",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "sb-4-col-portfolio-a43bdb31",
+  "repo": "sb-4-col-portfolio",
+  "commit": "a43bdb31b805f31581cb4efd814a65e1503e76a5",
+  "date": "2017-03-03",
+  "subject": "body padding fix for responsive nav",
+  "fixed_state": "a43bdb31b805f31581cb4efd814a65e1503e76a5",
+  "changed": [
+   "css/4-col-portfolio.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-6b6f68ee",
+  "repo": "nes-css",
+  "commit": "6b6f68ee8ce464addb76a0b6f513bacf6a5205e2",
+  "date": "2019-12-22",
+  "subject": "fix(select): fixed select state styling",
+  "fixed_state": null,
+  "changed": [
+   "scss/form/selects.scss",
+   "story/select/select.template.js"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-287d52aa",
+  "repo": "nes-css",
+  "commit": "287d52aa63b8a86245b3dd7a1b769f11bcf8ffb3",
+  "date": "2019-10-17",
+  "subject": "refactor: add fill-gaps utility",
+  "fixed_state": null,
+  "changed": [
+   "scss/pixel-arts/ash.scss",
+   "scss/pixel-arts/bcrikko.scss",
+   "scss/pixel-arts/bulbasaur.scss",
+   "scss/pixel-arts/charmander.scss",
+   "scss/pixel-arts/kirby.scss",
+   "scss/pixel-arts/mario.scss",
+   "scss/pixel-arts/nes-icon.scss",
+   "scss/pixel-arts/nes-jp-icon.scss",
+   "scss/pixel-arts/octocat.scss",
+   "scss/pixel-arts/phone.scss",
+   "scss/pixel-arts/pokeball.scss",
+   "scss/pixel-arts/smartphone.scss",
+   "scss/pixel-arts/snes-icon.scss",
+   "scss/pixel-arts/snes-jp-icon.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-6ae1049f",
+  "repo": "nes-css",
+  "commit": "6ae1049fd8dc3b39f91d8120468b12fe1d9c8df6",
+  "date": "2019-10-10",
+  "subject": "fix: string interpolation to calculate width of inputs",
+  "fixed_state": null,
+  "changed": [
+   ".gitignore",
+   "scss/form/inputs.scss",
+   "scss/form/selects.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-c4059834",
+  "repo": "nes-css",
+  "commit": "c40598341e0a13d5d6e3e33592083ac7c8bac07a",
+  "date": "2019-07-03",
+  "subject": "refactor: add visually-hidden util",
+  "fixed_state": null,
+  "changed": [
+   "scss/elements/buttons.scss",
+   "scss/form/checkboxes.scss",
+   "scss/form/radios.scss",
+   "scss/utilities/_index.scss",
+   "scss/utilities/visually-hidden.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-5d5e2838",
+  "repo": "nes-css",
+  "commit": "5d5e28386bb5c39207efe2d0f814127a1d036431",
+  "date": "2019-02-25",
+  "subject": "docs: sticky header and fab",
+  "fixed_state": null,
+  "changed": [
+   "docs/index.html",
+   "docs/script.js",
+   "docs/style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-7cdca004",
+  "repo": "nes-css",
+  "commit": "7cdca0041b5df2f26a9c7e1d7caafb62c07289f1",
+  "date": "2019-02-23",
+  "subject": "docs: styles on mobile devices",
+  "fixed_state": null,
+  "changed": [
+   "docs/index.html",
+   "docs/script.js",
+   "docs/style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-7dc16cee",
+  "repo": "nes-css",
+  "commit": "7dc16ceee004621ed30f940f801f4044e8f3e17d",
+  "date": "2019-02-11",
+  "subject": "fix(dialog.scss): fix position of peusedo element",
+  "fixed_state": null,
+  "changed": [
+   "demo/style.css",
+   "scss/elements/dialogs.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-341b44b5",
+  "repo": "nes-css",
+  "commit": "341b44b5460e5ad30a1bf8cd235245cac19623e7",
+  "date": "2019-02-08",
+  "subject": "fix(html): fix alignment of the html in form and table component",
+  "fixed_state": "341b44b5460e5ad30a1bf8cd235245cac19623e7",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-7894b845",
+  "repo": "nes-css",
+  "commit": "7894b8455bb471434c7c00e4e96d5e4e20d021d8",
+  "date": "2019-02-08",
+  "subject": "feat(style.css): fix broken layout",
+  "fixed_state": null,
+  "changed": [
+   "demo/style.css",
+   "index.html"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-d9de7c95",
+  "repo": "nes-css",
+  "commit": "d9de7c95b5750a2e4b5acdfd096c05fb7adeeaeb",
+  "date": "2019-02-06",
+  "subject": "feat(index.html): modified width of the tag p",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-f0f06005",
+  "repo": "nes-css",
+  "commit": "f0f060052f4a40bf84c37af9353c52aaaeffc523",
+  "date": "2019-02-06",
+  "subject": "feat(index.html): add margin to progress and table.",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-78e522e4",
+  "repo": "nes-css",
+  "commit": "78e522e4ddbca22fc373a4d0fd38f6510d152226",
+  "date": "2019-01-02",
+  "subject": "fix(container): removed padding-top inside with-title class",
+  "fixed_state": null,
+  "changed": [
+   "scss/elements/balloons.scss",
+   "scss/elements/containers.scss",
+   "scss/elements/progress.scss",
+   "scss/form/selects.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-463a3363",
+  "repo": "nes-css",
+  "commit": "463a336335fc23ea6a5932b5a59d588ff3380c32",
+  "date": "2018-12-17",
+  "subject": "docs(add sketch file): added sketch file and fixed favicon file",
+  "fixed_state": "463a336335fc23ea6a5932b5a59d588ff3380c32",
+  "changed": [
+   "favicon.ico",
+   "favicon.png",
+   "index.html",
+   "sketch/NES-css-index.sketch"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-02cd4844",
+  "repo": "nes-css",
+  "commit": "02cd4844ca7ba24035b5871972d1a46316b8b69d",
+  "date": "2018-12-10",
+  "subject": "feat(tables): it replicates the responsive tables from bootstrap",
+  "fixed_state": null,
+  "changed": [
+   "index.html",
+   "scss/elements/tables.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "nes-css-a14585b8",
+  "repo": "nes-css",
+  "commit": "a14585b86585cae08a588cab60ef63ec009361a9",
+  "date": "2018-12-10",
+  "subject": "fix(icons): changed width of the mario icon to 14",
+  "fixed_state": "d4eab54ba4c3ade567438b4388514b64ef539bba",
+  "changed": [
+   "scss/pixel-arts/mario.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-2819ca36",
+  "repo": "nes-css",
+  "commit": "2819ca36d6be2cb57c2a7592a1126202435d3109",
+  "date": "2018-12-10",
+  "subject": "fix(style.css): fix margin and padding of body",
+  "fixed_state": "d4eab54ba4c3ade567438b4388514b64ef539bba",
+  "changed": [
+   "style.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-527a4fb6",
+  "repo": "nes-css",
+  "commit": "527a4fb6e5a9b09e685412182206e132415598f5",
+  "date": "2018-12-09",
+  "subject": "fix(icons): changed ash and marios width",
+  "fixed_state": "d4eab54ba4c3ade567438b4388514b64ef539bba",
+  "changed": [
+   "scss/pixel-arts/ash.scss",
+   "scss/pixel-arts/mario.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-7c0d7aae",
+  "repo": "nes-css",
+  "commit": "7c0d7aae6fb7bc54fa47f1186d2f4bac41c93260",
+  "date": "2018-12-09",
+  "subject": "fix(icons): changed pokemons icons width and height",
+  "fixed_state": "d4eab54ba4c3ade567438b4388514b64ef539bba",
+  "changed": [
+   "scss/pixel-arts/bulbasaur.scss",
+   "scss/pixel-arts/charmander.scss",
+   "scss/pixel-arts/squirtle.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-a9c95921",
+  "repo": "nes-css",
+  "commit": "a9c959217f8935158f69cfab72bec61dc509e476",
+  "date": "2018-12-10",
+  "subject": "fix(containers.scss): fix alignment of title (#136)",
+  "fixed_state": "d4eab54ba4c3ade567438b4388514b64ef539bba",
+  "changed": [
+   "scss/elements/containers.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-f765692e",
+  "repo": "nes-css",
+  "commit": "f765692e1d75c8ed6a9c8dd1db95927e2fb211e2",
+  "date": "2018-12-09",
+  "subject": "fix(balloon.scss): fix gaps in balloon (#134)",
+  "fixed_state": "d4eab54ba4c3ade567438b4388514b64ef539bba",
+  "changed": [
+   "scss/elements/balloons.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-06ac77ab",
+  "repo": "nes-css",
+  "commit": "06ac77abfe444d72e451bd31ba1df9149d791f21",
+  "date": "2018-12-09",
+  "subject": "refactor: fix table margin in demo page",
+  "fixed_state": "d4eab54ba4c3ade567438b4388514b64ef539bba",
+  "changed": [
+   "index.html",
+   "style.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-c61e17ac",
+  "repo": "nes-css",
+  "commit": "c61e17ac03b7de09ebe2ca4b0f8f616f357d3d0c",
+  "date": "2018-12-09",
+  "subject": "fix(tables.scss): add margin to table is-border class",
+  "fixed_state": "d4eab54ba4c3ade567438b4388514b64ef539bba",
+  "changed": [
+   "scss/elements/tables.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-28d8839c",
+  "repo": "nes-css",
+  "commit": "28d8839c61f8b75bbbc3545fdf2113d502c7cf5b",
+  "date": "2018-12-08",
+  "subject": "fix(inputs.scss): fix field responsive",
+  "fixed_state": "d4eab54ba4c3ade567438b4388514b64ef539bba",
+  "changed": [
+   "scss/form/inputs.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-469863ca",
+  "repo": "nes-css",
+  "commit": "469863ca6247541131e4613784d1f195d185c3b6",
+  "date": "2018-12-07",
+  "subject": "fix(containers.scss): fix title position when use is-rounded",
+  "fixed_state": "469863ca6247541131e4613784d1f195d185c3b6",
+  "changed": [
+   "css/nes.css",
+   "css/nes.css.map",
+   "css/nes.min.css",
+   "scss/elements/containers.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-7bf08ab7",
+  "repo": "nes-css",
+  "commit": "7bf08ab7f3ea846f67a4fc5516a73c3cb98a2610",
+  "date": "2018-12-07",
+  "subject": "fix(containers.scss): fix alignment without title",
+  "fixed_state": "7bf08ab7f3ea846f67a4fc5516a73c3cb98a2610",
+  "changed": [
+   "css/nes.css",
+   "css/nes.css.map",
+   "css/nes.min.css",
+   "scss/elements/containers.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-cd60b09c",
+  "repo": "nes-css",
+  "commit": "cd60b09cfbf28bff586ad8707f6cf33c6514733f",
+  "date": "2018-12-07",
+  "subject": "fix(table): added margin 4px to table is-bordered",
+  "fixed_state": "cd60b09cfbf28bff586ad8707f6cf33c6514733f",
+  "changed": [
+   "css/nes.css",
+   "css/nes.css.map",
+   "css/nes.min.css",
+   "scss/elements/tables.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-78c2bc4c",
+  "repo": "nes-css",
+  "commit": "78c2bc4ca48455c7915fbf042c33079fe54352ec",
+  "date": "2018-12-03",
+  "subject": "align container title with .is-right and .is-center",
+  "fixed_state": "78c2bc4ca48455c7915fbf042c33079fe54352ec",
+  "changed": [
+   "css/nes.css",
+   "css/nes.css.map",
+   "css/nes.min.css",
+   "scss/elements/containers.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-7328502b",
+  "repo": "nes-css",
+  "commit": "7328502b30de9f405131761134c02baa74cea526",
+  "date": "2018-12-03",
+  "subject": "#62 fix .is-center and .is-right; replace align-items with text-align",
+  "fixed_state": "7328502b30de9f405131761134c02baa74cea526",
+  "changed": [
+   "css/nes.css",
+   "css/nes.css.map",
+   "css/nes.min.css",
+   "scss/elements/containers.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-dca069f2",
+  "repo": "nes-css",
+  "commit": "dca069f207301f6192dd9b034c25e1a7c7f1ca4e",
+  "date": "2018-12-03",
+  "subject": "Fix layout of title at PC View",
+  "fixed_state": "dca069f207301f6192dd9b034c25e1a7c7f1ca4e",
+  "changed": [
+   "css/nes.css",
+   "css/nes.css.map",
+   "css/nes.min.css",
+   "scss/elements/containers.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-3bb7fd93",
+  "repo": "nes-css",
+  "commit": "3bb7fd93d4c7a743d846104cf39ad33cdfb0fa13",
+  "date": "2018-11-30",
+  "subject": "Changes requested made like adding table-layout property, usage of the $base-color variable, added word-wrap property and removed the box-shadow unused values.",
+  "fixed_state": "3bb7fd93d4c7a743d846104cf39ad33cdfb0fa13",
+  "changed": [
+   "css/nes.css",
+   "css/nes.css.map",
+   "css/nes.min.css",
+   "scss/elements/tables.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-66bd33a5",
+  "repo": "nes-css",
+  "commit": "66bd33a59080c146364b11426c5c3e6803311318",
+  "date": "2018-11-29",
+  "subject": "Added table new design with two classes, is -bordered that adds a border and is-centered that aligns all the table headers to the center. Updated index.html (docs).",
+  "fixed_state": "66bd33a59080c146364b11426c5c3e6803311318",
+  "changed": [
+   "css/nes.css",
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-bfe34004",
+  "repo": "nes-css",
+  "commit": "bfe34004608f239e9c7553064f09174ba385ecf1",
+  "date": "2018-11-29",
+  "subject": "Preventings overflowing inputs",
+  "fixed_state": "bfe34004608f239e9c7553064f09174ba385ecf1",
+  "changed": [
+   "css/nes.css",
+   "css/nes.css.map",
+   "css/nes.min.css",
+   "scss/form/inputs.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "nes-css-03ae245d",
+  "repo": "nes-css",
+  "commit": "03ae245d6f7a065c6aa30488915277dc9ca1b32d",
+  "date": "2018-09-29",
+  "subject": ":+1: fork meをfixedに変更",
+  "fixed_state": "ae8542b6216238c759706f5696374e37f23b5a88",
+  "changed": [
+   "style.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "css98-040fed78",
+  "repo": "css98",
+  "commit": "040fed78540e9fae9f91b67ee70b95701f77940c",
+  "date": "2020-10-23",
+  "subject": "Fixed tabs borders colors",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css98-fff3262e",
+  "repo": "css98",
+  "commit": "fff3262e3c96661b5c4d1841c79b3ef9e51d5796",
+  "date": "2022-11-13",
+  "subject": "Prevent layout issues for active button (#150)",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css98-36284ae7",
+  "repo": "css98",
+  "commit": "36284ae73ae194a71aa4c458be72a3e1e9cb63be",
+  "date": "2020-05-18",
+  "subject": "fix padding on menubar presses - fixes #88",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css98-a482a4b6",
+  "repo": "css98",
+  "commit": "a482a4b6e8079b2957c974b857581f51e18cf896",
+  "date": "2020-05-17",
+  "subject": "Align \"+\"/\"-\" in ul.tree-view details (#86)",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css98-1b6312f4",
+  "repo": "css98",
+  "commit": "1b6312f42bc252a46128b3475f2477b9b06e33ae",
+  "date": "2020-04-26",
+  "subject": "fix title-bar padding",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css98-0a32dd35",
+  "repo": "css98",
+  "commit": "0a32dd359c2c28b74c1d0a88c372733fc22607e8",
+  "date": "2020-04-26",
+  "subject": "limit field-row child spacing to direct descendants",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css98-59a40ed9",
+  "repo": "css98",
+  "commit": "59a40ed9e8c8e98687f109c9788d0e20467e5033",
+  "date": "2020-04-23",
+  "subject": "fix radio and checkbox label positioning",
+  "fixed_state": "59a40ed9e8c8e98687f109c9788d0e20467e5033",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css98-cd0f1f32",
+  "repo": "css98",
+  "commit": "cd0f1f32410549601267889a82197018c6febad1",
+  "date": "2020-04-23",
+  "subject": "add select boxes and fix line height",
+  "fixed_state": "cd0f1f32410549601267889a82197018c6febad1",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css98-fa2d8dd2",
+  "repo": "css98",
+  "commit": "fa2d8dd2e2d42337e7df87a7116b237c160b3e9a",
+  "date": "2020-04-22",
+  "subject": "fix input[type=\"text\"] and textarea styles in safari mobile",
+  "fixed_state": "fa2d8dd2e2d42337e7df87a7116b237c160b3e9a",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css98-f85aa615",
+  "repo": "css98",
+  "commit": "f85aa6159c9398d04a659c2e2f38d708fdca11b5",
+  "date": "2020-04-22",
+  "subject": "remove letter-spacing",
+  "fixed_state": "f85aa6159c9398d04a659c2e2f38d708fdca11b5",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css",
+   "test.sh"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css98-5509453e",
+  "repo": "css98",
+  "commit": "5509453e21ac37acc2453301c689a928fe79ebea",
+  "date": "2020-04-21",
+  "subject": "give pre a scrollbar on mobile",
+  "fixed_state": "6fdbfd2bab955f5bc12ee76cd709c467206e7de5",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css98-68d7366d",
+  "repo": "css98",
+  "commit": "68d7366ddfc8593f4f5aba227dda1441d2587257",
+  "date": "2020-04-21",
+  "subject": "fix code width on mobile",
+  "fixed_state": "6fdbfd2bab955f5bc12ee76cd709c467206e7de5",
+  "changed": [
+   "docs/docs.css",
+   "docs/index.html",
+   "docs/index.html.ejs"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css98-6cff5302",
+  "repo": "css98",
+  "commit": "6cff5302980216b5227af25dcb4e9d1426cc66b1",
+  "date": "2020-04-21",
+  "subject": "fix pre width",
+  "fixed_state": "6fdbfd2bab955f5bc12ee76cd709c467206e7de5",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css98-366c8dcb",
+  "repo": "css98",
+  "commit": "366c8dcb016c82b5f06bb4ec8da9041050577228",
+  "date": "2020-04-21",
+  "subject": "fix h3 margin",
+  "fixed_state": "d82b8232956917aa80e56a595aff3f4343f4b845",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/backup.html",
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css98-ecfc9758",
+  "repo": "css98",
+  "commit": "ecfc9758a86cfccf64a38435a803b9c31016b589",
+  "date": "2020-04-21",
+  "subject": "some mobile styles",
+  "fixed_state": "d21a9cdd176f280c741f82bbc14fb4b1de719886",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/backup.html",
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css98-92932e64",
+  "repo": "css98",
+  "commit": "92932e64b077339f64bc2c10a2e3819b223f6aa7",
+  "date": "2020-04-17",
+  "subject": "fix fieldset margins",
+  "fixed_state": "23a00f1dcb228b0a27b07427063034abed9675e1",
+  "changed": [
+   "docs/index.html",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css98-236ee973",
+  "repo": "css98",
+  "commit": "236ee9731d238f11d24a5b73856922ea88741fd7",
+  "date": "2020-04-16",
+  "subject": "going a little wild with spacing",
+  "fixed_state": "23a00f1dcb228b0a27b07427063034abed9675e1",
+  "changed": [
+   "close.svg",
+   "index.html",
+   "maximize.svg",
+   "minimize.svg",
+   "style.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "xp-css-7e7039f8",
+  "repo": "xp-css",
+  "commit": "7e7039f8d7d2186566a4752e69fc9feb5197b9ac",
+  "date": "2020-12-21",
+  "subject": "fix xp title bar height",
+  "fixed_state": null,
+  "changed": [
+   "themes/XP/_window.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "xp-css-28fced3d",
+  "repo": "xp-css",
+  "commit": "28fced3da3377953f9f5172561d380343d2b8903",
+  "date": "2020-05-22",
+  "subject": "fix: title bar height",
+  "fixed_state": null,
+  "changed": [
+   "themes/XP/_window.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "xp-css-0c19202e",
+  "repo": "xp-css",
+  "commit": "0c19202e98bdaaa70d7639b23fcb79c67165e60e",
+  "date": "2020-05-19",
+  "subject": "fix: checkmark positioning on safari",
+  "fixed_state": null,
+  "changed": [
+   "gui/_forms.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "xp-css-3aba0d78",
+  "repo": "xp-css",
+  "commit": "3aba0d784dd910bae144009c6f231e3b1dd72725",
+  "date": "2020-05-19",
+  "subject": "fix: checkmark positioning on safari",
+  "fixed_state": null,
+  "changed": [
+   "gui/_forms.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "xp-css-1b6312f4",
+  "repo": "xp-css",
+  "commit": "1b6312f42bc252a46128b3475f2477b9b06e33ae",
+  "date": "2020-04-26",
+  "subject": "fix title-bar padding",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "xp-css-0a32dd35",
+  "repo": "xp-css",
+  "commit": "0a32dd359c2c28b74c1d0a88c372733fc22607e8",
+  "date": "2020-04-26",
+  "subject": "limit field-row child spacing to direct descendants",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "xp-css-59a40ed9",
+  "repo": "xp-css",
+  "commit": "59a40ed9e8c8e98687f109c9788d0e20467e5033",
+  "date": "2020-04-23",
+  "subject": "fix radio and checkbox label positioning",
+  "fixed_state": "59a40ed9e8c8e98687f109c9788d0e20467e5033",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "xp-css-cd0f1f32",
+  "repo": "xp-css",
+  "commit": "cd0f1f32410549601267889a82197018c6febad1",
+  "date": "2020-04-23",
+  "subject": "add select boxes and fix line height",
+  "fixed_state": "cd0f1f32410549601267889a82197018c6febad1",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "xp-css-fa2d8dd2",
+  "repo": "xp-css",
+  "commit": "fa2d8dd2e2d42337e7df87a7116b237c160b3e9a",
+  "date": "2020-04-22",
+  "subject": "fix input[type=\"text\"] and textarea styles in safari mobile",
+  "fixed_state": "fa2d8dd2e2d42337e7df87a7116b237c160b3e9a",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "xp-css-f85aa615",
+  "repo": "xp-css",
+  "commit": "f85aa6159c9398d04a659c2e2f38d708fdca11b5",
+  "date": "2020-04-22",
+  "subject": "remove letter-spacing",
+  "fixed_state": "f85aa6159c9398d04a659c2e2f38d708fdca11b5",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css",
+   "test.sh"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "xp-css-5509453e",
+  "repo": "xp-css",
+  "commit": "5509453e21ac37acc2453301c689a928fe79ebea",
+  "date": "2020-04-21",
+  "subject": "give pre a scrollbar on mobile",
+  "fixed_state": "6fdbfd2bab955f5bc12ee76cd709c467206e7de5",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "xp-css-68d7366d",
+  "repo": "xp-css",
+  "commit": "68d7366ddfc8593f4f5aba227dda1441d2587257",
+  "date": "2020-04-21",
+  "subject": "fix code width on mobile",
+  "fixed_state": "6fdbfd2bab955f5bc12ee76cd709c467206e7de5",
+  "changed": [
+   "docs/docs.css",
+   "docs/index.html",
+   "docs/index.html.ejs"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "xp-css-6cff5302",
+  "repo": "xp-css",
+  "commit": "6cff5302980216b5227af25dcb4e9d1426cc66b1",
+  "date": "2020-04-21",
+  "subject": "fix pre width",
+  "fixed_state": "6fdbfd2bab955f5bc12ee76cd709c467206e7de5",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "xp-css-366c8dcb",
+  "repo": "xp-css",
+  "commit": "366c8dcb016c82b5f06bb4ec8da9041050577228",
+  "date": "2020-04-21",
+  "subject": "fix h3 margin",
+  "fixed_state": "d82b8232956917aa80e56a595aff3f4343f4b845",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/backup.html",
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "xp-css-ecfc9758",
+  "repo": "xp-css",
+  "commit": "ecfc9758a86cfccf64a38435a803b9c31016b589",
+  "date": "2020-04-21",
+  "subject": "some mobile styles",
+  "fixed_state": "d21a9cdd176f280c741f82bbc14fb4b1de719886",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/backup.html",
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "xp-css-92932e64",
+  "repo": "xp-css",
+  "commit": "92932e64b077339f64bc2c10a2e3819b223f6aa7",
+  "date": "2020-04-17",
+  "subject": "fix fieldset margins",
+  "fixed_state": "23a00f1dcb228b0a27b07427063034abed9675e1",
+  "changed": [
+   "docs/index.html",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "xp-css-236ee973",
+  "repo": "xp-css",
+  "commit": "236ee9731d238f11d24a5b73856922ea88741fd7",
+  "date": "2020-04-16",
+  "subject": "going a little wild with spacing",
+  "fixed_state": "23a00f1dcb228b0a27b07427063034abed9675e1",
+  "changed": [
+   "close.svg",
+   "index.html",
+   "maximize.svg",
+   "minimize.svg",
+   "style.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "css7-9d692d9f",
+  "repo": "css7",
+  "commit": "9d692d9f9b369a63eed00ece859bd36806e8be0e",
+  "date": "2024-10-30",
+  "subject": "fix line-height calculation for tree view toggles",
+  "fixed_state": null,
+  "changed": [
+   "gui/_treeview.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-228cf75a",
+  "repo": "css7",
+  "commit": "228cf75a099534fd5baaef44ebc2ca1238c22ab0",
+  "date": "2024-10-30",
+  "subject": "switch down/up clip paths",
+  "fixed_state": null,
+  "changed": [
+   "gui/_listview.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-fba92f19",
+  "repo": "css7",
+  "commit": "fba92f195654b067a2eea3d880bbdf4468c7c079",
+  "date": "2023-07-29",
+  "subject": "Cover next menuitems in the menubar",
+  "fixed_state": null,
+  "changed": [
+   "gui/_menu.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-e601c264",
+  "repo": "css7",
+  "commit": "e601c264c834e8d0cb4e090d04d8fd2f3f9dca71",
+  "date": "2023-07-29",
+  "subject": "Avoid overlapping menus",
+  "fixed_state": null,
+  "changed": [
+   "gui/_menu.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-2ee88421",
+  "repo": "css7",
+  "commit": "2ee8842144d70429a3dae47b93d553034ba393e2",
+  "date": "2023-03-19",
+  "subject": "Add balloon positioning",
+  "fixed_state": null,
+  "changed": [
+   "docs/components/balloon.ejs",
+   "docs/docs.css",
+   "docs/script.js",
+   "gui/_balloon.scss",
+   "gui/icon/balloon-tail.svg"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-95d08099",
+  "repo": "css7",
+  "commit": "95d0809966f465439d191e818948575b95cd56ad",
+  "date": "2023-02-12",
+  "subject": "Fixed scrollbar colours",
+  "fixed_state": null,
+  "changed": [
+   "gui/_global.scss",
+   "gui/_typography.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-6ee8bd7e",
+  "repo": "css7",
+  "commit": "6ee8bd7ebcf4a7584fbbadd78b0a79a6370198b3",
+  "date": "2021-07-02",
+  "subject": "fix: remove line-height on inputs",
+  "fixed_state": null,
+  "changed": [
+   "gui/_forms.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-7e7039f8",
+  "repo": "css7",
+  "commit": "7e7039f8d7d2186566a4752e69fc9feb5197b9ac",
+  "date": "2020-12-21",
+  "subject": "fix xp title bar height",
+  "fixed_state": null,
+  "changed": [
+   "themes/XP/_window.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-28fced3d",
+  "repo": "css7",
+  "commit": "28fced3da3377953f9f5172561d380343d2b8903",
+  "date": "2020-05-22",
+  "subject": "fix: title bar height",
+  "fixed_state": null,
+  "changed": [
+   "themes/XP/_window.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-0c19202e",
+  "repo": "css7",
+  "commit": "0c19202e98bdaaa70d7639b23fcb79c67165e60e",
+  "date": "2020-05-19",
+  "subject": "fix: checkmark positioning on safari",
+  "fixed_state": null,
+  "changed": [
+   "gui/_forms.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-3aba0d78",
+  "repo": "css7",
+  "commit": "3aba0d784dd910bae144009c6f231e3b1dd72725",
+  "date": "2020-05-19",
+  "subject": "fix: checkmark positioning on safari",
+  "fixed_state": null,
+  "changed": [
+   "gui/_forms.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-1b6312f4",
+  "repo": "css7",
+  "commit": "1b6312f42bc252a46128b3475f2477b9b06e33ae",
+  "date": "2020-04-26",
+  "subject": "fix title-bar padding",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-0a32dd35",
+  "repo": "css7",
+  "commit": "0a32dd359c2c28b74c1d0a88c372733fc22607e8",
+  "date": "2020-04-26",
+  "subject": "limit field-row child spacing to direct descendants",
+  "fixed_state": null,
+  "changed": [
+   "style.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "css7-59a40ed9",
+  "repo": "css7",
+  "commit": "59a40ed9e8c8e98687f109c9788d0e20467e5033",
+  "date": "2020-04-23",
+  "subject": "fix radio and checkbox label positioning",
+  "fixed_state": "59a40ed9e8c8e98687f109c9788d0e20467e5033",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css7-cd0f1f32",
+  "repo": "css7",
+  "commit": "cd0f1f32410549601267889a82197018c6febad1",
+  "date": "2020-04-23",
+  "subject": "add select boxes and fix line height",
+  "fixed_state": "cd0f1f32410549601267889a82197018c6febad1",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css7-fa2d8dd2",
+  "repo": "css7",
+  "commit": "fa2d8dd2e2d42337e7df87a7116b237c160b3e9a",
+  "date": "2020-04-22",
+  "subject": "fix input[type=\"text\"] and textarea styles in safari mobile",
+  "fixed_state": "fa2d8dd2e2d42337e7df87a7116b237c160b3e9a",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css7-f85aa615",
+  "repo": "css7",
+  "commit": "f85aa6159c9398d04a659c2e2f38d708fdca11b5",
+  "date": "2020-04-22",
+  "subject": "remove letter-spacing",
+  "fixed_state": "f85aa6159c9398d04a659c2e2f38d708fdca11b5",
+  "changed": [
+   "build/98.css",
+   "docs/98.css",
+   "style.css",
+   "test.sh"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css7-5509453e",
+  "repo": "css7",
+  "commit": "5509453e21ac37acc2453301c689a928fe79ebea",
+  "date": "2020-04-21",
+  "subject": "give pre a scrollbar on mobile",
+  "fixed_state": "6fdbfd2bab955f5bc12ee76cd709c467206e7de5",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css7-68d7366d",
+  "repo": "css7",
+  "commit": "68d7366ddfc8593f4f5aba227dda1441d2587257",
+  "date": "2020-04-21",
+  "subject": "fix code width on mobile",
+  "fixed_state": "6fdbfd2bab955f5bc12ee76cd709c467206e7de5",
+  "changed": [
+   "docs/docs.css",
+   "docs/index.html",
+   "docs/index.html.ejs"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css7-6cff5302",
+  "repo": "css7",
+  "commit": "6cff5302980216b5227af25dcb4e9d1426cc66b1",
+  "date": "2020-04-21",
+  "subject": "fix pre width",
+  "fixed_state": "6fdbfd2bab955f5bc12ee76cd709c467206e7de5",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css7-366c8dcb",
+  "repo": "css7",
+  "commit": "366c8dcb016c82b5f06bb4ec8da9041050577228",
+  "date": "2020-04-21",
+  "subject": "fix h3 margin",
+  "fixed_state": "d82b8232956917aa80e56a595aff3f4343f4b845",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/backup.html",
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css7-ecfc9758",
+  "repo": "css7",
+  "commit": "ecfc9758a86cfccf64a38435a803b9c31016b589",
+  "date": "2020-04-21",
+  "subject": "some mobile styles",
+  "fixed_state": "d21a9cdd176f280c741f82bbc14fb4b1de719886",
+  "changed": [
+   "docs/docs.css"
+  ],
+  "pages": [
+   "docs/backup.html",
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css7-92932e64",
+  "repo": "css7",
+  "commit": "92932e64b077339f64bc2c10a2e3819b223f6aa7",
+  "date": "2020-04-17",
+  "subject": "fix fieldset margins",
+  "fixed_state": "23a00f1dcb228b0a27b07427063034abed9675e1",
+  "changed": [
+   "docs/index.html",
+   "style.css"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "css7-236ee973",
+  "repo": "css7",
+  "commit": "236ee9731d238f11d24a5b73856922ea88741fd7",
+  "date": "2020-04-16",
+  "subject": "going a little wild with spacing",
+  "fixed_state": "23a00f1dcb228b0a27b07427063034abed9675e1",
+  "changed": [
+   "close.svg",
+   "index.html",
+   "maximize.svg",
+   "minimize.svg",
+   "style.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "wtf-forms-d42e3d1c",
+  "repo": "wtf-forms",
+  "commit": "d42e3d1c08255959414dcfe6f6bf80f85bd21d0b",
+  "date": "2014-06-10",
+  "subject": "don't width: 100%; it by default, and clean up docs organization",
+  "fixed_state": "d42e3d1c08255959414dcfe6f6bf80f85bd21d0b",
+  "changed": [
+   "index.md",
+   "wtf-forms.css"
+  ],
+  "pages": [
+   "test.html"
+  ]
+ },
+ {
+  "id": "wtf-forms-81a14a37",
+  "repo": "wtf-forms",
+  "commit": "81a14a371a556f885d112b7572649a35657a7aa0",
+  "date": "2014-06-10",
+  "subject": "fixes #24: set width: 100%; on selects",
+  "fixed_state": "81a14a371a556f885d112b7572649a35657a7aa0",
+  "changed": [
+   "wtf-forms.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wtf-forms-8ec17707",
+  "repo": "wtf-forms",
+  "commit": "8ec1770750b7afcf6983aa2ec1f504425bda07e2",
+  "date": "2014-05-13",
+  "subject": "Fixed typo",
+  "fixed_state": "854943e14cb04a94db22cc9fa78d6133511b95f5",
+  "changed": [
+   "_includes/select.html"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wtf-forms-3d60ea4f",
+  "repo": "wtf-forms",
+  "commit": "3d60ea4ff3d8a28053e8f551bf2018d6e0a144e0",
+  "date": "2014-05-11",
+  "subject": "responsive and other tweaks",
+  "fixed_state": "3d60ea4ff3d8a28053e8f551bf2018d6e0a144e0",
+  "changed": [
+   "css/inputs.css",
+   "css/reset.css",
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "wtf-forms-5dcd2aa1",
+  "repo": "wtf-forms",
+  "commit": "5dcd2aa1d5912e907618e0967951b5593a52e9b7",
+  "date": "2014-05-11",
+  "subject": "responsive",
+  "fixed_state": "5dcd2aa1d5912e907618e0967951b5593a52e9b7",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "hack-e290afff",
+  "repo": "hack",
+  "commit": "e290afff67886738a877144d7e481aa9375ec134",
+  "date": "2017-12-15",
+  "subject": "align ol gt 10 (#59)",
+  "fixed_state": null,
+  "changed": [
+   "src/css/markdown.css",
+   "yarn.lock"
+  ],
+  "pages": []
+ },
+ {
+  "id": "hack-9ef10eb4",
+  "repo": "hack",
+  "commit": "9ef10eb43bd5ab3b60e3c8dbe80009ed5aac5d94",
+  "date": "2016-09-11",
+  "subject": "Add flex-wrap: wrap; (#40)",
+  "fixed_state": null,
+  "changed": [
+   "src/css/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "hack-5d24d69e",
+  "repo": "hack",
+  "commit": "5d24d69e4741de1a56194713e53859fb5f865ac1",
+  "date": "2016-09-09",
+  "subject": "Fixed unwanted line break in progress bar (#39)",
+  "fixed_state": null,
+  "changed": [
+   "src/css/components.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "hack-f2956fb4",
+  "repo": "hack",
+  "commit": "f2956fb40407853f8d483cdbf4805cebf8c85e4e",
+  "date": "2016-08-19",
+  "subject": "fix margin in standard mode",
+  "fixed_state": null,
+  "changed": [
+   "src/css/markdown.css",
+   "src/css/themes/standard.css",
+   "src/html/components.jade"
+  ],
+  "pages": []
+ },
+ {
+  "id": "hack-7effbda4",
+  "repo": "hack",
+  "commit": "7effbda40f6414a315dc11d8196707b9b52bb39c",
+  "date": "2016-08-14",
+  "subject": "fixed `<hr />` element, refs #31 (#32)",
+  "fixed_state": null,
+  "changed": [
+   "src/css/markdown.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "hack-e65606ce",
+  "repo": "hack",
+  "commit": "e65606ce800215a005aeab44e0e15d17198643fc",
+  "date": "2016-07-19",
+  "subject": "remove scrollbar for pre element on mobile device",
+  "fixed_state": null,
+  "changed": [
+   "src/css/dark.css",
+   "src/css/reset.css",
+   "src/css/responsive.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "hack-0c279322",
+  "repo": "hack",
+  "commit": "0c2793228c4a0bac4902cf31ef9a533d92113a30",
+  "date": "2016-07-17",
+  "subject": "fixed form width (#10)",
+  "fixed_state": null,
+  "changed": [
+   "src/css/components.css",
+   "src/css/reset.css",
+   "src/css/responsive.css",
+   "src/html/index.jade"
+  ],
+  "pages": []
+ },
+ {
+  "id": "hack-0aca22fc",
+  "repo": "hack",
+  "commit": "0aca22fcc0f0a8b4b8111f2b045ea470fc0991fd",
+  "date": "2016-07-18",
+  "subject": "set form-control to full width",
+  "fixed_state": null,
+  "changed": [
+   "src/css/responsive.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "hack-4211a27f",
+  "repo": "hack",
+  "commit": "4211a27f497d1e6b56f0379d51cedf282bc19415",
+  "date": "2016-07-17",
+  "subject": "add responsive ui",
+  "fixed_state": null,
+  "changed": [
+   "gulpfile.js",
+   "src/css/hack.css",
+   "src/css/markdown.css",
+   "src/css/reset.css",
+   "src/css/responsive.css",
+   "src/html/index.jade",
+   "src/static/site.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "boltcss-3d9424c0",
+  "repo": "boltcss",
+  "commit": "3d9424c079fd2e50940f7dfca94f1fc1314084b5",
+  "date": "2023-03-20",
+  "subject": "reducer header margin",
+  "fixed_state": "3d9424c079fd2e50940f7dfca94f1fc1314084b5",
+  "changed": [
+   "demo-support.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "boltcss-655bb607",
+  "repo": "boltcss",
+  "commit": "655bb607163e4859599f0aa76ff65c3890b29c77",
+  "date": "2023-03-16",
+  "subject": "fix anchors extra spacing",
+  "fixed_state": "655bb607163e4859599f0aa76ff65c3890b29c77",
+  "changed": [
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "neatcss-c5d6d9a6",
+  "repo": "neatcss",
+  "commit": "c5d6d9a6ec0a4ebd9b03bdac72cef338b3d8156e",
+  "date": "2024-01-12",
+  "subject": "Fix h1 line heights for long titles",
+  "fixed_state": "c5d6d9a6ec0a4ebd9b03bdac72cef338b3d8156e",
+  "changed": [
+   "neat.css",
+   "neat.html"
+  ],
+  "pages": [
+   "neat.html"
+  ]
+ },
+ {
+  "id": "neatcss-9f77df7f",
+  "repo": "neatcss",
+  "commit": "9f77df7f76bc412152b9f9ceaeb581cc3554946b",
+  "date": "2023-05-16",
+  "subject": "Add padding between buttons",
+  "fixed_state": "9f77df7f76bc412152b9f9ceaeb581cc3554946b",
+  "changed": [
+   "docs/index.html",
+   "neat.css",
+   "neat.html"
+  ],
+  "pages": [
+   "docs/index.html",
+   "neat.html"
+  ]
+ },
+ {
+  "id": "neatcss-e66aad2a",
+  "repo": "neatcss",
+  "commit": "e66aad2a8a4beab0004a37891851f64a96ee64b7",
+  "date": "2023-04-29",
+  "subject": "Add height auto to prevent layout reflow",
+  "fixed_state": "e66aad2a8a4beab0004a37891851f64a96ee64b7",
+  "changed": [
+   "neat.css"
+  ],
+  "pages": [
+   "neat.html"
+  ]
+ },
+ {
+  "id": "neatcss-51e91de3",
+  "repo": "neatcss",
+  "commit": "51e91de386a30ec84da2c468c6af78c319cd6b9e",
+  "date": "2023-04-25",
+  "subject": "Move line-height rule to fix heading spacing",
+  "fixed_state": "51e91de386a30ec84da2c468c6af78c319cd6b9e",
+  "changed": [
+   "neat.css"
+  ],
+  "pages": [
+   "neat.html"
+  ]
+ },
+ {
+  "id": "neatcss-a2e90780",
+  "repo": "neatcss",
+  "commit": "a2e90780ed5159e633833dd57289b0f5e81e0649",
+  "date": "2020-09-24",
+  "subject": "Add link to research showing constrained width is better for retention",
+  "fixed_state": "a2e90780ed5159e633833dd57289b0f5e81e0649",
+  "changed": [
+   "neat.html"
+  ],
+  "pages": [
+   "neat.html"
+  ]
+ },
+ {
+  "id": "neatcss-d167fadb",
+  "repo": "neatcss",
+  "commit": "d167fadbad4f97bde304abdd08ae2d1ea37bea6f",
+  "date": "2020-05-19",
+  "subject": "Update pre tags to overflow auto",
+  "fixed_state": "d167fadbad4f97bde304abdd08ae2d1ea37bea6f",
+  "changed": [
+   "neat.css"
+  ],
+  "pages": [
+   "neat.html"
+  ]
+ },
+ {
+  "id": "neatcss-cbe980a3",
+  "repo": "neatcss",
+  "commit": "cbe980a36c352d917f6d34c6a5eea85932c0729d",
+  "date": "2020-05-13",
+  "subject": "Add info about the framework being responsive",
+  "fixed_state": "cbe980a36c352d917f6d34c6a5eea85932c0729d",
+  "changed": [
+   "neat.html"
+  ],
+  "pages": [
+   "neat.html"
+  ]
+ },
+ {
+  "id": "yorha-b575933c",
+  "repo": "yorha",
+  "commit": "b575933c8a8d037bbdf04aec1cd197ce9e729843",
+  "date": "2018-06-05",
+  "subject": "Fix button z-indexing.",
+  "fixed_state": "b575933c8a8d037bbdf04aec1cd197ce9e729843",
+  "changed": [
+   "dist/yorha.css",
+   "dist/yorha.min.css",
+   "src/yorha/form.styl"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "yorha-5e99b769",
+  "repo": "yorha",
+  "commit": "5e99b769d42fb867457570a9d42fb96c40083bf8",
+  "date": "2017-01-08",
+  "subject": "fix form legend padding",
+  "fixed_state": "a32e797b88779bd6768ea835b5e20d96e7533c4b",
+  "changed": [
+   "src/form.styl",
+   "src/index.pug"
+  ],
+  "pages": []
+ },
+ {
+  "id": "spcss-7988e4d7",
+  "repo": "spcss",
+  "commit": "7988e4d7386e3d6d875c491b2dc113cd3afb3245",
+  "date": "2021-09-11",
+  "subject": "Increase top margin of heading elements to 1.25em",
+  "fixed_state": "7988e4d7386e3d6d875c491b2dc113cd3afb3245",
+  "changed": [
+   "CHANGES.md",
+   "sp.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "spcss-f23895e4",
+  "repo": "spcss",
+  "commit": "f23895e4b9ab8d6f9a7e4182cd8965586dfbd8de",
+  "date": "2020-12-31",
+  "subject": "Use unitless line-height for heading elements",
+  "fixed_state": "f23895e4b9ab8d6f9a7e4182cd8965586dfbd8de",
+  "changed": [
+   "sp.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "spcss-93b12537",
+  "repo": "spcss",
+  "commit": "93b12537984b603c6f023df411eada721f1a694d",
+  "date": "2020-11-30",
+  "subject": "Add left and right padding for body",
+  "fixed_state": "93b12537984b603c6f023df411eada721f1a694d",
+  "changed": [
+   "sp.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "kraken-c4d3a5b4",
+  "repo": "kraken",
+  "commit": "c4d3a5b4a45ffe3e367ff937a33a5b7079ca54b6",
+  "date": "2020-04-30",
+  "subject": "fixed focus state on buttons",
+  "fixed_state": "c4d3a5b4a45ffe3e367ff937a33a5b7079ca54b6",
+  "changed": [
+   "dist/main.css",
+   "dist/main.min.css",
+   "package.json",
+   "src/scss/components/_buttons.scss"
+  ],
+  "pages": [
+   "components.html",
+   "getting-started.html"
+  ]
+ },
+ {
+  "id": "kraken-ed5195c3",
+  "repo": "kraken",
+  "commit": "ed5195c37b63d27239fa37152dd24f6d07186341",
+  "date": "2020-04-30",
+  "subject": "v12.0.2 Fixed focus styles on inputs",
+  "fixed_state": "ed5195c37b63d27239fa37152dd24f6d07186341",
+  "changed": [
+   "dist/main.css",
+   "dist/main.min.css",
+   "package.json",
+   "src/scss/components/_forms.scss"
+  ],
+  "pages": [
+   "components.html",
+   "getting-started.html"
+  ]
+ },
+ {
+  "id": "kraken-cb7962e5",
+  "repo": "kraken",
+  "commit": "cb7962e5536dfc6ca4431ee3a730f3117cba1724",
+  "date": "2020-04-28",
+  "subject": "fixed docs",
+  "fixed_state": "cb7962e5536dfc6ca4431ee3a730f3117cba1724",
+  "changed": [
+   "components.html",
+   "getting-started.html",
+   "index.html",
+   "src/docs/header.html"
+  ],
+  "pages": [
+   "components.html",
+   "getting-started.html"
+  ]
+ },
+ {
+  "id": "kraken-d5d3368a",
+  "repo": "kraken",
+  "commit": "d5d3368ae6bb999bc59aeaf14a4b5710aa31eb46",
+  "date": "2020-04-27",
+  "subject": "Fixed file names",
+  "fixed_state": "d5d3368ae6bb999bc59aeaf14a4b5710aa31eb46",
+  "changed": [
+   "dist/main.css",
+   "dist/main.min.css",
+   "package-lock.json",
+   "package.json",
+   "sass.js"
+  ],
+  "pages": [
+   "components.html",
+   "getting-started.html"
+  ]
+ },
+ {
+  "id": "kraken-dbe1dfbb",
+  "repo": "kraken",
+  "commit": "dbe1dfbbd3a2fdd559b187af99c60347b62502aa",
+  "date": "2019-03-25",
+  "subject": "Fixed typos",
+  "fixed_state": "dbe1dfbbd3a2fdd559b187af99c60347b62502aa",
+  "changed": [
+   "components.html",
+   "src/copy/components.html"
+  ],
+  "pages": [
+   "components.html"
+  ]
+ },
+ {
+  "id": "kraken-fe312e98",
+  "repo": "kraken",
+  "commit": "fe312e98241dcd3710c5c517734a90db68074fb1",
+  "date": "2019-01-29",
+  "subject": "Input button wrapping https://github.com/cferdinandi/kraken/issues/279",
+  "fixed_state": "fe312e98241dcd3710c5c517734a90db68074fb1",
+  "changed": [
+   "components.html",
+   "dist/main.css",
+   "dist/main.min.css",
+   "getting-started.html",
+   "index.html",
+   "package.json",
+   "src/copy/components.html",
+   "src/copy/getting-started.html",
+   "src/copy/index.html",
+   "src/sass/components/_buttons.scss",
+   "src/sass/components/_code.scss",
+   "src/sass/components/_forms.scss",
+   "src/sass/components/_overrides.scss"
+  ],
+  "pages": [
+   "components.html",
+   "getting-started.html"
+  ]
+ },
+ {
+  "id": "kraken-a58624bf",
+  "repo": "kraken",
+  "commit": "a58624bf551a35c4a211ad94d34e38f8b49170e4",
+  "date": "2019-01-24",
+  "subject": "v9.0.0 - The build tool was removed to focus on Kraken's core strength: the CSS boilerplate. - Sass mixins weren't really used, and have been removed. - `calc-em()` was replaced in the Sass files with native `em`-based sizing. - SVG sprite styles were removed in favor of inline SVGs. - CSS-only responsive tables had accessibility issues and were removed. - The `.disabled` class for buttons was removed in favor of the `[disabled]` attribute. - The `.screen-reader` class was renamed `.visually-hidden` to be consistent with industry norms. - An accessibility bugfix was added for unstyled and inline lists.",
+  "fixed_state": "a58624bf551a35c4a211ad94d34e38f8b49170e4",
+  "changed": [
+   ".github/contributing.md",
+   ".github/issue_template.md",
+   "README.md",
+   "components.html",
+   "dist/css/main.min.css",
+   "dist/img/README.md",
+   "dist/js/detects.js",
+   "dist/js/detects.min.js",
+   "dist/js/main.js",
+   "dist/js/main.min.js",
+   "dist/main.css",
+   "dist/main.min.css",
+   "dist/svg/atom.svg",
+   "dist/svg/blocks.svg"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-11b09089",
+  "repo": "kraken",
+  "commit": "11b0908989e53efd8c3a346359c0d4efc554b44d",
+  "date": "2018-11-19",
+  "subject": "Fixed Sass compile issue https://github.com/cferdinandi/kraken/issues/275",
+  "fixed_state": "11b0908989e53efd8c3a346359c0d4efc554b44d",
+  "changed": [
+   "dist/css/main.css",
+   "dist/css/main.min.css",
+   "docs/dist/css/main.css",
+   "docs/dist/css/main.min.css",
+   "package-lock.json",
+   "src/sass/components/_grid.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-dda7a7c5",
+  "repo": "kraken",
+  "commit": "dda7a7c55460145d863a7ef638525a745ea7d1e6",
+  "date": "2018-08-17",
+  "subject": "v8.0.1 Fixed flexbox grid bug",
+  "fixed_state": "dda7a7c55460145d863a7ef638525a745ea7d1e6",
+  "changed": [
+   "dist/css/main.css",
+   "dist/css/main.min.css",
+   "dist/js/detects.js",
+   "dist/js/detects.min.js",
+   "dist/js/main.js",
+   "dist/js/main.min.js",
+   "docs/dist/css/main.css",
+   "docs/dist/css/main.min.css",
+   "docs/dist/js/detects.js",
+   "docs/dist/js/detects.min.js",
+   "docs/dist/js/main.js",
+   "docs/dist/js/main.min.js",
+   "package.json",
+   "src/sass/components/_grid.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-c73bd8d2",
+  "repo": "kraken",
+  "commit": "c73bd8d2b10907a9ab626acc443db2571cc1c9ff",
+  "date": "2016-12-12",
+  "subject": "v7.5.2 Fixed smushed screen reader text",
+  "fixed_state": "c73bd8d2b10907a9ab626acc443db2571cc1c9ff",
+  "changed": [
+   "dist/css/main.css",
+   "dist/css/main.min.css",
+   "dist/js/detects.js",
+   "dist/js/detects.min.js",
+   "dist/js/main.js",
+   "dist/js/main.min.js",
+   "docs/dist/css/main.css",
+   "docs/dist/css/main.min.css",
+   "docs/dist/js/detects.js",
+   "docs/dist/js/detects.min.js",
+   "docs/dist/js/main.js",
+   "docs/dist/js/main.min.js",
+   "package.json",
+   "src/sass/components/_overrides.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-bb0e933f",
+  "repo": "kraken",
+  "commit": "bb0e933f947ec58fada60273db435f7770fb27d2",
+  "date": "2016-10-27",
+  "subject": "v7.5.1 Fixed JS linting bug in Gulp",
+  "fixed_state": "bb0e933f947ec58fada60273db435f7770fb27d2",
+  "changed": [
+   "dist/css/main.css",
+   "dist/css/main.min.css",
+   "dist/js/detects.js",
+   "dist/js/detects.min.js",
+   "dist/js/main.js",
+   "dist/js/main.min.js",
+   "docs/dist/css/main.css",
+   "docs/dist/css/main.min.css",
+   "docs/dist/js/detects.js",
+   "docs/dist/js/detects.min.js",
+   "docs/dist/js/main.js",
+   "docs/dist/js/main.min.js",
+   "gulpfile.js",
+   "package.json"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-3655e7ef",
+  "repo": "kraken",
+  "commit": "3655e7ef655ac7dfceb10759116e3977ae1e0ade",
+  "date": "2016-08-18",
+  "subject": "v7.4.1 Fixed spacing",
+  "fixed_state": "3655e7ef655ac7dfceb10759116e3977ae1e0ade",
+  "changed": [
+   "dist/css/main.css",
+   "dist/css/main.min.css",
+   "dist/js/detects.js",
+   "dist/js/detects.min.js",
+   "dist/js/main.js",
+   "dist/js/main.min.js",
+   "docs/dist/css/main.css",
+   "docs/dist/css/main.min.css",
+   "docs/dist/js/detects.js",
+   "docs/dist/js/detects.min.js",
+   "docs/dist/js/main.js",
+   "docs/dist/js/main.min.js",
+   "package.json",
+   "src/sass/components/_forms.scss"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-abfd13f9",
+  "repo": "kraken",
+  "commit": "abfd13f91d4adb0d3abe757af0f8143a290952bd",
+  "date": "2016-01-14",
+  "subject": "v7.2.0 - Added a word-break to code so that it doesn't break layouts on small screens - Added a gulp task to copy content from the static folder into dist",
+  "fixed_state": "abfd13f91d4adb0d3abe757af0f8143a290952bd",
+  "changed": [
+   "dist/README.md",
+   "dist/css/main.css",
+   "dist/css/main.min.css",
+   "dist/js/detects.js",
+   "dist/js/detects.min.js",
+   "dist/js/main.js",
+   "dist/js/main.min.js",
+   "docs/dist/README.md",
+   "docs/dist/css/main.css",
+   "docs/dist/css/main.min.css",
+   "docs/dist/js/detects.js",
+   "docs/dist/js/detects.min.js",
+   "docs/dist/js/main.js",
+   "docs/dist/js/main.min.js"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-4446b20b",
+  "repo": "kraken",
+  "commit": "4446b20b0dc13197963e92a37dc7096227fc5ab5",
+  "date": "2015-09-04",
+  "subject": "Fixed documentation",
+  "fixed_state": "59376c9178b0290b1265d396ce54b798ac5f0971",
+  "changed": [
+   "docs/index.html",
+   "src/docs/index.md"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-cca0f511",
+  "repo": "kraken",
+  "commit": "cca0f51168cbcc09134254c78c10b4093d5b165c",
+  "date": "2015-08-26",
+  "subject": "Fixed docs",
+  "fixed_state": "49de2bbe78d4e2f19e1c31caefeb978c5c9a61f7",
+  "changed": [
+   "docs/assets/css/custom.css",
+   "src/docs/assets/css/custom.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-d60a50aa",
+  "repo": "kraken",
+  "commit": "d60a50aa8091f7e7cfc498daf2f5f34c587ba4c7",
+  "date": "2015-08-25",
+  "subject": "Fixed docs",
+  "fixed_state": "49de2bbe78d4e2f19e1c31caefeb978c5c9a61f7",
+  "changed": [
+   "docs/assets/js/highlight-active-nav.js",
+   "docs/components.html",
+   "docs/index.html",
+   "docs/odds-and-ends.html",
+   "docs/setup.html",
+   "src/docs/_templates/_footer.html",
+   "src/docs/assets/js/highlight-active-nav.js"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-33c24bc4",
+  "repo": "kraken",
+  "commit": "33c24bc44e14e01228aad740096933a124faa409",
+  "date": "2015-08-25",
+  "subject": "v7.0.0 * Updated Gulp dependencies * Updated calc-em mixin * Switched from Meyer's CSS Reset to normalize.css * Adds table styling and pure CSS responsive tables * Switched to libsass for faster compiling * Added search form styling * Added .text-right-medium class * Removed generic no-margin and no-padding * Complete rebuild of the documentation",
+  "fixed_state": "33c24bc44e14e01228aad740096933a124faa409",
+  "changed": [
+   "LICENSE.md",
+   "README.md",
+   "dist/css/main.css",
+   "dist/css/main.min.css",
+   "dist/fonts/README.md",
+   "dist/js/detects.js",
+   "dist/js/detects.min.js",
+   "dist/js/main.js",
+   "dist/js/main.min.js",
+   "dist/svg/atom.svg",
+   "dist/svg/blocks.svg",
+   "dist/svg/icons.svg",
+   "dist/svg/logo.svg",
+   "dist/svg/rocket.svg"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-e7e1fda7",
+  "repo": "kraken",
+  "commit": "e7e1fda7851be5be6bd229de65bc8fba6a816356",
+  "date": "2015-03-06",
+  "subject": "Fixed SVG detection with Opera Mini",
+  "fixed_state": "e7e1fda7851be5be6bd229de65bc8fba6a816356",
+  "changed": [
+   "README.md",
+   "dist/css/main.css",
+   "dist/css/main.min.css",
+   "dist/js/detects.js",
+   "dist/js/detects.min.js",
+   "dist/js/main.js",
+   "dist/js/main.min.js",
+   "docs/dist/css/main.css",
+   "docs/dist/css/main.min.css",
+   "docs/dist/js/detects.js",
+   "docs/dist/js/detects.min.js",
+   "docs/dist/js/main.js",
+   "docs/dist/js/main.min.js",
+   "package.json"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-e85f5db4",
+  "repo": "kraken",
+  "commit": "e85f5db4554a441d4e6d6701f796a0f0d1760c33",
+  "date": "2014-11-20",
+  "subject": "Fixed watch task",
+  "fixed_state": "e85f5db4554a441d4e6d6701f796a0f0d1760c33",
+  "changed": [
+   "README.md",
+   "dist/css/main.css",
+   "dist/css/main.min.css",
+   "dist/js/detects.js",
+   "dist/js/detects.min.js",
+   "dist/js/main.js",
+   "dist/js/main.min.js",
+   "docs/dist/css/main.css",
+   "docs/dist/css/main.min.css",
+   "docs/dist/js/detects.js",
+   "docs/dist/js/detects.min.js",
+   "docs/dist/js/main.js",
+   "docs/dist/js/main.min.js",
+   "docs/generating-documentation.html"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-f825c240",
+  "repo": "kraken",
+  "commit": "f825c240b5e6ff6218faf0bfb8719189a3e34f6d",
+  "date": "2014-10-24",
+  "subject": "Fixed SVG detection bug",
+  "fixed_state": "f825c240b5e6ff6218faf0bfb8719189a3e34f6d",
+  "changed": [
+   "README.md",
+   "dist/css/main.css",
+   "dist/css/main.min.css",
+   "dist/js/detects.js",
+   "dist/js/detects.min.js",
+   "dist/js/main.js",
+   "dist/js/main.min.js",
+   "docs/dist/css/main.css",
+   "docs/dist/css/main.min.css",
+   "docs/dist/js/detects.js",
+   "docs/dist/js/detects.min.js",
+   "docs/dist/js/main.js",
+   "docs/dist/js/main.min.js",
+   "package.json"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-952e0133",
+  "repo": "kraken",
+  "commit": "952e0133573a42bb22f95d10e305aa76b6254eaf",
+  "date": "2014-10-08",
+  "subject": "Fixed nav hightlighting JS in docs",
+  "fixed_state": "4b8ee943ef1683b8eeb9adc6b56df86d68af3755",
+  "changed": [
+   "docs/add-ons.html",
+   "docs/browsers.html",
+   "docs/buttons.html",
+   "docs/download.html",
+   "docs/file-structure.html",
+   "docs/forms.html",
+   "docs/generating-documentation.html",
+   "docs/grid.html",
+   "docs/html-template.html",
+   "docs/icons.html",
+   "docs/index.html",
+   "docs/overrides.html",
+   "docs/support.html",
+   "docs/the-kraken-approach.html"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-04ac76a5",
+  "repo": "kraken",
+  "commit": "04ac76a5680bfab148de217a87520525038cd40b",
+  "date": "2014-10-08",
+  "subject": "Fixed nav highlighting JS in docs",
+  "fixed_state": "4b8ee943ef1683b8eeb9adc6b56df86d68af3755",
+  "changed": [
+   "docs/add-ons.html",
+   "docs/browsers.html",
+   "docs/buttons.html",
+   "docs/download.html",
+   "docs/file-structure.html",
+   "docs/forms.html",
+   "docs/generating-documentation.html",
+   "docs/grid.html",
+   "docs/html-template.html",
+   "docs/icons.html",
+   "docs/index.html",
+   "docs/overrides.html",
+   "docs/support.html",
+   "docs/the-kraken-approach.html"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-6f1593ac",
+  "repo": "kraken",
+  "commit": "6f1593ac677ddb48572bb4612d05af66e9c60430",
+  "date": "2014-10-08",
+  "subject": "Fixed sticky footer formatting in docs",
+  "fixed_state": "4b8ee943ef1683b8eeb9adc6b56df86d68af3755",
+  "changed": [
+   "docs/add-ons.html",
+   "docs/browsers.html",
+   "docs/buttons.html",
+   "docs/download.html",
+   "docs/file-structure.html",
+   "docs/forms.html",
+   "docs/generating-documentation.html",
+   "docs/grid.html",
+   "docs/html-template.html",
+   "docs/icons.html",
+   "docs/index.html",
+   "docs/overrides.html",
+   "docs/support.html",
+   "docs/the-kraken-approach.html"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-3cc91b3a",
+  "repo": "kraken",
+  "commit": "3cc91b3ab9d92b113426c2a99fd07a8b62e6649f",
+  "date": "2014-10-08",
+  "subject": "Fixed typo in docs",
+  "fixed_state": "4b8ee943ef1683b8eeb9adc6b56df86d68af3755",
+  "changed": [
+   "docs/typography.html",
+   "docs/working-with-the-source-files.html",
+   "src/docs/working-with-the-source-files.html"
+  ],
+  "pages": []
+ },
+ {
+  "id": "kraken-e37d69ce",
+  "repo": "kraken",
+  "commit": "e37d69cedc8e3e0fba3ce5b991d470dfa2634d89",
+  "date": "2014-09-29",
+  "subject": "Fixed JS concatenation bug",
+  "fixed_state": "e37d69cedc8e3e0fba3ce5b991d470dfa2634d89",
+  "changed": [
+   "README.md",
+   "dist/css/kraken.css",
+   "dist/css/kraken.css.map",
+   "dist/css/kraken.css.min.map",
+   "dist/css/kraken.min.css",
+   "dist/js/detects.js",
+   "dist/js/detects.min.js",
+   "dist/js/html5.js",
+   "dist/js/html5.min.js",
+   "dist/js/main.js",
+   "dist/js/main.min.js",
+   "gulpfile.js",
+   "package.json"
+  ],
+  "pages": [
+   "index.html",
+   "template.html"
+  ]
+ },
+ {
+  "id": "kraken-827790d7",
+  "repo": "kraken",
+  "commit": "827790d77930a68037926c091f194509264a9780",
+  "date": "2013-11-29",
+  "subject": "Fixed typo in grid",
+  "fixed_state": "753fc15951d479dd48a7b883bf670e357752df27",
+  "changed": [
+   "Build/css/kraken.css",
+   "css/components/_grid.scss"
+  ],
+  "pages": [
+   "index.html",
+   "template.html"
+  ]
+ },
+ {
+  "id": "kraken-087c5e1c",
+  "repo": "kraken",
+  "commit": "087c5e1c7e8944cf507315eaccd35e151b8e3865",
+  "date": "2013-11-28",
+  "subject": "Fixed font-face mixin",
+  "fixed_state": "753fc15951d479dd48a7b883bf670e357752df27",
+  "changed": [
+   "css/components/_icons.scss"
+  ],
+  "pages": [
+   "index.html",
+   "template.html"
+  ]
+ },
+ {
+  "id": "kraken-9599d8c2",
+  "repo": "kraken",
+  "commit": "9599d8c2646b1fd2ac27d81753455b13b1f6a37a",
+  "date": "2013-11-28",
+  "subject": "Fixed font-face mixin",
+  "fixed_state": "753fc15951d479dd48a7b883bf670e357752df27",
+  "changed": [
+   "css/_mixins.scss"
+  ],
+  "pages": [
+   "index.html",
+   "template.html"
+  ]
+ },
+ {
+  "id": "kraken-4eb0b083",
+  "repo": "kraken",
+  "commit": "4eb0b08363ae3274231146ec69eb375e16a62417",
+  "date": "2013-11-25",
+  "subject": "Fixed a typo",
+  "fixed_state": "4eb0b08363ae3274231146ec69eb375e16a62417",
+  "changed": [
+   "Build/index.html",
+   "index.html"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "kraken-20746c67",
+  "repo": "kraken",
+  "commit": "20746c677a595fd32801ce46843a7ea834bb3784",
+  "date": "2013-10-21",
+  "subject": "Fixed `vertical-align` issue in form styling",
+  "fixed_state": "753fc15951d479dd48a7b883bf670e357752df27",
+  "changed": [
+   "README.md",
+   "kraken.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "kraken-c089e5e8",
+  "repo": "kraken",
+  "commit": "c089e5e88a834f41552eecfc8da6e6607928a4a9",
+  "date": "2013-10-18",
+  "subject": "Fixed `input-inline`",
+  "fixed_state": "753fc15951d479dd48a7b883bf670e357752df27",
+  "changed": [
+   "README.md",
+   "kraken.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "kraken-d0f6c26b",
+  "repo": "kraken",
+  "commit": "d0f6c26be90815974e8c635dd402e5376446d44e",
+  "date": "2013-03-18",
+  "subject": "Fixed padding on .btn-large",
+  "fixed_state": "753fc15951d479dd48a7b883bf670e357752df27",
+  "changed": [
+   "kraken.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "kraken-19542ada",
+  "repo": "kraken",
+  "commit": "19542ada1460fc4dd74d89499293a4221e6d28e8",
+  "date": "2013-02-07",
+  "subject": "Minor min/max-width updates",
+  "fixed_state": "753fc15951d479dd48a7b883bf670e357752df27",
+  "changed": [
+   "kraken.css"
+  ],
+  "pages": [
+   "example.html",
+   "index.html"
+  ]
+ },
+ {
+  "id": "primitive-d7a8dd74",
+  "repo": "primitive",
+  "commit": "d7a8dd749daa34e2f4b6453bd6b97e742f617c56",
+  "date": "2019-06-08",
+  "subject": "fixed small typo in first sentence under Sass section on homepage",
+  "fixed_state": "d7a8dd749daa34e2f4b6453bd6b97e742f617c56",
+  "changed": [
+   "docs/index.html"
+  ],
+  "pages": [
+   "docs/index.html"
+  ]
+ },
+ {
+  "id": "primitive-e9e81f6e",
+  "repo": "primitive",
+  "commit": "e9e81f6edb7b6e5dc22dc272b17a135b78aee069",
+  "date": "2017-03-28",
+  "subject": "Simplify and modify margins, padding, and layout",
+  "fixed_state": "e9e81f6edb7b6e5dc22dc272b17a135b78aee069",
+  "changed": [
+   "dist/css/main.css.map",
+   "dist/css/main.min.css",
+   "dist/robots.txt",
+   "dist/test.html",
+   "example/branding.html",
+   "example/css/eighties.css",
+   "example/css/example.css",
+   "example/css/prism.css",
+   "example/favicon.png",
+   "example/js/example.js",
+   "example/js/prism.js",
+   "example/templates/apple.css",
+   "example/templates/github.css",
+   "example/templates/slack.css"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "primitive-7fd57a18",
+  "repo": "primitive",
+  "commit": "7fd57a1842372cdb1351fd1915e08c0687f4d8b7",
+  "date": "2016-11-12",
+  "subject": "Add full width container",
+  "fixed_state": "7fd57a1842372cdb1351fd1915e08c0687f4d8b7",
+  "changed": [
+   "dist/css/main.css",
+   "index.html",
+   "src/scss/base/_variables.scss",
+   "src/scss/components/_scaffolding.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "primitive-2a37336c",
+  "repo": "primitive",
+  "commit": "2a37336c33968d4dcc32156d46b865f1cd5e65bb",
+  "date": "2016-10-18",
+  "subject": "Remove input height",
+  "fixed_state": "2a37336c33968d4dcc32156d46b865f1cd5e65bb",
+  "changed": [
+   "dist/css/main.css",
+   "dist/css/main.css.map",
+   "src/scss/components/_forms.scss"
+  ],
+  "pages": [
+   "dist/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "id": "primitive-466e171d",
+  "repo": "primitive",
+  "commit": "466e171d7af055906e924490b034229266972e14",
+  "date": "2016-06-15",
+  "subject": "Padding",
+  "fixed_state": "336998a73fa97a7715a0ed9adfa2f56fce857079",
+  "changed": [
+   "src/scss/base/_variables.scss",
+   "src/scss/components/_helpers.scss",
+   "src/scss/components/_scaffolding.scss"
+  ],
+  "pages": [
+   "dist/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "id": "primitive-af2e11cd",
+  "repo": "primitive",
+  "commit": "af2e11cd64dd15926d6f368a323df30b34a9c790",
+  "date": "2016-06-10",
+  "subject": "Negative margins on rows",
+  "fixed_state": "af2e11cd64dd15926d6f368a323df30b34a9c790",
+  "changed": [
+   "dist/css/main.css",
+   "dist/css/main.css.map",
+   "example/example.css",
+   "index.html",
+   "src/scss/base/_variables.scss",
+   "src/scss/components/_grid.scss",
+   "src/scss/components/_helpers.scss",
+   "src/scss/components/_scaffolding.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "primitive-fceba118",
+  "repo": "primitive",
+  "commit": "fceba118407d169fce8b2566b48673adda02af0e",
+  "date": "2016-01-25",
+  "subject": "Padding",
+  "fixed_state": "fceba118407d169fce8b2566b48673adda02af0e",
+  "changed": [
+   "dist/css/main.css",
+   "src/sass/components/_forms.scss",
+   "src/sass/components/_grid.scss"
+  ],
+  "pages": [
+   "dist/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "id": "primitive-b971323c",
+  "repo": "primitive",
+  "commit": "b971323c5b4baf30f472e7a73dbba31e699855bb",
+  "date": "2016-01-21",
+  "subject": "Fix padding issue",
+  "fixed_state": "b971323c5b4baf30f472e7a73dbba31e699855bb",
+  "changed": [
+   "dist/css/main.css",
+   "dist/css/main.css.map",
+   "src/sass/base/_variables.scss",
+   "src/sass/components/_buttons.scss",
+   "src/sass/components/_scaffolding.scss"
+  ],
+  "pages": [
+   "dist/index.html",
+   "index.html"
+  ]
+ },
+ {
+  "id": "primitive-ad2888ed",
+  "repo": "primitive",
+  "commit": "ad2888edfabfc9b24f162ebdf56526ea710d91cd",
+  "date": "2015-12-30",
+  "subject": "Margins",
+  "fixed_state": "ad2888edfabfc9b24f162ebdf56526ea710d91cd",
+  "changed": [
+   "dist/css/main.css",
+   "dist/css/main.css.map",
+   "dist/css/prism.css",
+   "dist/js/prism.js",
+   "index.html",
+   "src/sass/base/_mixins.scss",
+   "src/sass/base/_variables.scss",
+   "src/sass/components/_buttons.scss",
+   "src/sass/components/_grid.scss",
+   "src/sass/components/_scaffolding.scss"
+  ],
+  "pages": [
+   "index.html"
+  ]
+ },
+ {
+  "id": "wing-dbce9efb",
+  "repo": "wing",
+  "commit": "dbce9efb9c1611500de6ea0872f12fe0c8423f8e",
+  "date": "2019-03-09",
+  "subject": "remove grid column margins (fixes #82)",
+  "fixed_state": "dbce9efb9c1611500de6ea0872f12fe0c8423f8e",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/grid.styl"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-4d130cda",
+  "repo": "wing",
+  "commit": "4d130cda36a7e3b46f6e7341bc51f608340f7971",
+  "date": "2018-05-28",
+  "subject": "fix grid spacing",
+  "fixed_state": "4d130cda36a7e3b46f6e7341bc51f608340f7971",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/grid.styl"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-b447e657",
+  "repo": "wing",
+  "commit": "b447e657c93d3e96534e3f14d8946d6cafa58cc7",
+  "date": "2018-05-07",
+  "subject": "update typography and spacing",
+  "fixed_state": "b447e657c93d3e96534e3f14d8946d6cafa58cc7",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/box.styl",
+   "src/button.styl",
+   "src/card.styl",
+   "src/code.styl",
+   "src/config.styl",
+   "src/form.styl",
+   "src/grid.styl",
+   "src/image.styl",
+   "src/list.styl",
+   "src/nav.styl",
+   "src/typography.styl"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-9fd27d73",
+  "repo": "wing",
+  "commit": "9fd27d73b39e1e0eb981994ed4e8c05e169ef4c0",
+  "date": "2018-02-14",
+  "subject": "fix: add padding to all columns",
+  "fixed_state": "9fd27d73b39e1e0eb981994ed4e8c05e169ef4c0",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/grid.styl"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-b72b976c",
+  "repo": "wing",
+  "commit": "b72b976c215438ccf32721c89016b40a1bf6865a",
+  "date": "2017-10-16",
+  "subject": "add position utilities",
+  "fixed_state": "b72b976c215438ccf32721c89016b40a1bf6865a",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/util.styl"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-48ee577b",
+  "repo": "wing",
+  "commit": "48ee577b03e7ed198e75eddd1c15da2f2124932f",
+  "date": "2017-10-16",
+  "subject": "add hidden utility",
+  "fixed_state": "b72b976c215438ccf32721c89016b40a1bf6865a",
+  "changed": [
+   "src/util.styl"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-a6b7aa05",
+  "repo": "wing",
+  "commit": "a6b7aa054330d9728274d036669c706e978dac4c",
+  "date": "2017-10-15",
+  "subject": "breaking: Rewrite Wing (fixes #58, fixes #66) - use Stylus - new typography scale - new grid scale (#66) - allow for nested grids (#58) - add color utilities   - .color-black   - .color-white   - .color-gray   - .color-blue   - .color-red   - .color-yellow   - .color-green - remove .fixed utility - change colors and styles for code - change colors and styles for buttons and forms - make a simple flat card   - .card-img   - .card-content - simpler navigation   - .nav for a wrapper   - .nav-item for nav links   - should use utilities (.left, .right, .horizontal-align) as needed",
+  "fixed_state": "a6b7aa054330d9728274d036669c706e978dac4c",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "gulpfile.js",
+   "package.json",
+   "src/base.css",
+   "src/base.styl",
+   "src/button.styl",
+   "src/buttons.css",
+   "src/card.styl",
+   "src/cards.css",
+   "src/code.styl",
+   "src/config.styl",
+   "src/form.styl",
+   "src/forms.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-9535c264",
+  "repo": "wing",
+  "commit": "9535c264d7bd9892b0ef057fd342efb26ad676e0",
+  "date": "2017-08-13",
+  "subject": "better minifier and add spacing to images",
+  "fixed_state": "9535c264d7bd9892b0ef057fd342efb26ad676e0",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "gulpfile.js",
+   "package.json",
+   "src/images.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-26b42f9c",
+  "repo": "wing",
+  "commit": "26b42f9c92d150862c873fda216dffd0aaa1ed24",
+  "date": "2017-08-13",
+  "subject": "even spacing on most elements",
+  "fixed_state": "26b42f9c92d150862c873fda216dffd0aaa1ed24",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/buttons.css",
+   "src/lists.css",
+   "src/misc.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-970cfe42",
+  "repo": "wing",
+  "commit": "970cfe42827802724a11b5bf7d0a48aab8ebd134",
+  "date": "2017-08-13",
+  "subject": "even spacing and clean up",
+  "fixed_state": "970cfe42827802724a11b5bf7d0a48aab8ebd134",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/base.css",
+   "src/buttons.css",
+   "src/grid.css",
+   "src/links.css",
+   "src/lists.css",
+   "src/misc.css",
+   "src/typography.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-4ffa582a",
+  "repo": "wing",
+  "commit": "4ffa582a6dbf5db4380498043526489853d7c307",
+  "date": "2017-07-29",
+  "subject": "setup fixed width grid",
+  "fixed_state": "4ffa582a6dbf5db4380498043526489853d7c307",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-19f6a1af",
+  "repo": "wing",
+  "commit": "19f6a1afe6d7a42f4fafef2b49442de59ec10869",
+  "date": "2017-07-29",
+  "subject": "add padding to nav",
+  "fixed_state": "19f6a1afe6d7a42f4fafef2b49442de59ec10869",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/nav.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-7d0def50",
+  "repo": "wing",
+  "commit": "7d0def50723e23b3daeda1a5f0dd24ebeed82a8a",
+  "date": "2017-07-29",
+  "subject": "remove overflow hidden (fixes #56, closes #57)",
+  "fixed_state": "19f6a1afe6d7a42f4fafef2b49442de59ec10869",
+  "changed": [
+   ".gitignore",
+   "index.html",
+   "src/cards.css",
+   "test.js"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-08e78f2c",
+  "repo": "wing",
+  "commit": "08e78f2c224cbd5cb9d807629c999a1c0633525b",
+  "date": "2017-04-20",
+  "subject": "update padding for textarea and unify background between select and input",
+  "fixed_state": "08e78f2c224cbd5cb9d807629c999a1c0633525b",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/forms.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-3df144e7",
+  "repo": "wing",
+  "commit": "3df144e78ff18d1619866614259fe7a8ac2ea7c9",
+  "date": "2017-04-20",
+  "subject": "add reset margin for body (fixes #53)",
+  "fixed_state": "3df144e78ff18d1619866614259fe7a8ac2ea7c9",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/base.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-9c570627",
+  "repo": "wing",
+  "commit": "9c570627ad205f6489fad268c212023d12d4f71e",
+  "date": "2017-03-19",
+  "subject": "Add additional text alignment utility classes",
+  "fixed_state": "643916f88e259b21b516f1df90938d3cf4ad4d6b",
+  "changed": [
+   "src/util.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-b76d9433",
+  "repo": "wing",
+  "commit": "b76d94336602e7438ccc6a42bc5c0a367674d23c",
+  "date": "2017-03-19",
+  "subject": "reset padding/margin on lists, and allow for nested lists",
+  "fixed_state": "b76d94336602e7438ccc6a42bc5c0a367674d23c",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/lists.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-d8bb5277",
+  "repo": "wing",
+  "commit": "d8bb52772fd9ef167ae752000d9782950d0c447e",
+  "date": "2017-03-19",
+  "subject": "add .full-width utility class",
+  "fixed_state": "d8bb52772fd9ef167ae752000d9782950d0c447e",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "gulpfile.js",
+   "src/util.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-713d0b69",
+  "repo": "wing",
+  "commit": "713d0b6931c011f0b7631b242627b70191e4808c",
+  "date": "2017-03-18",
+  "subject": "normalize padding across all inputs",
+  "fixed_state": "713d0b6931c011f0b7631b242627b70191e4808c",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/forms.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-08c8537d",
+  "repo": "wing",
+  "commit": "08c8537d245441f2698192d24426d218ef42b7a9",
+  "date": "2017-03-18",
+  "subject": "uniform padding on textarea/input",
+  "fixed_state": "08c8537d245441f2698192d24426d218ef42b7a9",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/forms.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-b6a907d7",
+  "repo": "wing",
+  "commit": "b6a907d7b40bd28e89ea1f1c0e94ec9757e0cff2",
+  "date": "2017-03-18",
+  "subject": "fix margin problems and textarea outline selector (fixes #47 and #48)",
+  "fixed_state": "b6a907d7b40bd28e89ea1f1c0e94ec9757e0cff2",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/forms.css",
+   "src/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-1fca41a7",
+  "repo": "wing",
+  "commit": "1fca41a7c940cbd869f17ffcbe8611c9426ae143",
+  "date": "2017-03-18",
+  "subject": "keep margin on mobile for rows",
+  "fixed_state": "1fca41a7c940cbd869f17ffcbe8611c9426ae143",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-f0d81029",
+  "repo": "wing",
+  "commit": "f0d81029a363fe8c1e3b147fc15bfc1aec6de3fc",
+  "date": "2017-03-14",
+  "subject": "Add nav plugin with alignment options",
+  "fixed_state": null,
+  "changed": [
+   "src/nav.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-58a1c369",
+  "repo": "wing",
+  "commit": "58a1c3695eb7adf0b846a09f2d87fd1377981d5b",
+  "date": "2017-03-14",
+  "subject": "Add nav plugin with alignment options",
+  "fixed_state": "f3175e3affc05900984ec74d517ac8f817ddf871",
+  "changed": [
+   "src/nav.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-7eaa9a45",
+  "repo": "wing",
+  "commit": "7eaa9a4591629a76c25a1601b06b88b4137486a6",
+  "date": "2016-12-28",
+  "subject": "Add mobile helper classes and bugfix responsive tables",
+  "fixed_state": "7eaa9a4591629a76c25a1601b06b88b4137486a6",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/tables.css",
+   "src/util.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-d991d6b4",
+  "repo": "wing",
+  "commit": "d991d6b437961f53b755346fd998a980f88973a7",
+  "date": "2016-12-28",
+  "subject": "Add mobile helper classes and bugfix responsive tables",
+  "fixed_state": "d991d6b437961f53b755346fd998a980f88973a7",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/tables.css",
+   "src/util.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-a20dda5f",
+  "repo": "wing",
+  "commit": "a20dda5fe85114a01837f16d6b94821dfcd3788d",
+  "date": "2016-12-28",
+  "subject": "Add table styling (base, striped, hover & responsive)",
+  "fixed_state": "a20dda5fe85114a01837f16d6b94821dfcd3788d",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "gulpfile.js",
+   "src/tables.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-872b8631",
+  "repo": "wing",
+  "commit": "872b8631d3860557c56a181fce48c20defa1dc64",
+  "date": "2016-12-28",
+  "subject": "Add table styling (base, striped, hover & responsive)",
+  "fixed_state": "872b8631d3860557c56a181fce48c20defa1dc64",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "gulpfile.js",
+   "src/tables.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-c235e2d3",
+  "repo": "wing",
+  "commit": "c235e2d33a8d8a78e2a5ca6bc05f35a5d2b0e243",
+  "date": "2016-10-12",
+  "subject": "all types responsive",
+  "fixed_state": null,
+  "changed": [
+   "src/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-57a5e6e3",
+  "repo": "wing",
+  "commit": "57a5e6e372a98861f4e8ab421b91eb4ee18eb4a9",
+  "date": "2016-10-12",
+  "subject": "all types responsive",
+  "fixed_state": "e5658fa759932febc2c4c74abbaca8eb8a2b397c",
+  "changed": [
+   "src/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-2a52b0ae",
+  "repo": "wing",
+  "commit": "2a52b0ae5c3d885d2bb0d4128e8653f2e0f5641b",
+  "date": "2016-10-12",
+  "subject": "flex not width",
+  "fixed_state": "2a52b0ae5c3d885d2bb0d4128e8653f2e0f5641b",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-ae6690e1",
+  "repo": "wing",
+  "commit": "ae6690e1f5253a083905454409272da962e39b0f",
+  "date": "2016-10-12",
+  "subject": "flex not width",
+  "fixed_state": "ae6690e1f5253a083905454409272da962e39b0f",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-1f32f59e",
+  "repo": "wing",
+  "commit": "1f32f59e5e238260ffc9344176326398af49e708",
+  "date": "2016-10-12",
+  "subject": "width",
+  "fixed_state": "1f32f59e5e238260ffc9344176326398af49e708",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-dc964c4f",
+  "repo": "wing",
+  "commit": "dc964c4fc974bbaaf4f832372519beab72f226a5",
+  "date": "2016-10-12",
+  "subject": "width",
+  "fixed_state": "dc964c4fc974bbaaf4f832372519beab72f226a5",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-22e57050",
+  "repo": "wing",
+  "commit": "22e570509a12f018be54ca2dfd6d1c2bb39b9dc9",
+  "date": "2016-10-12",
+  "subject": "add margin",
+  "fixed_state": "22e570509a12f018be54ca2dfd6d1c2bb39b9dc9",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-2b08ccbc",
+  "repo": "wing",
+  "commit": "2b08ccbc847294c4513db64396cf298e2adb50f2",
+  "date": "2016-10-12",
+  "subject": "add margin",
+  "fixed_state": "2b08ccbc847294c4513db64396cf298e2adb50f2",
+  "changed": [
+   "dist/wing.css",
+   "dist/wing.min.css",
+   "src/grid.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-91af72cf",
+  "repo": "wing",
+  "commit": "91af72cf9fb51998c24536a39596e198b39adc7b",
+  "date": "2016-10-12",
+  "subject": "no whitespace no wrap",
+  "fixed_state": null,
+  "changed": [
+   "src/buttons.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-b960b3dd",
+  "repo": "wing",
+  "commit": "b960b3ddf78daa78dbdf6bb88a9153f9281729b2",
+  "date": "2016-10-12",
+  "subject": "no whitespace no wrap",
+  "fixed_state": "d2478369e27c4c2be69b1d0d5836a00d2bc47a33",
+  "changed": [
+   "src/buttons.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-1a84efa9",
+  "repo": "wing",
+  "commit": "1a84efa9096a2d832e6ec7353a86076390ad7399",
+  "date": "2016-10-10",
+  "subject": "width",
+  "fixed_state": null,
+  "changed": [
+   "src/util.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "wing-90287440",
+  "repo": "wing",
+  "commit": "902874408a1fc62ac138388831b9a485fcaf85d6",
+  "date": "2016-10-10",
+  "subject": "width",
+  "fixed_state": "cae4a96ee7b7f8a68d32826c0eb5bc253353f2eb",
+  "changed": [
+   "src/util.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "terminal-css-2923b48f",
+  "repo": "terminal-css",
+  "commit": "2923b48febc3786accf071bc897fc80071136092",
+  "date": "2023-12-08",
+  "subject": "make aside menu sticky",
+  "fixed_state": null,
+  "changed": [
+   "templates/partials/aside.html",
+   "templates/partials/head.html"
+  ],
+  "pages": []
+ },
+ {
+  "id": "terminal-css-308e015f",
+  "repo": "terminal-css",
+  "commit": "308e015f3d6f44bc819ebbd1a541657fbe770a80",
+  "date": "2023-11-25",
+  "subject": "fix image width to use max-width instead of width as suggested by @diomed",
+  "fixed_state": null,
+  "changed": [
+   "lib/terminal.css"
+  ],
+  "pages": []
+ },
+ {
+  "id": "terminal-css-2d923d57",
+  "repo": "terminal-css",
+  "commit": "2d923d576f017bcaa4c131ca2bd783fc70ee9c9c",
+  "date": "2019-02-03",
+  "subject": "fix navigation margin",
+  "fixed_state": null,
+  "changed": [
+   "lib/terminal.css"
+  ],
+  "pages": []
+ }
+]
