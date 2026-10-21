@@ -2072,7 +2072,12 @@ export class WebSession {
     try {
       return await this.page.evaluate(() => {
         const s = document.scrollingElement || document.documentElement;
-        return s.scrollHeight > s.clientHeight + 1 && s.scrollTop + s.clientHeight >= s.scrollHeight - 2;
+        // The screen is the visual viewport: on a phone page wider than the screen the
+        // layout viewport is taller than the screen and stops scrolling first, while the
+        // screen keeps panning inside it down to the end.
+        const vv = window.visualViewport;
+        const bottom = vv ? vv.pageTop + vv.height : s.scrollTop + s.clientHeight;
+        return s.scrollHeight > s.clientHeight + 1 && bottom >= s.scrollHeight - 2;
       });
     } catch {
       return false;

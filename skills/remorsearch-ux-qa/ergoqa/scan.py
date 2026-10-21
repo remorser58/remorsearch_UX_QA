@@ -312,21 +312,26 @@ def run_scan(url: str, out: Path, devices: tuple[str, ...] = DEFAULT_DEVICES, ti
             doc = json.loads(snap_path.read_text(encoding="utf-8"))
             sc = (doc.get("surface") or {}).get("scroll") or {}
             if doc.get("device", {}).get("probe") != "adaptation" and isinstance(sc.get("y"), (int, float)):
-                scrolls.append((sc["y"], sc.get("height")))
+                # The screen shows the visual viewport, which pans inside the layout
+                # viewport when a phone page is wider than the screen.
+                visual = (doc.get("surface") or {}).get("visual") or {}
+                offset = visual.get("offset_y") if isinstance(visual.get("offset_y"), (int, float)) else 0
+                tall = visual.get("height") if isinstance(visual.get("height"), (int, float)) and visual.get("height") > 0 else None
+                scrolls.append((sc["y"] + offset, sc.get("height"), tall))
                 css = ((doc.get("screenshot") or {}).get("css") or {}).get("path")
                 if css and (run_dir / css).is_file():
                     shots[device_id].append(run_dir / css)
         if scrolls:
-            height = max((h for _, h in scrolls if isinstance(h, (int, float))), default=None)
+            height = max((h for _, h, _ in scrolls if isinstance(h, (int, float))), default=None)
             screen = get_device(device_id).viewport_css[1]
-            seen, gaps, edge = sorted({y for y, _ in scrolls}), [], 0.0
-            for y in seen:
+            seen, gaps, edge = sorted({(y, tall or screen) for y, _, tall in scrolls}), [], 0.0
+            for y, tall in seen:
                 if y > edge + 1:
                     gaps.append([round(edge), round(y)])
-                edge = max(edge, y + screen)
+                edge = max(edge, y + tall)
             if isinstance(height, (int, float)) and height > edge + 1:
                 gaps.append([round(edge), round(height)])
-            entry.update({"screens": len(scrolls), "page_height_css": height, "deepest_scroll_css": max(seen),
+            entry.update({"screens": len(scrolls), "page_height_css": height, "deepest_scroll_css": round(max(y for y, _ in seen), 2),
                           "uncaptured_css": gaps})
         coverage.append(entry)
     findings = swarm.aggregate(analyses, profiles) if analyses else []
