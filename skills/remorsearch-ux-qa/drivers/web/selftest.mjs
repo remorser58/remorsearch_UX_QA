@@ -184,6 +184,11 @@ function startFixtureServer() {
       readFixture(pathname, res, req);
       return;
     }
+    if (req.method === 'GET' && pathname === '/slow-missing-font.woff2') {
+      // A font that is still loading when the page is measured: answered late, and missing.
+      setTimeout(() => { res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('not found'); }, 4000);
+      return;
+    }
     const file = FIXTURE_FILES[pathname];
     if (req.method === 'GET' && file) {
       res.writeHead(200, { 'Content-Type': file.endsWith('.css') ? 'text/css; charset=utf-8' : 'text/html; charset=utf-8', 'Cache-Control': 'no-store' });
@@ -3046,8 +3051,10 @@ async function typographyTest(base, tmp) {
       .every((selector) => protectedCapture.elements.find((e) => e.selector === selector)?.font_metrics?.status === 'unavailable')
       && !JSON.stringify(protectedCapture).includes(secret));
     // A face of the element's family that has not loaded (FontFaceSet.check() then answers
-    // false); a family whose faces have all loaded skips that call.
-    await page.evaluate(() => { document.fonts.add(new FontFace('Arial', 'url(missing-font.woff2)')); });
+    // false); a family whose faces have all loaded skips that call. The server answers the
+    // font late, so the face is still loading when the page is measured; a missing font
+    // answered at once can already have failed by then and no longer counts as loading.
+    await page.evaluate(() => { document.fonts.add(new FontFace('Arial', 'url(slow-missing-font.woff2)')); });
     const unloaded = await capture();
     writeJson(path.join(tmp, 'typography-font-unavailable.json'), unloaded);
     check('typography: unavailable font produces no body metric', unloaded.elements.find((e) => e.selector === '#arial')?.font_metrics?.limitations.includes('font_not_loaded'));
