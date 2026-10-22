@@ -1,0 +1,38 @@
+[
+  {
+    "page": "p02",
+    "selector": ".tile_count .count_top, .tile_count .count_bottom",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360x780 the six dashboard stat cells are 120px wide with a 92px text column. 'Total Collections' needs 101px and 'Total Connections' 109px, so both render truncated ('Total Collect...', 'Total Conne...'); the '34% From last Week' line needs 123px and is clipped to '34% From last ...'. The same cells fit at 1440x900.",
+    "fix": "Below 768px, let the stat label and delta line wrap (remove white-space: nowrap / overflow: hidden on .tile_stats_count .right span) or use two stat columns per row so each label has at least 140px."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The card heading 'Top Campaign Performance' has 191px available but needs 213px at 17px, so it is cut to 'Top Campaign Perfor...' by the nowrap/ellipsis rule. At 1440x900 the same heading is fully visible.",
+    "fix": "Allow the heading to wrap on narrow screens or give it the full card width by moving the collapse/tool/close controls onto their own row."
+  },
+  {
+    "page": "p03",
+    "selector": ".profile_view .list-unstyled li:nth-child(2)",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "In each contact card the second 'Address:' line occupies y=409-428 while the grey rating/action bar (.bottom) starts at y=418, so the bottom 10px of the line is covered. The same card at 1440x900 ends the line at y=364 with the bar at y=376, so only the 360px layout clips it.",
+    "fix": "Remove the -20px top margin on .well.profile_view .bottom at narrow widths (or let the left column grow) so the bar follows the text instead of overlapping it."
+  },
+  {
+    "page": "p03",
+    "selector": ".pagination.pagination-split > li:nth-child(6)",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The '...' item is a bare li (11x19px at y=193 on phone, y=187 on laptop) while the letter links are 33px tall at y=175 / y=168. Its centre sits 11px (phone) and 12px (laptop) below the letter row centre, so the ellipsis hangs near the bottom of the alphabet strip instead of aligning with A-E and W-Z.",
+    "fix": "Give the ellipsis item the same 33px height and line-height as the pagination anchors (e.g. .pagination-split > li { height: 33px; line-height: 31px; })."
+  }
+]

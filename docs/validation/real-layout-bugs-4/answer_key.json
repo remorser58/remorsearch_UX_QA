@@ -1,0 +1,155 @@
+{
+ "round": 4,
+ "sealed": "2026-10-20, before any agent run",
+ "viewports": {
+  "phone": "360x780 and 393x852, touch, mobile emulation",
+  "laptop": "1440x900"
+ },
+ "cases": [
+  {
+   "item": "simple-css-c6af6463",
+   "source": "kevquirk/simple.css",
+   "fix_commit": "c6af64630d7ab945790b86984ced0fa6bb96a047",
+   "fix_subject": "Reduce font size in asides, set to full-width on mobile Fixes #96",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the aside in the Asides section floats beside the paragraphs as a 77 px column (86 px at 393 px) with 45 px left for text, so its heading and text break into one or two letters per line ('asid / e', 'Lore / m'). After the fix it spans the content width (258 px).",
+   "selectors": [
+    "aside",
+    "aside h4",
+    "aside p"
+   ]
+  },
+  {
+   "item": "simple-css-36144b34",
+   "source": "kevquirk/simple.css",
+   "fix_commit": "36144b34fdfd87775bbfcced816fab0f7c29fdf4",
+   "fix_subject": "Fix margin issues in header when using semantic HTML Fixes #96",
+   "page": "index.html",
+   "visible_at": [
+    "phone",
+    "laptop"
+   ],
+   "defect": "The page header's navigation links (Text, Embedded content, Form elements, Project homepage, GitHub repo) have no space between them, 0 px against 16 px after the fix: on a phone the underlined labels run together into lines such as 'TextEmbedded contentForm elements', and on the laptop the bordered link buttons touch.",
+   "selectors": [
+    "body > header nav",
+    "body > header nav a",
+    "header nav a"
+   ],
+   "also_present": [
+    "Both states also show simple-css-c6af6463's squeezed aside on a phone; a report of it on this item is a valid extra, not this item's defect."
+   ]
+  },
+  {
+   "item": "mvp-66ec5a39",
+   "source": "andybrewer/mvp",
+   "fix_commit": "66ec5a392ac121be2ba202f5ba2e5f8982fb6f7c",
+   "fix_subject": "Add missing comma to restore textarea width",
+   "page": "index.html",
+   "visible_at": [
+    "phone",
+    "laptop"
+   ],
+   "defect": "In the sign-up form the textarea is narrower than the text fields above it (255.6 px against 287 px on a phone, 265.6 px against 287 px on the laptop), so its right edge stops 31 px (laptop 21 px) short of theirs. Equal widths after the fix.",
+   "selectors": [
+    "form textarea",
+    "form input",
+    "form"
+   ]
+  },
+  {
+   "item": "mvp-11722ccc",
+   "source": "andybrewer/mvp",
+   "fix_commit": "11722cccc368c0d3633ca4e6131ff474f90d3338",
+   "fix_subject": "form width",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the textarea in the form card ('What you did at your last job') is 351.6 px wide and runs past the right edge of its card, by 41.6 px at 360 px (beyond the screen) and 15.6 px at 393 px. Inside the card after the fix.",
+   "selectors": [
+    "form textarea",
+    "form"
+   ],
+   "also_present": [
+    "In both states the comparison table runs past a 360 px screen by 29 px (12 px at 393 px); a report of it is a valid extra."
+   ]
+  },
+  {
+   "item": "picnic-8ae635b1",
+   "source": "franciscop/picnic",
+   "fix_commit": "8ae635b15733b5b4ada7afcb57c9f4c71ca6d603",
+   "fixed_state_commit": "55972204a4c579f657407aaec41a2e7822821900",
+   "fix_subject": "Made it responsive",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the page is 610 px wide: the install line in the hero (the unpkg link tag) and the top bar stretch to 610 px, so the page scrolls sideways and the menu button sits off-screen at the far right of the bar. 360 px and 393 px after the fix.",
+   "selectors": [
+    ".hero pre.npm",
+    "body > nav",
+    "body > nav .burger",
+    "nav"
+   ]
+  },
+  {
+   "item": "picnic-8bb0d652",
+   "source": "franciscop/picnic",
+   "fix_commit": "8bb0d65237acdeb987375433fce897ecdfba826b",
+   "fixed_state_commit": "6a45c30a92b26bb3e661ebebff5fc3a863ee8ac9",
+   "fix_subject": "Restored responsiveness",
+   "page": "documentation.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the top bar's GitHub and Documentation links do not collapse into the menu: they wrap onto a second row under the brand and hang 20 px below the fixed 53 px bar (to 72.5 px). After the fix they sit behind the menu button.",
+   "selectors": [
+    "body > nav",
+    "body > nav .menu",
+    "body > nav .menu a"
+   ]
+  },
+  {
+   "item": "picnic-ec6a3d0d",
+   "source": "franciscop/picnic",
+   "fix_commit": "ec6a3d0d2030e797f13ea8b94779d8a36ed3bc25",
+   "fix_subject": "Added now and hide the aside on mobile",
+   "page": "documentation.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the table of contents stays on screen as a 65 px column (71 px at 393 px) down the left side: its 'Contents' title is wider than the column and runs into the page title 'Picnic CSS', the documentation is pushed right, and the page is 413 px wide on a 360 px screen (421 px on 393 px). Hidden on phones after the fix.",
+   "selectors": [
+    "aside",
+    "aside h2",
+    "main h1",
+    "main article"
+   ]
+  },
+  {
+   "item": "mini-css-0ed75ca8",
+   "source": "Chalarangelo/mini.css",
+   "fix_commit": "0ed75ca8efd625e2b007a3e5e2ab14a70cd0e018",
+   "fix_subject": "Fixed a typo that messed up the layout",
+   "page": "docs/progress.html",
+   "visible_at": [
+    "phone",
+    "laptop"
+   ],
+   "defect": "The 'Basic progress bar' card is 2280 px wide, so its text and examples run far past the screen and the page scrolls sideways to 2292 px on a phone (2534 px on the laptop). 344 px and 1171 px wide after the fix.",
+   "selectors": [
+    ".card",
+    ".col-sm-121",
+    ".row"
+   ]
+  }
+ ],
+ "notes": [
+  "A known defect is each item's own defect on its broken page.",
+  "Fixed-state alarm: a finding on a fixed page that points at that item's defect element and calls it broken in the way the defect describes.",
+  "Defects listed under also_present are real in both states; reports of them are valid extras."
+ ]
+}

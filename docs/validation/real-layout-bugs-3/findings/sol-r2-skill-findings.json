@@ -1,0 +1,65 @@
+[
+  {
+    "page": "p01",
+    "selector": ".pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the large pagination starts at x=12 and its children end at x=431.70, exceeding the 336 px content area and the screen by 71.70 px. Page 5 is partly off-screen and the final next-page control is entirely outside it (x=373.22..431.70). The document expands to 433 px; the fixed header's menu toggle also moves outside the screen (x=365..421). Viewed capture: p01-phone-9100.png.",
+    "fix": "Use compact pagination sizing below the small-screen breakpoint, reducing page-link horizontal padding so all seven controls fit the available 336 px. Contain the pagination within the viewport instead of hiding body overflow."
+  },
+  {
+    "page": "p03",
+    "selector": "#typography",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the TYPOGRAPHY word measures 356.81 px inside a 330 px heading/container beginning at x=15. Its text ends at x=371.81, 11.81 px outside the screen; the final Y is visibly cut at the right edge. Viewed capture: p03-phone-2300.png.",
+    "fix": "Reduce the section-heading font size at narrow widths, for example to 2.5rem at this breakpoint, accounting for the existing letter spacing so the whole word fits the 330 px content area."
+  },
+  {
+    "page": "p03",
+    "selector": "table.table.table-hover",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the four-column table is 465.06 px wide in a 330 px content area, from x=15 to x=480.06. The fourth column begins at x=369.08 and is completely outside the screen. The document becomes 480 px wide, with 120 px of horizontal overflow; its fixed header menu toggle is also pushed outside the visible screen. Viewed capture: p03-phone-4100.png.",
+    "fix": "Wrap the table in a width-constrained .table-responsive container with overflow-x:auto so horizontal scrolling stays inside the table and the document/header remain viewport-wide. Alternatively reduce cell padding enough for all columns to fit."
+  },
+  {
+    "page": "p03",
+    "selector": ".pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the large pagination children span x=15..433.94 while their container ends at x=345. Page 5 extends to x=376.22 and the final next-page control occupies x=376.22..433.94, entirely outside the screen. This overflows independently of the table above it. Viewed capture: p03-phone-8600.png.",
+    "fix": "Switch this example to compact page-link padding/font sizing below the small-screen breakpoint, fitting the seven controls into 330 px, or wrap complete controls within their own container."
+  },
+  {
+    "page": "p03",
+    "selector": ".custom-file-label",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "At 360x780, the file label is 214.20 px wide. Its Browse pseudo-element is 117.89 px wide and starts at x=111.31, while Choose file runs from x=47 to x=128.16. Browse paints over the final 16.84 px of the label, leaving only 'Choose f' visible. The laptop instance fits. Viewed capture: p03-phone-7300.png.",
+    "fix": "At narrow widths, reduce horizontal padding on .custom-file-label and its ::after Browse button from 32 px to 16 px, or place Upload on another row so the file control has enough width for both labels."
+  },
+  {
+    "page": "p03",
+    "selector": ".btn-outline-warning, .alert-warning .close",
+    "viewport": "laptop",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "At 1440x900, hovering the demo component displays an 84.94x42.38 px #source-button over its content. In the outline-button example, the source button starts at x=715.06 and covers 48.44 px of the WARNING label's 60.61 px text width (x=702.89..763.50). In the warning alert, it completely covers the close glyph at x=1241.39..1254.00. These are two instances of the same overlay placement defect. Viewed captures: p03-laptop-hover-buttons.png and p03-laptop-hover-alert.png.",
+    "fix": "Put the source-code button in a separate toolbar row above each demo, or reserve enough space for it in the component layout; do not absolutely position it over labels or close controls."
+  },
+  {
+    "page": "p04",
+    "selector": ".main-panel",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P1",
+    "evidence": "At 360x780, the sidebar remains 260 px wide and the main panel is only 100 px wide at x=260..360. The cards shrink to 40 px and their chart containers to 10 px. Dashboard/card headings and legends run out of the cards and are cut off at the screen edge; the task list is also squeezed out of view. The main panel has 135 px scrollWidth versus 100 px clientWidth. This persists while scrolling its complete 3259 px content to scrollTop=2479. Viewed captures: p04-phone-0.png, p04-phone-1248.png and p04-phone-2479.png.",
+    "fix": "At the mobile breakpoint, collapse the sidebar off-canvas and give .main-panel width:100% with no reserved 260 px offset. Keep cards and their chart containers sized to the full available content width."
+  }
+]

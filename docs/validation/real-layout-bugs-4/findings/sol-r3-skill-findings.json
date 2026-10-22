@@ -1,0 +1,119 @@
+[
+  {
+    "page": "p02",
+    "selector": "#text__asides aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360×780, the floated aside is only 77.39 px wide, including 30 px horizontal padding and 2 px border, leaving 45.39 px for text. Its heading breaks \"aside\" into \"asid\" / \"e\" and its paragraph repeatedly breaks words into tiny fragments; the aside becomes 1104.69 px tall. Viewed: captures/p02-phone/005.png and 006.png; details/p02-phone-q0-0.png. The laptop aside has adequate room.",
+    "fix": "At the phone breakpoint, remove the float and set the aside to width:100% with border-box sizing, placing it above or below the surrounding paragraphs."
+  },
+  {
+    "page": "p02",
+    "selector": "#embedded__audio audio, #embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "At 360×780, these media elements start at x=51 inside cards whose right border is x=326 and whose content edge is x=309. Audio/embed/object retain 300 px widths and end at x=351, protruding 25 px beyond the card border; the 304 px iframe ends at x=355, protruding 29 px. The controls and embedded panels visibly cross their cards. Viewed: captures/p02-phone/020.png, 023.png and 024.png.",
+    "fix": "Constrain these media elements with max-width:100% and box-sizing:border-box so their rendered width fits the 258 px card content area, including the iframe border."
+  },
+  {
+    "page": "p03",
+    "selector": "main.documentation > section.flex.five > aside, main.documentation article.four-fifth",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360×780, the contents sidebar remains beside the article at only 64.80 px wide. \"Contents\" paints across x=28.55–142.95, y=111–141; \"Picnic CSS\" paints across x=93.34–279.20, y=107.11–146.11. Their glyph areas overlap by 49.61×30 px. Sidebar links also intrude into the article. The narrowed article is only 248.64 px wide; the Tabs reference URL reaches x=413.02, producing 53 px of page overflow. Viewed: captures/p03-phone/000.png and 043.png; details/p03-phone-q2-0.png.",
+    "fix": "Below the desktop breakpoint, put the contents section and article on separate full-width rows; reserve the one-fifth/four-fifths layout for sufficiently wide screens."
+  },
+  {
+    "page": "p03",
+    "selector": "main.documentation article > .flex.six",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360×780, both class-name reference grids keep six columns of 43.19 px. Several code chips need 59.13–67.58 px, so adjacent chip backgrounds cover letters and their text runs together. The next chip begins at x=222.91 and covers the end of \"three\", whose text reaches x=230.41; the \"twelve\" chip reaches x=376.86. Viewed: captures/p03-phone/019.png and 025.png; details/p03-phone-q4-1.png.",
+    "fix": "Use fewer columns at phone widths, such as two columns with six enabled only at a larger breakpoint; give each chip enough space for its complete class name."
+  },
+  {
+    "page": "p03",
+    "selector": ".third input.stack[placeholder=\"Repeat password\"], .third input.stack[placeholder=\"First name\"], .third input.stack[placeholder=\"Last name\"], .third input.stack[placeholder=\"Password\"]",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360×780, the stacked form fields keep a one-third width of 82.88 px. Padding and borders leave only 59.76 px of text space, while \"Repeat password\" measures 136.97 px in the rendered font. \"First name\", \"Last name\", \"Password\" and \"Repeat password\" are cut to fragments such as \"First na\", \"Passwo\" and \"Repeat\". These are the fields' visible identifying labels. Viewed: captures/p03-phone/040.png; verify/p03-phone-q0-2.png.",
+    "fix": "Make the sample form containers full width on phones and apply the one-third width only at a wider breakpoint, so placeholders fit without truncation."
+  },
+  {
+    "page": "p04",
+    "selector": "#features table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360×780, the comparison table is 417.20 px wide and centered at x=-28.59–388.61 inside a 328 px section. The left ends of every feature label disappear outside the viewport, and the \"CSS Frameworks\" heading is cut on the right. The negative left overflow cannot be reached by scrolling right. Viewed: captures/p04-phone/005.png; details/p04-phone-q0-0.png.",
+    "fix": "Place the table in a max-width:100% horizontal scroll container aligned to the section start, with the table beginning at a nonnegative x position; alternatively make its columns fit the phone width."
+  },
+  {
+    "page": "p04",
+    "selector": "#job",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360×780, the textarea starts at x=37.50 and remains 363.59 px wide, ending at x=401.09. It extends 53.59 px beyond its form's right border at x=347.50 and 41.09 px past the viewport, while the adjacent text input fits inside the form. The textarea's right edge and resize handle are off-screen. Viewed: captures/p04-phone/015.png and 016.png; details/p04-phone-q1-0.png.",
+    "fix": "Set the textarea to width:100%; max-width:100%; box-sizing:border-box within the form, allowing the cols attribute to stop dictating its phone width."
+  },
+  {
+    "page": "p05",
+    "selector": "div.col-sm-121",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The \"Basic progress bar\" section grows to 2288.38 px wide. At 360×780 its parent row is 352 px wide, but the section runs from x=4 to 2292.38, making the document 2292 px wide. At 1440×900 its parent is 1178.66 px wide, but the section runs from x=245.33 to 2533.70, making the document 2534 px wide. Progress tracks, explanatory text, examples and the card edge run far off-screen; neighboring cards fit their containers. Viewed: captures/p05-phone/002.png and captures/p05-laptop/001.png.",
+    "fix": "Correct the grid class from col-sm-121 to col-sm-12 and constrain the row item to the available width, with min-width:0 so long preformatted samples scroll inside their own containers."
+  },
+  {
+    "page": "p07",
+    "selector": "main.documentation article > .flex.six",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360×780, both class-name reference grids keep six columns of 53.98 px. Several code chips need 59.13–67.58 px, so adjacent chip backgrounds cover letters and their text runs together. The \"three-fourth\" chip begins at x=298.47 and covers the final part of \"fourth\", whose text reaches x=303.63; the \"twelve\" chip reaches x=366.05. Viewed: captures/p07-phone/019.png and 024.png; details/p07-phone-q0-1.png.",
+    "fix": "Use fewer columns at phone widths, such as two columns with six enabled only at a larger breakpoint; give each chip enough space for its complete class name."
+  },
+  {
+    "page": "p07",
+    "selector": ".third input.stack[placeholder=\"Repeat password\"]",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360×780, the stacked form fields keep a one-third width of 104.47 px. Padding and borders leave only 81.35 px of text space, while \"Repeat password\" measures 136.97 px in the rendered font. \"Repeat password\" is visibly cut to \"Repeat pa\". These are the fields' visible identifying labels. Viewed: captures/p07-phone/040.png; verify/p07-phone-q0-2.png.",
+    "fix": "Make the sample form containers full width on phones and apply the one-third width only at a wider breakpoint, so placeholders fit without truncation."
+  },
+  {
+    "page": "p08",
+    "selector": "#text__asides aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360×780, the floated aside is only 77.39 px wide, including 30 px horizontal padding and 2 px border, leaving 45.39 px for text. Its heading breaks \"aside\" into \"asid\" / \"e\" and its paragraph repeatedly breaks words into tiny fragments; the aside becomes 1104.69 px tall. Viewed: captures/p08-phone/005.png and 006.png; details/p08-phone-q1-0.png. The laptop aside has adequate room.",
+    "fix": "At the phone breakpoint, remove the float and set the aside to width:100% with border-box sizing, placing it above or below the surrounding paragraphs."
+  },
+  {
+    "page": "p08",
+    "selector": "#embedded__audio audio, #embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "At 360×780, these media elements start at x=51 inside cards whose right border is x=326 and whose content edge is x=309. Audio/embed/object retain 300 px widths and end at x=351, protruding 25 px beyond the card border; the 304 px iframe ends at x=355, protruding 29 px. The controls and embedded panels visibly cross their cards. Viewed: captures/p08-phone/020.png, 023.png and 024.png.",
+    "fix": "Constrain these media elements with max-width:100% and box-sizing:border-box so their rendered width fits the 258 px card content area, including the iframe border."
+  },
+  {
+    "page": "p08",
+    "selector": "body > header nav li",
+    "viewport": "phone",
+    "category": "other",
+    "severity": "P3",
+    "evidence": "At 360×780, neighboring navigation links have zero horizontal padding, margin and gap. \"Text\" ends at x=72.05 exactly where \"Embedded content\" starts; that link ends at x=210.33 exactly where \"Form elements\" starts. The second row likewise joins \"Project homepage\" directly to \"GitHub repo\". The five navigation labels paint as two continuous underlined text runs, merging the separate controls visually. Viewed: captures/p08-phone/000.png; verify/p08-phone-q0-0.png.",
+    "fix": "Give the navigation list a wrapping flex layout with an explicit horizontal gap, or restore horizontal spacing on each list item at the phone breakpoint."
+  }
+]

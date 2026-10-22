@@ -1,0 +1,101 @@
+[
+  {
+    "page": "p01",
+    "selector": "body > article > p:nth-of-type(2) > img",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360 CSS px the screenshot image renders at 572x316 px starting at x=14, so its right edge is 586 px. The document scrollWidth becomes 586 px against a 360 px viewport, forcing sideways scrolling; the second image also extends to 530 px.",
+    "fix": "Constrain article images with `max-width: 100%; height: auto;` so both screenshots fit the article column."
+  },
+  {
+    "page": "p03",
+    "selector": "body.c > pre:nth-of-type(3)",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The HTML example `pre` is 328 px wide with 322 px of client width, but its contents are 876 px wide and its inline `code` renders 850.3 px wide. The block has `overflow-x: auto` and no visible scrollbar in the touch capture, so most of the example is hidden. Other code examples on the page show the same horizontal clipping (scrollWidth 354 vs clientWidth 322, and 361 vs 322).",
+    "fix": "Keep the scroll container on `pre` but make the overflow affordance visible, or wrap long code lines with `white-space: pre-wrap; overflow-wrap: anywhere;` so examples remain readable at 360 px."
+  },
+  {
+    "page": "p04",
+    "selector": "div.table-wrapper:nth-of-type(1)",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The first table wrapper is 268.8 px wide with `overflow-x: scroll`, but its table is 337.9 px wide and extends to x=385.5, 25.5 px past the 360 px viewport. The table's third column is cut mid-label and the wrapper gives no visible scroll cue; the page also reports a 343 px scrollWidth inside a 268 px box.",
+    "fix": "Give the table wrapper `max-width: 100%; overflow-x: auto;` and let the table shrink to the wrapper (remove its fixed/minimum column widths), or provide a visible horizontal-scroll affordance."
+  },
+  {
+    "page": "p04",
+    "selector": "html > body > article > section:nth-of-type(4) > pre.code",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The code blocks are 283.5 px wide with `overflow-x: scroll`, but their content is 681 px and 731 px wide. Only the left portion of each HTML example is visible, and the rest is hidden without a visible scrollbar on the touch viewport.",
+    "fix": "Use wrapping for these examples or expose a clear horizontal-scroll affordance; avoid clipping long code lines in a narrow column."
+  },
+  {
+    "page": "p05",
+    "selector": "#selectmultiple",
+    "viewport": "both",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The multiselect is 258x160 px with clientHeight 158 and scrollHeight 348, so options 7 and 8 are below the visible list area on both phone and laptop. This is a native scrolling select; the list is usable by scrolling, but the last options are not visible at rest.",
+    "fix": "Increase the multiselect height (for example `min-height: 14rem`) so the full option list is visible, or keep the current scroll area and add a visible scrollbar."
+  },
+  {
+    "page": "p06",
+    "selector": "body > nav > ul",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The fixed navigation list is 336 px wide but its scrollWidth is 374 px. The fourth item, “Form elements”, runs from x=277.5 to x=386.5, 26.5 px beyond the 360 px viewport, and is cut off at the right edge. The list is horizontally scrollable but has no visible scrollbar.",
+    "fix": "Allow the navigation items to wrap, or reduce their padding/font size and add a visible scroll affordance so all items fit or are clearly reachable."
+  },
+  {
+    "page": "p06",
+    "selector": "main > section:nth-of-type(1) > article:nth-of-type(7) > table:nth-of-type(1)",
+    "viewport": "both",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "On phone the table is 328 px wide with `overflow-x: auto` but its contents are 768 px wide; the caption and headings 3–5 are cut off. On laptop the same table is 688 px wide with 798 px of content, so its last columns are also clipped. The table has no visible scrollbar.",
+    "fix": "Wrap the table in a scroll container with a visible scrollbar, or allow the cells to wrap (`white-space: normal`) so the columns fit the available width."
+  },
+  {
+    "page": "p07",
+    "selector": "body > div.tc.vh-100 > div.vc.c > a.btn.bg-accent",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The two hero buttons are inline elements on one line. The first button occupies x=102.3–257.6 and the second x=87.8–272.1; their vertical ranges overlap (407.4–450.8 and 433.0–476.4), so the white “Components” button sits on top of the lower half of the “Utilities” button.",
+    "fix": "Make the hero buttons `inline-block` or flex items and give them vertical spacing (`margin-bottom`) so each button occupies its own row at narrow widths."
+  },
+  {
+    "page": "p08",
+    "selector": "body.c > div.row:nth-of-type(7) > div.6.col > input.card.w-100",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The email input is 360.7 px wide starting at x=16, so it reaches x=376.7, 16.7 px past the 360 px viewport. The textarea below is also 360.7 px wide. The page's document scrollWidth is 377 px, producing sideways scrolling.",
+    "fix": "Add `box-sizing: border-box` to form controls (or `max-width: 100%`) so padding and borders are included in the `w-100` width."
+  },
+  {
+    "page": "p09",
+    "selector": "body > article > section:nth-of-type(6) > table",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The table is 304 px wide but its 7 columns need more room; the header reads “mpgcylldisp” with no separation and the numeric columns collide (“1101103.90”). The table overflows its 283 px paragraph column and the final values are squeezed beyond the readable area.",
+    "fix": "Give the table a horizontal scroll wrapper with a minimum column width, or switch to a stacked responsive layout below 400 px."
+  },
+  {
+    "page": "p10",
+    "selector": ".hero__headline",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The headline is 48 px text with `white-space: nowrap`, a 288.8 px box and 22.4 px line height, while its content needs 39 px of height. “Flexbox Grid” is cut at the right edge and the line is vertically clipped; the fixed menu button's “listview” label also runs off the right edge.",
+    "fix": "Remove `white-space: nowrap` or reduce the mobile headline size, allow wrapping, and replace the fixed 32 px menu label with an icon that fits its control."
+  }
+]

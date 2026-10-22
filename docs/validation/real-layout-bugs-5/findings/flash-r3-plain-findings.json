@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p09",
+    "selector": "pre.code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360px the document scrollWidth is 455px against a 360px viewport, so the page scrolls sideways by 95px. The code blocks start at x=45 with a 2em left padding and content-box sizing, so the block box ends at x=362 and its unwrapped 'white-space: pre' lines reach x=455 (scrollWidth 410 vs clientWidth 317). In the Code section the lines '(map tufte-style all-the-thi' and 'all_the_things[i].useTuft' are cut at the right edge.",
+    "fix": "Set box-sizing: border-box and overflow-x: auto (or max-width: 100%) on pre.code so long code lines scroll inside the block instead of widening the article and the page."
+  },
+  {
+    "page": "p09",
+    "selector": "table",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "The data table is squeezed into 304px with 1px cell padding, so numeric columns collapse onto each other. Header cells read 'mpgcyl disp' (2px between text edges), and row 1 renders as '1601103.902.62' - only 2px between '160' and '110' and between '3.90' and '2.62'. Columns are no longer distinguishable at 360px.",
+    "fix": "Give table cells horizontal padding (e.g. td, th { padding: 0.25em 0.5em }) and allow the table to shrink to its content width or scroll inside a wrapper below 400px."
+  },
+  {
+    "page": "p07",
+    "selector": ".vc > a.btn",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The hero's two pill links are inline anchors, so at 360px they wrap and their padding boxes overlap: 'Utilities' occupies y=407-451 and 'Components' y=433-476, a 18px overlap. In the screenshot the Components pill covers the bottom of the Utilities pill.",
+    "fix": "Make the hero links inline-block (or flex with a gap) and add vertical spacing so wrapped buttons stack without overlapping."
+  },
+  {
+    "page": "p10",
+    "selector": "label.menu-button",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The fixed 32x32 menu control contains the text label 'listview' at 18px (scrollWidth 63 vs clientWidth 30). It starts at x=316 and runs past the 360px viewport, so only 'listvi' is visible and the label spills out of its button box at the top-right corner.",
+    "fix": "Give the control a fixed 32x32 icon (or hide the text with an accessible label and overflow: hidden), so the glyph is centred inside the 2rem button."
+  },
+  {
+    "page": "p03",
+    "selector": "h4 + div a.btn",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "In the Buttons demo the link button is taller than the button and input siblings: the <a class='btn'> is 49.6px tall (y=3592.9-3642.5) while <button> and <input> are 46.6px (y=3593.9-3640.5). The anchor's padding box sits about 1px higher and 3px lower than the row, breaking the baseline of the three controls.",
+    "fix": "Give .btn a shared inline-block box with matching padding/line-height (e.g. display: inline-block; line-height: 1.6) so anchors, buttons and inputs share the same height."
+  }
+]

@@ -1,0 +1,111 @@
+{
+ "skill": "c5a7fbe (frozen for round 3)",
+ "how": "one scan command with eight --url, file:// URLs, REMORSEARCH_CHROMIUM_ARGS=--single-process, three pages at a time",
+ "matched_known_defects_on_broken_pages": 0,
+ "states": {
+  "bootswatch-0cbc74c6-broken/docs/lux/index.html": {
+   "candidates": 259,
+   "layout_rows": 6,
+   "layout": [
+    "LY-02 div:nth-of-type(8) > div:nth-of-type(2) > div > div > div:nt",
+    "LY-02 p:nth-of-type(3) > button:nth-of-type(5)|Warning",
+    "LY-02 th:nth-of-type(4)|Column heading",
+    "LY-08 page-width|",
+    "RF-01 div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-",
+    "RF-01 div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2)",
+    "RF-01 html|/private/tmp/rs-rb3/states/bootswatch-0cbc74c6-broken/d"
+   ],
+   "seconds": [
+    42.3,
+    42.3
+   ]
+  },
+  "bootswatch-0cbc74c6-fixed/docs/lux/index.html": {
+   "candidates": 255,
+   "layout_rows": 6,
+   "layout": [
+    "LY-02 div:nth-of-type(2) > div > p:nth-of-type(1) > a|urna mollis ",
+    "LY-02 p:nth-of-type(3) > button:nth-of-type(5)|Warning",
+    "LY-02 th:nth-of-type(4)|Column heading",
+    "LY-08 page-width|",
+    "RF-01 div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-",
+    "RF-01 div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2)",
+    "RF-01 html|/private/tmp/rs-rb3/states/bootswatch-0cbc74c6-fixed/do"
+   ],
+   "seconds": [
+    38.7,
+    38.7
+   ]
+  },
+  "bootswatch-f02c7f9f-broken/docs/materia/index.html": {
+   "candidates": 116,
+   "layout_rows": 3,
+   "layout": [
+    "RF-01 div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-",
+    "RF-01 div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2)"
+   ],
+   "seconds": [
+    42.8,
+    42.8
+   ]
+  },
+  "bootswatch-f02c7f9f-fixed/docs/materia/index.html": {
+   "candidates": 116,
+   "layout_rows": 3,
+   "layout": [
+    "RF-01 div:nth-of-type(2) > div > div:nth-of-type(2) > ul > li:nth-",
+    "RF-01 div:nth-of-type(3) > div:nth-of-type(2) > div:nth-of-type(2)"
+   ],
+   "seconds": [
+    43.3,
+    43.3
+   ]
+  },
+  "grayscale-4eaba19f-broken/index.html": {
+   "candidates": 12,
+   "layout_rows": 1,
+   "layout": [
+    "LY-06 div > div > div > div > a|"
+   ],
+   "seconds": [
+    30.5,
+    31.6
+   ]
+  },
+  "grayscale-4eaba19f-fixed/index.html": {
+   "candidates": 11,
+   "layout_rows": 1,
+   "layout": [
+    "LY-06 div > div > div > div > a|"
+   ],
+   "seconds": [
+    35.3,
+    35.4
+   ]
+  },
+  "lbd-a5032470-broken/dashboard.html": {
+   "candidates": 55,
+   "layout_rows": 1,
+   "layout": [
+    "LY-06 div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(2) >"
+   ],
+   "seconds": [
+    26.5,
+    33.2
+   ]
+  },
+  "lbd-a5032470-fixed/dashboard.html": {
+   "candidates": 63,
+   "layout_rows": 9,
+   "layout": [
+    "LY-01 #chartHours > svg > g:nth-of-type(3) > foreignobject:nth-of-",
+    "LY-03 #chartHours > svg > g:nth-of-type(3) > foreignobject:nth-of-",
+    "LY-06 div:nth-of-type(2) > ul:nth-of-type(1) > li:nth-of-type(2) >"
+   ],
+   "seconds": [
+    25.9,
+    28.6
+   ]
+  }
+ }
+}

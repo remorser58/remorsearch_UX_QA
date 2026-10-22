@@ -1,0 +1,38 @@
+[
+  {
+    "page": "p01",
+    "selector": ".s-content",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 with touch emulation, .s-content is 960 CSS px wide (x=0 to 960), extending 600 px beyond the 360 px visual viewport. Its paragraphs occupy x=90 to 870; the first sentence visibly stops at 'sections of' at the right screen edge. Cards, examples, modal samples, tabs and footer text are similarly cut off throughout the full scroll. body has overflow-x:hidden. Laptop rendering fits. Evidence: evidence/p01-phone.png; captures/p01-phone/000.png through 033.png; p01-phone-tail1.png and p01-phone-tail2.png.",
+    "fix": "At the phone breakpoint, set .s-content to width:100%, min-width:0 and box-sizing:border-box, with phone-sized horizontal padding (for example 16px). Let examples reflow inside that width; keep any necessary horizontal code scrolling inside each code block."
+  },
+  {
+    "page": "p01",
+    "selector": "#sidebar .s-nav",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the navigation stays fixed at x=30, y=100 with width 210 px (right edge 240), while main text begins at x=90: their horizontal regions overlap by 150 px. In the initial view, sidebar 'COMPONENTS', 'Accordions' and 'Autocomplete' collide with the accordion example's 'Elements', 'Element 1' and 'Element 2'. During scrolling, opaque main code panels cover the right portion of sidebar labels; ordinary paragraphs also overlap navigation text. Laptop navigation and content remain separate. Evidence: evidence/p01-phone.png; captures/p01-phone/002.png and 025.png.",
+    "fix": "Add a phone layout for the sidebar: remove the persistent fixed navigation from the content area and collapse it behind a menu control, or place it in normal flow above the main content. Keep the brand/header and main content in separate non-overlapping rows."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph .col-md-3 .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The campaign panel heading reads 'Top Campaign Perfor...' at 360x780. Its text needs 213 CSS px but the h2 is constrained to about 191 px (x=26 to 217), with nowrap, overflow:hidden and text-overflow:ellipsis. The enclosing title row has roughly 314 px available and no sibling controls beside this heading, so the complete title could fit. It is fully visible on the laptop. Evidence: evidence/p02-phone.png and its JSON receipt; scan-p02/crops/22-LY-01.png.",
+    "fix": "For this campaign heading, remove the narrow percentage width and let h2 use the available row width (width:auto or width:100%). Allow wrapping if it still does not fit."
+  },
+  {
+    "page": "p03",
+    "selector": ".well.profile_view .bottom",
+    "viewport": "both",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "All nine contact-card footers intrude into the content above because .bottom has margin-top:-20px. On the phone, the first card's second Address line spans y=408.98 to 428.09 while the opaque footer starts at y=418.09, hiding its lower 10 px; this repeats down the page. On the laptop, the first circular avatar spans y=264.41 to 385.78, but the footer starts at y=375.78 and covers its bottom 10 px, visibly flattening the circular frame; all nine cards repeat this. Evidence: evidence/p03-phone.png; evidence/p03-laptop.png; scan-p03/crops/01-LY-02.png through 09-LY-02.png; measurements.json.",
+    "fix": "Remove the negative top margin from .well.profile_view .bottom (set margin-top:0) and keep the footer in normal flow after the cleared content row. Preserve enough space for the complete text and circular avatar at both widths."
+  }
+]

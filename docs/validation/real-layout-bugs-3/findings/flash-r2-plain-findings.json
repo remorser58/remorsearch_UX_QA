@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p01",
+    "selector": "ul.pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the large pagination row is 420px wide inside a 336px container. Its last item starts at x=372.2 and ends at x=431.7, outside the 360px viewport. The document scrollWidth is 432px, so the page scrolls sideways; the screenshot shows the right arrow cut off at the right edge.",
+    "fix": "Allow the pagination items to wrap at narrow widths (for example flex-wrap: wrap) or reduce their padding/font size so the complete row fits within the 336px content column. Verify document.scrollWidth returns 360 after the change."
+  },
+  {
+    "page": "p03",
+    "selector": "table.table.table-hover",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the table is 465.1px wide inside a 330px column and its right edge is at x=480.1. The document scrollWidth is 480px. The fourth column is outside the 360px viewport and the table is visibly cut at the right edge in the screenshot.",
+    "fix": "Wrap the table in a horizontally scrollable container (overflow-x: auto) or render it as a stacked table on small screens. Keep the page-level scrollWidth at 360px."
+  },
+  {
+    "page": "p03",
+    "selector": "ul.pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the large pagination row is 330px wide but its content is 419px. The last item starts at x=376.2 and ends at x=433.9, outside the 360px viewport. The right arrow is missing from the visible row and the page can scroll sideways.",
+    "fix": "Allow the pagination items to wrap or shrink at mobile widths so the full row fits within the 330px content column."
+  },
+  {
+    "page": "p03",
+    "selector": "#typography",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "At 360x780 the #typography heading text is 356.8px wide starting at x=15, so it ends at x=371.8 while the content column ends at x=345. The heading has scrollWidth 357 versus clientWidth 330, and the final Y is visibly cut by the 360px viewport.",
+    "fix": "Reduce the h1 font size or letter spacing below 400px, or allow the heading to wrap or scale so it stays inside the 330px content column."
+  },
+  {
+    "page": "p04",
+    "selector": ".main-panel",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P1",
+    "evidence": "At 360x780 the sidebar remains 260px wide and .main-panel is only 100px wide (x=260 to x=360). Inside the panel, .container-fluid is 70px wide and cards are 40px wide; the Email Statistics heading collapses to 10px wide and 60px tall, wrapping one character per line. The navbar brand Dashboard ends at x=386.7 and is clipped. The page shows a 260px sidebar and a 100px content sliver instead of a readable dashboard.",
+    "fix": "At widths up to 767px, move the sidebar off-canvas (for example translateX(-260px)) and set .main-panel width: 100%. Reveal the sidebar only through the menu toggle and ensure the navbar brand fits the remaining width."
+  }
+]

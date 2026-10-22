@@ -1,0 +1,1075 @@
+{
+ "sources": [
+  {
+   "source": "StartBootstrap/startbootstrap-agency",
+   "screened": 4,
+   "accepted": 0
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-creative",
+   "screened": 5,
+   "accepted": 0
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-freelancer",
+   "screened": 4,
+   "accepted": 0
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-grayscale",
+   "screened": 3,
+   "accepted": 1
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-new-age",
+   "screened": 1,
+   "accepted": 0
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-landing-page",
+   "screened": 1,
+   "accepted": 0
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-clean-blog",
+   "screened": 4,
+   "accepted": 0
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-resume",
+   "screened": 0,
+   "accepted": 0
+  },
+  {
+   "source": "designmodo/Flat-UI",
+   "screened": 13,
+   "accepted": 0
+  },
+  {
+   "source": "mdbootstrap/bootstrap-material-design",
+   "screened": 0,
+   "accepted": 0
+  },
+  {
+   "source": "BootstrapDash/PurpleAdmin-Free-Admin-Template",
+   "screened": 0,
+   "accepted": 0
+  },
+  {
+   "source": "creativetimofficial/light-bootstrap-dashboard",
+   "screened": 2,
+   "accepted": 1
+  },
+  {
+   "source": "creativetimofficial/paper-dashboard",
+   "screened": 1,
+   "accepted": 0
+  },
+  {
+   "source": "creativetimofficial/now-ui-dashboard",
+   "screened": 0,
+   "accepted": 0
+  },
+  {
+   "source": "creativetimofficial/black-dashboard",
+   "screened": 0,
+   "accepted": 0
+  },
+  {
+   "source": "Kamona-WD/kwd-dashboard",
+   "screened": 7,
+   "accepted": 0
+  },
+  {
+   "source": "thomaspark/bootswatch",
+   "screened": 29,
+   "accepted": 2
+  }
+ ],
+ "candidates": [
+  {
+   "id": "sb-agency-5d735d95",
+   "source": "StartBootstrap/startbootstrap-agency",
+   "commit": "5d735d95848dbd55d3b9ac50ffe2ee80cdf714a5",
+   "date": "2017-08-19",
+   "subject": "Wrapped nav items in a container element",
+   "fixed_state": "5d735d95848dbd55d3b9ac50ffe2ee80cdf714a5",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "navigation moved into a container; the earlier state looks intended"
+  },
+  {
+   "id": "sb-agency-496c579c",
+   "source": "StartBootstrap/startbootstrap-agency",
+   "commit": "496c579c6bf4c4c9e48fa892ae5d0f374c29daa9",
+   "date": "2016-07-12",
+   "subject": "fixed Issue #48: Closing modals with esc-key doesn't work",
+   "fixed_state": "496c579c6bf4c4c9e48fa892ae5d0f374c29daa9",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "modal keyboard behaviour; no visible difference"
+  },
+  {
+   "id": "sb-agency-aec87402",
+   "source": "StartBootstrap/startbootstrap-agency",
+   "commit": "aec874028cd2a3bed1abc756b4de03e77e07a3e2",
+   "date": "2016-06-24",
+   "subject": "fixed typo",
+   "fixed_state": "aec874028cd2a3bed1abc756b4de03e77e07a3e2",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "sb-agency-a76ba751",
+   "source": "StartBootstrap/startbootstrap-agency",
+   "commit": "a76ba7512e0313e331f73ec2a11a103c047bc036",
+   "date": "2016-06-23",
+   "subject": "Added minified JS, fixed banners, and updated readme with documentation on how to work with source files and use gulp tasks",
+   "fixed_state": "a76ba7512e0313e331f73ec2a11a103c047bc036",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording only (footer year)"
+  },
+  {
+   "id": "sb-creative-3098c455",
+   "source": "StartBootstrap/startbootstrap-creative",
+   "commit": "3098c45597aceafb6e838111ccc8a9fc93a80f44",
+   "date": "2019-05-16",
+   "subject": "update spacing between contact items, update version",
+   "fixed_state": "3098c45597aceafb6e838111ccc8a9fc93a80f44",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "spacing refinement; the earlier state looks intended"
+  },
+  {
+   "id": "sb-creative-c5bf746f",
+   "source": "StartBootstrap/startbootstrap-creative",
+   "commit": "c5bf746f14f5bdba670b4c408c09a4f99cf33da4",
+   "date": "2017-08-19",
+   "subject": "Wrapped nav items in a container element",
+   "fixed_state": "c5bf746f14f5bdba670b4c408c09a4f99cf33da4",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "navigation moved into a container; the earlier state looks intended"
+  },
+  {
+   "id": "sb-creative-f8ba006e",
+   "source": "StartBootstrap/startbootstrap-creative",
+   "commit": "f8ba006e80492a64b18f02e1bf6b97d0f78a00a8",
+   "date": "2017-03-06",
+   "subject": "min height fix for header",
+   "fixed_state": "f8ba006e80492a64b18f02e1bf6b97d0f78a00a8",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sb-creative-60cdf6ca",
+   "source": "StartBootstrap/startbootstrap-creative",
+   "commit": "60cdf6cad0b1642b5918507b304784a046054697",
+   "date": "2016-06-27",
+   "subject": "Added a vendor directory to separate third party plugin files from core theme files and updated menu bar responsive toggle",
+   "fixed_state": "60cdf6cad0b1642b5918507b304784a046054697",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "redesign (menu button and type); no fault in the earlier state"
+  },
+  {
+   "id": "sb-creative-61a007a3",
+   "source": "StartBootstrap/startbootstrap-creative",
+   "commit": "61a007a3bf33583740fc78fbadae4a4ce53057ff",
+   "date": "2015-07-21",
+   "subject": "Fixed Navigation Issue with \"Get Started!\" button",
+   "fixed_state": "61a007a3bf33583740fc78fbadae4a4ce53057ff",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "sb-freelancer-e0c1375c",
+   "source": "StartBootstrap/startbootstrap-freelancer",
+   "commit": "e0c1375c2ea6519537e197cb8064cb44af320bc4",
+   "date": "2020-03-18",
+   "subject": "adjust spacing variables and add spacing to portfolio items",
+   "fixed_state": "e0c1375c2ea6519537e197cb8064cb44af320bc4",
+   "pages_rendered": [
+    "dist/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "spacing refinement; the earlier state looks intended"
+  },
+  {
+   "id": "sb-freelancer-1caa7b83",
+   "source": "StartBootstrap/startbootstrap-freelancer",
+   "commit": "1caa7b83e2beb512d9668c47fa4037c0313ed5ec",
+   "date": "2018-01-26",
+   "subject": "Set the left and right margin to 'auto' to center the star line in Edge and IE",
+   "fixed_state": "9e73899b6ac5fe4ee2b32e8a917b357b012728af",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "Edge and Internet Explorer only; no visible difference in Chromium"
+  },
+  {
+   "id": "sb-freelancer-6855b01a",
+   "source": "StartBootstrap/startbootstrap-freelancer",
+   "commit": "6855b01af332d1768fdac927920aa9ee76fab443",
+   "date": "2017-11-21",
+   "subject": "Bootstrap 4 Design Update - Spacing/Modals/Standardization",
+   "fixed_state": "6855b01af332d1768fdac927920aa9ee76fab443",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "redesign"
+  },
+  {
+   "id": "sb-freelancer-0e3ab710",
+   "source": "StartBootstrap/startbootstrap-freelancer",
+   "commit": "0e3ab710c439a1ee6723f00176f2028fbbee17fc",
+   "date": "2017-08-19",
+   "subject": "Wrapped nav items in a container element",
+   "fixed_state": "0e3ab710c439a1ee6723f00176f2028fbbee17fc",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "navigation moved into a container; the earlier state looks intended"
+  },
+  {
+   "id": "sb-grayscale-a93034ad",
+   "source": "StartBootstrap/startbootstrap-grayscale",
+   "commit": "a93034ade96cf603b4810ccbe37ceb27b5844786",
+   "date": "2017-08-19",
+   "subject": "Wrapped nav items in a container element",
+   "fixed_state": "a93034ade96cf603b4810ccbe37ceb27b5844786",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "navigation moved into a container; the earlier state looks intended"
+  },
+  {
+   "id": "sb-grayscale-fa9c7dfd",
+   "source": "StartBootstrap/startbootstrap-grayscale",
+   "commit": "fa9c7dfd6bef2e5275e0bb1f88533209e1aa7813",
+   "date": "2016-06-16",
+   "subject": "Added additional navbar spacing to the navbar custom",
+   "fixed_state": "fa9c7dfd6bef2e5275e0bb1f88533209e1aa7813",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "spacing refinement with copy changes"
+  },
+  {
+   "id": "sb-grayscale-4eaba19f",
+   "source": "StartBootstrap/startbootstrap-grayscale",
+   "commit": "4eaba19fd953e84ff9383a55c1817941511a2c20",
+   "date": "2015-11-11",
+   "subject": "Fixed .navbar-toggle position level",
+   "fixed_state": "a0b1aa9227bbd300af3c22d1378945b4120449d5",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the menu toggle sits 3 px below the brand centre and makes the bar 6 px taller than the brand; gone at the first commit whose built CSS has the fix"
+  },
+  {
+   "id": "sb-new-age-3b7fa58a",
+   "source": "StartBootstrap/startbootstrap-new-age",
+   "commit": "3b7fa58abeaabcce6df9598dff968060b68d18cd",
+   "date": "2017-08-19",
+   "subject": "Wrapped nav items in a container element",
+   "fixed_state": "3b7fa58abeaabcce6df9598dff968060b68d18cd",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "navigation moved into a container; the earlier state looks intended"
+  },
+  {
+   "id": "sb-landing-page-ffcea1cf",
+   "source": "StartBootstrap/startbootstrap-landing-page",
+   "commit": "ffcea1cfed39895b8db249b6b3adb6d4de21ceb6",
+   "date": "2017-08-19",
+   "subject": "Wrapped nav items in a container element",
+   "fixed_state": "ffcea1cfed39895b8db249b6b3adb6d4de21ceb6",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "navigation moved into a container; the earlier state looks intended"
+  },
+  {
+   "id": "sb-clean-blog-83db423a",
+   "source": "StartBootstrap/startbootstrap-clean-blog",
+   "commit": "83db423a861b21a9c48bdeb3b09f55537cd7d793",
+   "date": "2021-05-06",
+   "subject": "change the offset for the navbar height",
+   "fixed_state": "83db423a861b21a9c48bdeb3b09f55537cd7d793",
+   "pages_rendered": [
+    "dist/about.html",
+    "dist/contact.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "sb-clean-blog-1e30f6eb",
+   "source": "StartBootstrap/startbootstrap-clean-blog",
+   "commit": "1e30f6ebc60036e5ff0133938d4cc7589bd5f18e",
+   "date": "2017-08-19",
+   "subject": "Wrapped nav items in a container element",
+   "fixed_state": "1e30f6ebc60036e5ff0133938d4cc7589bd5f18e",
+   "pages_rendered": [
+    "about.html",
+    "contact.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "header spacing refinement; the earlier state looks intended"
+  },
+  {
+   "id": "sb-clean-blog-05910633",
+   "source": "StartBootstrap/startbootstrap-clean-blog",
+   "commit": "0591063342c99c4f70ece8bc855c0a9dab52de7d",
+   "date": "2017-03-03",
+   "subject": "slight nabber tweaks with bottom border on responsive",
+   "fixed_state": "0591063342c99c4f70ece8bc855c0a9dab52de7d",
+   "pages_rendered": [
+    "index.html",
+    "contact.html"
+   ],
+   "verdict": "rejected",
+   "reason": "border style refinement"
+  },
+  {
+   "id": "sb-clean-blog-2d4c77fc",
+   "source": "StartBootstrap/startbootstrap-clean-blog",
+   "commit": "2d4c77fcc2c40bb0ca0e502f8ce495f8bf697f03",
+   "date": "2016-06-27",
+   "subject": "Added vendor directory to remove third party plugins from core theme files, updated responsive menu bar toggle to be less mystery-meat",
+   "fixed_state": "2d4c77fcc2c40bb0ca0e502f8ce495f8bf697f03",
+   "pages_rendered": [
+    "about.html",
+    "contact.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "redesign (menu button style)"
+  },
+  {
+   "id": "flat-ui-60e64100",
+   "source": "designmodo/Flat-UI",
+   "commit": "60e641008e625632ea7de0347fc3c69ed32a4b46",
+   "date": "2016-07-01",
+   "subject": "Fixed dead link",
+   "fixed_state": "60e641008e625632ea7de0347fc3c69ed32a4b46",
+   "pages_rendered": [
+    "docs/components.html"
+   ],
+   "verdict": "rejected",
+   "reason": "link change only"
+  },
+  {
+   "id": "flat-ui-5297c513",
+   "source": "designmodo/Flat-UI",
+   "commit": "5297c51348ab5e2148004205f18e692057fdce6b",
+   "date": "2016-07-01",
+   "subject": "Fixed invalid js links",
+   "fixed_state": "5297c51348ab5e2148004205f18e692057fdce6b",
+   "pages_rendered": [
+    "docs/template.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "flat-ui-d674e9fb",
+   "source": "designmodo/Flat-UI",
+   "commit": "d674e9fb38ccbf56aed562d01b6d1f3fb6a5a64c",
+   "date": "2016-04-07",
+   "subject": "fixed tags input doc link",
+   "fixed_state": "d674e9fb38ccbf56aed562d01b6d1f3fb6a5a64c",
+   "pages_rendered": [
+    "docs/components.html"
+   ],
+   "verdict": "rejected",
+   "reason": "link change only"
+  },
+  {
+   "id": "flat-ui-19fb50a7",
+   "source": "designmodo/Flat-UI",
+   "commit": "19fb50a7571d9564027265069bb59ae9c7864180",
+   "date": "2014-10-11",
+   "subject": "fixed path to flat-ui.min.js",
+   "fixed_state": "19fb50a7571d9564027265069bb59ae9c7864180",
+   "pages_rendered": [
+    "dist/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "flat-ui-f05e2a82",
+   "source": "designmodo/Flat-UI",
+   "commit": "f05e2a8259c7d60c123ae40073d83a326957faa0",
+   "date": "2014-10-07",
+   "subject": "added holder.js library; fixed issue with dropdowns; fixed jquery-ui vs bootstrap-button conflicts; fixed typeahead styling; updated version number;",
+   "fixed_state": "f05e2a8259c7d60c123ae40073d83a326957faa0",
+   "pages_rendered": [
+    "docs/components.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "script behaviour; differences under 2 px"
+  },
+  {
+   "id": "flat-ui-ea3ed023",
+   "source": "designmodo/Flat-UI",
+   "commit": "ea3ed023fc4c26af8277c79193b868b056ad80e4",
+   "date": "2014-02-06",
+   "subject": "Reset height on select[multiple] in .input-size() mixin.",
+   "fixed_state": "ea3ed023fc4c26af8277c79193b868b056ad80e4",
+   "pages_rendered": [
+    "components.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "flat-ui-b35f3155",
+   "source": "designmodo/Flat-UI",
+   "commit": "b35f31557c2295fe10efe054bd1fe351ffb371ef",
+   "date": "2014-02-05",
+   "subject": "Add line-height to progress bar for proper text alignment within",
+   "fixed_state": "b35f31557c2295fe10efe054bd1fe351ffb371ef",
+   "pages_rendered": [
+    "components.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "flat-ui-42d3f776",
+   "source": "designmodo/Flat-UI",
+   "commit": "42d3f776ff8040217a56b7fe5c9e78f4ab781c17",
+   "date": "2014-02-05",
+   "subject": "Update navbar-height and input-font-size variables in navbar.less",
+   "fixed_state": "42d3f776ff8040217a56b7fe5c9e78f4ab781c17",
+   "pages_rendered": [
+    "components.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change across the page; no fault in the earlier state"
+  },
+  {
+   "id": "flat-ui-1a5e6371",
+   "source": "designmodo/Flat-UI",
+   "commit": "1a5e6371b62377dd05d41ce1ffa4d8369d7bc5ad",
+   "date": "2014-01-21",
+   "subject": "Disable responsive for demo page",
+   "fixed_state": "42d3f776ff8040217a56b7fe5c9e78f4ab781c17",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design decision (fixed-width demo page)"
+  },
+  {
+   "id": "flat-ui-254ec8ee",
+   "source": "designmodo/Flat-UI",
+   "commit": "254ec8ee6302893dec47218359b4f0d5697f892f",
+   "date": "2014-01-16",
+   "subject": "Fixed minor issues",
+   "fixed_state": "254ec8ee6302893dec47218359b4f0d5697f892f",
+   "pages_rendered": [
+    "components.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content changes"
+  },
+  {
+   "id": "flat-ui-d496e97a",
+   "source": "designmodo/Flat-UI",
+   "commit": "d496e97ae1f07317022d840ea55214fbc145c0be",
+   "date": "2013-09-19",
+   "subject": "Fixed code sample for btn-inverse",
+   "fixed_state": "d496e97ae1f07317022d840ea55214fbc145c0be",
+   "pages_rendered": [
+    "components.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording only (code sample)"
+  },
+  {
+   "id": "flat-ui-27a8201f",
+   "source": "designmodo/Flat-UI",
+   "commit": "27a8201fa6de57635254ab9a12e0c473e25dcbe3",
+   "date": "2013-09-16",
+   "subject": "fixed: pagination border, logo, loop icon",
+   "fixed_state": "27a8201fa6de57635254ab9a12e0c473e25dcbe3",
+   "pages_rendered": [
+    "components.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "border and image refinements; no geometry fault of 2 px or more"
+  },
+  {
+   "id": "flat-ui-b486f758",
+   "source": "designmodo/Flat-UI",
+   "commit": "b486f758bba334fd5499ac7e65fe2a5c7d9e5b74",
+   "date": "2013-03-05",
+   "subject": "Positioning tooltips for the demo",
+   "fixed_state": "b486f758bba334fd5499ac7e65fe2a5c7d9e5b74",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "demo tooltips sit lower on a non-responsive page; the earlier state looks intended"
+  },
+  {
+   "id": "light-bootstrap-dashboard-d6679aa2",
+   "source": "creativetimofficial/light-bootstrap-dashboard",
+   "commit": "d6679aa27c97319fde0738bbb0f592246d69eb19",
+   "date": "2016-09-02",
+   "subject": "added calc min height and overflow auto for scroll multiple elements",
+   "fixed_state": "7c997815aabeee16edadbec8db055a6936c9f0bd",
+   "pages_rendered": [
+    "dashboard.html",
+    "table.html"
+   ],
+   "verdict": "rejected",
+   "reason": "layout shift without a visible fault"
+  },
+  {
+   "id": "light-bootstrap-dashboard-a5032470",
+   "source": "creativetimofficial/light-bootstrap-dashboard",
+   "commit": "a5032470fddd607d9e13bc9622e20bfc54803d4c",
+   "date": "2015-08-15",
+   "subject": "finished typo page + table + small changes responsive",
+   "fixed_state": "a5032470fddd607d9e13bc9622e20bfc54803d4c",
+   "pages_rendered": [
+    "dashboard.html",
+    "table.html",
+    "user.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the sidebar stays open on load and squeezes the main panel into a 100 px column with cut cards; gone at the fix"
+  },
+  {
+   "id": "paper-dashboard-55455bd8",
+   "source": "creativetimofficial/paper-dashboard",
+   "commit": "55455bd835a3d1709acc4225e8fc857378939b29",
+   "date": "2018-05-23",
+   "subject": "small changes - responsive sidebar, fixed-plugin, footer, navbar",
+   "fixed_state": "55455bd835a3d1709acc4225e8fc857378939b29",
+   "pages_rendered": [
+    "examples/dashboard.html",
+    "examples/icons.html",
+    "examples/map.html"
+   ],
+   "verdict": "rejected",
+   "reason": "position refinements; the earlier state looks intended"
+  },
+  {
+   "id": "kwd-dashboard-ab24f962",
+   "source": "Kamona-WD/kwd-dashboard",
+   "commit": "ab24f962c98032917d739b68c5f9e32d6201931f",
+   "date": "2025-01-22",
+   "subject": "add layouts pages",
+   "fixed_state": "ab24f962c98032917d739b68c5f9e32d6201931f",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no page at the parent commit"
+  },
+  {
+   "id": "kwd-dashboard-62194580",
+   "source": "Kamona-WD/kwd-dashboard",
+   "commit": "621945801c520bbfae5a27c5f9e45569ab6f2e36",
+   "date": "2025-01-17",
+   "subject": "fix default layout",
+   "fixed_state": "621945801c520bbfae5a27c5f9e45569ab6f2e36",
+   "pages_rendered": [
+    "dist/auth/forgot-password.html",
+    "dist/auth/login.html",
+    "dist/auth/register.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "kwd-dashboard-2df06e12",
+   "source": "Kamona-WD/kwd-dashboard",
+   "commit": "2df06e124cd31bf76bff091fc4830c814f142337",
+   "date": "2021-06-15",
+   "subject": "Fixed Typo",
+   "fixed_state": "2df06e124cd31bf76bff091fc4830c814f142337",
+   "pages_rendered": [
+    "public/pages/404.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording only"
+  },
+  {
+   "id": "kwd-dashboard-cbb9967a",
+   "source": "Kamona-WD/kwd-dashboard",
+   "commit": "cbb9967a1e381d7e8bbaa22f0eec1a132aad2de5",
+   "date": "2021-02-16",
+   "subject": "add mini sidebar layout",
+   "fixed_state": "cbb9967a1e381d7e8bbaa22f0eec1a132aad2de5",
+   "pages_rendered": [
+    "public/index.html",
+    "public/layouts/mini-plus-one-columns-sidebar.html",
+    "public/layouts/two-columns-sidebar.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature; the page renders unstyled because the built CSS is not committed"
+  },
+  {
+   "id": "kwd-dashboard-cdd060a2",
+   "source": "Kamona-WD/kwd-dashboard",
+   "commit": "cdd060a258fe0c9a3aa77e058e3a057e48a834a0",
+   "date": "2021-02-12",
+   "subject": "add mini plus one colums sidebar layout",
+   "fixed_state": "cdd060a258fe0c9a3aa77e058e3a057e48a834a0",
+   "pages_rendered": [
+    "public/index.html",
+    "public/layouts/two-columns-sidebar.html",
+    "public/pages/blank.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature; the page renders unstyled because the built CSS is not committed"
+  },
+  {
+   "id": "kwd-dashboard-73a99b95",
+   "source": "Kamona-WD/kwd-dashboard",
+   "commit": "73a99b95f4e05616d8f3c9807e7e41acbe3eb99a",
+   "date": "2021-02-11",
+   "subject": "add two columns sidebar layout",
+   "fixed_state": "553ed6ba40deaf3680eecc2fe64aa9a4f310be38",
+   "pages_rendered": [
+    "public/index.html",
+    "public/pages/blank.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature; the page renders unstyled because the built CSS is not committed"
+  },
+  {
+   "id": "kwd-dashboard-49856106",
+   "source": "Kamona-WD/kwd-dashboard",
+   "commit": "49856106fabac3ce8b51975095b004f2495d8084",
+   "date": "2021-02-07",
+   "subject": "fix overflow",
+   "fixed_state": "49856106fabac3ce8b51975095b004f2495d8084",
+   "pages_rendered": [
+    "public/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference; the built CSS is not committed"
+  },
+  {
+   "id": "bootswatch-2eab64ca",
+   "source": "thomaspark/bootswatch",
+   "commit": "2eab64cad0b9fe2f683f37e273b5624e6762fbb6",
+   "date": "2025-06-05",
+   "subject": "brite: fix active button z-index in btn-group, closes #1338",
+   "fixed_state": "2eab64cad0b9fe2f683f37e273b5624e6762fbb6",
+   "pages_rendered": [
+    "docs/brite/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "needs an active or hovered button; no visible difference"
+  },
+  {
+   "id": "bootswatch-0b64b984",
+   "source": "thomaspark/bootswatch",
+   "commit": "0b64b984923ed0eb373aed9cf1bb8e697c30847a",
+   "date": "2024-03-09",
+   "subject": "materia: set form-floating-height, #1298",
+   "fixed_state": "0b64b984923ed0eb373aed9cf1bb8e697c30847a",
+   "pages_rendered": [
+    "docs/materia/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "floating labels differ only when filled; no fault at rest"
+  },
+  {
+   "id": "bootswatch-279b456d",
+   "source": "thomaspark/bootswatch",
+   "commit": "279b456d490494d938f6a27b3de7381307477e9e",
+   "date": "2024-03-09",
+   "subject": "materia: remove mixed units on form-control min-heights #1298",
+   "fixed_state": "279b456d490494d938f6a27b3de7381307477e9e",
+   "pages_rendered": [
+    "docs/materia/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "bootswatch-4a98b025",
+   "source": "thomaspark/bootswatch",
+   "commit": "4a98b025be83b82488a8c34f787142e8ac1b960f",
+   "date": "2024-03-09",
+   "subject": "lux: remove mixed units on form-control min-heights",
+   "fixed_state": "4a98b025be83b82488a8c34f787142e8ac1b960f",
+   "pages_rendered": [
+    "docs/lux/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "divider and spacing refinement; no geometry fault"
+  },
+  {
+   "id": "bootswatch-36b93e93",
+   "source": "thomaspark/bootswatch",
+   "commit": "36b93e93619a7c23654b80f053adc5aaf81b1c6a",
+   "date": "2024-01-24",
+   "subject": "superhero: fix floating label input height, closes #1292",
+   "fixed_state": "36b93e93619a7c23654b80f053adc5aaf81b1c6a",
+   "pages_rendered": [
+    "docs/superhero/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "shows only when the floating label moves (focus or value)"
+  },
+  {
+   "id": "bootswatch-7ca0f323",
+   "source": "thomaspark/bootswatch",
+   "commit": "7ca0f3231c7c6eed92eda5013ea6f1d7ee7f9e79",
+   "date": "2024-01-04",
+   "subject": "slate: match pagination padding to buttons and inputs, fixes #1290",
+   "fixed_state": "7ca0f3231c7c6eed92eda5013ea6f1d7ee7f9e79",
+   "pages_rendered": [
+    "docs/slate/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content added to the page (pagination example)"
+  },
+  {
+   "id": "bootswatch-353270c0",
+   "source": "thomaspark/bootswatch",
+   "commit": "353270c0418feef07784116eccd2a1a49fd67514",
+   "date": "2023-07-27",
+   "subject": "vapor: set min-height to 100vh",
+   "fixed_state": "353270c0418feef07784116eccd2a1a49fd67514",
+   "pages_rendered": [
+    "docs/vapor/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "bootswatch-55269b5d",
+   "source": "thomaspark/bootswatch",
+   "commit": "55269b5d7ac4d98b9157ffc63cfdf2e9b88612ce",
+   "date": "2022-09-15",
+   "subject": "zephyr: fix nav-link padding on collapsed navbars, fixes #1204",
+   "fixed_state": "55269b5d7ac4d98b9157ffc63cfdf2e9b88612ce",
+   "pages_rendered": [
+    "docs/zephyr/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "needs the collapsed menu opened"
+  },
+  {
+   "id": "bootswatch-f02c7f9f",
+   "source": "thomaspark/bootswatch",
+   "commit": "f02c7f9fce2cb62989c71ee88946129cf01f976e",
+   "date": "2021-10-26",
+   "subject": "materia: vertical alignment on switch, fixes #1143",
+   "fixed_state": "f02c7f9fce2cb62989c71ee88946129cf01f976e",
+   "pages_rendered": [
+    "docs/materia/index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "laptop and phone: switch toggles sit 4.6 px above their label centres (1 px after the fix)"
+  },
+  {
+   "id": "bootswatch-0e4d5a4f",
+   "source": "thomaspark/bootswatch",
+   "commit": "0e4d5a4f03ae513735a0efbc01a07573d264cf81",
+   "date": "2020-07-30",
+   "subject": "fix content shift upward on nav-tabs nav-link hover when nav-link wraps content with a different font size",
+   "fixed_state": "0e4d5a4f03ae513735a0efbc01a07573d264cf81",
+   "pages_rendered": [
+    "docs/lumen/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "needs hover"
+  },
+  {
+   "id": "bootswatch-053c7125",
+   "source": "thomaspark/bootswatch",
+   "commit": "053c71258a579646d24f9aa6006f05aaffe20f14",
+   "date": "2020-04-02",
+   "subject": "sketchy: fix radio buttons and checkboxes on mobile safari, closes #955",
+   "fixed_state": "053c71258a579646d24f9aa6006f05aaffe20f14",
+   "pages_rendered": [
+    "docs/sketchy/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "Safari only"
+  },
+  {
+   "id": "bootswatch-dbc2af4b",
+   "source": "thomaspark/bootswatch",
+   "commit": "dbc2af4b2b878415e970f6786a4cc3c91f960f0e",
+   "date": "2020-04-02",
+   "subject": "flatly, darkly: set progress bar height back to default to fit text, closes #953",
+   "fixed_state": "dbc2af4b2b878415e970f6786a4cc3c91f960f0e",
+   "pages_rendered": [
+    "docs/darkly/index.html",
+    "docs/flatly/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "progress bars carry no label on the page; height refinement"
+  },
+  {
+   "id": "bootswatch-0f1a0bcb",
+   "source": "thomaspark/bootswatch",
+   "commit": "0f1a0bcbf389c67e78e10524a58f65c966b203f5",
+   "date": "2019-12-10",
+   "subject": "cyborg: fix alignment of inputs and selects, closes #936",
+   "fixed_state": "0f1a0bcbf389c67e78e10524a58f65c966b203f5",
+   "pages_rendered": [
+    "docs/cyborg/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "bootswatch-8cb385c1",
+   "source": "thomaspark/bootswatch",
+   "commit": "8cb385c1a83a5850c3f3fe79d3042be687412b41",
+   "date": "2019-11-07",
+   "subject": "darkly: fix input-group height",
+   "fixed_state": "8cb385c1a83a5850c3f3fe79d3042be687412b41",
+   "pages_rendered": [
+    "docs/darkly/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "border colour only; geometry unchanged"
+  },
+  {
+   "id": "bootswatch-65e41ae4",
+   "source": "thomaspark/bootswatch",
+   "commit": "65e41ae47f56463b139ae8aa29101618a689dd22",
+   "date": "2019-08-19",
+   "subject": "reverted unintentional change to yeti badge padding",
+   "fixed_state": "65e41ae47f56463b139ae8aa29101618a689dd22",
+   "pages_rendered": [
+    "docs/yeti/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "badge style refinement"
+  },
+  {
+   "id": "bootswatch-0e17509d",
+   "source": "thomaspark/bootswatch",
+   "commit": "0e17509dec3ccf6d213aeda976b4249bd08cd8b9",
+   "date": "2019-07-25",
+   "subject": "lux: reduce input-lg padding-x",
+   "fixed_state": "0e17509dec3ccf6d213aeda976b4249bd08cd8b9",
+   "pages_rendered": [
+    "docs/lux/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "padding refinement"
+  },
+  {
+   "id": "bootswatch-647bc9f6",
+   "source": "thomaspark/bootswatch",
+   "commit": "647bc9f6c1f63cd8f728a51337223eab7bfb8c66",
+   "date": "2019-07-25",
+   "subject": "lux: fix invalid .form-control height, closes #921",
+   "fixed_state": "647bc9f6c1f63cd8f728a51337223eab7bfb8c66",
+   "pages_rendered": [
+    "docs/lux/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "geometry unchanged on the page"
+  },
+  {
+   "id": "bootswatch-cb63df86",
+   "source": "thomaspark/bootswatch",
+   "commit": "cb63df86f2d54fb88bc99988f6de5fb316b719a3",
+   "date": "2019-07-03",
+   "subject": "materia: fix padding on small inputs, closes #917",
+   "fixed_state": "cb63df86f2d54fb88bc99988f6de5fb316b719a3",
+   "pages_rendered": [
+    "docs/materia/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "padding refinement; text not cut"
+  },
+  {
+   "id": "bootswatch-1df7cd60",
+   "source": "thomaspark/bootswatch",
+   "commit": "1df7cd60e4f9d1088a713e47ede9ea582b5d835a",
+   "date": "2018-07-15",
+   "subject": "materia: fix clipping on select inputs",
+   "fixed_state": "1df7cd60e4f9d1088a713e47ede9ea582b5d835a",
+   "pages_rendered": [
+    "docs/materia/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible clipping at rest"
+  },
+  {
+   "id": "bootswatch-561afb26",
+   "source": "thomaspark/bootswatch",
+   "commit": "561afb266682d05d6ac5bab068088aef7d35bb26",
+   "date": "2018-07-03",
+   "subject": "materia: reduce button vertical padding",
+   "fixed_state": "561afb266682d05d6ac5bab068088aef7d35bb26",
+   "pages_rendered": [
+    "docs/materia/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "padding refinement"
+  },
+  {
+   "id": "bootswatch-0cbc74c6",
+   "source": "thomaspark/bootswatch",
+   "commit": "0cbc74c628279ae206d12325e10d3f8bea71c34a",
+   "date": "2018-04-24",
+   "subject": "lux: fix input and button height difference, closes #824",
+   "fixed_state": "0cbc74c628279ae206d12325e10d3f8bea71c34a",
+   "pages_rendered": [
+    "docs/lux/index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "laptop: the navbar search field is 45 px tall next to a 42.4 px button and sticks out 1.3 px above and below it; 48 px both after the fix"
+  },
+  {
+   "id": "bootswatch-01ddae3b",
+   "source": "thomaspark/bootswatch",
+   "commit": "01ddae3b75bb487a6b4d51982ed5a4c27e1423d5",
+   "date": "2018-04-24",
+   "subject": "lux: reduce nav-item margin, closes #823",
+   "fixed_state": "01ddae3b75bb487a6b4d51982ed5a4c27e1423d5",
+   "pages_rendered": [
+    "docs/lux/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "spacing refinement"
+  },
+  {
+   "id": "bootswatch-4fce825a",
+   "source": "thomaspark/bootswatch",
+   "commit": "4fce825a4ece32e8edea696737314e1d0a7f471a",
+   "date": "2018-04-16",
+   "subject": "materia: fix input-group-text padding for input-group-lg, #819",
+   "fixed_state": "4fce825a4ece32e8edea696737314e1d0a7f471a",
+   "pages_rendered": [
+    "docs/materia/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "bootswatch-62754537",
+   "source": "thomaspark/bootswatch",
+   "commit": "62754537b396cd55c7ccd58d85071873bacfef51",
+   "date": "2018-04-16",
+   "subject": "materia: fix input-group-text padding, #819",
+   "fixed_state": "62754537b396cd55c7ccd58d85071873bacfef51",
+   "pages_rendered": [
+    "docs/materia/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences under 2 px"
+  },
+  {
+   "id": "bootswatch-7614d3ad",
+   "source": "thomaspark/bootswatch",
+   "commit": "7614d3ad8db741bea592f5a4598b5aa347a251aa",
+   "date": "2018-03-13",
+   "subject": "yeti: reduce horizontal padding on inputs, closes #806",
+   "fixed_state": "7614d3ad8db741bea592f5a4598b5aa347a251aa",
+   "pages_rendered": [
+    "docs/yeti/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "padding refinement"
+  },
+  {
+   "id": "bootswatch-719a14c2",
+   "source": "thomaspark/bootswatch",
+   "commit": "719a14c21cfc71bca3a1cc149eda1709df3b7c0c",
+   "date": "2018-03-09",
+   "subject": "lumen: fix active tab position and color, closes #804",
+   "fixed_state": "719a14c21cfc71bca3a1cc149eda1709df3b7c0c",
+   "pages_rendered": [
+    "docs/lumen/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change; the earlier state looks intended"
+  },
+  {
+   "id": "bootswatch-78f7c962",
+   "source": "thomaspark/bootswatch",
+   "commit": "78f7c9622a729499b241c07e499a906c135a2d12",
+   "date": "2018-01-23",
+   "subject": "Delete card overflow sketchy",
+   "fixed_state": "78f7c9622a729499b241c07e499a906c135a2d12",
+   "pages_rendered": [
+    "docs/sketchy/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "bootswatch-b0f7ef4e",
+   "source": "thomaspark/bootswatch",
+   "commit": "b0f7ef4e27e5df7d02dbcd9b935796aeed8a80c2",
+   "date": "2017-12-24",
+   "subject": "lux: fix nav-item margin for collapsed menus",
+   "fixed_state": "b0f7ef4e27e5df7d02dbcd9b935796aeed8a80c2",
+   "pages_rendered": [
+    "docs/lux/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "needs the collapsed menu opened"
+  },
+  {
+   "id": "bootswatch-7961a926",
+   "source": "thomaspark/bootswatch",
+   "commit": "7961a926b68af090be4242fb2a61b70b1466617c",
+   "date": "2017-12-12",
+   "subject": "flatly: fix navbar nav-item padding, closes #750",
+   "fixed_state": "7961a926b68af090be4242fb2a61b70b1466617c",
+   "pages_rendered": [
+    "docs/flatly/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "spacing refinement"
+  }
+ ]
+}

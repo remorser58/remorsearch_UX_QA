@@ -1,0 +1,110 @@
+[
+  {
+    "page": "p01",
+    "selector": ".topbar .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the header action list runs to x=412, making the document 412px wide and adding 52px of horizontal scrolling. The avatar and rightmost header action sit outside the 360px viewport.",
+    "fix": "Hide the user menu and secondary header actions at this breakpoint, or allow the action list to shrink and wrap within the header."
+  },
+  {
+    "page": "p02",
+    "selector": ".card:has(.ribbon.text-bg-info)",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P3",
+    "evidence": "At 360x780 the cyan LINKED ribbon crosses the card text; the word \"inherits\" at the end of the first line is painted under the ribbon band. The ribbon reaches x=343 while the card text column runs to about x=343, leaving no safe right inset.",
+    "fix": "Reserve right padding inside ribbon cards for the ribbon band, or clip the ribbon to the card corner without crossing the text column."
+  },
+  {
+    "page": "p02",
+    "selector": ".topbar ul.navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780 the header action list ends at x=364, producing a 364px document and 4px of horizontal scroll. The header item itself fits, but its margin pushes the document width beyond the viewport.",
+    "fix": "Reduce the header action gap or hide the avatar at the phone breakpoint so the list ends within 360px."
+  },
+  {
+    "page": "p04",
+    "selector": ".topbar .navbar-nav.ml-auto",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780 the header action list runs from x=176 to x=380 while the sidebar toggle ends at x=160. The rightmost profile control is cut at the viewport edge and the avatar is pushed out of view, so the header actions do not fit beside the toggle.",
+    "fix": "Collapse the notification and profile actions into a menu on narrow screens, and keep the header row within the viewport width."
+  },
+  {
+    "page": "p05",
+    "selector": ".topbar .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780 the header action list ends at x=364, producing a 364px document and 4px of horizontal scroll; the avatar is partly outside the viewport.",
+    "fix": "Tighten the header spacing or hide the avatar at the phone breakpoint so the header fits the 360px viewport."
+  },
+  {
+    "page": "p05",
+    "selector": "#navigation li:nth-of-type(19) p",
+    "viewport": "both",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The sidebar link 'Sidebar Mini + Collapsed + No Hover' has a 178px content box and a 229px text width with overflow hidden and nowrap, so the label is cut off with an ellipsis in both viewports.",
+    "fix": "Allow this sidebar label to wrap to two lines, or widen the sidebar so the complete label is readable."
+  },
+  {
+    "page": "p08",
+    "selector": ".topbar .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the header action list runs to x=412, making the document 412px wide and adding 52px of horizontal scrolling. The avatar and rightmost header action sit outside the 360px viewport.",
+    "fix": "Hide or collapse the user menu and secondary header actions at the phone breakpoint so the header fits within 360px."
+  },
+  {
+    "page": "p08",
+    "selector": "#navigation li:nth-of-type(20) p",
+    "viewport": "both",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "At 360x780 the header action list runs to x=412, making the document 412px wide and adding 52px of horizontal scrolling. The avatar and rightmost header action sit outside the 360px viewport.",
+    "fix": "Allow this sidebar label to wrap, or widen the sidebar so the full label is visible."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the first table is 549px wide, making the document 549px and adding 189px of horizontal scrolling. The Platform and Engine columns are cut off at the viewport edge.",
+    "fix": "Wrap the table in a horizontally scrollable container, or collapse the table into stacked rows at the phone breakpoint."
+  },
+  {
+    "page": "p10",
+    "selector": "#revenue-chart-canvas",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "At 360x780 the sales chart canvas keeps a 300px height inside a 300px chart box; the area fills are clipped at the card's bottom edge so the chart's baseline and the lower part of the curves are cut off at the bottom of the card.",
+    "fix": "Give the chart canvas a responsive height that includes axis labels and the plot area, and ensure the card body does not clip the canvas at its bottom edge."
+  },
+  {
+    "page": "p11",
+    "selector": "main table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780 the plugin table is 925px wide, making the document 925px and adding 565px of horizontal scrolling. The Data API column is cut off and the table overflows the content card.",
+    "fix": "Wrap the table in a horizontal scroll container, or switch the docs table to a stacked definition list at the phone breakpoint."
+  },
+  {
+    "page": "p12",
+    "selector": ".topbar .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780 the header action list ends at x=364, producing a 364px document and 4px of horizontal scroll; the avatar is partly outside the viewport.",
+    "fix": "Tighten header spacing or hide the avatar at the phone breakpoint so the header fits within 360px."
+  }
+]

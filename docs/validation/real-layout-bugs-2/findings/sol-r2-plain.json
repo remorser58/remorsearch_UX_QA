@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p01",
+    "selector": ".s-content",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780, the main content is 960px wide (x=0..960), extending 600px beyond the visible screen. Its section containers are 800px wide at x=80..880. Paragraphs, examples, code and controls are cut off at the right edge throughout the page; even the introductory sentence extends to x=415.6. The body has overflow-x:hidden. Screenshots: mobile-p01-phone-00.png, mobile-p01-phone-11.png, verified-p01-phone-bottom-4.png; measurements: inspect-p01-phone.json and verified-p01-phone.json.",
+    "fix": "At the phone breakpoint, allow .s-content to shrink with min-width:0 and width/max-width:100%, reduce its 80px horizontal padding, and constrain its section containers to the available width. Keep long code inside an internally scrollable code block."
+  },
+  {
+    "page": "p01",
+    "selector": "#sidebar .s-nav",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P1",
+    "evidence": "The fixed navigation occupies x=30..240 while the examples begin at x=90, sharing 150px of horizontal space. The navigation label Components (text x=38..125.6, y=225.4..240.4) overlaps the first Elements example label (starting x=117, y=229). The Autocomplete navigation link also crosses the Element 2 example around y=302. This collision continues through later sections while scrolling. Screenshot: mobile-p01-phone-00.png; measurements and stacking checks: targeted-p01-phone.json and p01-hit-testing.json.",
+    "fix": "At phone widths, place the navigation in normal flow above the content, or collapse it behind a menu control. Remove the fixed sidebar from the main reading area and size the content for the remaining space."
+  },
+  {
+    "page": "p01",
+    "selector": ".s-brand",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "At the top of the phone page, the logo is visibly sliced horizontally and the bottom of Spectre.css is covered. The 32px logo occupies y=30..62, but the first section heading background starts at y=50 and covers its lower 12px. The brand text extends to y=54.4. The #accordions .s-title::before background is 960x102px, offset left=-90px and top=-10px from the heading, placing it over the brand. Hit testing at (50,55) and (100,55) returns the section heading above the logo/text. Screenshot: verified-p01-phone-top.png; measurements: targeted-p01-phone.json and p01-hit-testing.json.",
+    "fix": "Reserve a complete mobile header row for .s-brand and start the section content below it. Constrain the .s-title::before background to the section area so its upward/leftward extension cannot paint over the brand."
+  },
+  {
+    "page": "p02",
+    "selector": ".tile_count .tile_stats_count .right",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The phone summary uses three 120px columns, leaving only 92px of text space inside each .right block after padding. Total Collections requires 101.2px and Total Connections requires 109.2px, so both labels lose their endings. All six comparison captions are truncated: the longest is 122.7px wide in the same 92px space, losing about 30.7px. The screen visibly shows Total Collect..., Total Conne... and incomplete From last Week captions. Screenshot: mobile-p02-phone-00.png; measurements: inspect-p02-phone.json and targeted-p02-phone.json.",
+    "fix": "Use two summary columns at 360px, and allow the labels and comparison captions to wrap with white-space:normal and automatic height instead of clipping them in .right."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "Top Campaign Performance is displayed as Top Campaign Perfor... even though its header has enough free space. At 360px the h2 is limited to 190.95px inside a 318px header, while its text measures 212.86px: a 21.91px shortfall. overflow:hidden and white-space:nowrap cut off the title. Screenshots: mobile-p02-phone-00.png and mobile-p02-phone-01.png; measurements: targeted-p02-phone.json.",
+    "fix": "Remove the narrow percentage width from this campaign heading at the phone breakpoint and let it use the full available header width. Allow wrapping and automatic height if needed."
+  }
+]

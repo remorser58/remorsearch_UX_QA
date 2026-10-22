@@ -1,0 +1,191 @@
+{
+ "seed": 2026102201,
+ "names": {
+  "writ-e0b84596": "p01",
+  "tufte-css-c6e436bb": "p02",
+  "lit-css-ce470806": "p03",
+  "tufte-css-6c2f3e8e": "p04",
+  "almond-css-44f880c2": "p05",
+  "bahunya-0aa2c063": "p06",
+  "lit-css-fce9ac96": "p07",
+  "lit-css-481f5cc3": "p08",
+  "tufte-css-69255155": "p09",
+  "flexboxgrid-7b71b69e": "p10"
+ },
+ "groups": {
+  "A": [
+   "flexboxgrid-7b71b69e",
+   "almond-css-44f880c2",
+   "writ-e0b84596",
+   "lit-css-481f5cc3"
+  ],
+  "B": [
+   "bahunya-0aa2c063",
+   "lit-css-fce9ac96",
+   "tufte-css-c6e436bb"
+  ],
+  "C": [
+   "lit-css-ce470806",
+   "tufte-css-69255155",
+   "tufte-css-6c2f3e8e"
+  ]
+ },
+ "runs": {
+  "1": {
+   "p01": {
+    "item": "writ-e0b84596",
+    "state": "broken",
+    "page": "p01/index.html"
+   },
+   "p02": {
+    "item": "tufte-css-c6e436bb",
+    "state": "broken",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "lit-css-ce470806",
+    "state": "fixed",
+    "page": "p03/index.html"
+   },
+   "p04": {
+    "item": "tufte-css-6c2f3e8e",
+    "state": "fixed",
+    "page": "p04/index.html"
+   },
+   "p05": {
+    "item": "almond-css-44f880c2",
+    "state": "broken",
+    "page": "p05/demo/index.html"
+   },
+   "p06": {
+    "item": "bahunya-0aa2c063",
+    "state": "broken",
+    "page": "p06/demo.html"
+   },
+   "p07": {
+    "item": "lit-css-fce9ac96",
+    "state": "broken",
+    "page": "p07/utility.html"
+   },
+   "p08": {
+    "item": "lit-css-481f5cc3",
+    "state": "broken",
+    "page": "p08/docs/lit.html"
+   },
+   "p09": {
+    "item": "tufte-css-69255155",
+    "state": "fixed",
+    "page": "p09/index.html"
+   },
+   "p10": {
+    "item": "flexboxgrid-7b71b69e",
+    "state": "broken",
+    "page": "p10/index.html"
+   }
+  },
+  "2": {
+   "p01": {
+    "item": "writ-e0b84596",
+    "state": "broken",
+    "page": "p01/index.html"
+   },
+   "p02": {
+    "item": "tufte-css-c6e436bb",
+    "state": "fixed",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "lit-css-ce470806",
+    "state": "broken",
+    "page": "p03/index.html"
+   },
+   "p04": {
+    "item": "tufte-css-6c2f3e8e",
+    "state": "broken",
+    "page": "p04/index.html"
+   },
+   "p05": {
+    "item": "almond-css-44f880c2",
+    "state": "broken",
+    "page": "p05/demo/index.html"
+   },
+   "p06": {
+    "item": "bahunya-0aa2c063",
+    "state": "fixed",
+    "page": "p06/demo.html"
+   },
+   "p07": {
+    "item": "lit-css-fce9ac96",
+    "state": "fixed",
+    "page": "p07/utility.html"
+   },
+   "p08": {
+    "item": "lit-css-481f5cc3",
+    "state": "broken",
+    "page": "p08/docs/lit.html"
+   },
+   "p09": {
+    "item": "tufte-css-69255155",
+    "state": "broken",
+    "page": "p09/index.html"
+   },
+   "p10": {
+    "item": "flexboxgrid-7b71b69e",
+    "state": "broken",
+    "page": "p10/index.html"
+   }
+  },
+  "3": {
+   "p01": {
+    "item": "writ-e0b84596",
+    "state": "fixed",
+    "page": "p01/index.html"
+   },
+   "p02": {
+    "item": "tufte-css-c6e436bb",
+    "state": "broken",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "lit-css-ce470806",
+    "state": "broken",
+    "page": "p03/index.html"
+   },
+   "p04": {
+    "item": "tufte-css-6c2f3e8e",
+    "state": "broken",
+    "page": "p04/index.html"
+   },
+   "p05": {
+    "item": "almond-css-44f880c2",
+    "state": "fixed",
+    "page": "p05/demo/index.html"
+   },
+   "p06": {
+    "item": "bahunya-0aa2c063",
+    "state": "broken",
+    "page": "p06/demo.html"
+   },
+   "p07": {
+    "item": "lit-css-fce9ac96",
+    "state": "broken",
+    "page": "p07/utility.html"
+   },
+   "p08": {
+    "item": "lit-css-481f5cc3",
+    "state": "fixed",
+    "page": "p08/docs/lit.html"
+   },
+   "p09": {
+    "item": "tufte-css-69255155",
+    "state": "broken",
+    "page": "p09/index.html"
+   },
+   "p10": {
+    "item": "flexboxgrid-7b71b69e",
+    "state": "fixed",
+    "page": "p10/index.html"
+   }
+  }
+ }
+}

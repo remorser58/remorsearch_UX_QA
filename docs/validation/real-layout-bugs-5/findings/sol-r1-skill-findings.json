@@ -1,0 +1,83 @@
+[
+  {
+    "page": "p01",
+    "selector": "article > p:nth-of-type(2) > img, article > p:nth-of-type(4) > img",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, both comparison images keep their intrinsic widths (572px and 516px) inside a 332px article content area. Starting at x=14px, they end at x=586px and x=530px, respectively: 226px and 170px beyond the screen. The right portions of the examples are visibly cut off and the document width becomes 586px. Viewed: scan/01-p01-index.html/runs/SCAN-galaxy-s24/S-SCAN-galaxy-s24-000.css.png and -001.css.png; measurements: p01-phone-top.json.",
+    "fix": "Constrain the article images with max-width:100% and height:auto so their rendered widths stay inside the article."
+  },
+  {
+    "page": "p05",
+    "selector": "input[type=\"radio\"], input[type=\"checkbox\"]",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The four radio controls and three checkboxes sit visibly below their adjacent labels at both sizes. On the phone at scrollY=5600, Radio 1 has a 16px control at y=224..240 (center 232), while its text box is y=217..235 (center 226): a 6px offset. Checkbox has the same 6px offset. The laptop repeats this alignment. Viewed: p05-phone-controls.png and p05-laptop-controls.png; matching JSON measurements are beside them.",
+    "fix": "Remove vertical-align:bottom from selection inputs and center each input/label pair in an inline flex row with align-items:center."
+  },
+  {
+    "page": "p06",
+    "selector": "#checkbox1, #checkbox2, #checkbox3, #radio1, #radio2, #radio3",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "All six selection controls are raised above their label text. The painted checkbox/radio centers are approximately 14px above the corresponding Choice/Option text centers on both phone and laptop. Each input receives a 44px-tall box plus 12px bottom margin, producing a 56px label row; the native glyph is centered in the tall input while the text sits near the row bottom. Viewed: p06-laptop-controls2.png and scan/06-p06-demo.html/runs/SCAN-galaxy-s24/S-SCAN-galaxy-s24-018.css.png; measured examples: p06-phone-controls.json and p06-laptop-controls2.json.",
+    "fix": "Exclude checkbox and radio inputs from the generic 44px input height and bottom margin. Use an inline flex label with align-items:center and a consistent gap so the glyph and text share a center."
+  },
+  {
+    "page": "p07",
+    "selector": "body > div:first-of-type > div > a.btn",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The Utilities and Components hero links wrap onto separate lines but their padded pill shapes overlap. Utilities occupies y=407.39..450.77 and Components y=432.99..476.36: 17.78px of vertical overlap. The filled lower pill visibly paints over the lower part of the upper pill. Viewed: p07-phone-layout.png and scan/07-p07-utility.html/runs/SCAN-galaxy-s24/S-SCAN-galaxy-s24-000.css.png; measurements: p07-phone-layout.json.",
+    "fix": "Make the hero links inline-block or inline-flex so their padding contributes to line height, or place them in a wrapping flex container with an explicit row gap."
+  },
+  {
+    "page": "p07",
+    "selector": "a[href=\"#full\"]",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "In the Components navigation box, the single Full Page Landing link splits across two rows: Full Page follows Alerts on the first row, while Landing restarts at the left edge on the next row. Its rendered bounds are 47.59px tall with a 25.59px line advance, separating parts of one navigation item. Viewed: p07-phone-nav.png; measurements: p07-phone-nav.json.",
+    "fix": "Render navigation links as inline-block with white-space:nowrap, or use flex-wrap on the navigation container, so each complete link moves together to the next row."
+  },
+  {
+    "page": "p07",
+    "selector": "#alerts > .row > .col.large",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "The alert x glyph drops into a separate full-width row beneath the message on the phone. Its column is 296px wide at x=32, y=4336.25, which is 83.98px below the message column top. On the laptop the same glyph occupies a 40.81px right-hand column aligned with the message top. The phone alert visibly places x at the lower left instead of alongside its message. Viewed: p07-phone-alert.png and p07-laptop-alert.png; matching JSON measurements are beside them.",
+    "fix": "Keep the alert content and x in a flex row at narrow widths; let the message flex and reserve an auto-sized column for the glyph aligned to the top right."
+  },
+  {
+    "page": "p08",
+    "selector": "input.card.w-100[type=\"email\"], textarea.card.w-100",
+    "viewport": "both",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The Email input and Message textarea exceed their assigned widths because padding/borders are added outside width:100%. On the phone each is 360.66px wide in a 328px content area, starting at x=16 and ending at x=376.66, so the right border is off screen and the page is 377px wide. On the laptop Email is 472.66px wide in a 440px column and extends to x=744.66, overlapping the adjacent select beginning at x=728 by 16.66px. Message is 928.66px wide in its 896px row. Viewed: p08-phone-form.png and p08-laptop-form.png; matching JSON measurements are beside them.",
+    "fix": "Apply box-sizing:border-box to the full-width input and textarea so width:100% includes their padding and borders."
+  },
+  {
+    "page": "p09",
+    "selector": "pre.code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "Both code-block boxes themselves extend outside the phone viewport. Their content width is 283.5px and left padding is 33.75px, giving a 317.25px outer width. At x=45 their right edge is x=362.25, beyond the 360px screen, and the document gains 2px of horizontal overflow. The code region visibly loses the surrounding right margin and runs into the screen edge. This is overflow of the outer box, separate from scrolling long code inside it. Viewed: scan/09-p09-index.html/runs/SCAN-galaxy-s24/S-SCAN-galaxy-s24-015.css.png and -016.css.png; measurements: p09-phone-table.json.",
+    "fix": "Use box-sizing:border-box on pre.code so its left padding stays inside the declared width; retain overflow-x:auto for long code lines."
+  },
+  {
+    "page": "p10",
+    "selector": "label.menu-button",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The fixed menu control displays listview text extending out of its square and beyond the right screen edge. The control is 32x32px at x=316..348, but its scrollWidth is 63px versus a 30px client width. The label is visibly truncated at x=360 throughout scrolling. Viewed: p10-phone-menu.png and the phone scan screenshots; measurements: p10-phone-menu.json.",
+    "fix": "Render a self-contained menu glyph, such as an inline SVG, and center it inside the 32px control with grid/flex alignment. Keep its rendered bounds within the control."
+  }
+]

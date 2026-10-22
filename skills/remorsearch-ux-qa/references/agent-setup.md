@@ -7,7 +7,12 @@ starts no subagents.
 
 ## 0. Current request takes precedence
 
-With no explicit choice, saved config or host mapping, inherit the current session: start subagents with no model or effort argument and record `source: session`. Ask only when the user asks to choose or change. The benchmark below is optional reference, not a default recommendation.
+The first run asks once. With no explicit choice in the conversation, no saved choice
+(step 1) and no harness mapping (step 2), ask the user before the first subagent starts
+(step 3) and save the answer. `python3 scripts/install.py` asks the same question in the
+terminal after it installs the skill, and `python3 scripts/subagents.py` shows the menu
+again whenever the user wants to change it. The benchmark below is reference, not a
+default recommendation.
 
 Apply model, effort and role assignments explicitly supplied in the current
 conversation before any saved choice or harness default. Mixed-provider teams
@@ -25,19 +30,21 @@ error and complete independent work. Never silently replace an explicitly
 requested model. A model substitution requires an existing user-approved
 fallback or a new user choice.
 
-For task-local choices, keep settings in the run record. Write persistent model
-preferences only when the user asks to save them. A session request to use
+For task-local choices, keep settings in the run record. A first-run answer is
+saved; a later change is saved when the user makes it. A session request to use
 subagents does not require another model-selection question.
 
 ## 1. Saved choice
 
-Read `${XDG_CONFIG_HOME:-~/.config}/remorsearch-ux-qa/config.json` if it exists:
+Run `python3 scripts/subagents.py --show`. It prints the saved choice from
+`${XDG_CONFIG_HOME:-~/.config}/remorsearch-ux-qa/config.json`, or exits 3 when there is
+none:
 
 ```json
 {
   "version": 1,
   "source": "session | harness | user",
-  "host": "claude-code | codex | other",
+  "host": "codex | claude-code | other",
   "roles": {
     "operator": {"model": "inherit | haiku | sonnet | opus | fable | <model id>", "effort": "inherit | low | medium | high | xhigh | max", "agent_type": "remorsearch-operator | null"},
     "judge": {"model": "...", "effort": "...", "agent_type": "remorsearch-judge | null"}
@@ -85,10 +92,18 @@ choice made here then has no effect; say so instead of asking.
 
 ## 3. Ask once
 
-Only when the user asked to choose or change models. Use the host's selection
-prompt (in Claude Code, the `AskUserQuestion` tool); if the host has none, ask
-with a numbered list. Before asking, say that ergonomics mode may start one agent
-per simulated profile (16 in the default sample), so the choice multiplies.
+At the first run (nothing saved, no harness mapping) or when the user asks to choose
+or change. Use the host's selection prompt (in Claude Code the `AskUserQuestion` tool,
+in Codex its question tool when one is available); if the host has none, ask with a
+numbered list, or let the user run `python3 scripts/subagents.py` in a terminal for the
+arrow-key menu. Before asking, say that ergonomics mode may start one agent per
+simulated profile (16 in the default sample), so the choice multiplies. Save the answer
+with `python3 scripts/subagents.py --host <host> --model <id> --effort <level>`
+(`inherit` keeps the session's model or effort).
+
+**Codex.** Offer "Same as this session" and the models and effort levels
+`python3 scripts/subagents.py --host codex --options` lists; they come from the Codex
+model cache, so they match the user's account.
 
 **Model and effort for persona and research subagents.** One question with these
 options; the host adds a free-text "Other".
@@ -135,9 +150,9 @@ Use the chosen model and effort in it. Write
 Never overwrite a file that already exists; if one differs, show it and ask.
 Save each agent type in the config (`agent_type`).
 
-Keep the answers with `"source": "user"` in the run record; save the config only
-when requested. Create the folder if needed. Never
-write secrets or tokens to this file.
+Keep the answers with `"source": "user"` in the run record and save them with
+`scripts/subagents.py`, which never writes secrets or tokens. Its menu offers to create the
+two Claude Code agent definitions when an effort is chosen.
 
 ## 4. Use the choice
 
@@ -145,7 +160,7 @@ write secrets or tokens to this file.
   role's subagents with it and pass no model, so the definition's model and
   effort apply. The host may list new definitions only from the next session.
 - Otherwise pass the saved model for each call. Where the call also takes an
-  effort, pass that too.
+  effort, pass that too: in Codex the spawn call takes `model` and `reasoning_effort`.
 - Skip both when the source is `harness` or `session`.
 - If a model is unavailable, use only a fallback the user has already allowed;
   otherwise record the blocked role and continue independent work.

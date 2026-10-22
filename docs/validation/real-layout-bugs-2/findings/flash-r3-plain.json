@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p01",
+    "selector": ".s-content",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 the document is 960px wide while the viewport is 360px. .s-content stays 960px wide (780px inner content at x=90), so the page scrolls sideways and the right 600px of every documentation section is outside the phone screen. At the end of the page the footer line 'GitHub Repo | Twitter | PayPal Donate | Version 0.2.15' is cut after 'Ve' at the viewport edge.",
+    "fix": "At the phone breakpoint, set the columns layout to block/flex-column and give .s-content width:100%; replace its 80px side padding with a mobile gutter and do not reserve the 240px sidebar width. Confirm document.scrollWidth equals 360."
+  },
+  {
+    "page": "p01",
+    "selector": "#sidebar > .s-nav",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360px the fixed navigation is 210px wide at x=30 while the content column begins at x=90, so it occupies the left 150px of the content. The rail stays at y=100 while scrolling and its labels and links visibly cross the '# Accordions' heading, section descriptions and the code examples; at the top GETTING STARTED, ELEMENTS, LAYOUT and COMPONENTS are drawn over the heading text, and the same overlap continues at the Breadcrumbs and Cards sections.",
+    "fix": "On phone, render the documentation navigation as a top disclosure/menu instead of a fixed 210px rail, and place .s-content below it in normal flow. If the rail stays, reserve its full 240px width in the layout and raise its stacking context above the content."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph .col-md-3 .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The 'Top Campaign Performance' heading needs 213px of text but is constrained to a 191px box with overflow:hidden and text-overflow:ellipsis, so it renders as 'Top Campaign Perfor...' in the card. The containing card is 320px wide, leaving enough room for the label to use the full title row.",
+    "fix": "Allow the heading to wrap onto two lines in the narrow layout (remove nowrap/overflow clipping or override to white-space:normal and overflow:visible), or reduce its font size so the full label fits within the 308px title row."
+  },
+  {
+    "page": "p03",
+    "selector": ".well.profile_view",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P1",
+    "evidence": "Every contact card's rating/action bar has a -20px top margin: the bar starts at y=418 while the profile block ends at y=438.1, so the opaque bar overlaps the final 20px of the block. The second 'Address:' line (y=409–428.1) is covered from y≈421 onward on all 9 cards. The card is 218.4px tall and leaves only 1px below the bar.",
+    "fix": "Remove the negative top margin on .well.profile_view > .bottom and place the bar in normal flow below the profile block, or increase the profile block/card height by the bar's height. Verify the top block's bottom is at or above the bar's top for every card."
+  },
+  {
+    "page": "p03",
+    "selector": ".well.profile_view",
+    "viewport": "laptop",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 1440x900 each card's rating/action bar starts at y=375.8 while the profile block ends at y=395.8, a 20px overlap caused by margin-top:-20px. The bar is drawn over the last 20px of the block on all 9 cards.",
+    "fix": "Remove the negative top margin on .well.profile_view > .bottom so the bar follows the profile block in normal flow, and extend the card's height to include the bar plus its padding."
+  }
+]

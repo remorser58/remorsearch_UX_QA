@@ -1,0 +1,110 @@
+[
+  {
+    "page": "p01",
+    "selector": ".navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 the header nav list spans x=60-412 (document scrollWidth 412). The 64px user menu sits at x=348-412 and its 32px avatar image at x=364-396, so the avatar is entirely off-screen and the page scrolls 52px sideways.",
+    "fix": "Hide the search/language items below the md breakpoint, or let the header nav shrink so .navbar-nav.ms-auto fits in 360px and the user menu stays on screen."
+  },
+  {
+    "page": "p02",
+    "selector": ".navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780 the header nav list ends at x=364 and the document scrollWidth is 364, giving a 4px horizontal scroll; the avatar image itself ends at 348 so only padding overflows.",
+    "fix": "Trim the header link padding (or hide one item) under 576px so the nav ends at or before 360px."
+  },
+  {
+    "page": "p03",
+    "selector": ".app-sidebar",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P1",
+    "evidence": "The page loads with body class sidebar-open at 360x780: .app-sidebar is fixed at x=0 with width 250 while .app-main also starts at x=0, so the sidebar covers the left 250px of every card. elementFromPoint(12,8) returns .sidebar-brand, so the sidebar toggle sits underneath the panel and no visible control closes it.",
+    "fix": "Default to the collapsed/off-canvas sidebar below lg and raise the header toggle above the panel, with a backdrop when it is open."
+  },
+  {
+    "page": "p04",
+    "selector": "nav.navbar ul.navbar-nav",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The 104px static sidebar leaves a 256px content column at 360x780. The header nav list runs x=176-380 (20px past the viewport) and the profile image at its right end is cut by the screen edge; the screenshot shows a half-visible avatar circle.",
+    "fix": "Collapse the sidebar below 768px and hide the profile item so the header nav fits within 360px."
+  },
+  {
+    "page": "p06",
+    "selector": ".navbar-search input",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360x780 the expanded navbar search input is 53px wide; the 'Search' placeholder renders as 'Sear' cut mid-word against the magnifier and close icons.",
+    "fix": "Give the small-screen search field a usable min-width, or collapse it into the search icon at narrow widths."
+  },
+  {
+    "page": "p06",
+    "selector": ".tab-empty h2.display-4",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "The h2 is 360px wide inside a flex-centered .tab-empty, so text-align:left starts 'No tab selected!' at x=0 flush with the screen edge. At 1440x900 the same heading is centered (x=662 of 1440).",
+    "fix": "Set text-align:center on .tab-empty .display-4, or constrain the heading width so it centers in the panel."
+  },
+  {
+    "page": "p08",
+    "selector": ".navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "Same header overflow as p01: the nav list spans x=60-412 in a 360px viewport (scrollWidth 412) and the 32px user avatar at x=364-396 is completely off-screen, forcing a 52px horizontal scroll.",
+    "fix": "Hide the redundant header items below md or allow the nav to shrink so the user menu stays inside 360px."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1, #example2",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "Both DataTables are 521px wide inside a 304px .dataTables_wrapper (card 344px) with no clipping or scroll container; the document scrollWidth is 549 at 360px, so the Engine version and CSS grade columns sit off-screen and the page scrolls sideways.",
+    "fix": "Wrap each table in .table-responsive (overflow-x:auto) so the table scrolls inside its card."
+  },
+  {
+    "page": "p09",
+    "selector": ".dataTables_paginate .previous",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360x780 the pagination row is 304px wide starting at x=28, but the Previous button renders at x=-5 to 79 (84px wide), so its left 13px falls outside the card (card starts at x=8) and 5px off the screen edge; the label is cut against the card border.",
+    "fix": "Let the pagination list wrap (flex-wrap) or shrink the button padding so it stays inside the card at narrow widths."
+  },
+  {
+    "page": "p11",
+    "selector": ".card table",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P1",
+    "evidence": "The plugin table is 798px wide inside a 320px card and has overflow:hidden, so the Data API column is cut at the card edge; the unclipped page scrollWidth is 925 at 360px and the page scrolls sideways.",
+    "fix": "Wrap the table in .table-responsive and drop overflow:hidden from the table so columns are reachable by scrolling."
+  },
+  {
+    "page": "p12",
+    "selector": "ul.list-group a.flex-grow-1",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "Each message row is 657px wide inside a 318px list item (card 320px); subjects run to x=752 at 360px and the document scrollWidth is 940, so subject text and timestamps sit off-screen.",
+    "fix": "Allow the subject span to shrink inside the row (min-width:0, flex-wrap) instead of keeping the 9rem sender plus unwrapped subject."
+  },
+  {
+    "page": "p12",
+    "selector": ".col-lg-9 .card a.flex-grow-1",
+    "viewport": "laptop",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 1440x900 the inbox card is 859px wide (x=562-1420) but each message row is 913px wide (x=637-1549); the subject text is cut mid-word at the viewport edge and the timestamp column (x=1469-1549) is off-screen.",
+    "fix": "Let the subject and timestamp flex items shrink within the card width."
+  }
+]

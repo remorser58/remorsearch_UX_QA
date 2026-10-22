@@ -897,6 +897,26 @@ export function extractSnapshot(args) {
   // or line layout. Keep actual displayed text separate from fixed font probes.
   let fontContext = null;
   const fontProbeCache = new Map();
+  // FontFaceSet.check() costs about a millisecond a call, once per text element. It can only
+  // answer false when a face of one of the font's families is not loaded, so a family list
+  // whose faces are all loaded (or that has none, a system font) needs no call.
+  const familiesReady = new Map();
+  const fontLoadedFor = (cs, font, textValue) => {
+    let ready = familiesReady.get(cs.fontFamily);
+    if (ready === undefined) {
+      const unquote = (s) => s.trim().replace(/^['"]|['"]$/g, '').toLowerCase();
+      const names = new Set(cs.fontFamily.split(',').map(unquote));
+      ready = true;
+      for (const face of document.fonts) {
+        if (face.status !== 'loaded' && names.has(unquote(face.family))) {
+          ready = false;
+          break;
+        }
+      }
+      familiesReady.set(cs.fontFamily, ready);
+    }
+    return ready || document.fonts.check(font, textValue);
+  };
   const privateFontNodes = new Set();
   const fontProperties = ['fontFamily', 'fontSize', 'fontWeight', 'fontStyle', 'fontStretch',
     'fontVariant', 'fontFeatureSettings', 'fontVariationSettings', 'fontOpticalSizing',
@@ -965,7 +985,7 @@ export function extractSnapshot(args) {
     if (!measuredText || measuredText !== displayedText) gaps.add('text_mismatch');
     if (gaps.size > 2) return finish();
     try {
-      if (!document.fonts || document.fonts.status !== 'loaded' || !document.fonts.check(font, measuredText)) {
+      if (!document.fonts || document.fonts.status !== 'loaded' || !fontLoadedFor(cs, font, measuredText)) {
         gaps.add('font_not_loaded'); return finish();
       }
       if (!fontContext) fontContext = document.createElement('canvas').getContext('2d');
@@ -994,7 +1014,18 @@ export function extractSnapshot(args) {
 
   // ---------- selectors
   const cssStr = (v) => String(v).replace(/\\/g, '\\\\').replace(/"/g, '\\"');
+  // Each selector test queries the whole document, and one capture asks for most elements'
+  // selectors twice; the DOM does not change during a capture, so each is computed once.
+  const selectorCache = new Map();
   const uniqueSelector = (el) => {
+    let s = selectorCache.get(el);
+    if (s === undefined) {
+      s = selectorOf(el);
+      selectorCache.set(el, s);
+    }
+    return s;
+  };
+  const selectorOf = (el) => {
     const root = el.getRootNode();
     const q = (s) => {
       try {
@@ -1857,6 +1888,766 @@ export function extractSnapshot(args) {
               container: uniqueSelector(box), gap_px: round2(odd[0].v), typical_px: round2(typical.value), group_size: group.length,
               text: textOf(after), box: boxOf(after) });
           }
+        }
+      }
+    }
+  }
+
+  // Smaller misplacements that eyes skip. An icon, image or symbol that is the only visible
+  // content of a control and sits 2 px or more off the control's centre while the box leaves
+  // room to centre it (icon_offset, LY-06); content flush against one side of a much wider
+  // box is a designed alignment and is skipped. A field and the painted button or addon
+  // attached to it (gap of at most 1.5 px) whose top or bottom edges differ by 2 px or more
+  // (attached_mismatch, LY-07). A page that runs past the screen (LY-08): content wider than
+  // the screen (page_overflow), or a full-height layout that scrolls 1 to 80 px
+  // (scroll_slack).
+  {
+    const LETTER = /[\p{L}\p{N}]/u;
+    const inView = (r) => r.right > VX0 && r.bottom > VY0 && r.left < VX1 && r.top < VY1;
+    const helperText = (e) => {
+      const r = geo(e).r;
+      const cs = style(e);
+      return (r.width <= 2 && r.height <= 2) || (cs.clip && cs.clip !== 'auto') || /inset\(50%/.test(cs.clipPath || '');
+    };
+    const shownContent = (v) => !!v && v !== 'none' && v !== 'normal' && v !== '""' && v !== "''";
+    // A glyph's ink, from the canvas text metrics of its font: the text box of "+" or "×" is
+    // the font's full height, often taller than a small button, while the ink is what the
+    // eye centres. Null when the run wraps or the metrics are missing (the text box stands in).
+    let inkCtx = null;
+    const glyphInk = (t, host) => {
+      const v = t.nodeValue;
+      const i0 = v.search(/\S/);
+      const i1 = v.replace(/\s+$/, '').length;
+      if (i0 < 0) return null;
+      const range = document.createRange();
+      range.setStart(t, i0);
+      range.setEnd(t, i1);
+      const qs = [...range.getClientRects()].filter((q) => q.width > 0 && q.height > 0);
+      if (qs.length !== 1) return qs.length ? { boxes: qs, ink: false } : null;
+      const q = qs[0];
+      try {
+        inkCtx = inkCtx || document.createElement('canvas').getContext('2d');
+        const cs = style(host);
+        inkCtx.font = cs.fontStyle + ' ' + cs.fontWeight + ' ' + cs.fontSize + ' ' + cs.fontFamily;
+        const m = inkCtx.measureText(v.slice(i0, i1));
+        const fa = m.fontBoundingBoxAscent;
+        const fd = m.fontBoundingBoxDescent;
+        if (!(fa + fd > 0) || !(m.width > 0) || !Number.isFinite(m.actualBoundingBoxAscent)) return { boxes: qs, ink: false };
+        const ky = q.height / (fa + fd);
+        const kx = q.width / m.width;
+        const base = q.top + fa * ky;
+        const ink = { left: q.left - m.actualBoundingBoxLeft * kx, right: q.left + m.actualBoundingBoxRight * kx,
+          top: base - m.actualBoundingBoxAscent * ky, bottom: base + m.actualBoundingBoxDescent * ky };
+        if (!(ink.right - ink.left > 0.5) || !(ink.bottom - ink.top > 0.5)) return { boxes: qs, ink: false };
+        return { boxes: [ink], ink: true };
+      } catch (e) {
+        return { boxes: qs, ink: false };
+      }
+    };
+    // The content of an icon-only control: letterless glyphs (by their ink), images, SVG,
+    // icon-font marks drawn by ::before or ::after, and empty boxes painted with a
+    // background image (a chevron or close sprite). Null for a labelled control or a group.
+    const iconBoxes = (ctl) => {
+      const found = [];
+      let inked = true;
+      let inkedX = true;
+      const walker = document.createTreeWalker(ctl, NodeFilter.SHOW_TEXT);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        const s = t.nodeValue.trim();
+        if (!s) continue;
+        const host = t.parentElement;
+        if (!host || !geo(host).vis || helperText(host)) continue;
+        if (LETTER.test(s)) return null; // a label: the control is not icon-only
+        const glyph = glyphInk(t, host);
+        if (!glyph) continue;
+        found.push(...glyph.boxes);
+        inked = inked && glyph.ink;
+      }
+      for (const e of ctl.querySelectorAll('*')) {
+        if (!geo(e).vis || helperText(e)) continue;
+        if (isInteractive(e)) return null; // a group of controls
+        if (MEDIA.has(e.localName)) {
+          found.push(geo(e).r);
+          inked = false;
+          inkedX = false;
+          continue;
+        }
+        if (e.textContent.trim()) continue;
+        const cs = style(e);
+        const er = geo(e).r;
+        const bordered = !e.children.length && er.width <= 24 && er.height <= 24
+          && ['Top', 'Right', 'Bottom', 'Left'].some((side) => (parseFloat(cs['border' + side + 'Width']) || 0) > 0 && cs['border' + side + 'Style'] !== 'none');
+        if (shownContent(getComputedStyle(e, '::before').content) || shownContent(getComputedStyle(e, '::after').content)
+          || (cs.backgroundImage && cs.backgroundImage !== 'none' && !e.children.length) || bordered) {
+          found.push(er); // an icon-font glyph, a drawn mark (a border caret) or a sprite
+          inkedX = false;
+          inked = false;
+        }
+      }
+      return found.length ? { boxes: found, inked, inkedX: inked && inkedX } : null;
+    };
+    const unionOf = (rs) => ({ l: Math.min(...rs.map((q) => q.left)), t: Math.min(...rs.map((q) => q.top)),
+      r: Math.max(...rs.map((q) => q.right)), b: Math.max(...rs.map((q) => q.bottom)) });
+    const paddingOf = (el) => {
+      const r = geo(el).r;
+      const cs = style(el);
+      return { l: r.left + (parseFloat(cs.borderLeftWidth) || 0), t: r.top + (parseFloat(cs.borderTopWidth) || 0),
+        r: r.right - (parseFloat(cs.borderRightWidth) || 0), b: r.bottom - (parseFloat(cs.borderBottomWidth) || 0) };
+    };
+    for (const el of all) {
+      const g = geo(el);
+      if (!g.vis || !inView(g.r) || g.r.width < 8 || g.r.height < 8 || g.r.width > 400 || g.r.height > 700) continue;
+      if (['input', 'select', 'textarea', 'canvas', 'iframe'].includes(el.localName) || MEDIA.has(el.localName)) continue;
+      const host = parentOf(el);
+      if (!isInteractive(el) && !(style(el).cursor === 'pointer' && !(host && host.nodeType === 1 && style(host).cursor === 'pointer'))) continue;
+      const icon = iconBoxes(el);
+      if (!icon) continue;
+      // A mark the control draws itself (a dropdown caret on ::after) takes room next to
+      // the icon but has no box to measure; the icon is then centred with it, not alone.
+      if (['::before', '::after'].some((ps) => {
+        const pc = getComputedStyle(el, ps);
+        return pc.content !== 'none' && pc.content !== 'normal' && pc.display !== 'none' && pc.position !== 'absolute' && pc.position !== 'fixed';
+      })) continue;
+      const u = unionOf(icon.boxes);
+      if (u.r - u.l > 80 || u.b - u.t > 80) continue;
+      const p = paddingOf(el);
+      for (const [axis, lo, hi, a, b] of [['x', p.l, p.r, u.l, u.r], ['y', p.t, p.b, u.t, u.b]]) {
+        const inkedAxis = axis === 'x' ? icon.inkedX : icon.inked;
+        const free = (hi - lo - (b - a)) / 2;
+        const off = (a + b) / 2 - (lo + hi) / 2;
+        if (free < 1 || Math.abs(off) < 2 || Math.abs(off) > free + 0.5) continue;
+        if (Math.abs(off) > 0.6 * free && free > 12) continue; // flush against one side of a wide box
+        // Measured glyph ink is exact, so 2 px counts; an image or icon box may carry its own
+        // transparent margin, so it needs 3 px or most of the free room.
+        if (!inkedAxis && Math.abs(off) < 3.5 && Math.abs(off) < 0.75 * free) continue;
+        if (inkedAxis && Math.abs(off) < 0.1 * Math.min(hi - lo, 64)) continue; // 2 px reads as centred in a large box
+        layoutOutliers.push({ kind: 'icon_offset', axis, selectors: [uniqueSelector(el)], container: null, offset_px: round2(off),
+          free_px: round2(free), size_px: round2(hi - lo), content_px: round2(b - a), ink: inkedAxis, text: (accName(el) || '').replace(/\s+/g, ' ').trim().slice(0, 60),
+          box: boxOf(el) });
+      }
+    }
+    const FIELD = 'input:not([type=checkbox]):not([type=radio]):not([type=hidden]):not([type=range]):not([type=color]):not([type=file])'
+      + ':not([type=submit]):not([type=button]):not([type=reset]):not([type=image]), select';
+    const paintedBox = (e) => {
+      const cs = style(e);
+      const bg = parseColor(cs.backgroundColor);
+      return (bg && bg.a > 0.05) || (cs.backgroundImage && cs.backgroundImage !== 'none')
+        || (parseFloat(cs.borderTopWidth) || 0) > 0 || (parseFloat(cs.borderBottomWidth) || 0) > 0;
+    };
+    for (const f of all) {
+      try {
+        if (!f.matches(FIELD)) continue;
+      } catch (e) {
+        continue;
+      }
+      const fg = geo(f);
+      if (!fg.vis || !inView(fg.r) || fg.r.width < 20 || fg.r.height < 10) continue;
+      const fr = fg.r;
+      // The field's group: its grandparent (a wrapper holding the addon), or its parent when
+      // the grandparent is the page itself.
+      const top = (n) => !n || n.nodeType !== 1 || n === document.body || n === document.documentElement;
+      const up = parentOf(f);
+      if (top(up)) continue;
+      const scope = top(parentOf(up)) ? up : parentOf(up);
+      let best = null;
+      for (const b of scope.querySelectorAll('*')) {
+        if (b === f || b.contains(f) || f.contains(b) || !geo(b).vis || !paintedBox(b)) continue;
+        const br = geo(b).r;
+        if (br.height < 10 || br.width < 8 || !(br.left >= fr.right - 1.5 || br.right <= fr.left + 1.5)) continue;
+        const gap = Math.min(Math.abs(br.left - fr.right), Math.abs(fr.left - br.right));
+        const overlap = Math.min(fr.bottom, br.bottom) - Math.max(fr.top, br.top);
+        if (gap > 1.5 || overlap < 0.5 * Math.min(fr.height, br.height)) continue;
+        if (!best || br.width * br.height < best.area) best = { el: b, area: br.width * br.height, r: br };
+      }
+      if (!best) continue;
+      const dt = best.r.top - fr.top;
+      const db = best.r.bottom - fr.bottom;
+      if (Math.max(Math.abs(dt), Math.abs(db)) < 2) continue;
+      layoutOutliers.push({ kind: 'attached_mismatch', axis: 'y', selectors: [uniqueSelector(f), uniqueSelector(best.el)], container: uniqueSelector(scope),
+        offset_px: round2(Math.abs(dt) >= Math.abs(db) ? dt : db), top_px: round2(dt), bottom_px: round2(db), field_px: round2(fr.height),
+        other_px: round2(best.r.height), text: (accName(f) || f.getAttribute('placeholder') || '').replace(/\s+/g, ' ').trim().slice(0, 60), box: boxOf(f) });
+    }
+    // Side by side, different kinds (LY-09): a checkbox, radio or switch whose centre is
+    // 3 px or more off the first line of its label; a field and a separate button in one
+    // row (gap up to 16 px) whose heights differ by 2 px or more; and in a bar (a header,
+    // navigation or toolbar row), a control whose content centre is 3 px or more off the
+    // others'. Content centres use the first text line or the icon, so a taller box with
+    // centred content does not count.
+    const firstLine = (el, skip) => {
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        if ((skip && skip.contains(t)) || !t.nodeValue.trim()) continue;
+        const host = t.parentElement;
+        if (!host || !geo(host).vis || helperText(host)) continue;
+        const range = document.createRange();
+        range.selectNodeContents(t);
+        const q = [...range.getClientRects()].find((x) => x.width > 0 && x.height > 0);
+        if (q) return q;
+      }
+      return null;
+    };
+    const CHOICE = 'input[type=checkbox], input[type=radio], [role=switch], [role=checkbox], [role=radio]';
+    for (const c of all) {
+      try {
+        if (!c.matches(CHOICE)) continue;
+      } catch (e) {
+        continue;
+      }
+      const g = geo(c);
+      if (!g.vis || !inView(g.r) || g.r.width < 8 || g.r.height < 8 || g.r.height > 48 || helperText(c)) continue;
+      if (parseFloat(style(c).opacity) === 0 || style(c).pointerEvents === 'none') continue;
+      let label = (c.labels && c.labels[0]) || c.closest('label');
+      if (!label && c.nextElementSibling && textOf(c.nextElementSibling)) label = c.nextElementSibling;
+      if (!label || !geo(label).vis) continue;
+      const line = firstLine(label, c);
+      if (!line) continue;
+      const overlap = Math.min(line.bottom, g.r.bottom) - Math.max(line.top, g.r.top);
+      if (!(line.left >= g.r.right - 2 || line.right <= g.r.left + 2) || overlap <= 0) continue;
+      const off = (g.r.top + g.r.bottom) / 2 - (line.top + line.bottom) / 2;
+      if (Math.abs(off) < 3) continue;
+      layoutOutliers.push({ kind: 'label_offset', axis: 'y', selectors: [uniqueSelector(c)], container: uniqueSelector(label), offset_px: round2(off),
+        line_px: round2(line.height), control_px: round2(g.r.height), text: textOf(label), box: boxOf(c) });
+    }
+    const BUTTONISH = 'button, input[type=submit], input[type=button], input[type=reset], a.btn, [role=button]';
+    for (const f of all) {
+      try {
+        if (!f.matches(FIELD)) continue;
+      } catch (e) {
+        continue;
+      }
+      const fg = geo(f);
+      if (!fg.vis || !inView(fg.r) || fg.r.width < 40 || fg.r.height < 16 || fg.r.height > 72) continue;
+      const fr = fg.r;
+      const scope = f.closest('form, .input-group, [role=search]') || parentOf(parentOf(f) || f);
+      if (!scope || scope.nodeType !== 1 || scope === document.body || scope === document.documentElement) continue;
+      let next = null;
+      for (const b of scope.querySelectorAll(BUTTONISH)) {
+        if (b.contains(f) || !geo(b).vis) continue;
+        const br = geo(b).r;
+        const gap = br.left >= fr.right - 1 ? br.left - fr.right : (br.right <= fr.left + 1 ? fr.left - br.right : -1);
+        const overlap = Math.min(fr.bottom, br.bottom) - Math.max(fr.top, br.top);
+        if (gap <= 1.5 || gap > 16 || overlap < 0.5 * Math.min(fr.height, br.height) || br.height < 0.6 * fr.height) continue;
+        if (!next || gap < next.gap) next = { el: b, gap, r: br };
+      }
+      if (!next || !paintedBox(next.el)) continue;
+      const dh = next.r.height - fr.height;
+      if (Math.abs(dh) < 2) continue;
+      layoutOutliers.push({ kind: 'pair_mismatch', axis: 'y', selectors: [uniqueSelector(f), uniqueSelector(next.el)], container: uniqueSelector(scope),
+        offset_px: round2(dh), gap_px: round2(next.gap), top_px: round2(next.r.top - fr.top), field_px: round2(fr.height), other_px: round2(next.r.height),
+        text: (accName(f) || f.getAttribute('placeholder') || '').replace(/\s+/g, ' ').trim().slice(0, 60), box: boxOf(f) });
+    }
+    const vw = VX1 - VX0;
+    const BAR_ITEM = 'a, button, [role=button]';
+    const placedOut = (n, el) => {
+      for (let a = n; a && a !== el; a = parentOf(a)) if (a.nodeType === 1 && ['absolute', 'fixed'].includes(style(a).position)) return true;
+      return false;
+    };
+    const contentCentre = (el) => {
+      const rects = [];
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        const host = t.parentElement;
+        if (!t.nodeValue.trim() || !host || !geo(host).vis || helperText(host) || placedOut(host, el)) continue;
+        const range = document.createRange();
+        range.selectNodeContents(t);
+        const q = [...range.getClientRects()].find((x) => x.width > 0 && x.height > 0);
+        if (q) { rects.push(q); break; }
+      }
+      for (const e of el.querySelectorAll('*')) {
+        if (!geo(e).vis || placedOut(e, el) || e.textContent.trim()) continue;
+        if (MEDIA.has(e.localName)) rects.push(geo(e).r);
+        else if (!e.children.length && (shownContent(getComputedStyle(e, '::before').content) || shownContent(getComputedStyle(e, '::after').content))) rects.push(geo(e).r);
+      }
+      if (!rects.length) return null;
+      const u = unionOf(rects);
+      return { c: (u.t + u.b) / 2, h: u.b - u.t };
+    };
+    const bars = all.filter((b) => {
+      const g = geo(b);
+      if (!g.vis || !inView(g.r) || g.r.height < 24 || g.r.height > 120 || g.r.width < 0.6 * vw) return false;
+      const role = b.getAttribute('role');
+      return ['nav', 'header'].includes(b.localName) || role === 'navigation' || role === 'banner' || role === 'toolbar'
+        || /(^|[-_ ])(navbar|topbar|toolbar|appbar|header)([-_ ]|$)/i.test(b.className && b.className.baseVal === undefined ? b.className : '');
+    });
+    for (const bar of bars.filter((b) => !bars.some((o) => o !== b && o.contains(b)))) {
+      const br = geo(bar).r;
+      const items = [...bar.querySelectorAll(BAR_ITEM)].filter((e) => {
+        const g = geo(e);
+        return g.vis && inView(g.r) && g.r.height <= 72 && g.r.top >= br.top - 1 && g.r.bottom <= br.bottom + 1;
+      });
+      const outer = items.filter((e) => !items.some((o) => o !== e && o.contains(e)));
+      const placed = [];
+      for (const e of outer) {
+        const cs = style(e);
+        if (cs.display === 'inline' && (parentOf(e) && style(parentOf(e)).display === 'inline')) continue;
+        const cc = contentCentre(e);
+        if (cc && cc.h <= 48) placed.push({ e, c: cc.c, h: cc.h, r: geo(e).r });
+      }
+      if (placed.length < 2) continue;
+      // One row only: the items whose boxes overlap the row of the first item.
+      const sameRow = placed.filter((it) => Math.min(it.r.bottom, placed[0].r.bottom) - Math.max(it.r.top, placed[0].r.top) > 0.5 * Math.min(it.r.height, placed[0].r.height));
+      // Items of similar content height only: an avatar with a name beside a row of icons is
+      // centred on purpose with its own height.
+      const hs = sameRow.map((it) => it.h).sort((a, b) => a - b);
+      const hm = hs[Math.floor(hs.length / 2)];
+      const row = sameRow.filter((it) => it.h <= 1.8 * hm && it.h >= hm / 1.8);
+      if (row.length < 2) continue;
+      const centres = row.map((it) => it.c).sort((a, b) => a - b);
+      const mid = centres[Math.floor(centres.length / 2)];
+      let worst = null;
+      for (const it of row) {
+        const d = it.c - mid;
+        const others = row.filter((o) => o !== it);
+        const agree = others.every((o) => Math.abs(o.c - mid) <= 1.5);
+        if (Math.abs(d) >= 3 && agree && (!worst || Math.abs(d) > Math.abs(worst.d))) worst = { it, d, ref: others[0] };
+      }
+      if (!worst) continue;
+      layoutOutliers.push({ kind: 'bar_offset', axis: 'y', selectors: [uniqueSelector(worst.it.e), uniqueSelector(worst.ref.e)], container: uniqueSelector(bar),
+        offset_px: round2(worst.d), items: row.length, text: (accName(worst.it.e) || textOf(worst.it.e)).slice(0, 60), box: boxOf(worst.it.e) });
+    }
+    // A squeezed column (LY-10): on a phone-width screen, two or more texts of two or more
+    // words in boxes narrower than four em that wrap to three or more lines, or of six or
+    // more words that break every one or two words. Reported once, through the outermost
+    // ancestor still narrower than 40 % of the screen.
+    if (vw <= 520) {
+      const squeezed = [];
+      for (const e of all) {
+        if (squeezed.length > 30) break;
+        const g = geo(e);
+        if (!g.vis || !inView(g.r) || ![...e.childNodes].some((n) => n.nodeType === 3 && n.nodeValue.trim())) continue;
+        const words = textOf(e).split(' ').filter(Boolean);
+        if (words.length < 2 || textOf(e).length < 8) continue;
+        const cs = style(e);
+        const fs = parseFloat(cs.fontSize) || 16;
+        const lh = parseFloat(cs.lineHeight) || fs * 1.2;
+        // Or a longer text in a box under 40 % of the screen that breaks every one or two words
+        // (table cells and nested list items wrap by design and are left out).
+        const lines = Math.round(g.r.height / lh);
+        if ((g.r.width < 4 * fs && g.r.height >= 2.5 * lh) || (g.r.width < 3 * fs && g.r.height >= 1.6 * lh)
+          || (words.length >= 6 && lines >= 3 && lines >= words.length / 2 && g.r.width < 0.4 * vw && !e.closest('table, li li'))) squeezed.push(e);
+      }
+      if (squeezed.length >= 2) {
+        let col = squeezed[0];
+        for (let a = parentOf(col); a && a.nodeType === 1 && a !== document.body && a !== document.documentElement; a = parentOf(a)) {
+          if (geo(a).r.width < 0.4 * vw) col = a; else break;
+        }
+        layoutOutliers.push({ kind: 'narrow_column', axis: 'x', selectors: [uniqueSelector(col)], container: null, offset_px: round2(geo(col).r.width),
+          screen_px: round2(vw), count: squeezed.length, text: textOf(squeezed[0]), box: boxOf(col) });
+      }
+    }
+    // Uneven fields and crowded neighbours (LY-11..13). Two text fields stacked in one form
+    // column (same left edge, nothing beside their right edge) whose widths differ by 4 px
+    // or more and by less than a quarter; a deliberately short field differs by more
+    // (field_width). Two links or buttons next to each other on one line, at one size and
+    // baseline, whose labels touch: under 0.1 em from the end of one label's text to the
+    // start of the next, so they read as one phrase (run_together). A link or button of a
+    // painted header bar (fixed, sticky, or a header or navigation bar 24 to 160 px tall)
+    // whose text starts inside the bar and hangs past its bottom edge by 4 px and 30 % of
+    // its line or more; a bar at the bottom of the screen is checked upwards (hanging_item).
+    const trimmedRects = (t) => {
+      const v = t.nodeValue;
+      const i0 = v.search(/\S/);
+      if (i0 < 0) return [];
+      const range = document.createRange();
+      range.setStart(t, i0);
+      range.setEnd(t, v.replace(/\s+$/, '').length);
+      return [...range.getClientRects()].filter((q) => q.width > 0 && q.height > 0);
+    };
+    const TEXT_FIELD = 'textarea, input:not([type]), input[type=text], input[type=email], input[type=password], input[type=search], input[type=tel], input[type=url]';
+    const textFields = [];
+    for (const f of all) {
+      try {
+        if (!f.matches(TEXT_FIELD)) continue;
+      } catch (e) {
+        continue;
+      }
+      const g = geo(f);
+      if (g.vis && g.r.width >= 40 && g.r.height >= 12 && !helperText(f)) textFields.push(f);
+    }
+    const fieldScopes = new Map();
+    for (const f of textFields) {
+      let scope = f.closest('form, fieldset');
+      for (let a = parentOf(f), i = 0; !scope && a && a.nodeType === 1 && a !== document.body && i < 4; a = parentOf(a), i++) {
+        if (textFields.some((o) => o !== f && a.contains(o))) scope = a;
+      }
+      if (!scope) continue;
+      if (!fieldScopes.has(scope)) fieldScopes.set(scope, []);
+      fieldScopes.get(scope).push(f);
+    }
+    for (const [scope, list] of fieldScopes) {
+      if (list.length < 2) continue;
+      const near = [...scope.querySelectorAll('*')].slice(0, 800).filter((e) => !list.includes(e) && geo(e).vis);
+      // Something beside a field's right edge (an addon, a button, another field, a hint)
+      // takes part of its row: that field is narrower on purpose.
+      const free = list.filter((f) => {
+        const r = geo(f).r;
+        return !near.some((e) => {
+          if (e.contains(f) || f.contains(e)) return false;
+          const q = geo(e).r;
+          const ov = Math.min(r.bottom, q.bottom) - Math.max(r.top, q.top);
+          return q.width >= 4 && ov > 0.5 * Math.min(r.height, q.height) && q.left >= r.right - 1.5 && q.left < r.right + 48;
+        });
+      }).sort((a, b) => geo(a).r.top - geo(b).r.top);
+      const shares = (f, skip) => free.some((o) => !skip.includes(o) && Math.abs(geo(o).r.left - geo(f).r.left) <= 1.5 && Math.abs(geo(o).r.width - geo(f).r.width) <= 1);
+      const reported = new Set();
+      for (let i = 1; i < free.length; i++) {
+        const a = geo(free[i - 1]).r;
+        const b = geo(free[i]).r;
+        const gap = b.top - a.bottom;
+        if (Math.abs(a.left - b.left) > 1.5 || gap < 0 || gap > 120) continue;
+        const ratio = b.width / a.width;
+        if (Math.abs(b.width - a.width) < 4 || ratio < 0.75 || ratio > 1.34) continue;
+        // The odd field is the one whose width no other field of the column shares.
+        const pair = [free[i - 1], free[i]];
+        const odd = shares(pair[0], pair) && !shares(pair[1], pair) ? pair[1] : (shares(pair[1], pair) && !shares(pair[0], pair) ? pair[0] : pair[1]);
+        const other = odd === pair[0] ? pair[1] : pair[0];
+        if (reported.has(odd) || !inView(geo(odd).r)) continue;
+        reported.add(odd);
+        layoutOutliers.push({ kind: 'field_width', axis: 'x', selectors: [uniqueSelector(odd), uniqueSelector(other)], container: uniqueSelector(scope),
+          offset_px: round2(geo(odd).r.width - geo(other).r.width), field_px: round2(geo(odd).r.width), other_px: round2(geo(other).r.width),
+          text: (accName(odd) || odd.getAttribute('placeholder') || '').replace(/\s+/g, ' ').trim().slice(0, 60), box: boxOf(odd) });
+      }
+    }
+    const ITEM = 'a[href], button, [role=button], [role=link], [role=tab], [role=menuitem]';
+    const labelEnds = (el) => {
+      let first = null;
+      let last = null;
+      let letters = false;
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        const host = t.parentElement;
+        if (!t.nodeValue.trim() || !host || !geo(host).vis || helperText(host) || placedOut(host, el)) continue;
+        const qs = trimmedRects(t);
+        if (!qs.length) continue;
+        const fs = parseFloat(style(host).fontSize) || 16;
+        if (!first) first = { q: qs[0], fs };
+        last = { q: qs[qs.length - 1], fs };
+        letters = letters || LETTER.test(t.nodeValue);
+      }
+      return first ? { first, last, letters } : null;
+    };
+    const runs = new Map();
+    let prevItem = null;
+    for (const e of all) {
+      try {
+        if (!e.matches(ITEM)) continue;
+      } catch (err) {
+        continue;
+      }
+      if (prevItem && prevItem.e.contains(e)) continue;
+      const g = geo(e);
+      if (!g.vis || !inView(g.r) || helperText(e)) continue;
+      const ends = labelEnds(e);
+      if (!ends) continue;
+      if (!ends.letters) {
+        prevItem = null; // a caret or symbol between two labels separates them
+        continue;
+      }
+      const item = { e, ...ends };
+      if (prevItem) {
+        const a = prevItem.last.q;
+        const b = item.first.q;
+        const fs = Math.min(prevItem.last.fs, item.first.fs);
+        const ov = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+        const gap = b.left - a.right;
+        if (ov > 0.5 * Math.min(a.height, b.height) && b.left > a.left + 1 && gap < 0.1 * fs && gap > -0.3 * fs
+          && Math.max(prevItem.last.fs, item.first.fs) <= 1.25 * fs && Math.abs(a.bottom - b.bottom) <= 0.25 * fs) {
+          let common = parentOf(prevItem.e);
+          while (common && common.nodeType === 1 && !common.contains(e)) common = parentOf(common);
+          const key = common && common.nodeType === 1 ? common : document.body;
+          if (!runs.has(key)) runs.set(key, []);
+          runs.get(key).push({ a: prevItem.e, b: e, gap });
+        }
+      }
+      prevItem = item;
+    }
+    for (const [box, pairs] of runs) {
+      const p = pairs[0];
+      layoutOutliers.push({ kind: 'run_together', axis: 'x', selectors: [uniqueSelector(p.b), uniqueSelector(p.a)], container: uniqueSelector(box),
+        offset_px: round2(p.gap), pairs: pairs.length, text: (textOf(p.a) + ' | ' + textOf(p.b)).slice(0, 80), box: boxOf(p.b) });
+    }
+    const BAR_NAME = /(^|[-_ ])(navbar|topbar|toolbar|appbar|header|nav)([-_ ]|$)/i;
+    const hangBars = all.filter((b) => {
+      const g = geo(b);
+      if (!g.vis || !inView(g.r) || g.r.height < 24 || g.r.height > 160 || g.r.width < 0.6 * vw) return false;
+      const cs = style(b);
+      const pinned = cs.position === 'fixed' || cs.position === 'sticky';
+      const named = ['nav', 'header'].includes(b.localName) || ['navigation', 'banner', 'toolbar'].includes(b.getAttribute('role'))
+        || BAR_NAME.test(typeof b.className === 'string' ? b.className : '');
+      return (pinned || named) && paintedBox(b) && cs.overflowY === 'visible';
+    });
+    for (const bar of hangBars.filter((b) => !hangBars.some((o) => o !== b && o.contains(b)))) {
+      const br = geo(bar).r;
+      const atBottom = br.bottom >= VY1 - 1 && br.top > VY0 + (VY1 - VY0) / 2;
+      let worst = null;
+      let count = 0;
+      for (const it of bar.querySelectorAll(ITEM)) {
+        const g = geo(it);
+        if (!g.vis || g.r.right <= VX0 + 1 || g.r.left >= VX1 - 1 || helperText(it) || placedOut(it, bar)) continue;
+        const rects = [];
+        const walker = document.createTreeWalker(it, NodeFilter.SHOW_TEXT);
+        for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+          const host = t.parentElement;
+          if (t.nodeValue.trim() && host && geo(host).vis && !helperText(host)) rects.push(...trimmedRects(t));
+        }
+        if (!rects.length) continue;
+        const line = Math.min(...rects.map((q) => q.height));
+        if (paintedBox(it)) rects.push(g.r);
+        const u = unionOf(rects);
+        const hang = atBottom ? br.top - u.t : u.b - br.bottom;
+        const starts = atBottom ? u.b <= br.bottom + 1 && u.b > br.top + 2 : u.t >= br.top - 1 && u.t < br.bottom - 2;
+        if (!starts || hang < 4 || hang < 0.3 * line) continue;
+        count++;
+        if (!worst || hang > worst.hang) worst = { it, hang };
+      }
+      if (worst) {
+        layoutOutliers.push({ kind: 'hanging_item', axis: 'y', selectors: [uniqueSelector(worst.it)], container: uniqueSelector(bar), offset_px: round2(worst.hang),
+          items: count, bar_px: round2(br.height), pinned: ['fixed', 'sticky'].includes(style(bar).position), edge: atBottom ? 'top' : 'bottom',
+          text: textOf(worst.it), box: boxOf(worst.it) });
+      }
+    }
+    // Text over an image (LY-14): the glyphs of a text overlap an image it does not belong to
+    // by 8 px across and 4 px down or more while its block runs past the image's edge, as when
+    // a float or a negative margin carries a caption into the next figure. Deliberate overlays
+    // stay out: a text block wholly inside the image, anything placed out of flow (absolute,
+    // fixed, sticky) or transformed between either one and their common ancestor, both in one
+    // grid, and text on a painted panel of its own. A transparent image drawn over the text
+    // counts too: the text shows through it (text_over_image).
+    const pictures = [];
+    for (const e of all) {
+      if (!['img', 'svg', 'video', 'canvas', 'object', 'embed'].includes(e.localName) || (e.localName === 'svg' && parentOf(e) && parentOf(e).closest && parentOf(e).closest('svg'))) continue;
+      const g = geo(e);
+      if (g.vis && inView(g.r) && g.r.width >= 40 && g.r.height >= 24 && parseFloat(style(e).opacity) >= 0.5) pictures.push(e);
+      if (pictures.length >= 80) break;
+    }
+    const offFlow = (from, top) => {
+      for (let a = from; a && a !== top; a = parentOf(a)) {
+        if (a.nodeType !== 1) continue;
+        const cs = style(a);
+        if (['absolute', 'fixed', 'sticky'].includes(cs.position) || (cs.transform && cs.transform !== 'none')) return true;
+      }
+      return false;
+    };
+    const panelAt = (from, top, x, y) => {
+      for (let a = from; a && a !== top; a = parentOf(a)) {
+        if (a.nodeType !== 1) continue;
+        const cs = style(a);
+        const bg = parseColor(cs.backgroundColor);
+        const r = geo(a).r;
+        if (((bg && bg.a >= 0.5) || (cs.backgroundImage && cs.backgroundImage !== 'none')) && x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return true;
+      }
+      return false;
+    };
+    if (pictures.length) {
+      const over = new Map();
+      const walker = document.createTreeWalker(document.body || document.documentElement, NodeFilter.SHOW_TEXT);
+      for (let t = walker.nextNode(); t; t = walker.nextNode()) {
+        const host = t.parentElement;
+        if (!host || !LETTER.test(t.nodeValue)) continue;
+        const hg = geo(host);
+        if (!hg.vis || !inView(hg.r) || helperText(host)) continue;
+        const near = pictures.filter((p) => {
+          const q = geo(p).r;
+          return !p.contains(host) && hg.r.left < q.right && hg.r.right > q.left && hg.r.top < q.bottom && hg.r.bottom > q.top;
+        });
+        if (!near.length) continue;
+        let block = host;
+        while (block && block.nodeType === 1 && ['inline', 'contents'].includes(style(block).display) && parentOf(block)) block = parentOf(block);
+        const bb = geo(block).r;
+        for (const q of trimmedRects(t)) {
+          for (const p of near) {
+            const r = geo(p).r;
+            if (bb.left >= r.left - 1 && bb.right <= r.right + 1 && bb.top >= r.top - 1 && bb.bottom <= r.bottom + 1) continue;
+            const ox = Math.min(q.right, r.right) - Math.max(q.left, r.left);
+            const oy = Math.min(q.bottom, r.bottom) - Math.max(q.top, r.top);
+            if (ox < 8 || oy < 4 || oy < 0.3 * q.height) continue;
+            const x = (Math.max(q.left, r.left) + Math.min(q.right, r.right)) / 2;
+            const y = (Math.max(q.top, r.top) + Math.min(q.bottom, r.bottom)) / 2;
+            if (x < VX0 || x > VX1 || y < VY0 || y > VY1) continue;
+            let common = parentOf(host);
+            while (common && common.nodeType === 1 && !common.contains(p)) common = parentOf(common);
+            if (!common || common.nodeType !== 1 || ['grid', 'inline-grid'].includes(style(common).display)) continue;
+            if (offFlow(host, common) || offFlow(p, common) || panelAt(host, common, x, y)) continue;
+            const hit = document.elementFromPoint(x, y);
+            const under = !!hit && (hit === p || p.contains(hit));
+            const seen = over.get(p);
+            if (!seen) over.set(p, { p, host, oy, ox, under, lines: 1 });
+            else {
+              seen.lines++;
+              if (oy > seen.oy) Object.assign(seen, { host, oy, ox, under });
+            }
+          }
+        }
+      }
+      for (const { p, host, oy, ox, under, lines } of over.values()) {
+        layoutOutliers.push({ kind: 'text_over_image', axis: 'y', selectors: [uniqueSelector(host), uniqueSelector(p)], offset_px: round2(oy),
+          overlap_w: round2(ox), image_on_top: under, lines, text: textOf(host), box: boxOf(host) });
+      }
+    }
+    // Rows that touch while columns keep a gap (LY-15): painted cells in rows and columns
+    // whose neighbour on the same row keeps 4 to 64 px from them while the cell below touches
+    // them (within 1 px), so the rows run together into one block. Tables, controls and inline
+    // boxes (a wrapped row of buttons or tabs), the items of one card beside another card's,
+    // and stacks side by side (the cell below in the same parent, the neighbour in another)
+    // stay out (touching_rows).
+    const cellBoxes = [];
+    const CONTROL = 'a, button, input, select, textarea, label, summary, [role=button], [role=tab], [role=link], [role=menuitem]';
+    for (const e of all) {
+      const g = geo(e);
+      if (!g.vis || !inView(g.r) || g.r.width < 16 || g.r.height < 12 || g.r.width > 0.95 * vw) continue;
+      const cs = style(e);
+      if (cs.display.startsWith('inline') || cs.display.startsWith('table') || ['absolute', 'fixed'].includes(cs.position)) continue;
+      try {
+        if (e.matches(CONTROL)) continue;
+      } catch (err) {
+        continue;
+      }
+      const bg = parseColor(cs.backgroundColor);
+      const ring = ['Top', 'Right', 'Bottom', 'Left'].every((s) => (parseFloat(cs['border' + s + 'Width']) || 0) > 0);
+      if ((bg && bg.a > 0.05) || (cs.backgroundImage && cs.backgroundImage !== 'none') || ring) cellBoxes.push({ c: e, r: g.r });
+      if (cellBoxes.length >= 400) break;
+    }
+    const apart = (a, b) => a !== b && !a.c.contains(b.c) && !b.c.contains(a.c);
+    const sameRow = (a, b) => Math.abs(a.r.top - b.r.top) <= 1 && Math.abs(a.r.bottom - b.r.bottom) <= 2;
+    const gapRight = (a, b) => b.r.left - a.r.right;
+    for (const a of cellBoxes) {
+      a.right = null;
+      a.spaced = false;
+      for (const o of cellBoxes) {
+        if (!apart(a, o) || !sameRow(a, o)) continue;
+        const g1 = gapRight(a, o);
+        const g2 = gapRight(o, a);
+        if ((g1 >= 4 && g1 <= 64) || (g2 >= 4 && g2 <= 64)) a.spaced = true;
+        if (g1 >= 4 && g1 <= 64 && (!a.right || o.r.left < a.right.r.left)) a.right = o;
+      }
+    }
+    const touching = new Map();
+    for (const a of cellBoxes) {
+      if (!a.right) continue;
+      const c = a.right;
+      for (const b of cellBoxes) {
+        if (b === c || !b.spaced || !apart(a, b) || !apart(b, c)) continue;
+        const gy = b.r.top - a.r.bottom;
+        const ox = Math.min(a.r.right, b.r.right) - Math.max(a.r.left, b.r.left);
+        if (gy < -1 || gy > 1 || ox < 0.5 * Math.min(a.r.width, b.r.width)) continue;
+        if (parentOf(a.c) === parentOf(b.c) && parentOf(c.c) !== parentOf(a.c)) continue;
+        let panel = parentOf(a.c);
+        while (panel && panel.nodeType === 1 && !paintedBox(panel)) panel = parentOf(panel);
+        if (panel && panel.nodeType === 1 && !panel.contains(c.c)) continue;
+        let common = parentOf(a.c);
+        while (common && common.nodeType === 1 && !(common.contains(b.c) && common.contains(c.c))) common = parentOf(common);
+        const key = common && common.nodeType === 1 ? common : document.body;
+        if (!touching.has(key)) touching.set(key, { a, b, gy, gx: gapRight(a, c), pairs: 0 });
+        touching.get(key).pairs++;
+      }
+    }
+    for (const [box, t] of touching) {
+      layoutOutliers.push({ kind: 'touching_rows', axis: 'y', selectors: [uniqueSelector(t.b.c), uniqueSelector(t.a.c)], container: uniqueSelector(box),
+        offset_px: round2(t.gy), gap_px: round2(t.gx), pairs: t.pairs, text: (textOf(t.a.c) + ' / ' + textOf(t.b.c)).slice(0, 80), box: boxOf(t.b.c) });
+    }
+    // Text against the screen edge (LY-16): three or more texts whose glyphs start or end
+    // within 1.5 px of the left or right edge of the screen leave the page no side margin.
+    // Text in a code block or in a box whose content runs past it sideways (a scroller, a
+    // carousel) is cut by that box and is left out. Reported once per side, through the first three texts.
+    {
+      const sides = { left: [], right: [] };
+      const inSideBox = (e) => {
+        for (let a = e; a && a.nodeType === 1 && a !== document.body && a !== document.documentElement; a = parentOf(a)) {
+          if (a.tagName === 'PRE' || (style(a).overflowX !== 'visible' && a.scrollWidth > a.clientWidth + 1)) return true;
+        }
+        return false;
+      };
+      for (const e of all) {
+        if (sides.left.length > 8 && sides.right.length > 8) break;
+        if (!e.childNodes || ![...e.childNodes].some((n) => n.nodeType === 3 && n.nodeValue.trim())) continue;
+        const g = geo(e);
+        if (!g.vis || !inView(g.r) || inSideBox(e)) continue;
+        let left = Infinity;
+        let right = -Infinity;
+        for (const n of e.childNodes) {
+          if (n.nodeType !== 3 || !n.nodeValue.trim()) continue;
+          const range = document.createRange();
+          range.selectNodeContents(n);
+          for (const q of range.getClientRects()) {
+            if (q.width < 1 || q.height < 1 || q.bottom <= VY0 || q.top >= VY1) continue;
+            left = Math.min(left, q.left);
+            right = Math.max(right, q.right);
+          }
+        }
+        if (left !== Infinity && left >= VX0 - 0.5 && left - VX0 <= 1.5) sides.left.push({ e, d: Math.max(0, left - VX0) });
+        if (right !== -Infinity && right <= VX1 + 0.5 && VX1 - right <= 1.5) sides.right.push({ e, d: Math.max(0, VX1 - right) });
+      }
+      for (const side of ['left', 'right']) {
+        const hits = sides[side];
+        if (hits.length < 3) continue;
+        layoutOutliers.push({ kind: 'edge_text', axis: 'x', side, selectors: hits.slice(0, 3).map((h) => uniqueSelector(h.e)), container: null,
+          offset_px: round2(Math.max(...hits.map((h) => h.d))), count: hits.length, screen_px: round2(vw), text: textOf(hits[0].e), box: boxOf(hits[0].e) });
+      }
+    }
+    // A desktop layout on a phone (LY-17): a touch screen of phone width whose page is laid
+    // out at least 30 % wider than the screen without a device-width viewport, so the
+    // browser shrinks the whole page to fit and its text renders a few pixels tall.
+    {
+      const sw = (window.screen && window.screen.width) || 0;
+      const meta = document.querySelector('meta[name="viewport" i]');
+      const deviceWidth = !!meta && /width\s*=\s*device-width/i.test(meta.getAttribute('content') || '');
+      if (navigator.maxTouchPoints > 0 && sw > 0 && sw <= 520 && window.innerWidth >= 1.3 * sw && !deviceWidth) {
+        const scale = vvp && vvp.scale > 0 ? vvp.scale : sw / window.innerWidth;
+        const fs = document.body ? parseFloat(style(document.body).fontSize) || 16 : 16;
+        layoutOutliers.push({ kind: 'desktop_layout', axis: 'x', selectors: ['html'], container: null, offset_px: round2(window.innerWidth),
+          screen_px: sw, scale: round2(scale), text_px: round2(fs * scale), meta: meta ? (meta.getAttribute('content') || '') : null,
+          text: '', box: { x: 0, y: 0, w: round2(Math.min(vw, 600)), h: 160 } });
+      }
+    }
+    const scroller = document.scrollingElement || document.documentElement;
+    if (scroller) {
+      const sx = window.scrollX || 0;
+      const cw = scroller.clientWidth;
+      const ch = scroller.clientHeight;
+      if (scroller.scrollWidth > cw + 1) {
+        const rootHides = [document.documentElement, document.body].some((n) => n && ['hidden', 'clip'].includes(style(n).overflowX));
+        const offenders = [];
+        for (const e of all) {
+          const g = geo(e);
+          if (!g.vis || g.r.width < 1 || g.r.right + sx <= cw + 1) continue;
+          const p = parentOf(e);
+          if (p && p.nodeType === 1 && p !== document.body && p !== document.documentElement && geo(p).r.right + sx > cw + 1) continue;
+          let clippedAway = false;
+          for (let a = p; a && a.nodeType === 1 && a !== document.body && a !== document.documentElement; a = parentOf(a)) {
+            if (style(a).overflowX !== 'visible') { clippedAway = true; break; }
+          }
+          if (clippedAway || ['fixed'].includes(style(e).position)) continue;
+          offenders.push(e);
+        }
+        // The cut a user sees: an element that starts on the screen and runs past its edge.
+        offenders.sort((a, b) => (geo(a).r.left + sx < cw) - (geo(b).r.left + sx < cw) || geo(b).r.right - geo(a).r.right).reverse();
+        const shown = offenders.filter((e) => geo(e).r.left + sx < cw && geo(e).r.bottom > VY0 && geo(e).r.top < VY1);
+        if (shown.length) {
+          shown.sort((a, b) => geo(b).r.right - geo(a).r.right);
+          layoutOutliers.push({ kind: 'page_overflow', axis: 'x', selectors: shown.slice(0, 3).map(uniqueSelector), container: null,
+            offset_px: round2(scroller.scrollWidth - cw), page_px: scroller.scrollWidth, screen_px: cw, hides: rootHides,
+            text: textOf(shown[0]), box: boxOf(shown[0]) });
+        } else {
+          // The page is wider on every screen even when the element that widens it lies
+          // further down: name it, and outline the screen's right edge.
+          const elsewhere = offenders.filter((e) => geo(e).r.left + sx < cw).sort((a, b) => geo(b).r.right - geo(a).r.right);
+          if (elsewhere.length) {
+            layoutOutliers.push({ kind: 'page_overflow', axis: 'x', selectors: elsewhere.slice(0, 3).map(uniqueSelector), container: null,
+              offset_px: round2(scroller.scrollWidth - cw), page_px: scroller.scrollWidth, screen_px: cw, hides: rootHides, offscreen: true,
+              offender_y: round2(geo(elsewhere[0]).r.top + (window.scrollY || 0)), text: textOf(elsewhere[0]),
+              box: { x: round2(VX1 - 40), y: round2(VY0), w: 40, h: round2(VY1 - VY0) } });
+          }
+        }
+      }
+      const slack = scroller.scrollHeight - ch;
+      if (slack >= 1 && slack <= 80) {
+        const full = all.find((e) => {
+          if (e === document.body || e === document.documentElement || !geo(e).vis) return false;
+          return Math.abs(geo(e).r.height - ch) <= 1 || (parseFloat(style(e).minHeight) || 0) >= ch - 1;
+        });
+        if (full) {
+          layoutOutliers.push({ kind: 'scroll_slack', axis: 'y', selectors: [uniqueSelector(full)], container: null, offset_px: round2(slack),
+            page_px: scroller.scrollHeight, screen_px: ch, text: '', box: boxOf(full) });
         }
       }
     }

@@ -1,0 +1,130 @@
+{
+ "round": 2,
+ "sealed": "2026-10-19, before any agent run",
+ "viewports": {
+  "phone": "360x780 and 393x852, touch, mobile emulation",
+  "laptop": "1440x900"
+ },
+ "cases": [
+  {
+   "item": "spectre-4cb36cd7",
+   "source": "picturepan2/spectre",
+   "fix_commit": "4cb36cd7914a52c4ea18ac34308a38250a4c0399",
+   "fix_subject": "Add mobile responsive support",
+   "fix_date": "2017-08-14",
+   "broken_commit": "b15b0cee1110e83a26326dacdbc995364dd07cdb",
+   "fixed_commit": "4cb36cd7914a52c4ea18ac34308a38250a4c0399",
+   "page": "docs/components.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "At phone width the documentation keeps its 960 px desktop layout. The side navigation (#sidebar, its menu .s-nav) and the main content (.s-content: section titles .s-title, notes and demos) overlap, text drawn over text, and the content runs past the right edge of the screen (the page is 960 px wide on a 360 or 393 px screen).",
+   "elements": [
+    "#sidebar",
+    "#sidebar .s-nav",
+    ".s-content",
+    ".s-content .s-title",
+    ".s-content .container",
+    "body/html for the sideways scroll"
+   ],
+   "found_if": "A finding on this page at phone width that points at the side navigation, the main content or an element inside either, and says they overlap or that content runs off the screen or the page scrolls sideways.",
+   "measured": {
+    "phone360": "nav x 30-240, first section title x 90-870 and y 60-152: 7800 px2 overlap; scrollWidth 960 at clientWidth 360",
+    "phone393": "same overlap; scrollWidth 960 at clientWidth 393",
+    "laptop": "no overlap",
+    "fixed_state": "nav off canvas, scrollWidth equals clientWidth"
+   }
+  },
+  {
+   "item": "gentelella-fc3c0364",
+   "source": "ColorlibHQ/gentelella",
+   "fix_commit": "fc3c0364681f19ba2ad23c70de0c80ffbeff1ae2",
+   "fix_subject": "Fix profile details overlapping content and fix messy layout when profile height is different",
+   "fix_date": "2016-04-27",
+   "broken_commit": "1301f59dc46f9fb7cdb9900391b9bcc8d4b1531b",
+   "fixed_commit": "fc3c0364681f19ba2ad23c70de0c80ffbeff1ae2",
+   "page": "production/contacts.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "In every profile card the grey rating footer (.profile_view .bottom, pulled up by margin-top: -20px) covers the last line of the profile details (.profile_view .left li, the second 'Address:' line): 10 px of the 19 px line at 360 px, 3 px at 393 px.",
+   "elements": [
+    ".well.profile_view",
+    ".profile_view .left",
+    ".profile_view .left ul",
+    ".profile_view .left li",
+    ".profile_view .bottom",
+    ".profile_view .ratings"
+   ],
+   "found_if": "A finding on this page that points at a profile card, its details list or its footer and says the footer covers, overlaps or cuts the last detail line (or that the details are cut at the bottom).",
+   "measured": {
+    "phone360": "last detail line bottom 10 px below the footer top in each card",
+    "phone393": "3 px",
+    "laptop": "11 px gap, no overlap",
+    "fixed_state": "10 to 17 px gap"
+   }
+  },
+  {
+   "item": "gentelella-c0602144",
+   "source": "ColorlibHQ/gentelella",
+   "fix_commit": "c0602144ed3c5d60f72146e1d2cf75ca9a1a8a8d",
+   "fix_subject": "Dashboard tile count mobile enhancement",
+   "fix_date": "2016-04-25",
+   "broken_commit": "6a6db2ea23661e2c72c0fcb9dd97c9c3a0a37b8b",
+   "fixed_commit": "c0602144ed3c5d60f72146e1d2cf75ca9a1a8a8d",
+   "page": "production/index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "The six count tiles at the top of the dashboard (.tile_count .tile_stats_count) sit three to a row at phone width, and their text is cut with ellipses: titles such as 'Total Collect...' and 'Total Conne...' (.count_top) and the captions under the numbers such as '4% From last ...' and '34% From l...' (.count_bottom).",
+   "elements": [
+    ".tile_count",
+    ".tile_stats_count",
+    ".tile_stats_count .right",
+    ".count_top",
+    ".count_bottom",
+    ".count"
+   ],
+   "found_if": "A finding on this page at phone width that points at the count tiles or their labels or captions and says the text is cut, truncated or clipped (or that the tiles are too narrow so text is cut).",
+   "measured": {
+    "phone360": "caption text cut by up to 12 px with an ellipsis; titles cut",
+    "phone393": "captions cut by 3 to 21 px; two titles cut",
+    "laptop": "no cut",
+    "fixed_state": "two tiles to a row, nothing cut"
+   }
+  },
+  {
+   "item": "bootstrap-d255ba37",
+   "source": "twbs/bootstrap",
+   "fix_commit": "d255ba371914b638ecb040374f11673fe7c3d1db",
+   "fix_subject": "Fixes Issue #16371 Carousel control is vertically off center for small screens",
+   "fix_date": "2015-05-02",
+   "broken_commit": "45c798a47b307025094015a0c17693ba59a2e393",
+   "fixed_commit": "82279a8eb28fcddf24ecdf524686583e408b5191",
+   "fixed_commit_note": "first later commit whose built CSS (dist/css/bootstrap.css) contains the fix",
+   "page": "docs/examples/carousel/index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "The previous and next chevrons of the carousel (.carousel-control .glyphicon-chevron-left and .glyphicon-chevron-right) sit 10 px below the vertical centre of their controls at phone width.",
+   "elements": [
+    ".carousel-control",
+    ".carousel-control.left",
+    ".carousel-control.right",
+    ".glyphicon-chevron-left",
+    ".glyphicon-chevron-right"
+   ],
+   "found_if": "A finding on this page that points at a carousel control or its chevron and says the chevron is off centre, too low or misaligned vertically.",
+   "measured": {
+    "phone360": "glyph centre 10 px below control centre (both)",
+    "phone393": "10 px",
+    "laptop": "0 px",
+    "fixed_state": "0 px"
+   }
+  }
+ ],
+ "notes": [
+  "A known defect is each item's own defect on its broken page. The same defect seen on another item is a valid extra there; no other item shows these four.",
+  "Fixed-state alarm: a finding on a fixed page that points at that item's defect element and calls it broken in the way the defect describes."
+ ]
+}

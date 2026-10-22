@@ -1,0 +1,258 @@
+[
+ {
+  "run": "flash-r1-plain",
+  "model": "flash",
+  "k": 1,
+  "arm": "plain",
+  "shown": 3,
+  "found": 0,
+  "found_items": [],
+  "missed": [
+   "p01:bootswatch-f02c7f9f",
+   "p02:grayscale-4eaba19f",
+   "p03:bootswatch-0cbc74c6"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 4,
+  "findings": 5,
+  "minutes": 35.07,
+  "note": "stop message at 33.92 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r1-skill",
+  "model": "flash",
+  "k": 1,
+  "arm": "skill",
+  "shown": 3,
+  "found": 0,
+  "found_items": [],
+  "missed": [
+   "p01:bootswatch-f02c7f9f",
+   "p02:grayscale-4eaba19f",
+   "p03:bootswatch-0cbc74c6"
+  ],
+  "alarms": 0,
+  "unsupported": 2,
+  "valid_extra": 5,
+  "findings": 7,
+  "minutes": 35.92,
+  "note": "stop message at 33.87 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r2-plain",
+  "model": "flash",
+  "k": 2,
+  "arm": "plain",
+  "shown": 3,
+  "found": 1,
+  "found_items": [
+   "p04:lbd-a5032470"
+  ],
+  "missed": [
+   "p01:bootswatch-f02c7f9f",
+   "p03:bootswatch-0cbc74c6"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 4,
+  "findings": 5,
+  "minutes": 22.77,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "flash-r2-skill",
+  "model": "flash",
+  "k": 2,
+  "arm": "skill",
+  "shown": 3,
+  "found": 1,
+  "found_items": [
+   "p04:lbd-a5032470"
+  ],
+  "missed": [
+   "p01:bootswatch-f02c7f9f",
+   "p03:bootswatch-0cbc74c6"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 4,
+  "findings": 6,
+  "minutes": 34.71,
+  "note": "stop message at 33.78 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r3-plain",
+  "model": "flash",
+  "k": 3,
+  "arm": "plain",
+  "shown": 2,
+  "found": 1,
+  "found_items": [
+   "p04:lbd-a5032470"
+  ],
+  "missed": [
+   "p02:grayscale-4eaba19f"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 3,
+  "findings": 5,
+  "minutes": 35.29,
+  "note": "stop message at 33.65 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r3-skill",
+  "model": "flash",
+  "k": 3,
+  "arm": "skill",
+  "shown": 2,
+  "found": 1,
+  "found_items": [
+   "p04:lbd-a5032470"
+  ],
+  "missed": [
+   "p02:grayscale-4eaba19f"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 4,
+  "findings": 6,
+  "minutes": 35.09,
+  "note": "stop message at 33.45 min",
+  "missing": false
+ },
+ {
+  "run": "sol-r1-plain",
+  "model": "sol",
+  "k": 1,
+  "arm": "plain",
+  "shown": 3,
+  "found": 0,
+  "found_items": [],
+  "missed": [
+   "p01:bootswatch-f02c7f9f",
+   "p02:grayscale-4eaba19f",
+   "p03:bootswatch-0cbc74c6"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 8,
+  "findings": 9,
+  "minutes": 7.66,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r1-skill",
+  "model": "sol",
+  "k": 1,
+  "arm": "skill",
+  "shown": 3,
+  "found": 0,
+  "found_items": [],
+  "missed": [
+   "p01:bootswatch-f02c7f9f",
+   "p02:grayscale-4eaba19f",
+   "p03:bootswatch-0cbc74c6"
+  ],
+  "alarms": 0,
+  "unsupported": 3,
+  "valid_extra": 5,
+  "findings": 8,
+  "minutes": 15.24,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-plain",
+  "model": "sol",
+  "k": 2,
+  "arm": "plain",
+  "shown": 3,
+  "found": 1,
+  "found_items": [
+   "p04:lbd-a5032470"
+  ],
+  "missed": [
+   "p01:bootswatch-f02c7f9f",
+   "p03:bootswatch-0cbc74c6"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 5,
+  "findings": 6,
+  "minutes": 11.46,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-skill",
+  "model": "sol",
+  "k": 2,
+  "arm": "skill",
+  "shown": 3,
+  "found": 1,
+  "found_items": [
+   "p04:lbd-a5032470"
+  ],
+  "missed": [
+   "p01:bootswatch-f02c7f9f",
+   "p03:bootswatch-0cbc74c6"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 5,
+  "findings": 7,
+  "minutes": 16.42,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-plain",
+  "model": "sol",
+  "k": 3,
+  "arm": "plain",
+  "shown": 2,
+  "found": 1,
+  "found_items": [
+   "p04:lbd-a5032470"
+  ],
+  "missed": [
+   "p02:grayscale-4eaba19f"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 6,
+  "findings": 7,
+  "minutes": 11.18,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-skill",
+  "model": "sol",
+  "k": 3,
+  "arm": "skill",
+  "shown": 2,
+  "found": 1,
+  "found_items": [
+   "p04:lbd-a5032470"
+  ],
+  "missed": [
+   "p02:grayscale-4eaba19f"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 6,
+  "findings": 8,
+  "minutes": 11.84,
+  "note": "",
+  "missing": false
+ }
+]

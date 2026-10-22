@@ -87,3 +87,27 @@ export function truncate(s, n) {
   const str = String(s ?? '');
   return str.length > n ? `${str.slice(0, n - 1)}…` : str;
 }
+
+// Request types a file:// page may load from any local folder.
+export const LOCAL_SUBRESOURCES = new Set(['stylesheet', 'script', 'image', 'font', 'media', 'texttrack', 'manifest']);
+
+/**
+ * The drivers' network policy for a page (a URL object): data, blob and about URLs; on a
+ * file:// page, local subresources from any folder and other files (frames, documents)
+ * only from the page's folder and below; otherwise only the given origins.
+ */
+export function allowedUrl(page, origins, url, resourceType = null) {
+  let u;
+  try {
+    u = new URL(url);
+  } catch {
+    return false;
+  }
+  if (['data:', 'blob:', 'about:'].includes(u.protocol)) return true;
+  if (u.protocol === 'file:') {
+    if (page.protocol !== 'file:') return false;
+    if (resourceType && LOCAL_SUBRESOURCES.has(resourceType)) return true;
+    return u.pathname.startsWith(page.pathname.slice(0, page.pathname.lastIndexOf('/') + 1));
+  }
+  return origins.has(u.origin);
+}

@@ -1,0 +1,29 @@
+[
+  {
+    "page": "p04",
+    "selector": "body > main",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the fixed navigation occupies x=0..216 and main starts at x=240 with a 780px width, ending at x=1020. Only 120px of main is initially visible; the title, paragraphs and examples continue off the right edge throughout the page. Document scrollWidth is 1068px, 708px wider than the screen. Viewed: scan/04-docs-index.html/sheets/galaxy-s24-1.png and measure-p04/measure.png.",
+    "fix": "Add a narrow-screen breakpoint that places the navigation above the content or collapses it, resets the 240px main margin, makes main fit the available width, and stacks the component heading/example columns."
+  },
+  {
+    "page": "p05",
+    "selector": "section .d-flex > .w-50.p-5",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, all three sections retain two 165px columns inside a 330px row. Each text column has 48px padding on both sides, leaving only 69px for its heading and paragraph. The first heading wraps into five lines and each paragraph into 27 lines (648px tall); most lines contain a single word. The middle heading also spills rightward, producing a 366px document width. Viewed: scan/05-p05-index.html/sheets/galaxy-s24-1.png and measure-p05/measure.png.",
+    "fix": "At a phone breakpoint, stack each section flex row vertically, override .w-50 to width:100%, and reduce the 48px padding to 24px so the text occupies the available row."
+  },
+  {
+    "page": "p08",
+    "selector": "main > pre",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, both introductory installation code panels are 391px wide and start at x=16, ending at x=407. Their right borders extend 47px beyond the screen and 63px beyond the main content edge at x=344. The entire document becomes 407px wide, allowing page-level sideways scrolling. Viewed: scan/08-docs-index.html/sheets/galaxy-s24-1.png and measure-p08/measure.png.",
+    "fix": "Constrain the installation pre elements to the main content width on narrow screens with width:100%, max-width:100% and box-sizing:border-box; keep overflow-x:auto on the code panels for any long lines."
+  }
+]

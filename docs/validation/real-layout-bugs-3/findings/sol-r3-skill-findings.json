@@ -1,0 +1,74 @@
+[
+  {
+    "page": "p01",
+    "selector": ".pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the large pagination starts at x=12 and its seven items extend to x=431.7, beyond the 336 px container and 360 px screen. The next-page chevron is completely off screen and the page becomes 433 px wide. See p01-phone-detail-pagination.png.",
+    "fix": "At phone widths, reduce .pagination-lg .page-link horizontal padding from 24 px to 16 px so all seven controls fit within the 336 px content width."
+  },
+  {
+    "page": "p03",
+    "selector": "#typography",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "The TYPOGRAPHY heading uses 48 px text in a 330 px content column. Its text bounds run from x=15 to x=371.8, putting 11.8 px beyond the 360 px screen and visibly cutting the final Y. See p03-phone-detail-typography.png.",
+    "fix": "Add a phone breakpoint that reduces this heading to 40 px or smaller, or use a responsive font-size that keeps its text within the 330 px column."
+  },
+  {
+    "page": "p03",
+    "selector": "table.table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the table is 465.1 px wide inside a 330 px container, running from x=15 to x=480.1. The fourth column starts beyond the screen (its heading text starts at x=393.1), so that column is absent from the normal view and the whole page scrolls horizontally. See p03-phone-detail-table.png.",
+    "fix": "Wrap the table in a width-constrained .table-responsive container with overflow-x:auto, keeping horizontal scrolling local to the table. Alternatively reduce cell padding and allow wrapping until all columns fit the phone width."
+  },
+  {
+    "page": "p03",
+    "selector": ".pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The large pagination items span x=15 to x=433.9 inside a 330 px column. The 5 item crosses the 360 px screen edge and the next-page chevron starts at x=376.2, completely outside the screen. The normal and small pagination examples fit. See p03-phone-detail-pagination.png.",
+    "fix": "At phone widths, reduce horizontal padding on .pagination-lg .page-link from 24 px to 16 px so the full row fits within 330 px."
+  },
+  {
+    "page": "p03",
+    "selector": ".custom-file-label::after",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "In the custom file input, Choose file text occupies x=47 to x=128.2, while the opaque Browse block begins at x=111.3. It covers the last 16.8 px of the filename label, leaving only Choose f visible. The file field is 214.2 px wide beside the Upload button. See p03-phone-detail-upload.png.",
+    "fix": "Reduce the file label's horizontal inset at phone widths (for example to 12 px), reserve the Browse block's width in padding-right, and ensure the filename text fits in the remaining space without painting beneath Browse."
+  },
+  {
+    "page": "p03",
+    "selector": ".custom-file-label, .custom-file-label::after",
+    "viewport": "both",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "The file label and its Browse block are 45 px high, while the attached Upload button and .custom-file wrapper are 48 px high. Their top edges align, but Upload protrudes 3 px below the rest of the input group on both phone and laptop. See p03-phone-detail-upload.png and p03-laptop-detail-upload.png.",
+    "fix": "Give .custom-file-label and its ::after block the same 48 px border-box height as the adjacent button; remove the label's bottom margin and align all input-group children to the same height."
+  },
+  {
+    "page": "p03",
+    "selector": "#source-button",
+    "viewport": "laptop",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "At 1440x900 and scrollY=720, hovering the outlined-button example reveals an 84.9x48 px source control at x=715.1, y=405.8. It overlays the Warning button (x=668.9 to 797.5, y=405.8 to 457.8), hiding most of WARNING so only its beginning remains visible. Reproduced in p03-laptop-source-hover.png; the skill scan also captured it.",
+    "fix": "Place the source control in reserved space above the example, or add a dedicated toolbar/padding region so the control cannot cover the example's labels."
+  },
+  {
+    "page": "p04",
+    "selector": ".sidebar, .main-panel",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P1",
+    "evidence": "At 360x780, the desktop sidebar remains 260 px wide and .main-panel occupies only x=260 to 360 (100 px). With nested padding, each dashboard card is only 40 px wide and its heading content box is 10 px wide. Dashboard, Email Statistics, chart legends and task content are cut off; pie-chart labels overlap in the collapsed chart. This persists through the panel's full 3259 px scroll height. See p04-phone-inner-0.png through p04-phone-inner-4.png; laptop layout is intact.",
+    "fix": "At the phone breakpoint, collapse the sidebar out of the normal visible layout and give .main-panel width:100% with no sidebar offset. Retain the navigation toggle, and let the stacked cards use the full available content width."
+  }
+]

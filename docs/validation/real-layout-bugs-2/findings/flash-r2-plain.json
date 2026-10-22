@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p01",
+    "selector": "body > .s-content",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 the content column stays 960px wide (x=0 to 960) and the page scrollWidth is 960, while body overflow-x is hidden. The screen shows only the left 360px, so every article line, component demo and code sample is cut at the right edge with no horizontal scrollbar to reach the rest.",
+    "fix": "Add a phone breakpoint that sets .s-content to width:100% and replaces the 80px side padding with fluid padding; remove the fixed 960px width and the body overflow-x:hidden mask at narrow widths."
+  },
+  {
+    "page": "p01",
+    "selector": ".s-sidebar .s-nav",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P1",
+    "evidence": "The sidebar container is only 60px tall at 360px wide, but its navigation starts at y=130 and is 172px tall. The links paint directly over the article: in the top capture the words COMPONENTS and ELEMENTS are superimposed on the Accordions description and its element links, making both texts unreadable.",
+    "fix": "Collapse the sidebar into a real mobile header: hide .s-nav behind a menu toggle, or give .s-sidebar height:auto and place .s-content after the full navigation instead of at y=60."
+  },
+  {
+    "page": "p02",
+    "selector": ".row.tile_count .right",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "All six statistic tiles are 102px wide but need 114-133px of content, and each has overflow:hidden. The rendered labels read Total Collect..., Total Conne..., and every delta reads From last ...; the sixth tile sits at x=258-360 and its 123px delta span is clipped at the screen edge.",
+    "fix": "Use a two-column phone layout for the six tiles, remove the fixed .right width, and let the label and delta lines wrap with white-space:normal instead of hiding overflow."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph .col-md-3 .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The panel title is 213px wide inside a 191px heading with white-space:nowrap and overflow:hidden, so the phone capture renders Top Campaign Perfor... instead of the full Top Campaign Performance even though the panel can grow vertically.",
+    "fix": "Allow this heading to wrap at phone width (white-space:normal; overflow:visible) or reduce its font size so the full title fits beside the panel controls."
+  },
+  {
+    "page": "p03",
+    "selector": "ul.pagination.pagination-split",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "The A-Z filter is one row on the laptop, but at 360px it wraps into A B C D E ... W on row one and X Y Z alone on row two. The ellipsis separator sits between E and W at the end of the first row, so the alphabet index loses its single-row structure.",
+    "fix": "Keep the filter on one line at phone width with overflow-x:auto and nowrap, or reduce the item size and gaps so all ten entries fit; keep the ellipsis inline between E and W."
+  }
+]

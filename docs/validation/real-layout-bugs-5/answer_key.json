@@ -1,0 +1,195 @@
+{
+ "round": 5,
+ "sealed": "2026-10-22, before any agent run",
+ "viewports": {
+  "phone": "360x780 and 393x852, touch, mobile emulation",
+  "laptop": "1440x900"
+ },
+ "cases": [
+  {
+   "item": "tufte-css-c6e436bb",
+   "source": "edwardtufte/tufte-css",
+   "fix_commit": "c6e436bba2bf92f75c7eb7ae6415ed08bf69ac4d",
+   "fix_subject": "Align baseline of sidenote/marginnote with main text",
+   "page": "index.html",
+   "visible_at": [
+    "laptop"
+   ],
+   "defect": "On the laptop every sidenote and margin note sits 6 to 7 px above the baseline of the main-text line it belongs to (for example 'Beautiful Evidence' and 'See Tufte's comment in the Tufte book fonts thread'), so a note's first line and the line it annotates do not line up. About 1.5 px after the fix.",
+   "selectors": [
+    ".sidenote",
+    ".marginnote",
+    "span.sidenote",
+    "span.marginnote",
+    "label.sidenote-number"
+   ]
+  },
+  {
+   "item": "tufte-css-6c2f3e8e",
+   "source": "edwardtufte/tufte-css",
+   "fix_commit": "6c2f3e8e7c4e3d009d62a80bbb5c54de2a9601dd",
+   "fix_subject": "adding a clear to full-width figures",
+   "page": "index.html",
+   "visible_at": [
+    "laptop"
+   ],
+   "defect": "On the laptop the margin caption of the rhinoceros figure (F.J. Cole, 'The History of Albrecht Durer's Rhinoceros in Zoological Literature' ... 'page 71 of Edward Tufte's Visual Explanations') runs down over the top right of the full-width Napoleon's March figure below it and overlaps the figure's title by 49 px. The figure starts below the caption after the fix.",
+   "selectors": [
+    ".marginnote",
+    "figure.fullwidth",
+    "figure.fullwidth img",
+    "figure img"
+   ]
+  },
+  {
+   "item": "tufte-css-69255155",
+   "source": "edwardtufte/tufte-css",
+   "fix_commit": "69255155c916b4025e40460fd4b507c00be36dff",
+   "fix_subject": "Fix typo @ Bembo sidenote. Fix code overflow.",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the code sample in the code section (pre.code, ';; functional programming: (map tufte-style all-the-things)') does not fit: its longest line ends at 455 px, so the page is 455 px wide on a 360 px phone (459 px on 393 px) and scrolls sideways. 362 px and 393 px after the fix.",
+   "selectors": [
+    "pre.code",
+    "pre",
+    "code"
+   ],
+   "also_present": [
+    "In both states the code blocks end at 362 px on a 360 px phone, so the page is 2 px wider than the screen; a report of that 2 px overflow is a valid extra."
+   ]
+  },
+  {
+   "item": "lit-css-481f5cc3",
+   "source": "ajusa/lit",
+   "fix_commit": "481f5cc3375a7363eca12924401c15f8466f7b00",
+   "fixed_state_commit": "a2756f216baf665e987083756031c78f6cfbef33",
+   "fix_subject": "fixed an old overflow bug, tried to make css a bit smaller",
+   "page": "docs/lit.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the form example's text field and textarea (input.card.w-100, textarea.card.w-100) are 361 px wide from x = 16 (394 px at 393 px), so they run 17 px past the right edge of the screen and the docs page scrolls sideways (377 px; 410 px at 393 px). They fit after the fix.",
+   "selectors": [
+    "input.card.w-100",
+    "textarea.card.w-100",
+    "input.w-100",
+    "textarea.w-100",
+    "input",
+    "textarea"
+   ]
+  },
+  {
+   "item": "lit-css-fce9ac96",
+   "source": "ajusa/lit",
+   "fix_commit": "fce9ac96f5d313e9af797466a783e912ffd9cc2e",
+   "fix_subject": "fixed button overlapping on home page",
+   "page": "utility.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a 360 px phone the two pill buttons in the hero wrap onto two rows and the Components button covers the bottom 18 px of the Utilities button above it; 11 px apart after the fix. At 393 px and on the laptop they sit side by side in both states.",
+   "selectors": [
+    "a.btn",
+    ".btn",
+    "a.btn.pill"
+   ]
+  },
+  {
+   "item": "lit-css-ce470806",
+   "source": "ajusa/lit",
+   "fix_commit": "ce470806f81fdfb21d9e308cb0b88b77cfad2632",
+   "fix_subject": "added back the vertical margin",
+   "page": "index.html",
+   "visible_at": [
+    "laptop"
+   ],
+   "defect": "On the laptop the grid demo ('Grids are defined on a 12 column scale') has no space between its six rows (1 + 11 col to 6 + 6 col): the rows touch (0 px), so the grey cells run together into one block. 19 px between rows after the fix.",
+   "selectors": [
+    ".row",
+    ".col",
+    ".row > .col"
+   ],
+   "also_present": [
+    "On a phone the stacked grid cells touch in both states; a report of that on either state is a valid extra."
+   ]
+  },
+  {
+   "item": "writ-e0b84596",
+   "source": "programble/writ",
+   "fix_commit": "e0b84596b92c538b046b8273790d685045a199b3",
+   "fix_subject": "Add img width constraint",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone an image in the page (572 px wide from x = 14) runs past the screen, so the page is 586 px wide on 360 px and 393 px phones and scrolls sideways. The image fits after the fix.",
+   "selectors": [
+    "img",
+    "p img",
+    "main img"
+   ]
+  },
+  {
+   "item": "almond-css-44f880c2",
+   "source": "alvaromontoro/almond.css",
+   "fix_commit": "44f880c203a0e61dcf4b0a327fe86a7c2d88f9de",
+   "fix_subject": "update radio and checkbox vertical alignment",
+   "page": "demo/index.html",
+   "visible_at": [
+    "phone",
+    "laptop"
+   ],
+   "defect": "In the demo form the radio buttons and checkboxes (Radio 1 to 4, Checkbox, Checked Checkbox, Disabled Checkbox) sit 6 px below the middle of their labels' text, on a phone and on the laptop. 1 px above it after the fix.",
+   "selectors": [
+    "input[type=radio]",
+    "input[type=checkbox]",
+    "label"
+   ]
+  },
+  {
+   "item": "flexboxgrid-7b71b69e",
+   "source": "kristoferjoseph/flexboxgrid",
+   "fix_commit": "7b71b69eb41764b87352d399d3c7826eb8a9b155",
+   "fix_subject": "Aligning hero copy center",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "defect": "On a phone the hero description under the centred 'Flexbox Grid' title is left-aligned: its second line 'display property.' starts at x = 57 instead of being centred (x = 124 after the fix), so the copy does not line up with the title above it. On the laptop the description fits one line and looks the same in both states.",
+   "selectors": [
+    ".hero__copy",
+    "p.hero__copy",
+    ".hero",
+    "header.hero p"
+   ]
+  },
+  {
+   "item": "bahunya-0aa2c063",
+   "source": "Kimeiga/bahunya",
+   "fix_commit": "0aa2c063999ff9a21f7669a14b94edb75fb0f063",
+   "fix_subject": "Fix mobile dropdowns, navbar alignment, and type scale (#20)",
+   "page": "demo.html",
+   "visible_at": [
+    "phone",
+    "laptop"
+   ],
+   "defect": "In the top navigation bar the brand link 'Bahunya' sits 4 px higher than the links beside it (Text, Embedded content, Form elements): their text centres are at 25 px and 29 px, on a phone and on the laptop. All at 23 px after the fix.",
+   "selectors": [
+    "nav",
+    "nav a",
+    "nav[aria-label=Primary] a"
+   ],
+   "also_present": [
+    "On a phone the navigation links scroll sideways inside their own list (overflow-x: auto), which cuts 'Form elements' at the screen edge in both states; by the round conventions a list that scrolls inside its own box is not a defect, so a report of it is unsupported."
+   ]
+  }
+ ],
+ "notes": [
+  "A known defect is each item's own defect on its broken page.",
+  "Fixed-state alarm: a finding on a fixed page that points at that item's defect element and calls it broken in the way the defect describes.",
+  "Defects listed under also_present are real in both states; reports of them are valid extras unless the entry says otherwise.",
+  "A table, code block or list that scrolls inside its own box (overflow: auto) is not a defect; a report of it is unsupported."
+ ]
+}

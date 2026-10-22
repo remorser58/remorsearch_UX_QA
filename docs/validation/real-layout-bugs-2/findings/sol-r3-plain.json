@@ -1,0 +1,38 @@
+[
+  {
+    "page": "p01",
+    "selector": ".s-content",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780, the main content remains 960 CSS px wide (x=0 to 960), producing a document scrollWidth of 960 versus a clientWidth of 360: 600 px of horizontal overflow. Section containers are 800 px wide at x=80; their text starts at x=90 and continues beyond the right screen edge. Paragraphs, examples, cards and controls are visibly cut off throughout the page. Screenshots: p01-phone-000.png, p01-phone-002.png, p01-phone-010.png and p01-phone-036.png. The 1440x900 view fits horizontally.",
+    "fix": "At the phone breakpoint, set .s-content to width:100%, min-width:0 and substantially smaller horizontal padding; make its section containers fit the available width. Allow component examples to wrap and keep long preformatted code in its own horizontally scrolling container."
+  },
+  {
+    "page": "p01",
+    "selector": "#sidebar .s-nav",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the navigation stays fixed at x=30 to 240 and y=100 to 750 while main text and examples begin at x=90. This creates a 150 px horizontal overlap with the reading area. In the first section, sidebar links such as Accordions and Autocomplete collide with the Element 1/Element 2 example text. At later scroll positions the links run across paragraphs, card images and controls. Screenshots: p01-phone-000.png, p01-phone-002.png and p01-phone-010.png. On laptop the navigation and content occupy separate columns.",
+    "fix": "At the phone breakpoint, place the navigation in normal flow above the content or use a collapsed navigation panel that reserves its own space when displayed. Remove the permanently fixed navigation from the main reading area."
+  },
+  {
+    "page": "p01",
+    "selector": ".s-title::before",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "At the top of the phone page, the first section title's opaque white ::before background spans x=0 to 960 and y=50 to 152. It paints above the fixed brand logo and GitHub button, both of which extend from y=30 to 62, hiding their bottom 12 px. The logo and button visibly end along the same horizontal cut at y=50. Once a section title sticks at the top, its background also covers the header controls completely. Screenshot: p01-header-evidence.png; DOM measurements: p01-coverage.json.",
+    "fix": "Give the phone header sufficient height for its controls and a stacking level above section-title backgrounds. Position sticky section titles below that header, and constrain their background pseudo-elements to the content region."
+  },
+  {
+    "page": "p03",
+    "selector": ".well.profile_view .bottom",
+    "viewport": "both",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "Every contact card's footer has margin-top:-20px and paints over the preceding card body. On phone, the first footer begins at y=418.09 while the second Address row extends to y=428.09; its lower 10 px are covered and the line is visibly cut off. The same defect repeats in all nine cards. On laptop, the first footer starts at y=375.78 while the circular profile image extends to y=385.78, covering the bottom 10 px of the image and flattening its circular outline. Screenshots: p03-phone-000.png through p03-phone-003.png and p03-laptop-000.png.",
+    "fix": "Remove the footer's negative top margin and keep it in normal flow after the complete profile body. Ensure it clears the floated text and image columns so the footer begins below whichever column is taller."
+  }
+]

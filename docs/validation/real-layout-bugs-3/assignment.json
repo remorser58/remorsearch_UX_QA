@@ -1,0 +1,89 @@
+{
+ "seed": 2026102001,
+ "names": {
+  "bootswatch-f02c7f9f": "p01",
+  "grayscale-4eaba19f": "p02",
+  "bootswatch-0cbc74c6": "p03",
+  "lbd-a5032470": "p04"
+ },
+ "groups": {
+  "A": [
+   "bootswatch-0cbc74c6",
+   "bootswatch-f02c7f9f"
+  ],
+  "B": [
+   "grayscale-4eaba19f"
+  ],
+  "C": [
+   "lbd-a5032470"
+  ]
+ },
+ "runs": {
+  "1": {
+   "p01": {
+    "item": "bootswatch-f02c7f9f",
+    "state": "broken",
+    "page": "p01/docs/materia/index.html"
+   },
+   "p02": {
+    "item": "grayscale-4eaba19f",
+    "state": "broken",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "bootswatch-0cbc74c6",
+    "state": "broken",
+    "page": "p03/docs/lux/index.html"
+   },
+   "p04": {
+    "item": "lbd-a5032470",
+    "state": "fixed",
+    "page": "p04/dashboard.html"
+   }
+  },
+  "2": {
+   "p01": {
+    "item": "bootswatch-f02c7f9f",
+    "state": "broken",
+    "page": "p01/docs/materia/index.html"
+   },
+   "p02": {
+    "item": "grayscale-4eaba19f",
+    "state": "fixed",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "bootswatch-0cbc74c6",
+    "state": "broken",
+    "page": "p03/docs/lux/index.html"
+   },
+   "p04": {
+    "item": "lbd-a5032470",
+    "state": "broken",
+    "page": "p04/dashboard.html"
+   }
+  },
+  "3": {
+   "p01": {
+    "item": "bootswatch-f02c7f9f",
+    "state": "fixed",
+    "page": "p01/docs/materia/index.html"
+   },
+   "p02": {
+    "item": "grayscale-4eaba19f",
+    "state": "broken",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "bootswatch-0cbc74c6",
+    "state": "fixed",
+    "page": "p03/docs/lux/index.html"
+   },
+   "p04": {
+    "item": "lbd-a5032470",
+    "state": "broken",
+    "page": "p04/dashboard.html"
+   }
+  }
+ }
+}

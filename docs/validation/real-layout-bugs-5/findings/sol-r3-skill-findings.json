@@ -1,0 +1,83 @@
+[
+  {
+    "page": "p04",
+    "selector": ".marginnote:has(img)",
+    "viewport": "laptop",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 1440x900, the margin illustration's caption overlaps the following full-width figure. In p04-laptop-rhino.png, the margin note occupies x=942.3..1288.8 and ends at y=491.1, while the next image starts at y=441.8: 49.3 px of vertical overlap. The caption's final lines are painted across the map's upper text.",
+    "fix": "Clear the floated margin note before the full-width figure, for example with clear: both on figure.fullwidth, so the figure starts below the complete note and caption."
+  },
+  {
+    "page": "p05",
+    "selector": "main > section:nth-child(3) > section:nth-child(6) > p",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "At 360x780, the 'Elements in-line' examples break their attached fields and buttons onto separate rows. The first group is 328 px wide; its field is 240 px and button 86.4 px, leaving only 1.6 px for the intervening whitespace. In p05-phone-inline.png, the field is at y=146..186 and its button at y=186..226, touching directly below it. The select/button pair has the same break, and the three-control example becomes three touching rows.",
+    "fix": "Use a flex row for each inline example, let text inputs and selects shrink with min-width: 0 and flex: 1, and keep buttons at their intrinsic width. Give wrapped rows an explicit gap where stacking is necessary."
+  },
+  {
+    "page": "p06",
+    "selector": "#forms__checkbox input, #forms__radio input",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At both 360x780 and 1440x900, all three checkbox glyphs and all three radio glyphs sit visibly above their labels. For 'Choice A', the input box is 44 px high and its centre is 14.1 px above the label text centre. The same offset appears for 'Option 1'. See p06-phone-checks.png and p06-laptop-checks.png.",
+    "fix": "Override the generic 44 px input minimum height for checkbox/radio inputs and align each input and label text in a flex row with align-items: center; keep any larger hit area on the label."
+  },
+  {
+    "page": "p06",
+    "selector": "nav > ul > li:first-child",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "The 'Bahunya' navigation item is 4 px above the sibling links at both viewport sizes. All link controls are 44 px high, but the brand begins at y=4 and the other links at y=8. On phone their text tops are y=17.2 versus 21.2; on laptop, y=16.6 versus 20.6. See p06-phone-nav.png and p06-laptop-nav.png.",
+    "fix": "Remove the differing vertical margins from the navigation list items and centre all items with the same align-items rule, retaining the brand's horizontal spacing."
+  },
+  {
+    "page": "p07",
+    "selector": "body > div:first-of-type > div > a",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780 the hero's 'UTILITIES' and 'COMPONENTS' pill buttons overlap. Their boxes are y=407.4..450.8 and y=433.0..476.4, giving 17.8 px of overlap. The second pill covers the bottom of the first pill and part of its label. See p07-phone-hero.png.",
+    "fix": "Make the hero actions inline-block or flex items with their full button heights in normal flow. On phone, stack them with an explicit gap instead of wrapping inline anchors within the text line height."
+  },
+  {
+    "page": "p07",
+    "selector": "a[href=\"#full\"]",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "At 360x780, the single 'Full Page Landing' navigation item splits across two rows and loses its alignment with the other items. In p07-phone-components.png, 'Full Page' starts at x=215.9, y=112.0, but 'Landing' resumes at x=27.0, y=137.5 underneath 'Buttons'. The link's two fragments span 47.6 px vertically.",
+    "fix": "Make each navigation anchor an inline-block with white-space: nowrap, or a flex item in a wrapping container, so the complete 'Full Page Landing' item moves to the next row together."
+  },
+  {
+    "page": "p07",
+    "selector": "#alerts .row > .col:last-child",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At 360x780 the alert's close 'x' drops into a full-width row at the lower left instead of staying beside the alert heading as it does on laptop. In p07-phone-alert.png, its column is x=32, y=192.3, width=296, height=38.4; the heading starts at y=108.3. The close glyph is about 84 px below the heading, leaving a separate bottom row in the 150.4 px-high alert.",
+    "fix": "Keep this alert's message and close element in a two-column grid or non-wrapping flex row at phone widths, with the close element sized to its contents and aligned to the upper right."
+  },
+  {
+    "page": "p09",
+    "selector": "pre.code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At the 360 px phone width, the document scrollWidth is 455 px, producing 95 px of page-level horizontal overflow. The final code block's text reaches x=454.5 while its own box ends at x=362.3; overflow-x is visible. Lines including '(map tufte-style all-the-things)' and 'all_the_things[i].useTufteStyle();' run past the screen edge. See p09-phone-code.png.",
+    "fix": "Constrain pre.code to the available content width using box-sizing: border-box and max-width: 100%, and give it overflow-x: auto so long code scrolls inside the block without widening the document."
+  },
+  {
+    "page": "p10",
+    "selector": ".menu-button",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780, the fixed top-right menu control's rendered label protrudes beyond the control and is cut off by the screen edge. The control is x=316..348, width=32 px, while its text occupies x=325..380, width=55 px: 32 px outside the control and 20 px outside the viewport. p10-phone-menu.png shows only the beginning of 'listview'.",
+    "fix": "Render a menu glyph that fits the 32 px control, centre it with inline-flex, and provide a contained fallback if the icon font is unavailable; keep all painted content inside the control and viewport."
+  }
+]

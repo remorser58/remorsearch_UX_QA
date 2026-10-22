@@ -1,0 +1,29 @@
+[
+  {
+    "page": "p02",
+    "selector": ".tile_count .tile_stats_count .right",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360x780, the six summary tiles occupy three 120px columns. Each .right container is 102px wide, with text beginning 10px inside it, leaving about 92px. The 104-123px-wide comparison labels are visibly cut to \"From last ...\", \"From la...\" or \"From l...\"; the 101px \"Total Collections\" and 109px \"Total Connections\" labels are also truncated. All six comparisons lose \"Week\". Their complete text fits at 1440x900. Viewed screenshots: captures/p02/phone/000-y0.png and p02-phone-top.png; geometry: p02-details.json.",
+    "fix": "Use two summary columns at narrow phone widths, such as col-xs-6 instead of col-xs-4, and allow count_top/count_bottom to wrap with normal white-space and content-driven tile height so full metric names and comparison periods remain visible."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph > .bg-white > .x_title > h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "At 360x780, \"Top Campaign Performance\" renders as \"Top Campaign Perfor...\". The h2 is constrained to 190.95px although its text needs about 213px and the title container is 318px wide. It uses nowrap, overflow:hidden and text-overflow:ellipsis, leaving unused space to its right. The title is complete on the laptop. Viewed screenshots: p02-phone-campaign.png and captures/p02/phone/001-y686.png; geometry: measurements.json.",
+    "fix": "Override the generic mobile .x_title h2 width for this campaign heading: use width:auto/max-width:100%, remove the 60% width restriction, and allow wrapping if necessary."
+  },
+  {
+    "page": "p03",
+    "selector": ".profile_view .bottom",
+    "viewport": "both",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "The ratings/action footer has margin-top:-20px and paints over the profile body in all nine cards. At 360x780, the first card body ends at y=438.09 but its footer begins at y=418.09; the second Address line glyph box spans y=410.98-425.98, so roughly 7.9px of its lower part is covered. Scrolling does not reveal it. At 1440x900, the footer begins at y=375.78 while the avatar ends at y=385.78, visibly chopping 10px off the lower edge of the circle. Viewed screenshots: captures/p03/phone/000-y0.png, captures/p03/phone/003-y1777.png, captures/p03/laptop/000-y0.png, p03-phone-card-detail.png and p03-laptop-card-detail.png; geometry: measurements.json.",
+    "fix": "Remove the negative top margin from .profile_view .bottom and keep the footer after the complete body in normal flow. Preserve any desired spacing using body/footer padding so the address lines and entire avatar remain above the footer at both widths."
+  }
+]

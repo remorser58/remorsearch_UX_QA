@@ -1,0 +1,83 @@
+[
+  {
+    "page": "p01",
+    "selector": "main table (Flexibility without complexity)",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360px the table is 474px wide inside a 326px column; header cells 'No CSS' (left 284.8, right 368.3) and 'Custom CSS' (left 368.3, right 490.7) are cut at the viewport edge, so the fourth column is never visible without scrolling inside the table.",
+    "fix": "Let the table shrink or wrap on narrow screens (wrapped headers or a visible horizontal scroll container inside the section) so every column header is reachable and nothing is clipped mid-cell."
+  },
+  {
+    "page": "p03",
+    "selector": "aside h2",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The sidebar collapses to 64.8px wide at x=18 while its h2 is 54.3px wide at 26.4px font; the word 'Contents' cannot wrap and overflows its box onto the page title at x=93.3, y=80. The screenshot shows 'ContPicnic CSS' with both strings superimposed.",
+    "fix": "Stack the aside above the article below the layout breakpoint (column direction, full width) or shrink/wrap the sidebar heading so the two blocks never share a line."
+  },
+  {
+    "page": "p03",
+    "selector": "nav",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Document scrollWidth is 413px at a 360px viewport, so the page scrolls sideways 53px. The fixed nav is 413px wide and its 'menu' toggle runs from x=337 to x=413, and a blockquote link ('http://jsfiddle.net/franciscop/wwfby2y8/') also ends at x=413, both past the 360px edge.",
+    "fix": "Keep the fixed nav at viewport width (width: 100%; box-sizing: border-box) and allow long URLs to wrap (overflow-wrap: anywhere) so document scrollWidth equals 360."
+  },
+  {
+    "page": "p04",
+    "selector": "section#features table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The comparison table is 417.2px wide from x=-28.6 to x=388.6 in a 360px viewport; the first column is cut on the left ('obile friendly' visible) and the last on the right ('CSS Frameworl'). Document scrollWidth is 389px, so the page scrolls sideways.",
+    "fix": "Drop the fixed max-width: 80% table sizing at narrow widths, or wrap the table in a scroll container that stays inside the section so it starts at the section edge and never widens the document."
+  },
+  {
+    "page": "p04",
+    "selector": "section#ideas form textarea#job",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "The textarea is 351.6px wide starting at x=37.5, so its right edge is 389.1 while the form ends at 347.5 and the viewport at 360. It runs past both its form border and the screen edge.",
+    "fix": "Give form controls width: 100% with box-sizing: border-box and no fixed cols-based minimum so the textarea matches the form's inner width."
+  },
+  {
+    "page": "p05",
+    "selector": "#basic-progress-bar .col-sm-121",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The card block is 2288px wide at a 360px phone viewport (x=4 to 2292) and 2534px at 1440px; document scrollWidth is 2292 on phone and 2534 on laptop. Body text and sample code run far past the right edge and the page scrolls sideways by about 1.9k px.",
+    "fix": "Use the framework's real grid class (col-sm-12) or set width: 100% and min-width: 0 on that block, then constrain the card to the row width so scrollWidth matches the viewport."
+  },
+  {
+    "page": "p06",
+    "selector": "header.hero pre.npm",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The install snippet is 610px wide in a 360px viewport and is cut at the right edge ('<link href=\"https://unpkg.com/pic'); document scrollWidth is 610 and max scrollX is 250. The same width pushes the fixed nav's 'menu' label to about x=523, so it is off-screen until the page is scrolled sideways.",
+    "fix": "Constrain the hero content to the viewport: allow the snippet to wrap (white-space: pre-wrap, overflow-wrap: anywhere) or give it max-width: 100% with overflow-x: auto, so the page and fixed nav stay at 360px."
+  },
+  {
+    "page": "p07",
+    "selector": "nav .menu",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "Document scrollWidth is 366px at 360px. Collapsed menu links sit at x=365..397 and the demo nav controls at x=347..379, so the page gains 6px of sideways scroll and those controls hang past the edge.",
+    "fix": "Clip or translate the off-canvas menu fully outside the scroll area (overflow-x: hidden on the nav or right: -100% with a clipped container) so scrollWidth equals 360."
+  },
+  {
+    "page": "p08",
+    "selector": "header > nav ul",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "Every nav anchor is the only child of its li, so 'header > nav a:last-child { margin-right: 0 }' applies to all of them; computed margin is 0px 0px 16px. Links render with no horizontal gap: 'TextEmbedded contentForm elements' on one row and 'Project homepageGitHub repo' on the next.",
+    "fix": "Scope the zero-margin rule to the last list item (header > nav li:last-child > a) or restore the right margin in the mobile media query so adjacent links keep their 16px gap."
+  }
+]

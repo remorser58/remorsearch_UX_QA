@@ -1,0 +1,65 @@
+[
+  {
+    "page": "p01",
+    "selector": ".pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the large pagination controls span x=12 to 431.7 (419.7 px) inside a 336 px container. The page-5 control extends to x=373.2 and the next control is entirely outside the 360 px screen at x=373.2–431.7. Document scrollWidth is 433 px. Screenshot: p01-phone-detail-pagination.png.",
+    "fix": "Below 576 px, reduce horizontal padding on .pagination-lg .page-link from 24 px to 12 px so all seven controls fit on one row within the container."
+  },
+  {
+    "page": "p03",
+    "selector": "#typography",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, TYPOGRAPHY is visibly cut off at the right edge. Its text spans x=15 to 371.8 (356.8 px), exceeding its 330 px heading box by 26.8 px and the screen by 11.8 px. Screenshot: p03-phone-detail-typography.png.",
+    "fix": "Use a smaller section-heading font at the phone breakpoint, for example 40 px instead of 48 px, so the full heading fits within the 330 px content column."
+  },
+  {
+    "page": "p03",
+    "selector": "table.table.table-hover",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the table spans x=15 to 480.1 (465.1 px), extending 120.1 px beyond the screen. Its fourth column starts at x=369.1 and is entirely off screen. The document scrollWidth expands to 480 px. Screenshot: p03-phone-detail-table.png.",
+    "fix": "Place the table inside a width-constrained .table-responsive wrapper with max-width:100% and overflow-x:auto, keeping any necessary horizontal scrolling inside the table rather than expanding the page."
+  },
+  {
+    "page": "p03",
+    "selector": ".pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the large pagination controls span x=15 to 433.9 (418.9 px) inside a 330 px container. The page-5 control ends at x=376.2, and the next control at x=376.2–433.9 is entirely outside the screen. Screenshot: p03-phone-detail-pagination.png.",
+    "fix": "Below 576 px, reduce horizontal padding on .pagination-lg .page-link from 24 px to 12 px so the complete row fits within the 330 px content column."
+  },
+  {
+    "page": "p03",
+    "selector": ".custom-file-label[for=\"inputGroupFile02\"]",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "At 360x780, the file label visibly reads only Choose f because the Browse pseudo-element covers the end of Choose file. The label text spans x=47–128.2, while Browse starts at x=111.3, covering approximately 16.8 px of text. Screenshot: p03-phone-file-control-crop.png.",
+    "fix": "At the phone breakpoint, reduce the Browse pseudo-element horizontal padding from 32 px to 16 px, reserving enough unobstructed space for the label text."
+  },
+  {
+    "page": "p03",
+    "selector": ".input-group:has(#inputGroupFile02)",
+    "viewport": "both",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "The joined file-upload control has a visible step along its bottom edge at both sizes. The file label and its Browse pseudo-element are 45 px high, while the attached Upload segment is 48 px high, extending 3 px below them. Screenshots: p03-phone-file-control-crop.png and p03-laptop-file-control-crop.png.",
+    "fix": "Apply a shared 48 px border-box height and 24 px line-height to .custom-file-label, its ::after pseudo-element, and the attached .input-group-text so their bottom edges align."
+  },
+  {
+    "page": "p04",
+    "selector": ".sidebar, .main-panel",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P1",
+    "evidence": "At 360x780, the expanded sidebar occupies x=0–260, leaving .main-panel only 100 px wide at x=260–360. Content cards are squeezed to 40 px wide at x=290–330. Dashboard text extends to x=387 and is clipped by the screen; card headings, legends, charts and task content are cut off or compressed throughout the panel. Scrolling the panel to its 2479 px maximum confirms the defect persists to the end. Screenshots: p04-phone-scroll-00.png through p04-phone-scroll-04.png.",
+    "fix": "Restore a mobile breakpoint that removes the closed sidebar from the visible layout and gives .main-panel width:100% with no horizontal offset. Show the sidebar only in its opened navigation state, allowing cards to use the available phone width."
+  }
+]

@@ -1,0 +1,137 @@
+[
+  {
+    "page": "p02",
+    "selector": "#text__asides > aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the floated aside is only 77.39px wide, including 30px horizontal padding and borders, leaving about 45px for text. The heading breaks as \"asid\" / \"e\" and body words break into fragments such as \"Lore\" / \"m\" and \"ipsu\" / \"m\". The aside becomes 1104.69px tall. See p02-phone-focus-3310.png.",
+    "fix": "At the phone breakpoint, remove the float and percentage width: use float:none; width:100%; box-sizing:border-box; and place the aside above or below the adjacent paragraphs."
+  },
+  {
+    "page": "p02",
+    "selector": "#embedded__audio audio, #embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "At 360x780, embedded elements retain 300-304px widths inside panels with only 258px of content width. They start at x=51; the audio/embed/object end at x=351 and the iframe at x=355, while the enclosing panel ends at x=326. The audio and framed content visibly cross the panel border by 25-29px. See p02-phone-focus-13470.png and p02-phone-focus-15300.png.",
+    "fix": "Constrain these embedded elements with max-width:100%; box-sizing:border-box; and responsive widths so their outer width fits the panel content area."
+  },
+  {
+    "page": "p03",
+    "selector": ".documentation article > .flex.six > div > code",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the column-count labels remain in six 53.98px columns. The \"eleven\" badge spans x=244.48-312.06 and \"twelve\" spans x=298.47-366.05, overlapping by 13.59px; the next badge background covers the end of the preceding label. The last badge also extends 6.05px past the viewport. See p03-phone-focus-12200.png.",
+    "fix": "Use fewer columns at narrow widths, for example three columns on phones and six only when each column can contain its longest label plus padding."
+  },
+  {
+    "page": "p03",
+    "selector": "div.third:has(> input[placeholder=\"Name\"]) > button.stack.icon-paper-plane",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "In the small Name/Email form at 360x780, the Send button is 104.47px wide and 63.31px tall. Its icon occupies a separate row above \"Send\", while the nearby Send control with the same width is 36.92px tall and keeps both on one row. See p03-phone-focus-24650.png.",
+    "fix": "Keep the icon and label together with display:flex; align-items:center; flex-wrap:nowrap; and an explicit gap. Remove formatting whitespace that consumes the remaining inline width, or widen the small form at this breakpoint."
+  },
+  {
+    "page": "p03",
+    "selector": "nav.demo .menu > select",
+    "viewport": "both",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At both 360x780 and 1440x900, the 166.36px-wide \"Choose an option\" select has only 7.92px of right padding. Its arrow occupies approximately x=141.36-151.36 within the control, while the option text extends to about x=146.89, visibly putting the triangle over the final letters. See p03-laptop-select.png.",
+    "fix": "Reserve at least 30-35px of right padding for the custom arrow and allow the select width to grow to fit its text plus that padding."
+  },
+  {
+    "page": "p04",
+    "selector": "#features > table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the comparison table is 417.20px wide inside a 328px section. Centering places it at x=-28.59 through x=388.61, clipping both edges of the viewport. The beginnings of row labels and the last column heading are visibly cut off; the leftmost 28.59px are outside the page origin. See p04-phone-scroll-5.jpg.",
+    "fix": "Put the table in a width:100%; min-width:0; overflow-x:auto wrapper and align it to the wrapper start. Keep the wrapper inside the section instead of centering an oversized table across the viewport."
+  },
+  {
+    "page": "p04",
+    "selector": "#job",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the textarea is 363.59px wide, starting at x=37.50 and ending at x=401.09. It crosses the form right border at x=347.50 by 53.59px and extends 41.09px beyond the screen, making the document 401px wide. Its right edge and resize corner are off screen. See p04-phone-focus-10080.png.",
+    "fix": "Set #job to width:100%; max-width:100%; box-sizing:border-box so its padding and borders fit the form content width."
+  },
+  {
+    "page": "p05",
+    "selector": "#basic-progress-bar > .col-sm-121",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The basic progress card expands to 2280.38px at both sizes. On phone its right edge is x=2288.38 in a 360px viewport and the document is 2292px wide. On laptop it spans x=249.33-2529.70 in a 1440px viewport and the document is 2534px wide. Explanatory text, code, notes, and progress tracks continue beyond the screen. Adjacent cards stay within their containers. See p05-phone-focus-1430.png and p05-laptop-scroll-1.jpg.",
+    "fix": "Correct the wrapper class from col-sm-121 to the existing col-sm-12 grid class. Give this flex child min-width:0 and a constrained width so the fluid card and its rows stay within the main column."
+  },
+  {
+    "page": "p06",
+    "selector": "header.hero pre.npm",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the installation snippet is 610px wide at x=0 inside a 360px hero. Its rightmost 250px extend beyond the viewport and the document becomes 610px wide. The end of the snippet is visibly cut off. See p06-phone-scroll-0.jpg.",
+    "fix": "Use width:100%; max-width:100%; min-width:0; box-sizing:border-box on the snippet and retain overflow-x:auto within that constrained block."
+  },
+  {
+    "page": "p07",
+    "selector": "#home article > .flex.six > div > code",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the column-count labels remain in six 53.98px columns. The \"eleven\" badge spans x=244.48-312.06 and \"twelve\" spans x=298.47-366.05, overlapping by 13.59px; the next badge background covers the end of the preceding label. The last badge also extends 6.05px past the viewport. See p07-phone-focus-12380.png.",
+    "fix": "Use fewer columns at narrow widths, for example three columns on phones and six only when each column can contain its longest label plus padding."
+  },
+  {
+    "page": "p07",
+    "selector": "div.third:has(> input[placeholder=\"Name\"]) > button.stack.icon-paper-plane",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "In the small Name/Email form at 360x780, the Send button is 104.47px wide and 63.31px tall. Its icon occupies a separate row above \"Send\", while the nearby Send control with the same width is 36.92px tall and keeps both on one row. See p07-phone-focus-26000.png.",
+    "fix": "Keep the icon and label together with display:flex; align-items:center; flex-wrap:nowrap; and an explicit gap. Remove formatting whitespace that consumes the remaining inline width, or widen the small form at this breakpoint."
+  },
+  {
+    "page": "p07",
+    "selector": "nav.demo .menu > select",
+    "viewport": "both",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At both 360x780 and 1440x900, the 166.36px-wide \"Choose an option\" select has only 7.92px of right padding. Its arrow occupies approximately x=141.36-151.36 within the control, while the option text extends to about x=146.89, visibly putting the triangle over the final letters. See p07-laptop-select.png.",
+    "fix": "Reserve at least 30-35px of right padding for the custom arrow and allow the select width to grow to fit its text plus that padding."
+  },
+  {
+    "page": "p07",
+    "selector": "body > nav > .menu, nav.demo > .menu",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "At 360x780, the fixed top nav is 52.80px tall but its menu spans y=30.29-77.74, protruding 24.94px below the bar. GitHub and Documentation straddle the bottom border instead of aligning with the brand. The same placement failure affects the demo navs: the search input and select protrude 18.46px below their 52.80px bars, and the Demo/Plugins row protrudes 44.77px. See p07-phone-scroll-0.jpg and p07-phone-focus-22310.png.",
+    "fix": "Keep the brand and controls in a single aligned flex row while they fit. At the mobile breakpoint, place menu contents in a properly positioned collapsible panel or let the nav height accommodate a separate row; remove the relative offsets that push children outside a fixed-height bar."
+  },
+  {
+    "page": "p08",
+    "selector": "#text__asides > aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the floated aside is only 77.39px wide, including 30px horizontal padding and borders, leaving about 45px for text. The heading breaks as \"asid\" / \"e\" and body words break into fragments such as \"Lore\" / \"m\" and \"ipsu\" / \"m\". The aside becomes 1104.69px tall. See p08-phone-focus-3310.png.",
+    "fix": "At the phone breakpoint, remove the float and percentage width: use float:none; width:100%; box-sizing:border-box; and place the aside above or below the adjacent paragraphs."
+  },
+  {
+    "page": "p08",
+    "selector": "#embedded__audio audio, #embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "At 360x780, embedded elements retain 300-304px widths inside panels with only 258px of content width. They start at x=51; the audio/embed/object end at x=351 and the iframe at x=355, while the enclosing panel ends at x=326. The audio and framed content visibly cross the panel border by 25-29px. See p08-phone-focus-13470.png and p08-phone-focus-15300.png.",
+    "fix": "Constrain these embedded elements with max-width:100%; box-sizing:border-box; and responsive widths so their outer width fits the panel content area."
+  }
+]

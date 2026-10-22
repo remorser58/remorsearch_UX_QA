@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p01",
+    "selector": ".s-content",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "At 360x780 with touch emulation, the layout viewport expands to 960 CSS px (visual viewport 360 px). .s-content measures 960x24551 px, while body has overflow-x: hidden, so roughly 600 CSS px on the right side is clipped with no horizontal scroll. The visible result cuts the Accordions description after 'sections of' and truncates every code line at the screen edge.",
+    "fix": "Add a <=600 px layout: make .s-content flex-basis 100%, width 100%, min-width: 0 and reduce its horizontal padding; make the sidebar a full-width block or a real off-canvas menu; set pre/code max-width: 100% with overflow-x: auto."
+  },
+  {
+    "page": "p01",
+    "selector": "#sidebar .s-nav",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P1",
+    "evidence": "The fixed navigation panel is 210 px wide at x=30-240 and starts at y=100, directly over .s-content, which begins at x=0 and contains the Accordions heading at x=90. Navigation labels such as ELEMENTS, LAYOUT, COMPONENTS, Accordions, and Autocomplete paint on top of the page heading, notes, and example controls; the collision remains while scrolling.",
+    "fix": "At the phone breakpoint, replace the always-visible fixed .s-nav with an off-canvas or collapsible navigation panel, or place it in normal flow above the content so it cannot occupy the same area as .s-content."
+  },
+  {
+    "page": "p02",
+    "selector": ".tile_count .tile_stats_count .right",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "The six KPI tiles are 120 px wide and their .right content boxes are 102 px wide with overflow: hidden. Text needs up to 133 px: 'Total Connections' renders as 'Total Conne...' and every change line is cut, for example '34% From l...' and '4% From last ...'. The clipped text cannot be recovered by scrolling.",
+    "fix": "Use two KPI columns at phone width (about 180 px each) or stack them, and allow .count_bottom to wrap. Reserve enough width for the full label and percentage instead of clipping the .right box."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph .bg-white .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "'Top Campaign Performance' is 213 px of text in a 191 px h2 box with white-space: nowrap, overflow: hidden, and text-overflow: ellipsis. It renders as 'Top Campaign Perfor...'.",
+    "fix": "Allow this heading to wrap or use the full width of its card on phone; remove nowrap/ellipsis for the section heading and let the card height grow."
+  },
+  {
+    "page": "p04",
+    "selector": "#myCarousel > a.carousel-control",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "Each carousel control is 54x500 px and its 20x20 px chevron sits at y=250-270, giving a center at y=260 instead of the control center at y=250. Both Previous and Next glyphs are 10 px below center at 360x780; they are centered at laptop width.",
+    "fix": "Apply a mobile rule giving the glyphicon a -10 px top margin (or use top: 50%; transform: translateY(-50%)), matching the 20 px glyph height at widths below 768 px."
+  }
+]

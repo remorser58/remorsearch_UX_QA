@@ -1,0 +1,29 @@
+[
+  {
+    "page": "p01",
+    "selector": "#sidebar",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P1",
+    "evidence": "At 360x780 the document is 960 CSS px wide and the right 600 px is clipped by the root overflow rule. #sidebar remains a 240x60 static flex item at x=0,y=0 while .s-content starts at y=60 with width 960; the navigation labels ELEMENTS, COMPONENTS and LAYOUT and the component links are painted over the article heading, paragraph text and code block. The page is unusable as a phone layout.",
+    "fix": "Add a <=600px responsive layout: make .columns stack, set .s-content to width:100%, max-width:100%, min-width:0 and normal mobile padding, and move #sidebar out of flow into the existing off-canvas/drawer pattern (or hide it behind the menu trigger). Remove the 960px minimum content width so the document no longer exceeds the viewport."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "At 360x780 the 'Top Campaign Performance' heading is rendered as 'Top Campaign Perfor...' because the h2 is constrained to 62% width with white-space:nowrap, overflow:hidden and text-overflow:ellipsis. The full label is cut before the final word, even though the card has 320 px of width available.",
+    "fix": "At phone widths let this heading wrap or use the full card width: set .dashboard_graph .x_title h2 { width:100%; white-space:normal; overflow:visible; text-overflow:clip; } below the mobile breakpoint, or reduce the type size only as needed to fit the complete label."
+  },
+  {
+    "page": "p03",
+    "selector": ".profile_view .bottom",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780 the first profile card is 294x218 CSS px. The second 'Address:' line occupies y=409-428, but the rating/action strip .bottom starts at y=418, covering the lower half of that line. The same collision repeats in all nine profile cards, hiding the second address row.",
+    "fix": "Clear the floated card body before the footer: add clear:both (or a clearfix) to .profile_view .bottom and let .profile_view height grow from its content instead of overlapping the address list. Verify all nine cards retain both address rows above the rating strip."
+  }
+]

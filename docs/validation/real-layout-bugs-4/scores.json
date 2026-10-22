@@ -1,0 +1,292 @@
+[
+ {
+  "run": "flash-r1-plain",
+  "model": "flash",
+  "k": 1,
+  "arm": "plain",
+  "shown": 6,
+  "found": 3,
+  "found_items": [
+   "p02:simple-css-c6af6463",
+   "p05:mini-css-0ed75ca8",
+   "p06:picnic-8ae635b1"
+  ],
+  "missed": [
+   "p01:mvp-66ec5a39",
+   "p04:mvp-11722ccc",
+   "p07:picnic-8bb0d652"
+  ],
+  "alarms": 0,
+  "unsupported": 4,
+  "valid_extra": 4,
+  "findings": 11,
+  "minutes": 34.44,
+  "note": "stop message at 33.60 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r1-skill",
+  "model": "flash",
+  "k": 1,
+  "arm": "skill",
+  "shown": 6,
+  "found": 5,
+  "found_items": [
+   "p02:simple-css-c6af6463",
+   "p04:mvp-11722ccc",
+   "p05:mini-css-0ed75ca8",
+   "p06:picnic-8ae635b1",
+   "p07:picnic-8bb0d652"
+  ],
+  "missed": [
+   "p01:mvp-66ec5a39"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 2,
+  "findings": 8,
+  "minutes": 34.61,
+  "note": "stop message at 33.50 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r2-plain",
+  "model": "flash",
+  "k": 2,
+  "arm": "plain",
+  "shown": 5,
+  "found": 3,
+  "found_items": [
+   "p03:picnic-ec6a3d0d",
+   "p06:picnic-8ae635b1",
+   "p07:picnic-8bb0d652"
+  ],
+  "missed": [
+   "p01:mvp-66ec5a39",
+   "p08:simple-css-36144b34"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 4,
+  "findings": 9,
+  "minutes": 35.94,
+  "note": "stop message at 33.36 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r2-skill",
+  "model": "flash",
+  "k": 2,
+  "arm": "skill",
+  "shown": 5,
+  "found": 3,
+  "found_items": [
+   "p03:picnic-ec6a3d0d",
+   "p06:picnic-8ae635b1",
+   "p07:picnic-8bb0d652"
+  ],
+  "missed": [
+   "p01:mvp-66ec5a39",
+   "p08:simple-css-36144b34"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 4,
+  "findings": 9,
+  "minutes": 35.49,
+  "note": "stop message at 32.91 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r3-plain",
+  "model": "flash",
+  "k": 3,
+  "arm": "plain",
+  "shown": 5,
+  "found": 3,
+  "found_items": [
+   "p03:picnic-ec6a3d0d",
+   "p05:mini-css-0ed75ca8",
+   "p08:simple-css-36144b34"
+  ],
+  "missed": [
+   "p02:simple-css-c6af6463",
+   "p04:mvp-11722ccc"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 2,
+  "findings": 6,
+  "minutes": 33.72,
+  "note": "stop message at 32.62 min",
+  "missing": false
+ },
+ {
+  "run": "flash-r3-skill",
+  "model": "flash",
+  "k": 3,
+  "arm": "skill",
+  "shown": 5,
+  "found": 4,
+  "found_items": [
+   "p03:picnic-ec6a3d0d",
+   "p04:mvp-11722ccc",
+   "p05:mini-css-0ed75ca8",
+   "p08:simple-css-36144b34"
+  ],
+  "missed": [
+   "p02:simple-css-c6af6463"
+  ],
+  "alarms": 1,
+  "unsupported": 1,
+  "valid_extra": 2,
+  "findings": 9,
+  "minutes": 33.98,
+  "note": "stop message at 32.30 min",
+  "missing": false
+ },
+ {
+  "run": "sol-r1-plain",
+  "model": "sol",
+  "k": 1,
+  "arm": "plain",
+  "shown": 6,
+  "found": 5,
+  "found_items": [
+   "p02:simple-css-c6af6463",
+   "p04:mvp-11722ccc",
+   "p05:mini-css-0ed75ca8",
+   "p06:picnic-8ae635b1",
+   "p07:picnic-8bb0d652"
+  ],
+  "missed": [
+   "p01:mvp-66ec5a39"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 10,
+  "findings": 15,
+  "minutes": 10.24,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r1-skill",
+  "model": "sol",
+  "k": 1,
+  "arm": "skill",
+  "shown": 6,
+  "found": 5,
+  "found_items": [
+   "p02:simple-css-c6af6463",
+   "p04:mvp-11722ccc",
+   "p05:mini-css-0ed75ca8",
+   "p06:picnic-8ae635b1",
+   "p07:picnic-8bb0d652"
+  ],
+  "missed": [
+   "p01:mvp-66ec5a39"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 8,
+  "findings": 13,
+  "minutes": 15.52,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-plain",
+  "model": "sol",
+  "k": 2,
+  "arm": "plain",
+  "shown": 5,
+  "found": 4,
+  "found_items": [
+   "p03:picnic-ec6a3d0d",
+   "p06:picnic-8ae635b1",
+   "p07:picnic-8bb0d652",
+   "p08:simple-css-36144b34"
+  ],
+  "missed": [
+   "p01:mvp-66ec5a39"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 8,
+  "findings": 15,
+  "minutes": 18.55,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r2-skill",
+  "model": "sol",
+  "k": 2,
+  "arm": "skill",
+  "shown": 5,
+  "found": 3,
+  "found_items": [
+   "p03:picnic-ec6a3d0d",
+   "p06:picnic-8ae635b1",
+   "p07:picnic-8bb0d652"
+  ],
+  "missed": [
+   "p01:mvp-66ec5a39",
+   "p08:simple-css-36144b34"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 11,
+  "findings": 15,
+  "minutes": 16.98,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-plain",
+  "model": "sol",
+  "k": 3,
+  "arm": "plain",
+  "shown": 5,
+  "found": 5,
+  "found_items": [
+   "p02:simple-css-c6af6463",
+   "p03:picnic-ec6a3d0d",
+   "p04:mvp-11722ccc",
+   "p05:mini-css-0ed75ca8",
+   "p08:simple-css-36144b34"
+  ],
+  "missed": [],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 6,
+  "findings": 12,
+  "minutes": 10.35,
+  "note": "",
+  "missing": false
+ },
+ {
+  "run": "sol-r3-skill",
+  "model": "sol",
+  "k": 3,
+  "arm": "skill",
+  "shown": 5,
+  "found": 5,
+  "found_items": [
+   "p02:simple-css-c6af6463",
+   "p03:picnic-ec6a3d0d",
+   "p04:mvp-11722ccc",
+   "p05:mini-css-0ed75ca8",
+   "p08:simple-css-36144b34"
+  ],
+  "missed": [],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 8,
+  "findings": 13,
+  "minutes": 22.47,
+  "note": "",
+  "missing": false
+ }
+]

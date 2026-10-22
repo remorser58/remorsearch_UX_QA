@@ -1,0 +1,3842 @@
+{
+ "sources": [
+  {
+   "source": "creativetimofficial/soft-ui-dashboard",
+   "screened": 1,
+   "accepted": 0
+  },
+  {
+   "source": "creativetimofficial/argon-dashboard",
+   "screened": 4,
+   "accepted": 0
+  },
+  {
+   "source": "themeselection/sneat-html-admin-template-free",
+   "screened": 3,
+   "accepted": 0
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-sb-admin",
+   "screened": 10,
+   "accepted": 0
+  },
+  {
+   "source": "picturepan2/spectre",
+   "screened": 40,
+   "accepted": 1
+  },
+  {
+   "source": "estevanmaito/windmill-dashboard",
+   "screened": 6,
+   "accepted": 0
+  },
+  {
+   "source": "ColorlibHQ/gentelella",
+   "screened": 40,
+   "accepted": 2
+  },
+  {
+   "source": "creativetimofficial/material-dashboard",
+   "screened": 27,
+   "accepted": 0
+  },
+  {
+   "source": "twbs/bootstrap (version 3 line)",
+   "screened": 40,
+   "accepted": 1
+  },
+  {
+   "source": "tabler/tabler (2018-02-14 to 2019-03-12)",
+   "screened": 6,
+   "accepted": 0
+  },
+  {
+   "source": "Semantic-Org/Semantic-UI",
+   "screened": 40,
+   "accepted": 0
+  },
+  {
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "screened": 40,
+   "accepted": 0
+  }
+ ],
+ "candidates": [
+  {
+   "id": "soft-ui-687e8b81",
+   "source": "creativetimofficial/soft-ui-dashboard",
+   "commit": "687e8b81f787009dededbd787f13a47f645e2223",
+   "date": "2022-03-18",
+   "subject": "feat: add new product version",
+   "matched_on": "changelog",
+   "fixed_state": "687e8b81f787009dededbd787f13a47f645e2223",
+   "pages_rendered": [
+    "pages/billing.html",
+    "pages/dashboard.html",
+    "pages/profile.html",
+    "pages/rtl.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature change: the fixed state adds an Online Builder button; the earlier state shows no fault"
+  },
+  {
+   "id": "argon-76a3aa99",
+   "source": "creativetimofficial/argon-dashboard",
+   "commit": "76a3aa9947499de8bdefa008b602b761071f0884",
+   "date": "2020-02-20",
+   "subject": "Feat(v1.2.0): Upgrade product",
+   "matched_on": "changelog",
+   "fixed_state": "76a3aa9947499de8bdefa008b602b761071f0884",
+   "pages_rendered": [
+    "examples/icons.html",
+    "examples/login.html",
+    "examples/map.html",
+    "examples/maps.html"
+   ],
+   "verdict": "rejected",
+   "reason": "product redesign; the earlier state shows no fault"
+  },
+  {
+   "id": "argon-5e740c3b",
+   "source": "creativetimofficial/argon-dashboard",
+   "commit": "5e740c3ba67d8e6c1696866816a83c2953db9753",
+   "date": "2020-02-04",
+   "subject": "Feat(v1.1.2): Update",
+   "matched_on": "changelog",
+   "fixed_state": "5e740c3ba67d8e6c1696866816a83c2953db9753",
+   "pages_rendered": [
+    "examples/icons.html",
+    "examples/login.html",
+    "examples/maps.html",
+    "examples/profile.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature change: adds an Upgrade to PRO item"
+  },
+  {
+   "id": "argon-d10223f8",
+   "source": "creativetimofficial/argon-dashboard",
+   "commit": "d10223f8e44c4888407a28eaa59743c2303827de",
+   "date": "2019-12-20",
+   "subject": "Update to v1.1.1",
+   "matched_on": "changelog",
+   "fixed_state": "d10223f8e44c4888407a28eaa59743c2303827de",
+   "pages_rendered": [
+    "examples/icons.html",
+    "examples/maps.html",
+    "examples/profile.html",
+    "examples/tables.html"
+   ],
+   "verdict": "rejected",
+   "reason": "colour only (link colour)"
+  },
+  {
+   "id": "argon-11540f93",
+   "source": "creativetimofficial/argon-dashboard",
+   "commit": "11540f93d6da20acb2921324cb64e4f7c278f733",
+   "date": "2019-07-01",
+   "subject": "Updated to V1.10",
+   "matched_on": "changelog",
+   "fixed_state": "11540f93d6da20acb2921324cb64e4f7c278f733",
+   "pages_rendered": [
+    "examples/icons.html",
+    "examples/login.html",
+    "examples/maps.html",
+    "examples/profile.html"
+   ],
+   "verdict": "rejected",
+   "reason": "colour only (icon colour)"
+  },
+  {
+   "id": "sneat-a9f202ec",
+   "source": "themeselection/sneat-html-admin-template-free",
+   "commit": "a9f202ec3b4763eccb160cd60205f27b599e46cb",
+   "date": "2023-11-09",
+   "subject": "chore: release v1.2.1",
+   "matched_on": "changelog",
+   "fixed_state": "623f132cf9568e38bed71fb47181e0543e7dea3e",
+   "pages_rendered": [
+    "html/auth-forgot-password-basic.html",
+    "html/auth-login-basic.html",
+    "html/auth-register-basic.html",
+    "html/forms-basic-inputs.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style refinement in a release; the earlier state looks intended"
+  },
+  {
+   "id": "sneat-1dd5d5b4",
+   "source": "themeselection/sneat-html-admin-template-free",
+   "commit": "1dd5d5b4ec4079163b2adbdf173a5375f9799437",
+   "date": "2023-09-13",
+   "subject": "refactor(multi): updated all src free template files",
+   "matched_on": "changelog",
+   "fixed_state": "1dd5d5b4ec4079163b2adbdf173a5375f9799437",
+   "pages_rendered": [
+    "html/auth-forgot-password-basic.html",
+    "html/auth-login-basic.html",
+    "html/auth-register-basic.html",
+    "html/cards-basic.html"
+   ],
+   "verdict": "rejected",
+   "reason": "colour only (field border)"
+  },
+  {
+   "id": "sneat-93e1dd4a",
+   "source": "themeselection/sneat-html-admin-template-free",
+   "commit": "93e1dd4afe6b7e4bff82fcd23c7b04ca8b2b6a5c",
+   "date": "2022-04-29",
+   "subject": "fix(html): updated html file commit minor css bugfixed",
+   "matched_on": "message",
+   "fixed_state": "93e1dd4afe6b7e4bff82fcd23c7b04ca8b2b6a5c",
+   "pages_rendered": [
+    "html/auth-forgot-password-basic.html",
+    "html/auth-login-basic.html",
+    "html/auth-register-basic.html",
+    "html/cards-basic.html"
+   ],
+   "verdict": "rejected",
+   "reason": "change of a few pixels with no fault a reviewer could name"
+  },
+  {
+   "id": "sbadmin-303fc250",
+   "source": "StartBootstrap/startbootstrap-sb-admin",
+   "commit": "303fc25046b17bfe151e65308492f8e5f8cde6d2",
+   "date": "2020-01-03",
+   "subject": "fix content z-index for mobile view",
+   "matched_on": "message",
+   "fixed_state": "e04b74e4e2518069a6081d05c1ee85605ed89b42",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "needs a click: the overlay it fixes shows only when the side navigation is opened"
+  },
+  {
+   "id": "sbadmin-31d331f7",
+   "source": "StartBootstrap/startbootstrap-sb-admin",
+   "commit": "31d331f70053c6aead5b4f3c64b0f4d3a3a92214",
+   "date": "2019-12-14",
+   "subject": "make fixed navigation the default and remove redundant pug",
+   "matched_on": "message",
+   "fixed_state": "e04b74e4e2518069a6081d05c1ee85605ed89b42",
+   "pages_rendered": [
+    "dist/charts.html",
+    "dist/index.html",
+    "dist/layout-sidenav-light.html",
+    "dist/tables.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change: fixed navigation made the default"
+  },
+  {
+   "id": "sbadmin-6ccb3e64",
+   "source": "StartBootstrap/startbootstrap-sb-admin",
+   "commit": "6ccb3e648e5bb22bf3d57b8b3cedcbd46dc92c75",
+   "date": "2019-11-17",
+   "subject": "new layout and project structure initial commit",
+   "matched_on": "message",
+   "fixed_state": "6ccb3e648e5bb22bf3d57b8b3cedcbd46dc92c75",
+   "pages_rendered": [
+    "404.html",
+    "blank.html",
+    "charts.html",
+    "forgot-password.html"
+   ],
+   "verdict": "rejected",
+   "reason": "rewrite of layout and project structure; the earlier state shows no fault"
+  },
+  {
+   "id": "sbadmin-04385dd6",
+   "source": "StartBootstrap/startbootstrap-sb-admin",
+   "commit": "04385dd6caaa5dcb689528966dc4b7e2f6bed62f",
+   "date": "2019-01-31",
+   "subject": "update dependencies, remove broken fixed nav option, load bootstrap sass into project instead of css, gulp 4 update",
+   "matched_on": "message",
+   "fixed_state": "04385dd6caaa5dcb689528966dc4b7e2f6bed62f",
+   "pages_rendered": [
+    "404.html",
+    "blank.html",
+    "charts.html",
+    "forgot-password.html"
+   ],
+   "verdict": "rejected",
+   "reason": "changes of a few dozen pixels with no fault a reviewer could name"
+  },
+  {
+   "id": "sbadmin-8129b28e",
+   "source": "StartBootstrap/startbootstrap-sb-admin",
+   "commit": "8129b28e35e460b8bf4624a85594acffcc42e244",
+   "date": "2018-01-20",
+   "subject": "Fixed Tooltips - Broke Overflow on Fixed Navbar",
+   "matched_on": "message",
+   "fixed_state": "8129b28e35e460b8bf4624a85594acffcc42e244",
+   "pages_rendered": [
+    "index.html",
+    "cards.html",
+    "navbar.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "sbadmin-4070ec3d",
+   "source": "StartBootstrap/startbootstrap-sb-admin",
+   "commit": "4070ec3d8d767484ff398ba6b30c97db425169e6",
+   "date": "2018-01-06",
+   "subject": "fix calculation of sticky footer when heights differ from default",
+   "matched_on": "message",
+   "fixed_state": "d38811a4e87dfe0d78126f9dca44b5022ed4d814",
+   "pages_rendered": [
+    "navbar.html",
+    "blank.html",
+    "cards.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording (copyright year) and shifts under 2 px"
+  },
+  {
+   "id": "sbadmin-a08e3b90",
+   "source": "StartBootstrap/startbootstrap-sb-admin",
+   "commit": "a08e3b9052f5f73c988619b0e0099c3d6f8a22a5",
+   "date": "2017-08-25",
+   "subject": "added sticky footer option for both navbar options",
+   "matched_on": "message",
+   "fixed_state": "a08e3b9052f5f73c988619b0e0099c3d6f8a22a5",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (sticky footer option); the earlier state shows no fault"
+  },
+  {
+   "id": "sbadmin-43eb6e32",
+   "source": "StartBootstrap/startbootstrap-sb-admin",
+   "commit": "43eb6e32852cd93c2b937db86541797e7871082e",
+   "date": "2017-04-06",
+   "subject": "static navbar default with fixed option",
+   "matched_on": "message",
+   "fixed_state": "43eb6e32852cd93c2b937db86541797e7871082e",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change: static navbar made the default"
+  },
+  {
+   "id": "sbadmin-58529270",
+   "source": "StartBootstrap/startbootstrap-sb-admin",
+   "commit": "5852927003dd2dcd5b8886a7dec9c04b0eda5349",
+   "date": "2017-03-21",
+   "subject": "initial commit for v4-dev",
+   "matched_on": "changelog",
+   "fixed_state": "5852927003dd2dcd5b8886a7dec9c04b0eda5349",
+   "pages_rendered": [
+    "blank-page.html",
+    "bootstrap-elements.html",
+    "bootstrap-grid.html",
+    "charts.html"
+   ],
+   "verdict": "rejected",
+   "reason": "initial commit of a new major version; no earlier state of the same page"
+  },
+  {
+   "id": "sbadmin-e38295f0",
+   "source": "StartBootstrap/startbootstrap-sb-admin",
+   "commit": "e38295f03971dbdd4b42d79685990f60f85c7330",
+   "date": "2015-04-08",
+   "subject": "Fixed morris.js links",
+   "matched_on": "message",
+   "fixed_state": "bb0ae6de19588512b69231af102eae99bfa5a2a3",
+   "pages_rendered": [
+    "charts.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording only (link URL)"
+  },
+  {
+   "id": "spectre-8830b13d",
+   "source": "picturepan2/spectre",
+   "commit": "8830b13ddc31926064725ccc52c79622b63e656f",
+   "date": "2019-03-17",
+   "subject": "Fixed issue #561",
+   "matched_on": "message",
+   "fixed_state": "8830b13ddc31926064725ccc52c79622b63e656f",
+   "pages_rendered": [
+    "docs/elements/forms.html",
+    "docs/layout/grid.html",
+    "docs/components.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no page at the parent commit combines loading with tooltip; no visible difference"
+  },
+  {
+   "id": "spectre-cb542639",
+   "source": "picturepan2/spectre",
+   "commit": "cb542639988948295b0dd3afb36a5117b8572169",
+   "date": "2018-12-23",
+   "subject": "Add 0.5.8 Changelog",
+   "matched_on": "changelog",
+   "fixed_state": "b32df5f806f2a0f63d5f69869fff728afb204620",
+   "pages_rendered": [
+    "docs/elements/icons.html",
+    "docs/getting-started/whatsnew.html"
+   ],
+   "verdict": "rejected",
+   "reason": "release and changelog commit; differences are documentation content"
+  },
+  {
+   "id": "spectre-14552514",
+   "source": "picturepan2/spectre",
+   "commit": "14552514e53b3ef5b5037caaa9bec43936c3c1cf",
+   "date": "2018-12-16",
+   "subject": "Add Auto width column #541",
+   "matched_on": "message",
+   "fixed_state": "14552514e53b3ef5b5037caaa9bec43936c3c1cf",
+   "pages_rendered": [
+    "docs/layout/grid.html",
+    "docs/layout/responsive.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (auto width column); the earlier state shows no fault"
+  },
+  {
+   "id": "spectre-38fd80e7",
+   "source": "picturepan2/spectre",
+   "commit": "38fd80e7a02a158dce1ba1edb4d6144e2325585a",
+   "date": "2018-11-25",
+   "subject": "Change Carousels image number to variable #428",
+   "matched_on": "changelog",
+   "fixed_state": "38fd80e7a02a158dce1ba1edb4d6144e2325585a",
+   "pages_rendered": [
+    "docs/experimentals/carousels.html",
+    "docs/experimentals/viewer-360.html",
+    "docs/getting-started/whatsnew.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refactor of the carousel image count; carousel needs interaction"
+  },
+  {
+   "id": "spectre-e8144c88",
+   "source": "picturepan2/spectre",
+   "commit": "e8144c88071e8e9c86b1ac0d72c882ccc657fc0b",
+   "date": "2018-11-25",
+   "subject": "Fix Form textarea height issue",
+   "matched_on": "message",
+   "fixed_state": "e8144c88071e8e9c86b1ac0d72c882ccc657fc0b",
+   "pages_rendered": [
+    "docs/elements/forms.html",
+    "docs/experimentals/calendars.html",
+    "docs/layout/grid.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "spectre-ba4c380a",
+   "source": "picturepan2/spectre",
+   "commit": "ba4c380af32bc75dad1e03c2386b5f8a3fb9118f",
+   "date": "2018-11-20",
+   "subject": "Update Changelog",
+   "matched_on": "changelog",
+   "fixed_state": "ba4c380af32bc75dad1e03c2386b5f8a3fb9118f",
+   "pages_rendered": [
+    "docs/getting-started/whatsnew.html"
+   ],
+   "verdict": "rejected",
+   "reason": "changelog and documentation content"
+  },
+  {
+   "id": "spectre-26d3d625",
+   "source": "picturepan2/spectre",
+   "commit": "26d3d62515b3911f6a3f87e6161b9491cb02d8de",
+   "date": "2018-11-14",
+   "subject": "Add Hero layout #380",
+   "matched_on": "message",
+   "fixed_state": "26d3d62515b3911f6a3f87e6161b9491cb02d8de",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/components/accordions.html",
+    "docs/components/avatars.html",
+    "docs/components/badges.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (hero layout); the earlier state shows no fault"
+  },
+  {
+   "id": "spectre-62e6c4ea",
+   "source": "picturepan2/spectre",
+   "commit": "62e6c4eac47bff1b2931fd107ea757e155aa2c69",
+   "date": "2018-11-08",
+   "subject": "Fix sidebar background height for short docs pages",
+   "matched_on": "message",
+   "fixed_state": "c35ff2950a65c408f24d4770a848fe1f7dfbd70a",
+   "pages_rendered": [
+    "docs/experimentals/off-canvas.html",
+    "docs/components.html",
+    "docs/components/accordions.html"
+   ],
+   "verdict": "rejected",
+   "reason": "only the version number differs on the rendered pages; they are too long for the short-page fault to show"
+  },
+  {
+   "id": "spectre-a5f144b8",
+   "source": "picturepan2/spectre",
+   "commit": "a5f144b849a0e0271260cd4485667052247019a5",
+   "date": "2018-11-03",
+   "subject": "IMPORTANT: Change naming of position utilities to avoid conflicts",
+   "matched_on": "message",
+   "fixed_state": "a5f144b849a0e0271260cd4485667052247019a5",
+   "pages_rendered": [
+    "docs/elements.html",
+    "docs/utilities.html"
+   ],
+   "verdict": "rejected",
+   "reason": "class renaming; differences are documentation content"
+  },
+  {
+   "id": "spectre-f5cc786e",
+   "source": "picturepan2/spectre",
+   "commit": "f5cc786ee40cbb6fe6116b3ff590b93576c5c734",
+   "date": "2018-11-03",
+   "subject": "Fix multiple select height bug #508",
+   "matched_on": "message",
+   "fixed_state": "f5cc786ee40cbb6fe6116b3ff590b93576c5c734",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "spectre-05132a5f",
+   "source": "picturepan2/spectre",
+   "commit": "05132a5f5f312d910ad78d076da8f7d7a295763f",
+   "date": "2018-09-09",
+   "subject": "Fix GitHub button z-index bug #458",
+   "matched_on": "message",
+   "fixed_state": "05132a5f5f312d910ad78d076da8f7d7a295763f",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html"
+   ],
+   "verdict": "rejected",
+   "reason": "only an animated parallax demo differs; no fault visible at rest"
+  },
+  {
+   "id": "spectre-7369bb53",
+   "source": "picturepan2/spectre",
+   "commit": "7369bb530f87c29903ed22bdc7aa617612bba75b",
+   "date": "2018-06-10",
+   "subject": "Fix a bug input addons width on mobile devices #449",
+   "matched_on": "message",
+   "fixed_state": "7369bb530f87c29903ed22bdc7aa617612bba75b",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/layout.html"
+   ],
+   "verdict": "rejected",
+   "reason": "widths of the select and input redistribute; the earlier state shows no fault in Chromium"
+  },
+  {
+   "id": "spectre-c67deb47",
+   "source": "picturepan2/spectre",
+   "commit": "c67deb4708c44178c3a0ea46d8279da1672c32b7",
+   "date": "2018-06-05",
+   "subject": "Update docs demo margin",
+   "matched_on": "message",
+   "fixed_state": "c67deb4708c44178c3a0ea46d8279da1672c32b7",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html",
+    "docs/layout.html"
+   ],
+   "verdict": "rejected",
+   "reason": "spacing refinement of documentation demos; the earlier state looks intended"
+  },
+  {
+   "id": "spectre-17423a61",
+   "source": "picturepan2/spectre",
+   "commit": "17423a6156ba7cdc4de6744b0098d61702111101",
+   "date": "2018-06-03",
+   "subject": "Update responsive and navbar to new Pug templates",
+   "matched_on": "message",
+   "fixed_state": "c67deb4708c44178c3a0ea46d8279da1672c32b7",
+   "pages_rendered": [
+    "docs/layout.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation template rewrite; the earlier state looks intended"
+  },
+  {
+   "id": "spectre-554510f4",
+   "source": "picturepan2/spectre",
+   "commit": "554510f4e7ef5351d4c443a9d2d1b82a98ad95de",
+   "date": "2018-04-22",
+   "subject": "Fix margin and padding values #431",
+   "matched_on": "message",
+   "fixed_state": "554510f4e7ef5351d4c443a9d2d1b82a98ad95de",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "spectre-7e6a73d4",
+   "source": "picturepan2/spectre",
+   "commit": "7e6a73d4c3ace7e22e2afc25805ed0066b867bf5",
+   "date": "2018-02-21",
+   "subject": "Add 100% modal height class #391",
+   "matched_on": "message",
+   "fixed_state": "7e6a73d4c3ace7e22e2afc25805ed0066b867bf5",
+   "pages_rendered": [
+    "docs/components.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (full-height modal class); modal needs a click"
+  },
+  {
+   "id": "spectre-5451052f",
+   "source": "picturepan2/spectre",
+   "commit": "5451052f63e626349322962ac21f029d06d3c23f",
+   "date": "2018-01-16",
+   "subject": "Add responsive horizontal form support #375",
+   "matched_on": "message",
+   "fixed_state": "5451052f63e626349322962ac21f029d06d3c23f",
+   "pages_rendered": [
+    "docs/elements.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (stacked horizontal form on small screens); the earlier side-by-side form looks intended"
+  },
+  {
+   "id": "spectre-8db9c0af",
+   "source": "picturepan2/spectre",
+   "commit": "8db9c0af0fe20137c527f5ee538f32be53ba0f38",
+   "date": "2017-12-29",
+   "subject": "Fixed icons disappearing on group classes on focus.",
+   "matched_on": "message",
+   "fixed_state": "be24aacea62cdca21d999d3ec39905e408280bdb",
+   "pages_rendered": [
+    "docs/elements.html",
+    "docs/components.html",
+    "docs/utilities.html"
+   ],
+   "verdict": "rejected",
+   "reason": "needs focus"
+  },
+  {
+   "id": "spectre-14e581de",
+   "source": "picturepan2/spectre",
+   "commit": "14e581de8c8b5610abf12cd71a46e5663bf341e8",
+   "date": "2017-12-16",
+   "subject": "Fix Off-canvas z-index problem #361",
+   "matched_on": "message",
+   "fixed_state": "14e581de8c8b5610abf12cd71a46e5663bf341e8",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference; the off-canvas panel needs a click"
+  },
+  {
+   "id": "spectre-daa20985",
+   "source": "picturepan2/spectre",
+   "commit": "daa20985bb5c244f744b9ec8044f87d4bba5c2db",
+   "date": "2017-12-07",
+   "subject": "Update Off-canvas default behavior and new option available #347",
+   "matched_on": "changelog",
+   "fixed_state": "daa20985bb5c244f744b9ec8044f87d4bba5c2db",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html",
+    "docs/getting-started.html"
+   ],
+   "verdict": "rejected",
+   "reason": "behaviour change of the off-canvas panel; needs a click"
+  },
+  {
+   "id": "spectre-5f150883",
+   "source": "picturepan2/spectre",
+   "commit": "5f150883b8273d376330e9138074b9e93e3f2423",
+   "date": "2017-11-28",
+   "subject": "Fix Navbar last-child align right bug #346",
+   "matched_on": "message",
+   "fixed_state": "5f150883b8273d376330e9138074b9e93e3f2423",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "spectre-020fad4d",
+   "source": "picturepan2/spectre",
+   "commit": "020fad4d1b379130e64e169567b7e58042d34669",
+   "date": "2017-11-26",
+   "subject": "Fix form horizontal layout spacing",
+   "matched_on": "message",
+   "fixed_state": "020fad4d1b379130e64e169567b7e58042d34669",
+   "pages_rendered": [
+    "docs/elements.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation example rewritten (buttons removed); the earlier state shows no fault"
+  },
+  {
+   "id": "spectre-6ad27a46",
+   "source": "picturepan2/spectre",
+   "commit": "6ad27a469d445045e4a3283a6e8cd33a48460507",
+   "date": "2017-11-26",
+   "subject": "Add overflow-scrolling: touch; CSS for better scrolling",
+   "matched_on": "message",
+   "fixed_state": "6ad27a469d445045e4a3283a6e8cd33a48460507",
+   "pages_rendered": [
+    "docs/experimentals.html",
+    "docs/components.html",
+    "docs/utilities.html"
+   ],
+   "verdict": "rejected",
+   "reason": "touch scrolling property; no visible difference"
+  },
+  {
+   "id": "spectre-f9b68c6f",
+   "source": "picturepan2/spectre",
+   "commit": "f9b68c6f035e698db35a7eef94c1e0b462f6a160",
+   "date": "2017-11-20",
+   "subject": "Update Changelog and Docs",
+   "matched_on": "changelog",
+   "fixed_state": "18a21e8a03140e4be09e1756f906d9867c1ff285",
+   "pages_rendered": [
+    "docs/components.html"
+   ],
+   "verdict": "rejected",
+   "reason": "changelog and documentation content"
+  },
+  {
+   "id": "spectre-8072f466",
+   "source": "picturepan2/spectre",
+   "commit": "8072f46679d5ae5e4ba8eac6e4acfa11e0834f5b",
+   "date": "2017-11-20",
+   "subject": "Fix comparison slider image responsive bug #338",
+   "matched_on": "message",
+   "fixed_state": "8072f46679d5ae5e4ba8eac6e4acfa11e0834f5b",
+   "pages_rendered": [
+    "docs/experimentals.html",
+    "docs/components.html",
+    "docs/utilities.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the image mismatch shows only when the comparison slider is dragged"
+  },
+  {
+   "id": "spectre-14c87eaa",
+   "source": "picturepan2/spectre",
+   "commit": "14c87eaac4aeec0850e8fa38467fab08732921e4",
+   "date": "2017-11-16",
+   "subject": "Fix breadcrumb-item extra spacing #337",
+   "matched_on": "message",
+   "fixed_state": "14c87eaac4aeec0850e8fa38467fab08732921e4",
+   "pages_rendered": [
+    "docs/components.html"
+   ],
+   "verdict": "rejected",
+   "reason": "breadcrumb spacing refinement of 1 to 3 px; the earlier state looks intended"
+  },
+  {
+   "id": "spectre-88601b40",
+   "source": "picturepan2/spectre",
+   "commit": "88601b40f06487845e6fb088f3f318b1a830bae2",
+   "date": "2017-09-21",
+   "subject": "Remove Spectre Logo in mobile",
+   "matched_on": "message",
+   "fixed_state": "068eee7a401b9b12975a60dcf7d523593fde2ed6",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html",
+    "docs/getting-started.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (logo hidden on mobile)"
+  },
+  {
+   "id": "spectre-4f15bc0c",
+   "source": "picturepan2/spectre",
+   "commit": "4f15bc0c787fb87d19e26e665d5e1eadbe89b560",
+   "date": "2017-09-11",
+   "subject": "Update the Docs",
+   "matched_on": "changelog",
+   "fixed_state": "ea508ef4aa932188a1c8cd3a76bd1be6e318b196",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/utilities.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation content update"
+  },
+  {
+   "id": "spectre-ee51332b",
+   "source": "picturepan2/spectre",
+   "commit": "ee51332b0d70db166af394fc9a7a2442a4dec8aa",
+   "date": "2017-09-11",
+   "subject": "Fix responsive video #280",
+   "matched_on": "message",
+   "fixed_state": "ee51332b0d70db166af394fc9a7a2442a4dec8aa",
+   "pages_rendered": [
+    "docs/elements.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page gains new documentation; the earlier state has no video example and shows no fault"
+  },
+  {
+   "id": "spectre-41ec3e49",
+   "source": "picturepan2/spectre",
+   "commit": "41ec3e49d63ea45d8aee4f26eeccfedaa20a7f7d",
+   "date": "2017-08-17",
+   "subject": "Add Grid offset, more margin and padding utilities",
+   "matched_on": "message",
+   "fixed_state": "41ec3e49d63ea45d8aee4f26eeccfedaa20a7f7d",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html",
+    "docs/getting-started.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (grid offset and spacing utilities); differences are documentation content"
+  },
+  {
+   "id": "spectre-b56b14d2",
+   "source": "picturepan2/spectre",
+   "commit": "b56b14d2f4a5c30c9a3d106377b40d3a7f595b8a",
+   "date": "2017-08-16",
+   "subject": "Move Panels and Empty states to Components from Layout",
+   "matched_on": "message",
+   "fixed_state": "41ec3e49d63ea45d8aee4f26eeccfedaa20a7f7d",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html",
+    "docs/getting-started.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation reorganisation"
+  },
+  {
+   "id": "spectre-e1889c84",
+   "source": "picturepan2/spectre",
+   "commit": "e1889c840e060b51e4b551a3e30f142ce4b9ec2b",
+   "date": "2017-08-16",
+   "subject": "Fix margin utilities #250",
+   "matched_on": "message",
+   "fixed_state": "e1889c840e060b51e4b551a3e30f142ce4b9ec2b",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/layout.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "spectre-d6b5a134",
+   "source": "picturepan2/spectre",
+   "commit": "d6b5a13424cb56db116483f79d6253205e26757c",
+   "date": "2017-08-15",
+   "subject": "Update Responsive Container and docs",
+   "matched_on": "message",
+   "fixed_state": "d6b5a13424cb56db116483f79d6253205e26757c",
+   "pages_rendered": [
+    "docs/index.html",
+    "docs/layout.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation wording and spacing; the earlier state looks intended"
+  },
+  {
+   "id": "spectre-4cb36cd7",
+   "source": "picturepan2/spectre",
+   "commit": "4cb36cd7914a52c4ea18ac34308a38250a4c0399",
+   "date": "2017-08-14",
+   "subject": "Add mobile responsive support",
+   "matched_on": "message",
+   "fixed_state": "4cb36cd7914a52c4ea18ac34308a38250a4c0399",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html",
+    "docs/getting-started.html"
+   ],
+   "verdict": "accepted",
+   "reason": "docs/components.html at 360 px: the side navigation and the page content overlap (headings and text drawn over the menu links); fixed at the commit"
+  },
+  {
+   "id": "spectre-7e73f385",
+   "source": "picturepan2/spectre",
+   "commit": "7e73f385a827a3c19c3fdd174639cc6477c22487",
+   "date": "2017-06-13",
+   "subject": "Add Responsive container to the Docs #222",
+   "matched_on": "message",
+   "fixed_state": "58b19730a3bcda67ecd6b77abffd8133f2850905",
+   "pages_rendered": [
+    "docs/layout.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation content added"
+  },
+  {
+   "id": "spectre-aba0d05b",
+   "source": "picturepan2/spectre",
+   "commit": "aba0d05b3c95c13f965fe31e73808167297a6c4c",
+   "date": "2017-06-13",
+   "subject": "Change Dropdown menus max-height to 50% viewport height",
+   "matched_on": "message",
+   "fixed_state": "aba0d05b3c95c13f965fe31e73808167297a6c4c",
+   "pages_rendered": [
+    "docs/elements.html"
+   ],
+   "verdict": "rejected",
+   "reason": "dropdown menu height; needs a click"
+  },
+  {
+   "id": "spectre-12cbb65e",
+   "source": "picturepan2/spectre",
+   "commit": "12cbb65e6f21584223a058be478110543469a572",
+   "date": "2017-04-17",
+   "subject": "Fixed a typo",
+   "matched_on": "message",
+   "fixed_state": "610a8b8d8ba6eea7efb16bf03faf18bfe97a0f1b",
+   "pages_rendered": [
+    "docs/utilities.html"
+   ],
+   "verdict": "rejected",
+   "reason": "colour only on the rendered pages"
+  },
+  {
+   "id": "spectre-6aa86099",
+   "source": "picturepan2/spectre",
+   "commit": "6aa86099a457d2725315863725f79172888f1788",
+   "date": "2017-04-12",
+   "subject": "Cleanup code and make form-select 100% width",
+   "matched_on": "message",
+   "fixed_state": "6aa86099a457d2725315863725f79172888f1788",
+   "pages_rendered": [
+    "docs/elements.html",
+    "docs/layout.html"
+   ],
+   "verdict": "rejected",
+   "reason": "colour only on the rendered pages"
+  },
+  {
+   "id": "spectre-541850ff",
+   "source": "picturepan2/spectre",
+   "commit": "541850ff2927a4dee767809af61a0cd479657ae6",
+   "date": "2017-04-09",
+   "subject": "Fix Calendars date item width bug under Firefox",
+   "matched_on": "message",
+   "fixed_state": "541850ff2927a4dee767809af61a0cd479657ae6",
+   "pages_rendered": [
+    "docs/components.html",
+    "docs/elements.html",
+    "docs/experimentals.html"
+   ],
+   "verdict": "rejected",
+   "reason": "Firefox only"
+  },
+  {
+   "id": "spectre-9b698677",
+   "source": "picturepan2/spectre",
+   "commit": "9b698677d15b8eb515d736aaf1334de0340b86fe",
+   "date": "2017-04-05",
+   "subject": "Fix Modals center alignment bug on IE11",
+   "matched_on": "message",
+   "fixed_state": "9b698677d15b8eb515d736aaf1334de0340b86fe",
+   "pages_rendered": [
+    "docs/font/demo.html",
+    "docs/components.html",
+    "docs/elements.html"
+   ],
+   "verdict": "rejected",
+   "reason": "Internet Explorer 11 only"
+  },
+  {
+   "id": "windmill-16d3ff02",
+   "source": "estevanmaito/windmill-dashboard",
+   "commit": "16d3ff0239dac7bf7d69e1d34eb9c958fb372e78",
+   "date": "2020-06-19",
+   "subject": "fix container overflow and sidebar shrink",
+   "matched_on": "message",
+   "fixed_state": "16d3ff0239dac7bf7d69e1d34eb9c958fb372e78",
+   "pages_rendered": [
+    "public/buttons.html",
+    "public/cards.html",
+    "public/charts.html",
+    "public/forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "windmill-bc932edb",
+   "source": "estevanmaito/windmill-dashboard",
+   "commit": "bc932edbf810f1f3fa24fb14e6a71e50feb88215",
+   "date": "2020-06-16",
+   "subject": "improve mobile menu layout",
+   "matched_on": "message",
+   "fixed_state": "bc932edbf810f1f3fa24fb14e6a71e50feb88215",
+   "pages_rendered": [
+    "public/buttons.html",
+    "public/cards.html",
+    "public/charts.html",
+    "public/forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the mobile menu needs a click; at rest only the search placeholder shifts"
+  },
+  {
+   "id": "windmill-8fc251c6",
+   "source": "estevanmaito/windmill-dashboard",
+   "commit": "8fc251c6d0d16709ec256fd712d0e58ec5e56285",
+   "date": "2020-06-13",
+   "subject": "remove animation from mobile menu",
+   "matched_on": "message",
+   "fixed_state": "c068132c697b1ca85e0ceed83478b38cac3839f7",
+   "pages_rendered": [
+    "public/buttons.html",
+    "public/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "animation of the mobile menu; needs a click"
+  },
+  {
+   "id": "windmill-560ce96c",
+   "source": "estevanmaito/windmill-dashboard",
+   "commit": "560ce96cd5f7b382305d363efee5b1554b157bce",
+   "date": "2020-06-11",
+   "subject": "fix charts width",
+   "matched_on": "message",
+   "fixed_state": "c068132c697b1ca85e0ceed83478b38cac3839f7",
+   "pages_rendered": [
+    "public/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the parent commit has no committed built CSS for the page; it renders unstyled, so no defect can be judged"
+  },
+  {
+   "id": "windmill-fec36ab6",
+   "source": "estevanmaito/windmill-dashboard",
+   "commit": "fec36ab68c56b8266be03d9547dc0ba35deb03cf",
+   "date": "2020-06-11",
+   "subject": "make page responsive",
+   "matched_on": "message",
+   "fixed_state": "c068132c697b1ca85e0ceed83478b38cac3839f7",
+   "pages_rendered": [
+    "public/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the parent commit has no committed built CSS for the page; it renders unstyled, so no defect can be judged"
+  },
+  {
+   "id": "windmill-ddd5d8e2",
+   "source": "estevanmaito/windmill-dashboard",
+   "commit": "ddd5d8e29e71ff5fda02cb863b976d5ea194ab50",
+   "date": "2020-06-11",
+   "subject": "fix z-index",
+   "matched_on": "message",
+   "fixed_state": "c068132c697b1ca85e0ceed83478b38cac3839f7",
+   "pages_rendered": [
+    "public/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the parent commit has no committed built CSS for the page; it renders unstyled, so no defect can be judged"
+  },
+  {
+   "id": "gentelella-04d49be3",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "04d49be3af2144bd65cf5a8c450751465317bfd3",
+   "date": "2026-05-28",
+   "subject": "Fix dropzone alignment on file upload page (#985)",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-42ec74c8",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "42ec74c84f0f50d2951e33a682b572463593d581",
+   "date": "2026-05-05",
+   "subject": "Release 4.0.0-rc.2 — mobile pass + npm package distribution",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-ec9a06a6",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "ec9a06a60d82203498ab1dfd5271ede5c2f69c56",
+   "date": "2026-05-02",
+   "subject": "Release 4.0.0-rc.1 — v4 redesign",
+   "matched_on": "changelog",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-e08f69ca",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "e08f69ca77c20ca7e5b6590b84224e30017d9cdc",
+   "date": "2026-04-23",
+   "subject": "Release 2.2.0 — fresh for 2026",
+   "matched_on": "changelog",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-de24055a",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "de24055ae95301ed5b4f4b82e8e09b4b69f975f7",
+   "date": "2026-02-14",
+   "subject": "Fixed docs",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-8f1c00c4",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "8f1c00c47beff4895fbda6c2c294ce4de9525f7d",
+   "date": "2026-01-13",
+   "subject": "Improved color schema",
+   "matched_on": "changelog",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-f9802c15",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "f9802c15bf792e39a4cac0a3efd60cfa5eebdb20",
+   "date": "2026-01-12",
+   "subject": "Add Bootstrap Icons and fix navigation layout",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-817ee2f0",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "817ee2f04c9911c593a85da4f7ce1d8326b23284",
+   "date": "2026-01-12",
+   "subject": "feat: Migrate to Bootstrap 5 and consolidate custom CSS/JS",
+   "matched_on": "changelog",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-26ffadb4",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "26ffadb45b1d9462ca0d5a51a5b4af224d5f333f",
+   "date": "2026-01-12",
+   "subject": "Added Vitest with proper testing",
+   "matched_on": "changelog",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-86a3109c",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "86a3109c2c1977849c79c6b5723936cff1c724d3",
+   "date": "2026-01-12",
+   "subject": "feat: Implement modern ECharts module without jQuery",
+   "matched_on": "changelog",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-b8e4b6a3",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "b8e4b6a3e8a1f9d8200927fd72f377aefcf4d576",
+   "date": "2025-07-28",
+   "subject": "Added favicon and changelog",
+   "matched_on": "changelog",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-f691d46c",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "f691d46cdaa7d81bff007c542e973128278bc5cb",
+   "date": "2025-06-20",
+   "subject": "Fixed landing page",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-5573858b",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "5573858bf75b982330f58a4ede84c1b4c09f8828",
+   "date": "2025-06-20",
+   "subject": "🔧 Fix input group alignment and JavaScript errors",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-ccde4134",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "ccde4134cb35d1969d52c580e719ad4b6687c3e3",
+   "date": "2025-06-13",
+   "subject": "Fixed index2.html",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-d29032ed",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "d29032ed5911175edb8e4f941b88ed3ca65e6a6f",
+   "date": "2025-06-13",
+   "subject": "Code cleanup, fixed Dashboard pages",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-2f9a8260",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "2f9a826015c12525d9653506ecaec3f27fca96e1",
+   "date": "2025-06-12",
+   "subject": "Fixed charts",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS at the fix commit or later (the project moved to a build step); the page cannot be rendered from the repository without a build"
+  },
+  {
+   "id": "gentelella-b36819d3",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "b36819d3df873f232bf209c038dfaf72ff1b9b8a",
+   "date": "2023-01-07",
+   "subject": "fixed bugs in form button sizes",
+   "matched_on": "message",
+   "fixed_state": "775b9ddbffc089a5d3d24f3b9992fc3205c8d7a9",
+   "pages_rendered": [
+    "production/form_buttons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "size classes swapped in the demo markup (the Medium button is smaller than the Small one); a style fault outside the layout categories"
+  },
+  {
+   "id": "gentelella-c639b2b4",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "c639b2b45478e447baf651e03f8dc2ff106c79ec",
+   "date": "2019-10-30",
+   "subject": "fixed upgrade Bugs",
+   "matched_on": "message",
+   "fixed_state": "f06ebc4506cd6055abd5b5a42cf7486a92c7b935",
+   "pages_rendered": [
+    "production/calendar.html",
+    "production/chartjs.html",
+    "production/chartjs2.html",
+    "production/echarts.html"
+   ],
+   "verdict": "rejected",
+   "reason": "shifts under 2 px in the top bar badge"
+  },
+  {
+   "id": "gentelella-57172add",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "57172add60938c75c0acab61f46ef8ed11efa84d",
+   "date": "2019-10-26",
+   "subject": "Fixed Modal Title on Left",
+   "matched_on": "message",
+   "fixed_state": "f06ebc4506cd6055abd5b5a42cf7486a92c7b935",
+   "pages_rendered": [
+    "production/general_elements.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording (button label case) and small reflow; the earlier state shows no fault"
+  },
+  {
+   "id": "gentelella-5e1e86bf",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "5e1e86bf3a2694e98b90b5c8f429469c3f9a6ebc",
+   "date": "2019-04-08",
+   "subject": "bump bootstrap to 3.4.1",
+   "matched_on": "changelog",
+   "fixed_state": "33501fcac1b8d6c047a03bc1ceabaea1ff516ab4",
+   "pages_rendered": [
+    "production/icons.html",
+    "production/form_advanced.html",
+    "production/general_elements.html"
+   ],
+   "verdict": "rejected",
+   "reason": "dependency version bump; the fixed state is a much later commit with unrelated changes"
+  },
+  {
+   "id": "gentelella-622ed7a8",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "622ed7a89a364461a00f550ddd4418e7fbb21225",
+   "date": "2018-03-21",
+   "subject": ".left class makes daterangepicker plugin unusable on mobile devices",
+   "matched_on": "message",
+   "fixed_state": "33501fcac1b8d6c047a03bc1ceabaea1ff516ab4",
+   "pages_rendered": [
+    "production/contacts.html",
+    "production/form_advanced.html",
+    "production/inbox.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the date range picker fault needs a click; on the rendered pages the earlier state looks intended"
+  },
+  {
+   "id": "gentelella-3ccd984a",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "3ccd984ad34f1f3abee4cc267b68e10fff01a313",
+   "date": "2017-06-13",
+   "subject": "Datetime picker #411",
+   "matched_on": "changelog",
+   "fixed_state": "6e6abdfb490f5d55b44898c2ba1e1ad9f3c4b707",
+   "pages_rendered": [
+    "production/icons.html",
+    "production/glyphicons.html",
+    "production/form_advanced.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (date pickers panel added)"
+  },
+  {
+   "id": "gentelella-eb78e7ed",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "eb78e7ed186403e54875556ef223dedef45dc9b6",
+   "date": "2016-12-07",
+   "subject": ".profile should be clearfixed",
+   "matched_on": "message",
+   "fixed_state": "b221f6515030f97f8b2e967ebc55f694bc3ac1cc",
+   "pages_rendered": [
+    "production/plain_page.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the General heading sits about 4 px under the profile picture without overlap; tight spacing only"
+  },
+  {
+   "id": "gentelella-dab37f7d",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "dab37f7dbf944b08a2e803275a0d243d981dcdf4",
+   "date": "2016-07-10",
+   "subject": "Fix glitch on fixed sidebar for big resolution",
+   "matched_on": "message",
+   "fixed_state": "dab37f7dbf944b08a2e803275a0d243d981dcdf4",
+   "pages_rendered": [
+    "production/form_advanced.html",
+    "production/icons.html",
+    "production/glyphicons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports (large-resolution fault)"
+  },
+  {
+   "id": "gentelella-e35452aa",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "e35452aaa75a00f14b98b9f910f45bc23785c2c4",
+   "date": "2016-06-25",
+   "subject": "Fix autocomplete suggestions not aligned",
+   "matched_on": "message",
+   "fixed_state": "dab37f7dbf944b08a2e803275a0d243d981dcdf4",
+   "pages_rendered": [
+    "production/form.html"
+   ],
+   "verdict": "rejected",
+   "reason": "autocomplete suggestions need typing"
+  },
+  {
+   "id": "gentelella-aaec6701",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "aaec6701c36ff39e02b49e1c62f0273dd5123a5c",
+   "date": "2016-06-18",
+   "subject": "Revert \"-Added a css variable to adjust the side bar width\"",
+   "matched_on": "message",
+   "fixed_state": "aaec6701c36ff39e02b49e1c62f0273dd5123a5c",
+   "pages_rendered": [
+    "production/form_advanced.html",
+    "production/icons.html",
+    "production/glyphicons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "revert of a feature; no visible difference"
+  },
+  {
+   "id": "gentelella-88ef9065",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "88ef9065cf22c3f5e6bd762a99c0e2cabfb1bcc8",
+   "date": "2016-06-17",
+   "subject": "-Added a css variable to adjust the side bar width",
+   "matched_on": "message",
+   "fixed_state": "88ef9065cf22c3f5e6bd762a99c0e2cabfb1bcc8",
+   "pages_rendered": [
+    "production/form_advanced.html",
+    "production/icons.html",
+    "production/glyphicons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (sidebar width variable); no visible difference"
+  },
+  {
+   "id": "gentelella-425437af",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "425437af05ad4e1b06503f490879f3f422ffe374",
+   "date": "2016-06-17",
+   "subject": "-Fixed bottom sidebar part when resize lower than 992px",
+   "matched_on": "message",
+   "fixed_state": "425437af05ad4e1b06503f490879f3f422ffe374",
+   "pages_rendered": [
+    "production/form_advanced.html",
+    "production/icons.html",
+    "production/glyphicons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "gentelella-c103facf",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "c103facfdb9e959aa6a81e8921f70049fe48baac",
+   "date": "2016-06-10",
+   "subject": "Change jVectorMap to JQVMap",
+   "matched_on": "changelog",
+   "fixed_state": "b3089e199f18dc84f42b0344342739384070ddc4",
+   "pages_rendered": [
+    "production/index.html",
+    "production/index2.html",
+    "production/other_charts.html"
+   ],
+   "verdict": "rejected",
+   "reason": "map library replaced; the earlier state shows no fault"
+  },
+  {
+   "id": "gentelella-8fd7d36b",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "8fd7d36b7313750a4bb35b532531f40f4d4fef6e",
+   "date": "2016-06-07",
+   "subject": "Fix modal button not aligned properly",
+   "matched_on": "message",
+   "fixed_state": "8fd7d36b7313750a4bb35b532531f40f4d4fef6e",
+   "pages_rendered": [
+    "production/form_advanced.html",
+    "production/icons.html",
+    "production/glyphicons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference; the modal needs a click"
+  },
+  {
+   "id": "gentelella-89d7f6df",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "89d7f6df20011dbe6d96099fbf3fb06ad999c8ff",
+   "date": "2016-06-03",
+   "subject": "Update libraries",
+   "matched_on": "changelog",
+   "fixed_state": "c3fb2b45621c35fd8a700b23d4fe03c6ab64b1e7",
+   "pages_rendered": [
+    "production/form_advanced.html",
+    "production/icons.html",
+    "production/general_elements.html"
+   ],
+   "verdict": "rejected",
+   "reason": "library update; the earlier state shows no fault"
+  },
+  {
+   "id": "gentelella-b60a6c08",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "b60a6c08fdcc03c70954c5ae635d5f166069ac5f",
+   "date": "2016-05-23",
+   "subject": "Fix login form not switchable",
+   "matched_on": "changelog",
+   "fixed_state": "475e8db2a615ba97decc24b0e0e301c18b310e80",
+   "pages_rendered": [
+    "production/login.html"
+   ],
+   "verdict": "rejected",
+   "reason": "switching the login form needs a click"
+  },
+  {
+   "id": "gentelella-6a226543",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "6a2265434718e4285b761bce20ef559b9fd3e5dd",
+   "date": "2016-05-07",
+   "subject": "Enhance inbox page - Change button layout - Add compose",
+   "matched_on": "message",
+   "fixed_state": "475e8db2a615ba97decc24b0e0e301c18b310e80",
+   "pages_rendered": [
+    "production/form.html",
+    "production/inbox.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (compose button and inbox layout)"
+  },
+  {
+   "id": "gentelella-fc3c0364",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "fc3c0364681f19ba2ad23c70de0c80ffbeff1ae2",
+   "date": "2016-04-27",
+   "subject": "Fix profile details overlapping content and fix messy layout when profile height is different",
+   "matched_on": "message",
+   "fixed_state": "475e8db2a615ba97decc24b0e0e301c18b310e80",
+   "pages_rendered": [
+    "production/contacts.html"
+   ],
+   "verdict": "accepted",
+   "reason": "production/contacts.html at 360 px: in every profile card the last detail line is covered by the grey rating footer (10 px overlap); fixed at the commit"
+  },
+  {
+   "id": "gentelella-1301f59d",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "1301f59dc46f9fb7cdb9900391b9bcc8d4b1531b",
+   "date": "2016-04-26",
+   "subject": "Fix dropzone not adjust height when uploading large number of files",
+   "matched_on": "message",
+   "fixed_state": "475e8db2a615ba97decc24b0e0e301c18b310e80",
+   "pages_rendered": [
+    "production/form_upload.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the dropzone height fault needs file uploads"
+  },
+  {
+   "id": "gentelella-c0602144",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "c0602144ed3c5d60f72146e1d2cf75ca9a1a8a8d",
+   "date": "2016-04-25",
+   "subject": "Dashboard tile count mobile enhancement",
+   "matched_on": "message",
+   "fixed_state": "475e8db2a615ba97decc24b0e0e301c18b310e80",
+   "pages_rendered": [
+    "production/index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "production/index.html at 360 px: the six count tiles sit three to a row and their labels are cut to a few letters with ellipses (Total Collect..., From l...); fixed at the commit"
+  },
+  {
+   "id": "gentelella-6a6db2ea",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "6a6db2ea23661e2c72c0fcb9dd97c9c3a0a37b8b",
+   "date": "2016-04-24",
+   "subject": "Put dependecy libraries to bower for easy updating",
+   "matched_on": "changelog",
+   "fixed_state": "475e8db2a615ba97decc24b0e0e301c18b310e80",
+   "pages_rendered": [
+    "production/calendar.html",
+    "production/chartjs.html",
+    "production/chartjs2.html",
+    "production/contacts.html"
+   ],
+   "verdict": "rejected",
+   "reason": "dependency move to bower; the earlier state shows no fault"
+  },
+  {
+   "id": "gentelella-a172918f",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "a172918f23ca8dc260880508c2ed113c6ba3efbb",
+   "date": "2016-04-20",
+   "subject": "Make morris.js responsive",
+   "matched_on": "message",
+   "fixed_state": "475e8db2a615ba97decc24b0e0e301c18b310e80",
+   "pages_rendered": [
+    "production/index3.html",
+    "production/profile.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the earlier charts fit their panels; no fault"
+  },
+  {
+   "id": "gentelella-8db3bce2",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "8db3bce207fa1211552587fbbbdd584db0dbb6e6",
+   "date": "2016-04-17",
+   "subject": "Align button scheme to the themes",
+   "matched_on": "message",
+   "fixed_state": "475e8db2a615ba97decc24b0e0e301c18b310e80",
+   "pages_rendered": [
+    "production/form.html",
+    "production/form_wizards.html"
+   ],
+   "verdict": "rejected",
+   "reason": "colour only"
+  },
+  {
+   "id": "gentelella-d792bd0d",
+   "source": "ColorlibHQ/gentelella",
+   "commit": "d792bd0d1d9390ef3fad8f204c30bc5ce29847e8",
+   "date": "2016-04-15",
+   "subject": "Make dropdown responsive",
+   "matched_on": "message",
+   "fixed_state": "475e8db2a615ba97decc24b0e0e301c18b310e80",
+   "pages_rendered": [
+    "production/icons.html",
+    "production/form.html",
+    "production/general_elements.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the dropdown needs a click; other differences are colour"
+  },
+  {
+   "id": "material-b51f623f",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "b51f623f8cc3d6734a45ce82946215c780927779",
+   "date": "2024-10-22",
+   "subject": "v3.2.0",
+   "matched_on": "changelog",
+   "fixed_state": "b51f623f8cc3d6734a45ce82946215c780927779",
+   "pages_rendered": [
+    "pages/billing.html",
+    "pages/dashboard.html",
+    "pages/icons.html",
+    "pages/map.html"
+   ],
+   "verdict": "rejected",
+   "reason": "release with a redesign; the builder button still covers the search field in the fixed state, so no single defect is fixed"
+  },
+  {
+   "id": "material-7fe6c3cc",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "7fe6c3ccdf1999d31f485b3a0ac242c43fb65b7d",
+   "date": "2022-06-08",
+   "subject": "feat: update product to v3.0.3",
+   "matched_on": "changelog",
+   "fixed_state": "7fe6c3ccdf1999d31f485b3a0ac242c43fb65b7d",
+   "pages_rendered": [
+    "pages/billing.html",
+    "pages/dashboard.html",
+    "pages/icons.html",
+    "pages/map.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording (typo) and chart drawing changes"
+  },
+  {
+   "id": "material-dc591fbc",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "dc591fbc738c6c6412ffd3e528ae3249e45489e8",
+   "date": "2020-02-11",
+   "subject": "Fix: broken links fixing",
+   "matched_on": "changelog",
+   "fixed_state": "dc591fbc738c6c6412ffd3e528ae3249e45489e8",
+   "pages_rendered": [
+    "examples/dashboard.html",
+    "examples/icons.html",
+    "examples/map.html",
+    "examples/notifications.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (sidebar links removed)"
+  },
+  {
+   "id": "material-8777f326",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "8777f326c531b3a0b3d59931b04b967669cc4d6e",
+   "date": "2018-11-13",
+   "subject": "update - v2.1.1",
+   "matched_on": "changelog",
+   "fixed_state": "8777f326c531b3a0b3d59931b04b967669cc4d6e",
+   "pages_rendered": [
+    "examples/dashboard.html",
+    "examples/icons.html",
+    "examples/map.html",
+    "examples/notifications.html"
+   ],
+   "verdict": "rejected",
+   "reason": "release; only small shifts, the earlier state shows no fault"
+  },
+  {
+   "id": "material-ca24e018",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "ca24e0184d6bce67be51bf2a8ea111c9b10af0e0",
+   "date": "2018-06-13",
+   "subject": "## [2.1.0] 2018-06-13 ### Bug fixing - Card-chart fixed on Windows - Bug fixes for responsive devices - Small changes for components",
+   "matched_on": "message",
+   "fixed_state": "ca24e0184d6bce67be51bf2a8ea111c9b10af0e0",
+   "pages_rendered": [
+    "examples/dashboard.html",
+    "examples/icons.html",
+    "examples/maps.html",
+    "examples/notifications.html"
+   ],
+   "verdict": "rejected",
+   "reason": "release; wording of the title and shifts under 2 px"
+  },
+  {
+   "id": "material-535ba970",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "535ba9706db8fee5290b69fe94eae6aad340853c",
+   "date": "2018-06-07",
+   "subject": "Bootstrap 4 update - Core base code on Bootstrap 4 - Documentation code base written from scratch - Speed optimizations - Class changes : .card-block to .card-body - .navbar-toggleable-* to .navbar-ex",
+   "matched_on": "message",
+   "fixed_state": "535ba9706db8fee5290b69fe94eae6aad340853c",
+   "pages_rendered": [
+    "examples/dashboard.html",
+    "examples/icons.html",
+    "examples/maps.html",
+    "examples/notifications.html"
+   ],
+   "verdict": "rejected",
+   "reason": "framework migration; the earlier state shows no fault"
+  },
+  {
+   "id": "material-cf729408",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "cf729408b50c07cc7f25f1abb12c4ba62455d226",
+   "date": "2018-03-02",
+   "subject": "updated to v1.2.0 like on tim platform. added changelog. added packagejson for npmjs",
+   "matched_on": "changelog",
+   "fixed_state": "cf729408b50c07cc7f25f1abb12c4ba62455d226",
+   "pages_rendered": [
+    "examples/dashboard.html",
+    "examples/icons.html",
+    "examples/maps.html",
+    "examples/notifications.html"
+   ],
+   "verdict": "rejected",
+   "reason": "release; spacing refinement of the sidebar and a unit gap; the earlier state looks intended"
+  },
+  {
+   "id": "material-28ea435c",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "28ea435c119efad78a89bf19d2cea5a077371db8",
+   "date": "2016-09-21",
+   "subject": "documentation fixed on media query",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "documentation only; no committed built CSS change and no rendered page"
+  },
+  {
+   "id": "material-3b6cd69f",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "3b6cd69f9362796cd766ec0a5b4aa4b725948cda",
+   "date": "2016-09-21",
+   "subject": "delete tim-row-first who add padding to documentation",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "documentation only; no committed built CSS change and no rendered page"
+  },
+  {
+   "id": "material-b617adca",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "b617adca913dc383bb56d8dc7df5706569dfb5ac",
+   "date": "2016-09-21",
+   "subject": "icons iframe added margin",
+   "matched_on": "message",
+   "fixed_state": "b617adca913dc383bb56d8dc7df5706569dfb5ac",
+   "pages_rendered": [
+    "examples/icons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (explanatory text added on mobile)"
+  },
+  {
+   "id": "material-d8c19ca3",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "d8c19ca3f8c803d2b980951c6a1a9dc4f2f88091",
+   "date": "2016-09-21",
+   "subject": "add float none and margin changed to navbar-form",
+   "matched_on": "message",
+   "fixed_state": "d8c19ca3f8c803d2b980951c6a1a9dc4f2f88091",
+   "pages_rendered": [
+    "examples/dashboard.html"
+   ],
+   "verdict": "rejected",
+   "reason": "shifts under 2 px"
+  },
+  {
+   "id": "material-77e65d9d",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "77e65d9d76b62ea7ff775ff94ece3134e11f1631",
+   "date": "2016-09-21",
+   "subject": "added colors in navbar transparent dropdown default fix design for alert added new function for animations for bar charts fixed issue with charts drawing on resize (still need a better solution) remov",
+   "matched_on": "message",
+   "fixed_state": "77e65d9d76b62ea7ff775ff94ece3134e11f1631",
+   "pages_rendered": [
+    "examples/notifications.html",
+    "examples/table.html"
+   ],
+   "verdict": "rejected",
+   "reason": "colour and shadow style changes"
+  },
+  {
+   "id": "material-6dd6f745",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "6dd6f7454bfe4478fd4e76c3b96623cc5cce3dd3",
+   "date": "2016-09-20",
+   "subject": "add min-height on card-chart",
+   "matched_on": "message",
+   "fixed_state": "6dd6f7454bfe4478fd4e76c3b96623cc5cce3dd3",
+   "pages_rendered": [
+    "examples/dashboard.html",
+    "examples/notifications.html",
+    "examples/table.html"
+   ],
+   "verdict": "rejected",
+   "reason": "chart card height refinement; the earlier cards align and show no fault"
+  },
+  {
+   "id": "material-b7b4a665",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "b7b4a665ca83110beabed804337bc3f607d734fa",
+   "date": "2016-09-20",
+   "subject": "removed unnecessary js files + add margin top to map + add new jquery 3.1.0.min.js",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS change at the commit or later; no rendered page"
+  },
+  {
+   "id": "material-b0d593e5",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "b0d593e5c6b9714c163a10a2b6a84a9984bb2d85",
+   "date": "2016-09-20",
+   "subject": "removed div with space 70 from all pages + add margin-top: 70px to content +",
+   "matched_on": "message",
+   "fixed_state": "b0d593e5c6b9714c163a10a2b6a84a9984bb2d85",
+   "pages_rendered": [
+    "examples/dashboard.html",
+    "examples/icons.html",
+    "examples/maps.html",
+    "examples/notifications.html"
+   ],
+   "verdict": "rejected",
+   "reason": "shifts under 2 px"
+  },
+  {
+   "id": "material-8e7ca7ff",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "8e7ca7ffc2f68134f914646e72102b1b6b7a0f3e",
+   "date": "2016-09-20",
+   "subject": "add nav margin top + notifications arranged buttons + working on tutorial and documentation + add space-70 div to template.html",
+   "matched_on": "message",
+   "fixed_state": "8e7ca7ffc2f68134f914646e72102b1b6b7a0f3e",
+   "pages_rendered": [
+    "examples/notifications.html",
+    "examples/template.html"
+   ],
+   "verdict": "rejected",
+   "reason": "sidebar spacing refinement; the earlier state looks intended"
+  },
+  {
+   "id": "material-5064a8da",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "5064a8dab936bf63fe5d11596e8868b040545ab1",
+   "date": "2016-09-19",
+   "subject": "height 100 vh for sidebar + wrapper prop double erased + padding-bottom for sidebar-wrapper",
+   "matched_on": "message",
+   "fixed_state": "5064a8dab936bf63fe5d11596e8868b040545ab1",
+   "pages_rendered": [
+    "examples/dashboard.html",
+    "examples/user.html",
+    "examples/notifications.html"
+   ],
+   "verdict": "rejected",
+   "reason": "sidebar spacing refinement; the earlier state looks intended"
+  },
+  {
+   "id": "material-eb0b7123",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "eb0b7123d58a3a36bba9ba21e4df36369877ee68",
+   "date": "2016-09-19",
+   "subject": "fixed small bug",
+   "matched_on": "message",
+   "fixed_state": "eb0b7123d58a3a36bba9ba21e4df36369877ee68",
+   "pages_rendered": [
+    "examples/icons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "colour only (page background)"
+  },
+  {
+   "id": "material-4d444d30",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "4d444d30dc44734ad5e1cbdb9dd2f645d593ca0a",
+   "date": "2016-09-15",
+   "subject": "put logo outside sidebar-wrapper + changes",
+   "matched_on": "message",
+   "fixed_state": "4d444d30dc44734ad5e1cbdb9dd2f645d593ca0a",
+   "pages_rendered": [
+    "examples/components.html",
+    "examples/icons.html",
+    "examples/maps.html",
+    "examples/notifications.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference"
+  },
+  {
+   "id": "material-ebdff2a1",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "ebdff2a1da6e0061194d72107a359bfc1ab68a42",
+   "date": "2016-09-15",
+   "subject": "changed navbar menu mobile with bootstrap-navbar-mobile + working on navbar mobile",
+   "matched_on": "message",
+   "fixed_state": "ebdff2a1da6e0061194d72107a359bfc1ab68a42",
+   "pages_rendered": [
+    "examples/components.html",
+    "examples/dashboard.html",
+    "examples/icons.html",
+    "examples/maps.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change of floating labels; the earlier state looks intended"
+  },
+  {
+   "id": "material-7ffd5b40",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "7ffd5b4010cf8e2bbe14b42aa51c802acc3d808c",
+   "date": "2016-09-14",
+   "subject": "added favicon.png and retina.png + navbar transparent to all pages + data-color removed + fixed nabber to all pages",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS change at the commit or later; no rendered page"
+  },
+  {
+   "id": "material-ad2a2c38",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "ad2a2c3889e260d2b5272fdab399797f5c10424c",
+   "date": "2016-09-14",
+   "subject": "added border to logo + changed light-blue with cyan + changed margin from li a",
+   "matched_on": "message",
+   "fixed_state": "ad2a2c3889e260d2b5272fdab399797f5c10424c",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "material-510e3e84",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "510e3e84193c26ee02abf89a43dd19fee71dbc4c",
+   "date": "2016-06-21",
+   "subject": " bug fixed with ct-big-chart class",
+   "matched_on": "message",
+   "fixed_state": "510e3e84193c26ee02abf89a43dd19fee71dbc4c",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "material-a4c4f933",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "a4c4f933590635081fa4bd5f6ed86775a52f40e6",
+   "date": "2016-06-10",
+   "subject": "added border-radius to cards + added margin to footer",
+   "matched_on": "message",
+   "fixed_state": "a4c4f933590635081fa4bd5f6ed86775a52f40e6",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "material-4f227a00",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "4f227a008383c9467170e67ada41018b72251586",
+   "date": "2016-06-09",
+   "subject": "footer fixed + typography added",
+   "matched_on": "message",
+   "fixed_state": "4f227a008383c9467170e67ada41018b72251586",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "material-331560c1",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "331560c13ac75a73b9af15e9f093d4670fd37833",
+   "date": "2016-06-08",
+   "subject": "datetimepicker bug fixed",
+   "matched_on": "message",
+   "fixed_state": "331560c13ac75a73b9af15e9f093d4670fd37833",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "material-a5032470",
+   "source": "creativetimofficial/material-dashboard",
+   "commit": "a5032470fddd607d9e13bc9622e20bfc54803d4c",
+   "date": "2015-08-15",
+   "subject": "finished typo page + table + small changes responsive",
+   "matched_on": "message",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no committed built CSS change at the commit or later; no rendered page"
+  },
+  {
+   "id": "bootstrap-627b3595",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "627b359541373ee9d1c098c527b8a1dcbc323647",
+   "date": "2018-09-21",
+   "subject": "Add the unprefixed `appearance` property.",
+   "matched_on": "message",
+   "fixed_state": "4c547f2175b9a05aa43551f6927da83fe249ce42",
+   "pages_rendered": [
+    "docs/examples/jumbotron/index.html",
+    "docs/examples/signin/index.html",
+    "docs/examples/dashboard/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "bootstrap-25d017a2",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "25d017a2eef33c59ac987d6db82d6dccde5283e9",
+   "date": "2018-09-22",
+   "subject": "Replace ZeroClipboard with clipboard.js (backported from v4).",
+   "matched_on": "message",
+   "fixed_state": "4c547f2175b9a05aa43551f6927da83fe249ce42",
+   "pages_rendered": [
+    "docs/examples/non-responsive/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation script change; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "bootstrap-b6fdf61e",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "b6fdf61e907688ad5f2a1927f0adc3ab17337971",
+   "date": "2017-09-12",
+   "subject": "Fixed footer broken links (#23808)",
+   "matched_on": "message",
+   "fixed_state": "3073a4e9b6649358ed15aa4618337c0c4812495a",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "documentation links; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-4bf6d7cb",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "4bf6d7cb29073296e68a1e0bb59d122e9e95e17e",
+   "date": "2017-07-04",
+   "subject": "rewrite docs navbar less to use nesting, then tweak horizontal padding to prevent early navbar breakage in responsive viewports",
+   "matched_on": "message",
+   "fixed_state": "4731b239b1d2969b3e0262fb3e85ff8ce981e058",
+   "pages_rendered": [
+    "docs/examples/theme/index.html",
+    "docs/examples/carousel/index.html",
+    "docs/examples/navbar-fixed-top/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation navbar padding refinement; the earlier state looks intended"
+  },
+  {
+   "id": "bootstrap-98b9ff6b",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "98b9ff6b7ad3f3d37670f748363736fe4e91fafd",
+   "date": "2016-01-17",
+   "subject": "variables.less: Fix typo in comment for @caret-width-base",
+   "matched_on": "message",
+   "fixed_state": "c2f1bf74143391b8885a12d2ee0ae461d22eb2f7",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "comment only; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-bed3872b",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "bed3872b4952f8edd717b8ba62b40e8c851506cb",
+   "date": "2015-11-14",
+   "subject": "Ensure proper z-indexing in input-groups",
+   "matched_on": "message",
+   "fixed_state": "c13de0e69a5708cf3a8d2e2020ef561d47ac085f",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-4f09bbc4",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "4f09bbc4eca113ae1e06171c721834ddfce7a6e4",
+   "date": "2015-08-12",
+   "subject": "Use @carousel-control-font-size for in min-width sm",
+   "matched_on": "message",
+   "fixed_state": "332ed554ec5e49897ccc3082b67622093941e34a",
+   "pages_rendered": [
+    "docs/examples/carousel/index.html",
+    "docs/examples/theme/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "only the footer year differs in the build range; no fault"
+  },
+  {
+   "id": "bootstrap-57586925",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "575869253526f848ee6cc823c1a0fb3feb63ac37",
+   "date": "2015-08-04",
+   "subject": "fixes #16769: use a clearfix on the .modal-header instead of a min-height to avoid collapsing when only a dismiss button is available and no .modal-title",
+   "matched_on": "message",
+   "fixed_state": "ab412b2404d12a3c55d1c4b798bd42ef32e80fab",
+   "pages_rendered": [
+    "docs/examples/grid/index.html",
+    "docs/examples/cover/index.html",
+    "docs/examples/jumbotron-narrow/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the modal fix needs a click; the visible differences come from other commits in the build range"
+  },
+  {
+   "id": "bootstrap-f9bee7de",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "f9bee7deb6564234294925bd7480b93060b6d5a9",
+   "date": "2015-08-04",
+   "subject": "fixes #16902: remove the .container-fluid from the grid system in modal example since it's doubling up padding",
+   "matched_on": "message",
+   "fixed_state": "ab412b2404d12a3c55d1c4b798bd42ef32e80fab",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-2a38a923",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "2a38a92324c26116126fde301e79eaf786c868ca",
+   "date": "2015-06-16",
+   "subject": "Fix hover border covering active in pagination",
+   "matched_on": "message",
+   "fixed_state": "7dee0c33b18233ee796633c61463978efc7c29a4",
+   "pages_rendered": [
+    "docs/examples/theme/index.html",
+    "docs/examples/carousel/index.html",
+    "docs/examples/navbar-fixed-top/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "pagination hover border; needs hover; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "bootstrap-565037a9",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "565037a914e72ed7e0a0e2689b6af1eb8bccf4a3",
+   "date": "2015-06-01",
+   "subject": "Fixed typo",
+   "matched_on": "message",
+   "fixed_state": "f09e7964298971b024965b48a876153f5e420f81",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "typo; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-962ae5ac",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "962ae5ac2fb9f291ae7c6a60d8c5d0e00323de8d",
+   "date": "2015-05-14",
+   "subject": "[Close #16441] ScrollSpy requires non-body elements to have height and padding",
+   "matched_on": "message",
+   "fixed_state": "b5b4c9c701ec72b645374e161cfaf9ec84ab73a5",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "ScrollSpy documentation; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-7278bed8",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "7278bed86f7e740a0f5e1a8d64d08c75c1590942",
+   "date": "2015-05-30",
+   "subject": "Adjust Carbon Ads margin on -xs",
+   "matched_on": "message",
+   "fixed_state": "b5ed74d43dfb91e7447000ff371886ad55c3b850",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "documentation ads margin; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-d788e305",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "d788e305227d83b73d004012c8772b58aa00e5e5",
+   "date": "2015-05-14",
+   "subject": "Redo jumbotron padding",
+   "matched_on": "message",
+   "fixed_state": "588b7e564eee09bccc85d4756309f63ac3d004b7",
+   "pages_rendered": [
+    "docs/examples/carousel/index.html",
+    "docs/examples/jumbotron/index.html",
+    "docs/examples/theme/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "jumbotron padding redesign; the earlier state looks intended"
+  },
+  {
+   "id": "bootstrap-59073473",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "590734738227e1298ddf4d81b214b0b944aaae26",
+   "date": "2015-05-12",
+   "subject": "[Closes #16460] Fix .pagination-sm line height",
+   "matched_on": "message",
+   "fixed_state": "82279a8eb28fcddf24ecdf524686583e408b5191",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-0689117f",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "0689117f1378c743e315474100713905de4e54ef",
+   "date": "2015-01-28",
+   "subject": "Fix issue where affixed element has incorrect positioning",
+   "matched_on": "message",
+   "fixed_state": "82279a8eb28fcddf24ecdf524686583e408b5191",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "affix position needs scrolling with script state; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-85235c55",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "85235c55acffd1f3f2d2cdd0414828b21aa070b7",
+   "date": "2015-05-02",
+   "subject": "Document Affix plugin's `checkPosition` method",
+   "matched_on": "message",
+   "fixed_state": "82279a8eb28fcddf24ecdf524686583e408b5191",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "documentation; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-d255ba37",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "d255ba371914b638ecb040374f11673fe7c3d1db",
+   "date": "2015-05-02",
+   "subject": "Fixes Issue #16371 Carousel control is vertically off center for small screens",
+   "matched_on": "message",
+   "fixed_state": "82279a8eb28fcddf24ecdf524686583e408b5191",
+   "pages_rendered": [
+    "docs/examples/carousel/index.html",
+    "docs/examples/theme/index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "docs/examples/carousel/index.html at 360 px: the previous and next chevrons sit 10 px below the vertical centre of the carousel controls; fixed in the first later commit whose built CSS contains the fix (82279a8e)"
+  },
+  {
+   "id": "bootstrap-ccb53aa9",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "ccb53aa983aafbf345cb12841288a549f544fc41",
+   "date": "2015-04-23",
+   "subject": "Fix collapsing .img-thumbnail due to display: table-cell clashing with max-width",
+   "matched_on": "message",
+   "fixed_state": "2900711db49a801035855ab786c40a64f0ea93dc",
+   "pages_rendered": [
+    "docs/examples/tooltip-viewport/index.html",
+    "docs/examples/carousel/index.html",
+    "docs/examples/jumbotron-narrow/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "bootstrap-6ae488d6",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "6ae488d6efdc4d91e81cc1d9442128e63833c88f",
+   "date": "2015-04-24",
+   "subject": "Ensure .form-inline in non-responsive example doesn't stack; fixes #15977",
+   "matched_on": "message",
+   "fixed_state": "2900711db49a801035855ab786c40a64f0ea93dc",
+   "pages_rendered": [
+    "docs/examples/jumbotron/index.html",
+    "docs/examples/signin/index.html",
+    "docs/examples/non-responsive/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "bootstrap-c319d610",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "c319d610e2043478fdcdba0f1f03daef784a410e",
+   "date": "2015-04-23",
+   "subject": "Round results from gutter division to prevent decimal margins and padding",
+   "matched_on": "message",
+   "fixed_state": "2900711db49a801035855ab786c40a64f0ea93dc",
+   "pages_rendered": [
+    "docs/examples/grid/index.html",
+    "docs/examples/jumbotron/index.html",
+    "docs/examples/cover/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "bootstrap-07a5d55f",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "07a5d55f01c826c136b58c89907be76a203d5eaa",
+   "date": "2015-03-16",
+   "subject": "tooltip: line-height: 1.4 => @line-height-base",
+   "matched_on": "message",
+   "fixed_state": "150d454848fecc635e272a1f9c869ed5568fa90e",
+   "pages_rendered": [
+    "docs/examples/navbar-fixed-top/index.html",
+    "docs/examples/navbar-static-top/index.html",
+    "docs/examples/carousel/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "tooltip line height needs hover; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "bootstrap-d3cbf018",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "d3cbf018a8bf6f4fcd1f76a4f62de6cf700e19f6",
+   "date": "2015-04-01",
+   "subject": "Eliminate spurrious padding in .bs-docs-header",
+   "matched_on": "message",
+   "fixed_state": "9c0bd37661790865616199578c772e8b3aec0c13",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "documentation header; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-b5fefefd",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "b5fefefd49c79ff1e40ddb0d466f2f0e8f135cb9",
+   "date": "2015-03-28",
+   "subject": "Match all other responsive utilities and use important on the display: table",
+   "matched_on": "message",
+   "fixed_state": "f025840eae65afb4c8721192c9f22d5b9f7b2530",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-6c5e7dfc",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "6c5e7dfce19425af6e646c8b4578d15f2512d4ad",
+   "date": "2015-03-25",
+   "subject": "rm redundant aria-hidden usage from Modals; fixes #16020",
+   "matched_on": "message",
+   "fixed_state": "df8010b815b8cc4d2f5854b9ec05ca05143be29e",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "modal markup; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-286c0a1a",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "286c0a1a788fa055ae2dc1313242a50ec4cfbb51",
+   "date": "2015-03-15",
+   "subject": "z-index first",
+   "matched_on": "message",
+   "fixed_state": "fe41ca34e5626a68ccac0ed15913c002c9e67532",
+   "pages_rendered": [
+    "docs/examples/theme/index.html",
+    "docs/examples/carousel/index.html",
+    "docs/examples/navbar-fixed-top/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "bootstrap-f5beebe7",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "f5beebe726aa8c1810015d8c62931f4559b49664",
+   "date": "2015-02-24",
+   "subject": "Modal: Fix backdrop not readjusting when height changes",
+   "matched_on": "message",
+   "fixed_state": "c1005f52839f56a49fea68cede63f29b35d77641",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "modal backdrop needs a click; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-910f41da",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "910f41daf58f9e00af3b79fdf0a6604b91928a18",
+   "date": "2015-03-02",
+   "subject": "[Fixes #15976] Fix pagination link cut off border on hover",
+   "matched_on": "message",
+   "fixed_state": "fe41ca34e5626a68ccac0ed15913c002c9e67532",
+   "pages_rendered": [
+    "docs/examples/theme/index.html",
+    "docs/examples/carousel/index.html",
+    "docs/examples/navbar-fixed-top/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "pagination border on hover; needs hover; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "bootstrap-fd35779f",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "fd35779f0e15df27a8a05459a000d84320d8bb00",
+   "date": "2015-03-01",
+   "subject": "Input group sizes: Properly position `.form-control-feedback`",
+   "matched_on": "message",
+   "fixed_state": "e90d69c28c3edd49551d7d69b302d98933cc468a",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-06cba30e",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "06cba30e2dc62c71b85c323edfcc2afc49c4c2a3",
+   "date": "2015-02-27",
+   "subject": "[Fixes #15944] Add Z-Index to avoid border overlapping",
+   "matched_on": "message",
+   "fixed_state": "83d10bb5a72ea87e5f5c83cfaad7a8c278d8a6b1",
+   "pages_rendered": [
+    "docs/examples/theme/index.html",
+    "docs/examples/tooltip-viewport/index.html",
+    "docs/examples/offcanvas/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "bootstrap-10c8dad8",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "10c8dad84847314da26f559860e8cba26c389dbb",
+   "date": "2014-12-04",
+   "subject": "Prevent collapsed navbar in Non-responsive Example",
+   "matched_on": "message",
+   "fixed_state": "05b444aee3d6c9b8b18db2ffba1920fc5267fa5f",
+   "pages_rendered": [
+    "docs/examples/non-responsive/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "only the explanatory wording differs at the screening viewports"
+  },
+  {
+   "id": "bootstrap-769c27a1",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "769c27a19f4ce8d5d298cedc07905d5300022e24",
+   "date": "2015-02-24",
+   "subject": "Document how to properly handle modals with dynamic content height",
+   "matched_on": "message",
+   "fixed_state": "05b444aee3d6c9b8b18db2ffba1920fc5267fa5f",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "documentation; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-05513c52",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "05513c52c4b31db3646639ba4e1b8a5ee7271ae9",
+   "date": "2015-02-24",
+   "subject": "Fix #15911: Clear the floats and move the padding to the header",
+   "matched_on": "message",
+   "fixed_state": "05b444aee3d6c9b8b18db2ffba1920fc5267fa5f",
+   "pages_rendered": [
+    "docs/examples/jumbotron-narrow/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "header shifts in the jumbotron-narrow example; the earlier state shows no fault"
+  },
+  {
+   "id": "bootstrap-b4a5f89a",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "b4a5f89ab3a360d29994eea69b3bdce66115c244",
+   "date": "2015-01-23",
+   "subject": "Fix #15652: Set `position: relative` on .{radio,checkbox}-inline",
+   "matched_on": "message",
+   "fixed_state": "02f8cf9d0e3758d7fcffcda5ea7ba041b88b5e04",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-7080e895",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "7080e895d836edb03fa585bfc0d5345428bf6c34",
+   "date": "2015-02-20",
+   "subject": "fixed a few typos in the docs",
+   "matched_on": "message",
+   "fixed_state": "02f8cf9d0e3758d7fcffcda5ea7ba041b88b5e04",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "typos; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-89455afe",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "89455afe97a267e7a37d5699d9f17e82630b8c04",
+   "date": "2015-02-19",
+   "subject": "Affix docs: add MDN link for `position: sticky`",
+   "matched_on": "message",
+   "fixed_state": "e6dbaea97e72ccc8d6efd5e838fd4be963409f61",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "documentation; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-0ee76022",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "0ee76022841b1ef4ad48050680dafe4ea43f5967",
+   "date": "2015-01-29",
+   "subject": "[Fixes #15691] .form-control-static changes height when empty",
+   "matched_on": "message",
+   "fixed_state": "2549b808a148f9037c63ff50b3b7f881cf326a26",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-d13e8790",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "d13e879042b1ebe26ff41956510c3b71331272b6",
+   "date": "2015-02-07",
+   "subject": "Remove docs.min.js from Blog & Cover examples since it's unnecessary.",
+   "matched_on": "message",
+   "fixed_state": "6e0009e18d6ed2580a7f571e3253b63404948804",
+   "pages_rendered": [
+    "docs/examples/blog/index.html",
+    "docs/examples/cover/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "script removal; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "bootstrap-894ec6f7",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "894ec6f71419a0a7028e49a655623934f03ba24c",
+   "date": "2015-02-09",
+   "subject": "Fixes #15653 — Add comment which explains that how a responsive image should be centered",
+   "matched_on": "message",
+   "fixed_state": "47c3c6a59f6432a5f8a8e258fad810b930b1f948",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "comment only; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "bootstrap-7dd72d83",
+   "source": "twbs/bootstrap (version 3 line)",
+   "commit": "7dd72d83fab7394dee7326c0a6214374ec796ff6",
+   "date": "2015-02-05",
+   "subject": "Removed   visibility: hidden !important from .hidden class",
+   "matched_on": "message",
+   "fixed_state": "38fbd8fe35d770651bbaee1f41e1d9d17d2a7879",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "tabler-ab3aec2e",
+   "source": "tabler/tabler (2018-02-14 to 2019-03-12)",
+   "commit": "ab3aec2eeb04cafb25fefa29c4adb5db0f1d12fd",
+   "date": "2019-03-12",
+   "subject": "tabler v1",
+   "matched_on": "changelog",
+   "fixed_state": "ab3aec2eeb04cafb25fefa29c4adb5db0f1d12fd",
+   "pages_rendered": [
+    "dist/400.html",
+    "dist/401.html",
+    "dist/403.html",
+    "dist/404.html"
+   ],
+   "verdict": "rejected",
+   "reason": "version 1 rewrite; the earlier state shows no fault the rewrite fixes"
+  },
+  {
+   "id": "tabler-79f7d928",
+   "source": "tabler/tabler (2018-02-14 to 2019-03-12)",
+   "commit": "79f7d92872b27b9e730ce9a65aea616d1ebd03f9",
+   "date": "2018-07-19",
+   "subject": "aside responsive fixes",
+   "matched_on": "message",
+   "fixed_state": "ab3aec2eeb04cafb25fefa29c4adb5db0f1d12fd",
+   "pages_rendered": [
+    "dist/docs/alerts.html",
+    "dist/docs/cards.html",
+    "dist/docs/colors.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the next committed build is the version 1 rewrite (2019-03-12), so the fix cannot be isolated on a page"
+  },
+  {
+   "id": "tabler-da09e66e",
+   "source": "tabler/tabler (2018-02-14 to 2019-03-12)",
+   "commit": "da09e66ef7c1697aa81c50518a1c3d6aa9f2f6c3",
+   "date": "2018-05-29",
+   "subject": "Remove duplicate position property for .btn-loading:after",
+   "matched_on": "message",
+   "fixed_state": "ab3aec2eeb04cafb25fefa29c4adb5db0f1d12fd",
+   "pages_rendered": [
+    "dist/docs/buttons.html",
+    "dist/index.html",
+    "dist/sample-cards.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the next committed build is the version 1 rewrite (2019-03-12), so the fix cannot be isolated on a page"
+  },
+  {
+   "id": "tabler-b00f928e",
+   "source": "tabler/tabler (2018-02-14 to 2019-03-12)",
+   "commit": "b00f928ec91e216315156b57231ce9c43a2a4117",
+   "date": "2018-05-18",
+   "subject": "- arrows for sorting in table head - active item in pagination - fixed vertical align of table info",
+   "matched_on": "message",
+   "fixed_state": "ab3aec2eeb04cafb25fefa29c4adb5db0f1d12fd",
+   "pages_rendered": [
+    "dist/docs/buttons.html",
+    "dist/sample-cards.html",
+    "dist/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the next committed build is the version 1 rewrite (2019-03-12), so the fix cannot be isolated on a page"
+  },
+  {
+   "id": "tabler-c3abea39",
+   "source": "tabler/tabler (2018-02-14 to 2019-03-12)",
+   "commit": "c3abea39e38d2196c69163b55c369beb52868fdf",
+   "date": "2018-04-22",
+   "subject": "Add vertical layout for selectgroup",
+   "matched_on": "message",
+   "fixed_state": "ab3aec2eeb04cafb25fefa29c4adb5db0f1d12fd",
+   "pages_rendered": [
+    "dist/form-elements.html",
+    "dist/sample-cards.html",
+    "dist/users-list.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the next committed build is the version 1 rewrite (2019-03-12), so the fix cannot be isolated on a page"
+  },
+  {
+   "id": "tabler-0ace1b8b",
+   "source": "tabler/tabler (2018-02-14 to 2019-03-12)",
+   "commit": "0ace1b8b1abc1a6b13c20d22b1de18dbce4b5ab1",
+   "date": "2018-03-23",
+   "subject": "header mobile fixes",
+   "matched_on": "message",
+   "fixed_state": "da5069ed68ddf54cf0ef88c65dfe9895f700bf7d",
+   "pages_rendered": [
+    "dist/index.html",
+    "dist/docs/buttons.html",
+    "dist/sample-cards.html"
+   ],
+   "verdict": "rejected",
+   "reason": "header button placement refinement at phone widths; the earlier state shows no fault"
+  },
+  {
+   "id": "semantic-f415251c",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "f415251c9f8557f6c2aad597a461c81e7116e89a",
+   "date": "2020-05-25",
+   "subject": "Fix issue with sticky when larger than container",
+   "matched_on": "message",
+   "fixed_state": "f415251c9f8557f6c2aad597a461c81e7116e89a",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "sticky needs scrolling with script state; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "semantic-1b922b64",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "1b922b648effe0e19e816de85675233364352ed4",
+   "date": "2018-10-13",
+   "subject": "Fix very relaxed vertically divided grid divider spacing",
+   "matched_on": "message",
+   "fixed_state": "e7d04788fb5ba3314e289759f5b27b51fe6eed6d",
+   "pages_rendered": [
+    "examples/grid.html",
+    "examples/responsive.html",
+    "examples/bootstrap.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-bd47451f",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "bd47451f254ec84f3c89f18f21357a36c0d72c5b",
+   "date": "2018-09-16",
+   "subject": "Force auto width/height for content loaders",
+   "matched_on": "message",
+   "fixed_state": "037b97a01fe37716291edb5688a108cfe8c77c9d",
+   "pages_rendered": [
+    "examples/components/card.html",
+    "examples/responsive.html",
+    "examples/bootstrap.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-e35ce81e",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "e35ce81e2777b37712982c4297866ef35ffb9a3c",
+   "date": "2018-09-09",
+   "subject": "Fix legacy modals to support top aligned, fix bug in ie11 for swapping between top/middle aligned",
+   "matched_on": "message",
+   "fixed_state": "037b97a01fe37716291edb5688a108cfe8c77c9d",
+   "pages_rendered": [
+    "examples/components/table.html",
+    "examples/responsive.html",
+    "examples/grid.html"
+   ],
+   "verdict": "rejected",
+   "reason": "modal needs a click; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-bbad4302",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "bbad43026d0d0c6f52a62d2d1260039f4657b397",
+   "date": "2018-09-03",
+   "subject": "Finish refactor of modal to support legacy positioning for IE11",
+   "matched_on": "message",
+   "fixed_state": "037b97a01fe37716291edb5688a108cfe8c77c9d",
+   "pages_rendered": [
+    "examples/responsive.html",
+    "examples/bootstrap.html",
+    "examples/homepage.html"
+   ],
+   "verdict": "rejected",
+   "reason": "modal needs a click; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-18ecf158",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "18ecf158a355eaf8da8ff4844f0030aa72159d48",
+   "date": "2018-06-17",
+   "subject": "Fix issue with bottom margin on stats",
+   "matched_on": "message",
+   "fixed_state": "e485882ef375c6873e8e758c7952ab72131636aa",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "semantic-4231bb26",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "4231bb269f1f6000ca027b3c845fcbdddb5a1ad1",
+   "date": "2018-03-18",
+   "subject": "Fix issue with whitespace wrapping in reveal",
+   "matched_on": "message",
+   "fixed_state": "789d020a3996e3d52fdb5206b159fc88762b3dac",
+   "pages_rendered": [
+    "examples/components/card.html",
+    "examples/responsive.html",
+    "examples/components/button.html"
+   ],
+   "verdict": "rejected",
+   "reason": "shifts under 2 px"
+  },
+  {
+   "id": "semantic-b93737e0",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "b93737e07189aa61b5326304d5e72448f6df2f16",
+   "date": "2018-03-18",
+   "subject": "Fix double margin on nested images #6224",
+   "matched_on": "message",
+   "fixed_state": "789d020a3996e3d52fdb5206b159fc88762b3dac",
+   "pages_rendered": [
+    "examples/components/card.html",
+    "examples/responsive.html",
+    "examples/sticky.html"
+   ],
+   "verdict": "rejected",
+   "reason": "shifts under 2 px"
+  },
+  {
+   "id": "semantic-0727e5e5",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "0727e5e5ad08169be4da9ee0d16c6200046a82b7",
+   "date": "2018-02-19",
+   "subject": "Add mobile styles for search",
+   "matched_on": "message",
+   "fixed_state": "72d223511a86cb6cd792fe52e1a3da6b2fce2248",
+   "pages_rendered": [
+    "examples/components/input.html",
+    "examples/components/menu.html",
+    "examples/components/button.html"
+   ],
+   "verdict": "rejected",
+   "reason": "colour of the labeled-button icon; the earlier state shows no layout fault"
+  },
+  {
+   "id": "semantic-95ae3bf5",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "95ae3bf5fc98e2be09dd0656ccf0994baf0573ca",
+   "date": "2018-02-19",
+   "subject": "Updates to ui search to allow local category search, and responsive name width",
+   "matched_on": "message",
+   "fixed_state": "72d223511a86cb6cd792fe52e1a3da6b2fce2248",
+   "pages_rendered": [
+    "examples/components/input.html",
+    "examples/components/button.html",
+    "examples/components/card.html"
+   ],
+   "verdict": "rejected",
+   "reason": "colour of the labeled-button icon; the earlier state shows no layout fault"
+  },
+  {
+   "id": "semantic-fc60ec00",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "fc60ec009c46590372594ba3e0d975a7717b2b9b",
+   "date": "2018-02-19",
+   "subject": "Fixes alignment of dimmer",
+   "matched_on": "message",
+   "fixed_state": "72d223511a86cb6cd792fe52e1a3da6b2fce2248",
+   "pages_rendered": [
+    "examples/components/card.html",
+    "examples/responsive.html",
+    "examples/components/button.html"
+   ],
+   "verdict": "rejected",
+   "reason": "colour of the labeled-button icon; the dimmer needs a click"
+  },
+  {
+   "id": "semantic-2a082b07",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "2a082b074f173db1d48ffeb89476627f33330d62",
+   "date": "2017-09-06",
+   "subject": "Fix horizontal scrollbar height, closes #5728",
+   "matched_on": "message",
+   "fixed_state": "bef9b4632b91304d39d6d2ef0b2e0eea7c92790b",
+   "pages_rendered": [
+    "examples/components/input.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-7450aa3c",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "7450aa3c9c32d0d608e73c2f52b7bfa4f32a718f",
+   "date": "2017-08-06",
+   "subject": "Fixes #5578, absolute positioned modal items are now taken into scroll calculation",
+   "matched_on": "message",
+   "fixed_state": "78644361cb7ea690707c01ba81aad1c1eb8dd9f9",
+   "pages_rendered": [
+    "examples/components/menu.html",
+    "examples/homepage.html",
+    "examples/attached.html"
+   ],
+   "verdict": "rejected",
+   "reason": "modal needs a click; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-a3b6fb62",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "a3b6fb62db8114b469b3ccfd4f342e2905dc6ed1",
+   "date": "2017-08-06",
+   "subject": "Fixes issue with dropdown positioning being incorrect inside menus #5542",
+   "matched_on": "message",
+   "fixed_state": "78644361cb7ea690707c01ba81aad1c1eb8dd9f9",
+   "pages_rendered": [
+    "examples/components/menu.html",
+    "examples/bootstrap.html",
+    "examples/sticky.html"
+   ],
+   "verdict": "rejected",
+   "reason": "dropdown needs a click; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-f584e123",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "f584e1234e58f4556c11d1bec873d067be0ee180",
+   "date": "2017-07-11",
+   "subject": "#4506 fix subtle overlap of leftward menu",
+   "matched_on": "message",
+   "fixed_state": "7e37d4a098a51c0a888ca273b07d1423e21eef7c",
+   "pages_rendered": [
+    "examples/components/menu.html",
+    "examples/components/table.html",
+    "examples/bootstrap.html"
+   ],
+   "verdict": "rejected",
+   "reason": "dropdown menu needs a click; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-56865fd4",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "56865fd40379843a2ed558c09c0e5297d383224d",
+   "date": "2017-07-11",
+   "subject": "#4506 leftward now only checks on rightward, so predefined leftward menus are not touched. Fixes spacing on left dropdown icon",
+   "matched_on": "message",
+   "fixed_state": "7e37d4a098a51c0a888ca273b07d1423e21eef7c",
+   "pages_rendered": [
+    "examples/components/menu.html",
+    "examples/components/table.html",
+    "examples/bootstrap.html"
+   ],
+   "verdict": "rejected",
+   "reason": "dropdown menu needs a click; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-3b802c33",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "3b802c33c1aeb7473637e0362f26670c53158d3f",
+   "date": "2017-07-10",
+   "subject": "#4211 Change is.fitWidth to can.openRightward, fix logic to work after setting leftward",
+   "matched_on": "message",
+   "fixed_state": "9f1f6ab4cda3742e472a809dae71a2555a2ce354",
+   "pages_rendered": [
+    "examples/components/menu.html",
+    "examples/components/table.html",
+    "examples/bootstrap.html"
+   ],
+   "verdict": "rejected",
+   "reason": "panel border colours; the dropdown fix needs a click"
+  },
+  {
+   "id": "semantic-06aaeb00",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "06aaeb007a81553539def3dcae4ce6b4d8d8456a",
+   "date": "2017-07-04",
+   "subject": "Only reposition the current menu element",
+   "matched_on": "message",
+   "fixed_state": "96c0952c4f43df832ecf0c912da186eab38cfb75",
+   "pages_rendered": [
+    "examples/components/menu.html",
+    "examples/components/table.html",
+    "examples/bootstrap.html"
+   ],
+   "verdict": "rejected",
+   "reason": "shifts under 2 px; the dropdown needs a click"
+  },
+  {
+   "id": "semantic-aa6ecf95",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "aa6ecf951ce72d4cd8fbaa36e5d52c61e04d14f3",
+   "date": "2017-07-02",
+   "subject": "Fix spacing on image in dropdown",
+   "matched_on": "message",
+   "fixed_state": "1b48f527eb73d6bc4b1af2e94d52f51c32cec3c3",
+   "pages_rendered": [
+    "examples/components/menu.html",
+    "examples/bootstrap.html",
+    "examples/sticky.html"
+   ],
+   "verdict": "rejected",
+   "reason": "shifts under 2 px; the dropdown needs a click"
+  },
+  {
+   "id": "semantic-635a0eed",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "635a0eed735fb45370e08a4216b6d9d8ea0ef519",
+   "date": "2017-07-02",
+   "subject": "Fix positioning with loading/dropdown icon",
+   "matched_on": "message",
+   "fixed_state": "1b48f527eb73d6bc4b1af2e94d52f51c32cec3c3",
+   "pages_rendered": [
+    "examples/components/input.html",
+    "examples/components/button.html",
+    "examples/components/menu.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-3a7d36f3",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "3a7d36f343f6070f15142e9dc6e0ee91013e64d3",
+   "date": "2017-07-02",
+   "subject": "#5281 fix issue with descendors cut-off in transparent input",
+   "matched_on": "message",
+   "fixed_state": "1b48f527eb73d6bc4b1af2e94d52f51c32cec3c3",
+   "pages_rendered": [
+    "examples/components/input.html",
+    "examples/components/button.html",
+    "examples/components/menu.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-f419f4f8",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "f419f4f88ba2f52466c06fc2ac9599439ed295d2",
+   "date": "2017-04-09",
+   "subject": "Fixes #3604 #5116 Issue with left/right menu on stackable mobile",
+   "matched_on": "message",
+   "fixed_state": "df93fffb290f7e9ac48ba80fe8cb8d3b23c7c07c",
+   "pages_rendered": [
+    "examples/components/table.html",
+    "examples/components/menu.html",
+    "examples/sticky.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the menu example is wider than the screen in both states; the fixed state changes the demo items and keeps the overflow"
+  },
+  {
+   "id": "semantic-c5ede182",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "c5ede1822209822141bd2681083ef5b1cc316945",
+   "date": "2017-03-10",
+   "subject": "Fixed an issue whith child `.card` elements incorrectly inheriting their parents’ rules",
+   "matched_on": "message",
+   "fixed_state": "dfc323e608ff15e36a336c17ef925ffc27b5bb2e",
+   "pages_rendered": [
+    "examples/grid.html",
+    "examples/responsive.html",
+    "examples/components/card.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-dfc7599f",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "dfc7599f6b9c6c730d6f750fb17105775c6aad35",
+   "date": "2017-02-28",
+   "subject": "The width of inputs that are inside of a dropdown’s `.menu` should never be overridden",
+   "matched_on": "message",
+   "fixed_state": "bf088d3246ea71f6654a1f45bf793db9afee1612",
+   "pages_rendered": [
+    "examples/responsive.html",
+    "examples/bootstrap.html",
+    "examples/components/menu.html"
+   ],
+   "verdict": "rejected",
+   "reason": "panel border colours; the dropdown input fix needs a click"
+  },
+  {
+   "id": "semantic-ee05b712",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "ee05b712900473fd8959c911a29652926163150f",
+   "date": "2017-02-20",
+   "subject": "Fix #4264 remove height requirements on iOS mode",
+   "matched_on": "message",
+   "fixed_state": "6bc1c5ec4bdaf349e8ac5877f9fee0139a138d9d",
+   "pages_rendered": [
+    "examples/homepage.html"
+   ],
+   "verdict": "rejected",
+   "reason": "shifts under 2 px"
+  },
+  {
+   "id": "semantic-01dbc261",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "01dbc261cac3a891278b2993a09ee34f091e2a5d",
+   "date": "2016-12-29",
+   "subject": "Swap aliases on thermometer, fix issue with scrolling dropdown right padding",
+   "matched_on": "message",
+   "fixed_state": "01dbc261cac3a891278b2993a09ee34f091e2a5d",
+   "pages_rendered": [
+    "examples/responsive.html",
+    "examples/grid.html",
+    "examples/bootstrap.html"
+   ],
+   "verdict": "rejected",
+   "reason": "dropdown scrolling needs a click; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-a74d21a2",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "a74d21a2f32dbe7a5199fe3b089626afe28fb095",
+   "date": "2016-11-04",
+   "subject": "Fix <body> being set to position relative when dimmable class applied",
+   "matched_on": "message",
+   "fixed_state": "b578e7ebb1a3f921d9df8bdeb9ad07465c2d1a54",
+   "pages_rendered": [
+    "examples/components/card.html",
+    "examples/components/site.html",
+    "examples/login.html"
+   ],
+   "verdict": "rejected",
+   "reason": "heading shifts under 2 px; the dimmer needs a click"
+  },
+  {
+   "id": "semantic-002752eb",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "002752eb12debe5912fbb28d17751392b655d16c",
+   "date": "2016-10-15",
+   "subject": "[ref #904] added 4 positions for corner icons",
+   "matched_on": "message",
+   "fixed_state": "5d1a78bf7d6016a24556ba08b5c9282dc7963f14",
+   "pages_rendered": [
+    "examples/components/table.html",
+    "examples/attached.html",
+    "examples/sticky.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (corner icon positions); text shifts under 2 px"
+  },
+  {
+   "id": "semantic-b008a19d",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "b008a19de8006a4378c4f232f372d6bf46ffb313",
+   "date": "2016-09-20",
+   "subject": "Adds container option for sticky, adds checkbox vars",
+   "matched_on": "message",
+   "fixed_state": "8b38f91c51ab112897b2e4e63e5acd6f85cbdd8f",
+   "pages_rendered": [
+    "examples/grid.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (sticky container option); no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-7076fbe1",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "7076fbe14fcf1007beeaaaa702e39810a11341e6",
+   "date": "2016-07-31",
+   "subject": "#4305 Fixes issue with grid alignment inheritance",
+   "matched_on": "message",
+   "fixed_state": "3c934621ba1ee4e35c4e92937f377d783b7f1b66",
+   "pages_rendered": [
+    "examples/grid.html",
+    "examples/responsive.html",
+    "examples/bootstrap.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-33ea63ec",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "33ea63ec9139ffd3cc49ae492aeffd1666f8db63",
+   "date": "2016-07-31",
+   "subject": "Fix dropdown icon spacing, fix issues with selectOnKeydown when using text that includes html (like images)",
+   "matched_on": "message",
+   "fixed_state": "3c934621ba1ee4e35c4e92937f377d783b7f1b66",
+   "pages_rendered": [
+    "examples/components/button.html",
+    "examples/components/input.html",
+    "examples/components/menu.html"
+   ],
+   "verdict": "rejected",
+   "reason": "icon spacing refinement inside a button group; the earlier state looks intended"
+  },
+  {
+   "id": "semantic-39ef156d",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "39ef156decdf8e1e46034594229cad9af044d9a5",
+   "date": "2016-06-26",
+   "subject": "#4167 - Tabular menu now has correct bottom margin in all cases",
+   "matched_on": "message",
+   "fixed_state": "7a2886343639f503905649b3e52e9473c51150bd",
+   "pages_rendered": [
+    "examples/responsive.html",
+    "examples/attached.html",
+    "examples/bootstrap.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-dfc0cff5",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "dfc0cff5f90135fb97487f034a08dfe67c48429d",
+   "date": "2016-06-26",
+   "subject": "More accurate arrow positioning in tooltips",
+   "matched_on": "message",
+   "fixed_state": "7a2886343639f503905649b3e52e9473c51150bd",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "tooltip needs hover; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "semantic-7ba53c30",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "7ba53c302f9cf436a60db8a2ced873484f481b52",
+   "date": "2016-06-22",
+   "subject": "Fixed dropdown menu item not opening upward",
+   "matched_on": "message",
+   "fixed_state": "6c585827044b1db2c1294c63afdab345df1df925",
+   "pages_rendered": [
+    "examples/components/menu.html",
+    "examples/bootstrap.html",
+    "examples/components/button.html"
+   ],
+   "verdict": "rejected",
+   "reason": "badge and panel style changes; the dropdown fix needs a click"
+  },
+  {
+   "id": "semantic-31026d4b",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "31026d4b0e9662d4b9ee73903200f4dd4f6d4a24",
+   "date": "2016-06-18",
+   "subject": "Remove duplicate height definition",
+   "matched_on": "message",
+   "fixed_state": "a39a528e0df504b0894013adb807215d873a172d",
+   "pages_rendered": [
+    "examples/components/menu.html",
+    "examples/bootstrap.html",
+    "examples/homepage.html"
+   ],
+   "verdict": "rejected",
+   "reason": "badge and panel style changes; the earlier state shows no layout fault"
+  },
+  {
+   "id": "semantic-7eeeeea5",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "7eeeeea54905d81d38f0735840417b27dd485721",
+   "date": "2016-06-13",
+   "subject": "Adds new visibility callbacks, and fixes hidden image",
+   "matched_on": "message",
+   "fixed_state": "7a2886343639f503905649b3e52e9473c51150bd",
+   "pages_rendered": [
+    "examples/components/card.html",
+    "examples/responsive.html",
+    "examples/sticky.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-50306f8e",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "50306f8eaf37706d641c8b21be3b786965d7e6bc",
+   "date": "2016-06-12",
+   "subject": "Fix tooltip case when no data-position is specified",
+   "matched_on": "message",
+   "fixed_state": "589799c11243172dcb14ab036a8e15deb9b60a4a",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "tooltip needs hover; no example page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "semantic-2ed268a7",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "2ed268a732f5c38f8835b8b34f9a29122a33a7b5",
+   "date": "2016-06-06",
+   "subject": "Fix margin when floated content after top attached label",
+   "matched_on": "message",
+   "fixed_state": "edda7f888d6457d796b3c06a708355885698eb6f",
+   "pages_rendered": [
+    "examples/responsive.html",
+    "examples/attached.html",
+    "examples/bootstrap.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "semantic-4731246f",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "4731246f285a2ebcdd8a511111bb62f3f3ac3271",
+   "date": "2016-06-07",
+   "subject": "Fixed an issue where all child inputs of a icon input would recieve a right padding, not just the main input. This caused issues where a popup was attached to the icon input which caused all of the in",
+   "matched_on": "message",
+   "fixed_state": "84b11fb1143b0c4f0e87e8b6b680098e05df1161",
+   "pages_rendered": [
+    "examples/components/input.html",
+    "examples/components/button.html",
+    "examples/sticky.html"
+   ],
+   "verdict": "rejected",
+   "reason": "icon shifts under 2 px"
+  },
+  {
+   "id": "semantic-00587e1e",
+   "source": "Semantic-Org/Semantic-UI",
+   "commit": "00587e1e523e6d949a831da3252d91993502247d",
+   "date": "2016-06-01",
+   "subject": "Fixes vertical text menu includes horizontal padding",
+   "matched_on": "message",
+   "fixed_state": "edda7f888d6457d796b3c06a708355885698eb6f",
+   "pages_rendered": [
+    "examples/bootstrap.html",
+    "examples/components/menu.html",
+    "examples/homepage.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-ef69461e",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "ef69461efcd15d2159c0dadc575e9cd830b47853",
+   "date": "2017-04-05",
+   "subject": "Fixed missleading with variable $button-font-size",
+   "matched_on": "message",
+   "fixed_state": "6d147dfb518dfa178bdf2e44fff54b0ed003da63",
+   "pages_rendered": [
+    "buttons.html",
+    "waves.html",
+    "modals.html"
+   ],
+   "verdict": "rejected",
+   "reason": "button font size refinement; the earlier state looks intended"
+  },
+  {
+   "id": "materialize-8dfe0c3e",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "8dfe0c3e1fb1184f852279ad5978074f47c68440",
+   "date": "2017-04-03",
+   "subject": "Fix conflicts in valign docs",
+   "matched_on": "message",
+   "fixed_state": "0eafb14c5f3a6c78efd8ff4a3039f30f7b471881",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-22057eaa",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "22057eaafe8ed59cd17430672ad14f826bd9b47f",
+   "date": "2017-04-03",
+   "subject": "remove valign class",
+   "matched_on": "message",
+   "fixed_state": "0eafb14c5f3a6c78efd8ff4a3039f30f7b471881",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-4df1e100",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "4df1e100dd1301cdba5b7b38046d739f52b2becc",
+   "date": "2017-04-02",
+   "subject": "Prevent label from inheriting text alignment from parent",
+   "matched_on": "message",
+   "fixed_state": "9a861c4ab9672b318418a479d3ad5ce3791d3197",
+   "pages_rendered": [
+    "forms.html",
+    "tabs.html",
+    "preloader.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-d0b429e0",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "d0b429e0982df475bd4880aaaec4c9cd0037221d",
+   "date": "2017-04-02",
+   "subject": "Fixed offset bug, #4410 that appeared when xl breakpoints were added",
+   "matched_on": "message",
+   "fixed_state": "a57c47cc1d40e6b87397151b1390346d33739fce",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-6e317e21",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "6e317e21367b826a9e3f49c77257e189ad883106",
+   "date": "2017-03-31",
+   "subject": "Fixed carousel reinitialize bugs",
+   "matched_on": "message",
+   "fixed_state": "e45393d185e55f3745614660f4532f255ffc9338",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "carousel script behaviour; no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-5878fddd",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "5878fdddf9accad05721e1a6af64acde1eebc035",
+   "date": "2017-03-30",
+   "subject": "don't cheat, use the right markup for valign",
+   "matched_on": "message",
+   "fixed_state": "91587b45f3f64489104ac84469534565876f1276",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-fbd081a9",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "fbd081a9a5d11eebd2f73259a660a8b4c976b352",
+   "date": "2017-03-30",
+   "subject": "don't cheat, use the right markup for valign",
+   "matched_on": "message",
+   "fixed_state": "fbd081a9a5d11eebd2f73259a660a8b4c976b352",
+   "pages_rendered": [
+    "helpers.html"
+   ],
+   "verdict": "rejected",
+   "reason": "demo markup change (text alignment of the vertical-align demo); the earlier state shows no fault"
+  },
+  {
+   "id": "materialize-210ce989",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "210ce9897ea55185ebc58730bb53ac5974301e3f",
+   "date": "2017-03-28",
+   "subject": "tweaked and compiled tap target mobile fix",
+   "matched_on": "message",
+   "fixed_state": "210ce9897ea55185ebc58730bb53ac5974301e3f",
+   "pages_rendered": [
+    "color.html",
+    "forms.html",
+    "icons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "tap target needs a click; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-8cb4b6cc",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "8cb4b6ccf52700096f1bb57e9a9f5fca97bb4368",
+   "date": "2017-03-26",
+   "subject": "parent padding range bugfix",
+   "matched_on": "message",
+   "fixed_state": "8cb4b6ccf52700096f1bb57e9a9f5fca97bb4368",
+   "pages_rendered": [
+    "color.html",
+    "forms.html",
+    "icons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "shifts under 2 px"
+  },
+  {
+   "id": "materialize-d52e8034",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "d52e8034dd3cd6b7241c66cc549d9bc188832707",
+   "date": "2017-03-26",
+   "subject": "Fixed taptarget demo methods",
+   "matched_on": "message",
+   "fixed_state": "8bc1031bbb6975c77d28c1841e404372cae3d98c",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "demo script; no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-42051a56",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "42051a56d2a35bdd8fbdffab739ee64859b186d4",
+   "date": "2017-03-23",
+   "subject": "fixed dropdown event bubbling bug",
+   "matched_on": "message",
+   "fixed_state": "23e24cea846c7bd9f157109a4308c17a5ca4a74d",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "dropdown needs a click; no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-b336331e",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "b336331e851d5903ce684b55cfd3049042d87b28",
+   "date": "2017-03-22",
+   "subject": "Fixed collapsible preselected bug",
+   "matched_on": "message",
+   "fixed_state": "23e24cea846c7bd9f157109a4308c17a5ca4a74d",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "collapsible script behaviour; no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-2a27dc5f",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "2a27dc5fc5745001986055fdf3985aef32fa2def",
+   "date": "2017-03-21",
+   "subject": "v0.98.1 Release",
+   "matched_on": "changelog",
+   "fixed_state": "2a27dc5fc5745001986055fdf3985aef32fa2def",
+   "pages_rendered": [
+    "forms.html",
+    "getting-started.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "release; only version numbers differ"
+  },
+  {
+   "id": "materialize-6321a785",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "6321a7855ab14ed88070cc53bae88d4fb53439f4",
+   "date": "2017-03-13",
+   "subject": "fixed materialbox callback bug",
+   "matched_on": "message",
+   "fixed_state": "f4693a9917df7c40e68f380142110f5c4952cef2",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "materialbox script behaviour; no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-0028f812",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "0028f812ca03fdd2fee03023ae2a7e2f295e593f",
+   "date": "2017-03-01",
+   "subject": "fixed grid typo",
+   "matched_on": "message",
+   "fixed_state": "0028f812ca03fdd2fee03023ae2a7e2f295e593f",
+   "pages_rendered": [
+    "grid.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording only (a percentage in the documentation)"
+  },
+  {
+   "id": "materialize-7b67132b",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "7b67132b03657e3022a738b4fcd773e5da39076e",
+   "date": "2017-02-28",
+   "subject": "fixed multiple select and optgroups",
+   "matched_on": "message",
+   "fixed_state": "104da64c4f3bcb0905d2700fe66bc3cc5fb264f8",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "select needs a click; no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-aa06a61e",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "aa06a61e09d08641ebb2e7d44aba18fc694cabee",
+   "date": "2017-02-19",
+   "subject": "Fixed typo",
+   "matched_on": "message",
+   "fixed_state": "aa06a61e09d08641ebb2e7d44aba18fc694cabee",
+   "pages_rendered": [
+    "forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording only (documentation code sample)"
+  },
+  {
+   "id": "materialize-ab34805e",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "ab34805ef9a1e398dbf001f12296360cf9b25240",
+   "date": "2017-02-16",
+   "subject": "Revert label height change",
+   "matched_on": "message",
+   "fixed_state": "ab34805ef9a1e398dbf001f12296360cf9b25240",
+   "pages_rendered": [
+    "color.html",
+    "forms.html",
+    "icons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "label position refinement of about 2 px; the earlier state looks intended"
+  },
+  {
+   "id": "materialize-3d6d151e",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "3d6d151e010102731c846cd9f865b72cc99b53cd",
+   "date": "2017-02-14",
+   "subject": "Fixed select bug where label was preventing it from being opened",
+   "matched_on": "message",
+   "fixed_state": "3d6d151e010102731c846cd9f865b72cc99b53cd",
+   "pages_rendered": [
+    "color.html",
+    "forms.html",
+    "icons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "select needs a click; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-bc401722",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "bc4017224822b150a608dcda5ef799fc7c04e8a4",
+   "date": "2017-02-11",
+   "subject": "fixed autocomplete alignment in chips",
+   "matched_on": "message",
+   "fixed_state": "bc4017224822b150a608dcda5ef799fc7c04e8a4",
+   "pages_rendered": [
+    "color.html",
+    "forms.html",
+    "icons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "autocomplete needs typing; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-bf01e955",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "bf01e95514495684d90754a16ba8eed25f0f074b",
+   "date": "2017-02-06",
+   "subject": "cleaned up js and fixed up responsiveness",
+   "matched_on": "message",
+   "fixed_state": "bf01e95514495684d90754a16ba8eed25f0f074b",
+   "pages_rendered": [
+    "color.html",
+    "forms.html",
+    "icons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-6ef30090",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "6ef300902539e842f44c08a2621a304f5d9722da",
+   "date": "2017-01-31",
+   "subject": "Implementing tap target from feature discovery guidelines",
+   "matched_on": "message",
+   "fixed_state": "faf67f4b6df9c5d3b2130ade73d0f02736386bae",
+   "pages_rendered": [
+    "dialogs.html",
+    "buttons.html",
+    "waves.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (tap target); no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-a9ffd6f7",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "a9ffd6f7809702c35110f0d8612ac02385b1f057",
+   "date": "2017-01-31",
+   "subject": "Fixed materialbox removing inline styles",
+   "matched_on": "message",
+   "fixed_state": "e5757653366f75ee18881f0bf240d4f97e626eab",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "materialbox needs a click; no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-453efd02",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "453efd027bcbe42909da7ba650f6c4402714f5c5",
+   "date": "2017-01-27",
+   "subject": "Fixed syntax error in dropdown code example",
+   "matched_on": "message",
+   "fixed_state": "e5757653366f75ee18881f0bf240d4f97e626eab",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "documentation code sample; no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-d283cb91",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "d283cb913c805ae57a5a944f8eef3f898c6623bf",
+   "date": "2017-01-26",
+   "subject": "Remove padding on collapsible body in sideNav",
+   "matched_on": "message",
+   "fixed_state": "d283cb913c805ae57a5a944f8eef3f898c6623bf",
+   "pages_rendered": [
+    "color.html",
+    "forms.html",
+    "icons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "side navigation padding refinement; the earlier state looks intended"
+  },
+  {
+   "id": "materialize-a2fcbfd5",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "a2fcbfd56183e09c31464f4c6851d63eecc915b2",
+   "date": "2017-01-25",
+   "subject": "v0.98.0 Release",
+   "matched_on": "changelog",
+   "fixed_state": "a2fcbfd56183e09c31464f4c6851d63eecc915b2",
+   "pages_rendered": [
+    "getting-started.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "release; only version numbers differ"
+  },
+  {
+   "id": "materialize-048bbf28",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "048bbf28ff1b39f9a5cc32573295eeab3615adab",
+   "date": "2017-01-22",
+   "subject": "Fixed card title truncation",
+   "matched_on": "message",
+   "fixed_state": "048bbf28ff1b39f9a5cc32573295eeab3615adab",
+   "pages_rendered": [
+    "color.html",
+    "icons.html",
+    "cards.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-1f3377c2",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "1f3377c222083910841385df6e9e815017f4ebab",
+   "date": "2017-01-19",
+   "subject": "Fixed toast animation bug in Firefox",
+   "matched_on": "message",
+   "fixed_state": "1f3377c222083910841385df6e9e815017f4ebab",
+   "pages_rendered": [
+    "dialogs.html"
+   ],
+   "verdict": "rejected",
+   "reason": "Firefox only; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-a0a09ca1",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "a0a09ca1f224a9a1f12dd69eb086e82f41468b81",
+   "date": "2017-01-19",
+   "subject": "Moved padding on collapsible-body elements to collapsible-body instead for spacing to be more consistent with multiple elements",
+   "matched_on": "message",
+   "fixed_state": "a0a09ca1f224a9a1f12dd69eb086e82f41468b81",
+   "pages_rendered": [
+    "collapsible.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation code sample wording"
+  },
+  {
+   "id": "materialize-14de2a0a",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "14de2a0a14261abd607c541efa930b84f1221e64",
+   "date": "2017-01-11",
+   "subject": "Added limit to autocomplete and fixed multiple init bugs and added testing",
+   "matched_on": "message",
+   "fixed_state": "14de2a0a14261abd607c541efa930b84f1221e64",
+   "pages_rendered": [
+    "_SpecRunner.html",
+    "forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation content (new option)"
+  },
+  {
+   "id": "materialize-347b93fb",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "347b93fbe78ee29570a21605d87b472a8e2c9f28",
+   "date": "2017-01-09",
+   "subject": "Removed console logs and changed responsiveThreshold to infinity by default",
+   "matched_on": "message",
+   "fixed_state": "347b93fbe78ee29570a21605d87b472a8e2c9f28",
+   "pages_rendered": [
+    "tabs.html"
+   ],
+   "verdict": "rejected",
+   "reason": "documentation content (new option)"
+  },
+  {
+   "id": "materialize-425cd4e9",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "425cd4e9e92d160be3b0331409e83f18b00a96fe",
+   "date": "2016-12-26",
+   "subject": "Fixed dropdown method bug and added tests",
+   "matched_on": "message",
+   "fixed_state": "425cd4e9e92d160be3b0331409e83f18b00a96fe",
+   "pages_rendered": [
+    "_SpecRunner.html"
+   ],
+   "verdict": "rejected",
+   "reason": "dropdown script; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-428d7fe9",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "428d7fe93379c0008f3f393b07eb776091a9cad3",
+   "date": "2016-12-23",
+   "subject": "materialbox tests added and overlay with transformed ancestor bug fixed",
+   "matched_on": "message",
+   "fixed_state": "428d7fe93379c0008f3f393b07eb776091a9cad3",
+   "pages_rendered": [
+    "_SpecRunner.html",
+    "sass.html",
+    "side-nav.html"
+   ],
+   "verdict": "rejected",
+   "reason": "materialbox needs a click; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-3c9765d9",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "3c9765d9d321ed22f548858dc574cdc21a989c20",
+   "date": "2016-12-20",
+   "subject": "Fixed tabs bug that hid active tab when clicked while active",
+   "matched_on": "message",
+   "fixed_state": "3c9765d9d321ed22f548858dc574cdc21a989c20",
+   "pages_rendered": [
+    "_SpecRunner.html"
+   ],
+   "verdict": "rejected",
+   "reason": "tabs need a click; no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-bb5dd21a",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "bb5dd21a12dbf32d732d53adf24092114951166f",
+   "date": "2016-12-20",
+   "subject": "Fixed carousel vertical alignment",
+   "matched_on": "message",
+   "fixed_state": "bb5dd21a12dbf32d732d53adf24092114951166f",
+   "pages_rendered": [
+    "color.html",
+    "forms.html",
+    "icons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  },
+  {
+   "id": "materialize-e3668e36",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "e3668e36ad2c82f6520406cdb1a971c1a69d4f79",
+   "date": "2016-12-14",
+   "subject": "Fixed multiple select scrollTo bug",
+   "matched_on": "message",
+   "fixed_state": "66d37f0a4e1ce3cd454351fb37b61125ce0e6f32",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "select needs a click; no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-9edfd0a2",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "9edfd0a2245e3e9fe3124506ac680aeacb098c7f",
+   "date": "2016-11-30",
+   "subject": "Fix default menuWidth of sideNav",
+   "matched_on": "message",
+   "fixed_state": "9edfd0a2245e3e9fe3124506ac680aeacb098c7f",
+   "pages_rendered": [
+    "side-nav.html"
+   ],
+   "verdict": "rejected",
+   "reason": "wording only (a default value in the documentation)"
+  },
+  {
+   "id": "materialize-f72378e8",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "f72378e89263d4ab4e050c2cffcc296653010936",
+   "date": "2016-11-30",
+   "subject": "Fix default menuWidth of sideNav",
+   "matched_on": "message",
+   "fixed_state": "6e192c38708859f691f1e36f0ebf5db6a120e9d2",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no documentation page at the parent commit uses the changed styles"
+  },
+  {
+   "id": "materialize-bfb84261",
+   "source": "Dogfalo/materialize (to 2017-04-21)",
+   "commit": "bfb842614b93ff8c1fa8e89f37a796f908164954",
+   "date": "2016-11-12",
+   "subject": "Fixed donate ad style",
+   "matched_on": "message",
+   "fixed_state": "bfb842614b93ff8c1fa8e89f37a796f908164954",
+   "pages_rendered": [
+    "color.html",
+    "forms.html",
+    "icons.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference in Chromium at the screening viewports"
+  }
+ ]
+}

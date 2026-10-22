@@ -1,0 +1,20 @@
+[
+  {
+    "page": "p03",
+    "selector": ".social-icons",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "The social-link group is displaced into a separate row below the hero, flush against the left edge. At 1440x900, the hero occupies y=0–900, while the three 42x38px buttons occupy x=0–42, y=900–1014. Their wrapper is another 900px tall, making the document 1800px tall and leaving the links entirely below the initial screen. At 360x780, the buttons similarly start at x=0, y=485.19 and their 780px wrapper extends to y=1265.19. Screenshots: p03-laptop-verified-middle.png, p03-laptop-verified-end.png, p03-phone-verified-top.png, p03-phone-verified-end.png.",
+    "fix": "Position the desktop .social-icons group within the hero viewport using position:absolute, top:0, right:2.5rem, width:auto, height:100%, and align-items:center. For phones, use an auto-height group with centered horizontal buttons and explicit spacing; remove the full-viewport-height row."
+  },
+  {
+    "page": "p08",
+    "selector": "main > pre[style*=\"width: 375px\"]",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Both installation code blocks extend beyond the phone screen. Their rendered border boxes start at x=16 and are 391px wide (375px content plus 16px horizontal padding), ending at x=407. The screen is 360px wide and the main content column ends at x=344, so the blocks exceed the column by 63px and the screen by 47px. The right edges are cut off at the initial horizontal position, and document scrollWidth is 407px versus clientWidth 360px. Screenshot: p08-phone-verified-middle.png; measurements: p08-phone-detail.json.",
+    "fix": "Keep the preferred 375px width but add box-sizing:border-box and max-width:100% to these blocks, with overflow-x:auto for long code lines. Their outer width must stay within the 328px phone content column."
+  }
+]

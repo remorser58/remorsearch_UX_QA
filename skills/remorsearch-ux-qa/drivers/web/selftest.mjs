@@ -16,7 +16,7 @@ import fs from 'node:fs';
 import http from 'node:http';
 import os from 'node:os';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { CATALOG } from './devices.mjs';
 import { openBrowser, validateBrowserWs } from './browser_transport.mjs';
@@ -182,6 +182,11 @@ function startFixtureServer() {
     }
     if (req.method === 'GET' && (pathname.startsWith('/read/') || pathname === '/task-integrity.html' || pathname === '/task-integrity-timing.html')) {
       readFixture(pathname, res, req);
+      return;
+    }
+    if (req.method === 'GET' && pathname === '/slow-missing-font.woff2') {
+      // A font that is still loading when the page is measured: answered late, and missing.
+      setTimeout(() => { res.writeHead(404, { 'Content-Type': 'text/plain' }); res.end('not found'); }, 4000);
       return;
     }
     const file = FIXTURE_FILES[pathname];
@@ -1596,6 +1601,66 @@ async function reflowCopyTest(base, tmp) {
     !lost.includes('gnb-a1') && !lost.includes('foot-a1'), recs.map((x) => x.lost));
 }
 
+/**
+ * A built site opened from disk: the page sits two folders below the stylesheet that makes
+ * its row 600 px wide, and frames a file outside its own folder. Run plainly and with
+ * --single-process (the setting for command sandboxes that block Chromium's helpers),
+ * where every pass that needs its own browser context used to fail.
+ */
+async function localFilesTest(tmp) {
+  const site = path.join(tmp, 'local-site');
+  fs.mkdirSync(path.join(site, 'css'), { recursive: true });
+  fs.mkdirSync(path.join(site, 'pages', 'ui'), { recursive: true });
+  fs.mkdirSync(path.join(tmp, 'local-private'), { recursive: true });
+  fs.writeFileSync(path.join(site, 'css', 'site.css'), 'body { margin: 0; font-family: sans-serif; }\n#wide-row { width: 600px; height: 40px; background: #dde; }\n'
+    + '.clip { width: 220px; height: 18px; overflow: hidden; white-space: nowrap; font-size: 14px; line-height: 18px; }\n');
+  fs.writeFileSync(path.join(tmp, 'local-private', 'note.html'), '<!doctype html><title>note</title><p>outside the page folder</p>');
+  // Three identical cards nest their clipped label six levels deep, so a five-level path
+  // cannot tell them apart.
+  const card = '<div class="card"><div><div><div><div><div class="clip"><span>Total Connections this week</span></div></div></div></div></div></div>';
+  fs.writeFileSync(path.join(site, 'pages', 'ui', 'page.html'), '<!doctype html><html lang="en"><head><meta charset="utf-8">'
+    + '<meta name="viewport" content="width=device-width, initial-scale=1"><title>Local page</title>'
+    + '<link rel="stylesheet" href="../../css/site.css"></head><body><h1>Local page</h1><div id="wide-row">A row from the site stylesheet</div>'
+    + `<section>${card.repeat(3)}</section>`
+    + '<iframe id="outside" title="outside" src="../../../local-private/note.html"></iframe></body></html>');
+  writeJson(path.join(tmp, 'local.json'), {
+    schema_version: 'ergo-scenario.v1', scenario_id: 'SC-driver-local-01',
+    surface: { kind: 'web', url: pathToFileURL(path.join(site, 'pages', 'ui', 'page.html')).href },
+    task_goal_ko: '페이지를 본다', device_ids: ['galaxy-s24'], targets: {}, steps: [{ action: 'wait', ms: 100 }],
+    success: { selector_visible: '#wide-row' },
+  });
+  const variants = [['plain', {}]];
+  if (process.env.REMORSEARCH_BROWSER_WS === undefined) variants.push(['single-process', { REMORSEARCH_CHROMIUM_ARGS: '--single-process' }]);
+  for (const [label, extra] of variants) {
+    const runId = `R-local-${label}`;
+    const r = await runDriver(['run', '--scenario', path.join(tmp, 'local.json'), '--device', 'galaxy-s24', '--out', path.join(tmp, 'runs'),
+      '--run-id', runId, '--focus-walk'], { env: { ...process.env, ...extra } });
+    if (!check(`local files (${label}): exit 0`, r.code === 0, `${r.code} ${r.err}`)) continue;
+    const { run } = loadRun(path.join(tmp, 'runs', runId));
+    const blocked = run.driver.network_policy.blocked_sample.map((b) => b.url);
+    check(`local files (${label}): a stylesheet two folders up loads; a frame outside the page's folder is blocked`,
+      !blocked.some((u) => u.endsWith('/css/site.css')) && blocked.some((u) => u.endsWith('/local-private/note.html')), blocked);
+    const offenders = (run.reflow || []).filter((x) => !x.error && !x.styles_lost).flatMap((x) => (x.offenders || []).map((o) => o.dom_id));
+    check(`local files (${label}): the 320 px copy keeps the page's stylesheet and finds the wide row`, offenders.includes('wide-row'), run.reflow);
+    check(`local files (${label}): the reflow, text-spacing and focus walk passes all ran`,
+      !run.warnings.some((w) => /pass failed|walk \((?:load|end)\) failed|not measured/.test(w))
+        && (run.adaptation || []).length === 2 && run.focus_walks.some((w) => w.phase === 'load'), run.warnings);
+  }
+  // The text-spacing pass measures on the laptop profile (on the phone profile its capture
+  // mapping is unverified), where the identical cards used to share one selector.
+  writeJson(path.join(tmp, 'local-laptop.json'), { ...JSON.parse(fs.readFileSync(path.join(tmp, 'local.json'), 'utf8')),
+    scenario_id: 'SC-driver-local-02', device_ids: ['laptop-1440'] });
+  const r = await runDriver(['run', '--scenario', path.join(tmp, 'local-laptop.json'), '--device', 'laptop-1440', '--out', path.join(tmp, 'runs'),
+    '--run-id', 'R-local-laptop']);
+  if (check('local files (laptop): exit 0', r.code === 0, `${r.code} ${r.err}`)) {
+    const { run } = loadRun(path.join(tmp, 'runs', 'R-local-laptop'));
+    const spacing = (run.adaptation || []).find((x) => x.kind === 'text_spacing');
+    const lost = (spacing?.lost || []).map((x) => x.selector);
+    check('local files (laptop): text spacing clips the three identical card labels and names each one apart',
+      spacing?.evaluable === true && lost.filter((s) => /span$/.test(s)).length >= 3 && new Set(lost).size === lost.length, spacing);
+  }
+}
+
 async function adaptationTest(base, tmp) {
   const { pw, info } = loadPlaywright();
   const { scenario } = normalizeScenario({ schema_version: 'ergo-scenario.v1', scenario_id: 'SC-adaptation',
@@ -2664,6 +2729,199 @@ async function paintedStateTest(base, tmp) {
   }
 }
 
+async function placementTest(tmp) {
+  // LY-06..08 measurements: an off-centre icon (box and glyph ink), a field and its attached
+  // button with different bottoms, a page wider than the screen and a full-height page with a
+  // few px of extra scroll; each beside a clean twin that must stay silent.
+  const { pw, info } = loadPlaywright();
+  const transport = await openBrowser(pw, info, { endpoint: undefined });
+  const context = await transport.browser.newContext({ viewport: { width: 1100, height: 800 }, deviceScaleFactor: 1 });
+  try {
+    const page = await context.newPage();
+    await page.setContent(`<!doctype html><style>
+      body { margin:0; font:16px Arial, sans-serif }
+      .ib { box-sizing:border-box; width:40px; height:40px; border:1px solid #888; background:#eee; margin:20px; padding:0 }
+      .ib svg { display:block; width:16px; height:16px }
+      #icon-off { display:block; padding-left:6px }
+      #icon-ok { display:flex; align-items:center; justify-content:center }
+      .glyph { box-sizing:border-box; width:24px; height:24px; margin:20px; background:#ddd; cursor:pointer; text-align:center }
+      #glyph-off { line-height:24px; padding-top:6px }
+      #glyph-ok { display:flex; align-items:center; justify-content:center }
+      .group { display:flex; align-items:flex-start; margin:20px }
+      .group input { box-sizing:border-box; height:34px; border:1px solid #888; margin:0 }
+      .group button { box-sizing:border-box; border:1px solid #06c; background:#08f; margin:0 }
+      #wide { width:1300px; height:10px; background:#ccc }
+    </style>
+    <button id="icon-off" class="ib" aria-label="Off"><svg viewBox="0 0 16 16"><rect width="16" height="16"/></svg></button>
+    <button id="icon-ok" class="ib" aria-label="Ok"><svg viewBox="0 0 16 16"><rect width="16" height="16"/></svg></button>
+    <div id="glyph-off" class="glyph">+</div>
+    <div id="glyph-ok" class="glyph">+</div>
+    <div class="group"><input id="field" aria-label="Search"><button id="go" style="height:38px">Go</button></div>
+    <div class="group"><input id="field-ok" aria-label="Find"><button id="go-ok" style="height:34px">Go</button></div>
+    <div id="wide"></div>`);
+    const capture = () => page.evaluate(extractSnapshot, { key: STATE_KEY, cap: 400, knownRoles: [...KNOWN_ROLES] });
+    const first = await capture();
+    writeJson(path.join(tmp, 'placement-capture.json'), first.layout_outliers);
+    const of = (ex, kind, sel) => (ex.layout_outliers || []).filter((o) => o.kind === kind && (!sel || o.selectors.includes(sel)));
+    const iconOff = of(first, 'icon_offset', '#icon-off');
+    check('placement: an icon 5 px left of its button centre is measured on that axis only',
+      iconOff.length === 1 && iconOff[0].axis === 'x' && Math.abs(iconOff[0].offset_px + 5) < 0.6 && !of(first, 'icon_offset', '#icon-ok').length, iconOff);
+    const glyph = of(first, 'icon_offset', '#glyph-off');
+    check('placement: a glyph pushed down in its box is measured by its ink, and a centred one is not',
+      glyph.length === 1 && glyph[0].axis === 'y' && glyph[0].ink === true && glyph[0].offset_px > 3 && !of(first, 'icon_offset', '#glyph-ok').length,
+      of(first, 'icon_offset'));
+    const attached = of(first, 'attached_mismatch', '#field');
+    check('placement: a field whose attached button is 4 px taller differs at the bottom edge, a matching pair does not',
+      attached.length === 1 && attached[0].selectors.includes('#go') && Math.abs(attached[0].bottom_px - 4) < 0.6 && Math.abs(attached[0].top_px) < 0.6
+        && !of(first, 'attached_mismatch', '#field-ok').length, of(first, 'attached_mismatch'));
+    const wide = of(first, 'page_overflow');
+    check('placement: a 1300 px block on a 1100 px screen makes one page-width outlier naming it',
+      wide.length === 1 && wide[0].selectors.includes('#wide') && Math.abs(wide[0].offset_px - 200) < 1, wide);
+    await page.evaluate(() => {
+      document.body.innerHTML = '<div id="full" style="height:100vh;background:#eee"></div>';
+      document.body.style.margin = '8px';
+    });
+    const slack = of(await capture(), 'scroll_slack');
+    check('placement: a full-height block plus the body margin scrolls 16 px and is measured',
+      slack.length === 1 && slack[0].selectors.includes('#full') && Math.abs(slack[0].offset_px - 16) < 1 && !of(await capture(), 'page_overflow').length, slack);
+    await page.evaluate(() => { document.body.style.margin = '0'; });
+    check('placement: the same block without the margin fits the screen', !of(await capture(), 'scroll_slack').length);
+    // LY-09 and LY-10: a switch raised 5 px against its label, a field 4 px taller than the
+    // button 8 px beside it, a bar whose toggle content sits 4 px low, and on a phone a
+    // column squeezed to 60 px; each beside a twin that lines up.
+    await page.setContent(`<!doctype html><style>
+      body { margin:0; font:16px Arial, sans-serif } .row { display:flex; align-items:center; gap:8px; margin:16px }
+      .row input[type=checkbox] { margin:0; width:16px; height:16px }
+      #raised { position:relative; top:-5px }
+      form { display:flex; align-items:flex-start; gap:8px; margin:16px } form input { box-sizing:border-box; height:40px; border:1px solid #888 }
+      form button { box-sizing:border-box; border:1px solid #06c; background:#08f; color:#fff }
+      .bar { display:flex; justify-content:space-between; align-items:center; height:56px; width:100%; background:#222 }
+      .bar a { color:#fff; font-size:18px } .bar button { width:40px; height:40px; background:#333; border:1px solid #555; color:#fff; padding:0 }
+      #low { padding-top:8px }
+    </style>
+    <label class="row"><input id="raised" type="checkbox"> Raised option</label>
+    <label class="row"><input id="level" type="checkbox"> Level option</label>
+    <form id="f1"><input id="q1" aria-label="Search one"><button id="b1" style="height:36px">Search</button></form>
+    <form id="f2"><input id="q2" aria-label="Search two"><button id="b2" style="height:40px">Search</button></form>
+    <nav class="navbar bar" id="bar1"><a href="#" id="brand1">Brand</a><button id="low" aria-label="Menu">&#9776;</button></nav>
+    <nav class="navbar bar" id="bar2"><a href="#" id="brand2">Brand</a><button id="even" aria-label="Menu">&#9776;</button></nav>`);
+    const second = await capture();
+    const raised = of(second, 'label_offset', '#raised');
+    check('placement: a checkbox 5 px above its label line is measured, a level one is not',
+      raised.length === 1 && raised[0].offset_px < -3 && !of(second, 'label_offset', '#level').length, of(second, 'label_offset'));
+    const pair = of(second, 'pair_mismatch', '#q1');
+    check('placement: a field 4 px taller than the button 8 px beside it is measured, an equal pair is not',
+      pair.length === 1 && pair[0].selectors.includes('#b1') && Math.abs(pair[0].offset_px + 4) < 0.6 && !of(second, 'pair_mismatch', '#q2').length, of(second, 'pair_mismatch'));
+    const bar = of(second, 'bar_offset');
+    check('placement: in a bar, a toggle whose content sits 4 px low is measured once, a centred bar is silent',
+      bar.length === 1 && bar[0].container === '#bar1' && Math.abs(Math.abs(bar[0].offset_px) - 4) < 1.1, bar);
+    const phone = await transport.browser.newContext({ viewport: { width: 360, height: 780 }, deviceScaleFactor: 1 });
+    try {
+      const small = await phone.newPage();
+      await small.setContent(`<!doctype html><style>body { margin:0; font:16px Arial } .wrap { display:flex } .side { width:300px; flex:none } .main { width:60px }</style>
+        <div class="wrap"><div class="side">Menu</div><div class="main" id="main"><h2>Email statistics today</h2><p>Last campaign performance</p></div></div>`);
+      const narrow = (await small.evaluate(extractSnapshot, { key: STATE_KEY, cap: 400, knownRoles: [...KNOWN_ROLES] })).layout_outliers.filter((o) => o.kind === 'narrow_column');
+      check('placement: on a phone a 60 px content column with texts wrapping word by word is reported once', narrow.length === 1 && narrow[0].selectors.includes('#main'), narrow);
+      // LY-10 by words per line and LY-16: half-width columns whose 48 px padding leaves
+      // their texts 69 px, and a page with no side margin, beside a padded twin of each.
+      const snap = async () => (await small.evaluate(extractSnapshot, { key: STATE_KEY, cap: 400, knownRoles: [...KNOWN_ROLES] })).layout_outliers;
+      const words = 'one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen';
+      await small.setContent(`<!doctype html><style>body { margin:0; font:16px Arial } .two { display:flex; width:330px; margin:0 15px } .two > div { width:50%; padding:48px; box-sizing:border-box }
+        main { padding:0 16px }</style><div class="two" id="two"><div id="txt"><p>${words}</p><p>${words}</p></div><div>Picture</div></div>
+        <main><p>${words}</p><p>${words}</p><p>${words}</p></main>`);
+      const padded = await snap();
+      await small.setContent(`<!doctype html><style>body { margin:0; font:16px Arial }</style><h1>Title flush left</h1><p>${words}</p><p>${words}</p><p>${words}</p>`);
+      const flush = await snap();
+      const squeezedPad = padded.filter((o) => o.kind === 'narrow_column');
+      check('placement: texts that padding squeezes to break every one or two words make one LY-10 row, full-width texts none',
+        squeezedPad.length === 1 && !flush.some((o) => o.kind === 'narrow_column'), squeezedPad);
+      const edge = flush.filter((o) => o.kind === 'edge_text');
+      check('placement: four texts against the left edge make one edge_text row, a page with side padding none',
+        edge.length === 1 && edge[0].side === 'left' && edge[0].count === 4 && !padded.some((o) => o.kind === 'edge_text'), edge);
+    } finally {
+      await phone.close();
+    }
+    // LY-17: on a touch phone a page without a device-width viewport is laid out at 980 px
+    // and shrunk; the same page with the tag is not.
+    const touch = await transport.browser.newContext({ viewport: { width: 360, height: 780 }, isMobile: true, hasTouch: true, deviceScaleFactor: 1 });
+    try {
+      const tp = await touch.newPage();
+      const body = '<style>body { margin:0 16px; font:16px Arial }</style><h1>Desktop page</h1><p>Some text</p>';
+      await tp.goto('data:text/html,' + encodeURIComponent('<!doctype html>' + body));
+      const bare = (await tp.evaluate(extractSnapshot, { key: STATE_KEY, cap: 400, knownRoles: [...KNOWN_ROLES] })).layout_outliers.filter((o) => o.kind === 'desktop_layout');
+      await tp.goto('data:text/html,' + encodeURIComponent('<!doctype html><meta name="viewport" content="width=device-width, initial-scale=1">' + body));
+      const tagged = (await tp.evaluate(extractSnapshot, { key: STATE_KEY, cap: 400, knownRoles: [...KNOWN_ROLES] })).layout_outliers.filter((o) => o.kind === 'desktop_layout');
+      check('placement: a phone page without a device-width viewport is measured as a 980 px layout shrunk to fit, the tagged page is not',
+        bare.length === 1 && bare[0].offset_px >= 900 && bare[0].scale < 0.5 && bare[0].meta === null && !tagged.length, { bare, tagged });
+    } finally {
+      await touch.close();
+    }
+    // LY-11..13: a textarea 30 px narrower than the two fields above it, links whose labels
+    // touch, and a fixed bar whose second link wraps below its edge; each beside a twin
+    // that is correct (an even form with an addon field, spaced links, a bar that fits).
+    await page.setContent(`<!doctype html><style>
+      body { margin:0; font:16px Arial, sans-serif } main { margin-top:60px }
+      form { width:320px; margin:16px } form input, form textarea { display:block; box-sizing:border-box; width:300px; margin:0 0 12px; border:1px solid #888 }
+      #msg1 { width:270px } .ig { display:flex; width:300px; margin:0 0 12px } .ig input { flex:1; width:auto; margin:0 } .ig span { width:40px; background:#ddd }
+      .links { display:flex; margin:16px } .links a { margin:0 } #spaced a { margin-right:12px }
+      #bar { position:fixed; top:0; left:0; right:0; height:36px; background:#fff; box-shadow:0 0 4px #888 }
+      #bar .menu { display:flex; flex-wrap:wrap; width:200px } #bar .menu a { display:block; width:120px; line-height:24px }
+      #bar-ok { display:flex; align-items:center; height:40px; background:#eee } #bar-ok a { margin-right:16px }
+    </style>
+    <nav id="bar"><div class="menu"><a href="#" id="m1">Home page</a><a href="#" id="m2">Documentation</a></div></nav>
+    <main>
+    <form id="ff1"><input id="name1" aria-label="Name"><input id="mail1" aria-label="Mail"><textarea id="msg1" aria-label="Message"></textarea></form>
+    <form id="ff2"><input id="name2" aria-label="Name"><div class="ig"><input id="amount" aria-label="Amount"><span>.00</span></div><textarea id="msg2" aria-label="Message"></textarea></form>
+    <div class="links" id="touch"><a href="#">Text</a><a href="#">Embedded content</a><a href="#">Forms</a></div>
+    <div class="links" id="spaced"><a href="#">Text</a><a href="#">Embedded content</a><a href="#">Forms</a></div>
+    <header id="bar-ok"><a href="#">Home</a><a href="#">Docs</a></header>
+    </main>`);
+    const third = await capture();
+    const width = of(third, 'field_width');
+    check('placement: a textarea 30 px narrower than the two fields above it is measured once; an even form with an addon field is not',
+      width.length === 1 && width[0].selectors[0] === '#msg1' && Math.abs(width[0].offset_px + 30) < 0.6, width);
+    const together = of(third, 'run_together');
+    check('placement: links whose labels touch make one row with two touching pairs, spaced links are silent',
+      together.length === 1 && together[0].container === '#touch' && together[0].pairs === 2, together);
+    const hang = of(third, 'hanging_item');
+    check('placement: a fixed bar whose second link wraps below its edge is measured once, a bar that fits is silent',
+      hang.length === 1 && hang[0].container === '#bar' && hang[0].selectors.includes('#m2') && hang[0].offset_px >= 4, hang);
+    // LY-14 and LY-15: a caption pulled 12 px up over the picture above it by a negative
+    // margin, beside a caption on its own white panel, a label placed absolutely over a
+    // picture and a heading set wholly inside one; two rows of cells 16 px apart side by side
+    // but touching each other, beside a grid spaced both ways, two lists side by side and a
+    // row of buttons that wraps onto a second line.
+    const svg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10'%3E%3Crect width='10' height='10' fill='%23999'/%3E%3C/svg%3E";
+    await page.setContent(`<!doctype html><style>
+      body { margin:0; font:16px Arial, sans-serif } .pic { display:block; width:400px; height:100px; margin:20px 20px 0 }
+      .cap { width:380px; margin:-12px 20px 20px; line-height:20px } #cap2 { background:#fff } #hero { width:300px; margin:-70px 40px 60px; line-height:20px }
+      .card { position:relative; width:400px; margin:20px } .card .pic { margin:0 } .tag { position:absolute; top:8px; left:8px }
+      .rows, .grid2 { width:600px; margin:20px } .row { display:flex; gap:16px } .row > div, .grid2 > div { flex:1; height:30px; background:#ddd }
+      .grid2 { display:flex; flex-wrap:wrap; gap:16px } .grid2 > div { flex:0 0 292px }
+      .lists { display:flex; gap:16px; margin:20px } .lists ul { list-style:none; margin:0; padding:0; width:200px } .lists li { height:24px; background:#eee }
+      .btns { width:250px; margin:20px } .btns button { width:110px; height:32px; margin:0 8px 0 0; border:1px solid #888; background:#eee }
+    </style>
+    <img class="pic" id="pic1" alt="" src="${svg}"><p class="cap" id="cap1">Caption pulled up over the picture above it</p>
+    <img class="pic" id="pic2" alt="" src="${svg}"><p class="cap" id="cap2">Caption on a white panel of its own</p>
+    <div class="card"><img class="pic" alt="" src="${svg}"><span class="tag" id="tag1">New</span></div>
+    <img class="pic" id="pic3" alt="" src="${svg}"><h2 id="hero">Heading set inside the picture</h2>
+    <div class="rows" id="rows"><div class="row"><div>1</div><div>2</div></div><div class="row"><div>3</div><div>4</div></div></div>
+    <div class="grid2" id="grid2"><div>1</div><div>2</div><div>3</div><div>4</div></div>
+    <div class="lists" id="lists"><ul><li>a</li><li>b</li></ul><ul><li>c</li><li>d</li></ul></div>
+    <div class="btns" id="btns"><button>One</button><button>Two</button><button>Three</button><button>Four</button></div>`);
+    const fourth = await capture();
+    const over = of(fourth, 'text_over_image');
+    check('placement: a caption pulled over the picture above it is measured once; a caption on its own panel and a placed label are not',
+      over.length === 1 && over[0].selectors[0] === '#cap1' && over[0].selectors[1] === '#pic1' && over[0].offset_px >= 4, over);
+    const rows = of(fourth, 'touching_rows');
+    check('placement: rows of cells 16 px apart that touch each other are measured once; a grid spaced both ways and lists side by side are not',
+      rows.length === 1 && rows[0].container === '#rows' && Math.abs(rows[0].offset_px) <= 1 && Math.abs(rows[0].gap_px - 16) < 0.6, rows);
+  } finally {
+    await context.close();
+    await transport.close();
+  }
+}
+
 async function gazeGeometryTest(tmp) {
   const { pw, info } = loadPlaywright();
   const transport = await openBrowser(pw, info, { endpoint: undefined });
@@ -2792,7 +3050,11 @@ async function typographyTest(base, tmp) {
     check('typography: session redaction applies before font measurement including private echoes', ['#opted', '#echo']
       .every((selector) => protectedCapture.elements.find((e) => e.selector === selector)?.font_metrics?.status === 'unavailable')
       && !JSON.stringify(protectedCapture).includes(secret));
-    await page.evaluate(() => { Object.defineProperty(document.fonts, 'check', { value: () => false }); });
+    // A face of the element's family that has not loaded (FontFaceSet.check() then answers
+    // false); a family whose faces have all loaded skips that call. The server answers the
+    // font late, so the face is still loading when the page is measured; a missing font
+    // answered at once can already have failed by then and no longer counts as loading.
+    await page.evaluate(() => { document.fonts.add(new FontFace('Arial', 'url(slow-missing-font.woff2)')); });
     const unloaded = await capture();
     writeJson(path.join(tmp, 'typography-font-unavailable.json'), unloaded);
     check('typography: unavailable font produces no body metric', unloaded.elements.find((e) => e.selector === '#arial')?.font_metrics?.limitations.includes('font_not_loaded'));
@@ -2846,7 +3108,7 @@ async function typographyTest(base, tmp) {
 async function main() {
   const keep = process.argv.includes('--keep');
   // --only a,b: run just these groups (scripted, actions, layers, focus, focus2, feedback, native-feedback,
-  // read, reflow, reflow-copy, viewport, dialog, serve, tooling, exit, connect, analyze) while iterating on one part.
+  // read, reflow, reflow-copy, local, viewport, dialog, serve, tooling, exit, connect, analyze, placement) while iterating on one part.
   const oi = process.argv.indexOf('--only');
   const only = oi > 0 && process.argv[oi + 1] ? new Set(process.argv[oi + 1].split(',')) : null;
   const want = (g) => !only || only.has(g);
@@ -2864,6 +3126,7 @@ async function main() {
     if (want('integrity')) await taskIntegrityTest(base, tmp);
     if (want('painted')) await paintedStateTest(base, tmp);
     if (want('gaze')) await gazeGeometryTest(tmp);
+    if (want('placement')) await placementTest(tmp);
     if (want('typography')) await typographyTest(base, tmp);
 
     const outDir = path.join(tmp, 'runs');
@@ -2918,6 +3181,7 @@ async function main() {
     if (want('reflow')) await reflowTest(base, tmp);
     if (want('reflow-copy')) await reflowCopyTest(base, tmp);
     if (want('adaptation')) await adaptationTest(base, tmp);
+    if (want('local')) await localFilesTest(tmp);
     if (want('viewport')) await viewportTest(base, tmp);
     if (want('dialog')) await dialogTest(base, tmp);
     if (want('serve')) await serveTest(base, tmp);

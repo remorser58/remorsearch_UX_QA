@@ -225,8 +225,12 @@ The driver itself never installs anything.
 ## Hosts that sandbox commands (Codex)
 
 A sandbox that blocks Chromium's helper processes but allows local files (Codex
-on macOS) can launch it in one process, which is enough for captures and the
-layout scan of a `file://` page:
+on macOS) can launch it in one process. Chromium in that mode cannot open a second
+browser context, so the driver gives each pass that needs one (the 320 px reflow
+copy, text spacing and short window, the fresh focus walk) a browser process of its
+own. A `file://` page loads its stylesheets, scripts, fonts, images and media from
+any local folder, as a browser does; frames and other documents load only from the
+page's folder and below:
 
 ```sh
 REMORSEARCH_CHROMIUM_ARGS=--single-process python3 scripts/ergo_qa.py scan --url file:///path/to/page.html --out work/scan
@@ -287,9 +291,22 @@ node drivers/web/ergo_drive.mjs serve --scenario sc.json --profile p.json --agen
 node drivers/web/drive_client.mjs --port 9477 act '{"action":"tap","target":"#submit"}'
 node drivers/web/drive_client.mjs --port 9477 inspect
 
+# Measure elements on one page as the layout scan renders it (read-only)
+python3 scripts/ergo_qa.py measure --url URL --device galaxy-s24 --selector '.caption' --selector 'figure img' --out work/m1
+
 # Self-test (local fixture server, a few minutes; --only focus2,reflow-copy runs groups)
 node drivers/web/selftest.mjs [--keep] [--only GROUPS]
 ```
+
+The layout scan writes, beside each page's crops, contact sheets of every screen in
+scroll order (`sheets/<device>-<n>.png`): four phone screens across at CSS size, wider
+screens at half size, two rows a sheet; `scan.md` lists them per device with their screen
+numbers. `measure` opens the page with the scan's device emulation and network policy and
+writes `measure.json` and `measure.png`: per selector the matched elements (box in page
+CSS px, text lines, the styles that decide layout, parent box), and for neighbouring
+matches in page order their gaps, edge and centre offsets, size differences, first-line
+offset and any overlap. The screenshot is the screen around the first overlap (or
+`--at N`, or the first shown match) with every match outlined and numbered.
 
 | Option | Meaning |
 | --- | --- |
@@ -454,9 +471,9 @@ Playwright touchscreen/mouse/keyboard), never as synthetic DOM events or `el.cli
 | `long_press` | `target`, `ms?` (800) | touch held `ms` | button held `ms` |
 | `swipe` | `target?` (start, default centre), `to` or `dx/dy` or `direction`+`distance`, `duration_ms?` (200) | finger path (fling allowed) | drag path |
 | `drag` | `target`, `to`/`dx/dy`/`direction`, `hold_ms?` (250), `duration_ms?` (600) | hold, move, hold 100 ms | same with mouse |
-| `scroll` | `dx/dy` or `direction`+`distance` (content direction), `target?` | slow finger strokes, slop-compensated, corrected | mouse wheel |
+| `scroll` | `dx/dy` or `direction`+`distance` (content direction), `target?`, `wheel?`, `until_end?` | slow finger strokes, slop-compensated, corrected; mouse wheel with `wheel: true` | mouse wheel |
 | `type` | `text`, `target?` (tapped/clicked first), `clear?`, `delay_ms?` | keyboard | keyboard |
-| `press` | `key`, `hold_ms?`, `repeat?` | keyboard | keyboard |
+| `press` | `key`, `hold_ms?`, `repeat?`, `until_end?` | keyboard | keyboard |
 | `gamepad` | `key` or `keys` (the keyboard mapping), `button?` (label), `hold_ms?` | keyboard | keyboard |
 | `wait` | `ms` | | |
 | `snapshot` | | | |
@@ -466,6 +483,9 @@ wait, default 5000), `auto_scroll`, and metadata (`note`, `label`, `comment`,
 `description`, `id`, `intent`, `expected`). A remote (TV) device has no pointer:
 pointer actions fall back to mouse events and a warning is recorded
 (`input: "mouse(fallback)"`). The Switch-style handheld has a touchscreen and uses touch.
+In a scripted run, a `scroll` or `press` step with `until_end: true` is skipped once the
+document has scrolled to its end (the layout scan's screens); a page that scrolls
+inside a box keeps every step.
 
 Targets: a Playwright selector (`#pay`, `text=결제하기`, `role=button[name="..."]`),
 `hotspot:<id>` (from `scenario.hotspots` or the page's

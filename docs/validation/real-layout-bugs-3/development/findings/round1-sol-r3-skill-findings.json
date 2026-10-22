@@ -1,0 +1,137 @@
+[
+  {
+    "page": "p02",
+    "selector": ".app-content .row:last-child .col-lg-6:last-child .ribbon-wrapper",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "At 360x780, the 110x110px Linked ribbon covers the end of the first paragraph line (\"It inherits\") in the Interactive ribbon card. At the bottom of the page its wrapper occupies x=229\u2013339, y=535\u2013645; the paragraph first line extends to x=268 at y=579\u2013601, under the diagonal ribbon. Screenshot: details/p02-ribbon.png; enlarged region: details/p02-ribbon-zoom.png.",
+    "fix": "Reserve space for the 110px ribbon in the card body at the phone breakpoint, or move the ribbon above the paragraph so every line clears its diagonal area."
+  },
+  {
+    "page": "p02",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780, the header right-hand controls occupy x=60\u2013364 (304px wide), exceeding the 360px screen by 4px. The document is 364px wide; a horizontal touch swipe shifts visualViewport.offsetLeft from 0 to 4px and moves the entire page sideways. Screenshots: captures/p02/phone/00.png and details/p02-horizontal.png; measurement: details/p02-scroll-check.json.",
+    "fix": "Reduce the header controls by at least 4px plus the intended right gutter at this breakpoint, for example by reducing link padding or moving one optional control into a menu."
+  },
+  {
+    "page": "p03",
+    "selector": "nav.navbar.navbar-expand-lg form[role=\"search\"] input",
+    "viewport": "laptop",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 1440x900, the Navbar example inside the right column expands its full desktop links within a 529px container. The Search input shrinks to 26x38px at x=1303; its 24px horizontal padding leaves no visible placeholder or usable text area. The attached Search button remains 71.7px wide. Screenshot: details/p03-search.png; measurements: details/p03-search.png.json.",
+    "fix": "Collapse this example navbar according to its container width, or let the links and search form wrap. Give the search input a usable minimum width and prevent it from shrinking to its padding."
+  },
+  {
+    "page": "p04",
+    "selector": "#content .mt-4.text-center.small > span:last-child",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "At 360x780, the Revenue Sources legend is only 166px wide. The Referral dot stays on the first row at x=287.3, y=529.2, while its label wraps alone to x=205.1, y=545.3 (19.2px below the other labels). The dot and label become separated. Screenshot: details/p04-legend.png; text ranges: details/p04-legend.png.json.",
+    "fix": "Make each legend item an inline-flex or nonwrapping inline-block containing both dot and label; allow whole items to wrap together with a consistent gap."
+  },
+  {
+    "page": "p04",
+    "selector": ".navbar form .input-group > input",
+    "viewport": "laptop",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "At 1440x900, the top search input and its attached button share y=16 but have heights 34.39px and 38px. Their bottom edges are y=50.39 and y=54, leaving a visible 3.61px step at the join. Screenshot: details/p04-search.png; enlarged join: details/p04-search-zoom.png.",
+    "fix": "Use the same control size and height for both sides of the input group; remove the input-only small sizing or apply matching sizing to the button."
+  },
+  {
+    "page": "p04",
+    "selector": ".scroll-to-top",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P3",
+    "evidence": "At the page end at 360x780, the fixed 44x44px scroll-to-top button occupies x=300\u2013344, y=720\u2013764. The footer copyright spans x=140.1\u2013323.9, y=731.9\u2013749.9, so its final 23.9px (including the year) sit underneath the button. The footer is at the end of the page and cannot be scrolled clear. Screenshot: details/p04-footer.png; measurements: details/p04-footer.png.json.",
+    "fix": "Place the back-to-top control outside the footer text area, or reserve right/bottom space for it and wrap the copyright within the remaining width."
+  },
+  {
+    "page": "p06",
+    "selector": ".main-header .navbar-search-block",
+    "viewport": "both",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At both sizes, the search input is rendered as a second row below the search icon while the other header icons stay in the first row, increasing the header to 88px. On phone the search block is x=54, y=48, 108x31px and its input is just 53.4px wide, visibly clipping the end of \"Search\". On laptop the extra search row remains visible at y=48. Screenshots: details/p06-header-phone.png and details/p06-header-laptop.png.",
+    "fix": "Restore the navbar search block to a positioned overlay that takes no normal-flow space when closed. In the displayed state, give the field sufficient width and align it with the header controls."
+  },
+  {
+    "page": "p06",
+    "selector": ".content-wrapper.iframe-mode > .nav",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the iframe tab toolbar breaks into two 40px rows (81px total). Close and the left arrow sit at y=88; the right arrow drops to x=0,y=128 and fullscreen to x=314,y=128, splitting the arrow pair across opposite ends and rows. At laptop size these controls share one row. Screenshot: details/p06-header-phone.png; measurements: details/p06-header-phone.png.json.",
+    "fix": "Keep the toolbar controls in one nonwrapping flex row; give the tab strip flex:1 and min-width:0, and prevent the arrow/fullscreen controls from wrapping."
+  },
+  {
+    "page": "p06",
+    "selector": ".tab-empty > h2",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At 360x780, \"No tab selected!\" wraps into two lines anchored to x=0 inside the empty 360px-wide panel. The visible lines are 150.9px and 203.5px wide, placing their centres at x=75.4 and 101.8 instead of the panel centre x=180. The laptop message is centred. Screenshot: details/p06-header-phone.png; text-range measurements: details/p06-header-phone.png.json.",
+    "fix": "Apply text-align:center to the empty-state heading and suitable horizontal padding, preserving the parent flex centring when the message wraps."
+  },
+  {
+    "page": "p07",
+    "selector": ".sidebar-brand .brand-image",
+    "viewport": "laptop",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At 1440x900, the collapsed sidebar is 73.59px wide (centre x=36.80). Its 33px logo occupies x=16.30\u201349.30 (centre x=32.80), visibly 4px left of the sidebar centre. The link retains 8px of empty space after the logo. Screenshot: details/p07-logo.png; enlargement: details/p07-logo-zoom.png; geometry: details/p07-logo.png.json.",
+    "fix": "Remove the remaining text gap/trailing spacing in collapsed mode, or centre the image in a full-width brand link."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-header .navbar-nav.ms-auto",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the header controls extend from x=60 to x=412. The user menu occupies x=348\u2013412, and its 32px avatar at x=364\u2013396 is wholly outside the screen. Document width is 412px; a touch swipe pans 52px sideways, cutting the left side of the main content while revealing the avatar. Screenshots: details/p08-header.png and details/p08-horizontal.png; measurements: details/p08-header.png.json and details/p08-scroll-check.json.",
+    "fix": "Fit the right-side controls within the available header width at 360px, reducing padding or moving optional controls into a menu while retaining the user menu inside the viewport."
+  },
+  {
+    "page": "p08",
+    "selector": ".app-sidebar > .sidebar-wrapper",
+    "viewport": "laptop",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "At 1440x900, the sidebar dark surface ends at page y=900, but its child wrapper starts at page y=104.59 and is 843px high, extending to y=947.59. At the page end (scrollY=48), the dark sidebar ends at screen y=852 while the Mailbox entry is painted below it on the page background around y=870. The extra 48px of sidebar content creates page overflow. Screenshot: details/p08-sidebar.png; measurements: details/p08-sidebar.png.json.",
+    "fix": "Include the added sidebar search area in the height calculation: use a column flex sidebar with fixed brand/search regions and a flex:1, min-height:0 scroll wrapper, or subtract their combined height from the wrapper."
+  },
+  {
+    "page": "p09",
+    "selector": "#example1_paginate .pagination, #example2_paginate .pagination",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "At 360x780, both table pagers need about 337px but are right-aligned inside 304px containers at x=28\u2013332. Each Previous control starts at x=-5.02 and extends to x=78.94, crossing the card left edge (x=7) and the viewport; its left border is cut off. Other table content remains inside x=28\u2013332. Screenshot: details/p09-pagination.png and captures/p09/phone/03.png; geometry: #example1_previous and #example2_previous in the DOM.",
+    "fix": "Use fewer page-number buttons or smaller pagination at the phone breakpoint, or wrap the pager within its container. Avoid end alignment when the pager is wider than its available width."
+  },
+  {
+    "page": "p10",
+    "selector": ".todo-list > li:nth-child(5) > .text",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P3",
+    "evidence": "At 360x780, the fifth to-do label drops entirely below its drag handle and checkbox, beginning at x=52.5,y=470.6. Sibling labels begin at x=121.1 beside their checkboxes, only 10px below their row tops; this label begins 34px below its row top and is displaced 68.6px left. The row grows to 116px versus 68px for adjacent rows. Screenshot: details/p10-todo.png; measurements: details/p10-todo.png.json.",
+    "fix": "Use a flex or grid row with fixed handle/checkbox columns and a min-width:0 text column. Allow the label to wrap within that text column, keeping its first line beside the checkbox."
+  },
+  {
+    "page": "p12",
+    "selector": ".app-content .list-group-item > a.flex-grow-1",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Message links do not shrink to their rows. On phone the 318px rows end at x=339, but the Linear message link starts at x=95 and is 844.55px wide, reaching x=939.55; the document grows to 940px across a 360px screen. On laptop the row ends at x=1419, while the same link reaches x=1737.05; subjects paint outside the card and timestamps move offscreen. Screenshots: details/p12-subject-phone.png, p12-pan-1.png, and details/p12-subject-laptop.png; measurements: the corresponding details/*.png.json.",
+    "fix": "Set min-width:0 and a constrained available width on the message link flex item and subject column. Keep the timestamp from shrinking, and apply ellipsis inside the allocated subject width so neither row nor page overflows."
+  }
+]

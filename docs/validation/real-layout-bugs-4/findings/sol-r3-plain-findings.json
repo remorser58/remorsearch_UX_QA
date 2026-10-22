@@ -1,0 +1,110 @@
+[
+  {
+    "page": "p02",
+    "selector": "#text__asides aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the floated aside is only 77.4 px wide, leaving approximately 45.4 px for text after padding and borders. Its heading breaks \"aside\" into \"asid\" / \"e\", and the paragraph repeatedly breaks words into 1-4 letters. The aside becomes 1,104.7 px tall. See p02-phone-evidence.png.",
+    "fix": "At the phone breakpoint, remove the float, set the aside width to 100% with border-box sizing, and remove its left margin so it stacks above or below the paragraph."
+  },
+  {
+    "page": "p02",
+    "selector": "#embedded__audio audio, #embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "At 360x780, media elements exceed their containing cards. Cards span x=34..326 with a 258 px content area. Audio, embed and object are 300 px wide at x=51..351, protruding 25 px past the card border; the iframe is 304 px wide and ends at x=355, protruding 29 px. See p02-phone-020.png and p02-phone-023.png through p02-phone-025.png.",
+    "fix": "Constrain these embedded elements to max-width:100% of the card content box and use border-box sizing; make their widths responsive instead of retaining the 300 px intrinsic width on phones."
+  },
+  {
+    "page": "p03",
+    "selector": ".documentation > section.flex.five > aside, .documentation > section.flex.five > article.four-fifth",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the contents sidebar remains beside the article and is only 64.8 px wide. The rendered \"Contents\" heading spans x=28.5..143.0, y=111..141, while \"Picnic CSS\" spans x=93.3..279.2, y=107.1..146.1. The two headings visibly overprint across approximately 49.6 px horizontally. See p03-phone-evidence.png.",
+    "fix": "Stack the contents and article at phone widths: give both full width below the desktop breakpoint, then apply the one-fifth/four-fifths columns only at wide widths. Allow sidebar headings and links to fit their allocated width."
+  },
+  {
+    "page": "p03",
+    "selector": "body > nav.loading > label[for=\"bmenu\"]",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the fixed navigation bar is 413 px wide. Its menu control spans x=337.3..413.0, and the menu text spans x=353.1..397.2. Approximately 37.2 of the text's 44.0 px are outside the visible screen, leaving only the beginning of the label visible. See p03-phone-evidence.png.",
+    "fix": "Constrain the fixed navigation bar to the visible viewport with width:100vw, max-width:100vw and border-box sizing, retaining inline padding around the menu control. Wrap long article links to prevent document-wide horizontal overflow."
+  },
+  {
+    "page": "p03",
+    "selector": ".documentation article .flex.six > div > code",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The class-reference lists keep six columns in the narrow article. For example, \"seven\" has a tag spanning x=93.3..152.5, while the next tag starts at x=136.5, overlapping it by 15.9 px and covering approximately 7.5 px of its text. \"twelve\" ends at x=376.9, beyond the 360 px screen. The size-class list also visibly loses word endings beneath adjacent tag backgrounds. See p03-phone-grid-0.png and p03-phone-grid-1.png.",
+    "fix": "Use fewer columns for these text reference lists on phones, such as two columns with six enabled only at a sufficiently wide breakpoint. Give each tag enough space for its complete label and padding."
+  },
+  {
+    "page": "p04",
+    "selector": "#features table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the comparison table is 417.2 px wide and centered at x=-28.6..388.6. Both edges leave the screen by approximately 28.6 px. The beginning of feature labels, including \"Mobile friendly\", and the end of the last column heading are visibly cut off. The table has no containing horizontal scroll region. See p04-phone-evidence.png.",
+    "fix": "Put the table in a horizontal scroll container constrained to the available width and align the table to that container's start. Alternatively, provide a phone layout that fits all columns without negative positioning."
+  },
+  {
+    "page": "p04",
+    "selector": "#job",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "At 360x780, the textarea has a 351.6 px outer width inside a form with a 285 px content area. It spans x=37.5..389.1, extending 41.6 px past the form's right border at x=347.5 and 29.1 px past the screen. Its right border is cut off and it is wider than the other form controls. See p04-phone-end.png.",
+    "fix": "Set the textarea to width:100%, max-width:100% and box-sizing:border-box relative to the form content area; remove the fixed/intrinsic width that exceeds the form."
+  },
+  {
+    "page": "p05",
+    "selector": "#basic-progress-bar > .col-sm-121",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The Basic progress bar section is 2,288.4 px wide at both sizes. On the 1440x900 laptop it spans x=245.3..2533.7, so 1,093.7 px extend past the screen and its explanatory text and sample code are off screen. On the 360x780 phone it spans x=4..2292.4, extending 1,932.4 px past the screen. Adjacent sections retain the normal content width. See p05-laptop-001.png and p05-phone-touch-1.png.",
+    "fix": "Replace the invalid col-sm-121 class with the grid's col-sm-12 class so this section occupies one full available row. Keep its fluid card and code scrollers constrained to that column."
+  },
+  {
+    "page": "p07",
+    "selector": ".documentation article .flex.six > div > code",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the reference lists retain six columns and adjacent tag backgrounds overlap. The \"eleven\" tag spans x=244.5..312.1 while \"twelve\" starts at x=298.5, overlapping it by 13.6 px and covering approximately 5.2 px of the word ending. The last tag extends to x=366.0. The size-class list similarly truncates labels such as \"fourth\" beneath the next tag. See p07-phone-grid-0.png and p07-phone-grid-1.png.",
+    "fix": "Give the text reference lists a responsive column count, with two or three columns on phones and six only where complete labels and padding fit. Avoid allowing adjacent code backgrounds to cover neighboring text."
+  },
+  {
+    "page": "p08",
+    "selector": "#text__asides aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the aside is 77.4 px wide with approximately 45.4 px of usable text width. Its heading breaks \"aside\" into \"asid\" / \"e\" and the paragraph repeatedly splits words into 1-4 letters, producing a 1,104.7 px tall strip beside the main text. See p08-phone-005.png and p08-phone-006.png.",
+    "fix": "At the phone breakpoint, remove the float, use width:100% with border-box sizing, and remove the left margin so the aside stacks with the paragraph."
+  },
+  {
+    "page": "p08",
+    "selector": "#embedded__audio audio, #embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "At 360x780, these media elements protrude through the right borders of their cards. The cards end at x=326 and have 258 px content areas; audio, embed and object are 300 px wide and end at x=351, while the 304 px iframe ends at x=355. The visible protrusions are 25-29 px. See p08-phone-020.png and p08-phone-023.png through p08-phone-025.png.",
+    "fix": "Apply max-width:100% and border-box sizing to the embedded elements, with responsive widths bounded by each card's content area."
+  },
+  {
+    "page": "p08",
+    "selector": "body > header nav ul li a",
+    "viewport": "phone",
+    "category": "other",
+    "severity": "P3",
+    "evidence": "The phone navigation labels run directly together with 0 px horizontal separation, visibly forming \"TextEmbedded contentForm elements\" and \"Project homepageGitHub repo\". The first link ends exactly where the second starts at x=72.05; the second and third meet at x=210.33. Both rows have the same problem. See p08-phone-evidence.png.",
+    "fix": "Add an explicit horizontal gap between navigation items at the phone breakpoint, for example a wrapping flex list with a 12 px column gap, while retaining the row spacing."
+  }
+]

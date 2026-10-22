@@ -1,0 +1,47 @@
+[
+  {
+    "page": "p01",
+    "selector": "ul.pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the large pagination extends from x=12 to x=431.7 while the viewport ends at 360. Its seven items total about 420px, the final page and next-arrow controls are cut off, and the document scrollWidth grows to 432px.",
+    "fix": "Let the pagination wrap or shrink at narrow widths, or constrain it to the container with horizontal overflow instead of allowing its flex children to extend past the viewport."
+  },
+  {
+    "page": "p03",
+    "selector": "table.table.table-hover",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the table is 465.1px wide inside a 330px .bs-component and ends at x=480.1. The fourth column is outside the screen and the document scrollWidth is 480px.",
+    "fix": "Wrap the table in a width-constrained responsive container with overflow-x:auto, or reduce/stack columns at the phone breakpoint."
+  },
+  {
+    "page": "p03",
+    "selector": "ul.pagination.pagination-lg",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the large pagination has scrollWidth 419px inside a 330px container; its final controls reach x=433.9, beyond the 360px viewport.",
+    "fix": "Allow the pagination to wrap or reduce page-control size at phone width so every item stays within its container."
+  },
+  {
+    "page": "p04",
+    "selector": ".sidebar",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P1",
+    "evidence": "At 360x780, the sidebar remains 260px wide and leaves .main-panel only 100px. Cards collapse to 40px, card headings get 10px text columns, and the task table wrapper is 10px wide around an 898px table; the dashboard content is squeezed and unreadable.",
+    "fix": "Use an off-canvas/drawer sidebar below the responsive breakpoint and make .main-panel occupy the full viewport width when the sidebar is closed."
+  },
+  {
+    "page": "p04",
+    "selector": "#chartHours svg",
+    "viewport": "laptop",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 1440x900, the Users Behavior SVG is 706.7px wide and ends at x=1395, but its series paths extend to x=1621.1, about 226px beyond the SVG and 211px beyond the card edge at x=1410. The right side of the plotted area is cut at the chart boundary.",
+    "fix": "Make the chart data/labels and SVG plotting viewport use the same horizontal scale, or regenerate the chart with all series points constrained to the visible viewBox."
+  }
+]

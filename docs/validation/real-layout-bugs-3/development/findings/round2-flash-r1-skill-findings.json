@@ -1,0 +1,38 @@
+[
+  {
+    "page": "p02",
+    "selector": ".row.tile_count",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360x780 CSS px, each metric tile is 120 px wide with only a 102 px text column. The labels render as 'Total Collect...' and 'Total Conne...', and every trend line renders as '4% From last ...' or similar. Eight text lines are ellipsized inside the strip.",
+    "fix": "Use two columns at phone width, or allow the metric label and trend text to wrap; remove the fixed 102 px nowrap/ellipsis treatment for these tiles."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph .bg-white .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The card heading is constrained to 191 px inside a 318 px header and is shown as 'Top Campaign Perfor...'. Computed styles use nowrap, hidden overflow and text-overflow ellipsis.",
+    "fix": "Let the heading wrap or expand to the card header width at narrow viewports instead of applying a 191 px ellipsis box."
+  },
+  {
+    "page": "p03",
+    "selector": ".profile_view .left.col-xs-7 ul.list-unstyled > li:nth-of-type(2)",
+    "viewport": "phone",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "In all nine contact cards at 360x780 CSS px, the second 'Address:' row occupies y=409-428 while the card footer starts at y=418, covering about 10 px of the 19 px line. Only the top half of the second address row is visible.",
+    "fix": "Remove the footer's -20 px top margin at phone width, or reserve footer space in the card flow so the content area grows to contain both address rows."
+  },
+  {
+    "page": "p04",
+    "selector": "#myCarousel > .carousel-control .glyphicon",
+    "viewport": "phone",
+    "category": "alignment",
+    "severity": "P3",
+    "evidence": "At 360x780 CSS px, both 54x500 px carousel controls place their 20x20 px chevrons at y=250-270, so the glyph centre is y=260 while the control centre is y=250. Both arrows sit 10 px below centre; at 1440x900 the 30 px glyphs are correctly centred.",
+    "fix": "Add a -10 px top offset for the 20 px chevrons below 768 px, or centre them with a flex layout."
+  }
+]

@@ -1,0 +1,512 @@
+{
+ "skill": "e72a71c (frozen for round 6)",
+ "how": "one scan command with sixteen --url (both states of each case), file:// URLs, --tiles 40, REMORSEARCH_CHROMIUM_ARGS=--single-process, as the agents ran it, after all six sessions had finished, on an otherwise idle machine; the round 5 version ran right after. \"Matched\" means a layout row on the broken page that names the known defect and is absent from the fixed page.",
+ "matched_known_defects_on_broken_pages": 2,
+ "matched": {
+  "css98-68d7366d": "LY-08: the page is 47 px wider than a 360 px phone (407 px) and the row names the first code block; no layout row on the fixed page",
+  "css98-ecfc9758": "LY-08: the page is 708 px wider than the phone (1068 px) and the row names main; no LY-08 row on the fixed page"
+ },
+ "missed": {
+  "sb-one-page-wonder-ec94d15b": "no layout row names the squeezed text columns (their 69 px text boxes sit in 165 px columns, above the four-em rule of LY-10); the RF-01 row at 320 px appears on both states",
+  "sb-coming-soon-f2f16308": "no row names the social icons below the hero",
+  "holiday-css-1eba36ad": "no layout row; PT-01 (WCAG 2.5.8 target size) lists the 18 px table-of-contents links on the broken page and two other links on the fixed page, and lists the same table-of-contents links on both e27aca20 pages, which predate this fix",
+  "holiday-css-e27aca20": "no row compares text with the screen edge",
+  "wtf-forms-5dcd2aa1": "no row reports the 980 px layout shrunk onto the phone",
+  "spcss-93b12537": "no row compares text with the screen edge"
+ },
+ "states": {
+  "sb-one-page-wonder-ec94d15b-broken/index.html": {
+   "candidates": 2,
+   "layout": [
+    "RF-01 html|/private/tmp/rs-rb6/states/sb-one-page-wonder-ec94d15b-"
+   ],
+   "target_size_rows": 0,
+   "screens": {
+    "galaxy-s24": 7,
+    "laptop-1440": 2
+   },
+   "seconds": [
+    6.1,
+    6.1
+   ]
+  },
+  "sb-one-page-wonder-ec94d15b-fixed/index.html": {
+   "candidates": 2,
+   "layout": [
+    "RF-01 html|/private/tmp/rs-rb6/states/sb-one-page-wonder-ec94d15b-"
+   ],
+   "target_size_rows": 0,
+   "screens": {
+    "galaxy-s24": 4,
+    "laptop-1440": 2
+   },
+   "seconds": [
+    4.3,
+    4.3
+   ]
+  },
+  "sb-coming-soon-f2f16308-broken/dist/index.html": {
+   "candidates": 9,
+   "layout": [],
+   "target_size_rows": 0,
+   "screens": {
+    "galaxy-s24": 2,
+    "laptop-1440": 3
+   },
+   "seconds": [
+    4.9,
+    4.9
+   ]
+  },
+  "sb-coming-soon-f2f16308-fixed/dist/index.html": {
+   "candidates": 9,
+   "layout": [],
+   "target_size_rows": 0,
+   "screens": {
+    "galaxy-s24": 42,
+    "laptop-1440": 42
+   },
+   "seconds": [
+    36.4,
+    36.4
+   ]
+  },
+  "holiday-css-1eba36ad-broken/src/index.html": {
+   "candidates": 230,
+   "layout": [
+    "LY-02 #input > label:nth-of-type(6)|Label after disabled checkbox"
+   ],
+   "target_size_rows": 76,
+   "screens": {
+    "galaxy-s24": 28,
+    "laptop-1440": 42
+   },
+   "seconds": [
+    22.8,
+    35.8
+   ]
+  },
+  "holiday-css-1eba36ad-fixed/src/index.html": {
+   "candidates": 156,
+   "layout": [
+    "LY-02 #input > label:nth-of-type(6)|Label after disabled checkbox"
+   ],
+   "target_size_rows": 2,
+   "screens": {
+    "galaxy-s24": 29,
+    "laptop-1440": 42
+   },
+   "seconds": [
+    23.3,
+    35.8
+   ]
+  },
+  "holiday-css-e27aca20-broken/src/index.html": {
+   "candidates": 224,
+   "layout": [
+    "LY-10 tbody > tr:nth-of-type(1) > th|",
+    "LY-10 tr:nth-of-type(2) > th|"
+   ],
+   "target_size_rows": 74,
+   "screens": {
+    "galaxy-s24": 26,
+    "laptop-1440": 22
+   },
+   "seconds": [
+    21.3,
+    21.3
+   ]
+  },
+  "holiday-css-e27aca20-fixed/src/index.html": {
+   "candidates": 224,
+   "layout": [
+    "LY-10 tbody > tr:nth-of-type(1) > th|",
+    "LY-10 tr:nth-of-type(2) > th|"
+   ],
+   "target_size_rows": 74,
+   "screens": {
+    "galaxy-s24": 26,
+    "laptop-1440": 22
+   },
+   "seconds": [
+    21.5,
+    21.5
+   ]
+  },
+  "wtf-forms-5dcd2aa1-broken/index.html": {
+   "candidates": 1,
+   "layout": [],
+   "target_size_rows": 0,
+   "screens": {
+    "galaxy-s24": 42,
+    "laptop-1440": 42
+   },
+   "seconds": [
+    24.6,
+    27.6
+   ]
+  },
+  "wtf-forms-5dcd2aa1-fixed/index.html": {
+   "candidates": 1,
+   "layout": [],
+   "target_size_rows": 0,
+   "screens": {
+    "galaxy-s24": 42,
+    "laptop-1440": 42
+   },
+   "seconds": [
+    25.4,
+    28.0
+   ]
+  },
+  "spcss-93b12537-broken/index.html": {
+   "candidates": 1,
+   "layout": [],
+   "target_size_rows": 0,
+   "screens": {
+    "galaxy-s24": 4,
+    "laptop-1440": 3
+   },
+   "seconds": [
+    4.0,
+    4.0
+   ]
+  },
+  "spcss-93b12537-fixed/index.html": {
+   "candidates": 1,
+   "layout": [],
+   "target_size_rows": 0,
+   "screens": {
+    "galaxy-s24": 4,
+    "laptop-1440": 3
+   },
+   "seconds": [
+    4.8,
+    4.8
+   ]
+  },
+  "css98-68d7366d-broken/docs/index.html": {
+   "candidates": 56,
+   "layout": [
+    "LY-05 section:nth-of-type(1) > div > div:nth-of-type(3)|I cannot b",
+    "LY-08 page-width| offenders main > pre:nth-of-type(1)",
+    "RF-01 main > section:nth-of-type(8) > div > div:nth-of-type(1) > d",
+    "RF-01 main > section:nth-of-type(8) > div > div:nth-of-type(2) > d"
+   ],
+   "target_size_rows": 29,
+   "screens": {
+    "galaxy-s24": 12,
+    "laptop-1440": 9
+   },
+   "seconds": [
+    9.0,
+    9.0
+   ]
+  },
+  "css98-68d7366d-fixed/docs/index.html": {
+   "candidates": 55,
+   "layout": [
+    "LY-05 section:nth-of-type(1) > div > div:nth-of-type(3)|I cannot b",
+    "RF-01 main > section:nth-of-type(8) > div > div:nth-of-type(1) > d",
+    "RF-01 main > section:nth-of-type(8) > div > div:nth-of-type(2) > d"
+   ],
+   "target_size_rows": 29,
+   "screens": {
+    "galaxy-s24": 12,
+    "laptop-1440": 9
+   },
+   "seconds": [
+    9.6,
+    9.6
+   ]
+  },
+  "css98-ecfc9758-broken/docs/index.html": {
+   "candidates": 25,
+   "layout": [
+    "LY-05 section:nth-of-type(1) > div > div:nth-of-type(3)|I cannot b",
+    "LY-08 page-width| offenders main",
+    "RF-01 main|98.css A design system for building fait"
+   ],
+   "target_size_rows": 15,
+   "screens": {
+    "galaxy-s24": 4,
+    "laptop-1440": 4
+   },
+   "seconds": [
+    3.1,
+    4.2
+   ]
+  },
+  "css98-ecfc9758-fixed/docs/index.html": {
+   "candidates": 23,
+   "layout": [
+    "LY-05 section:nth-of-type(1) > div > div:nth-of-type(3)|I cannot b"
+   ],
+   "target_size_rows": 15,
+   "screens": {
+    "galaxy-s24": 5,
+    "laptop-1440": 4
+   },
+   "seconds": [
+    4.8,
+    4.8
+   ]
+  }
+ },
+ "previous_version": {
+  "skill": "ac1a187 (frozen for round 5)",
+  "matched_known_defects_on_broken_pages": 2,
+  "same_layout_rows_as_e72a71c": true,
+  "states": {
+   "sb-one-page-wonder-ec94d15b-broken/index.html": {
+    "candidates": 2,
+    "layout": [
+     "RF-01 html|/private/tmp/rs-rb6/states/sb-one-page-wonder-ec94d15b-"
+    ],
+    "target_size_rows": 0,
+    "screens": {
+     "galaxy-s24": 42,
+     "laptop-1440": 2
+    },
+    "seconds": [
+     25.7,
+     25.7
+    ]
+   },
+   "sb-one-page-wonder-ec94d15b-fixed/index.html": {
+    "candidates": 2,
+    "layout": [
+     "RF-01 html|/private/tmp/rs-rb6/states/sb-one-page-wonder-ec94d15b-"
+    ],
+    "target_size_rows": 0,
+    "screens": {
+     "galaxy-s24": 4,
+     "laptop-1440": 2
+    },
+    "seconds": [
+     3.6,
+     3.6
+    ]
+   },
+   "sb-coming-soon-f2f16308-broken/dist/index.html": {
+    "candidates": 9,
+    "layout": [],
+    "target_size_rows": 0,
+    "screens": {
+     "galaxy-s24": 2,
+     "laptop-1440": 3
+    },
+    "seconds": [
+     4.3,
+     4.3
+    ]
+   },
+   "sb-coming-soon-f2f16308-fixed/dist/index.html": {
+    "candidates": 9,
+    "layout": [],
+    "target_size_rows": 0,
+    "screens": {
+     "galaxy-s24": 42,
+     "laptop-1440": 42
+    },
+    "seconds": [
+     36.1,
+     36.1
+    ]
+   },
+   "holiday-css-1eba36ad-broken/src/index.html": {
+    "candidates": 230,
+    "layout": [
+     "LY-02 #input > label:nth-of-type(6)|Label after disabled checkbox"
+    ],
+    "target_size_rows": 76,
+    "screens": {
+     "galaxy-s24": 28,
+     "laptop-1440": 42
+    },
+    "seconds": [
+     23.1,
+     35.8
+    ]
+   },
+   "holiday-css-1eba36ad-fixed/src/index.html": {
+    "candidates": 156,
+    "layout": [
+     "LY-02 #input > label:nth-of-type(6)|Label after disabled checkbox"
+    ],
+    "target_size_rows": 2,
+    "screens": {
+     "galaxy-s24": 29,
+     "laptop-1440": 42
+    },
+    "seconds": [
+     23.6,
+     35.9
+    ]
+   },
+   "holiday-css-e27aca20-broken/src/index.html": {
+    "candidates": 224,
+    "layout": [
+     "LY-10 tbody > tr:nth-of-type(1) > th|",
+     "LY-10 tr:nth-of-type(2) > th|"
+    ],
+    "target_size_rows": 74,
+    "screens": {
+     "galaxy-s24": 26,
+     "laptop-1440": 22
+    },
+    "seconds": [
+     21.5,
+     21.5
+    ]
+   },
+   "holiday-css-e27aca20-fixed/src/index.html": {
+    "candidates": 224,
+    "layout": [
+     "LY-10 tbody > tr:nth-of-type(1) > th|",
+     "LY-10 tr:nth-of-type(2) > th|"
+    ],
+    "target_size_rows": 74,
+    "screens": {
+     "galaxy-s24": 26,
+     "laptop-1440": 22
+    },
+    "seconds": [
+     21.5,
+     21.5
+    ]
+   },
+   "wtf-forms-5dcd2aa1-broken/index.html": {
+    "candidates": 1,
+    "layout": [],
+    "target_size_rows": 0,
+    "screens": {
+     "galaxy-s24": 42,
+     "laptop-1440": 42
+    },
+    "seconds": [
+     24.6,
+     27.9
+    ]
+   },
+   "wtf-forms-5dcd2aa1-fixed/index.html": {
+    "candidates": 1,
+    "layout": [],
+    "target_size_rows": 0,
+    "screens": {
+     "galaxy-s24": 42,
+     "laptop-1440": 42
+    },
+    "seconds": [
+     25.4,
+     28.1
+    ]
+   },
+   "spcss-93b12537-broken/index.html": {
+    "candidates": 1,
+    "layout": [],
+    "target_size_rows": 0,
+    "screens": {
+     "galaxy-s24": 4,
+     "laptop-1440": 3
+    },
+    "seconds": [
+     3.6,
+     3.6
+    ]
+   },
+   "spcss-93b12537-fixed/index.html": {
+    "candidates": 1,
+    "layout": [],
+    "target_size_rows": 0,
+    "screens": {
+     "galaxy-s24": 4,
+     "laptop-1440": 3
+    },
+    "seconds": [
+     3.7,
+     3.7
+    ]
+   },
+   "css98-68d7366d-broken/docs/index.html": {
+    "candidates": 56,
+    "layout": [
+     "LY-05 section:nth-of-type(1) > div > div:nth-of-type(3)|I cannot b",
+     "LY-08 page-width| offenders main > pre:nth-of-type(1)",
+     "RF-01 main > section:nth-of-type(8) > div > div:nth-of-type(1) > d",
+     "RF-01 main > section:nth-of-type(8) > div > div:nth-of-type(2) > d"
+    ],
+    "target_size_rows": 29,
+    "screens": {
+     "galaxy-s24": 42,
+     "laptop-1440": 9
+    },
+    "seconds": [
+     29.1,
+     29.1
+    ]
+   },
+   "css98-68d7366d-fixed/docs/index.html": {
+    "candidates": 55,
+    "layout": [
+     "LY-05 section:nth-of-type(1) > div > div:nth-of-type(3)|I cannot b",
+     "RF-01 main > section:nth-of-type(8) > div > div:nth-of-type(1) > d",
+     "RF-01 main > section:nth-of-type(8) > div > div:nth-of-type(2) > d"
+    ],
+    "target_size_rows": 29,
+    "screens": {
+     "galaxy-s24": 12,
+     "laptop-1440": 9
+    },
+    "seconds": [
+     10.1,
+     10.1
+    ]
+   },
+   "css98-ecfc9758-broken/docs/index.html": {
+    "candidates": 25,
+    "layout": [
+     "LY-05 section:nth-of-type(1) > div > div:nth-of-type(3)|I cannot b",
+     "LY-08 page-width| offenders main",
+     "RF-01 main|98.css A design system for building fait"
+    ],
+    "target_size_rows": 15,
+    "screens": {
+     "galaxy-s24": 42,
+     "laptop-1440": 4
+    },
+    "seconds": [
+     26.7,
+     26.7
+    ]
+   },
+   "css98-ecfc9758-fixed/docs/index.html": {
+    "candidates": 23,
+    "layout": [
+     "LY-05 section:nth-of-type(1) > div > div:nth-of-type(3)|I cannot b"
+    ],
+    "target_size_rows": 15,
+    "screens": {
+     "galaxy-s24": 5,
+     "laptop-1440": 4
+    },
+    "seconds": [
+     4.5,
+     4.5
+    ]
+   }
+  }
+ },
+ "timing": {
+  "e72a71c_idle": {
+   "real_s": 93.6,
+   "user_s": 196.53,
+   "sys_s": 23.86
+  },
+  "ac1a187_idle": {
+   "real_s": 122.07,
+   "user_s": 211.28,
+   "sys_s": 24.74
+  }
+ }
+}

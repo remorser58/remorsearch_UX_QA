@@ -1,0 +1,24 @@
+You are a UI QA reviewer. Review the rendered UI of the web pages below and report layout defects a user would notice. This is a read-only review: do not modify the pages.
+
+Pages (local files; each folder holds one saved page with its own assets; open the listed HTML file in a browser):
+- /private/tmp/rs-rb3/runs/run1/pages/p01/docs/materia/index.html
+- /private/tmp/rs-rb3/runs/run1/pages/p02/index.html
+- /private/tmp/rs-rb3/runs/run1/pages/p03/docs/lux/index.html
+- /private/tmp/rs-rb3/runs/run1/pages/p04/dashboard.html
+
+These are saved pages from real open-source projects. Some pages may have layout defects and some may have none. Review every page on its own, at a phone size (360x780 CSS px with touch emulation) and a laptop size (1440x900). Scroll every page from top to end.
+
+Report only visible layout defects: content or text that is cut off, covered or overlapping; content that runs outside the screen or makes the page scroll sideways; a component that breaks into the wrong rows; elements misaligned with the siblings or container they belong to; an element whose size does not match the element it is attached to; an icon or glyph off the centre of its control. Do not report colours, contrast, wording, image content, demo data, missing images or interaction behaviour.
+
+Tools: Node.js 22 is at /private/tmp/rs-node22-dist/node-v22.23.3-darwin-arm64/bin/node, and Playwright 1.56.1 is importable from /private/tmp/rs-ab-tools/node_modules/playwright/index.mjs. Set PLAYWRIGHT_BROWSERS_PATH=/private/tmp/rs-user-check/home/Library/Caches/ms-playwright so it finds the downloaded Chromium. If Chromium fails to launch in your sandbox, launch it with args ['--single-process']. Use screenshots and DOM inspection as you see fit; view the screenshots you capture with your image viewer.
+
+Rules:
+- Read only the files named above and the tools you are told to use and the skill folder named below. Do not search this machine for answer keys, benchmark folders, git history, other repositories or prior reports, and do not open any web site.
+- Do not delegate to other agents.
+- Time budget: 30 minutes. Stop and write the report by then.
+
+Report: write /private/tmp/rs-rb3/out/flash-r1-skill/findings.json as a JSON array. One item per defect: {"page": "p01", "selector": "CSS selector or id of the affected element", "viewport": "phone or laptop or both", "category": "clipped | covered | overlapping | off_screen | wrapping | alignment | size_mismatch | other", "severity": "P0|P1|P2|P3", "evidence": "what you saw, with measurements", "fix": "concrete fix"}. Use an empty array if you find nothing. Also write a short summary.md next to it. Then reply with the number of findings per page.
+
+Use the Remorsearch UX QA skill installed at /private/tmp/rs-rb3/frozen2/remorsearch-ux-qa. Read its SKILL.md first and follow it for this UI QA request; its scan command is /private/tmp/rs-rb3/frozen2/remorsearch-ux-qa/scripts/ergo_qa.py (run it with python3, pass --node with the Node.js path above, and set REMORSEARCH_CHROMIUM_ARGS=--single-process if Chromium cannot launch). The scan accepts file:// URLs.
+
+Work only inside /private/tmp/rs-rb3/out/flash-r1-skill for your own files (scripts, screenshots, notes). Do not read any other folder under /private/tmp/rs-rb3 except the pages listed above and the skill folder.

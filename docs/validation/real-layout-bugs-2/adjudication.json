@@ -1,0 +1,512 @@
+[
+ {
+  "code": 48989,
+  "run": "flash-r1-plain",
+  "index": 0,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".tile_stats_count",
+  "verdict": "KNOWN:gentelella-c0602144"
+ },
+ {
+  "code": 31326,
+  "run": "flash-r1-plain",
+  "index": 1,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".dashboard_graph h2",
+  "verdict": "VALID:c060-campaign-title"
+ },
+ {
+  "code": 16095,
+  "run": "flash-r1-plain",
+  "index": 2,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-broken",
+  "viewport": "phone",
+  "selector": ".profile_view .left",
+  "verdict": "KNOWN:gentelella-fc3c0364"
+ },
+ {
+  "code": 31498,
+  "run": "flash-r1-skill",
+  "index": 0,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".tile_count .count_top, .tile_count .count_bottom",
+  "verdict": "KNOWN:gentelella-c0602144"
+ },
+ {
+  "code": 52989,
+  "run": "flash-r1-skill",
+  "index": 1,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".dashboard_graph .x_title h2",
+  "verdict": "VALID:c060-campaign-title"
+ },
+ {
+  "code": 74616,
+  "run": "flash-r1-skill",
+  "index": 2,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-broken",
+  "viewport": "phone",
+  "selector": ".profile_view .list-unstyled li:nth-child(2)",
+  "verdict": "KNOWN:gentelella-fc3c0364"
+ },
+ {
+  "code": 26031,
+  "run": "flash-r1-skill",
+  "index": 3,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-broken",
+  "viewport": "both",
+  "selector": ".pagination.pagination-split > li:nth-child(6)",
+  "verdict": "VALID:fc3c-pagination-ellipsis-low",
+  "note": "Re-measured: the '...' item's centre is 12 px below the letter buttons' centres (phone and laptop, both states)."
+ },
+ {
+  "code": 67107,
+  "run": "flash-r2-plain",
+  "index": 0,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": "body > .s-content",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 50154,
+  "run": "flash-r2-plain",
+  "index": 1,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-sidebar .s-nav",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 63428,
+  "run": "flash-r2-plain",
+  "index": 2,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".row.tile_count .right",
+  "verdict": "KNOWN:gentelella-c0602144"
+ },
+ {
+  "code": 52634,
+  "run": "flash-r2-plain",
+  "index": 3,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".dashboard_graph .col-md-3 .x_title h2",
+  "verdict": "VALID:c060-campaign-title"
+ },
+ {
+  "code": 48141,
+  "run": "flash-r2-plain",
+  "index": 4,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-fixed",
+  "viewport": "phone",
+  "selector": "ul.pagination.pagination-split",
+  "verdict": "VALID:fc3c-pagination-wrap",
+  "note": "Same wrap as 72950 on the fixed page; it is not the item's defect element."
+ },
+ {
+  "code": 61795,
+  "run": "flash-r2-skill",
+  "index": 0,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-content",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 13093,
+  "run": "flash-r2-skill",
+  "index": 1,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": "#sidebar .s-nav",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 49139,
+  "run": "flash-r2-skill",
+  "index": 2,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".tile_count .tile_stats_count",
+  "verdict": "KNOWN:gentelella-c0602144"
+ },
+ {
+  "code": 58571,
+  "run": "flash-r2-skill",
+  "index": 3,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".dashboard_graph .col-md-3.bg-white .x_title h2",
+  "verdict": "VALID:c060-campaign-title"
+ },
+ {
+  "code": 99948,
+  "run": "flash-r3-plain",
+  "index": 0,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-content",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 52626,
+  "run": "flash-r3-plain",
+  "index": 1,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": "#sidebar > .s-nav",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 49001,
+  "run": "flash-r3-plain",
+  "index": 2,
+  "page": "p02",
+  "state": "gentelella-c0602144-fixed",
+  "viewport": "phone",
+  "selector": ".dashboard_graph .col-md-3 .x_title h2",
+  "verdict": "VALID:c060-campaign-title",
+  "note": "Same as 41391."
+ },
+ {
+  "code": 43749,
+  "run": "flash-r3-plain",
+  "index": 3,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-broken",
+  "viewport": "phone",
+  "selector": ".well.profile_view",
+  "verdict": "KNOWN:gentelella-fc3c0364"
+ },
+ {
+  "code": 48990,
+  "run": "flash-r3-plain",
+  "index": 4,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-broken",
+  "viewport": "laptop",
+  "selector": ".well.profile_view",
+  "verdict": "KNOWN:gentelella-fc3c0364",
+  "note": "Laptop: the footer starts at y=376 while the portrait ends at y=386, so the -20 px footer covers the bottom 10 px of the portrait (re-measured; gone in the fixed state). Same overlap as the phone defect."
+ },
+ {
+  "code": 77319,
+  "run": "flash-r3-skill",
+  "index": 0,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-content",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 77578,
+  "run": "flash-r3-skill",
+  "index": 1,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-nav",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 16848,
+  "run": "flash-r3-skill",
+  "index": 2,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".float-btn",
+  "verdict": "KNOWN:spectre-4cb36cd7",
+  "note": "The GitHub button sits inside #sidebar at x=806-870 on a 360 px screen; part of the same 960 px layout that runs off the screen."
+ },
+ {
+  "code": 41391,
+  "run": "flash-r3-skill",
+  "index": 3,
+  "page": "p02",
+  "state": "gentelella-c0602144-fixed",
+  "viewport": "phone",
+  "selector": ".col-md-3.col-sm-3.col-xs-12.bg-white .x_title h2",
+  "verdict": "VALID:c060-campaign-title",
+  "note": "The campaign heading is cut to 'Top Campaign Perfor...' in both states (scrollWidth 213, clientWidth 191); it is not the item's defect element."
+ },
+ {
+  "code": 51869,
+  "run": "flash-r3-skill",
+  "index": 4,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-broken",
+  "viewport": "phone",
+  "selector": ".well.profile_view .bottom",
+  "verdict": "KNOWN:gentelella-fc3c0364"
+ },
+ {
+  "code": 72950,
+  "run": "flash-r3-skill",
+  "index": 5,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-broken",
+  "viewport": "phone",
+  "selector": ".pagination.pagination-split",
+  "verdict": "VALID:fc3c-pagination-wrap",
+  "note": "Re-measured: X, Y and Z wrap to a second row at 360 px in both states."
+ },
+ {
+  "code": 52367,
+  "run": "sol-r1-plain",
+  "index": 0,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".tile_count .tile_stats_count .right",
+  "verdict": "KNOWN:gentelella-c0602144"
+ },
+ {
+  "code": 47603,
+  "run": "sol-r1-plain",
+  "index": 1,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".dashboard_graph .bg-white .x_title h2",
+  "verdict": "VALID:c060-campaign-title"
+ },
+ {
+  "code": 36387,
+  "run": "sol-r1-plain",
+  "index": 2,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-broken",
+  "viewport": "both",
+  "selector": ".well.profile_view > .bottom",
+  "verdict": "KNOWN:gentelella-fc3c0364"
+ },
+ {
+  "code": 37448,
+  "run": "sol-r1-skill",
+  "index": 0,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".tile_count .tile_stats_count .right",
+  "verdict": "KNOWN:gentelella-c0602144"
+ },
+ {
+  "code": 36619,
+  "run": "sol-r1-skill",
+  "index": 1,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".dashboard_graph > .bg-white > .x_title > h2",
+  "verdict": "VALID:c060-campaign-title"
+ },
+ {
+  "code": 38129,
+  "run": "sol-r1-skill",
+  "index": 2,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-broken",
+  "viewport": "both",
+  "selector": ".profile_view .bottom",
+  "verdict": "KNOWN:gentelella-fc3c0364"
+ },
+ {
+  "code": 69310,
+  "run": "sol-r2-plain",
+  "index": 0,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-content",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 22393,
+  "run": "sol-r2-plain",
+  "index": 1,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": "#sidebar .s-nav",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 77750,
+  "run": "sol-r2-plain",
+  "index": 2,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-brand",
+  "verdict": "KNOWN:spectre-4cb36cd7",
+  "note": "Same as 52901."
+ },
+ {
+  "code": 36850,
+  "run": "sol-r2-plain",
+  "index": 3,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".tile_count .tile_stats_count .right",
+  "verdict": "KNOWN:gentelella-c0602144"
+ },
+ {
+  "code": 95900,
+  "run": "sol-r2-plain",
+  "index": 4,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".dashboard_graph .x_title h2",
+  "verdict": "VALID:c060-campaign-title"
+ },
+ {
+  "code": 71797,
+  "run": "sol-r2-skill",
+  "index": 0,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-content",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 32662,
+  "run": "sol-r2-skill",
+  "index": 1,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": "#sidebar .s-nav",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 55576,
+  "run": "sol-r2-skill",
+  "index": 2,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-title::before, .s-subtitle::before",
+  "verdict": "KNOWN:spectre-4cb36cd7",
+  "note": "Same as 52901."
+ },
+ {
+  "code": 45635,
+  "run": "sol-r2-skill",
+  "index": 3,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".tile_count .tile_stats_count .right",
+  "verdict": "KNOWN:gentelella-c0602144"
+ },
+ {
+  "code": 94063,
+  "run": "sol-r2-skill",
+  "index": 4,
+  "page": "p02",
+  "state": "gentelella-c0602144-broken",
+  "viewport": "phone",
+  "selector": ".dashboard_graph .bg-white .x_title h2",
+  "verdict": "VALID:c060-campaign-title"
+ },
+ {
+  "code": 67886,
+  "run": "sol-r3-plain",
+  "index": 0,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-content",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 62574,
+  "run": "sol-r3-plain",
+  "index": 1,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": "#sidebar .s-nav",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 52901,
+  "run": "sol-r3-plain",
+  "index": 2,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-title::before",
+  "verdict": "KNOWN:spectre-4cb36cd7",
+  "note": "The first section title's white ::before background starts at y=50 and cuts the bottom 12 px off the fixed brand logo (y=30-62); re-measured. Counted with the sidebar and content overlap it belongs to."
+ },
+ {
+  "code": 53709,
+  "run": "sol-r3-plain",
+  "index": 3,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-broken",
+  "viewport": "both",
+  "selector": ".well.profile_view .bottom",
+  "verdict": "KNOWN:gentelella-fc3c0364"
+ },
+ {
+  "code": 37591,
+  "run": "sol-r3-skill",
+  "index": 0,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": ".s-content",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 82943,
+  "run": "sol-r3-skill",
+  "index": 1,
+  "page": "p01",
+  "state": "spectre-4cb36cd7-broken",
+  "viewport": "phone",
+  "selector": "#sidebar .s-nav",
+  "verdict": "KNOWN:spectre-4cb36cd7"
+ },
+ {
+  "code": 33255,
+  "run": "sol-r3-skill",
+  "index": 2,
+  "page": "p03",
+  "state": "gentelella-fc3c0364-broken",
+  "viewport": "both",
+  "selector": ".profile_view > .bottom",
+  "verdict": "KNOWN:gentelella-fc3c0364"
+ }
+]

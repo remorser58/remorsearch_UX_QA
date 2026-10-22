@@ -1,0 +1,83 @@
+[
+  {
+    "page": "p03",
+    "selector": "main.documentation > section > aside",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P1",
+    "evidence": "At 360px the five-column doc layout squeezes the Contents sidebar to 64.8px (x=18..82.8) while the article starts at x=82.8. The 'Contents' heading is 114.4px wide (x=28.5..142.9) and paints over the article h1 'Picnic CSS' (text x=93.3..279.2, y=107..146); the two headings overlap across y=111..141 and read as one garbled line. Sidebar links (x=44.4..122.7) also run across the article paragraph at x=93.3.",
+    "fix": "Stack the aside above the article below the small breakpoint (let section.flex.five wrap and give aside/article 100% width under 600px), or hide the sidebar and rely on the top nav; keep the aside at least as wide as its longest link."
+  },
+  {
+    "page": "p03",
+    "selector": "main.documentation > section > article > blockquote:nth-of-type(4) > p > a",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "Document scrollWidth is 413 at a 360px viewport; window.scrollTo(500,0) lands at scrollX=53, so the page pans sideways. The bare URL 'http://jsfiddle.net/franciscop/wwfby2y8/' runs from x=112.7 to x=413 and is the widest offender; inline code 'twelve' (right edge 376.9) and 'three-fourth' (368.4) also pass the viewport edge.",
+    "fix": "Allow long URLs and code to break (overflow-wrap:anywhere or word-break:break-word on article a and article code), or constrain the blockquote paragraph width so the link wraps."
+  },
+  {
+    "page": "p04",
+    "selector": "body > main > section:nth-of-type(3) > table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The comparison table is 417.2px wide inside a 328px section at x=-28.6, so its left edge sits outside the 360px viewport and the first-column labels are cut ('Mobile friendly' renders as 'obile / endly', 'Works out of the box' as 'orks out'). Document scrollWidth is 389 and the page pans 29px sideways.",
+    "fix": "Wrap the table in a horizontally scrollable container (overflow-x:auto) or drop max-width:80% so it can shrink; below 480px reduce cell padding/font so it fits 328px, or stack the rows as label/value blocks."
+  },
+  {
+    "page": "p06",
+    "selector": "main > header.hero > div.content > pre.npm",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The hero code line '<link href=\"https://unpkg.com/picnic\" rel=\"stylesheet\">' is a 610px-wide nowrap pre inside a 360px hero (x=0..610). Document scrollWidth is 610 at 360 and the page pans 250px sideways. The fixed nav is also 610px wide, so the 'menu' toggle sits at x=523.7 and is off-screen until the page is dragged sideways; the code line is cut mid-string at the right edge.",
+    "fix": "Give pre.npm overflow-x:auto with max-width:100% and box-sizing:border-box (and min-width:0 on its flex parent) so the hero and nav stay 360px and only the code line scrolls inside its own box."
+  },
+  {
+    "page": "p07",
+    "selector": "a.top",
+    "viewport": "both",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "The fixed 'Up you go' link is pinned at top:793px (phone) / top:900px (laptop) with height 0 and no background, so its blue text paints over page content: on phone it covers the code block '.cool:hover' at y=745..770; on laptop it crosses the code sample lines at the bottom of the viewport. The text under the control is obscured.",
+    "fix": "Give the fixed link a solid background, padding and border-radius (or move it into the sidebar or above the footer) so it never paints directly on body text, and anchor it with bottom:1rem instead of a zero-height top offset."
+  },
+  {
+    "page": "p07",
+    "selector": "html > body > nav",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P3",
+    "evidence": "At 360px the nav box is 52.8px tall but its menu wraps to y=30.3..77.8, so the nav's bottom border at y=52.8 cuts through the 'GitHub' label (text y=43.8..63.8) and the Documentation button (y=35.6..72.5). The rule is visible crossing the middle of 'GitHub' in the rendered header.",
+    "fix": "Let the fixed nav grow with its wrapped content (auto height with padding-bottom) or keep brand and menu on one row by shrinking the buttons below 400px; ensure the border sits below the last row."
+  },
+  {
+    "page": "p07",
+    "selector": "div.flex.six > div:nth-of-type(12) > code",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P3",
+    "evidence": "The 12-column grid cell for 'twelve' is 54px wide (x=287.9..341.9) but the inline code renders 67.6px wide (x=298.5..366), past the cell and 6px past the 360px viewport. Document scrollWidth is 366 and the page pans 6px sideways; the fixed nav is also 366px wide.",
+    "fix": "Let the cell content wrap or clip (code{overflow-wrap:anywhere}, .flex.six>div{min-width:0}) and reduce the grid gutter below 400px so the last cell stays inside the viewport."
+  },
+  {
+    "page": "p08",
+    "selector": "#text__asides > aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360px the aside is 77.4px wide (x=231.6..309) and its paragraph only 45.4px, so the callout breaks every one or two letters onto its own line ('Lore / m / ipsu / m / dolor') and the heading renders 'This is an asid / e'. The aside grows to 1104.7px tall, versus 221.2px for the same block in the p02 variant.",
+    "fix": "Below about 600px make the aside full width and place it above or below the paragraph (display:block; width:100%; float:none) so it keeps a normal paragraph measure."
+  },
+  {
+    "page": "p01",
+    "selector": "body > main > section:nth-of-type(3) > table",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "The comparison table is 328px wide but its content is 474px, so the third column ('Custom CSS') is entirely outside the visible box and the 'No CSS' header is cut mid-word at x=344. The table scrolls inside its own box (overflow:auto), so the page does not pan, but the visible header and cells are truncated with no indication of more content.",
+    "fix": "Make the table fit narrow screens (stack columns or drop to two columns under 480px), or add a visible scroll affordance and keep header cells from being cut."
+  }
+]

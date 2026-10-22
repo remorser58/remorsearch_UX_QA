@@ -1,0 +1,297 @@
+[
+ {
+  "round": "a",
+  "run": "flash-r1-skill",
+  "model": "flash",
+  "k": 1,
+  "shown": 11,
+  "found": 7,
+  "found_items": [
+   "p01:B3",
+   "p02:H",
+   "p03:B8",
+   "p08:H",
+   "p09:A3",
+   "p11:B2",
+   "p12:B6"
+  ],
+  "missed": [
+   "p05:B7",
+   "p06:A2",
+   "p10:A1",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 4,
+  "findings": 12,
+  "minutes": 41.44,
+  "note": "stop message at 35.89 min"
+ },
+ {
+  "round": "a",
+  "run": "flash-r2-skill",
+  "model": "flash",
+  "k": 2,
+  "shown": 12,
+  "found": 7,
+  "found_items": [
+   "p01:B3",
+   "p02:H",
+   "p05:H",
+   "p08:H",
+   "p09:A3",
+   "p11:B2",
+   "p12:H"
+  ],
+  "missed": [
+   "p02:B5",
+   "p04:S1",
+   "p07:B1",
+   "p08:B4",
+   "p10:A1"
+  ],
+  "alarms": 0,
+  "unsupported": 1,
+  "valid_extra": 3,
+  "findings": 12,
+  "minutes": 37.71,
+  "note": "stop message at 35.83 min"
+ },
+ {
+  "round": "a",
+  "run": "flash-r3-skill",
+  "model": "flash",
+  "k": 3,
+  "shown": 11,
+  "found": 4,
+  "found_items": [
+   "p02:H",
+   "p03:B8",
+   "p08:H",
+   "p12:B6"
+  ],
+  "missed": [
+   "p02:B5",
+   "p04:S1",
+   "p05:B7",
+   "p06:A2",
+   "p07:B1",
+   "p08:B4",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 2,
+  "valid_extra": 2,
+  "findings": 8,
+  "minutes": 37.56,
+  "note": "stop message at 35.68 min"
+ },
+ {
+  "round": "a",
+  "run": "sol-r1-skill",
+  "model": "sol",
+  "k": 1,
+  "shown": 11,
+  "found": 8,
+  "found_items": [
+   "p01:B3",
+   "p02:H",
+   "p06:A2",
+   "p08:H",
+   "p09:A3",
+   "p10:A1",
+   "p11:B2",
+   "p12:B6"
+  ],
+  "missed": [
+   "p03:B8",
+   "p05:B7",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 6,
+  "findings": 14,
+  "minutes": 17.22,
+  "note": ""
+ },
+ {
+  "round": "a",
+  "run": "sol-r2-skill",
+  "model": "sol",
+  "k": 2,
+  "shown": 12,
+  "found": 10,
+  "found_items": [
+   "p01:B3",
+   "p02:H",
+   "p04:S1",
+   "p05:H",
+   "p07:B1",
+   "p08:H",
+   "p09:A3",
+   "p10:A1",
+   "p11:B2",
+   "p12:H"
+  ],
+  "missed": [
+   "p02:B5",
+   "p08:B4"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 8,
+  "findings": 18,
+  "minutes": 20.47,
+  "note": ""
+ },
+ {
+  "round": "a",
+  "run": "sol-r3-skill",
+  "model": "sol",
+  "k": 3,
+  "shown": 11,
+  "found": 7,
+  "found_items": [
+   "p02:H",
+   "p04:S1",
+   "p06:A2",
+   "p07:B1",
+   "p08:B4",
+   "p08:H",
+   "p12:B6"
+  ],
+  "missed": [
+   "p02:B5",
+   "p03:B8",
+   "p05:B7",
+   "p12:H"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 8,
+  "findings": 15,
+  "minutes": 20.73,
+  "note": ""
+ },
+ {
+  "round": "b",
+  "run": "flash-r1-skill",
+  "model": "flash",
+  "k": 1,
+  "shown": 3,
+  "found": 3,
+  "found_items": [
+   "p02:gentelella-c0602144",
+   "p03:gentelella-fc3c0364",
+   "p04:bootstrap-d255ba37"
+  ],
+  "missed": [],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 4,
+  "minutes": 35.04,
+  "note": ""
+ },
+ {
+  "round": "b",
+  "run": "flash-r2-skill",
+  "model": "flash",
+  "k": 2,
+  "shown": 3,
+  "found": 3,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p02:gentelella-c0602144",
+   "p04:bootstrap-d255ba37"
+  ],
+  "missed": [],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 5,
+  "minutes": 35.17,
+  "note": ""
+ },
+ {
+  "round": "b",
+  "run": "flash-r3-skill",
+  "model": "flash",
+  "k": 3,
+  "shown": 2,
+  "found": 2,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p03:gentelella-fc3c0364"
+  ],
+  "missed": [],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 3,
+  "minutes": 37.35,
+  "note": "stop message at 35.47 min"
+ },
+ {
+  "round": "b",
+  "run": "sol-r1-skill",
+  "model": "sol",
+  "k": 1,
+  "shown": 3,
+  "found": 3,
+  "found_items": [
+   "p02:gentelella-c0602144",
+   "p03:gentelella-fc3c0364",
+   "p04:bootstrap-d255ba37"
+  ],
+  "missed": [],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 4,
+  "minutes": 10.93,
+  "note": ""
+ },
+ {
+  "round": "b",
+  "run": "sol-r2-skill",
+  "model": "sol",
+  "k": 2,
+  "shown": 3,
+  "found": 2,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p04:bootstrap-d255ba37"
+  ],
+  "missed": [
+   "p02:gentelella-c0602144"
+  ],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 0,
+  "findings": 3,
+  "minutes": 13.38,
+  "note": ""
+ },
+ {
+  "round": "b",
+  "run": "sol-r3-skill",
+  "model": "sol",
+  "k": 3,
+  "shown": 2,
+  "found": 2,
+  "found_items": [
+   "p01:spectre-4cb36cd7",
+   "p03:gentelella-fc3c0364"
+  ],
+  "missed": [],
+  "alarms": 0,
+  "unsupported": 0,
+  "valid_extra": 1,
+  "findings": 4,
+  "minutes": 11.17,
+  "note": ""
+ }
+]

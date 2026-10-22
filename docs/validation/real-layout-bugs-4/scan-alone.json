@@ -1,0 +1,750 @@
+{
+ "skill": "51240ed (frozen for round 4)",
+ "how": "one scan command with sixteen --url (both states of each case), file:// URLs, REMORSEARCH_CHROMIUM_ARGS=--single-process, three pages at a time. \"Matched\" means a layout row on the broken page that names the known defect and is absent from the fixed page.",
+ "matched_known_defects_on_broken_pages": 5,
+ "matched": {
+  "simple-css-c6af6463": "LY-10: the aside is a 77.39 px column on the phone (no LY-10 row on the fixed page)",
+  "mvp-11722ccc": "LY-08 names #job, the textarea, among the elements outside the screen; on the fixed page the same row names only the table",
+  "picnic-8ae635b1": "LY-08: the page is 250 px wider than the screen because of header > div > pre",
+  "picnic-ec6a3d0d": "LY-03: Picnic CSS overlaps the text of aside > h2; LY-08: 53 px wider than the screen (6 px on the fixed page)",
+  "mini-css-0ed75ca8": "LY-08: 1932 px wider than the screen because of #basic-progress-bar > div"
+ },
+ "missed": {
+  "simple-css-36144b34": "no row names the header links touching",
+  "mvp-66ec5a39": "no row compares the textarea width with the fields above it",
+  "picnic-8bb0d652": "no row names the menu links hanging below the fixed bar"
+ },
+ "states": {
+  "simple-css-c6af6463-broken/index.html": {
+   "candidates": 28,
+   "layout_rows": 3,
+   "layout": [
+    "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+    "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+    "LY-02 #text__asides > p:nth-of-type(3)|Lorem ipsum dolor sit amet ",
+    "LY-10 aside|",
+    "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+   ],
+   "seconds": [
+    693.6,
+    693.6
+   ]
+  },
+  "simple-css-c6af6463-fixed/index.html": {
+   "candidates": 26,
+   "layout_rows": 3,
+   "layout": [
+    "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+    "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+    "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+   ],
+   "seconds": [
+    685.7,
+    688.6
+   ]
+  },
+  "simple-css-36144b34-broken/index.html": {
+   "candidates": 28,
+   "layout_rows": 3,
+   "layout": [
+    "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+    "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+    "LY-02 #text__asides > p:nth-of-type(3)|Lorem ipsum dolor sit amet ",
+    "LY-10 aside|",
+    "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+   ],
+   "seconds": [
+    718.4,
+    718.4
+   ]
+  },
+  "simple-css-36144b34-fixed/index.html": {
+   "candidates": 28,
+   "layout_rows": 3,
+   "layout": [
+    "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+    "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+    "LY-02 #text__asides > p:nth-of-type(3)|Lorem ipsum dolor sit amet ",
+    "LY-10 aside|",
+    "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+   ],
+   "seconds": [
+    61.2,
+    61.2
+   ]
+  },
+  "mvp-66ec5a39-broken/index.html": {
+   "candidates": 78,
+   "layout_rows": 11,
+   "layout": [
+    "LY-02 #docs > ul > li:nth-of-type(2) > small|— content area with n",
+    "LY-02 #docs > ul > li:nth-of-type(3) > ul > li > small|— quote att",
+    "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(1) > small|— solid l",
+    "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(2) > small|— outline",
+    "LY-02 li:nth-of-type(10) > ul > li > small|— image callout caption",
+    "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > small|— dropdo",
+    "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > ul > li > smal",
+    "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(4) > small|— large ",
+    "LY-02 li:nth-of-type(7) > small|— default expandable content secti",
+    "LY-02 li:nth-of-type(7) > ul > li > small|— expandable heading",
+    "RF-01 #ideas > form|A company you like: A hobby you like: Bu"
+   ],
+   "seconds": [
+    93.2,
+    115.2
+   ]
+  },
+  "mvp-66ec5a39-fixed/index.html": {
+   "candidates": 78,
+   "layout_rows": 11,
+   "layout": [
+    "LY-02 #docs > ul > li:nth-of-type(2) > small|— content area with n",
+    "LY-02 #docs > ul > li:nth-of-type(3) > ul > li > small|— quote att",
+    "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(1) > small|— solid l",
+    "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(2) > small|— outline",
+    "LY-02 li:nth-of-type(10) > ul > li > small|— image callout caption",
+    "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > small|— dropdo",
+    "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > ul > li > smal",
+    "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(4) > small|— large ",
+    "LY-02 li:nth-of-type(7) > small|— default expandable content secti",
+    "LY-02 li:nth-of-type(7) > ul > li > small|— expandable heading",
+    "RF-01 #ideas > form|A company you like: A hobby you like: Bu"
+   ],
+   "seconds": [
+    75.3,
+    85.1
+   ]
+  },
+  "mvp-11722ccc-broken/index.html": {
+   "candidates": 54,
+   "layout_rows": 2,
+   "layout": [
+    "LY-08 page-width| offenders #job,table",
+    "RF-01 #ideas > form|A skill you have: Ideal business model: "
+   ],
+   "seconds": [
+    83.4,
+    104.0
+   ]
+  },
+  "mvp-11722ccc-fixed/index.html": {
+   "candidates": 54,
+   "layout_rows": 2,
+   "layout": [
+    "LY-08 page-width| offenders table",
+    "RF-01 #ideas > form|A skill you have: Ideal business model: "
+   ],
+   "seconds": [
+    55.1,
+    109.2
+   ]
+  },
+  "picnic-8ae635b1-broken/index.html": {
+   "candidates": 17,
+   "layout_rows": 1,
+   "layout": [
+    "LY-08 page-width| offenders header > div > pre"
+   ],
+   "seconds": [
+    38.7,
+    44.3
+   ]
+  },
+  "picnic-8ae635b1-fixed/index.html": {
+   "candidates": 16,
+   "layout_rows": 0,
+   "layout": [],
+   "seconds": [
+    55.4,
+    56.3
+   ]
+  },
+  "picnic-8bb0d652-broken/documentation.html": {
+   "candidates": 618,
+   "layout_rows": 2,
+   "layout": [
+    "LY-08 page-width| offenders div:nth-of-type(22) > div:nth-of-type(12) > code",
+    "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+   ],
+   "seconds": [
+    49.6,
+    62.2
+   ]
+  },
+  "picnic-8bb0d652-fixed/documentation.html": {
+   "candidates": 617,
+   "layout_rows": 2,
+   "layout": [
+    "LY-08 page-width| offenders div:nth-of-type(22) > div:nth-of-type(12) > code",
+    "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+   ],
+   "seconds": [
+    67.9,
+    67.9
+   ]
+  },
+  "picnic-ec6a3d0d-broken/documentation.html": {
+   "candidates": 607,
+   "layout_rows": 4,
+   "layout": [
+    "LY-02 div:nth-of-type(50) > button:nth-of-type(2)|Bottom (default)",
+    "LY-03 #picnic-css|Picnic CSS",
+    "LY-08 page-width| offenders blockquote:nth-of-type(4) > p > a,div:nth-of-type(22) > div:nth-of-type(12) > code,div:nth-of-type(29) > div:nth-of-type(6) > code",
+    "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+   ],
+   "seconds": [
+    69.6,
+    78.1
+   ]
+  },
+  "picnic-ec6a3d0d-fixed/documentation.html": {
+   "candidates": 605,
+   "layout_rows": 2,
+   "layout": [
+    "LY-08 page-width| offenders div:nth-of-type(22) > div:nth-of-type(12) > code",
+    "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+   ],
+   "seconds": [
+    44.1,
+    52.4
+   ]
+  },
+  "mini-css-0ed75ca8-broken/docs/progress.html": {
+   "candidates": 22,
+   "layout_rows": 15,
+   "layout": [
+    "LY-01 #donut-spinner > div > div > div:nth-of-type(2) > div:nth-of",
+    "LY-01 #donut-spinner > div > div > div:nth-of-type(3) > div > div:",
+    "LY-01 #progress-variants > div > div > div:nth-of-type(2) > div:nt",
+    "LY-01 #progress-variants > div > div > div:nth-of-type(3) > div > ",
+    "LY-01 #spinner-variants > div > div > div:nth-of-type(2) > div:nth",
+    "LY-01 div:nth-of-type(2) > div > div > div:nth-of-type(2) > pre|< ",
+    "LY-01 header > a:nth-of-type(1)|m",
+    "LY-04 #basic-progress-bar > div > div > div:nth-of-type(2)|Process",
+    "LY-04 #donut-spinner > div > div > div:nth-of-type(2)|Donut spinne",
+    "LY-04 #progress-variants > div > div > div:nth-of-type(2)|Secondar",
+    "LY-04 #spinner-variants > div > div > div:nth-of-type(2)|Apart fro",
+    "LY-08 page-width| offenders #basic-progress-bar > div",
+    "RF-01 #basic-progress-bar > div|Basic progress bar Process is 0% c"
+   ],
+   "seconds": [
+    34.8,
+    50.2
+   ]
+  },
+  "mini-css-0ed75ca8-fixed/docs/progress.html": {
+   "candidates": 23,
+   "layout_rows": 16,
+   "layout": [
+    "LY-01 #basic-progress-bar > div > div > div:nth-of-type(2) > div:n",
+    "LY-01 #basic-progress-bar > div > div > div:nth-of-type(3) > div >",
+    "LY-01 #donut-spinner > div > div > div:nth-of-type(2) > div:nth-of",
+    "LY-01 #donut-spinner > div > div > div:nth-of-type(3) > div > div:",
+    "LY-01 #progress-variants > div > div > div:nth-of-type(2) > div:nt",
+    "LY-01 #progress-variants > div > div > div:nth-of-type(3) > div > ",
+    "LY-01 #spinner-variants > div > div > div:nth-of-type(2) > div:nth",
+    "LY-01 div:nth-of-type(2) > div > div > div:nth-of-type(2) > pre|< ",
+    "LY-01 header > a:nth-of-type(1)|m",
+    "LY-04 #basic-progress-bar > div > div > div:nth-of-type(2)|Process",
+    "LY-04 #donut-spinner > div > div > div:nth-of-type(2)|Donut spinne",
+    "LY-04 #progress-variants > div > div > div:nth-of-type(2)|Secondar",
+    "LY-04 #spinner-variants > div > div > div:nth-of-type(2)|Apart fro"
+   ],
+   "seconds": [
+    38.2,
+    43.1
+   ]
+  }
+ },
+ "previous_version": {
+  "skill": "c5a7fbe (frozen for round 3)",
+  "matched_known_defects_on_broken_pages": 3,
+  "matched": [
+   "picnic-8ae635b1",
+   "picnic-ec6a3d0d",
+   "mini-css-0ed75ca8"
+  ],
+  "states": {
+   "simple-css-c6af6463-broken/index.html": {
+    "candidates": 27,
+    "layout_rows": 2,
+    "layout": [
+     "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+     "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+     "LY-02 #text__asides > p:nth-of-type(3)|Lorem ipsum dolor sit amet ",
+     "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+    ],
+    "seconds": [
+     172.0,
+     172.1
+    ]
+   },
+   "simple-css-c6af6463-fixed/index.html": {
+    "candidates": 26,
+    "layout_rows": 3,
+    "layout": [
+     "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+     "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+     "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+    ],
+    "seconds": [
+     185.3,
+     185.3
+    ]
+   },
+   "simple-css-36144b34-broken/index.html": {
+    "candidates": 27,
+    "layout_rows": 2,
+    "layout": [
+     "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+     "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+     "LY-02 #text__asides > p:nth-of-type(3)|Lorem ipsum dolor sit amet ",
+     "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+    ],
+    "seconds": [
+     178.8,
+     178.8
+    ]
+   },
+   "simple-css-36144b34-fixed/index.html": {
+    "candidates": 27,
+    "layout_rows": 3,
+    "layout": [
+     "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+     "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+     "LY-02 #text__asides > p:nth-of-type(3)|Lorem ipsum dolor sit amet ",
+     "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+    ],
+    "seconds": [
+     510.4,
+     510.4
+    ]
+   },
+   "mvp-66ec5a39-broken/index.html": {
+    "candidates": 78,
+    "layout_rows": 11,
+    "layout": [
+     "LY-02 #docs > ul > li:nth-of-type(2) > small|— content area with n",
+     "LY-02 #docs > ul > li:nth-of-type(3) > ul > li > small|— quote att",
+     "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(1) > small|— solid l",
+     "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(2) > small|— outline",
+     "LY-02 li:nth-of-type(10) > ul > li > small|— image callout caption",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > small|— dropdo",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > ul > li > smal",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(4) > small|— large ",
+     "LY-02 li:nth-of-type(7) > small|— default expandable content secti",
+     "LY-02 li:nth-of-type(7) > ul > li > small|— expandable heading",
+     "RF-01 #ideas > form|A company you like: A hobby you like: Bu"
+    ],
+    "seconds": [
+     69.8,
+     150.9
+    ]
+   },
+   "mvp-66ec5a39-fixed/index.html": {
+    "candidates": 78,
+    "layout_rows": 11,
+    "layout": [
+     "LY-02 #docs > ul > li:nth-of-type(2) > small|— content area with n",
+     "LY-02 #docs > ul > li:nth-of-type(3) > ul > li > small|— quote att",
+     "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(1) > small|— solid l",
+     "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(2) > small|— outline",
+     "LY-02 li:nth-of-type(10) > ul > li > small|— image callout caption",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > small|— dropdo",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > ul > li > smal",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(4) > small|— large ",
+     "LY-02 li:nth-of-type(7) > small|— default expandable content secti",
+     "LY-02 li:nth-of-type(7) > ul > li > small|— expandable heading",
+     "RF-01 #ideas > form|A company you like: A hobby you like: Bu"
+    ],
+    "seconds": [
+     358.7,
+     358.7
+    ]
+   },
+   "mvp-11722ccc-broken/index.html": {
+    "candidates": 54,
+    "layout_rows": 2,
+    "layout": [
+     "LY-08 page-width| offenders table",
+     "RF-01 #ideas > form|A skill you have: Ideal business model: "
+    ],
+    "seconds": [
+     66.7,
+     69.1
+    ]
+   },
+   "mvp-11722ccc-fixed/index.html": {
+    "candidates": 54,
+    "layout_rows": 2,
+    "layout": [
+     "LY-08 page-width| offenders table",
+     "RF-01 #ideas > form|A skill you have: Ideal business model: "
+    ],
+    "seconds": [
+     42.6,
+     68.7
+    ]
+   },
+   "picnic-8ae635b1-broken/index.html": {
+    "candidates": 17,
+    "layout_rows": 1,
+    "layout": [
+     "LY-08 page-width| offenders header > div > pre"
+    ],
+    "seconds": [
+     133.0,
+     133.0
+    ]
+   },
+   "picnic-8ae635b1-fixed/index.html": {
+    "candidates": 16,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     70.8,
+     135.2
+    ]
+   },
+   "picnic-8bb0d652-broken/documentation.html": {
+    "candidates": 617,
+    "layout_rows": 1,
+    "layout": [
+     "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+    ],
+    "seconds": [
+     61.5,
+     111.7
+    ]
+   },
+   "picnic-8bb0d652-fixed/documentation.html": {
+    "candidates": 616,
+    "layout_rows": 1,
+    "layout": [
+     "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+    ],
+    "seconds": [
+     109.0,
+     109.0
+    ]
+   },
+   "picnic-ec6a3d0d-broken/documentation.html": {
+    "candidates": 606,
+    "layout_rows": 3,
+    "layout": [
+     "LY-02 div:nth-of-type(50) > button:nth-of-type(2)|Bottom (default)",
+     "LY-03 #picnic-css|Picnic CSS",
+     "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+    ],
+    "seconds": [
+     92.0,
+     94.5
+    ]
+   },
+   "picnic-ec6a3d0d-fixed/documentation.html": {
+    "candidates": 438,
+    "layout_rows": 1,
+    "layout": [
+     "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+    ],
+    "seconds": [
+     85.5,
+     85.5
+    ]
+   },
+   "mini-css-0ed75ca8-broken/docs/progress.html": {
+    "candidates": 22,
+    "layout_rows": 15,
+    "layout": [
+     "LY-01 #donut-spinner > div > div > div:nth-of-type(2) > div:nth-of",
+     "LY-01 #donut-spinner > div > div > div:nth-of-type(3) > div > div:",
+     "LY-01 #progress-variants > div > div > div:nth-of-type(2) > div:nt",
+     "LY-01 #progress-variants > div > div > div:nth-of-type(3) > div > ",
+     "LY-01 #spinner-variants > div > div > div:nth-of-type(2) > div:nth",
+     "LY-01 div:nth-of-type(2) > div > div > div:nth-of-type(2) > pre|< ",
+     "LY-01 header > a:nth-of-type(1)|m",
+     "LY-04 #basic-progress-bar > div > div > div:nth-of-type(2)|Process",
+     "LY-04 #donut-spinner > div > div > div:nth-of-type(2)|Donut spinne",
+     "LY-04 #progress-variants > div > div > div:nth-of-type(2)|Secondar",
+     "LY-04 #spinner-variants > div > div > div:nth-of-type(2)|Apart fro",
+     "LY-08 page-width| offenders #basic-progress-bar > div",
+     "RF-01 #basic-progress-bar > div|Basic progress bar Process is 0% c"
+    ],
+    "seconds": [
+     61.5,
+     91.9
+    ]
+   },
+   "mini-css-0ed75ca8-fixed/docs/progress.html": {
+    "candidates": 23,
+    "layout_rows": 16,
+    "layout": [
+     "LY-01 #basic-progress-bar > div > div > div:nth-of-type(2) > div:n",
+     "LY-01 #basic-progress-bar > div > div > div:nth-of-type(3) > div >",
+     "LY-01 #donut-spinner > div > div > div:nth-of-type(2) > div:nth-of",
+     "LY-01 #donut-spinner > div > div > div:nth-of-type(3) > div > div:",
+     "LY-01 #progress-variants > div > div > div:nth-of-type(2) > div:nt",
+     "LY-01 #progress-variants > div > div > div:nth-of-type(3) > div > ",
+     "LY-01 #spinner-variants > div > div > div:nth-of-type(2) > div:nth",
+     "LY-01 div:nth-of-type(2) > div > div > div:nth-of-type(2) > pre|< ",
+     "LY-01 header > a:nth-of-type(1)|m",
+     "LY-04 #basic-progress-bar > div > div > div:nth-of-type(2)|Process",
+     "LY-04 #donut-spinner > div > div > div:nth-of-type(2)|Donut spinne",
+     "LY-04 #progress-variants > div > div > div:nth-of-type(2)|Secondar",
+     "LY-04 #spinner-variants > div > div > div:nth-of-type(2)|Apart fro"
+    ],
+    "seconds": [
+     52.6,
+     52.6
+    ]
+   }
+  }
+ },
+ "timing_note": "The two scans above ran while six agent sessions were running. The frozen scan was run again on the same sixteen states on an otherwise idle machine for timing; its layout rows are in idle_rerun.",
+ "idle_rerun": {
+  "seconds_per_page_median": 44.95,
+  "seconds_per_page_max": 57.4,
+  "states": {
+   "simple-css-c6af6463-broken/index.html": {
+    "candidates": 28,
+    "layout_rows": 3,
+    "layout": [
+     "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+     "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+     "LY-02 #text__asides > p:nth-of-type(3)|Lorem ipsum dolor sit amet ",
+     "LY-10 aside|",
+     "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+    ],
+    "seconds": [
+     51.4,
+     55.2
+    ]
+   },
+   "simple-css-c6af6463-fixed/index.html": {
+    "candidates": 26,
+    "layout_rows": 3,
+    "layout": [
+     "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+     "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+     "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+    ],
+    "seconds": [
+     54.1,
+     57.4
+    ]
+   },
+   "simple-css-36144b34-broken/index.html": {
+    "candidates": 28,
+    "layout_rows": 3,
+    "layout": [
+     "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+     "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+     "LY-02 #text__asides > p:nth-of-type(3)|Lorem ipsum dolor sit amet ",
+     "LY-10 aside|",
+     "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+    ],
+    "seconds": [
+     56.6,
+     56.6
+    ]
+   },
+   "simple-css-36144b34-fixed/index.html": {
+    "candidates": 28,
+    "layout_rows": 3,
+    "layout": [
+     "LY-02 #text__asides > p:nth-of-type(1)|Lorem ipsum dolor sit, amet",
+     "LY-02 #text__asides > p:nth-of-type(2)|Lorem, ipsum dolor sit amet",
+     "LY-02 #text__asides > p:nth-of-type(3)|Lorem ipsum dolor sit amet ",
+     "LY-10 aside|",
+     "RF-01 #forms__html5|HTML5 inputs Color input Number input Ra"
+    ],
+    "seconds": [
+     49.3,
+     53.2
+    ]
+   },
+   "mvp-66ec5a39-broken/index.html": {
+    "candidates": 78,
+    "layout_rows": 11,
+    "layout": [
+     "LY-02 #docs > ul > li:nth-of-type(2) > small|— content area with n",
+     "LY-02 #docs > ul > li:nth-of-type(3) > ul > li > small|— quote att",
+     "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(1) > small|— solid l",
+     "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(2) > small|— outline",
+     "LY-02 li:nth-of-type(10) > ul > li > small|— image callout caption",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > small|— dropdo",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > ul > li > smal",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(4) > small|— large ",
+     "LY-02 li:nth-of-type(7) > small|— default expandable content secti",
+     "LY-02 li:nth-of-type(7) > ul > li > small|— expandable heading",
+     "RF-01 #ideas > form|A company you like: A hobby you like: Bu"
+    ],
+    "seconds": [
+     46.7,
+     46.7
+    ]
+   },
+   "mvp-66ec5a39-fixed/index.html": {
+    "candidates": 78,
+    "layout_rows": 11,
+    "layout": [
+     "LY-02 #docs > ul > li:nth-of-type(2) > small|— content area with n",
+     "LY-02 #docs > ul > li:nth-of-type(3) > ul > li > small|— quote att",
+     "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(1) > small|— solid l",
+     "LY-02 li:nth-of-type(1) > ul > li:nth-of-type(2) > small|— outline",
+     "LY-02 li:nth-of-type(10) > ul > li > small|— image callout caption",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > small|— dropdo",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(3) > ul > li > smal",
+     "LY-02 li:nth-of-type(12) > ul > li:nth-of-type(4) > small|— large ",
+     "LY-02 li:nth-of-type(7) > small|— default expandable content secti",
+     "LY-02 li:nth-of-type(7) > ul > li > small|— expandable heading",
+     "RF-01 #ideas > form|A company you like: A hobby you like: Bu"
+    ],
+    "seconds": [
+     41.0,
+     42.3
+    ]
+   },
+   "mvp-11722ccc-broken/index.html": {
+    "candidates": 54,
+    "layout_rows": 2,
+    "layout": [
+     "LY-08 page-width| offenders #job,table",
+     "RF-01 #ideas > form|A skill you have: Ideal business model: "
+    ],
+    "seconds": [
+     33.8,
+     35.8
+    ]
+   },
+   "mvp-11722ccc-fixed/index.html": {
+    "candidates": 54,
+    "layout_rows": 2,
+    "layout": [
+     "LY-08 page-width| offenders table",
+     "RF-01 #ideas > form|A skill you have: Ideal business model: "
+    ],
+    "seconds": [
+     34.5,
+     38.1
+    ]
+   },
+   "picnic-8ae635b1-broken/index.html": {
+    "candidates": 17,
+    "layout_rows": 1,
+    "layout": [
+     "LY-08 page-width| offenders header > div > pre"
+    ],
+    "seconds": [
+     28.6,
+     35.3
+    ]
+   },
+   "picnic-8ae635b1-fixed/index.html": {
+    "candidates": 16,
+    "layout_rows": 0,
+    "layout": [],
+    "seconds": [
+     30.0,
+     34.6
+    ]
+   },
+   "picnic-8bb0d652-broken/documentation.html": {
+    "candidates": 618,
+    "layout_rows": 2,
+    "layout": [
+     "LY-08 page-width| offenders div:nth-of-type(22) > div:nth-of-type(12) > code",
+     "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+    ],
+    "seconds": [
+     36.0,
+     46.4
+    ]
+   },
+   "picnic-8bb0d652-fixed/documentation.html": {
+    "candidates": 617,
+    "layout_rows": 2,
+    "layout": [
+     "LY-08 page-width| offenders div:nth-of-type(22) > div:nth-of-type(12) > code",
+     "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+    ],
+    "seconds": [
+     36.1,
+     46.0
+    ]
+   },
+   "picnic-ec6a3d0d-broken/documentation.html": {
+    "candidates": 607,
+    "layout_rows": 4,
+    "layout": [
+     "LY-02 div:nth-of-type(50) > button:nth-of-type(2)|Bottom (default)",
+     "LY-03 #picnic-css|Picnic CSS",
+     "LY-08 page-width| offenders blockquote:nth-of-type(4) > p > a,div:nth-of-type(22) > div:nth-of-type(12) > code,div:nth-of-type(29) > div:nth-of-type(6) > code",
+     "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+    ],
+    "seconds": [
+     38.2,
+     45.2
+    ]
+   },
+   "picnic-ec6a3d0d-fixed/documentation.html": {
+    "candidates": 604,
+    "layout_rows": 2,
+    "layout": [
+     "LY-08 page-width| offenders div:nth-of-type(22) > div:nth-of-type(12) > code",
+     "RF-01 section > article > blockquote:nth-of-type(4) > p > a|http:/"
+    ],
+    "seconds": [
+     32.5,
+     44.7
+    ]
+   },
+   "mini-css-0ed75ca8-broken/docs/progress.html": {
+    "candidates": 22,
+    "layout_rows": 15,
+    "layout": [
+     "LY-01 #donut-spinner > div > div > div:nth-of-type(2) > div:nth-of",
+     "LY-01 #donut-spinner > div > div > div:nth-of-type(3) > div > div:",
+     "LY-01 #progress-variants > div > div > div:nth-of-type(2) > div:nt",
+     "LY-01 #progress-variants > div > div > div:nth-of-type(3) > div > ",
+     "LY-01 #spinner-variants > div > div > div:nth-of-type(2) > div:nth",
+     "LY-01 div:nth-of-type(2) > div > div > div:nth-of-type(2) > pre|< ",
+     "LY-01 header > a:nth-of-type(1)|m",
+     "LY-04 #basic-progress-bar > div > div > div:nth-of-type(2)|Process",
+     "LY-04 #donut-spinner > div > div > div:nth-of-type(2)|Donut spinne",
+     "LY-04 #progress-variants > div > div > div:nth-of-type(2)|Secondar",
+     "LY-04 #spinner-variants > div > div > div:nth-of-type(2)|Apart fro",
+     "LY-08 page-width| offenders #basic-progress-bar > div",
+     "RF-01 #basic-progress-bar > div|Basic progress bar Process is 0% c"
+    ],
+    "seconds": [
+     32.2,
+     35.8
+    ]
+   },
+   "mini-css-0ed75ca8-fixed/docs/progress.html": {
+    "candidates": 23,
+    "layout_rows": 16,
+    "layout": [
+     "LY-01 #basic-progress-bar > div > div > div:nth-of-type(2) > div:n",
+     "LY-01 #basic-progress-bar > div > div > div:nth-of-type(3) > div >",
+     "LY-01 #donut-spinner > div > div > div:nth-of-type(2) > div:nth-of",
+     "LY-01 #donut-spinner > div > div > div:nth-of-type(3) > div > div:",
+     "LY-01 #progress-variants > div > div > div:nth-of-type(2) > div:nt",
+     "LY-01 #progress-variants > div > div > div:nth-of-type(3) > div > ",
+     "LY-01 #spinner-variants > div > div > div:nth-of-type(2) > div:nth",
+     "LY-01 div:nth-of-type(2) > div > div > div:nth-of-type(2) > pre|< ",
+     "LY-01 header > a:nth-of-type(1)|m",
+     "LY-04 #basic-progress-bar > div > div > div:nth-of-type(2)|Process",
+     "LY-04 #donut-spinner > div > div > div:nth-of-type(2)|Donut spinne",
+     "LY-04 #progress-variants > div > div > div:nth-of-type(2)|Secondar",
+     "LY-04 #spinner-variants > div > div > div:nth-of-type(2)|Apart fro"
+    ],
+    "seconds": [
+     32.2,
+     33.9
+    ]
+   }
+  }
+ }
+}

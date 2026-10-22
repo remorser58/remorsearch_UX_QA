@@ -1,0 +1,29 @@
+[
+  {
+    "page": "p02",
+    "selector": ".tile_count .tile_stats_count .right",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P2",
+    "evidence": "At 360x780, the three-column metric grid gives each tile 120px and its text only 92px after the divider and padding. The labels 'Total Collections' and 'Total Connections' require 101.22px and 109.23px, so they appear as 'Total Collect...' and 'Total Conne...'. All six comparison captions also lose the end of 'From last Week'; those captions require 104.03-122.70px. The metric values fit. Screenshot: p02-phone-000-y0.png.",
+    "fix": "At the phone breakpoint, use two metric tiles per row and allow the label and comparison caption to wrap inside each tile. Remove the nowrap/ellipsis clipping for those labels at that breakpoint."
+  },
+  {
+    "page": "p02",
+    "selector": ".dashboard_graph .bg-white .x_title h2",
+    "viewport": "phone",
+    "category": "clipped",
+    "severity": "P3",
+    "evidence": "At 360x780, 'Top Campaign Performance' is displayed as 'Top Campaign Perfor...'. The heading has a 190.95px box but 213px of text, leaving about 22px truncated. Its containing section has enough room for the full heading and no adjacent toolbar. The full heading is visible at 1440x900. Screenshot: p02-phone-campaign.png.",
+    "fix": "Allow this toolbar-free heading to use the full section width at the phone breakpoint; remove its restricted width and permit wrapping instead of applying nowrap and ellipsis."
+  },
+  {
+    "page": "p03",
+    "selector": ".well.profile_view > .bottom",
+    "viewport": "both",
+    "category": "covered",
+    "severity": "P2",
+    "evidence": "The footer overlaps the body of all nine contact cards because its top margin is -20px. At 360x780, the first footer starts at document y=418.09 while the final Address text extends to y=425.98, covering the bottom 7.89px of that line. At 1440x900, the first portrait extends to y=385.78 while the footer starts at y=375.78, covering its bottom 10px and visibly flattening the circular outline. Screenshots: p03-phone-card.png and p03-laptop-card.png.",
+    "fix": "Remove the negative top margin from .well.profile_view > .bottom and keep the footer below the cleared card body so wrapped details and the entire portrait remain visible."
+  }
+]

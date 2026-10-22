@@ -1,0 +1,119 @@
+[
+  {
+    "page": "p02",
+    "selector": "#text__asides aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the floated aside is only 77.39 CSS px wide, with 45.39 px available for text after padding. 'This is an aside' breaks as 'This / is an / asid / e'; the paragraph breaks words into fragments such as 'Lore / m' and 'ipsu / m'. The aside becomes 1104.69 px tall. Viewed: details/p02-phone-aside.png.",
+    "fix": "At the phone breakpoint, remove the aside's float and 30% width; give it the full article content width and stack it above or below the paragraph."
+  },
+  {
+    "page": "p02",
+    "selector": "#embedded__audio audio, #embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "At 360x780, the media cards span x=34..326 and have 258 CSS px of inner content width. The audio, embed and object retain 300 px widths and end at x=351, protruding 25 px beyond their card borders; the iframe is 304 px wide and ends at x=355, protruding 29 px. The adjacent video fits within x=51..309. Viewed: details/p02-phone-audio.png, details/p02-phone-iframe.png and captures/p02-phone/024.png.",
+    "fix": "Constrain audio, iframe, embed and object to max-width:100% with border-box sizing so their outer width fits the article's content box."
+  },
+  {
+    "page": "p03",
+    "selector": ".documentation .third:has(input.stack)",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the form examples stay at one-third width: 104.47 CSS px. 'Repeat password' is visibly cut to 'Repeat pa'. In 'A small form', the Send button's icon wraps onto a separate line above its label, increasing the button height to 63.31 px; the adjacent single-line Send example is 36.92 px high. Both examples fit on laptop. Viewed: details/p03-phone-small-form.png and details/p03-phone-forms2.png; geometry: final-measurements.json.",
+    "fix": "Make the form previews full width on phones and apply the one-third width only at a larger breakpoint. Keep the Send icon and label together on one line with inline flex alignment or white-space:nowrap."
+  },
+  {
+    "page": "p03",
+    "selector": ".documentation article > .flex.six > div > code",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the class-name lists keep six columns, each 53.98 CSS px wide. The 'eleven' chip spans x=244.48..312.06 and 'twelve' starts at x=298.47: their painted backgrounds overlap by 13.59 px, hiding the end of 'eleven'. 'twelve' ends at x=366.05, beyond the 360 px screen, and the document scrollWidth is 366 px. Other longer class-name chips also collide. Viewed: details/p03-phone-six.png; geometry: final-measurements.json.",
+    "fix": "Use fewer columns at phone widths, for example change these class-name lists to flex three six-600, retaining six columns only when their labels fit."
+  },
+  {
+    "page": "p04",
+    "selector": "#job",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P2",
+    "evidence": "At 360x780, the form border spans x=12.5..347.5, but the job textarea spans x=37.5..389.09 and is 351.59 CSS px wide. It protrudes 41.59 px beyond its form and 29.09 px beyond the screen; its right border is missing from the initial view. The other text input fits inside the form. Viewed: details/p04-phone-form.png and details/p04-phone-end-touch.png.",
+    "fix": "Set the textarea to width:100%; max-width:100%; box-sizing:border-box so its outer width fits the form's inner content width, including padding and borders."
+  },
+  {
+    "page": "p04",
+    "selector": "table",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the comparison table is 417.20 CSS px wide and centered at x=-28.59..388.61. Both outer columns are cut by the screen: the row labels lose their opening letters and 'CSS Frameworks' is cut at the right. The negative left edge cannot be reached by scrolling farther left from scrollX=0. The table itself has overflow-x:visible. Viewed: details/p04-phone-table.png.",
+    "fix": "Place the table in a width:100% horizontal scroll container and align its initial left edge with the content area, or reduce its minimum width with responsive cell wrapping. Avoid centering an oversized table into negative coordinates."
+  },
+  {
+    "page": "p05",
+    "selector": "#basic-progress-bar > .col-sm-121",
+    "viewport": "both",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "The Basic progress bar column is 2288.38 CSS px wide at both sizes. On phone it spans x=4..2292.38, making the 360 px document 2292 px wide. On laptop it spans x=245.33..2533.70, making the 1440 px document 2534 px wide. Its card's right edge, explanatory text, sample code and Notes continue off-screen, while neighboring cards fit their column. Viewed: details/p05-phone-basic.png and details/p05-laptop-basic.png.",
+    "fix": "Correct the wrapper class from col-sm-121 to col-sm-12 so it receives the framework's full-column sizing; ensure the column can shrink within its row and keep code scrolling inside its own pre element."
+  },
+  {
+    "page": "p06",
+    "selector": ".hero pre.npm",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P2",
+    "evidence": "At 360x780, the hero stylesheet snippet has a fixed 610 CSS px width, spanning x=0..610. The line is cut after the URL prefix and the document becomes 610 px wide, requiring 250 px of sideways panning. This also expands the fixed navigation to 610 px: its menu control sits at x=523.77..599.45, completely outside the initial screen. Laptop fits the snippet. Viewed: details/p06-phone-hero.png and captures/p06-phone/000.png; geometry: measurements.json.",
+    "fix": "Constrain the snippet to max-width:100% with border-box sizing while retaining overflow-x:auto inside the pre. This keeps the page and fixed navigation within the phone viewport."
+  },
+  {
+    "page": "p07",
+    "selector": ".documentation .third:has(input.stack)",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the form examples stay at one-third width: 104.47 CSS px. 'Repeat password' is visibly cut to 'Repeat pa'. In 'A small form', the Send button's icon wraps onto a separate line above its label, increasing the button height to 63.31 px; the adjacent single-line Send example is 36.92 px high. Both examples fit on laptop. Viewed: details/p07-phone-small-form.png and details/p07-phone-forms.png; geometry: final-measurements.json.",
+    "fix": "Make the form previews full width on phones and apply the one-third width only at a larger breakpoint. Keep the Send icon and label together on one line with inline flex alignment or white-space:nowrap."
+  },
+  {
+    "page": "p07",
+    "selector": ".documentation article > .flex.six > div > code",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the class-name lists keep six columns, each 53.98 CSS px wide. The 'eleven' chip spans x=244.48..312.06 and 'twelve' starts at x=298.47: their painted backgrounds overlap by 13.59 px, hiding the end of 'eleven'. 'twelve' ends at x=366.05, beyond the 360 px screen, and the document scrollWidth is 366 px. Other longer class-name chips also collide. Viewed: details/p07-phone-six.png; geometry: final-measurements.json.",
+    "fix": "Use fewer columns at phone widths, for example change these class-name lists to flex three six-600, retaining six columns only when their labels fit."
+  },
+  {
+    "page": "p07",
+    "selector": "body > nav .menu, nav.demo .menu",
+    "viewport": "phone",
+    "category": "overlapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the fixed header is 52.80 CSS px tall, but GitHub and Documentation occupy y=35.55..72.48, protruding 19.68 px below it. At scrollY=675, GitHub visibly overlaps the Buttons heading below the header. The navigation demos have the same broken containment: search/select controls fall below their 52.80 px bars and into the following code area. Viewed: details/p07-phone-nav-overlap.png and details/p07-phone-navform.png; geometry: measurements.json.",
+    "fix": "Apply the narrow-screen navigation layout consistently: provide the main nav's toggle/burger markup and the required show class on demo toggles, and collapse menu contents at phone widths. If menus remain expanded, let the bar grow and reserve its full height in the document."
+  },
+  {
+    "page": "p08",
+    "selector": "#text__asides aside",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "At 360x780, the floated aside is only 77.39 CSS px wide, with 45.39 px available for text after padding. 'This is an aside' breaks as 'This / is an / asid / e'; the paragraph breaks words into fragments such as 'Lore / m' and 'ipsu / m'. The aside becomes 1104.69 px tall. Viewed: details/p08-phone-aside.png.",
+    "fix": "At the phone breakpoint, remove the aside's float and 30% width; give it the full article content width and stack it above or below the paragraph."
+  },
+  {
+    "page": "p08",
+    "selector": "#embedded__audio audio, #embedded__iframe iframe, #embedded__embed embed, #embedded__object object",
+    "viewport": "phone",
+    "category": "size_mismatch",
+    "severity": "P3",
+    "evidence": "At 360x780, the media cards span x=34..326 and have 258 CSS px of inner content width. The audio, embed and object retain 300 px widths and end at x=351, protruding 25 px beyond their card borders; the iframe is 304 px wide and ends at x=355, protruding 29 px. The adjacent video fits within x=51..309. Viewed: details/p08-phone-audio.png, details/p08-phone-iframe.png and captures/p08-phone/024.png.",
+    "fix": "Constrain audio, iframe, embed and object to max-width:100% with border-box sizing so their outer width fits the article's content box."
+  }
+]

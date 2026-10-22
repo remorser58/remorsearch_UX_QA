@@ -1,0 +1,157 @@
+{
+ "seed": 2026102202,
+ "names": {
+  "holiday-css-1eba36ad": "p01",
+  "spcss-93b12537": "p02",
+  "sb-coming-soon-f2f16308": "p03",
+  "css98-ecfc9758": "p04",
+  "sb-one-page-wonder-ec94d15b": "p05",
+  "holiday-css-e27aca20": "p06",
+  "wtf-forms-5dcd2aa1": "p07",
+  "css98-68d7366d": "p08"
+ },
+ "groups": {
+  "A": [
+   "css98-ecfc9758",
+   "sb-one-page-wonder-ec94d15b",
+   "wtf-forms-5dcd2aa1"
+  ],
+  "B": [
+   "spcss-93b12537",
+   "css98-68d7366d",
+   "holiday-css-e27aca20"
+  ],
+  "C": [
+   "sb-coming-soon-f2f16308",
+   "holiday-css-1eba36ad"
+  ]
+ },
+ "runs": {
+  "1": {
+   "p01": {
+    "item": "holiday-css-1eba36ad",
+    "state": "fixed",
+    "page": "p01/src/index.html"
+   },
+   "p02": {
+    "item": "spcss-93b12537",
+    "state": "broken",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "sb-coming-soon-f2f16308",
+    "state": "fixed",
+    "page": "p03/dist/index.html"
+   },
+   "p04": {
+    "item": "css98-ecfc9758",
+    "state": "broken",
+    "page": "p04/docs/index.html"
+   },
+   "p05": {
+    "item": "sb-one-page-wonder-ec94d15b",
+    "state": "broken",
+    "page": "p05/index.html"
+   },
+   "p06": {
+    "item": "holiday-css-e27aca20",
+    "state": "broken",
+    "page": "p06/src/index.html"
+   },
+   "p07": {
+    "item": "wtf-forms-5dcd2aa1",
+    "state": "broken",
+    "page": "p07/index.html"
+   },
+   "p08": {
+    "item": "css98-68d7366d",
+    "state": "broken",
+    "page": "p08/docs/index.html"
+   }
+  },
+  "2": {
+   "p01": {
+    "item": "holiday-css-1eba36ad",
+    "state": "broken",
+    "page": "p01/src/index.html"
+   },
+   "p02": {
+    "item": "spcss-93b12537",
+    "state": "fixed",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "sb-coming-soon-f2f16308",
+    "state": "broken",
+    "page": "p03/dist/index.html"
+   },
+   "p04": {
+    "item": "css98-ecfc9758",
+    "state": "broken",
+    "page": "p04/docs/index.html"
+   },
+   "p05": {
+    "item": "sb-one-page-wonder-ec94d15b",
+    "state": "broken",
+    "page": "p05/index.html"
+   },
+   "p06": {
+    "item": "holiday-css-e27aca20",
+    "state": "fixed",
+    "page": "p06/src/index.html"
+   },
+   "p07": {
+    "item": "wtf-forms-5dcd2aa1",
+    "state": "broken",
+    "page": "p07/index.html"
+   },
+   "p08": {
+    "item": "css98-68d7366d",
+    "state": "fixed",
+    "page": "p08/docs/index.html"
+   }
+  },
+  "3": {
+   "p01": {
+    "item": "holiday-css-1eba36ad",
+    "state": "broken",
+    "page": "p01/src/index.html"
+   },
+   "p02": {
+    "item": "spcss-93b12537",
+    "state": "broken",
+    "page": "p02/index.html"
+   },
+   "p03": {
+    "item": "sb-coming-soon-f2f16308",
+    "state": "broken",
+    "page": "p03/dist/index.html"
+   },
+   "p04": {
+    "item": "css98-ecfc9758",
+    "state": "fixed",
+    "page": "p04/docs/index.html"
+   },
+   "p05": {
+    "item": "sb-one-page-wonder-ec94d15b",
+    "state": "fixed",
+    "page": "p05/index.html"
+   },
+   "p06": {
+    "item": "holiday-css-e27aca20",
+    "state": "broken",
+    "page": "p06/src/index.html"
+   },
+   "p07": {
+    "item": "wtf-forms-5dcd2aa1",
+    "state": "fixed",
+    "page": "p07/index.html"
+   },
+   "p08": {
+    "item": "css98-68d7366d",
+    "state": "broken",
+    "page": "p08/docs/index.html"
+   }
+  }
+ }
+}

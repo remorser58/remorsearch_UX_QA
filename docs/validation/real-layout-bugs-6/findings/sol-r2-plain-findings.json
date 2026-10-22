@@ -1,0 +1,29 @@
+[
+  {
+    "page": "p03",
+    "selector": ".social-icons",
+    "viewport": "both",
+    "category": "alignment",
+    "severity": "P2",
+    "evidence": "The social-button stack is detached from the hero and sits flush against the left screen edge in a separate full-height block. At 1440x900, the hero ends at y=900 and all three 42x38px buttons occupy x=0..42, y=900..1014, completely below the initial screen. Their wrapper extends to y=1800, leaving 786px of unused height below the buttons. At 360x780, the buttons occupy x=0..42, y=485.19..599.19, but their 780px-high wrapper extends to y=1265.19, leaving another 666px below them. Screenshots: p03-laptop-stable.png, p03-laptop-touch-0.png, p03-laptop-touch-1.png, p03-phone-stable.png, p03-phone-touch-0.png.",
+    "fix": "Position the social wrapper within the hero/viewport on laptop (absolute positioning at the right edge, with vertical centering and an explicit inset), rather than allowing its 100% height to create another document row. On phone, use an auto-height wrapper with padding and a centered horizontal button row below the signup content."
+  },
+  {
+    "page": "p04",
+    "selector": "main",
+    "viewport": "phone",
+    "category": "off_screen",
+    "severity": "P1",
+    "evidence": "The phone screen shows only the left fragment of the documentation. The fixed sidebar occupies x=0..216; main starts at x=240 and remains 780px wide, ending at x=1020, which is 660px beyond the 360px visual viewport. Component descriptions and examples start at x=420, entirely outside the initial screen. Document scrollWidth is 1068px versus a 360px client/visual viewport, producing 708px of horizontal overflow. Vertical touch scrolling to the end still shows truncated headings with the examples off to the right. Screenshots: p04-phone-stable.png, p04-phone-touch-0.png, p04-phone-touch-1.png, p04-phone-touch-2.png.",
+    "fix": "Add a phone breakpoint that places the sidebar in normal flow, removes main's 240px left margin, and makes main fit the available width with border-box sizing and small horizontal padding. Stack .component children vertically and replace their fixed 600px content width with width:auto/max-width:100% at that breakpoint."
+  },
+  {
+    "page": "p05",
+    "selector": "section .d-flex > .w-50.p-5",
+    "viewport": "phone",
+    "category": "wrapping",
+    "severity": "P2",
+    "evidence": "All three content sections retain two 165px-wide columns inside a 330px row. Each column has 48px padding on both sides, leaving only 69px for its heading and paragraph. Headings break into 3-5 lines and the paragraphs into 27 lines (648px tall), while words spill into the adjacent column/padding. The second heading starts at x=228 and has a 138px scroll width, reaching x=366, so the end of \"salute\" runs 6px past the 360px screen. The document becomes 366px wide. Screenshots: p05-phone-1.png, p05-phone-3.png, p05-phone-4.png, p05-phone-5.png.",
+    "fix": "At phone widths, change the section flex rows to flex-direction:column, override .w-50 to width:100%, and reduce .p-5 horizontal padding (for example to 24px). Give each heading and paragraph the resulting full column width so the words fit without overflowing."
+  }
+]
