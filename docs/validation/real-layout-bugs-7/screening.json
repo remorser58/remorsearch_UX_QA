@@ -1,0 +1,5464 @@
+{
+ "sources": [
+  {
+   "source": "adoahr/8.bit-css",
+   "candidates": 5,
+   "screened": 5,
+   "accepted": 0
+  },
+  {
+   "source": "bonsaicss/bonsai.css",
+   "candidates": 6,
+   "screened": 6,
+   "accepted": 0
+  },
+  {
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "candidates": 39,
+   "screened": 39,
+   "accepted": 0
+  },
+  {
+   "source": "cardinalcss/cardinalcss",
+   "candidates": 40,
+   "screened": 40,
+   "accepted": 0
+  },
+  {
+   "source": "720kb/checkbox.css",
+   "candidates": 1,
+   "screened": 1,
+   "accepted": 0
+  },
+  {
+   "source": "moesaid/cleopatra",
+   "candidates": 3,
+   "screened": 3,
+   "accepted": 1
+  },
+  {
+   "source": "codyhouse/codyframe",
+   "candidates": 8,
+   "screened": 8,
+   "accepted": 0
+  },
+  {
+   "source": "puikinsh/CoolAdmin",
+   "candidates": 4,
+   "screened": 4,
+   "accepted": 0
+  },
+  {
+   "source": "jackdomleo7/Cooltipz.css",
+   "candidates": 12,
+   "screened": 12,
+   "accepted": 0
+  },
+  {
+   "source": "ArunMichaelDsouza/CSS-Mint",
+   "candidates": 10,
+   "screened": 10,
+   "accepted": 0
+  },
+  {
+   "source": "dropways/deskapp",
+   "candidates": 4,
+   "screened": 4,
+   "accepted": 0
+  },
+  {
+   "source": "puikinsh/ElaAdmin",
+   "candidates": 3,
+   "screened": 3,
+   "accepted": 0
+  },
+  {
+   "source": "kanbanize/eve",
+   "candidates": 40,
+   "screened": 40,
+   "accepted": 0
+  },
+  {
+   "source": "kenangundogan/flexible-grid",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 0
+  },
+  {
+   "source": "aaroniker/framy-css",
+   "candidates": 16,
+   "screened": 16,
+   "accepted": 0
+  },
+  {
+   "source": "puikinsh/kiaalap",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 0
+  },
+  {
+   "source": "p3yman/koochak",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 0
+  },
+  {
+   "source": "joexn/LegacyCSS",
+   "candidates": 15,
+   "screened": 15,
+   "accepted": 0
+  },
+  {
+   "source": "zuramai/mazer",
+   "candidates": 40,
+   "screened": 40,
+   "accepted": 0
+  },
+  {
+   "source": "mazipan/milligram-admin-dashboard-template",
+   "candidates": 3,
+   "screened": 3,
+   "accepted": 0
+  },
+  {
+   "source": "OshekharO/Neubrutalism",
+   "candidates": 11,
+   "screened": 11,
+   "accepted": 2
+  },
+  {
+   "source": "sreeram-venkitesh/notion.css",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 1
+  },
+  {
+   "source": "ionited/particle",
+   "candidates": 6,
+   "screened": 6,
+   "accepted": 1
+  },
+  {
+   "source": "getpavilion/pavilion",
+   "candidates": 22,
+   "screened": 22,
+   "accepted": 0
+  },
+  {
+   "source": "PlainAdmin/plain-free-bootstrap-admin-template",
+   "candidates": 4,
+   "screened": 4,
+   "accepted": 1
+  },
+  {
+   "source": "xriley/portal-theme-bs5",
+   "candidates": 3,
+   "screened": 3,
+   "accepted": 0
+  },
+  {
+   "source": "ummahusla/PotatoCSS",
+   "candidates": 16,
+   "screened": 16,
+   "accepted": 0
+  },
+  {
+   "source": "micah5/PSone.css",
+   "candidates": 6,
+   "screened": 6,
+   "accepted": 2
+  },
+  {
+   "source": "StartBootstrap/startbootstrap-full-slider",
+   "candidates": 1,
+   "screened": 1,
+   "accepted": 0
+  },
+  {
+   "source": "oltdaniel/skeleton-plus",
+   "candidates": 5,
+   "screened": 5,
+   "accepted": 0
+  },
+  {
+   "source": "themefisher/sleek-bootstrap",
+   "candidates": 40,
+   "screened": 40,
+   "accepted": 0
+  },
+  {
+   "source": "snack-ui/snack",
+   "candidates": 11,
+   "screened": 11,
+   "accepted": 0
+  },
+  {
+   "source": "puikinsh/srtdash-admin-dashboard",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 0
+  },
+  {
+   "source": "secondtruth/startmin",
+   "candidates": 1,
+   "screened": 1,
+   "accepted": 1
+  },
+  {
+   "source": "jeroenoomsNL/the-flex-grid",
+   "candidates": 7,
+   "screened": 7,
+   "accepted": 0
+  },
+  {
+   "source": "smakosh/unnamed-css-framework",
+   "candidates": 7,
+   "screened": 7,
+   "accepted": 0
+  },
+  {
+   "source": "zuramai/voler",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 0
+  },
+  {
+   "source": "themesberg/windows-95-ui-kit",
+   "candidates": 2,
+   "screened": 2,
+   "accepted": 0
+  }
+ ],
+ "candidates": [
+  {
+   "id": "bit8-d4e62ed3",
+   "source": "adoahr/8.bit-css",
+   "commit": "d4e62ed32faf3323865f081089d7fd906e28b4d4",
+   "date": "2020-05-03",
+   "subject": "Fixed aside and header",
+   "fixed_state": "d4e62ed32faf3323865f081089d7fd906e28b4d4",
+   "pages_rendered": [
+    "public/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bit8-bc55e63a",
+   "source": "adoahr/8.bit-css",
+   "commit": "bc55e63aa54a2cc8d6eb4de84d002a5e436f7d9f",
+   "date": "2020-05-03",
+   "subject": "Avoid the overlay effect for figure caption on mobile",
+   "fixed_state": "bc55e63aa54a2cc8d6eb4de84d002a5e436f7d9f",
+   "pages_rendered": [
+    "public/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the figure caption shows on hover in the broken state; no fault without interaction"
+  },
+  {
+   "id": "bit8-8c6a5535",
+   "source": "adoahr/8.bit-css",
+   "commit": "8c6a5535f96f8d37947e6b2d94ffa2cebebd9c84",
+   "date": "2020-05-02",
+   "subject": "Fixed textarea height",
+   "fixed_state": "781a9b83b716f88d7ff79ac26079a8945edd73b8",
+   "pages_rendered": [
+    "public/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bit8-6ba9d8fe",
+   "source": "adoahr/8.bit-css",
+   "commit": "6ba9d8fe5a214ff37eeac2ce9cdcb6a83b7dd217",
+   "date": "2020-05-02",
+   "subject": "Fixed form styles in Firefox",
+   "fixed_state": "6ba9d8fe5a214ff37eeac2ce9cdcb6a83b7dd217",
+   "pages_rendered": [
+    "public/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "form style refinement for Firefox; the broken state looks intended in Chromium"
+  },
+  {
+   "id": "bit8-a16e7caf",
+   "source": "adoahr/8.bit-css",
+   "commit": "a16e7caf867d6704413dc77139f477e52a9ec443",
+   "date": "2020-05-02",
+   "subject": "Fixed bugs",
+   "fixed_state": "a16e7caf867d6704413dc77139f477e52a9ec443",
+   "pages_rendered": [
+    "public/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "text against the left edge of the screen with no margin; nothing cut or off the screen (excluded kind)"
+  },
+  {
+   "id": "bonsai-7f53153f",
+   "source": "bonsaicss/bonsai.css",
+   "commit": "7f53153f72d531be5be2b80c74dec06e57d67154",
+   "date": "2020-11-19",
+   "subject": "Fix tag padding",
+   "fixed_state": "133f1d2fccf149f2fa2349a7415fde36702785ee",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bonsai-ad5a7f82",
+   "source": "bonsaicss/bonsai.css",
+   "commit": "ad5a7f825495e39f73cac2d146753df90d45e31e",
+   "date": "2020-11-19",
+   "subject": "Update wrapper default",
+   "fixed_state": "2021d597d9bbd3a64a5f4c8979249a7642ae4ec8",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two in text or one small element; nothing cut, covered, off the screen or misaligned"
+  },
+  {
+   "id": "bonsai-6dbadcbc",
+   "source": "bonsaicss/bonsai.css",
+   "commit": "6dbadcbc508692d593675ad8032c44980d3742f2",
+   "date": "2020-11-19",
+   "subject": "Wrapper Class/Helper",
+   "fixed_state": "2021d597d9bbd3a64a5f4c8979249a7642ae4ec8",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page is wider than the phone screen in both states (395 and 385 px)"
+  },
+  {
+   "id": "bonsai-dd2e912f",
+   "source": "bonsaicss/bonsai.css",
+   "commit": "dd2e912f1fe4b362a81b57a5466c20526895dfce",
+   "date": "2020-11-17",
+   "subject": "Update details and summary to wrap the content nicer",
+   "fixed_state": "b5676513c3ea7a285587d4423fe7d87f0e20f8dd",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "bonsai-df5c5b0b",
+   "source": "bonsaicss/bonsai.css",
+   "commit": "df5c5b0b3ab57f19a5e91cee178594120462e198",
+   "date": "2020-11-13",
+   "subject": "Remove overflow:hidden from .accent",
+   "fixed_state": "8898988e6b109ec62b1444def1e33777b10d2467",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bonsai-66243053",
+   "source": "bonsaicss/bonsai.css",
+   "commit": "662430539238a368cf2e16be65c389cf52acb0e8",
+   "date": "2020-09-08",
+   "subject": "Rm img height:auto - difficult to unset",
+   "fixed_state": "662430539238a368cf2e16be65c389cf52acb0e8",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-da2db224",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "da2db2246b1f740afb8d98c80155aabb89b243e1",
+   "date": "2026-05-05",
+   "subject": "Release 3.4.4 - Laptop density, calendar/chart overflow fixes, period selectors, mobile polish",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "bs-admin-ccfbc708",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "ccfbc70805647c616835ba9056f8c5ce2cee8325",
+   "date": "2026-01-27",
+   "subject": "Fixed sidebar",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "bs-admin-c77e90d0",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "c77e90d084fbc60ea5450eb6fcd4b4a905aed6e6",
+   "date": "2026-01-26",
+   "subject": "Fixed sidebar on mobile",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "bs-admin-a4d2e38c",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "a4d2e38c5f9c6092b73e473143a894c454933902",
+   "date": "2025-11-29",
+   "subject": "Fixed several ESLint warnings",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "bs-admin-56f6af34",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "56f6af341da546ead64d849006e54589285f217b",
+   "date": "2025-07-08",
+   "subject": "Layout tweaks",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "bs-admin-aa1e0fce",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "aa1e0fce56687b46e356f79503cd657fd35e7fa5",
+   "date": "2025-06-24",
+   "subject": "🎨 Fix Logo Centering & Navbar Layout",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "bs-admin-512e591e",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "512e591ebe54dcc830d027920f66d23bd9e94e73",
+   "date": "2017-03-15",
+   "subject": "new #right off-canvas new right.less file added rewrite layout.less and menu.less files remove affixed #menu added sticky #left option sidebar-left-mini #menu hover option changed",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "bs-admin-0599fbb6",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "0599fbb6987993d8f6d1ebb1a32ac1fe61e26b5f",
+   "date": "2017-03-14",
+   "subject": "fixed some errors remove file.html and it's links from left and top nav fixed user-media section remove elfinder library from src/lib and public/assets/lib folders",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "bs-admin-ecfb1eeb",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "ecfb1eeb8bddfe4cde67c2c0dada2adc441dc356",
+   "date": "2016-09-16",
+   "subject": "fixed windows command prompt errors",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "bs-admin-ee662508",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "ee6625082bd1da80432e750dea68316bdb1a30b4",
+   "date": "2015-07-30",
+   "subject": "fixed assets route",
+   "fixed_state": "ee6625082bd1da80432e750dea68316bdb1a30b4",
+   "pages_rendered": [
+    "dist/form-general.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the broken page misses plugin scripts or styles through wrong asset paths; no layout fault of the kinds listed"
+  },
+  {
+   "id": "bs-admin-9916b8c2",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "9916b8c2d3e82d35ea92499c3f3dd53fd04413e5",
+   "date": "2014-11-07",
+   "subject": "fixed #menu hover",
+   "fixed_state": "9916b8c2d3e82d35ea92499c3f3dd53fd04413e5",
+   "pages_rendered": [
+    "dist/403.html",
+    "dist/404.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-2785fb77",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "2785fb770d87783893a18d539a168208b713658e",
+   "date": "2014-04-08",
+   "subject": "fixed bootstrap switch",
+   "fixed_state": "2785fb770d87783893a18d539a168208b713658e",
+   "pages_rendered": [
+    "dist/alterne.html",
+    "dist/bgcolor.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "bs-admin-0deacbb3",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "0deacbb3a9e3f042f1c2ebac788d3e9897d24446",
+   "date": "2014-04-06",
+   "subject": "fixed tablesorter",
+   "fixed_state": "0deacbb3a9e3f042f1c2ebac788d3e9897d24446",
+   "pages_rendered": [
+    "dist/alterne.html",
+    "dist/bgcolor.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "bs-admin-b2d72518",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "b2d725182a447a8a8f7786587a3945545db30179",
+   "date": "2014-02-28",
+   "subject": "fixed map.html errors",
+   "fixed_state": "b2d725182a447a8a8f7786587a3945545db30179",
+   "pages_rendered": [
+    "dist/403.html",
+    "dist/404.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-542b9a13",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "542b9a132d3d4ad0a4fd07080c49d9abca82a2a8",
+   "date": "2014-02-16",
+   "subject": "fixed fullscreen",
+   "fixed_state": "542b9a132d3d4ad0a4fd07080c49d9abca82a2a8",
+   "pages_rendered": [
+    "dist/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "bs-admin-0d4c6182",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "0d4c6182a5e8aac4ac873f144dc7dc26066f577a",
+   "date": "2013-12-06",
+   "subject": "fixed #content",
+   "fixed_state": "0d4c6182a5e8aac4ac873f144dc7dc26066f577a",
+   "pages_rendered": [
+    "dist/403.html",
+    "dist/404.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-a44590f9",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "a44590f917b23fa089e2dadb8c9be314044c67bd",
+   "date": "2013-12-06",
+   "subject": "fixed #content",
+   "fixed_state": "a44590f917b23fa089e2dadb8c9be314044c67bd",
+   "pages_rendered": [
+    "dist/403.html",
+    "dist/404.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-623652d7",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "623652d70876b4d764ab1e9a9a53f4da9b061405",
+   "date": "2013-12-03",
+   "subject": "fixed maps.html, search button and create map.less",
+   "fixed_state": "623652d70876b4d764ab1e9a9a53f4da9b061405",
+   "pages_rendered": [
+    "dist/alterne.html",
+    "dist/assets/lib/tablesorter/docs/example-widget-filter.html"
+   ],
+   "verdict": "rejected",
+   "reason": "changes to a plugin documentation page; no fault of the kinds listed"
+  },
+  {
+   "id": "bs-admin-466ba2d9",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "466ba2d91fff9a7d14c14898838ba87b5d2ff287",
+   "date": "2013-11-14",
+   "subject": "update submodule & fixed fullCalendar",
+   "fixed_state": "466ba2d91fff9a7d14c14898838ba87b5d2ff287",
+   "pages_rendered": [
+    "dist/assets/lib/plupload/tests/auto/Events.html",
+    "dist/assets/lib/plupload/tests/auto/Uploader.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-db674f0d",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "db674f0d40f75243d297739b0124635653cf89cb",
+   "date": "2013-09-26",
+   "subject": "fixed tagsinput plugin source",
+   "fixed_state": "db674f0d40f75243d297739b0124635653cf89cb",
+   "pages_rendered": [
+    "dist/403.html",
+    "dist/404.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-5a9f1ee9",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "5a9f1ee9956c031c6b64d979dcc37dd90bcd07af",
+   "date": "2013-09-26",
+   "subject": "fixed some plugins source",
+   "fixed_state": "5a9f1ee9956c031c6b64d979dcc37dd90bcd07af",
+   "pages_rendered": [
+    "dist/form-general.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-fe5b694d",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "fe5b694d9269d6758dcd7435215afa2a2dff05f3",
+   "date": "2013-09-26",
+   "subject": "fixed gritter and form plugins",
+   "fixed_state": "fe5b694d9269d6758dcd7435215afa2a2dff05f3",
+   "pages_rendered": [
+    "dist/assets/lib/gritter/index.html",
+    "dist/assets/lib/gritter/serverside-validations/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the plugin demo page is replaced by another page, so the fix cannot be shown"
+  },
+  {
+   "id": "bs-admin-abf5ee2d",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "abf5ee2da0508a692f8b916543a34ed2a77526bc",
+   "date": "2013-09-26",
+   "subject": "fixed jquery-validation plugin asset",
+   "fixed_state": "abf5ee2da0508a692f8b916543a34ed2a77526bc",
+   "pages_rendered": [
+    "dist/form-validation.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-dea93bc3",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "dea93bc35854fef410c6402fe78a3869b8048a83",
+   "date": "2013-09-20",
+   "subject": "add margin-right .topnav",
+   "fixed_state": "9b6db9f8d7f2285b85fe8a5c311a7e47da527a51",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "bs-admin-daffcf29",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "daffcf2975e2cef06e9ab8c809b9bc0766e291fa",
+   "date": "2013-07-16",
+   "subject": "fixed fullcalendar route",
+   "fixed_state": "daffcf2975e2cef06e9ab8c809b9bc0766e291fa",
+   "pages_rendered": [
+    "alterne.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the broken page misses plugin scripts or styles through wrong asset paths; no layout fault of the kinds listed"
+  },
+  {
+   "id": "bs-admin-9a79cb77",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "9a79cb7764ac8ef3d206f564b453ca8d19c17aee",
+   "date": "2013-06-21",
+   "subject": "fixed fullcalendar path",
+   "fixed_state": "9a79cb7764ac8ef3d206f564b453ca8d19c17aee",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the broken page misses plugin scripts or styles through wrong asset paths; no layout fault of the kinds listed"
+  },
+  {
+   "id": "bs-admin-a5cd4c26",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "a5cd4c26d912d750a060d7223fc200ada94c440a",
+   "date": "2013-06-18",
+   "subject": "fixed fullcalendar path",
+   "fixed_state": "a5cd4c26d912d750a060d7223fc200ada94c440a",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-1de9fce4",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "1de9fce4632e7d4659bedc948eacaea53eac1f81",
+   "date": "2013-06-17",
+   "subject": "fixed some files",
+   "fixed_state": "9b6db9f8d7f2285b85fe8a5c311a7e47da527a51",
+   "pages_rendered": [
+    "403.html",
+    "ono.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state lays the page out 980 px wide on a phone, so it is not a fix"
+  },
+  {
+   "id": "bs-admin-ed291a15",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "ed291a15a6f3dfa5f7b9498af87e7d87c7f5d9a5",
+   "date": "2013-06-17",
+   "subject": "fixed",
+   "fixed_state": "ed291a15a6f3dfa5f7b9498af87e7d87c7f5d9a5",
+   "pages_rendered": [
+    "ono.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two in text or one small element; nothing cut, covered, off the screen or misaligned"
+  },
+  {
+   "id": "bs-admin-c37d954f",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "c37d954f92f204fea2b652442e3e9596b062e8fc",
+   "date": "2013-06-16",
+   "subject": "fixed fixed body fixed navbar",
+   "fixed_state": "9b6db9f8d7f2285b85fe8a5c311a7e47da527a51",
+   "pages_rendered": [
+    "403.html",
+    "404.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state lays the page out 980 px wide on a phone, so it is not a fix"
+  },
+  {
+   "id": "bs-admin-de32d3b5",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "de32d3b55095af5cc0f53a285b43a4f101bd8c36",
+   "date": "2013-06-15",
+   "subject": "fixed some errors",
+   "fixed_state": "de32d3b55095af5cc0f53a285b43a4f101bd8c36",
+   "pages_rendered": [
+    "login.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-3251fa68",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "3251fa68ce1e56b8d20105f20b6f62b33c60d7a1",
+   "date": "2013-04-08",
+   "subject": "fixed some errors",
+   "fixed_state": "9b6db9f8d7f2285b85fe8a5c311a7e47da527a51",
+   "pages_rendered": [
+    "alterne.html",
+    "blank.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state lays the page out 980 px wide on a phone, so it is not a fix"
+  },
+  {
+   "id": "bs-admin-7102066d",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "7102066d4f0de425f8022df7012f79883aeab74d",
+   "date": "2013-04-08",
+   "subject": "remove body overflow properties",
+   "fixed_state": "7102066d4f0de425f8022df7012f79883aeab74d",
+   "pages_rendered": [
+    "alterne.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "bs-admin-f43cf0c3",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "f43cf0c3425f46338d812f28a862b35716721fa5",
+   "date": "2013-04-07",
+   "subject": "remove body overflow properties",
+   "fixed_state": "9b6db9f8d7f2285b85fe8a5c311a7e47da527a51",
+   "pages_rendered": [
+    "403.html",
+    "404.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state lays the page out 980 px wide on a phone, so it is not a fix"
+  },
+  {
+   "id": "bs-admin-96e786d7",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "96e786d7b13bcf30369eb90733f26318064e47e8",
+   "date": "2013-04-07",
+   "subject": "fixed errors",
+   "fixed_state": "96e786d7b13bcf30369eb90733f26318064e47e8",
+   "pages_rendered": [
+    "alterne.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "bs-admin-3147c465",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "3147c46563aed0b5d29fc100496a0365cf470091",
+   "date": "2013-04-07",
+   "subject": "fixed style-switcher errors",
+   "fixed_state": "9b6db9f8d7f2285b85fe8a5c311a7e47da527a51",
+   "pages_rendered": [
+    "blank.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state lays the page out 980 px wide on a phone, so it is not a fix"
+  },
+  {
+   "id": "bs-admin-4360b65c",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "4360b65c5b2e1b8dd939e74708e78986d60a7264",
+   "date": "2013-04-07",
+   "subject": "fixed errors",
+   "fixed_state": "4360b65c5b2e1b8dd939e74708e78986d60a7264",
+   "pages_rendered": [
+    "chart.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change (colour, border, radius or font)"
+  },
+  {
+   "id": "bs-admin-a2c5683c",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "a2c5683c7a73bd8bf35dabc5391baf3569c3b8d0",
+   "date": "2013-04-07",
+   "subject": "added layout2.css",
+   "fixed_state": "9b6db9f8d7f2285b85fe8a5c311a7e47da527a51",
+   "pages_rendered": [
+    "403.html",
+    "404.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state lays the page out 980 px wide on a phone, so it is not a fix"
+  },
+  {
+   "id": "bs-admin-df7b24c0",
+   "source": "puikinsh/Bootstrap-Admin-Template",
+   "commit": "df7b24c08f8ec329f0a454f1454027d31d09f960",
+   "date": "2013-04-07",
+   "subject": "fixed errors",
+   "fixed_state": "df7b24c08f8ec329f0a454f1454027d31d09f960",
+   "pages_rendered": [
+    "alterne.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-b83062c6",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "b83062c64f7fb38b1e550ee9c1ddd7bffe94a91f",
+   "date": "2016-03-22",
+   "subject": "Use mixin to generate z-index breakpoint classes",
+   "fixed_state": "243dca0c4778899eac270a2eb415c6c49dcc99e0",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-af647162",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "af647162eaba2bcb9bf423eba99da03acbbd63f8",
+   "date": "2016-03-22",
+   "subject": "Use mixin to generate width breakpoint classes",
+   "fixed_state": "243dca0c4778899eac270a2eb415c6c49dcc99e0",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-07ac088d",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "07ac088dac65a2a51624317e9bdee138eae638b0",
+   "date": "2016-03-22",
+   "subject": "Use mixin to generate vertical alignment breakpoint classes",
+   "fixed_state": "243dca0c4778899eac270a2eb415c6c49dcc99e0",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-75699abf",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "75699abf99e5cfc194c5617484f60caaa83edfd7",
+   "date": "2016-03-22",
+   "subject": "Use mixin to generate text alignment breakpoint classes",
+   "fixed_state": "243dca0c4778899eac270a2eb415c6c49dcc99e0",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-47b4054f",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "47b4054f43f22f6342bea61cede131138a8502b2",
+   "date": "2016-03-22",
+   "subject": "Use mixin to generate position breakpoint classes",
+   "fixed_state": "243dca0c4778899eac270a2eb415c6c49dcc99e0",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-43808f68",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "43808f68dab0da340c021192a74b7b75d3c4a28f",
+   "date": "2016-03-22",
+   "subject": "Use mixin to generate padding breakpoint classes",
+   "fixed_state": "243dca0c4778899eac270a2eb415c6c49dcc99e0",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-a074eb30",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "a074eb30a4b75256a365734961e88df13caec1ba",
+   "date": "2016-03-22",
+   "subject": "Use mixin to generate margin breakpoint classes",
+   "fixed_state": "243dca0c4778899eac270a2eb415c6c49dcc99e0",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-8d5bc2ad",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "8d5bc2adc6e4be2e37b6de5ce8c0c253c08f539f",
+   "date": "2016-01-11",
+   "subject": "fix incorrect grid variable; fix textarea height preventing resize",
+   "fixed_state": "4456f937591abe05ba6e7627d2eb2626c9828133",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-2333777b",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "2333777b67b6d47400679f42e7778fa557dc7db0",
+   "date": "2016-01-07",
+   "subject": "Add deprecation warning for max-width mixins",
+   "fixed_state": "b62bf08ca019b5d69cb44902389f520d1de8a2d1",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-ad0467b1",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "ad0467b18d426efc3695eb6367cc65e187e7845b",
+   "date": "2016-01-07",
+   "subject": "Add max-width mixins back in to prevent breaking changes",
+   "fixed_state": "b62bf08ca019b5d69cb44902389f520d1de8a2d1",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-2f5680c6",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "2f5680c6057df31dbabaf3ed31a755203f6951db",
+   "date": "2015-12-21",
+   "subject": "remove mixins that are not aligned with the “mobile-first” methodology",
+   "fixed_state": "b911ef6fa90c56ef06c3f901a4cfd62826e8dc24",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-123f8380",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "123f8380293d4b19cc56a2c7c159beac85ee82ff",
+   "date": "2015-08-05",
+   "subject": "update variables spacing values; update comments",
+   "fixed_state": "64f7b570d5962b2e58976bb7bb7f85911e129c3b",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-577dec64",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "577dec645452e08bb9f56e559a04238a9d64d445",
+   "date": "2015-03-08",
+   "subject": "remove @root-font-size, @root-line-height, and @root-font-family variables",
+   "fixed_state": "577dec645452e08bb9f56e559a04238a9d64d445",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-bb213fce",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "bb213fceb2be4cd4e28c4e4df7546df9b012a4d8",
+   "date": "2015-03-08",
+   "subject": "remove @root-font-size, @root-line-height, and @root-font-family variables",
+   "fixed_state": "bb213fceb2be4cd4e28c4e4df7546df9b012a4d8",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-13186b8a",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "13186b8ab78111eafb79f307cea1e71fc41b1f64",
+   "date": "2015-02-25",
+   "subject": "ol li, and ul li got a left-margin by default",
+   "fixed_state": "87fe929534374438b97c90ddf56e8ca48a857d3a",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-27e1e787",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "27e1e787fa0a8cfdb00ea6831429cba10dbf3d94",
+   "date": "2015-02-16",
+   "subject": "fix @print typo in wrappers.less",
+   "fixed_state": "27e1e787fa0a8cfdb00ea6831429cba10dbf3d94",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two; the page is 990 px wide on a phone in both states"
+  },
+  {
+   "id": "cardinal-072f6886",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "072f6886d75296777635edd5ac5fa7e1a0529cb7",
+   "date": "2014-01-30",
+   "subject": "closes #34 fixed button small sizes",
+   "fixed_state": "85b7c3d0cee7afb187185e892ccf60ce71119965",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-8d1020f6",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "8d1020f6d0af2c4e0166d3570dd796b0e466956c",
+   "date": "2014-01-22",
+   "subject": "Added LESS support; added empty img/ folder; Updated table of contents; Removed @media query for extra padding on kbd elements; Nested caption styles inside the table element; changed some pixel value",
+   "fixed_state": "8d1020f6d0af2c4e0166d3570dd796b0e466956c",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-f843534d",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "f843534d4cbc79f18cf7131c24edb25493efa79f",
+   "date": "2014-01-21",
+   "subject": "fixed word wrapping and hyphenation in 2.0.2",
+   "fixed_state": "f843534d4cbc79f18cf7131c24edb25493efa79f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-f6a26337",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "f6a2633731da406aafbc7ceb87ad5275dc06142e",
+   "date": "2014-01-17",
+   "subject": "changed hr.asterisks to hr.symbol for better semantics; added a bottom margin to hr.symbol",
+   "fixed_state": "f6a2633731da406aafbc7ceb87ad5275dc06142e",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-8c381517",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "8c381517d324fb9da8397facd62401929255b00c",
+   "date": "2014-01-16",
+   "subject": "added slight left and right margin to <code> elements",
+   "fixed_state": "8c381517d324fb9da8397facd62401929255b00c",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-f6b7e5de",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "f6b7e5def398557f8bda2013188fe9c225613fc7",
+   "date": "2014-01-15",
+   "subject": "remove @media query to increase padding on <code> elements",
+   "fixed_state": "f6b7e5def398557f8bda2013188fe9c225613fc7",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-c5e8834e",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "c5e8834ec213d1319e628248710d320f9b54d600",
+   "date": "2014-01-15",
+   "subject": "updated padding on .button-mini class",
+   "fixed_state": "c5e8834ec213d1319e628248710d320f9b54d600",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-3ed3e523",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "3ed3e5236cdefcf863cf369198f1cf43b921e4f1",
+   "date": "2014-01-10",
+   "subject": "changed wrapper width to pixels instead of rems",
+   "fixed_state": "3ed3e5236cdefcf863cf369198f1cf43b921e4f1",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-6b5b343a",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "6b5b343ae73e19d1c5da2b992f1c8f8caad619bc",
+   "date": "2014-01-10",
+   "subject": "removed .antialiased class; fixed minor spacing issue",
+   "fixed_state": "6b5b343ae73e19d1c5da2b992f1c8f8caad619bc",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-25980fbf",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "25980fbfd0b8e78a7e2995880fee4df7788f020c",
+   "date": "2013-11-08",
+   "subject": "removed some helper classes; moved .width_auto classes to their rightful places in main.css",
+   "fixed_state": "25980fbfd0b8e78a7e2995880fee4df7788f020c",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-14d88fba",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "14d88fba23a18d38628636a38aca01b04fc39671",
+   "date": "2013-10-15",
+   "subject": "Updated word wrapping and hyphenation declaration to include caption element and use a more bulletproof solution that works in IE8+, Firefox 6+, iOS 4.2+, Safari 5.1+, and Chrome 13+",
+   "fixed_state": "14d88fba23a18d38628636a38aca01b04fc39671",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-54fe106a",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "54fe106a658501172c9637ddba45f14b234573dc",
+   "date": "2013-10-07",
+   "subject": "fixed conflict between .font_normal classes",
+   "fixed_state": "54fe106a658501172c9637ddba45f14b234573dc",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-13567c9e",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "13567c9eb06b491838bedd2c26ade49b9417fd15",
+   "date": "2013-09-27",
+   "subject": "Fixed test css file nonsense",
+   "fixed_state": "13567c9eb06b491838bedd2c26ade49b9417fd15",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-8d9c17a3",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "8d9c17a3656ce9720780cf5fb56ed2692114ed61",
+   "date": "2013-09-27",
+   "subject": "fixed .gitignore",
+   "fixed_state": "8d9c17a3656ce9720780cf5fb56ed2692114ed61",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-8545e34d",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "8545e34dc6a578aec91775495573671d9dc9cf50",
+   "date": "2013-09-27",
+   "subject": "added .width_auto class; changed class-naming conventions; changed .table_border_all to .table_border_cells; removed font weight and color inheritance from .font_* classes",
+   "fixed_state": "8545e34dc6a578aec91775495573671d9dc9cf50",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-4a71b353",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "4a71b3536af0417e323701869d0d6b7ff6a2c8cf",
+   "date": "2013-08-30",
+   "subject": "fixed figcaption bug",
+   "fixed_state": "4a71b3536af0417e323701869d0d6b7ff6a2c8cf",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-f526b72a",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "f526b72a485e5acac9fc4496153e5ea64c0d6412",
+   "date": "2013-08-30",
+   "subject": "fixed figcaption bug",
+   "fixed_state": "f526b72a485e5acac9fc4496153e5ea64c0d6412",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-7404eed8",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "7404eed848fd503ec8b5cddf8e4e87407292120f",
+   "date": "2013-08-27",
+   "subject": "fixed missing comma",
+   "fixed_state": "7404eed848fd503ec8b5cddf8e4e87407292120f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-36293833",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "36293833ed506301a74246e6ccbc3f9f56eae2f6",
+   "date": "2013-08-22",
+   "subject": "fixed .no_js typo on conditional html elements",
+   "fixed_state": "36293833ed506301a74246e6ccbc3f9f56eae2f6",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-0d122f6f",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "0d122f6f287266edaa17c4f276574e934db919d5",
+   "date": "2013-08-21",
+   "subject": "more spacing fixes",
+   "fixed_state": "0d122f6f287266edaa17c4f276574e934db919d5",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-77df49df",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "77df49dfc7ad8e754ca0cdadf56a0cfe11855af5",
+   "date": "2013-08-21",
+   "subject": "fixed some misaligned properties",
+   "fixed_state": "77df49dfc7ad8e754ca0cdadf56a0cfe11855af5",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-cc7298d4",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "cc7298d425df6036c6f1a85ad3dd0a0cd6a9f083",
+   "date": "2013-08-21",
+   "subject": "fixed video element to be fluid",
+   "fixed_state": "cc7298d425df6036c6f1a85ad3dd0a0cd6a9f083",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-800ae227",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "800ae22759d0ff651b48e9681775f1b2ee36e6a3",
+   "date": "2013-08-15",
+   "subject": "consistent colors; removed button hover states; add .h1, .h2, etc. classes; fixed font-size for various elements",
+   "fixed_state": "800ae22759d0ff651b48e9681775f1b2ee36e6a3",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cardinal-814e0798",
+   "source": "cardinalcss/cardinalcss",
+   "commit": "814e079826352bea197a6a49bcd72d9e170ce3dd",
+   "date": "2013-07-12",
+   "subject": "removed margin-bottom from .strip and .grid-item classes",
+   "fixed_state": "814e079826352bea197a6a49bcd72d9e170ce3dd",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "checkbox-720-1b39abee",
+   "source": "720kb/checkbox.css",
+   "commit": "1b39abeee87dc8f88068cc15829b3226238b9bd8",
+   "date": "2016-05-20",
+   "subject": "fixed :active with keyframes and :checked",
+   "fixed_state": "1b39abeee87dc8f88068cc15829b3226238b9bd8",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cleopatra-87cd9395",
+   "source": "moesaid/cleopatra",
+   "commit": "87cd93958c7a865588ef685a83643a8b605cf717",
+   "date": "2026-01-25",
+   "subject": "Fixed -- links",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "cleopatra-a3b4bfa0",
+   "source": "moesaid/cleopatra",
+   "commit": "a3b4bfa05321c0b5fce59e0601ccd60d39ac842f",
+   "date": "2024-08-01",
+   "subject": "Fixed responsive issues",
+   "fixed_state": "a3b4bfa05321c0b5fce59e0601ccd60d39ac842f",
+   "pages_rendered": [
+    "dist/alert.html",
+    "dist/blank.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page is 610 px wide on a phone in both states; the change hides the sidebar on phones"
+  },
+  {
+   "id": "cleopatra-1d67f504",
+   "source": "moesaid/cleopatra",
+   "commit": "1d67f5041af7fddab4c80269e3df0b6bfd5b447a",
+   "date": "2020-05-15",
+   "subject": "fixing responsive problem",
+   "fixed_state": "1d67f5041af7fddab4c80269e3df0b6bfd5b447a",
+   "pages_rendered": [
+    "dist/index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the four statistic cards stay in one row, their badges spill out of the cards and the page is 453 px wide, so the menu toggle at 415 to 429 px lies off the screen; the cards stack and the page fits 360 px after the fix",
+   "kind": "content that runs outside the screen or makes the page scroll sideways"
+  },
+  {
+   "id": "codyframe-c79a4c50",
+   "source": "codyhouse/codyframe",
+   "commit": "c79a4c501fba0f2cf5027ae6b8097c4d876c9939",
+   "date": "2023-07-17",
+   "subject": "updated order for padding/margin utility classes",
+   "fixed_state": "c79a4c501fba0f2cf5027ae6b8097c4d876c9939",
+   "pages_rendered": [
+    "main/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "codyframe-c7c28b56",
+   "source": "codyhouse/codyframe",
+   "commit": "c7c28b563261608c7c5ff0c3c02a03e9662880a9",
+   "date": "2023-03-22",
+   "subject": "added new overflow classes",
+   "fixed_state": "c7c28b563261608c7c5ff0c3c02a03e9662880a9",
+   "pages_rendered": [
+    "main/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "codyframe-216a862b",
+   "source": "codyhouse/codyframe",
+   "commit": "216a862b1bf5121678bf36d17ad0705604bf0209",
+   "date": "2023-03-09",
+   "subject": "fixed issue with z-index variables",
+   "fixed_state": "216a862b1bf5121678bf36d17ad0705604bf0209",
+   "pages_rendered": [
+    "main/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "codyframe-26aa2342",
+   "source": "codyhouse/codyframe",
+   "commit": "26aa23427c11ba036554407e58222f79ef302695",
+   "date": "2023-03-08",
+   "subject": "fixed bug with the .shadow-ring utility class",
+   "fixed_state": "26aa23427c11ba036554407e58222f79ef302695",
+   "pages_rendered": [
+    "main/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "codyframe-11827d54",
+   "source": "codyhouse/codyframe",
+   "commit": "11827d5470fbe9989be8360937ab5252c8284a14",
+   "date": "2023-02-27",
+   "subject": "fixed inner-glow-top",
+   "fixed_state": "11827d5470fbe9989be8360937ab5252c8284a14",
+   "pages_rendered": [
+    "main/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "codyframe-d44dfad7",
+   "source": "codyhouse/codyframe",
+   "commit": "d44dfad7297e81eaa1396916937297dee27e3dc4",
+   "date": "2023-02-24",
+   "subject": "fixed bug with offset util classes",
+   "fixed_state": "d44dfad7297e81eaa1396916937297dee27e3dc4",
+   "pages_rendered": [
+    "main/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "codyframe-23dbe40b",
+   "source": "codyhouse/codyframe",
+   "commit": "23dbe40b1fd3234b5af62f22e4d46d2515a2d1c6",
+   "date": "2023-02-16",
+   "subject": "+ position static",
+   "fixed_state": "23dbe40b1fd3234b5af62f22e4d46d2515a2d1c6",
+   "pages_rendered": [
+    "main/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "codyframe-6408517f",
+   "source": "codyhouse/codyframe",
+   "commit": "6408517f32b910b2ca501e58be13a637d8d6dac2",
+   "date": "2023-02-15",
+   "subject": "fixed minor bug",
+   "fixed_state": "6408517f32b910b2ca501e58be13a637d8d6dac2",
+   "pages_rendered": [
+    "main/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cooladmin-01c6e629",
+   "source": "puikinsh/CoolAdmin",
+   "commit": "01c6e629f5a1840d8c36c51ae15f529617c945e1",
+   "date": "2025-07-24",
+   "subject": "Fixed multiple pages",
+   "fixed_state": "01c6e629f5a1840d8c36c51ae15f529617c945e1",
+   "pages_rendered": [
+    "calendar.html",
+    "card.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the calendar is not drawn at the parent commit (script change); no fault of the kinds listed"
+  },
+  {
+   "id": "cooladmin-1c070277",
+   "source": "puikinsh/CoolAdmin",
+   "commit": "1c07027767ba4440377abe8bb2ed7d8f747128bd",
+   "date": "2019-10-16",
+   "subject": "login, register, forget password scroll fixed",
+   "fixed_state": "1c07027767ba4440377abe8bb2ed7d8f747128bd",
+   "pages_rendered": [
+    "alert.html",
+    "badge.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cooladmin-91d0daf8",
+   "source": "puikinsh/CoolAdmin",
+   "commit": "91d0daf8abce287431c2eb3ab97bd6581ef48cf3",
+   "date": "2019-03-12",
+   "subject": "fixed a click problem and added readme reference",
+   "fixed_state": "91d0daf8abce287431c2eb3ab97bd6581ef48cf3",
+   "pages_rendered": [
+    "calendar.html",
+    "map.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cooladmin-f41cd674",
+   "source": "puikinsh/CoolAdmin",
+   "commit": "f41cd674f59457a917504aa4469a92ba44484ef0",
+   "date": "2019-02-10",
+   "subject": "Footer hidden on mobile",
+   "fixed_state": "f41cd674f59457a917504aa4469a92ba44484ef0",
+   "pages_rendered": [
+    "alert.html",
+    "badge.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cooltipz-f0e4b3a4",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "f0e4b3a4b6b6b762009bbe70314f8b523fe87fb9",
+   "date": "2020-04-30",
+   "subject": "Added word-wrap for really large font sizes in small tooltips, stops overflow",
+   "fixed_state": "f0e4b3a4b6b6b762009bbe70314f8b523fe87fb9",
+   "pages_rendered": [
+    "test.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cooltipz-ddd7897c",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "ddd7897c74617adce58cc29c9cffdc5ade94f7d1",
+   "date": "2020-04-30",
+   "subject": "Added word-wrap for really large font sizes in small tooltips, stops overflow",
+   "fixed_state": "ddd7897c74617adce58cc29c9cffdc5ade94f7d1",
+   "pages_rendered": [
+    "test.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cooltipz-ec774ac6",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "ec774ac64cb294de2f63f3b419bf2f8e33690ad9",
+   "date": "2020-04-23",
+   "subject": "Fixed bug where tooltip box seems to follow after the arrow",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "cooltipz-25b3cb75",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "25b3cb7547918e438d063dbee5b361771ec0d6e3",
+   "date": "2020-04-23",
+   "subject": "Fixed bug where tooltip box seems to follow after the arrow",
+   "fixed_state": "7edddb96491a74be5d32627743b6a6fb059334ef",
+   "pages_rendered": [
+    "test.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the tooltip fault shows only while it animates on hover"
+  },
+  {
+   "id": "cooltipz-62a5196a",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "62a5196a971fdf2a90d832dcea3f901adb37324d",
+   "date": "2020-04-22",
+   "subject": "Fixed bug where bottom-right and bottom-left directions slide up rather down down",
+   "fixed_state": "62a5196a971fdf2a90d832dcea3f901adb37324d",
+   "pages_rendered": [
+    "test.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cooltipz-84fc3a5b",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "84fc3a5be5b07ec99f79ce2b24771a34c453a899",
+   "date": "2020-04-22",
+   "subject": "Fixed bug where bottom-right and bottom-left directions slide up rather down down",
+   "fixed_state": "84fc3a5be5b07ec99f79ce2b24771a34c453a899",
+   "pages_rendered": [
+    "test.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cooltipz-6e01e893",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "6e01e8936a2e4a58961b2d1db73ceddb19b39cbb",
+   "date": "2020-04-22",
+   "subject": "Added more spacing",
+   "fixed_state": "6e01e8936a2e4a58961b2d1db73ceddb19b39cbb",
+   "pages_rendered": [
+    "test.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "cooltipz-2b14dfaf",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "2b14dfafea114cdaa2fd1a007a1f07b59e2ac6cb",
+   "date": "2020-04-22",
+   "subject": "Added more spacing",
+   "fixed_state": "2b14dfafea114cdaa2fd1a007a1f07b59e2ac6cb",
+   "pages_rendered": [
+    "test.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "cooltipz-f3649ffb",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "f3649ffb6bbc9b5ee3aea1722238e6e3a6176e50",
+   "date": "2020-04-19",
+   "subject": "Fixed bug where focusing an element would not trigger the slide functionality",
+   "fixed_state": "f3649ffb6bbc9b5ee3aea1722238e6e3a6176e50",
+   "pages_rendered": [
+    "test.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cooltipz-71f6bc78",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "71f6bc78d9f4af88666c571f761c2c98921d8d6d",
+   "date": "2020-04-19",
+   "subject": "Fixed bug where focusing an element would not trigger the slide functionality",
+   "fixed_state": "71f6bc78d9f4af88666c571f761c2c98921d8d6d",
+   "pages_rendered": [
+    "test.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cooltipz-6759e708",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "6759e708dc1e34d86a79624f7dc754df75a9c3c9",
+   "date": "2020-04-17",
+   "subject": "Fixed hr styles",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "cooltipz-525ce4b0",
+   "source": "jackdomleo7/Cooltipz.css",
+   "commit": "525ce4b0552929019cb0a27e78856c9529f68ec6",
+   "date": "2020-04-17",
+   "subject": "Fixed hr styles",
+   "fixed_state": "fb10780851123b93795b61ce3fcfe36d4ef6747f",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "cssmint-ddc492da",
+   "source": "ArunMichaelDsouza/CSS-Mint",
+   "commit": "ddc492daf3fdd25c8d559cb2a32a81f7637aa24c",
+   "date": "2018-05-22",
+   "subject": "Grid col width map percent fix",
+   "fixed_state": "8bbc2f42ee53c02523e29156021b2c2fd0a28bc1",
+   "pages_rendered": [
+    "demo/components.html",
+    "demo/default.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cssmint-29b02c10",
+   "source": "ArunMichaelDsouza/CSS-Mint",
+   "commit": "29b02c1034513ea8ab6e1ff5f56d9a08332b5e23",
+   "date": "2018-04-12",
+   "subject": "Grid wrapper added",
+   "fixed_state": "29b02c1034513ea8ab6e1ff5f56d9a08332b5e23",
+   "pages_rendered": [
+    "demo/components.html",
+    "demo/default.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (new classes or behaviour); the broken state looks intended"
+  },
+  {
+   "id": "cssmint-0a3d12cf",
+   "source": "ArunMichaelDsouza/CSS-Mint",
+   "commit": "0a3d12cf2c4cde48fa45f0b8a1513888adb1b152",
+   "date": "2018-04-06",
+   "subject": "Grid col width classes auto generation logic updated",
+   "fixed_state": "0a3d12cf2c4cde48fa45f0b8a1513888adb1b152",
+   "pages_rendered": [
+    "demo/Components/index.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cssmint-cab4e5f6",
+   "source": "ArunMichaelDsouza/CSS-Mint",
+   "commit": "cab4e5f666ccb8418360b082bd3d5b755d24bcf5",
+   "date": "2018-04-06",
+   "subject": "Sass map used for col-width pairs",
+   "fixed_state": "cab4e5f666ccb8418360b082bd3d5b755d24bcf5",
+   "pages_rendered": [
+    "demo/Components/index.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cssmint-dded3d98",
+   "source": "ArunMichaelDsouza/CSS-Mint",
+   "commit": "dded3d987b2d78283e8f2086111655c20580ab28",
+   "date": "2015-10-02",
+   "subject": "Fixing panel padding bug",
+   "fixed_state": "dded3d987b2d78283e8f2086111655c20580ab28",
+   "pages_rendered": [
+    "demo/Components/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "cssmint-8a4f1c15",
+   "source": "ArunMichaelDsouza/CSS-Mint",
+   "commit": "8a4f1c15cc25ca6db3aa02e5549a9f71260db45b",
+   "date": "2015-09-11",
+   "subject": "Added fixed header component",
+   "fixed_state": "8a4f1c15cc25ca6db3aa02e5549a9f71260db45b",
+   "pages_rendered": [
+    "test/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "cssmint-11f64063",
+   "source": "ArunMichaelDsouza/CSS-Mint",
+   "commit": "11f64063bc958758cab4438c2512c08bdf2d377b",
+   "date": "2014-06-01",
+   "subject": "Added Typography classes and base font styles for p tags. Added alignment classes",
+   "fixed_state": "11f64063bc958758cab4438c2512c08bdf2d377b",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change; the broken state looks intended"
+  },
+  {
+   "id": "cssmint-4193cb98",
+   "source": "ArunMichaelDsouza/CSS-Mint",
+   "commit": "4193cb988a1b92014bd28adeb8d57688b7964a9a",
+   "date": "2014-05-30",
+   "subject": "Updated Main Wrapper and Container Styles",
+   "fixed_state": "4193cb988a1b92014bd28adeb8d57688b7964a9a",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page is wider than the phone screen in both states (1110 and 1120 px)"
+  },
+  {
+   "id": "cssmint-62030fbc",
+   "source": "ArunMichaelDsouza/CSS-Mint",
+   "commit": "62030fbc3f888d74a5182ea1e9ec7b930d3abe35",
+   "date": "2014-05-16",
+   "subject": "Added Container Styles. Used to Wrap and Center Specific Layout Elements, Content or Design",
+   "fixed_state": "62030fbc3f888d74a5182ea1e9ec7b930d3abe35",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (new classes or behaviour); the broken state looks intended"
+  },
+  {
+   "id": "cssmint-8fd4f344",
+   "source": "ArunMichaelDsouza/CSS-Mint",
+   "commit": "8fd4f344bfd5bd3e6704f349c3d29655d9323050",
+   "date": "2014-05-16",
+   "subject": "Added Main Wrapper Styles. Used to Wrap and Center entire Design/Layout and Content",
+   "fixed_state": "8fd4f344bfd5bd3e6704f349c3d29655d9323050",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page is wider than the phone screen in both states (1100 and 1110 px)"
+  },
+  {
+   "id": "deskapp-17c70e0f",
+   "source": "dropways/deskapp",
+   "commit": "17c70e0f7b28e13c5fa2638eec0452c93b2b68d5",
+   "date": "2022-07-07",
+   "subject": "layout changes & bootstrap icon add",
+   "fixed_state": "17c70e0f7b28e13c5fa2638eec0452c93b2b68d5",
+   "pages_rendered": [
+    "400.html",
+    "403.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change; the broken state looks intended"
+  },
+  {
+   "id": "deskapp-a298826c",
+   "source": "dropways/deskapp",
+   "commit": "a298826c280df10a9866815773b097a0e9179ed8",
+   "date": "2020-03-09",
+   "subject": "responsive",
+   "fixed_state": "a298826c280df10a9866815773b097a0e9179ed8",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "deskapp-cc94fb2f",
+   "source": "dropways/deskapp",
+   "commit": "cc94fb2f602ec466b5fd9a2d2628f3195792fd92",
+   "date": "2018-03-12",
+   "subject": "datatable responsive css",
+   "fixed_state": "cc94fb2f602ec466b5fd9a2d2628f3195792fd92",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "deskapp-ac57bb4f",
+   "source": "dropways/deskapp",
+   "commit": "ac57bb4f8f25f235ae294f3cd7135e0d5e06b972",
+   "date": "2018-02-22",
+   "subject": "leftsidebar responsive & Font Awesome page Done",
+   "fixed_state": "ac57bb4f8f25f235ae294f3cd7135e0d5e06b972",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "elaadmin-ea15a2ab",
+   "source": "puikinsh/ElaAdmin",
+   "commit": "ea15a2ab7eeb9b9c69e83f03436a69b28355ffef",
+   "date": "2020-08-13",
+   "subject": "chat align fix",
+   "fixed_state": "ea15a2ab7eeb9b9c69e83f03436a69b28355ffef",
+   "pages_rendered": [
+    "charts-chartjs.html",
+    "charts-flot.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the differences are chart data drawn at random; no layout difference"
+  },
+  {
+   "id": "elaadmin-c6198d22",
+   "source": "puikinsh/ElaAdmin",
+   "commit": "c6198d22541f845bb8c2104056b4ceeb53241e2c",
+   "date": "2018-05-24",
+   "subject": "Fixed card issue in .less file #16",
+   "fixed_state": "c6198d22541f845bb8c2104056b4ceeb53241e2c",
+   "pages_rendered": [
+    "app-profile.html",
+    "chart-amchart.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "elaadmin-a5c495fb",
+   "source": "puikinsh/ElaAdmin",
+   "commit": "a5c495fbb985ddf140b61a24688207ce062b825a",
+   "date": "2018-05-11",
+   "subject": "fixed card issue",
+   "fixed_state": "a5c495fbb985ddf140b61a24688207ce062b825a",
+   "pages_rendered": [
+    "app-profile.html",
+    "chart-amchart.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "eve-e57dd237",
+   "source": "kanbanize/eve",
+   "commit": "e57dd2376af4c6c19bcfb2c37c6430adaf7bd980",
+   "date": "2020-10-16",
+   "subject": "Fix spacing",
+   "fixed_state": "e57dd2376af4c6c19bcfb2c37c6430adaf7bd980",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-8ea035c7",
+   "source": "kanbanize/eve",
+   "commit": "8ea035c7759fcd75cc2187f4777ec1009b7af91d",
+   "date": "2020-10-16",
+   "subject": "Change dropdown max-width",
+   "fixed_state": "c15bbfd8d5683cdaffaa2cf058b2db3e5ec38d3d",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-3492678f",
+   "source": "kanbanize/eve",
+   "commit": "3492678f51060dfe92fa52d24f280446c029eaf1",
+   "date": "2020-10-16",
+   "subject": "Change spacing",
+   "fixed_state": "c15bbfd8d5683cdaffaa2cf058b2db3e5ec38d3d",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-f4d64d93",
+   "source": "kanbanize/eve",
+   "commit": "f4d64d935e88c70e71ffc689addae75b3170fdd0",
+   "date": "2020-10-09",
+   "subject": "Fix list header padding",
+   "fixed_state": "f4d64d935e88c70e71ffc689addae75b3170fdd0",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-9379983c",
+   "source": "kanbanize/eve",
+   "commit": "9379983c47a95aeedfdf753d6e42b82f8ff621e6",
+   "date": "2019-12-27",
+   "subject": "update separator spacing",
+   "fixed_state": "9379983c47a95aeedfdf753d6e42b82f8ff621e6",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-80e8a567",
+   "source": "kanbanize/eve",
+   "commit": "80e8a567fd1af7e1179ce34709a359ce22f38b44",
+   "date": "2019-12-22",
+   "subject": "fix radius and width",
+   "fixed_state": "d25c31837822341d988b6ec823b9c40753fd033a",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-f2b2472e",
+   "source": "kanbanize/eve",
+   "commit": "f2b2472eeb6da744c2327957a3ed488e6a6204a4",
+   "date": "2019-12-21",
+   "subject": "Fix spacing variable",
+   "fixed_state": "c6fff89f58678702dde71d8ce2c583a448f16524",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-39045d4b",
+   "source": "kanbanize/eve",
+   "commit": "39045d4b9fffdca594a8cc29204c8bd0bedfc003",
+   "date": "2019-12-21",
+   "subject": "add spacing variables",
+   "fixed_state": "39045d4b9fffdca594a8cc29204c8bd0bedfc003",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-b3264d32",
+   "source": "kanbanize/eve",
+   "commit": "b3264d32bc5ee8681357a8ffd1db74f3f586d6a4",
+   "date": "2019-12-21",
+   "subject": "fix table header height",
+   "fixed_state": "348548386fdf4c518bdf3c17cd60d4536de2e507",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-af6e543f",
+   "source": "kanbanize/eve",
+   "commit": "af6e543f9b219b7bcc67e37095685ff00f7505f8",
+   "date": "2019-12-20",
+   "subject": "Fix line-height",
+   "fixed_state": "348548386fdf4c518bdf3c17cd60d4536de2e507",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-c3cea4b4",
+   "source": "kanbanize/eve",
+   "commit": "c3cea4b46f236f8244fd3605ac770b97889452e6",
+   "date": "2019-12-08",
+   "subject": "update accordions margin",
+   "fixed_state": "64296e732a59806377582a72f17c047c18faf0d1",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-c437999a",
+   "source": "kanbanize/eve",
+   "commit": "c437999a2b460d10f09a9024c39488b235c5de75",
+   "date": "2019-12-08",
+   "subject": "fix button line-height",
+   "fixed_state": "c437999a2b460d10f09a9024c39488b235c5de75",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-61e63892",
+   "source": "kanbanize/eve",
+   "commit": "61e63892363221a42ad651889cb6b6a3c1223115",
+   "date": "2019-11-16",
+   "subject": "remove spacing foundation",
+   "fixed_state": "61e63892363221a42ad651889cb6b6a3c1223115",
+   "pages_rendered": [
+    "docs/documentation/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-d55f005f",
+   "source": "kanbanize/eve",
+   "commit": "d55f005fd75848fc9c2894f1f38f7a1a5b6c5429",
+   "date": "2019-11-16",
+   "subject": "change table header weight and height",
+   "fixed_state": "61e63892363221a42ad651889cb6b6a3c1223115",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-34e80dcb",
+   "source": "kanbanize/eve",
+   "commit": "34e80dcb277195461f7674baace5d5199415bb1b",
+   "date": "2019-11-16",
+   "subject": "change dropdown items height",
+   "fixed_state": "61e63892363221a42ad651889cb6b6a3c1223115",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-e973f9bc",
+   "source": "kanbanize/eve",
+   "commit": "e973f9bcd21d26b2929c689931ed5391d1edec9b",
+   "date": "2019-08-12",
+   "subject": "Change accordion height",
+   "fixed_state": "e973f9bcd21d26b2929c689931ed5391d1edec9b",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-398f6ea6",
+   "source": "kanbanize/eve",
+   "commit": "398f6ea66ea72ddd1bc87ba110e02a8852ca82e6",
+   "date": "2019-06-05",
+   "subject": "Fix avatars wrap",
+   "fixed_state": "bf2d2fb0d5aa3533ed99bf2ae6aee6b611bc7ce5",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "eve-85496010",
+   "source": "kanbanize/eve",
+   "commit": "854960106e6c83e98abbd2d3e5102169f2f4c948",
+   "date": "2019-06-03",
+   "subject": "Fix dropdown min and max width",
+   "fixed_state": "854960106e6c83e98abbd2d3e5102169f2f4c948",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-93665997",
+   "source": "kanbanize/eve",
+   "commit": "9366599764d06a4e9b1411e4ded6c5f505c2a707",
+   "date": "2019-06-03",
+   "subject": "Fix loading indicator border width",
+   "fixed_state": "9366599764d06a4e9b1411e4ded6c5f505c2a707",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-aed4902d",
+   "source": "kanbanize/eve",
+   "commit": "aed4902d3b8a646ca982c99d8471b58ec86b2de6",
+   "date": "2019-05-27",
+   "subject": "Change feedback font-size and line-height",
+   "fixed_state": "fe076b59b6fae4316e2ccf6f03b296e20b901253",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-e4d15e36",
+   "source": "kanbanize/eve",
+   "commit": "e4d15e36fbd763a889dc37bcc94a2e636108262d",
+   "date": "2019-05-27",
+   "subject": "Fix accordion header padding-right (with icon)",
+   "fixed_state": "e4d15e36fbd763a889dc37bcc94a2e636108262d",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-45aa1540",
+   "source": "kanbanize/eve",
+   "commit": "45aa154059b03531cacfdb0e89486a532370dffd",
+   "date": "2019-04-15",
+   "subject": "Fix vertical alignment of checkbox, radio, and switch components",
+   "fixed_state": "aaff3736379e63107850bc15416bd1d01453d420",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-89fe49d9",
+   "source": "kanbanize/eve",
+   "commit": "89fe49d95736c2b66f377dae45d0d9fc1d0a447c",
+   "date": "2019-04-15",
+   "subject": "Remove position absolute from avatar images",
+   "fixed_state": "aaff3736379e63107850bc15416bd1d01453d420",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-65b5cbff",
+   "source": "kanbanize/eve",
+   "commit": "65b5cbff1e2f93033272fe5d20293404f31c1a70",
+   "date": "2019-04-02",
+   "subject": "Fix grid gaps",
+   "fixed_state": "65b5cbff1e2f93033272fe5d20293404f31c1a70",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-29b26754",
+   "source": "kanbanize/eve",
+   "commit": "29b267544c246399293fec15bb32081029a4caf9",
+   "date": "2019-03-25",
+   "subject": "Replace .25rem with $eve-spacing-x-tiny variable",
+   "fixed_state": "29b267544c246399293fec15bb32081029a4caf9",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-9c1290fa",
+   "source": "kanbanize/eve",
+   "commit": "9c1290fa0b8603ad2f99920562df25a0e545c83f",
+   "date": "2019-03-25",
+   "subject": "Fix icon button padding left",
+   "fixed_state": "9c1290fa0b8603ad2f99920562df25a0e545c83f",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-43e3d3aa",
+   "source": "kanbanize/eve",
+   "commit": "43e3d3aa21640b812821c82a90f63bfd4c1f6048",
+   "date": "2019-03-24",
+   "subject": "Fix multiline grid with gap",
+   "fixed_state": "43e3d3aa21640b812821c82a90f63bfd4c1f6048",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-eda6f927",
+   "source": "kanbanize/eve",
+   "commit": "eda6f927e20cada06dc1cdf5f2f4fb54c18187ac",
+   "date": "2019-02-25",
+   "subject": "Fix vertical alignment of chips",
+   "fixed_state": "b2a0f8008b71e8907cc0f365c63f5e5e523c59c4",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "eve-32218c03",
+   "source": "kanbanize/eve",
+   "commit": "32218c03ff416e1e306ece38e2f0f8348ab04c72",
+   "date": "2019-02-22",
+   "subject": "revert accordion content padding",
+   "fixed_state": "32218c03ff416e1e306ece38e2f0f8348ab04c72",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-01a45cc7",
+   "source": "kanbanize/eve",
+   "commit": "01a45cc763346afec3b002c7f899dc0e033f605c",
+   "date": "2019-02-22",
+   "subject": "change accordion content padding",
+   "fixed_state": "01a45cc763346afec3b002c7f899dc0e033f605c",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-5062268d",
+   "source": "kanbanize/eve",
+   "commit": "5062268d44700b2d851969e93797acf7aa6405c5",
+   "date": "2019-01-30",
+   "subject": "Fix divider line height",
+   "fixed_state": "f1cbfefbca988afb215e55fa87e1ea247ab6ce4e",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-5bf03038",
+   "source": "kanbanize/eve",
+   "commit": "5bf030385e601f7736224a7ecd88d46091038458",
+   "date": "2019-01-04",
+   "subject": "fix checkbox, radio, and switch alignment",
+   "fixed_state": "5bf030385e601f7736224a7ecd88d46091038458",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-cb69ec34",
+   "source": "kanbanize/eve",
+   "commit": "cb69ec340e4140d73b874245f9002b6c52df731c",
+   "date": "2018-12-19",
+   "subject": "Fix vertical aligns",
+   "fixed_state": "cb69ec340e4140d73b874245f9002b6c52df731c",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-8de4c482",
+   "source": "kanbanize/eve",
+   "commit": "8de4c482e10d2967f867676813242dc506918d1e",
+   "date": "2018-12-19",
+   "subject": "Fix feedback line-height",
+   "fixed_state": "8de4c482e10d2967f867676813242dc506918d1e",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-bf5f7f78",
+   "source": "kanbanize/eve",
+   "commit": "bf5f7f78eb8e467f06051b7304bca852e18ca809",
+   "date": "2018-12-11",
+   "subject": "add .eve-gap-none in gap utility",
+   "fixed_state": "7b786ebb46e20c97b55a0a7570c12d0f7012f688",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-f1b1fa57",
+   "source": "kanbanize/eve",
+   "commit": "f1b1fa575b42945fc47f1789af05cde6475e6be6",
+   "date": "2018-11-07",
+   "subject": "Fix feedback height",
+   "fixed_state": "f1b1fa575b42945fc47f1789af05cde6475e6be6",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-19fc09d4",
+   "source": "kanbanize/eve",
+   "commit": "19fc09d4ba603eec31c034c2ff91aa71c35fdaa4",
+   "date": "2018-11-06",
+   "subject": "add padding to home link",
+   "fixed_state": "19fc09d4ba603eec31c034c2ff91aa71c35fdaa4",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-063a10b6",
+   "source": "kanbanize/eve",
+   "commit": "063a10b6b078670685b81bc3fa6b2400394d9da5",
+   "date": "2018-11-01",
+   "subject": "Fix z-index of tooltip",
+   "fixed_state": "063a10b6b078670685b81bc3fa6b2400394d9da5",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-2e41b8d5",
+   "source": "kanbanize/eve",
+   "commit": "2e41b8d54ae18a1f26a68dd348d245b23ffc3b95",
+   "date": "2018-10-25",
+   "subject": "Add additional overflow utility classes",
+   "fixed_state": "2e41b8d54ae18a1f26a68dd348d245b23ffc3b95",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "eve-ad7582fa",
+   "source": "kanbanize/eve",
+   "commit": "ad7582fa55c7caec6825e6c25701c2c66e4ea65f",
+   "date": "2018-10-25",
+   "subject": "use $eve-spacing=tiny in accordions",
+   "fixed_state": "ad7582fa55c7caec6825e6c25701c2c66e4ea65f",
+   "pages_rendered": [
+    "docs/documentation/index.html",
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the rendered documentation pages show only their navigation; the differences are its spacing and colour or a pixel of text"
+  },
+  {
+   "id": "flexible-grid-95f5a162",
+   "source": "kenangundogan/flexible-grid",
+   "commit": "95f5a1624fcb1956ab244c223f95834c43abe00c",
+   "date": "2017-10-25",
+   "subject": "template style layout",
+   "fixed_state": "95f5a1624fcb1956ab244c223f95834c43abe00c",
+   "pages_rendered": [
+    "example/flexible-grid-example-1.html",
+    "example/flexible-grid-example-2.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change; the broken state looks intended"
+  },
+  {
+   "id": "flexible-grid-e2df0523",
+   "source": "kenangundogan/flexible-grid",
+   "commit": "e2df0523fb4f12a69635294bc23e8e54b0cc9f55",
+   "date": "2017-09-30",
+   "subject": "'height' class added & edited by 'width' class",
+   "fixed_state": "e2df0523fb4f12a69635294bc23e8e54b0cc9f55",
+   "pages_rendered": [
+    "example/flexible-grid-example-1.html",
+    "example/flexible-grid-example-2.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "framy-7eb9bf8e",
+   "source": "aaroniker/framy-css",
+   "commit": "7eb9bf8e7f43a1a7ac7ad7c4814113e7f78d071d",
+   "date": "2018-03-08",
+   "subject": "half columns class, smaller gap",
+   "fixed_state": "7eb9bf8e7f43a1a7ac7ad7c4814113e7f78d071d",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "framy-5845a18b",
+   "source": "aaroniker/framy-css",
+   "commit": "5845a18b76ac2f3d2c50848fe5dcac02171486a0",
+   "date": "2018-02-21",
+   "subject": "prefixed grid helper classes",
+   "fixed_state": "5845a18b76ac2f3d2c50848fe5dcac02171486a0",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "framy-c3307070",
+   "source": "aaroniker/framy-css",
+   "commit": "c3307070727ca0b1297e807debeb74c59b3d8db3",
+   "date": "2017-10-28",
+   "subject": "responsive mixins add px fallback if no breakpoint match",
+   "fixed_state": "0eebfdeebc820b49e23a1b1af8eb6d4f1033d742",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "framy-efa06548",
+   "source": "aaroniker/framy-css",
+   "commit": "efa06548b7a699fbbf009e5f3c731079087e5b76",
+   "date": "2017-10-24",
+   "subject": "add helper .wrap-lines class",
+   "fixed_state": "efa06548b7a699fbbf009e5f3c731079087e5b76",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "framy-9cc8689f",
+   "source": "aaroniker/framy-css",
+   "commit": "9cc8689f62eeafde9fbb53cfec7867cf0f1f6775",
+   "date": "2017-10-21",
+   "subject": "responsive mixins",
+   "fixed_state": "9cc8689f62eeafde9fbb53cfec7867cf0f1f6775",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "framy-9b857aef",
+   "source": "aaroniker/framy-css",
+   "commit": "9b857aef36015d2dfaeeae11aa574dd511e9a1da",
+   "date": "2017-10-21",
+   "subject": "responsive scss mixins added",
+   "fixed_state": "9b857aef36015d2dfaeeae11aa574dd511e9a1da",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "framy-03bcbb9a",
+   "source": "aaroniker/framy-css",
+   "commit": "03bcbb9a8eb472dcc6e47830c8fcb9be4740988c",
+   "date": "2017-10-08",
+   "subject": "important grid max-width attribute",
+   "fixed_state": "03bcbb9a8eb472dcc6e47830c8fcb9be4740988c",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "framy-77cf0a93",
+   "source": "aaroniker/framy-css",
+   "commit": "77cf0a93e01ced72789869e132da6f62dc63f88b",
+   "date": "2017-10-08",
+   "subject": "demo spacing",
+   "fixed_state": "77cf0a93e01ced72789869e132da6f62dc63f88b",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "framy-5c5dc1f2",
+   "source": "aaroniker/framy-css",
+   "commit": "5c5dc1f237f1ca69becd79d60a26b144beb77c8f",
+   "date": "2017-10-08",
+   "subject": "grid container padding fix",
+   "fixed_state": "5c5dc1f237f1ca69becd79d60a26b144beb77c8f",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "container padding refinement; the menu button is cut at the right edge in both states"
+  },
+  {
+   "id": "framy-489f8992",
+   "source": "aaroniker/framy-css",
+   "commit": "489f8992329aba1b7210823e8ff880172d37e4c9",
+   "date": "2016-10-06",
+   "subject": "button icon align fix",
+   "fixed_state": "489f8992329aba1b7210823e8ff880172d37e4c9",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "icon shift of about 1 px, under the 2 px floor"
+  },
+  {
+   "id": "framy-9ac2e86d",
+   "source": "aaroniker/framy-css",
+   "commit": "9ac2e86dfc3160cb8a972fbfdaca319c86264658",
+   "date": "2016-07-19",
+   "subject": "firefox button padding fix",
+   "fixed_state": "9ac2e86dfc3160cb8a972fbfdaca319c86264658",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "framy-a7dd3a34",
+   "source": "aaroniker/framy-css",
+   "commit": "a7dd3a34cf1087b5d2c3c4d54939cb4547df0686",
+   "date": "2016-06-14",
+   "subject": "table th color & margin fix",
+   "fixed_state": "4123a951a1484a363b01feb50d85dc7e61dabf13",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change (colour, border, radius or font)"
+  },
+  {
+   "id": "framy-533c17e6",
+   "source": "aaroniker/framy-css",
+   "commit": "533c17e6175e7e2a569b061dcdf55836e03b7e5f",
+   "date": "2016-04-27",
+   "subject": "fix container width",
+   "fixed_state": "af402c14618b7ec83bbe392c4c7ffceaaec17494",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "framy-782cd50c",
+   "source": "aaroniker/framy-css",
+   "commit": "782cd50ced1ac3db0059ff402be457315bfe3fbd",
+   "date": "2016-04-18",
+   "subject": "add margin to headings, p",
+   "fixed_state": "782cd50ced1ac3db0059ff402be457315bfe3fbd",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change; the broken state looks intended"
+  },
+  {
+   "id": "framy-cada3032",
+   "source": "aaroniker/framy-css",
+   "commit": "cada3032da8ff33816325562734dde38975ebf75",
+   "date": "2016-04-18",
+   "subject": "padding fix - tab identchar",
+   "fixed_state": "cada3032da8ff33816325562734dde38975ebf75",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "framy-6eefb130",
+   "source": "aaroniker/framy-css",
+   "commit": "6eefb130b9fb5b9e9489643ec90e725d0fe330ed",
+   "date": "2016-02-15",
+   "subject": "container padding",
+   "fixed_state": "6eefb130b9fb5b9e9489643ec90e725d0fe330ed",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "kiaalap-41817a01",
+   "source": "puikinsh/kiaalap",
+   "commit": "41817a01d8831eac4572496d99b381302c688ab9",
+   "date": "2025-09-30",
+   "subject": "feat: update charts initialization and sidebar navigation for improved responsiveness and organization",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "kiaalap-aa9b1929",
+   "source": "puikinsh/kiaalap",
+   "commit": "aa9b1929fa8f3bafbebc1a70009503b0359579de",
+   "date": "2025-09-26",
+   "subject": "Refactor HTML structure to implement dashboard grid system across multiple pages, enhancing layout consistency and responsiveness. Updated styles in register.html and tabs.html, replacing Bootstrap gr",
+   "fixed_state": "aa9b1929fa8f3bafbebc1a70009503b0359579de",
+   "pages_rendered": [
+    "404.html",
+    "500.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the pages at the parent commit are templates with unresolved includes"
+  },
+  {
+   "id": "koochak-06c7974f",
+   "source": "p3yman/koochak",
+   "commit": "06c7974f443d92f9eeef95a3083d3fd7b556e36a",
+   "date": "2018-02-25",
+   "subject": "responsive grid",
+   "fixed_state": "06c7974f443d92f9eeef95a3083d3fd7b556e36a",
+   "pages_rendered": [
+    "test/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (responsive grid classes); the test page columns look as intended"
+  },
+  {
+   "id": "koochak-860737ca",
+   "source": "p3yman/koochak",
+   "commit": "860737ca24d289ed9ab8fb8d3b08b8029ac3a98e",
+   "date": "2018-02-24",
+   "subject": "add container, grid responsive",
+   "fixed_state": "860737ca24d289ed9ab8fb8d3b08b8029ac3a98e",
+   "pages_rendered": [
+    "test/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (new classes or behaviour); the broken state looks intended"
+  },
+  {
+   "id": "legacycss-842f34b6",
+   "source": "joexn/LegacyCSS",
+   "commit": "842f34b6da6d4a75cc78a76e697d13e8ae4db50b",
+   "date": "2016-08-03",
+   "subject": "Fixed issue with Chrome Extensions",
+   "fixed_state": "842f34b6da6d4a75cc78a76e697d13e8ae4db50b",
+   "pages_rendered": [
+    "dev.html"
+   ],
+   "verdict": "rejected",
+   "reason": "a component is not shown at all in the broken developer page (a class name clash); no fault of the kinds listed"
+  },
+  {
+   "id": "legacycss-2fba0af6",
+   "source": "joexn/LegacyCSS",
+   "commit": "2fba0af623ff8e03850febfaf629092639d3dbf7",
+   "date": "2016-08-02",
+   "subject": "Fixed #58",
+   "fixed_state": "2fba0af623ff8e03850febfaf629092639d3dbf7",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the menu icon sits 20 px further from the screen edge; it still looks intended"
+  },
+  {
+   "id": "legacycss-00a02ac1",
+   "source": "joexn/LegacyCSS",
+   "commit": "00a02ac1eda553d47d4838405fbec24adda0d40a",
+   "date": "2016-08-02",
+   "subject": "FIXED #53",
+   "fixed_state": "00a02ac1eda553d47d4838405fbec24adda0d40a",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the stylesheet at the parent commit lacks the component styles, so most of the page is unstyled"
+  },
+  {
+   "id": "legacycss-ababb578",
+   "source": "joexn/LegacyCSS",
+   "commit": "ababb578d04b2d165843c2f715747c1944b14cf2",
+   "date": "2016-08-01",
+   "subject": "Fixed input for mobiles",
+   "fixed_state": "ababb578d04b2d165843c2f715747c1944b14cf2",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two in text or one small element; nothing cut, covered, off the screen or misaligned"
+  },
+  {
+   "id": "legacycss-15e4e480",
+   "source": "joexn/LegacyCSS",
+   "commit": "15e4e48023b89caef0ea9cda3cc87f057b056029",
+   "date": "2016-08-01",
+   "subject": "Fixed message box and hero font issue",
+   "fixed_state": "15e4e48023b89caef0ea9cda3cc87f057b056029",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change; the broken state looks intended"
+  },
+  {
+   "id": "legacycss-ed4d548f",
+   "source": "joexn/LegacyCSS",
+   "commit": "ed4d548fceaaab77494266c78af2c0a8e9e1a7ee",
+   "date": "2016-07-31",
+   "subject": "Font issue fixed (unrelated to issue)",
+   "fixed_state": "ed4d548fceaaab77494266c78af2c0a8e9e1a7ee",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "legacycss-8bde1c39",
+   "source": "joexn/LegacyCSS",
+   "commit": "8bde1c39cdd5932aee6910fba24508689b11e170",
+   "date": "2016-07-31",
+   "subject": "Fixed issue #42 - TEMP",
+   "fixed_state": "8bde1c39cdd5932aee6910fba24508689b11e170",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "legacycss-7b8e9c1f",
+   "source": "joexn/LegacyCSS",
+   "commit": "7b8e9c1f2d74a508cce450836e615ba79f274b48",
+   "date": "2016-07-31",
+   "subject": "Fixed font scaling issue",
+   "fixed_state": "7b8e9c1f2d74a508cce450836e615ba79f274b48",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two in text or one small element; nothing cut, covered, off the screen or misaligned"
+  },
+  {
+   "id": "legacycss-ebec892b",
+   "source": "joexn/LegacyCSS",
+   "commit": "ebec892bb16aab63c2302a583e531ff672e8de71",
+   "date": "2016-06-07",
+   "subject": "text-align: initial",
+   "fixed_state": "87970e901b65052ba83f8c4640b9c8cc286a735b",
+   "pages_rendered": [
+    "GettingStarted.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "legacycss-ddf4f0f9",
+   "source": "joexn/LegacyCSS",
+   "commit": "ddf4f0f93deacd19539db87a166a68729885ee31",
+   "date": "2016-04-23",
+   "subject": "New layout",
+   "fixed_state": "ddf4f0f93deacd19539db87a166a68729885ee31",
+   "pages_rendered": [
+    "GettingStarted.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change; the broken state looks intended"
+  },
+  {
+   "id": "legacycss-6c5d5cc8",
+   "source": "joexn/LegacyCSS",
+   "commit": "6c5d5cc80d2e95a21a96d61c319665d58d844229",
+   "date": "2016-03-30",
+   "subject": "Fixed button margin and font issues",
+   "fixed_state": "6c5d5cc80d2e95a21a96d61c319665d58d844229",
+   "pages_rendered": [
+    "home.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "legacycss-7ec0eb61",
+   "source": "joexn/LegacyCSS",
+   "commit": "7ec0eb6147f51e57b4aa1178d9152a99acbc6019",
+   "date": "2016-03-30",
+   "subject": "Fixed img src problem",
+   "fixed_state": "7ec0eb6147f51e57b4aa1178d9152a99acbc6019",
+   "pages_rendered": [
+    "home.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "legacycss-534d6c53",
+   "source": "joexn/LegacyCSS",
+   "commit": "534d6c5359f8ce785f47477d064dc895a13ea767",
+   "date": "2016-03-30",
+   "subject": "Fixed padding issue in navbar and header",
+   "fixed_state": "534d6c5359f8ce785f47477d064dc895a13ea767",
+   "pages_rendered": [
+    "home.html"
+   ],
+   "verdict": "rejected",
+   "reason": "navbar link spacing refinement of a few pixels"
+  },
+  {
+   "id": "legacycss-20385d51",
+   "source": "joexn/LegacyCSS",
+   "commit": "20385d5140cf9d5e8a3ac5cb53d23c58c22163e5",
+   "date": "2016-03-29",
+   "subject": "fixed navbar spacing issue",
+   "fixed_state": "20385d5140cf9d5e8a3ac5cb53d23c58c22163e5",
+   "pages_rendered": [
+    "home.html"
+   ],
+   "verdict": "rejected",
+   "reason": "navbar link spacing refinement of a few pixels"
+  },
+  {
+   "id": "legacycss-05e43e1e",
+   "source": "joexn/LegacyCSS",
+   "commit": "05e43e1eddf5c16c32dc9682ba8404e1bec4d392",
+   "date": "2016-03-28",
+   "subject": "Fixed font import and added comment",
+   "fixed_state": "05e43e1eddf5c16c32dc9682ba8404e1bec4d392",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "mazer-7cd27ae6",
+   "source": "zuramai/mazer",
+   "commit": "7cd27ae636a32525dc7fdedff0e606c8f71f9bde",
+   "date": "2023-11-01",
+   "subject": "fix: spacing",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-eaa15f60",
+   "source": "zuramai/mazer",
+   "commit": "eaa15f60920db70f82f855680033f13e5445ecea",
+   "date": "2023-10-29",
+   "subject": "fixed image could not be loaded",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-489cec66",
+   "source": "zuramai/mazer",
+   "commit": "489cec66e0758391da0cd17796fa724d6568aac2",
+   "date": "2023-10-22",
+   "subject": "fixed scss so it doesn't get overwritten",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-155070d9",
+   "source": "zuramai/mazer",
+   "commit": "155070d92d7ef408c8e221bd81628b3ceda089be",
+   "date": "2023-10-16",
+   "subject": "fix responsive in account profile",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-3bd872c2",
+   "source": "zuramai/mazer",
+   "commit": "3bd872c231e38d0abd93cf35b378383bcad53533",
+   "date": "2023-10-03",
+   "subject": "fixed information in Components/Card",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-2e062fdb",
+   "source": "zuramai/mazer",
+   "commit": "2e062fdba837da382b1296e45b295593767f6d7f",
+   "date": "2023-09-15",
+   "subject": "feat: layout rtl",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-97a22a1a",
+   "source": "zuramai/mazer",
+   "commit": "97a22a1a3dc6791b99adb30df992a22c0a664497",
+   "date": "2023-09-15",
+   "subject": "style: change auth left padding",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-42f85fd4",
+   "source": "zuramai/mazer",
+   "commit": "42f85fd424cd8444d95253ea6165f97222f5f0cd",
+   "date": "2023-08-08",
+   "subject": "Issue, please fix: I recently discovered that there is a discrepancy between the variables file of the Mazer project and the variables file of Bootstrap 5.3. This discrepancy cause an issue with the s",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-b9f580b7",
+   "source": "zuramai/mazer",
+   "commit": "b9f580b7d345f665e5d5d3617c57be5abdb503c2",
+   "date": "2023-06-16",
+   "subject": "Fix: add overflow-hidden to email-application",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-043d2745",
+   "source": "zuramai/mazer",
+   "commit": "043d2745cbc5c04f134c4034a6a55e0324b9a8d3",
+   "date": "2023-04-06",
+   "subject": "fix: fixed bg image url in auth page, removed debug line (#223)",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-53c21320",
+   "source": "zuramai/mazer",
+   "commit": "53c213203ba529ff55184690ff99663553264d8b",
+   "date": "2023-04-02",
+   "subject": "fix: wrong margin utilities classes",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-f2e175ed",
+   "source": "zuramai/mazer",
+   "commit": "f2e175ed878ff0e1da491a2f927b6419994dbd6c",
+   "date": "2023-04-02",
+   "subject": "fix: footer padding bug",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-d6b92af1",
+   "source": "zuramai/mazer",
+   "commit": "d6b92af1d78ca83ace76e9570ead6f2a1c7cc41b",
+   "date": "2023-04-02",
+   "subject": "fix(ui): inconsistent padding i n modal",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-137ba199",
+   "source": "zuramai/mazer",
+   "commit": "137ba199f30d87848ec5e0f1da575d4f716c78a3",
+   "date": "2023-04-02",
+   "subject": "fix: rtl layout active submenu",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-671551a5",
+   "source": "zuramai/mazer",
+   "commit": "671551a5d90cf267417397377624f36aa5034238",
+   "date": "2023-04-02",
+   "subject": "fix(ui): apexchart radial chart overflow",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-04499339",
+   "source": "zuramai/mazer",
+   "commit": "044993393d8aa288c38272b75bf8b744b1c27c98",
+   "date": "2023-04-02",
+   "subject": "style: sidebar shows at minimum 1200px instead of 992px width",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-1b149647",
+   "source": "zuramai/mazer",
+   "commit": "1b149647df5bcc3973817ff30df74bb67dde16e1",
+   "date": "2023-03-30",
+   "subject": "fix(ui): wrong text align in dashboard 'Profile Visit'",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-a258d1dc",
+   "source": "zuramai/mazer",
+   "commit": "a258d1dc103e5b5c0e8379a7ed174c87f631ed05",
+   "date": "2023-03-30",
+   "subject": "fix(style): todolist widget responsive",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-dcfde353",
+   "source": "zuramai/mazer",
+   "commit": "dcfde3530d57ed383dbc31f7e989406df554a79e",
+   "date": "2023-03-30",
+   "subject": "fix: horizontal layout burger button not working",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-0b652898",
+   "source": "zuramai/mazer",
+   "commit": "0b652898ac8e0890e626cb4878e52f1e92cdf9eb",
+   "date": "2023-03-30",
+   "subject": "fix: Cumulative Layout Shift (CLS) in sidebar",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-139a77f2",
+   "source": "zuramai/mazer",
+   "commit": "139a77f20ef90f93ac10233fbdd0b8dad8ae67ab",
+   "date": "2023-03-28",
+   "subject": "fix: layout missing links",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-6048352e",
+   "source": "zuramai/mazer",
+   "commit": "6048352e2045c93e51f25c18bfb1964cea3f6139",
+   "date": "2023-01-16",
+   "subject": "fix: auth dark mode and padding",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-3a83ba04",
+   "source": "zuramai/mazer",
+   "commit": "3a83ba04eebd5a3812e1add35c34a816bfb81c28",
+   "date": "2023-01-16",
+   "subject": "fix: dark mode doesn't work in other layouts",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-3250b031",
+   "source": "zuramai/mazer",
+   "commit": "3250b03198eaa8c7dff3ce9286f8dd2a7fe4d366",
+   "date": "2022-12-21",
+   "subject": "fix: datatable jquery not responsive, close #184",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-0934fadc",
+   "source": "zuramai/mazer",
+   "commit": "0934fadc9cd1b3480abe0cf6d0ac0d4c70a6e076",
+   "date": "2022-12-21",
+   "subject": "feat: use .navbar-fixed class for sticky navbar",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-b0c013d4",
+   "source": "zuramai/mazer",
+   "commit": "b0c013d441f53cb8f306f80559d48a7d36cbf022",
+   "date": "2022-12-02",
+   "subject": "feat: sticky vertical navbar",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-6479d2f5",
+   "source": "zuramai/mazer",
+   "commit": "6479d2f5bf8c0d9a53416649b016ccb73d73dfbc",
+   "date": "2022-11-07",
+   "subject": "style: adjust dark background in horizontal layout",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-0923e290",
+   "source": "zuramai/mazer",
+   "commit": "0923e2907a3b6e892d18985a2cc27a0929f24d54",
+   "date": "2022-11-07",
+   "subject": "fix: dark mode doesnt show on another layouts",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-81e72924",
+   "source": "zuramai/mazer",
+   "commit": "81e7292492074c4d890ab480ac54a07a1aa69aa6",
+   "date": "2022-10-15",
+   "subject": "fix: horizontal layout menu icon out of line with text, close #163",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-ed1065e6",
+   "source": "zuramai/mazer",
+   "commit": "ed1065e6155bad8ce38f252ebc62838782ad5479",
+   "date": "2022-10-12",
+   "subject": "fix border radius gap (#157)",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-b95c7bc2",
+   "source": "zuramai/mazer",
+   "commit": "b95c7bc2f639df98ea70613859d8579d489a704a",
+   "date": "2022-10-03",
+   "subject": "fix: error page height not full",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-82080cea",
+   "source": "zuramai/mazer",
+   "commit": "82080cea18639f0286821becb0d92890de0b3e61",
+   "date": "2022-10-03",
+   "subject": "fix: uneven gap social media card (#141)",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-71c4e15d",
+   "source": "zuramai/mazer",
+   "commit": "71c4e15de961896ffb2f61281aa73c09522422dc",
+   "date": "2022-10-01",
+   "subject": "feat: add social media card under video card on components layouts (#134)",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-f5bef31c",
+   "source": "zuramai/mazer",
+   "commit": "f5bef31c6e6ca1dffd4c45726b350f147c4935b5",
+   "date": "2022-09-22",
+   "subject": "fix: the class 'card-title' should not define a fixed font-size",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-ebbcf59b",
+   "source": "zuramai/mazer",
+   "commit": "ebbcf59bac2dfbe677863e9ab5c2fcd0fa65015a",
+   "date": "2022-08-01",
+   "subject": "fix: dropdown not showing in layout horizontal and vertical navbar",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-91e14149",
+   "source": "zuramai/mazer",
+   "commit": "91e141495443067338bb788782e078f6506edd1e",
+   "date": "2022-08-01",
+   "subject": "style: main content transition on sidebar toggle in layout-navbar",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-81af3c04",
+   "source": "zuramai/mazer",
+   "commit": "81af3c0440072702d48fe8c45ea4e0233c620e8e",
+   "date": "2022-07-11",
+   "subject": "fix: misaligned navbar items and sidebar toggler",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-91eb82ac",
+   "source": "zuramai/mazer",
+   "commit": "91eb82acae47fc832836b7e2a5d5a4502a238f38",
+   "date": "2022-06-08",
+   "subject": "fix(style): pricing widget shadow overlap sibling",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-6aa25bb2",
+   "source": "zuramai/mazer",
+   "commit": "6aa25bb26949050b036da27ee9274a73f89f39c4",
+   "date": "2022-06-07",
+   "subject": "fix: div not closed in layout horizontal",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "mazer-b8cf75d4",
+   "source": "zuramai/mazer",
+   "commit": "b8cf75d44451099717a84c3a8554c9192919aa45",
+   "date": "2022-06-02",
+   "subject": "fix: icon positioning",
+   "fixed_state": null,
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no later commit carries the change in built CSS, so the fix cannot be rendered"
+  },
+  {
+   "id": "milligram-admin-7f01dc4f",
+   "source": "mazipan/milligram-admin-dashboard-template",
+   "commit": "7f01dc4fc49924ae52629fb65bc65d8d4e9b45e2",
+   "date": "2017-11-28",
+   "subject": "hide menu in mobile",
+   "fixed_state": "7f01dc4fc49924ae52629fb65bc65d8d4e9b45e2",
+   "pages_rendered": [
+    "dashboard.html",
+    "form.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page loads Milligram and normalize.css from cdn.rawgit.com, which no longer serves them, so it renders without its framework stylesheet in both states"
+  },
+  {
+   "id": "milligram-admin-87349765",
+   "source": "mazipan/milligram-admin-dashboard-template",
+   "commit": "87349765b9ed6d419c4718ead7fc9d519046759a",
+   "date": "2017-11-28",
+   "subject": "add padding-right in nav",
+   "fixed_state": "87349765b9ed6d419c4718ead7fc9d519046759a",
+   "pages_rendered": [
+    "dashboard.html",
+    "form.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page loads Milligram and normalize.css from cdn.rawgit.com, which no longer serves them, so it renders without its framework stylesheet in both states"
+  },
+  {
+   "id": "milligram-admin-57bcdcba",
+   "source": "mazipan/milligram-admin-dashboard-template",
+   "commit": "57bcdcbae2742f2283facdd743ace113611170ec",
+   "date": "2017-11-03",
+   "subject": "update layout",
+   "fixed_state": "57bcdcbae2742f2283facdd743ace113611170ec",
+   "pages_rendered": [
+    "dashboard.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page loads Milligram and normalize.css from cdn.rawgit.com, which no longer serves them, so it renders without its framework stylesheet in both states"
+  },
+  {
+   "id": "neubrutalism-13f43189",
+   "source": "OshekharO/Neubrutalism",
+   "commit": "13f431898ab464e978ddc752c47ee6a79a0ed817",
+   "date": "2026-09-02",
+   "subject": "refactor(css): migrate to prefixed utility classes and optimize mobile styles",
+   "fixed_state": "13f431898ab464e978ddc752c47ee6a79a0ed817",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "neubrutalism-3b935b37",
+   "source": "OshekharO/Neubrutalism",
+   "commit": "3b935b376493b4695d8dab767a651e251fb71f77",
+   "date": "2026-09-02",
+   "subject": "feat(ui): improve mobile responsiveness and layout stability",
+   "fixed_state": "3b935b376493b4695d8dab767a651e251fb71f77",
+   "pages_rendered": [
+    "docs/index.html",
+    "examples/neubrutalism-mini-example.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the documentation header and the table of stylesheet URLs run to 734 px, so the page scrolls sideways; the page fits 360 px after the fix",
+   "kind": "content that runs outside the screen or makes the page scroll sideways"
+  },
+  {
+   "id": "neubrutalism-af223018",
+   "source": "OshekharO/Neubrutalism",
+   "commit": "af223018a4e4a762fd877d8be11f817a7f8b327d",
+   "date": "2026-09-01",
+   "subject": "feat(ui): add responsive navbar with hamburger menu",
+   "fixed_state": "af223018a4e4a762fd877d8be11f817a7f8b327d",
+   "pages_rendered": [
+    "examples/neubrutalism-mini-example.html",
+    "index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the navigation links and the Toggle Dark button run past the screen to 648 px; a menu button replaces them and the page fits 360 px after the fix",
+   "kind": "content that runs outside the screen or makes the page scroll sideways"
+  },
+  {
+   "id": "neubrutalism-500f7cc9",
+   "source": "OshekharO/Neubrutalism",
+   "commit": "500f7cc9c324306745f0dedd18866cbef95b2cf6",
+   "date": "2026-04-04",
+   "subject": "fix: remove unused .docs-layout CSS and update Documentation tab link to /docs",
+   "fixed_state": "500f7cc9c324306745f0dedd18866cbef95b2cf6",
+   "pages_rendered": [
+    "docs/index.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "neubrutalism-74821c96",
+   "source": "OshekharO/Neubrutalism",
+   "commit": "74821c966f0f9a4c3a2dc64742d1bbfea3a784be",
+   "date": "2025-12-01",
+   "subject": "Fix dark mode text colors by using fixed white/black instead of CSS variables",
+   "fixed_state": "74821c966f0f9a4c3a2dc64742d1bbfea3a784be",
+   "pages_rendered": [
+    "examples/dashboard.html",
+    "examples/starter-template.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "neubrutalism-b1891e75",
+   "source": "OshekharO/Neubrutalism",
+   "commit": "b1891e75031594b24430d9ac66add91fe33c2c67",
+   "date": "2025-11-30",
+   "subject": "Improve responsiveness, add examples, enhance developer experience",
+   "fixed_state": "b1891e75031594b24430d9ac66add91fe33c2c67",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the code blocks scroll inside their own boxes in the broken state; the fix wraps them"
+  },
+  {
+   "id": "neubrutalism-f1d02879",
+   "source": "OshekharO/Neubrutalism",
+   "commit": "f1d02879d18556af42f5e9c56da3fb0adfcbb254",
+   "date": "2025-11-30",
+   "subject": "Add comprehensive documentation, new components, and improved responsive design",
+   "fixed_state": "f1d02879d18556af42f5e9c56da3fb0adfcbb254",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "neubrutalism-a6301e27",
+   "source": "OshekharO/Neubrutalism",
+   "commit": "a6301e2704010fa3cd054cc25ffc88a2fde191bf",
+   "date": "2025-02-22",
+   "subject": "feat: add gap to checkbox section, improve responsiveness",
+   "fixed_state": "a6301e2704010fa3cd054cc25ffc88a2fde191bf",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement (two columns instead of three); the controls touch their labels in both states"
+  },
+  {
+   "id": "neubrutalism-c09df21a",
+   "source": "OshekharO/Neubrutalism",
+   "commit": "c09df21ae77ca9fce6ef7437670480b9a6c61569",
+   "date": "2025-01-02",
+   "subject": "Fixed pagination",
+   "fixed_state": "c09df21ae77ca9fce6ef7437670480b9a6c61569",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "neubrutalism-69cd2c76",
+   "source": "OshekharO/Neubrutalism",
+   "commit": "69cd2c76e7ae651c7fd9ee3a3f8c6d541fbc1ff4",
+   "date": "2025-01-01",
+   "subject": "GitHub cover css",
+   "fixed_state": "69cd2c76e7ae651c7fd9ee3a3f8c6d541fbc1ff4",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "neubrutalism-87cbdf9f",
+   "source": "OshekharO/Neubrutalism",
+   "commit": "87cbdf9ffb17f3391219935a7b43e3fc4108a922",
+   "date": "2024-12-31",
+   "subject": "Fix,v dropdown width",
+   "fixed_state": "87cbdf9ffb17f3391219935a7b43e3fc4108a922",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement (the dropdown grows wider); the broken state looks intended"
+  },
+  {
+   "id": "notion-css-68748c0d",
+   "source": "sreeram-venkitesh/notion.css",
+   "commit": "68748c0d8b0c37ddfc9b693d372a70483b013928",
+   "date": "2020-11-06",
+   "subject": "fixed width",
+   "fixed_state": "68748c0d8b0c37ddfc9b693d372a70483b013928",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change; the broken state looks intended"
+  },
+  {
+   "id": "notion-css-ff2c2912",
+   "source": "sreeram-venkitesh/notion.css",
+   "commit": "ff2c291247c3b633961cf50b2d387068a2f734bc",
+   "date": "2020-11-06",
+   "subject": "Site is now responsive",
+   "fixed_state": "ff2c291247c3b633961cf50b2d387068a2f734bc",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: a line of code runs out of its grey box and makes the page 918 px wide; the page fits 360 px after the fix",
+   "kind": "content that runs outside the screen or makes the page scroll sideways"
+  },
+  {
+   "id": "particle-bffc4ba5",
+   "source": "ionited/particle",
+   "commit": "bffc4ba5ff133531c74d8642d543cf2434953e46",
+   "date": "2023-10-25",
+   "subject": "fix: use padding again",
+   "fixed_state": "b5dce43355bc3282f3548f0ddf2e831df1a79f58",
+   "pages_rendered": [
+    "test/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "particle-891c4249",
+   "source": "ionited/particle",
+   "commit": "891c4249c4c7b831f2b62fb50df579bb92c4584f",
+   "date": "2023-10-17",
+   "subject": "fix: use gap instead of margin and padding",
+   "fixed_state": "b9906276787b1b41accb5137d06ea59d8c8d2c9c",
+   "pages_rendered": [
+    "test/index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the grid rows reach 8 px past both sides of the screen and the page is 368 px wide; the page fits 360 px after the fix",
+   "kind": "content that runs outside the screen or makes the page scroll sideways"
+  },
+  {
+   "id": "particle-ddd27668",
+   "source": "ionited/particle",
+   "commit": "ddd27668c141d4989b86c7b332ffa5c4d3d2d77d",
+   "date": "2023-02-08",
+   "subject": "feat: grid and col padding",
+   "fixed_state": "dd9a346b92a20d768cec56b5b1469900d4bf8018",
+   "pages_rendered": [
+    "test/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state makes the page wider than the phone screen, so it is not a fix"
+  },
+  {
+   "id": "particle-dd49bb65",
+   "source": "ionited/particle",
+   "commit": "dd49bb6567b3fc024f22ace4aefe1db5f820ee57",
+   "date": "2022-05-11",
+   "subject": "feat: display, margin and padding responsive",
+   "fixed_state": "e878ccc40ad786dd2a0743531cce7e0dfb32fb92",
+   "pages_rendered": [
+    "test/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (new classes or behaviour); the broken state looks intended"
+  },
+  {
+   "id": "particle-01ba831e",
+   "source": "ionited/particle",
+   "commit": "01ba831e78bb7122f27c5cabf71b5730b34ca32d",
+   "date": "2022-03-30",
+   "subject": "fix: textarea height",
+   "fixed_state": "1a6b3a070139244a02709222766e1f4ad1f9999c",
+   "pages_rendered": [
+    "test/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "particle-6f26c0e1",
+   "source": "ionited/particle",
+   "commit": "6f26c0e1b787d4a2617333afb9a387ca4f5404f3",
+   "date": "2020-04-25",
+   "subject": "docs(readme): Fix logo alignment",
+   "fixed_state": "6f26c0e1b787d4a2617333afb9a387ca4f5404f3",
+   "pages_rendered": [
+    "test/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "pavilion-361f3fb8",
+   "source": "getpavilion/pavilion",
+   "commit": "361f3fb8acfaaaf49dfaf9b13bb7ad7a2f782e53",
+   "date": "2017-02-26",
+   "subject": "Remove unneeded line-height",
+   "fixed_state": "c3cd4a6a3d1ef729ac4a740f012e9a7c3ae038cc",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two in text or one small element; nothing cut, covered, off the screen or misaligned"
+  },
+  {
+   "id": "pavilion-39639cce",
+   "source": "getpavilion/pavilion",
+   "commit": "39639cce77aecb2240e27791f2cce58780afc7a8",
+   "date": "2017-02-21",
+   "subject": "Select overflow fix",
+   "fixed_state": "9dca21a55260b8959e368a4d0bdca6f1793689e3",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change (colour, border, radius or font)"
+  },
+  {
+   "id": "pavilion-903096a0",
+   "source": "getpavilion/pavilion",
+   "commit": "903096a029e8e9840cff0078342d6e5fb22f6e60",
+   "date": "2017-02-21",
+   "subject": "Fix overflow on multiselect",
+   "fixed_state": "9dca21a55260b8959e368a4d0bdca6f1793689e3",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change (colour, border, radius or font)"
+  },
+  {
+   "id": "pavilion-983d3e4f",
+   "source": "getpavilion/pavilion",
+   "commit": "983d3e4fdeea617a920b7fcee9ef28f7ff179482",
+   "date": "2017-02-14",
+   "subject": "Minor fixed",
+   "fixed_state": "ed201a4078d4eccb4936874a9d5af2397a97f458",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "pavilion-72f63765",
+   "source": "getpavilion/pavilion",
+   "commit": "72f637650340c2a262f0e4e4211edaaeb4e74292",
+   "date": "2017-02-14",
+   "subject": "Set new vars and fix paddings",
+   "fixed_state": "1f24a424d25019163ba7ed5aeebaf78ba9ca6aad",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "pavilion-f7880939",
+   "source": "getpavilion/pavilion",
+   "commit": "f78809394f4dee6bf86fde55102c29f44baf4493",
+   "date": "2017-02-14",
+   "subject": "Set new var names and fix select padding",
+   "fixed_state": "1f24a424d25019163ba7ed5aeebaf78ba9ca6aad",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "pavilion-859f494a",
+   "source": "getpavilion/pavilion",
+   "commit": "859f494a314f51556c0711d6e8db2d96dd79fcbf",
+   "date": "2017-02-13",
+   "subject": "Fix padding for tables",
+   "fixed_state": "859f494a314f51556c0711d6e8db2d96dd79fcbf",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "pavilion-6874cf8f",
+   "source": "getpavilion/pavilion",
+   "commit": "6874cf8f9cd1263978b1213cccf67954870b5420",
+   "date": "2017-02-13",
+   "subject": "Fix paddings",
+   "fixed_state": "859f494a314f51556c0711d6e8db2d96dd79fcbf",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "pavilion-f1752104",
+   "source": "getpavilion/pavilion",
+   "commit": "f1752104a1e61bcd98ca9ff8a7e994905ac94190",
+   "date": "2017-02-03",
+   "subject": "Update border width variables with correct name",
+   "fixed_state": "f1752104a1e61bcd98ca9ff8a7e994905ac94190",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "pavilion-f7d3d641",
+   "source": "getpavilion/pavilion",
+   "commit": "f7d3d641a6a13f3db6d0741dac860411e8ce31d4",
+   "date": "2017-02-03",
+   "subject": "Base line-height",
+   "fixed_state": "b21fb1fb3c6d592896c9005c830a13def612a277",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two in text or one small element; nothing cut, covered, off the screen or misaligned"
+  },
+  {
+   "id": "pavilion-81ac7ba7",
+   "source": "getpavilion/pavilion",
+   "commit": "81ac7ba7e41e67e811478c550adbe01933ed87ac",
+   "date": "2017-02-03",
+   "subject": "Rename/structure lineheight setting",
+   "fixed_state": "b21fb1fb3c6d592896c9005c830a13def612a277",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two in text or one small element; nothing cut, covered, off the screen or misaligned"
+  },
+  {
+   "id": "pavilion-0e6a9000",
+   "source": "getpavilion/pavilion",
+   "commit": "0e6a900034e560698be5c062114e6834b34a96ea",
+   "date": "2017-02-02",
+   "subject": "Blockquote margin fix",
+   "fixed_state": "b21fb1fb3c6d592896c9005c830a13def612a277",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two in text or one small element; nothing cut, covered, off the screen or misaligned"
+  },
+  {
+   "id": "pavilion-1506ccfe",
+   "source": "getpavilion/pavilion",
+   "commit": "1506ccfe2c47c467d9a0c29c36ba7746d76d480f",
+   "date": "2017-01-28",
+   "subject": "Fix typography line height",
+   "fixed_state": "c05c442903c8561c6a209cfee5d36a445175999a",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "differences of a pixel or two in text or one small element; nothing cut, covered, off the screen or misaligned"
+  },
+  {
+   "id": "pavilion-b54f05e5",
+   "source": "getpavilion/pavilion",
+   "commit": "b54f05e5d87b6da516a594e40f0123c07cc4ad1a",
+   "date": "2016-07-17",
+   "subject": "- update with border and padding variable - update placeholder colors with medium gray - fix checkbox/radio alignment",
+   "fixed_state": "a4cf104b8b76eab28aa8748240402bfeaad171cd",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "pavilion-4645a1f0",
+   "source": "getpavilion/pavilion",
+   "commit": "4645a1f0a6be76ee837162af8d6b18bdefd532ab",
+   "date": "2016-07-17",
+   "subject": "update with variable border and padding",
+   "fixed_state": "a4cf104b8b76eab28aa8748240402bfeaad171cd",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "pavilion-adcb92c1",
+   "source": "getpavilion/pavilion",
+   "commit": "adcb92c1186dcb8448e934f8ef49c6ca0521b322",
+   "date": "2016-07-17",
+   "subject": "Add variables - padding & borders for inputs and buttons - medium gray color for inputs - headings sizes as variables",
+   "fixed_state": "a4cf104b8b76eab28aa8748240402bfeaad171cd",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "pavilion-5e4c7662",
+   "source": "getpavilion/pavilion",
+   "commit": "5e4c7662db7f8339f394e121817a6284bbaee1bc",
+   "date": "2016-05-21",
+   "subject": "fix radio & checkbox alignment on FireFox",
+   "fixed_state": "c2cfab1cab5a8393932c648125a97f7bbe634fa1",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "pavilion-22800948",
+   "source": "getpavilion/pavilion",
+   "commit": "22800948a4ea80602ab2de54ae6ca09a70d1e01b",
+   "date": "2016-04-25",
+   "subject": "fix form alignments",
+   "fixed_state": "f2764909ab8d3a54a518ac7f75e0ef3279245aec",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "pavilion-f7d0ccf1",
+   "source": "getpavilion/pavilion",
+   "commit": "f7d0ccf1f07dbfc9d989240b49b69636bf30f4d5",
+   "date": "2016-04-16",
+   "subject": "set proper container and column padding for smaller screens",
+   "fixed_state": "4cc9e71bf9d736f016476a000f4302e8ed65ee1b",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "pavilion-169081a6",
+   "source": "getpavilion/pavilion",
+   "commit": "169081a66292452584991b79ed0d942a0ecfe98f",
+   "date": "2016-03-30",
+   "subject": "- uppercase button + fix lineheight",
+   "fixed_state": "054a622a7ba5b27c6d9253304a2f748a3dd35549",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change (colour, border, radius or font)"
+  },
+  {
+   "id": "pavilion-fd8f4494",
+   "source": "getpavilion/pavilion",
+   "commit": "fd8f44948eafb1b80eb380727f4785a186758342",
+   "date": "2016-02-14",
+   "subject": "Textaligns per viewport",
+   "fixed_state": "c64dc6af2db2e38193c79677499cce6269f758e2",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (new classes or behaviour); the broken state looks intended"
+  },
+  {
+   "id": "pavilion-1cbd8e6f",
+   "source": "getpavilion/pavilion",
+   "commit": "1cbd8e6fb441a3cf9a096bea68af2992e0be8a32",
+   "date": "2016-02-13",
+   "subject": "Added small font-sizes for small screens in the variables and typography.scss",
+   "fixed_state": "1cbd8e6fb441a3cf9a096bea68af2992e0be8a32",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change; the broken state looks intended"
+  },
+  {
+   "id": "plainadmin-f96d74ce",
+   "source": "PlainAdmin/plain-free-bootstrap-admin-template",
+   "commit": "f96d74ce3ccbaa1ace8dfaa71c06482a9b9cf82a",
+   "date": "2021-09-30",
+   "subject": "updated to bootstrap 5.1.1, fixed minor bugs and UI improvements",
+   "fixed_state": "f96d74ce3ccbaa1ace8dfaa71c06482a9b9cf82a",
+   "pages_rendered": [
+    "alerts.html",
+    "blank-page.html"
+   ],
+   "verdict": "rejected",
+   "reason": "Bootstrap update with style changes; the broken state looks intended"
+  },
+  {
+   "id": "plainadmin-f3da9db7",
+   "source": "PlainAdmin/plain-free-bootstrap-admin-template",
+   "commit": "f3da9db76337652fdf92265bf99f00161081cc23",
+   "date": "2021-06-06",
+   "subject": "calendar issue of chrome fixed",
+   "fixed_state": "f3da9db76337652fdf92265bf99f00161081cc23",
+   "pages_rendered": [
+    "alerts.html",
+    "blank-page.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "plainadmin-db0d54e9",
+   "source": "PlainAdmin/plain-free-bootstrap-admin-template",
+   "commit": "db0d54e97f8562ac9c9472f1f25239f79c4a0a93",
+   "date": "2021-06-03",
+   "subject": "mobile experience updated",
+   "fixed_state": "db0d54e97f8562ac9c9472f1f25239f79c4a0a93",
+   "pages_rendered": [
+    "alerts.html",
+    "blank-page.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "plainadmin-7b537082",
+   "source": "PlainAdmin/plain-free-bootstrap-admin-template",
+   "commit": "7b53708245d694187a1e40c48993dbfe628ce1fd",
+   "date": "2021-06-03",
+   "subject": "mobile experience updated",
+   "fixed_state": "7b53708245d694187a1e40c48993dbfe628ce1fd",
+   "pages_rendered": [
+    "index.html",
+    "invoice.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the Sales Forecast legend stays on one row and runs to 486 px, past the screen; the legend stacks and the page fits 360 px after the fix",
+   "kind": "content that runs outside the screen or makes the page scroll sideways"
+  },
+  {
+   "id": "portal-bs5-6e961c72",
+   "source": "xriley/portal-theme-bs5",
+   "commit": "6e961c72dbbd5273e31fc6e4e10864e41c381e7f",
+   "date": "2020-10-10",
+   "subject": "fixed alert close button markup and styling",
+   "fixed_state": "6e961c72dbbd5273e31fc6e4e10864e41c381e7f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the alert close button is not drawn at the parent commit (markup for a newer Bootstrap); no fault of the kinds listed"
+  },
+  {
+   "id": "portal-bs5-8d21b184",
+   "source": "xriley/portal-theme-bs5",
+   "commit": "8d21b18474d8d9625ba21a28d85fb2ef405ff7e2",
+   "date": "2020-10-09",
+   "subject": "updated Bootstrap and fixed some minor issues",
+   "fixed_state": "8d21b18474d8d9625ba21a28d85fb2ef405ff7e2",
+   "pages_rendered": [
+    "account.html",
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "Bootstrap update with style changes; the broken state looks intended"
+  },
+  {
+   "id": "portal-bs5-3369863d",
+   "source": "xriley/portal-theme-bs5",
+   "commit": "3369863d8fca0aa4ccfcee42926722eff6d9bc2f",
+   "date": "2020-09-19",
+   "subject": "small tweak for mobile",
+   "fixed_state": "3369863d8fca0aa4ccfcee42926722eff6d9bc2f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "potato-fa62be96",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "fa62be96e2f359670761ef3707a6184954cbdedf",
+   "date": "2017-01-07",
+   "subject": "Changed hr width size to 60% (#98)",
+   "fixed_state": "fa62be96e2f359670761ef3707a6184954cbdedf",
+   "pages_rendered": [
+    "examples/buttons.html",
+    "examples/forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "potato-ad8bd26d",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "ad8bd26db89e07bea0f848d5f594631848f6cf52",
+   "date": "2016-12-22",
+   "subject": "Fixed issue #85",
+   "fixed_state": "ad8bd26db89e07bea0f848d5f594631848f6cf52",
+   "pages_rendered": [
+    "examples/buttons.html",
+    "examples/forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "potato-d5e76c7d",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "d5e76c7dea9eceee1783e74644d1f04e7bb17138",
+   "date": "2016-12-21",
+   "subject": "Fixed issue with white button bg color #83",
+   "fixed_state": "d5e76c7dea9eceee1783e74644d1f04e7bb17138",
+   "pages_rendered": [
+    "examples/buttons.html",
+    "examples/forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "potato-c08b0132",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "c08b013291b84b7360ce74726dd3030dfa95bf3d",
+   "date": "2016-12-21",
+   "subject": "Select oprion arrow is hidden",
+   "fixed_state": "c08b013291b84b7360ce74726dd3030dfa95bf3d",
+   "pages_rendered": [
+    "examples/buttons.html",
+    "examples/forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "potato-49dde4cd",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "49dde4cdb2d653bad8c079b69a0b27c7e7638f7f",
+   "date": "2016-12-21",
+   "subject": ":rocket: Fixed issue with button-full class #81",
+   "fixed_state": "49dde4cdb2d653bad8c079b69a0b27c7e7638f7f",
+   "pages_rendered": [
+    "examples/buttons.html",
+    "examples/forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "potato-5262fa9b",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "5262fa9be696fb100208df865ede8c0cf7fb92fb",
+   "date": "2016-12-18",
+   "subject": ":fire: Fixed minor issues",
+   "fixed_state": "5262fa9be696fb100208df865ede8c0cf7fb92fb",
+   "pages_rendered": [
+    "examples/buttons.html",
+    "examples/forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "potato-485124fa",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "485124faf138c3d1c569893e614c09f6a068877a",
+   "date": "2016-11-30",
+   "subject": "Fixed bug #62 with missing textarea's font size",
+   "fixed_state": "485124faf138c3d1c569893e614c09f6a068877a",
+   "pages_rendered": [
+    "examples/buttons.html",
+    "examples/forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "potato-6bcaba93",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "6bcaba93bf8f18f0f5d291f7975cb4acbb1fdbe6",
+   "date": "2016-10-17",
+   "subject": "Basic Table (Semi-responsive)",
+   "fixed_state": "7f032e4f44fee2f09bd9deb6ce725d9114cf591f",
+   "pages_rendered": [
+    "examples/table.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "potato-e3d5885b",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "e3d5885b01fd81a4c19e9aa8ded8c67d3db44e20",
+   "date": "2016-10-14",
+   "subject": "fixed $, replaced with @",
+   "fixed_state": "c144d8beebf5dc61faaf1513ba29ec0653380db0",
+   "pages_rendered": [
+    "examples/buttons.html",
+    "examples/forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "potato-3357eb58",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "3357eb580e80f14414473f0768732bd3cd95efa9",
+   "date": "2016-10-14",
+   "subject": "fixed value in SASS , echoed changes in LESS/CSS/Minimised CSS",
+   "fixed_state": "3357eb580e80f14414473f0768732bd3cd95efa9",
+   "pages_rendered": [
+    "examples/buttons.html",
+    "examples/forms.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "potato-71254345",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "71254345c7c461472c3e39ff91478bf94730b534",
+   "date": "2016-10-11",
+   "subject": "Errors fixed whith the suggestions.",
+   "fixed_state": "2953fb8decc4bbf8ad5434d79e2f7c8560fdcddf",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "potato-a01e0275",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "a01e02755afa5b438ef4f4b57d32837d4e23205f",
+   "date": "2016-10-08",
+   "subject": "Added font-size for mobile and tablet + desktop",
+   "fixed_state": "a01e02755afa5b438ef4f4b57d32837d4e23205f",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "potato-6fff7f28",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "6fff7f286f9e63576faddbb016391f3cfd762aca",
+   "date": "2016-10-06",
+   "subject": "Revert \"Fixed merge conflicts\"",
+   "fixed_state": "6fff7f286f9e63576faddbb016391f3cfd762aca",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "potato-b885e6d6",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "b885e6d62c8a85615e39ec2e38ac53b3444e906c",
+   "date": "2016-10-06",
+   "subject": "Fixed merge conflicts",
+   "fixed_state": "b885e6d62c8a85615e39ec2e38ac53b3444e906c",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "potato-a9b48154",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "a9b481549db6e19109df6b098c4009bbd0684f85",
+   "date": "2016-10-06",
+   "subject": ":zap: Added responsive grid",
+   "fixed_state": "a9b481549db6e19109df6b098c4009bbd0684f85",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "potato-5302a2bc",
+   "source": "ummahusla/PotatoCSS",
+   "commit": "5302a2bcd6f3f88eb83b8b85888e153fed41303a",
+   "date": "2016-10-05",
+   "subject": "-Added global font, color, line-height",
+   "fixed_state": "5302a2bcd6f3f88eb83b8b85888e153fed41303a",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "psone-d3751481",
+   "source": "micah5/PSone.css",
+   "commit": "d37514810fa7ba4260df73dcb5d08e6507b8cfa0",
+   "date": "2018-12-13",
+   "subject": "feat(icons): fix width, and spacing of the icons",
+   "fixed_state": "d37514810fa7ba4260df73dcb5d08e6507b8cfa0",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "psone-951038cc",
+   "source": "micah5/PSone.css",
+   "commit": "951038cce00c1efc51d6921bf4931b5a29930d8f",
+   "date": "2018-12-12",
+   "subject": "fix(icons): margins on index.html",
+   "fixed_state": "951038cce00c1efc51d6921bf4931b5a29930d8f",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state makes the page wider than the phone screen, so it is not a fix"
+  },
+  {
+   "id": "psone-047ad598",
+   "source": "micah5/PSone.css",
+   "commit": "047ad598cd469d2e5f593a01ada0c36475a98f24",
+   "date": "2018-12-12",
+   "subject": "feat: change width of the input and font-size of h1 to fix ios.",
+   "fixed_state": "047ad598cd469d2e5f593a01ada0c36475a98f24",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the PSone.css title runs 6 px past the right edge of the screen; it fits after the fix",
+   "kind": "content that runs outside the screen or makes the page scroll sideways"
+  },
+  {
+   "id": "psone-d368ab3f",
+   "source": "micah5/PSone.css",
+   "commit": "d368ab3f751212e6e1e681c96f128eafe971e000",
+   "date": "2018-12-12",
+   "subject": "feat: made responsive adjustments to index.html",
+   "fixed_state": "d368ab3f751212e6e1e681c96f128eafe971e000",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the row of controller buttons runs out of its panel to 746 px and the page scrolls sideways; the buttons wrap inside the panel after the fix",
+   "kind": "content that runs outside the screen or makes the page scroll sideways"
+  },
+  {
+   "id": "psone-874d963c",
+   "source": "micah5/PSone.css",
+   "commit": "874d963c16f1c6515e6b50cdbbf14da1302d9225",
+   "date": "2018-12-11",
+   "subject": "feat(icons): add l1 r1 icons and change margins",
+   "fixed_state": "874d963c16f1c6515e6b50cdbbf14da1302d9225",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state makes the page wider than the phone screen, so it is not a fix"
+  },
+  {
+   "id": "psone-c491d683",
+   "source": "micah5/PSone.css",
+   "commit": "c491d683058d29d7fa6325e052786e5ca81fea03",
+   "date": "2018-12-07",
+   "subject": "fixed height on INDETERMINATE progress bar, adding gradient to controller buttons, updating readme",
+   "fixed_state": "c491d683058d29d7fa6325e052786e5ca81fea03",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change (colour, border, radius or font)"
+  },
+  {
+   "id": "sb-full-slider-65f9222a",
+   "source": "StartBootstrap/startbootstrap-full-slider",
+   "commit": "65f9222a742452564c6ac6d9717980f9e26d3621",
+   "date": "2017-08-19",
+   "subject": "Wrapped nav items in a container element",
+   "fixed_state": "65f9222a742452564c6ac6d9717980f9e26d3621",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (navbar contents aligned to the page container)"
+  },
+  {
+   "id": "skeleton-plus-c51f874a",
+   "source": "oltdaniel/skeleton-plus",
+   "commit": "c51f874a128f2cf0f48078f3e8cfe0f59cba42f0",
+   "date": "2018-01-08",
+   "subject": ".bg-(color) is already covered",
+   "fixed_state": "ed1cbeaa32ab44282ff4d0237aed1e724f4ffda0",
+   "pages_rendered": [
+    "dist/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change (colour, border, radius or font)"
+  },
+  {
+   "id": "skeleton-plus-2051228c",
+   "source": "oltdaniel/skeleton-plus",
+   "commit": "2051228cd3e012dcc91b8cf222f01dfe7242737e",
+   "date": "2017-12-05",
+   "subject": "Added mobile/desktop & old grid",
+   "fixed_state": "2051228cd3e012dcc91b8cf222f01dfe7242737e",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "skeleton-plus-9c3de957",
+   "source": "oltdaniel/skeleton-plus",
+   "commit": "9c3de957d7623934ede9f57a477a33ada8879efa",
+   "date": "2017-10-05",
+   "subject": "Colors responsive navigation",
+   "fixed_state": "9c3de957d7623934ede9f57a477a33ada8879efa",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (navigation centred under the title)"
+  },
+  {
+   "id": "skeleton-plus-a9daa63f",
+   "source": "oltdaniel/skeleton-plus",
+   "commit": "a9daa63f7f43b6bb0204cf73e9179db34f6c2ecf",
+   "date": "2017-04-22",
+   "subject": "Better Grid + Fixed Issue",
+   "fixed_state": "a9daa63f7f43b6bb0204cf73e9179db34f6c2ecf",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "skeleton-plus-f1bdf076",
+   "source": "oltdaniel/skeleton-plus",
+   "commit": "f1bdf076d215272157040519f7cb3a6e90d4bedc",
+   "date": "2016-08-13",
+   "subject": "Color Fix (Tooltips). Input height fix.",
+   "fixed_state": "f1bdf076d215272157040519f7cb3a6e90d4bedc",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "input and select heights differ by about 1 px; tooltip colours change"
+  },
+  {
+   "id": "sleek-56c51201",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "56c512013b99a95967ea999ee22c97514981a957",
+   "date": "2020-03-05",
+   "subject": "fix: all compact-spacing",
+   "fixed_state": "d5fee260a75285ae5264c9b77bd93be784d3712e",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sleek-3fad14d8",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "3fad14d885ba09a2eb893d10fb1658f31efd8811",
+   "date": "2020-03-04",
+   "subject": "fix: compact alignment & remove unnecessary code",
+   "fixed_state": "d5fee260a75285ae5264c9b77bd93be784d3712e",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sleek-e6e99de0",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "e6e99de0a6189219a18fe0606ffd71b6135bf750",
+   "date": "2020-03-02",
+   "subject": "fix: compact spacing in index page",
+   "fixed_state": "d5fee260a75285ae5264c9b77bd93be784d3712e",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sleek-ebbd8283",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "ebbd8283d549eb054507325d06d66e82a58cad36",
+   "date": "2020-03-01",
+   "subject": "add compact-spacing in Layout Settings",
+   "fixed_state": "d5fee260a75285ae5264c9b77bd93be784d3712e",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sleek-67c3341a",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "67c3341a4ddbeec4ee94f89dbbb0cc4d52e592a6",
+   "date": "2020-01-28",
+   "subject": "fix: right-sidebar data height",
+   "fixed_state": "d5fee260a75285ae5264c9b77bd93be784d3712e",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sleek-d7e0c2e1",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "d7e0c2e1692e47a843599318d41a51d3803332b7",
+   "date": "2020-01-28",
+   "subject": "fix: simplebar data-height in inner-pages",
+   "fixed_state": "d5fee260a75285ae5264c9b77bd93be784d3712e",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sleek-38cbc53a",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "38cbc53afaae794b4845cda23c534b3148416df1",
+   "date": "2020-01-27",
+   "subject": "fix: team page data-height",
+   "fixed_state": "d5fee260a75285ae5264c9b77bd93be784d3712e",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sleek-fadff0ec",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "fadff0ec19c6eff7b725b4916685802a5313112d",
+   "date": "2020-01-08",
+   "subject": "fix: breadcrumb align",
+   "fixed_state": "b00ac8d70d7122c7a2c8e51b5e9b89dee53c85c9",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sleek-7eaa3241",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "7eaa324178263f15666cc7ead06146839cd9a63a",
+   "date": "2019-12-14",
+   "subject": "fix: Layout of table-borderless",
+   "fixed_state": "504a0c808ac7be9f1605ecc3b5f0045430621527",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sleek-377fef99",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "377fef997c96b7ddccb9b2e9211c80a1c3d51e6c",
+   "date": "2019-11-17",
+   "subject": "change align in data-table",
+   "fixed_state": "504a0c808ac7be9f1605ecc3b5f0045430621527",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "sleek-b168f57c",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "b168f57c03a7d29a44e1497f2613bd539b702e26",
+   "date": "2019-11-16",
+   "subject": "fix: alignment data-information",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-5f2b110c",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "5f2b110c28adffbc6f74b5d3d853dbb7376a7d45",
+   "date": "2019-11-14",
+   "subject": "fix: dataTable.dtr-inline.collapsed alignment",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-be4723c5",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "be4723c53e96ca84819c94f1e28df8fc065bd2ca",
+   "date": "2019-11-09",
+   "subject": "fix: dataTables_info alignment",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-c0321c26",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "c0321c268ae2775d08c0f1890ac8854feaa545fe",
+   "date": "2019-11-09",
+   "subject": "fix: add responsive-data-tables",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-79e57f6a",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "79e57f6a1e7373e0e745819bdbddc8559aeda17d",
+   "date": "2019-10-11",
+   "subject": "fix: responsive add contact modal",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-579a550f",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "579a550f8ff800cb2cf7fcd92b0fd8c7869d8b8d",
+   "date": "2019-09-29",
+   "subject": "fix: chat height",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-e382217f",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "e382217f630b23b2716ab589bc3e77fe8785b6f3",
+   "date": "2019-09-24",
+   "subject": "fix: mobile fixed and static",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-4584dba5",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "4584dba506beaca66d2102496fcebcb882960514",
+   "date": "2019-08-26",
+   "subject": "fix: name of layout setting",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-90224024",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "90224024448193b4319e984ba0d716f8f90fe2ba",
+   "date": "2019-08-26",
+   "subject": "fix: layout settings to right sidebar 2",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-34900818",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "34900818625de14e1e96344eaaaed3e16779c25c",
+   "date": "2019-08-25",
+   "subject": "fix: layout settings heading text and icon",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-b4805e25",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "b4805e25cc2126dd26a2fc19217298bb19b6da43",
+   "date": "2019-08-25",
+   "subject": "fix: layout settings spacing",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-7db8d3b4",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "7db8d3b403bb785e46efa0c02557b5609b4a84e0",
+   "date": "2019-08-25",
+   "subject": "fix: layout settings color",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-53e05677",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "53e0567735fe3b63669e362bd8aee18ceb35dfb1",
+   "date": "2019-08-25",
+   "subject": "fix: layout settings bg",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-5ae2c58f",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "5ae2c58f56e2e24b769bf32aa4d2db5b4ab42fb3",
+   "date": "2019-08-25",
+   "subject": "fix: layout setting",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-38e01c99",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "38e01c990eecc81a539fed3b01d491a7d913a28a",
+   "date": "2019-08-25",
+   "subject": "fix: layout settings",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-19d6a8b7",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "19d6a8b7cfad7208c2944015db4bb95b7bea7e28",
+   "date": "2019-04-28",
+   "subject": "fix: sidebar footer in fixed",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-8c61d615",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "8c61d6157e2f7f09defd13c61ff876e085c92fcf",
+   "date": "2019-04-28",
+   "subject": "fix: dynamic div create for mobile",
+   "fixed_state": "a2e46afb7fd967a58c9599fe14dbf4752e2f0ba3",
+   "pages_rendered": [
+    "dist/404.html",
+    "dist/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "one of 17 candidates that share the fixed state a2e46af; the differences are header and breadcrumb spacing of a pixel or two"
+  },
+  {
+   "id": "sleek-e91b6d83",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "e91b6d833efaa5c9875c3e079dd7bf411c4f7350",
+   "date": "2019-03-30",
+   "subject": "feat: add sidebar static offcanvas and fix sidebar fixed offcanvas",
+   "fixed_state": "c6a9587fa54876e8624256ebf5b7d1f5898a89d4",
+   "pages_rendered": [
+    "dist/alert.html",
+    "dist/analytics.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "sleek-4c33e67c",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "4c33e67c8762c3fd571ccd23e82db92981f77d1e",
+   "date": "2019-03-30",
+   "subject": "feat: add sidebar static minified and fix sidebar fixed minified",
+   "fixed_state": "c6a9587fa54876e8624256ebf5b7d1f5898a89d4",
+   "pages_rendered": [
+    "dist/alert.html",
+    "dist/analytics.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "sleek-ca5b6bc2",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "ca5b6bc2722b4dbd851e24283790d73309210d3a",
+   "date": "2019-03-30",
+   "subject": "feat: add support for sidebar fixed default and sidebar static default",
+   "fixed_state": "c6a9587fa54876e8624256ebf5b7d1f5898a89d4",
+   "pages_rendered": [
+    "dist/alert.html",
+    "dist/analytics.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "sleek-eda8f7c6",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "eda8f7c6d8c477c08cd9e4d3bac69eb004b7f9c6",
+   "date": "2018-12-23",
+   "subject": "fix: header fixed",
+   "fixed_state": "aae46f7b26663191eb8acbe7579ad369573683f7",
+   "pages_rendered": [
+    "dist/alert.html",
+    "dist/analytics.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "sleek-ef7935c9",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "ef7935c9a0368e18eb3afe37ea7f7e68813f88ff",
+   "date": "2018-12-22",
+   "subject": "fix: responsive",
+   "fixed_state": "aae46f7b26663191eb8acbe7579ad369573683f7",
+   "pages_rendered": [
+    "dist/alert.html",
+    "dist/analytics.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "sleek-ec6b5747",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "ec6b5747f5539e32768650c46ee340f56a842618",
+   "date": "2018-12-22",
+   "subject": "fix: dropdown position",
+   "fixed_state": "aae46f7b26663191eb8acbe7579ad369573683f7",
+   "pages_rendered": [
+    "dist/alert.html",
+    "dist/analytics.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  },
+  {
+   "id": "sleek-39cd4531",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "39cd45311a3d263394ecd204a1a0a89521717c2e",
+   "date": "2018-12-15",
+   "subject": "fix: left sidenav badge padding reduce",
+   "fixed_state": "455c01606626df7c1a87b4f1b88f91a5822a178b",
+   "pages_rendered": [
+    "dist/analytics.html",
+    "dist/charts/chartjs.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state lays the page out 980 px wide on a phone, so it is not a fix"
+  },
+  {
+   "id": "sleek-121bd719",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "121bd71974c6df8496789355847d9945e0107b57",
+   "date": "2018-12-11",
+   "subject": "fix: button padding variable",
+   "fixed_state": "455c01606626df7c1a87b4f1b88f91a5822a178b",
+   "pages_rendered": [
+    "dist/analytics.html",
+    "dist/charts/chartjs.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state lays the page out 980 px wide on a phone, so it is not a fix"
+  },
+  {
+   "id": "sleek-9d35fc5c",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "9d35fc5cd1478a4a5379e0203cb97c20042dc469",
+   "date": "2018-12-05",
+   "subject": "fix: sidebar top padding",
+   "fixed_state": "0cba9b7d0e19ce08b7b6d10a7e64451f3f50b1fc",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "sleek-d96c3baf",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "d96c3baf740134146589c151707030c3a0c31f1b",
+   "date": "2018-12-02",
+   "subject": "fix: content padding",
+   "fixed_state": "a51bbd9a2e2545e6aa8ba01774aaa084c7512b36",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "sleek-627ea94f",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "627ea94fc3dd11a85a8ce31767522aa15cf70d5b",
+   "date": "2018-12-02",
+   "subject": "fix: card header spacing of default card",
+   "fixed_state": "a51bbd9a2e2545e6aa8ba01774aaa084c7512b36",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "sleek-7462220c",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "7462220c8ba8d4fc1e0000e6bce08711a704660e",
+   "date": "2018-11-20",
+   "subject": "fix: analytics device spacing",
+   "fixed_state": "a51bbd9a2e2545e6aa8ba01774aaa084c7512b36",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "sleek-f9e882d0",
+   "source": "themefisher/sleek-bootstrap",
+   "commit": "f9e882d0fbd6d31f21caf9d73bba12638a72254a",
+   "date": "2018-11-19",
+   "subject": "fix: convert header fixed for jekyll",
+   "fixed_state": "a51bbd9a2e2545e6aa8ba01774aaa084c7512b36",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "snack-4bf58f8c",
+   "source": "snack-ui/snack",
+   "commit": "4bf58f8cb5d19093c6dc815c0f06953c64207fdb",
+   "date": "2021-03-19",
+   "subject": "fix: fix select height (#4)",
+   "fixed_state": "39a8a0de136352db66abfc46be3e3f81579c339e",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the select height changes by about 1 px"
+  },
+  {
+   "id": "snack-654e3222",
+   "source": "snack-ui/snack",
+   "commit": "654e3222548f2aadbad21558800bd1dd5d832960",
+   "date": "2021-02-23",
+   "subject": "chore(grid): small fix padding",
+   "fixed_state": "ac02f9d765c0d8109c80793785331f156fb6ae7a",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state makes the page wider than the phone screen, so it is not a fix"
+  },
+  {
+   "id": "snack-3ef4b250",
+   "source": "snack-ui/snack",
+   "commit": "3ef4b250785bd45cae93580f9fcfea16040425fa",
+   "date": "2021-02-20",
+   "subject": "refactor: rename help-block to form-text and improve spacing value",
+   "fixed_state": "3ef4b250785bd45cae93580f9fcfea16040425fa",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "refinement of spacing or size; the broken state looks intended"
+  },
+  {
+   "id": "snack-d0df8946",
+   "source": "snack-ui/snack",
+   "commit": "d0df8946b2311caf70dbb949f1c03550e6dfee73",
+   "date": "2021-02-20",
+   "subject": "refactor: correct some spacing values",
+   "fixed_state": "d0df8946b2311caf70dbb949f1c03550e6dfee73",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "snack-d1e68c0f",
+   "source": "snack-ui/snack",
+   "commit": "d1e68c0f47188340a55cd2518c0282285a330227",
+   "date": "2019-02-19",
+   "subject": "improve input appearance on mobile",
+   "fixed_state": "268288c1b3f46e28eded328aad3ce35f0f5a38f1",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "snack-f351afb9",
+   "source": "snack-ui/snack",
+   "commit": "f351afb96c4f705faa8772ecd4cf1b9688a55c4d",
+   "date": "2019-01-12",
+   "subject": "docs: fixed sticky issue",
+   "fixed_state": "f351afb96c4f705faa8772ecd4cf1b9688a55c4d",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "snack-e7d7430e",
+   "source": "snack-ui/snack",
+   "commit": "e7d7430ea8e85534c5cef9bfe7d744634fdaecce",
+   "date": "2019-01-12",
+   "subject": "fix: fixed form issue",
+   "fixed_state": "e7d7430ea8e85534c5cef9bfe7d744634fdaecce",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change (colour, border, radius or font)"
+  },
+  {
+   "id": "snack-a8ca7ba0",
+   "source": "snack-ui/snack",
+   "commit": "a8ca7ba0665bbadc0258daa45967a14d3432123d",
+   "date": "2019-01-11",
+   "subject": "fix: fixed row",
+   "fixed_state": "f1b0c8071a6bdb2c0bcb02a80148d0555520370c",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (form label layout)"
+  },
+  {
+   "id": "snack-96e1226f",
+   "source": "snack-ui/snack",
+   "commit": "96e1226f16b14d721f3debe62855bc71d9dad8fd",
+   "date": "2018-03-27",
+   "subject": "Removed overflow attribute in boxes style",
+   "fixed_state": "96e1226f16b14d721f3debe62855bc71d9dad8fd",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the browser table is cut at the edge of its box in both states; the change moves it by about 1 px"
+  },
+  {
+   "id": "snack-cd610595",
+   "source": "snack-ui/snack",
+   "commit": "cd610595b80ee7085c0f10e9bafc64d413e057fe",
+   "date": "2018-01-10",
+   "subject": "Modified form elements border width & radius",
+   "fixed_state": "cd610595b80ee7085c0f10e9bafc64d413e057fe",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change (colour, border, radius or font)"
+  },
+  {
+   "id": "snack-2a2e4789",
+   "source": "snack-ui/snack",
+   "commit": "2a2e4789cdc8d01887408c5939048cf9960eeea0",
+   "date": "2018-01-10",
+   "subject": "Modified buttons border width & radius",
+   "fixed_state": "2a2e4789cdc8d01887408c5939048cf9960eeea0",
+   "pages_rendered": [
+    "docs/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change (colour, border, radius or font)"
+  },
+  {
+   "id": "srtdash-94d4bef2",
+   "source": "puikinsh/srtdash-admin-dashboard",
+   "commit": "94d4bef2c540835e017656761315210596665aaf",
+   "date": "2026-02-09",
+   "subject": "Fix header alignment and icon rendering issues",
+   "fixed_state": "94d4bef2c540835e017656761315210596665aaf",
+   "pages_rendered": [
+    "srtdash/accordion.html",
+    "srtdash/alert.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change (header items centred on a phone)"
+  },
+  {
+   "id": "srtdash-3376d4ca",
+   "source": "puikinsh/srtdash-admin-dashboard",
+   "commit": "3376d4caa60e531ccd9d2aaa31556883bb075658",
+   "date": "2019-03-03",
+   "subject": "fixed nav-button",
+   "fixed_state": "3376d4caa60e531ccd9d2aaa31556883bb075658",
+   "pages_rendered": [
+    "srtdash/403.html",
+    "srtdash/404.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "startmin-00dfc439",
+   "source": "secondtruth/startmin",
+   "commit": "00dfc43943c373b70e945f4a4f772e3ab764c407",
+   "date": "2018-12-03",
+   "subject": "Wrap Bootstrap Rows in Container Tags",
+   "fixed_state": "00dfc43943c373b70e945f4a4f772e3ab764c407",
+   "pages_rendered": [
+    "pages/buttons.html",
+    "pages/flot.html"
+   ],
+   "verdict": "accepted",
+   "reason": "phone: the page rows sit outside a container, so the page is 376 px wide and scrolls sideways by 16 px; the page fits 360 px after the fix",
+   "kind": "content that runs outside the screen or makes the page scroll sideways"
+  },
+  {
+   "id": "the-flex-grid-cecca631",
+   "source": "jeroenoomsNL/the-flex-grid",
+   "commit": "cecca631ceb61a7e55266cfb44b7f1ff702c761f",
+   "date": "2019-03-11",
+   "subject": "Add full-height grid",
+   "fixed_state": "cecca631ceb61a7e55266cfb44b7f1ff702c761f",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "the-flex-grid-acb1652f",
+   "source": "jeroenoomsNL/the-flex-grid",
+   "commit": "acb1652f7df11b2a6575580979dee0ce6412a29b",
+   "date": "2017-03-19",
+   "subject": "Remove max-width from grid class & make column selectors less specific",
+   "fixed_state": "acb1652f7df11b2a6575580979dee0ce6412a29b",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "the-flex-grid-ccafb02e",
+   "source": "jeroenoomsNL/the-flex-grid",
+   "commit": "ccafb02e066954640e328de3fbaeb3e5e0c22988",
+   "date": "2017-02-14",
+   "subject": "Fix nested grids with equal height",
+   "fixed_state": "ccafb02e066954640e328de3fbaeb3e5e0c22988",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "the-flex-grid-4ad48889",
+   "source": "jeroenoomsNL/the-flex-grid",
+   "commit": "4ad488892edec11abf2a66452dce1cecaf9e40bd",
+   "date": "2015-10-14",
+   "subject": "Add vertical alignment for single columns",
+   "fixed_state": "4ad488892edec11abf2a66452dce1cecaf9e40bd",
+   "pages_rendered": [
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "feature (new classes or behaviour); the broken state looks intended"
+  },
+  {
+   "id": "the-flex-grid-0968c005",
+   "source": "jeroenoomsNL/the-flex-grid",
+   "commit": "0968c00566f2faf30efacbffac0269a804931e06",
+   "date": "2015-02-28",
+   "subject": "Add alignment for columns, including equal height!",
+   "fixed_state": "0968c00566f2faf30efacbffac0269a804931e06",
+   "pages_rendered": [
+    "app/index.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state makes the page wider than the phone screen, so it is not a fix"
+  },
+  {
+   "id": "the-flex-grid-15a6c18e",
+   "source": "jeroenoomsNL/the-flex-grid",
+   "commit": "15a6c18e4176d7c60b296a3cab323d792ad9bf82",
+   "date": "2015-02-22",
+   "subject": "Remove padding from grid",
+   "fixed_state": "15a6c18e4176d7c60b296a3cab323d792ad9bf82",
+   "pages_rendered": [
+    "app/index.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the page is wider than the phone screen in both states (584 and 568 px)"
+  },
+  {
+   "id": "the-flex-grid-844c4b70",
+   "source": "jeroenoomsNL/the-flex-grid",
+   "commit": "844c4b70fd789de016403c06aa1c3e685d42dcec",
+   "date": "2015-02-22",
+   "subject": "Refactoring gutter spacing",
+   "fixed_state": "844c4b70fd789de016403c06aa1c3e685d42dcec",
+   "pages_rendered": [
+    "app/index.html",
+    "demo/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "the later state makes the page wider than the phone screen, so it is not a fix"
+  },
+  {
+   "id": "unnamed-feea7a78",
+   "source": "smakosh/unnamed-css-framework",
+   "commit": "feea7a78f6e147b012440af161ce39c9fc2b275d",
+   "date": "2018-03-19",
+   "subject": "fixed default appearance of select element",
+   "fixed_state": "feea7a78f6e147b012440af161ce39c9fc2b275d",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "unnamed-b901b0b4",
+   "source": "smakosh/unnamed-css-framework",
+   "commit": "b901b0b482b1511c0fe7e53f6b041227fddf55d5",
+   "date": "2018-02-01",
+   "subject": "fixed checkboxes, radi buttons & other stuff",
+   "fixed_state": "b901b0b482b1511c0fe7e53f6b041227fddf55d5",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "unnamed-c7aba72d",
+   "source": "smakosh/unnamed-css-framework",
+   "commit": "c7aba72d18d11574a743260d714b44e29f7f9b19",
+   "date": "2018-01-06",
+   "subject": "fixed_logo",
+   "fixed_state": "a044c8d45b3c0ccb8a5893a1d91f30da0263a306",
+   "pages_rendered": [],
+   "verdict": "rejected",
+   "reason": "no HTML page at the parent commit"
+  },
+  {
+   "id": "unnamed-3f544224",
+   "source": "smakosh/unnamed-css-framework",
+   "commit": "3f54422468a4dc8cf8e53509eeba20c458bceb41",
+   "date": "2017-10-22",
+   "subject": "fixed minimized style file",
+   "fixed_state": "3f54422468a4dc8cf8e53509eeba20c458bceb41",
+   "pages_rendered": [
+    "unnamed/index.html",
+    "unnamed/soon.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "unnamed-a29da5eb",
+   "source": "smakosh/unnamed-css-framework",
+   "commit": "a29da5eb5d36200f71f0b2422bea277531120236",
+   "date": "2017-10-01",
+   "subject": "new documentation layout",
+   "fixed_state": "518432e32c2af4bfab127bcacf013deac0f9d22e",
+   "pages_rendered": [
+    "unnamed/index.html",
+    "unnamed/soon.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "unnamed-381a926d",
+   "source": "smakosh/unnamed-css-framework",
+   "commit": "381a926d66d2343e9e4d70a75cff4ae93fa09874",
+   "date": "2017-09-11",
+   "subject": "fixed some elements",
+   "fixed_state": "381a926d66d2343e9e4d70a75cff4ae93fa09874",
+   "pages_rendered": [
+    "unnamed/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "design change; the broken state looks intended"
+  },
+  {
+   "id": "unnamed-bba49547",
+   "source": "smakosh/unnamed-css-framework",
+   "commit": "bba4954775de9943d5f7f8d63d9ddd9f882a4c31",
+   "date": "2017-09-11",
+   "subject": "added black color & fixed the grid",
+   "fixed_state": "bba4954775de9943d5f7f8d63d9ddd9f882a4c31",
+   "pages_rendered": [
+    "unnamed/index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "style change (colour, border, radius or font)"
+  },
+  {
+   "id": "voler-0244a07a",
+   "source": "zuramai/voler",
+   "commit": "0244a07a57c47dffab94879e6e8130a3fee071a9",
+   "date": "2020-07-13",
+   "subject": "Fix datatable responsive",
+   "fixed_state": "0244a07a57c47dffab94879e6e8130a3fee071a9",
+   "pages_rendered": [
+    "dist/assets/scss/app.html",
+    "dist/assets/scss/bootstrap.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "voler-507b5357",
+   "source": "zuramai/voler",
+   "commit": "507b5357e45b964b00ccef7ace7a8e32fd7301b9",
+   "date": "2020-07-04",
+   "subject": "Add Form Layout Page",
+   "fixed_state": "507b5357e45b964b00ccef7ace7a8e32fd7301b9",
+   "pages_rendered": [
+    "dist/form-element-checkbox.html",
+    "dist/form-element-input.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "win95kit-a455b356",
+   "source": "themesberg/windows-95-ui-kit",
+   "commit": "a455b3564244da32c629aeef68cc1058b1a65003",
+   "date": "2019-08-29",
+   "subject": "Wrap icon buttons for mobile",
+   "fixed_state": "a455b3564244da32c629aeef68cc1058b1a65003",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "no visible difference at the screening viewports"
+  },
+  {
+   "id": "win95kit-7cdaa27c",
+   "source": "themesberg/windows-95-ui-kit",
+   "commit": "7cdaa27c1e6be43e581441c68921472ebe874079",
+   "date": "2019-08-29",
+   "subject": "Update tooltips font and add all positions",
+   "fixed_state": "7cdaa27c1e6be43e581441c68921472ebe874079",
+   "pages_rendered": [
+    "index.html"
+   ],
+   "verdict": "rejected",
+   "reason": "content change (the page gains, loses or replaces content)"
+  }
+ ]
+}

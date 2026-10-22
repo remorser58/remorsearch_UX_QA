@@ -1,0 +1,195 @@
+{
+ "round": 7,
+ "sealed": "2026-10-23, before any agent run",
+ "viewports": {
+  "phone": "360x780, touch, mobile emulation",
+  "laptop": "1440x900"
+ },
+ "cases": [
+  {
+   "item": "cleopatra-1d67f504",
+   "source": "moesaid/cleopatra",
+   "fix_commit": "1d67f5041af7fddab4c80269e3df0b6bfd5b447a",
+   "page": "dist/index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "kind": "content that runs outside the screen or makes the page scroll sideways",
+   "defect": "On a phone the four report cards of the dashboard (.grid.grid-cols-4 > .report-card: 5498 Items Sales, 3333 New Orders, 1122 Total Products, 1229 New Visitor) stay in one row of narrow cards: their labels wrap, the percentage badges spill over the card edges, and the page is 453 px wide, so the header (div.md:fixed, 453 px) and its menu toggle (button#navbarToggle at x = 415 to 429) lie past the right edge of the 360 px screen and the page scrolls sideways. After the fix the cards stack one per row and the page is 360 px wide.",
+   "selectors": [
+    ".grid.grid-cols-4",
+    ".grid-cols-4",
+    ".report-card",
+    "#navbarToggle",
+    "#navbar",
+    "div.md\\:fixed"
+   ],
+   "fix_subject": "fixing responsive problem"
+  },
+  {
+   "item": "neubrutalism-3b935b37",
+   "source": "OshekharO/Neubrutalism",
+   "fix_commit": "3b935b376493b4695d8dab767a651e251fb71f77",
+   "page": "docs/index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "kind": "content that runs outside the screen or makes the page scroll sideways",
+   "defect": "On a phone the documentation page is 734 px wide: the table of stylesheet URLs (table.docs-table, File and URL columns with the cdn.jsdelivr.net links) runs to 734 px, past the right edge of the 360 px screen, the header (header.docs-header) stretches with it, and the page scrolls sideways. After the fix the URLs wrap inside the table and the page is 360 px wide.",
+   "selectors": [
+    "table.docs-table",
+    ".docs-table",
+    ".docs-table code",
+    "header.docs-header",
+    ".docs-header"
+   ],
+   "fix_subject": "feat(ui): improve mobile responsiveness and layout stability"
+  },
+  {
+   "item": "neubrutalism-af223018",
+   "source": "OshekharO/Neubrutalism",
+   "fix_commit": "af223018a4e4a762fd877d8be11f817a7f8b327d",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "kind": "content that runs outside the screen or makes the page scroll sideways",
+   "defect": "On a phone the navigation bar keeps the brand, the four links (Home, Features, Components, Docs) and the Toggle Dark button on one row: the links and the button run past the right edge of the screen (button#theme-toggle at x = 528 to 648) and the page is 648 px wide. After the fix a menu button replaces the links and the page is 360 px wide.",
+   "selectors": [
+    "nav.nb-navbar",
+    ".nb-navbar",
+    ".nb-navbar-nav",
+    ".nb-navbar-nav a",
+    "#theme-toggle"
+   ],
+   "fix_subject": "feat(ui): add responsive navbar with hamburger menu"
+  },
+  {
+   "item": "notion-css-ff2c2912",
+   "source": "sreeram-venkitesh/notion.css",
+   "fix_commit": "ff2c291247c3b633961cf50b2d387068a2f734bc",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "kind": "content that runs outside the screen or makes the page scroll sideways",
+   "defect": "On a phone the installation sample (<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@fillerink/notion.css@0.1.0/src/notion.css\">) runs out of its grey box: the line of code (code.language-html) ends at 918 px, so the page is 918 px wide and scrolls sideways. After the fix the page is 360 px wide.",
+   "selectors": [
+    "code.language-html",
+    "pre",
+    "pre code",
+    "code"
+   ],
+   "fix_subject": "Site is now responsive"
+  },
+  {
+   "item": "particle-891c4249",
+   "source": "ionited/particle",
+   "fix_commit": "891c4249c4c7b831f2b62fb50df579bb92c4584f",
+   "page": "test/index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "kind": "content that runs outside the screen or makes the page scroll sideways",
+   "defect": "On a phone the two form grids of the test page (div.grid with the text, file, button and select inputs) reach 8 px past both sides of the screen (x = -8 to 368) through negative margins, so the page is 368 px wide and scrolls sideways by 8 px. After the fix the grids sit inside the screen and the page is 360 px wide.",
+   "selectors": [
+    "div.grid",
+    ".grid",
+    ".grid > *",
+    "input",
+    "select"
+   ],
+   "fix_subject": "fix: use gap instead of margin and padding",
+   "fixed_state_commit": "b9906276787b1b41accb5137d06ea59d8c8d2c9c"
+  },
+  {
+   "item": "plainadmin-7b537082",
+   "source": "PlainAdmin/plain-free-bootstrap-admin-template",
+   "fix_commit": "7b53708245d694187a1e40c48993dbfe628ce1fd",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "kind": "content that runs outside the screen or makes the page scroll sideways",
+   "defect": "On a phone the legend of the Sales Forecast chart (ul.legend3: Revenue +25.55%, Net Profit +45.55%, Order -4.2%) stays on one row and its last item ends at 486 px, past the right edge of the 360 px screen, so the page is 486 px wide and scrolls sideways. After the fix the legend items stack and the page is 360 px wide.",
+   "selectors": [
+    "ul.legend3",
+    ".legend3",
+    ".legend3 li",
+    ".legend3 .text"
+   ],
+   "fix_subject": "mobile experience updated"
+  },
+  {
+   "item": "psone-047ad598",
+   "source": "micah5/PSone.css",
+   "fix_commit": "047ad598cd469d2e5f593a01ada0c36475a98f24",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "kind": "content that runs outside the screen or makes the page scroll sideways",
+   "defect": "On a phone the page title 'PSone.css' (h1.play) is wider than the screen and ends at 366 px, 6 px past the right edge, so its last letter meets the edge and the page scrolls sideways by 6 px. After the fix the title ends at 330 px.",
+   "selectors": [
+    "h1.play",
+    "h1",
+    ".play"
+   ],
+   "fix_subject": "feat: change width of the input and font-size of h1 to fix ios."
+  },
+  {
+   "item": "psone-d368ab3f",
+   "source": "micah5/PSone.css",
+   "fix_commit": "d368ab3f751212e6e1e681c96f128eafe971e000",
+   "page": "index.html",
+   "visible_at": [
+    "phone"
+   ],
+   "kind": "content that runs outside the screen or makes the page scroll sideways",
+   "defect": "On a phone the Controller Buttons panel keeps its buttons on one row: the arrow, L1, R1, L3 and R3 buttons (i.icon) run out of the panel to 746 px, past the right edge of the screen, and the page is 746 px wide. After the fix the buttons wrap inside the panel and end at 290 px.",
+   "selectors": [
+    "i.icon",
+    ".icon",
+    ".icon.arrow-left",
+    ".icon.l1",
+    ".icon.l3",
+    ".icon.r3"
+   ],
+   "also_present": [
+    "Fixed state only: the title 'PSone.css' (h1.play) ends at 366 px, 6 px past the screen edge (the defect of psone-047ad598); a report of it on this item's fixed page is a valid extra."
+   ],
+   "fix_subject": "feat: made responsive adjustments to index.html"
+  },
+  {
+   "item": "startmin-00dfc439",
+   "source": "secondtruth/startmin",
+   "fix_commit": "00dfc43943c373b70e945f4a4f772e3ab764c407",
+   "page": "pages/buttons.html",
+   "visible_at": [
+    "phone"
+   ],
+   "kind": "content that runs outside the screen or makes the page scroll sideways",
+   "defect": "On a phone the Bootstrap rows of the page (#page-wrapper > .row, with -15 px side margins) sit outside a container, so the page is 376 px wide and scrolls sideways by 16 px, and the dark navbar (nav.navbar, 376 px) runs past the right edge of the screen. After the fix the rows sit in a container and the page is 360 px wide.",
+   "selectors": [
+    "#page-wrapper .row",
+    "#page-wrapper > .row",
+    ".row",
+    "#page-wrapper",
+    "nav.navbar",
+    ".navbar"
+   ],
+   "also_present": [
+    "In both states the page heading 'Buttons' (h1.page-header) is partly covered by the fixed navbar on a phone; a report of it is a valid extra."
+   ],
+   "fix_subject": "Wrap Bootstrap Rows in Container Tags"
+  }
+ ],
+ "notes": [
+  "A known defect is each item's own defect on its broken page.",
+  "Fixed-state alarm: a finding on a fixed page that points at that item's defect element and calls it broken in the way the defect describes.",
+  "Defects listed under also_present are real where the entry says; reports of them are valid extras.",
+  "A table, code block, list or select that scrolls inside its own box (overflow: auto) is not a defect; a report of it is unsupported.",
+  "The saved pages load nothing from other sites, so pictures from other sites (picsum.photos, i.redd.it and similar) are missing in both states; a report that only says such media is missing is unsupported.",
+  "The plainadmin page links assets/css/LineIcons.css, which its repository stores as lineicons.css, so its icon glyphs are missing in both states; a report that only says icons are missing is unsupported."
+ ]
+}
